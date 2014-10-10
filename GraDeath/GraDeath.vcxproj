@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -41,6 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)lib\Box2D;$(ProjectDir)include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -57,6 +58,8 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib\Box2D\Build\vs2012\bin\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Box2D.lib;WindowsCodecs.lib;d2d1.lib;d3d10_1.lib;d3dx10.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -79,9 +82,67 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source\D3D\Device\Device.cpp" />
+    <ClCompile Include="Source\D3D\SwapChain\SwapChain.cpp" />
+    <ClCompile Include="Source\Graphic\BlendState\BlendState.cpp" />
+    <ClCompile Include="Source\Graphic\D2DGraphic.cpp" />
+    <ClCompile Include="Source\Graphic\D3DGraphic.cpp" />
+    <ClCompile Include="Source\Graphic\DepthStencil\DepthStencil.cpp" />
+    <ClCompile Include="Source\Graphic\Graphic.cpp" />
+    <ClCompile Include="Source\Graphic\Rasterizer\Rasterizer.cpp" />
+    <ClCompile Include="Source\Graphic\RenderTarget\RenderTarget.cpp" />
+    <ClCompile Include="Source\Graphic\Sampler\Sampler.cpp" />
+    <ClCompile Include="Source\Object\Character.cpp" />
+    <ClCompile Include="Source\Object\Object.cpp" />
+    <ClCompile Include="Source\Sound\BGM\BGM.cpp" />
+    <ClCompile Include="Source\Sound\BGM\BGMPimpl.cpp" />
+    <ClCompile Include="Source\Sound\SE\SE.cpp" />
+    <ClCompile Include="Source\Sound\SE\SEPimpl.cpp" />
+    <ClCompile Include="Source\Sound\Sound.cpp" />
+    <ClCompile Include="Source\Sound\SoundCore.cpp" />
+    <ClCompile Include="Source\Sound\Voice\MasterVoice.cpp" />
+    <ClCompile Include="Source\Sound\Voice\SourceVoice.cpp" />
+    <ClCompile Include="Source\Sound\Voice\SubmixVoice.cpp" />
+    <ClCompile Include="Source\Sound\WaveDecoder.cpp" />
+    <ClCompile Include="Source\System\D2DCore.cpp" />
+    <ClCompile Include="Source\System\D3DCore.cpp" />
+    <ClCompile Include="Source\System\System.cpp" />
+    <ClCompile Include="Source\System\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include\Test.h" />
+    <ClInclude Include="Include\D2D\Brush\BitmapBrush.h" />
+    <ClInclude Include="Include\D2D\Brush\Brush.h" />
+    <ClInclude Include="Include\D2D\Brush\RGBrush.h" />
+    <ClInclude Include="Include\D2D\Brush\SolidBrush.h" />
+    <ClInclude Include="Include\D2D\D2DGeometry.h" />
+    <ClInclude Include="Include\D2D\Interface\ImagingFactory.h" />
+    <ClInclude Include="Include\D3D\Device\Device.h" />
+    <ClInclude Include="Include\D3D\SwapChain\SwapChain.h" />
+    <ClInclude Include="Include\Graphic\BlendState\BlendState.h" />
+    <ClInclude Include="Include\Graphic\D2DGraphic.h" />
+    <ClInclude Include="Include\Graphic\D3DGraphic.h" />
+    <ClInclude Include="Include\Graphic\DepthStencil\DepthStencil.h" />
+    <ClInclude Include="Include\Graphic\Graphic.h" />
+    <ClInclude Include="Include\Graphic\Rasterizer\Rasterizer.h" />
+    <ClInclude Include="Include\Graphic\RenderTarget\RenderTarget.h" />
+    <ClInclude Include="Include\Graphic\Sampler\Sampler.h" />
+    <ClInclude Include="Include\Object\Character.h" />
+    <ClInclude Include="Include\Object\Object.h" />
+    <ClInclude Include="Include\Sound\BGM\BGM.h" />
+    <ClInclude Include="Include\Sound\BGM\BGMPimpl.h" />
+    <ClInclude Include="Include\Sound\SE\SE.h" />
+    <ClInclude Include="Include\Sound\SE\SEPimpl.h" />
+    <ClInclude Include="Include\Sound\Sound.h" />
+    <ClInclude Include="Include\Sound\SoundCore.h" />
+    <ClInclude Include="Include\Sound\Voice\MasterVoice.h" />
+    <ClInclude Include="Include\Sound\Voice\SourceVoice.h" />
+    <ClInclude Include="Include\Sound\Voice\SubmixVoice.h" />
+    <ClInclude Include="Include\Sound\WaveData.h" />
+    <ClInclude Include="Include\Sound\WaveDecoder.h" />
+    <ClInclude Include="Include\System\D2DCore.h" />
+    <ClInclude Include="Include\System\D3DCore.h" />
+    <ClInclude Include="Include\System\System.h" />
+    <ClInclude Include="Include\System\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

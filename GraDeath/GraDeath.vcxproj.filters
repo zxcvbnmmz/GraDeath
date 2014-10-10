@@ -13,15 +13,270 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\Object">
+      <UniqueIdentifier>{021ee829-1c33-4ba4-b553-105299534a7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Object\Character">
+      <UniqueIdentifier>{45a4405f-e47e-446f-bb87-5e072ef5010d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\System">
+      <UniqueIdentifier>{c76fc456-12b5-496e-a12b-f29de0844055}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\System\Window">
+      <UniqueIdentifier>{fcfb4ae6-a97b-493a-b104-0cb9f6834e42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\System\D3D">
+      <UniqueIdentifier>{facbeddc-414d-495b-b4e0-2febe7e93b98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\System\D2D">
+      <UniqueIdentifier>{990377f6-ac4f-48ce-97d8-ae44ebb13bb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Graphic">
+      <UniqueIdentifier>{cb14809b-4aff-473e-9541-00dd520fdd67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Graphic\D2D">
+      <UniqueIdentifier>{a6a94156-4a10-4f44-8c80-f1d330ccabc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Graphic\D3D">
+      <UniqueIdentifier>{a4d65da7-6352-4bf9-901f-9c006529379f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Graphic\D3D\Interface">
+      <UniqueIdentifier>{b3547464-89c3-4347-9379-d1fa77a02e7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Graphic\D3D\Interface\DepthStencil">
+      <UniqueIdentifier>{a1e3aee1-8838-40ac-ac5f-40ccce191d4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Graphic\D3D\Interface\BlendState">
+      <UniqueIdentifier>{59258156-a3d1-49be-aac1-b0bdae56ec89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Graphic\D3D\Interface\Rasterizer">
+      <UniqueIdentifier>{0e7c7031-79a7-4391-bc08-5244a6756daa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Graphic\D3D\Interface\RenderTarget">
+      <UniqueIdentifier>{5939804d-7b37-49bf-8027-d33417039981}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Graphic\D3D\Interface\Sampler">
+      <UniqueIdentifier>{8f499f69-7ebc-4c5e-b650-c5df3b4f659f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Graphic\D2D\Geometory">
+      <UniqueIdentifier>{4907825a-9136-49e4-87be-cd52b216cb97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Graphic\D2D\Brush">
+      <UniqueIdentifier>{0f65e6cb-7eeb-4a7b-b725-46a1ca0b0ee5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Graphic\D2D\Interface">
+      <UniqueIdentifier>{2d524031-f694-4bc6-90ba-7a179eb0dfc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\System\D3D\Interface">
+      <UniqueIdentifier>{95867a76-b8d6-4460-a7e2-2ce2bb0a6bb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\System\D3D\Interface\SwapChain">
+      <UniqueIdentifier>{52169869-5c72-465f-b55f-0d10d1cffe41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\System\D3D\Interface\Device">
+      <UniqueIdentifier>{03b95c64-1e80-409c-abe0-802b46d6f7c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Sound">
+      <UniqueIdentifier>{9bd4baa4-269e-47bb-82dc-c10d955315b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Sound\Voice">
+      <UniqueIdentifier>{26f3ac7d-8185-4992-9132-00c98cc2f80e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Sound\BGM">
+      <UniqueIdentifier>{e2dfd1fe-bbd6-4bb3-9e6e-f08078b84245}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Sound\SE">
+      <UniqueIdentifier>{08a5e876-6b8b-4a33-ab02-cd932a59ca57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Sound\Core">
+      <UniqueIdentifier>{2bb772c2-52e9-4826-a0f8-e117c082ab05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Sound\Wave">
+      <UniqueIdentifier>{a9e48941-cd3c-401b-8276-d0a5e1274f99}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Object\Object.cpp">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Character.cpp">
+      <Filter>ソース ファイル\Object\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\Window.cpp">
+      <Filter>ソース ファイル\System\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\System.cpp">
+      <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\D3DCore.cpp">
+      <Filter>ソース ファイル\System\D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\D2DCore.cpp">
+      <Filter>ソース ファイル\System\D2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\Graphic.cpp">
+      <Filter>ソース ファイル\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\RenderTarget\RenderTarget.cpp">
+      <Filter>ソース ファイル\Graphic\D3D\Interface\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\Rasterizer\Rasterizer.cpp">
+      <Filter>ソース ファイル\Graphic\D3D\Interface\Rasterizer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\BlendState\BlendState.cpp">
+      <Filter>ソース ファイル\Graphic\D3D\Interface\BlendState</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\DepthStencil\DepthStencil.cpp">
+      <Filter>ソース ファイル\Graphic\D3D\Interface\DepthStencil</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\Sampler\Sampler.cpp">
+      <Filter>ソース ファイル\Graphic\D3D\Interface\Sampler</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\D2DGraphic.cpp">
+      <Filter>ソース ファイル\Graphic\D2D\Geometory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D3D\Device\Device.cpp">
+      <Filter>ソース ファイル\System\D3D\Interface\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D3D\SwapChain\SwapChain.cpp">
+      <Filter>ソース ファイル\System\D3D\Interface\SwapChain</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\Sound.cpp">
+      <Filter>ソース ファイル\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\Voice\MasterVoice.cpp">
+      <Filter>ソース ファイル\Sound\Voice</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\Voice\SourceVoice.cpp">
+      <Filter>ソース ファイル\Sound\Voice</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\Voice\SubmixVoice.cpp">
+      <Filter>ソース ファイル\Sound\Voice</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\BGM\BGMPimpl.cpp">
+      <Filter>ソース ファイル\Sound\BGM</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\BGM\BGM.cpp">
+      <Filter>ソース ファイル\Sound\BGM</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\SE\SEPimpl.cpp">
+      <Filter>ソース ファイル\Sound\SE</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\SE\SE.cpp">
+      <Filter>ソース ファイル\Sound\SE</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\SoundCore.cpp">
+      <Filter>ソース ファイル\Sound\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\WaveDecoder.cpp">
+      <Filter>ソース ファイル\Sound\Wave</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\D3DGraphic.cpp">
+      <Filter>ソース ファイル\Graphic\D3D</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include\Test.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="Include\Object\Object.h">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Character.h">
+      <Filter>ソース ファイル\Object\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\System\System.h">
+      <Filter>ソース ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\System\Window.h">
+      <Filter>ソース ファイル\System\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\System\D3DCore.h">
+      <Filter>ソース ファイル\System\D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\System\D2DCore.h">
+      <Filter>ソース ファイル\System\D2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\Graphic.h">
+      <Filter>ソース ファイル\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\Sampler\Sampler.h">
+      <Filter>ソース ファイル\Graphic\D3D\Interface\Sampler</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\RenderTarget\RenderTarget.h">
+      <Filter>ソース ファイル\Graphic\D3D\Interface\RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\Rasterizer\Rasterizer.h">
+      <Filter>ソース ファイル\Graphic\D3D\Interface\Rasterizer</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\BlendState\BlendState.h">
+      <Filter>ソース ファイル\Graphic\D3D\Interface\BlendState</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\DepthStencil\DepthStencil.h">
+      <Filter>ソース ファイル\Graphic\D3D\Interface\DepthStencil</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\D3DGraphic.h">
+      <Filter>ソース ファイル\Graphic\D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\D2DGeometry.h">
+      <Filter>ソース ファイル\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\D2DGraphic.h">
+      <Filter>ソース ファイル\Graphic\D2D\Geometory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Brush\BitmapBrush.h">
+      <Filter>ソース ファイル\Graphic\D2D\Brush</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Brush\Brush.h">
+      <Filter>ソース ファイル\Graphic\D2D\Brush</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Brush\RGBrush.h">
+      <Filter>ソース ファイル\Graphic\D2D\Brush</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Brush\SolidBrush.h">
+      <Filter>ソース ファイル\Graphic\D2D\Brush</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Interface\ImagingFactory.h">
+      <Filter>ソース ファイル\Graphic\D2D\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D3D\SwapChain\SwapChain.h">
+      <Filter>ソース ファイル\System\D3D\Interface\SwapChain</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D3D\Device\Device.h">
+      <Filter>ソース ファイル\System\D3D\Interface\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\BGM\BGM.h">
+      <Filter>ソース ファイル\Sound\BGM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\BGM\BGMPimpl.h">
+      <Filter>ソース ファイル\Sound\BGM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\SE\SEPimpl.h">
+      <Filter>ソース ファイル\Sound\SE</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\SE\SE.h">
+      <Filter>ソース ファイル\Sound\SE</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\Voice\MasterVoice.h">
+      <Filter>ソース ファイル\Sound\Voice</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\Voice\SourceVoice.h">
+      <Filter>ソース ファイル\Sound\Voice</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\Voice\SubmixVoice.h">
+      <Filter>ソース ファイル\Sound\Voice</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\Sound.h">
+      <Filter>ソース ファイル\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\SoundCore.h">
+      <Filter>ソース ファイル\Sound\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\WaveDecoder.h">
+      <Filter>ソース ファイル\Sound\Wave</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\WaveData.h">
+      <Filter>ソース ファイル\Sound\Wave</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
