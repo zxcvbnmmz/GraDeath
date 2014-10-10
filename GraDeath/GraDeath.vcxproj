@@ -95,6 +95,7 @@
     <ClCompile Include="Source\Graphic\Rasterizer\Rasterizer.cpp" />
     <ClCompile Include="Source\Graphic\RenderTarget\RenderTarget.cpp" />
     <ClCompile Include="Source\Graphic\Sampler\Sampler.cpp" />
+    <ClCompile Include="Source\Graphic\ShaderResource\ShaderResource.cpp" />
     <ClCompile Include="Source\Object\Character.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
     <ClCompile Include="Source\Scene\Factory\TitleFactory.cpp" />
@@ -137,6 +138,7 @@
     <ClInclude Include="Include\Graphic\Rasterizer\Rasterizer.h" />
     <ClInclude Include="Include\Graphic\RenderTarget\RenderTarget.h" />
     <ClInclude Include="Include\Graphic\Sampler\Sampler.h" />
+    <ClInclude Include="Include\Graphic\ShaderResource\ShaderResource.h" />
     <ClInclude Include="Include\Object\Character.h" />
     <ClInclude Include="Include\Object\Object.h" />
     <ClInclude Include="Include\Scene\Factory\TitleFactory.h" />
