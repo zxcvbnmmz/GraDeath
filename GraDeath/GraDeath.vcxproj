@@ -88,6 +88,10 @@
     <ClCompile Include="Source\D3D\Device\Device.cpp" />
     <ClCompile Include="Source\D3D\SwapChain\SwapChain.cpp" />
     <ClCompile Include="Source\Graphic\BlendState\BlendState.cpp" />
+    <ClCompile Include="Source\Graphic\Buffer\Buffer.cpp" />
+    <ClCompile Include="Source\Graphic\Buffer\ConstantBuffer.cpp" />
+    <ClCompile Include="Source\Graphic\Buffer\IndexBuffer.cpp" />
+    <ClCompile Include="Source\Graphic\Buffer\VertexBuffer.cpp" />
     <ClCompile Include="Source\Graphic\D2DGraphic.cpp" />
     <ClCompile Include="Source\Graphic\D3DGraphic.cpp" />
     <ClCompile Include="Source\Graphic\DepthStencil\DepthStencil.cpp" />
@@ -131,6 +135,10 @@
     <ClInclude Include="Include\D3D\Device\Device.h" />
     <ClInclude Include="Include\D3D\SwapChain\SwapChain.h" />
     <ClInclude Include="Include\Graphic\BlendState\BlendState.h" />
+    <ClInclude Include="Include\Graphic\Buffer\Buffer.h" />
+    <ClInclude Include="Include\Graphic\Buffer\ConstantBuffer.h" />
+    <ClInclude Include="Include\Graphic\Buffer\IndexBuffer.h" />
+    <ClInclude Include="Include\Graphic\Buffer\VertexBuffer.h" />
     <ClInclude Include="Include\Graphic\D2DGraphic.h" />
     <ClInclude Include="Include\Graphic\D3DGraphic.h" />
     <ClInclude Include="Include\Graphic\DepthStencil\DepthStencil.h" />
