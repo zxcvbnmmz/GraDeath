@@ -96,6 +96,7 @@
     <ClCompile Include="Source\Graphic\RenderTarget\RenderTarget.cpp" />
     <ClCompile Include="Source\Graphic\Sampler\Sampler.cpp" />
     <ClCompile Include="Source\Graphic\ShaderResource\ShaderResource.cpp" />
+    <ClCompile Include="Source\Model\CwnBaseMesh.cpp" />
     <ClCompile Include="Source\Object\Character.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
     <ClCompile Include="Source\Scene\Factory\TitleFactory.cpp" />
@@ -139,6 +140,8 @@
     <ClInclude Include="Include\Graphic\RenderTarget\RenderTarget.h" />
     <ClInclude Include="Include\Graphic\Sampler\Sampler.h" />
     <ClInclude Include="Include\Graphic\ShaderResource\ShaderResource.h" />
+    <ClInclude Include="Include\Model\CwnBaseMesh.h" />
+    <ClInclude Include="Include\Model\MeshDef.h" />
     <ClInclude Include="Include\Object\Character.h" />
     <ClInclude Include="Include\Object\Object.h" />
     <ClInclude Include="Include\Scene\Factory\TitleFactory.h" />
@@ -166,6 +169,7 @@
     <ClInclude Include="Include\Utility\Delegate.h" />
     <ClInclude Include="Include\Utility\DelegateBase.h" />
     <ClInclude Include="Include\Utility\DelegateList.h" />
+    <ClInclude Include="Include\Utility\SafeDelete.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
