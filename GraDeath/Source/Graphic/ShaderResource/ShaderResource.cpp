@@ -32,7 +32,8 @@ bool ShaderResource::Create(LPCWSTR fileName){
 		for(int i=0; i<3; ++i){
 			WCHAR str[80];
 			wcscpy_s(str,fileName);
-			WCHAR* name = wcscat(wcstok(str,L"."),ext[i]);
+			WCHAR* name = wcstok_s(str, L".",NULL);
+			wcscat_s(name,80,ext[i]);
 			if(SUCCEEDED(Graphic::D3D::CreateShaderResourceView(&texture,name))){
 				return true;
 			}
