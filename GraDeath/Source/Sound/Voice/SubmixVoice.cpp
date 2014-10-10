@@ -3,7 +3,10 @@
 
 namespace Sound{
 SubmixVoice::SubmixVoice(IXAudio2* xaudio):voice(nullptr){
-	xaudio->CreateSubmixVoice(&voice,1,44100);
+	try{
+		xaudio->CreateSubmixVoice(&voice, 1, 44100);
+	}
+	catch (...){}
 }
 
 SubmixVoice::~SubmixVoice(){
