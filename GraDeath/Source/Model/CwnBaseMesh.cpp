@@ -16,7 +16,7 @@
 
 
 // コンストラクタ
-CwnBaseMesh::CwnBaseMesh() : decoder( 0 ), meshData( 0 )
+CwnBaseMesh::CwnBaseMesh() : /*decoder( 0 ),*/ meshData( 0 )
 {
 }
 
@@ -29,26 +29,25 @@ CwnBaseMesh::~CwnBaseMesh()
 // 解放
 void CwnBaseMesh::Release()
 {
-	
-	Util::safeDelete ( decoder );
+	//Util::safeDelete ( decoder );
 }
 
 // 読込
 bool CwnBaseMesh::LoadCwn( char* filename, char* path )
 {
 	// 既に作られていたら真を返す
-	if ( decoder ) return true;
+	//if ( decoder ) return true;
 
-	decoder = new CwnDecoder;
+	//decoder = new CwnDecoder;
 	
-	bool ret = decoder->LoadCwn( filename, path );
+	//bool ret = decoder->LoadCwn( filename, path );
 
-	if ( ret )
-	{
-		meshData = decoder->GetMesh();
-	}
+	//if ( ret )
+	//{
+	//	meshData = decoder->GetMesh();
+	//}
 
-	return ret;
+	return false;// ret;
 }
 
 // メッシュデータの取得

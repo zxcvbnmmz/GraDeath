@@ -134,6 +134,15 @@
     <Filter Include="ソース ファイル\Library\Graphic\D3D\Interface\Buffer\VertexBuffer">
       <UniqueIdentifier>{55ff1f20-1ccb-4893-a0c7-de685e5af481}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Library\Model">
+      <UniqueIdentifier>{97c99cbd-976f-4f1f-881d-9b232c555e3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Library\Model\Base">
+      <UniqueIdentifier>{34942b5e-42da-4462-a9b0-30929ebe5d9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other\SafeDelete">
+      <UniqueIdentifier>{e851be66-1df2-4f76-b2e1-7756200af772}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -244,9 +253,6 @@
     <ClCompile Include="Source\Graphic\ShaderResource\ShaderResource.cpp">
       <Filter>ソース ファイル\Library\Graphic\D3D\Interface\ShaderResource</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Model\CwnBaseMesh.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Graphic\Buffer\Buffer.cpp">
       <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Buffer</Filter>
     </ClCompile>
@@ -258,6 +264,9 @@
     </ClCompile>
     <ClCompile Include="Source\Graphic\Buffer\VertexBuffer.cpp">
       <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Buffer\VertexBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\CwnBaseMesh.cpp">
+      <Filter>ソース ファイル\Library\Model\Base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -405,14 +414,14 @@
     <ClInclude Include="Include\Graphic\Buffer\VertexBuffer.h">
       <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Buffer\VertexBuffer</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Model\CwnBaseMesh.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Model\MeshDef.h">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Library\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Model\CwnBaseMesh.h">
+      <Filter>ソース ファイル\Library\Model\Base</Filter>
     </ClInclude>
     <ClInclude Include="Include\Utility\SafeDelete.h">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Other\SafeDelete</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
