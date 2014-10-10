@@ -2,7 +2,7 @@
 #define _SCENE_H__
 
 #include <vector>
-#include "Other/DelegateList.h"
+#include "Utility/DelegateList.h"
 
 enum SCENE_STATUS{
 	STILL_PROCESSING,

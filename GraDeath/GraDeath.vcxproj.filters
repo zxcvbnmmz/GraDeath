@@ -5,14 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="ヘッダー ファイル">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="リソース ファイル">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="ソース ファイル\Library">
       <UniqueIdentifier>{05b5b8bb-57c3-4a0b-a558-0bb392bcd050}</UniqueIdentifier>
     </Filter>
@@ -121,6 +113,12 @@
     <Filter Include="ソース ファイル\Game\Scene\Title\Factory">
       <UniqueIdentifier>{d666477e-c984-4e96-abe5-77e9c584271d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Other\Converter">
+      <UniqueIdentifier>{fcf1d913-de9d-462d-bcd5-f7ce0810a038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other\Debug">
+      <UniqueIdentifier>{ae2a00c2-068d-4e54-bb31-115b327521a1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -216,11 +214,17 @@
     <ClCompile Include="Source\Scene\TitleScene.cpp">
       <Filter>ソース ファイル\Game\Scene\Title</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Other\Delegate.cpp">
-      <Filter>ソース ファイル\Other\Delegate</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Scene\Factory\TitleFactory.cpp">
       <Filter>ソース ファイル\Game\Scene\Title\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\Converter.cpp">
+      <Filter>ソース ファイル\Other\Converter</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\Debug.cpp">
+      <Filter>ソース ファイル\Other\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\Delegate.cpp">
+      <Filter>ソース ファイル\Other\Delegate</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -332,20 +336,26 @@
     <ClInclude Include="Include\Scene\SceneManager.h">
       <Filter>ソース ファイル\Game\Scene\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Other\DelegateList.h">
-      <Filter>ソース ファイル\Other\Delegate</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Other\DelegateBase.h">
-      <Filter>ソース ファイル\Other\Delegate</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Other\Delegate.h">
-      <Filter>ソース ファイル\Other\Delegate</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Scene\TitleScene.h">
       <Filter>ソース ファイル\Game\Scene\Title</Filter>
     </ClInclude>
     <ClInclude Include="Include\Scene\Factory\TitleFactory.h">
       <Filter>ソース ファイル\Game\Scene\Title\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\Debug.h">
+      <Filter>ソース ファイル\Other\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\Converter.h">
+      <Filter>ソース ファイル\Other\Converter</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\DelegateBase.h">
+      <Filter>ソース ファイル\Other\Delegate</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\Delegate.h">
+      <Filter>ソース ファイル\Other\Delegate</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\DelegateList.h">
+      <Filter>ソース ファイル\Other\Delegate</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

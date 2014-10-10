@@ -1,5 +1,5 @@
-#include "Other/DelegateList.h"
-#include "Other/DelegateBase.h"
+#include "Utility/DelegateList.h"
+#include "Utility/DelegateBase.h"
 
 DelegateList::~DelegateList(){
 	std::for_each(delegates.begin(), delegates.end(), [=](DelegateBase* _base){

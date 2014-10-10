@@ -1,5 +1,5 @@
 #include "Scene/Scene.h"
-#include "Other/Delegate.h"
+#include "Utility/Delegate.h"
 
 Scene::Scene(){}
 

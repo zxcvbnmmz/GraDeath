@@ -19,8 +19,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -41,7 +42,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)lib\Box2D;$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)lib\Box2D;$(ProjectDir)include;$(DXSDK_DIR)include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -95,7 +97,6 @@
     <ClCompile Include="Source\Graphic\Sampler\Sampler.cpp" />
     <ClCompile Include="Source\Object\Character.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
-    <ClCompile Include="Source\Other\Delegate.cpp" />
     <ClCompile Include="Source\Scene\Factory\TitleFactory.cpp" />
     <ClCompile Include="Source\Scene\Scene.cpp" />
     <ClCompile Include="Source\Scene\SceneFactory.cpp" />
@@ -115,6 +116,9 @@
     <ClCompile Include="Source\System\D3DCore.cpp" />
     <ClCompile Include="Source\System\System.cpp" />
     <ClCompile Include="Source\System\Window.cpp" />
+    <ClCompile Include="Source\Utility\Converter.cpp" />
+    <ClCompile Include="Source\Utility\Debug.cpp" />
+    <ClCompile Include="Source\Utility\Delegate.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\D2D\Brush\BitmapBrush.h" />
@@ -135,9 +139,6 @@
     <ClInclude Include="Include\Graphic\Sampler\Sampler.h" />
     <ClInclude Include="Include\Object\Character.h" />
     <ClInclude Include="Include\Object\Object.h" />
-    <ClInclude Include="Include\Other\Delegate.h" />
-    <ClInclude Include="Include\Other\DelegateBase.h" />
-    <ClInclude Include="Include\Other\DelegateList.h" />
     <ClInclude Include="Include\Scene\Factory\TitleFactory.h" />
     <ClInclude Include="Include\Scene\Scene.h" />
     <ClInclude Include="Include\Scene\SceneFactory.h" />
@@ -158,6 +159,11 @@
     <ClInclude Include="Include\System\D3DCore.h" />
     <ClInclude Include="Include\System\System.h" />
     <ClInclude Include="Include\System\Window.h" />
+    <ClInclude Include="Include\Utility\Converter.h" />
+    <ClInclude Include="Include\Utility\Debug.h" />
+    <ClInclude Include="Include\Utility\Delegate.h" />
+    <ClInclude Include="Include\Utility\DelegateBase.h" />
+    <ClInclude Include="Include\Utility\DelegateList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
