@@ -1,5 +1,5 @@
 #include "Graphic/D3DGraphic.h"
-#include "ShaderResource/ShaderResource.h"
+#include "Graphic/ShaderResource/ShaderResource.h"
 #include "Utility/Converter.h"
 
 using namespace Graphic;
