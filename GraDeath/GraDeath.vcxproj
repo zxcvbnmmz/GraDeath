@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v100</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -60,6 +60,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)lib\Box2D\Build\vs2012\bin\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Box2D.lib;WindowsCodecs.lib;d2d1.lib;d3d10_1.lib;d3dx10.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4254 /ignore:4078 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -94,6 +95,12 @@
     <ClCompile Include="Source\Graphic\Sampler\Sampler.cpp" />
     <ClCompile Include="Source\Object\Character.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
+    <ClCompile Include="Source\Other\Delegate.cpp" />
+    <ClCompile Include="Source\Scene\Factory\TitleFactory.cpp" />
+    <ClCompile Include="Source\Scene\Scene.cpp" />
+    <ClCompile Include="Source\Scene\SceneFactory.cpp" />
+    <ClCompile Include="Source\Scene\SceneManager.cpp" />
+    <ClCompile Include="Source\Scene\TitleScene.cpp" />
     <ClCompile Include="Source\Sound\BGM\BGM.cpp" />
     <ClCompile Include="Source\Sound\BGM\BGMPimpl.cpp" />
     <ClCompile Include="Source\Sound\SE\SE.cpp" />
@@ -128,6 +135,14 @@
     <ClInclude Include="Include\Graphic\Sampler\Sampler.h" />
     <ClInclude Include="Include\Object\Character.h" />
     <ClInclude Include="Include\Object\Object.h" />
+    <ClInclude Include="Include\Other\Delegate.h" />
+    <ClInclude Include="Include\Other\DelegateBase.h" />
+    <ClInclude Include="Include\Other\DelegateList.h" />
+    <ClInclude Include="Include\Scene\Factory\TitleFactory.h" />
+    <ClInclude Include="Include\Scene\Scene.h" />
+    <ClInclude Include="Include\Scene\SceneFactory.h" />
+    <ClInclude Include="Include\Scene\SceneManager.h" />
+    <ClInclude Include="Include\Scene\TitleScene.h" />
     <ClInclude Include="Include\Sound\BGM\BGM.h" />
     <ClInclude Include="Include\Sound\BGM\BGMPimpl.h" />
     <ClInclude Include="Include\Sound\SE\SE.h" />

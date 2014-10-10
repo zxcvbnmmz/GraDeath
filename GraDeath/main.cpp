@@ -1,8 +1,7 @@
-#include <Windows.h>
 #include <crtdbg.h>
-#include <Box2D\Box2D.h>
 #include "System/System.h"
 #include "Graphic/Graphic.h"
+#include "Scene/SceneManager.h"
 
 INT WINAPI WinMain(HINSTANCE inst, HINSTANCE, LPSTR, INT){
 #ifdef _DEBUG
@@ -13,11 +12,19 @@ INT WINAPI WinMain(HINSTANCE inst, HINSTANCE, LPSTR, INT){
 		return 0;
 	}
 
+	SceneManager::Initialize();
+
 	while (System::Loop()){
 		Graphic::Clear();
 
+		if (!SceneManager::Execute()){
+			break;
+		}
+
 		Graphic::Present(0, 0);
 	}
+
+	SceneManager::Release();
 
 	System::Release();
 
