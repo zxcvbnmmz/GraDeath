@@ -152,6 +152,12 @@
     <Filter Include="ソース ファイル\Library\Model\Skin">
       <UniqueIdentifier>{98bb8eb2-0077-4e3d-a978-d0ef70cc2c2e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Library\Input">
+      <UniqueIdentifier>{00e513ce-0ecd-4ec2-913f-89ee7a98a323}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Library\Input\GamePad">
+      <UniqueIdentifier>{462d3bbb-591a-4d1e-8768-54d6ccb2cd03}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -285,6 +291,9 @@
     </ClCompile>
     <ClCompile Include="Source\Model\CwnSkinMesh.cpp">
       <Filter>ソース ファイル\Library\Model\Skin</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\Input\GamePad.cpp">
+      <Filter>ソース ファイル\Library\Input\GamePad</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -449,6 +458,9 @@
     </ClInclude>
     <ClInclude Include="Include\Model\CwnSkinMesh.h">
       <Filter>ソース ファイル\Library\Model\Skin</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Input\GamePad.h">
+      <Filter>ソース ファイル\Library\Input\GamePad</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

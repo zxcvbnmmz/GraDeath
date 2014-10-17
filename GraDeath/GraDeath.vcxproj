@@ -84,6 +84,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Include\Input\GamePad.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Source\D3D\Device\Device.cpp" />
     <ClCompile Include="Source\D3D\SwapChain\SwapChain.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Include\Graphic\RenderTarget\RenderTarget.h" />
     <ClInclude Include="Include\Graphic\Sampler\Sampler.h" />
     <ClInclude Include="Include\Graphic\ShaderResource\ShaderResource.h" />
+    <ClInclude Include="Include\Input\GamePad.h" />
     <ClInclude Include="Include\Model\CwnBaseMesh.h" />
     <ClInclude Include="Include\Model\CwnDecoder.h" />
     <ClInclude Include="Include\Model\CwnSkinMesh.h" />
