@@ -69,8 +69,6 @@ void CwnSkinMesh::SubRender( int num, CwnMesh& mesh, Shader* shader, ModelSkinCo
 	// インデックスバッファをセット
 	mesh.indexBuffer.SetToIA ();
 
-	Sampler sampler;
-
 	for ( DWORD i = 0; i < mesh.numMaterial; i++ )
 	{	
 		//shader->SetConstantBuffer( fscb );
@@ -78,7 +76,7 @@ void CwnSkinMesh::SubRender( int num, CwnMesh& mesh, Shader* shader, ModelSkinCo
 		if ( mesh.material[ mesh.subSet[ i ].matIndex ].m_texture != NULL )
 		{
 			// サンプリングステートを渡す
-			sampler.SetLinearWrap ();
+			Sampler::SetLinearWrap ();
 
 			// テクスチャを渡す
 			meshData->meshs[ num ].material[ meshData->meshs[ num ].subSet[ i ].matIndex ].m_texture->SetToShader ( 0, 1 );
