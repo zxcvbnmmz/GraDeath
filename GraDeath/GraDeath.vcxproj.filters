@@ -143,6 +143,15 @@
     <Filter Include="ソース ファイル\Other\SafeDelete">
       <UniqueIdentifier>{e851be66-1df2-4f76-b2e1-7756200af772}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Library\Model\Decoder">
+      <UniqueIdentifier>{e99a9ca6-950e-411c-9f7d-17837945fb63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Library\Model\Static">
+      <UniqueIdentifier>{63fbb1de-0462-4361-8dd3-c2be8bb5da2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Library\Model\Skin">
+      <UniqueIdentifier>{98bb8eb2-0077-4e3d-a978-d0ef70cc2c2e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -267,6 +276,15 @@
     </ClCompile>
     <ClCompile Include="Source\Model\CwnBaseMesh.cpp">
       <Filter>ソース ファイル\Library\Model\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\CwnDecoder.cpp">
+      <Filter>ソース ファイル\Library\Model\Decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\CwnStaticMesh.cpp">
+      <Filter>ソース ファイル\Library\Model\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\CwnSkinMesh.cpp">
+      <Filter>ソース ファイル\Library\Model\Skin</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -422,6 +440,15 @@
     </ClInclude>
     <ClInclude Include="Include\Utility\SafeDelete.h">
       <Filter>ソース ファイル\Other\SafeDelete</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Model\CwnDecoder.h">
+      <Filter>ソース ファイル\Library\Model\Decoder</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Model\CwnStaticMesh.h">
+      <Filter>ソース ファイル\Library\Model\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Model\CwnSkinMesh.h">
+      <Filter>ソース ファイル\Library\Model\Skin</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

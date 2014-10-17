@@ -14,6 +14,8 @@
 
 // インクルード ***********************************************
 #include <D3DX10math.h>
+#include "Graphic/Buffer/IndexBuffer.h"
+#include "Graphic/Buffer/VertexBuffer.h"
 //#include "Core.h"
 //#include "Typedefs.h"
 //#include "Texture.h"
@@ -45,7 +47,7 @@ struct MeshVertex
 {
 	D3DXVECTOR3	pos;
 	D3DXVECTOR3	normal;
-	D3DXVECTOR3	uv;
+	D3DXVECTOR2	uv;
 	UINT		boneIndex[ 4 ];
 	float		boneWeight[ 4 ];
 
@@ -202,8 +204,8 @@ struct CwnMesh
 	unsigned long			numSub;			// サブセット数
 
 	// バッファ関連
-	//VertexBuffer	vertexBuffer;	// 頂点バッファ
-	//IndexBuffer		indexBuffer;	// インデックスバッファ
+	VertexBuffer	vertexBuffer;	// 頂点バッファ
+	IndexBuffer		indexBuffer;	// インデックスバッファ
 
 	MeshVertex*		vertexList;		// ベーテックスリスト
 	int*			indexList;		// インデックスリスト

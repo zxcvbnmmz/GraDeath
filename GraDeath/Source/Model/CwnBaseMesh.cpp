@@ -9,16 +9,14 @@
 // インクルード ***********************************************
 #include "Model/CwnBaseMesh.h"
 #include "Model/CwnDecoder.h"
-#include "Utility/SafeDelete.h"
 #include "Model/MeshDef.h"
+#include "Utility/SafeDelete.h"
 #include "Graphic/ShaderResource/ShaderResource.h"
 
 
 
 // コンストラクタ
-CwnBaseMesh::CwnBaseMesh() : /*decoder( 0 ),*/ meshData( 0 )
-{
-}
+CwnBaseMesh::CwnBaseMesh() : decoder( nullptr ), meshData( 0 ){}
 
 // デストラクタ
 CwnBaseMesh::~CwnBaseMesh()
@@ -29,39 +27,38 @@ CwnBaseMesh::~CwnBaseMesh()
 // 解放
 void CwnBaseMesh::Release()
 {
-	//Util::safeDelete ( decoder );
+	Util::safeDelete ( decoder );
 }
 
 // 読込
 bool CwnBaseMesh::LoadCwn( char* filename, char* path )
 {
 	// 既に作られていたら真を返す
-	//if ( decoder ) return true;
+	if ( decoder ) return true;
 
-	//decoder = new CwnDecoder;
-	
-	//bool ret = decoder->LoadCwn( filename, path );
+	decoder = new CwnDecoder;
+	bool ret = decoder->LoadCwn( filename, path );
 
-	//if ( ret )
-	//{
-	//	meshData = decoder->GetMesh();
-	//}
-
-	return false;// ret;
+	if ( ret )
+	{
+		meshData = decoder->GetMesh();
+	}
+	return  ret;
 }
 
 // メッシュデータの取得
 const MeshData* CwnBaseMesh::GetMesh()
 {
-	if ( !meshData ) return 0;
-
+	if ( !meshData )
+		return nullptr;
 	return meshData;
 }
 
 // テクスチャのアタッチ
 bool CwnBaseMesh::SetAttachingTexture( const MeshTextures* textures )
 {
-	if ( !meshData ) return false;
+	if ( !meshData ) 
+		return false;
 
 	if ( meshData->numMesh != textures->numMesh )
 		return false;
@@ -81,7 +78,8 @@ bool CwnBaseMesh::SetAttachingTexture( const MeshTextures* textures )
 
 bool CwnBaseMesh::SetAttachingTexture( Graphic::ShaderResource* inTexture )
 {
-	if ( !meshData ) return false;
+	if ( !meshData )
+		return false;
 
 	for ( unsigned long i = 0; i < meshData->numMesh; i++ )
 	{
@@ -99,15 +97,17 @@ bool CwnBaseMesh::SetAttachingTexture( Graphic::ShaderResource* inTexture )
 
 bool CwnBaseMesh::SetAttachingTexture ( Graphic::ShaderResource* inTexture, int numMesh, int numMat )
 {
-	if ( !meshData ) return false;
-	if ( numMesh >= meshData->numMesh ) return false;
-	if ( (unsigned)numMat >= meshData->meshs[ numMesh ].numMaterial ) return false;
+	if ( !meshData ) 
+		return false;
+	if ( ( unsigned )numMesh >= meshData->numMesh ) 
+		return false;
+	if ( (unsigned)numMat >= meshData->meshs[ numMesh ].numMaterial ) 
+		return false;
 
 	if ( meshData->meshs[ numMesh ].material[ numMat ].m_texture != 0 )
 	{
 		Util::safeDelete ( meshData->meshs[ numMesh ].material[ numMat ].m_texture );
 	}
 	meshData->meshs[ numMesh ].material[ numMat ].m_texture = inTexture;
-
 	return true;
 }

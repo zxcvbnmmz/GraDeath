@@ -29,7 +29,7 @@ namespace Graphic
 // ************************************************************
 class CwnBaseMesh{
 protected:
-	//CwnDecoder* decoder;	// ‰ð“Ç—p
+	CwnDecoder* decoder;	// ‰ð“Ç—p
 	MeshData*	meshData;
 
 public:

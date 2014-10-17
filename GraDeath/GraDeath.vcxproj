@@ -101,6 +101,9 @@
     <ClCompile Include="Source\Graphic\Sampler\Sampler.cpp" />
     <ClCompile Include="Source\Graphic\ShaderResource\ShaderResource.cpp" />
     <ClCompile Include="Source\Model\CwnBaseMesh.cpp" />
+    <ClCompile Include="Source\Model\CwnDecoder.cpp" />
+    <ClCompile Include="Source\Model\CwnSkinMesh.cpp" />
+    <ClCompile Include="Source\Model\CwnStaticMesh.cpp" />
     <ClCompile Include="Source\Object\Character.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
     <ClCompile Include="Source\Scene\Factory\TitleFactory.cpp" />
@@ -149,6 +152,9 @@
     <ClInclude Include="Include\Graphic\Sampler\Sampler.h" />
     <ClInclude Include="Include\Graphic\ShaderResource\ShaderResource.h" />
     <ClInclude Include="Include\Model\CwnBaseMesh.h" />
+    <ClInclude Include="Include\Model\CwnDecoder.h" />
+    <ClInclude Include="Include\Model\CwnSkinMesh.h" />
+    <ClInclude Include="Include\Model\CwnStaticMesh.h" />
     <ClInclude Include="Include\Model\MeshDef.h" />
     <ClInclude Include="Include\Object\Character.h" />
     <ClInclude Include="Include\Object\Object.h" />
