@@ -112,6 +112,8 @@
     <ClCompile Include="Source\Scene\SceneFactory.cpp" />
     <ClCompile Include="Source\Scene\SceneManager.cpp" />
     <ClCompile Include="Source\Scene\TitleScene.cpp" />
+    <ClCompile Include="Source\Shader\Shader.cpp" />
+    <ClCompile Include="Source\Shader\TestShader.cpp" />
     <ClCompile Include="Source\Sound\BGM\BGM.cpp" />
     <ClCompile Include="Source\Sound\BGM\BGMPimpl.cpp" />
     <ClCompile Include="Source\Sound\SE\SE.cpp" />
@@ -165,6 +167,8 @@
     <ClInclude Include="Include\Scene\SceneFactory.h" />
     <ClInclude Include="Include\Scene\SceneManager.h" />
     <ClInclude Include="Include\Scene\TitleScene.h" />
+    <ClInclude Include="Include\Shader\Shader.h" />
+    <ClInclude Include="include\Shader\TestShader.h" />
     <ClInclude Include="Include\Sound\BGM\BGM.h" />
     <ClInclude Include="Include\Sound\BGM\BGMPimpl.h" />
     <ClInclude Include="Include\Sound\SE\SE.h" />

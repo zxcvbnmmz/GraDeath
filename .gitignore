@@ -154,3 +154,15 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+/GraDeath/lib/Box2D/Documentation
+/GraDeath/lib/Box2D/freeglut
+/GraDeath/lib/Box2D/glui
+/GraDeath/lib/Box2D/HelloWorld
+/GraDeath/lib/Box2D/Testbed
+/GraDeath/lib/Box2D/Building.txt
+/GraDeath/lib/Box2D/Changes.txt
+/GraDeath/lib/Box2D/CMakeLists.txt
+/GraDeath/lib/Box2D/License.txt
+/GraDeath/lib/Box2D/premake4.lua
+/GraDeath/lib/Box2D/Readme.txt
+/GraDeath/lib/Box2D/Box2D

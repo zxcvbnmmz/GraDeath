@@ -158,6 +158,12 @@
     <Filter Include="ソース ファイル\Library\Input\GamePad">
       <UniqueIdentifier>{462d3bbb-591a-4d1e-8768-54d6ccb2cd03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Library\Shader">
+      <UniqueIdentifier>{d8e3f975-2735-4275-a070-a8f7fe2ac753}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Library\Shader\Test">
+      <UniqueIdentifier>{0f8a13e1-fcb4-4daa-8b6f-4747a1c6a41c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -294,6 +300,12 @@
     </ClCompile>
     <ClCompile Include="Include\Input\GamePad.cpp">
       <Filter>ソース ファイル\Library\Input\GamePad</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shader\Shader.cpp">
+      <Filter>ソース ファイル\Library\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shader\TestShader.cpp">
+      <Filter>ソース ファイル\Library\Shader\Test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -461,6 +473,12 @@
     </ClInclude>
     <ClInclude Include="Include\Input\GamePad.h">
       <Filter>ソース ファイル\Library\Input\GamePad</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Shader\Shader.h">
+      <Filter>ソース ファイル\Library\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Shader\TestShader.h">
+      <Filter>ソース ファイル\Library\Shader\Test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
