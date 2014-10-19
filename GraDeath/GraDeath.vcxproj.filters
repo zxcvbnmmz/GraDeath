@@ -164,6 +164,9 @@
     <Filter Include="ソース ファイル\Library\Shader\Test">
       <UniqueIdentifier>{0f8a13e1-fcb4-4daa-8b6f-4747a1c6a41c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Library\Model\Shader">
+      <UniqueIdentifier>{1ae425f8-459b-434d-a469-8db6b036dfcb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -306,6 +309,12 @@
     </ClCompile>
     <ClCompile Include="Source\Shader\TestShader.cpp">
       <Filter>ソース ファイル\Library\Shader\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\ModelStaticShader.cpp">
+      <Filter>ソース ファイル\Library\Model\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\ModelSkinShader.cpp">
+      <Filter>ソース ファイル\Library\Model\Shader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -479,6 +488,12 @@
     </ClInclude>
     <ClInclude Include="include\Shader\TestShader.h">
       <Filter>ソース ファイル\Library\Shader\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Model\ModelStaticShader.h">
+      <Filter>ソース ファイル\Library\Model\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Model\ModelSkinShader.h">
+      <Filter>ソース ファイル\Library\Model\Shader</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

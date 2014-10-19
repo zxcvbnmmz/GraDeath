@@ -12,16 +12,15 @@
 #include "Graphic/Sampler/Sampler.h"
 #include "Graphic/ShaderResource/ShaderResource.h"
 #include "Model/MeshDef.h"
-//#include "Shader.h"
-//#include "ModelStaticShader.h"
+#include "Model/ModelStaticShader.h"
 
 
 // 描画
-void CwnStaticMesh::Render( Shader* shader, ModelConstantBuffer* fscb )
+void CwnStaticMesh::Render ( Shader* shader, ModelStaticDatas* fscb )
 {
 	if ( !meshData ) return;
 
-	//ModelConstantBuffer cb;
+	//ModelStaticDatas mds;
 
 	for ( unsigned int num = 0; num < meshData->numMesh; num++ )
 	{
@@ -33,14 +32,22 @@ void CwnStaticMesh::Render( Shader* shader, ModelConstantBuffer* fscb )
 
 		for ( unsigned int i = 0; i < meshData->meshs[ num ].numMaterial; i++ )
 		{
-			//cb.world	= fscb->world;										//	ワールド行列
-			//cb.wvp		= fscb->wvp;										//	座標変換行列
-			//cb.light	= fscb->light;										//	ライトベクトル
-			//cb.ambient	= meshData->meshs[ num ].material[ i ].ambient;		//	アンビエント
-			//cb.diffuse	= meshData->meshs[ num ].material[ i ].diffuse;		//	ディフューズ
-			//cb.specular	= meshData->meshs[ num ].material[ i ].specular;		//	スペキュラ
+			fscb->bufferData.ambient = meshData->meshs[ num ].material[ i ].ambient;
+			fscb->bufferData.diffuse = meshData->meshs[ num ].material[ i ].diffuse;
+			fscb->bufferData.specular = meshData->meshs[ num ].material[ i ].specular;
 
-			//shader->SetConstantBuffer( &cb );
+			/*
+			mds.gameData.lightDir = fscb->gameData.lightDir;
+			mds.gameData.eye = fscb->gameData.eye;
+
+			mds.bufferData.world = fscb->bufferData.world;
+			mds.bufferData.wvp = fscb->bufferData.wvp;
+			mds.bufferData.ambient = meshData->meshs[ num ].material[ i ].ambient;
+			mds.bufferData.diffuse = meshData->meshs[ num ].material[ i ].diffuse;
+			mds.bufferData.specular = meshData->meshs[ num ].material[ i ].specular;
+			*/
+
+			shader->SetParameters( fscb );
 
 			if ( meshData->meshs[ num ].material[ meshData->meshs[ num ].subSet[ i ].matIndex ].m_texture != NULL )
 			{

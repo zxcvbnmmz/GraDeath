@@ -17,7 +17,7 @@
 // ‘O•ûéŒ¾ ***************************************************
 class D3DGraphics;
 class Shader;
-struct ModelConstantBuffer;
+struct ModelStaticDatas;
 
 // ************************************************************
 // class	CwnStaticMesh
@@ -43,7 +43,7 @@ private:
 	// ************************************************************
 	// •`‰æ
 	// ************************************************************
-	void Render( Shader* shader, ModelConstantBuffer* fscb );
+	void Render ( Shader* shader, ModelStaticDatas* fscb );
 
 };
 
