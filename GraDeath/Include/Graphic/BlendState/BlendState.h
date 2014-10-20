@@ -4,20 +4,12 @@
 struct ID3D10BlendState;
 
 namespace Graphic{
-class BlendState{
-public:
-	BlendState();
-	~BlendState();
-
-	ID3D10BlendState* Add()const;
-	ID3D10BlendState* AlphaBlend()const;
-	ID3D10BlendState* Multiple()const;
-	ID3D10BlendState* Lenear()const;
-	ID3D10BlendState* Default()const;
-
-private:
-	class Pimpl;
-	Pimpl* pimpl;
+namespace BlendState{
+	ID3D10BlendState* Add();
+	ID3D10BlendState* AlphaBlend();
+	ID3D10BlendState* Multiple();
+	ID3D10BlendState* Lenear();
+	ID3D10BlendState* Default();
 };
 }
 
