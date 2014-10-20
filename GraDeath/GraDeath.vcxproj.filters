@@ -167,6 +167,9 @@
     <Filter Include="ソース ファイル\Library\Model\Shader">
       <UniqueIdentifier>{1ae425f8-459b-434d-a469-8db6b036dfcb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Library\Model\Anime">
+      <UniqueIdentifier>{c7c10297-eee3-4e0c-81af-7f48f4d29df4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -315,6 +318,9 @@
     </ClCompile>
     <ClCompile Include="Source\Model\ModelSkinShader.cpp">
       <Filter>ソース ファイル\Library\Model\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\BoneAnimeData.cpp">
+      <Filter>ソース ファイル\Library\Model\Anime</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -494,6 +500,9 @@
     </ClInclude>
     <ClInclude Include="Include\Model\ModelSkinShader.h">
       <Filter>ソース ファイル\Library\Model\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Model\BoneAnimeData.h">
+      <Filter>ソース ファイル\Library\Model\Anime</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
