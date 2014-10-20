@@ -8,7 +8,7 @@
 
 // インクルード ***********************************************
 #include "Model/BoneAnimeData.h"
-#include "Util/SafeDelete.h"
+#include "Utility/SafeDelete.h"
 #include <fstream>
 
 
