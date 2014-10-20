@@ -197,6 +197,24 @@
     <ClInclude Include="Include\Utility\DelegateList.h" />
     <ClInclude Include="Include\Utility\SafeDelete.h" />
   </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Resource\FbxSkinMeshShader.hlsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc $(ProjectDir)\Resource\%(Filename).hlsl /T vs_4_0 /Fh $(ProjectDir)\Resource\%(Filename)vso.h /E SkinMeshVS
+fxc $(ProjectDir)\Resource\%(Filename).hlsl /T ps_4_0 /Fh $(ProjectDir)\Resource\%(Filename)pso.h /E SkinMeshPS</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Inputname)vso.h;$(Inputname)pso.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </LinkObjects>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </TreatOutputAsContent>
+    </CustomBuild>
+    <CustomBuild Include="Resource\FbxStaticShader.hlsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc $(ProjectDir)\Resource\%(Filename).hlsl /T vs_4_0 /Fh $(ProjectDir)\Resource\%(Filename)vso.h /E FbxStaticShaderVS
+fxc $(ProjectDir)\Resource\%(Filename).hlsl /T ps_4_0 /Fh $(ProjectDir)\Resource\%(Filename)pso.h /E FbxStaticShaderPS</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Inputname)vso.h;$(Inputname)pso.h</Outputs>
+    </CustomBuild>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -10,6 +10,8 @@
 #include "Model/ModelSkinShader.h"
 #include "Graphic/Sampler/Sampler.h"
 
+#include "../Resource/FbxSkinMeshShadervso.h"
+#include "../Resource/FbxSkinMeshShaderpso.h"
 
 // コンストラクタ
 ModelSkinShader::ModelSkinShader (){}
@@ -35,8 +37,8 @@ HRESULT ModelSkinShader::Compile ()
 	};
 	UINT numElements = sizeof( layout ) / sizeof( layout[ 0 ] );
 
-	SHADER_STATUS status;
-	CreateFromPrecompiledShader ( status );
+	SHADER_STATUS status = { g_SkinMeshVS, sizeof(g_SkinMeshVS), g_SkinMeshPS, sizeof(g_SkinMeshPS), layout, numElements };
+	CreateFromPrecompiledShader(status);
 
 	return S_OK;
 }

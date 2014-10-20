@@ -170,6 +170,9 @@
     <Filter Include="ソース ファイル\Library\Model\Anime">
       <UniqueIdentifier>{c7c10297-eee3-4e0c-81af-7f48f4d29df4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\HLSL">
+      <UniqueIdentifier>{82c00292-273f-4f57-9978-21d0c923d2bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -504,5 +507,13 @@
     <ClInclude Include="Include\Model\BoneAnimeData.h">
       <Filter>ソース ファイル\Library\Model\Anime</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Resource\FbxSkinMeshShader.hlsl">
+      <Filter>ソース ファイル\HLSL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Resource\FbxStaticShader.hlsl">
+      <Filter>ソース ファイル\HLSL</Filter>
+    </CustomBuild>
   </ItemGroup>
 </Project>
