@@ -93,6 +93,7 @@
     <ClCompile Include="Source\Graphic\Buffer\ConstantBuffer.cpp" />
     <ClCompile Include="Source\Graphic\Buffer\IndexBuffer.cpp" />
     <ClCompile Include="Source\Graphic\Buffer\VertexBuffer.cpp" />
+    <ClCompile Include="Source\Graphic\Camera\Source.cpp" />
     <ClCompile Include="Source\Graphic\D2DGraphic.cpp" />
     <ClCompile Include="Source\Graphic\D3DGraphic.cpp" />
     <ClCompile Include="Source\Graphic\DepthStencil\DepthStencil.cpp" />
@@ -149,6 +150,7 @@
     <ClInclude Include="Include\Graphic\Buffer\ConstantBuffer.h" />
     <ClInclude Include="Include\Graphic\Buffer\IndexBuffer.h" />
     <ClInclude Include="Include\Graphic\Buffer\VertexBuffer.h" />
+    <ClInclude Include="Include\Graphic\Camera\Camera.h" />
     <ClInclude Include="Include\Graphic\D2DGraphic.h" />
     <ClInclude Include="Include\Graphic\D3DGraphic.h" />
     <ClInclude Include="Include\Graphic\DepthStencil\DepthStencil.h" />

@@ -22,11 +22,11 @@ public:
 	Shader();
 	virtual ~Shader();
 
-	bool CreateFromPrecompiledShader(const SHADER_STATUS& status);
 	virtual void SetParameters(ConstantDataBase*) = 0;
 	virtual HRESULT Compile() = 0;
 
 protected:
+	bool CreateFromPrecompiledShader(const SHADER_STATUS& status);
 	void SetShaderLayout();
 
 private:

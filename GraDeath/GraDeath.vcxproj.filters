@@ -173,6 +173,9 @@
     <Filter Include="ソース ファイル\HLSL">
       <UniqueIdentifier>{82c00292-273f-4f57-9978-21d0c923d2bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Library\Graphic\Camera">
+      <UniqueIdentifier>{9908b7d4-9b5d-4a75-abdf-ea5f9f438f85}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -324,6 +327,9 @@
     </ClCompile>
     <ClCompile Include="Source\Model\BoneAnimeData.cpp">
       <Filter>ソース ファイル\Library\Model\Anime</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\Camera\Source.cpp">
+      <Filter>ソース ファイル\Library\Graphic\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -506,6 +512,9 @@
     </ClInclude>
     <ClInclude Include="Include\Model\BoneAnimeData.h">
       <Filter>ソース ファイル\Library\Model\Anime</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\Camera\Camera.h">
+      <Filter>ソース ファイル\Library\Graphic\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
