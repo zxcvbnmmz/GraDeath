@@ -2,15 +2,17 @@
 #include "Graphic/Rasterizer/Rasterizer.h"
 #include <atlbase.h>
 
+namespace Graphic{
+	namespace Rasterizer{
+		class Pimpl;
+	}
+}
+
 using namespace Graphic;
 
 class Rasterizer::Pimpl{
 public:
-	Pimpl(ID3D10Device* _device):device(_device){}
-	static Pimpl* GetInstance(){
-		static Pimpl pimpl(D3DCore::GetD3DDevice());
-		return &pimpl;
-	}
+	Pimpl(){}	
 
 	HRESULT CreateState(D3D10_CULL_MODE cull, D3D10_FILL_MODE fill, ID3D10RasterizerState** dst);
 
@@ -18,10 +20,11 @@ public:
 	CComPtr<ID3D10RasterizerState> cullClockWise;
 	CComPtr<ID3D10RasterizerState> cullCounterClockWise;
 	CComPtr<ID3D10RasterizerState> wireFrame;
-
-private:
-	ID3D10Device* device;
 };
+
+namespace {
+	Rasterizer::Pimpl pimpl;
+}
 
 HRESULT Rasterizer::Pimpl::CreateState(D3D10_CULL_MODE cull, D3D10_FILL_MODE fill, ID3D10RasterizerState** dst){
 	if(*dst != nullptr){
@@ -35,36 +38,34 @@ HRESULT Rasterizer::Pimpl::CreateState(D3D10_CULL_MODE cull, D3D10_FILL_MODE fil
 	desc.DepthClipEnable = true;
 	desc.MultisampleEnable = true;
 
-	return device->CreateRasterizerState(&desc,dst);
+	return D3DCore::GetD3DDevice()->CreateRasterizerState(&desc, dst);
 }
 
-Rasterizer::Rasterizer():pimpl(Pimpl::GetInstance()){}
-
-ID3D10RasterizerState* Rasterizer::CullNone()const{
-	if(!pimpl->cullNone && FAILED(pimpl->CreateState(D3D10_CULL_NONE, D3D10_FILL_SOLID, &pimpl->cullNone))){
+ID3D10RasterizerState* Rasterizer::CullNone(){
+	if(!pimpl.cullNone && FAILED(pimpl.CreateState(D3D10_CULL_NONE, D3D10_FILL_SOLID, &pimpl.cullNone))){
 		return nullptr;
 	}
-	return pimpl->cullNone;
+	return pimpl.cullNone;
 }
 
-ID3D10RasterizerState* Rasterizer::CullClockWise()const{
-	if(!pimpl->cullClockWise && FAILED(pimpl->CreateState(D3D10_CULL_FRONT, D3D10_FILL_SOLID, &pimpl->cullClockWise))){
+ID3D10RasterizerState* Rasterizer::CullClockWise(){
+	if(!pimpl.cullClockWise && FAILED(pimpl.CreateState(D3D10_CULL_FRONT, D3D10_FILL_SOLID, &pimpl.cullClockWise))){
 		return nullptr;
 	}
-	return pimpl->cullClockWise;
+	return pimpl.cullClockWise;
 }
 
-ID3D10RasterizerState* Rasterizer::CullCounterClockWise()const{
-	if(!pimpl->cullCounterClockWise && FAILED(pimpl->CreateState(D3D10_CULL_BACK, D3D10_FILL_SOLID, &pimpl->cullCounterClockWise))){
+ID3D10RasterizerState* Rasterizer::CullCounterClockWise(){
+	if(!pimpl.cullCounterClockWise && FAILED(pimpl.CreateState(D3D10_CULL_BACK, D3D10_FILL_SOLID, &pimpl.cullCounterClockWise))){
 		return nullptr;
 	}
-	return pimpl->cullCounterClockWise;
+	return pimpl.cullCounterClockWise;
 }
 
-ID3D10RasterizerState* Rasterizer::WireFrame()const{
-	if(!pimpl->wireFrame && FAILED(pimpl->CreateState(D3D10_CULL_BACK, D3D10_FILL_WIREFRAME, &pimpl->wireFrame))){
+ID3D10RasterizerState* Rasterizer::WireFrame(){
+	if(!pimpl.wireFrame && FAILED(pimpl.CreateState(D3D10_CULL_BACK, D3D10_FILL_WIREFRAME, &pimpl.wireFrame))){
 		return nullptr;
 	}
-	return pimpl->wireFrame;
+	return pimpl.wireFrame;
 }
 
