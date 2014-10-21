@@ -1,3 +1,4 @@
+#include "Graphic/D3DGraphic.h"
 #include "Graphic/Camera/Camera.h"
 
 namespace Graphic{
@@ -133,6 +134,7 @@ namespace Graphic{
 		viewport._42 = (float)height / 2;
 		viewport._33 = 1.0f;
 		viewport._44 = 1.0f;
+		D3D::RS::SetViewport ( width, height );
 	}
 
 	namespace {

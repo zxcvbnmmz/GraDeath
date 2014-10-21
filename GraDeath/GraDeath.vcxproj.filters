@@ -328,7 +328,7 @@
     <ClCompile Include="Source\Model\BoneAnimeData.cpp">
       <Filter>ソース ファイル\Library\Model\Anime</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphic\Camera\Source.cpp">
+    <ClCompile Include="Source\Graphic\Camera\Camera.cpp">
       <Filter>ソース ファイル\Library\Graphic\Camera</Filter>
     </ClCompile>
   </ItemGroup>

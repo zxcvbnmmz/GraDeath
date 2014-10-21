@@ -35,7 +35,7 @@ CwnDecoder::~CwnDecoder()
 // 解放
 void CwnDecoder::Release()
 {
-	for ( unsigned int num = 0; num < meshData->numMesh; num++ )
+	for ( DWORD num = 0; num < meshData->numMesh; num++ )
 	{
 		Util::safeDeleteArray ( meshData->meshs[ num ].vertexList );
 		Util::safeDeleteArray ( meshData->meshs[ num ].indexList );
@@ -60,7 +60,7 @@ bool CwnDecoder::LoadCwn( char* filename, char* path )
 	filePathTemp = path;
 	// ファイル名をマルチからワイドに変換
 	size_t len = filePathTemp.size();
-	setlocale( LC_ALL, "japanese" );
+	//setlocale( LC_ALL, "japanese" );
 	wchar_t tempPath[ 100 ] = { 0 };
 	mbstowcs_s( &len, tempPath, filePathTemp.size() + 1, filePathTemp.c_str(), _TRUNCATE );
 
@@ -148,7 +148,7 @@ void CwnDecoder::LoadIndex( unsigned short* inIndex, int inNum )
 	meshData->meshs[ inNum ].indexList = new int[ faceNum ];
 	for ( DWORD i = 0; i < faceNum; i++ )
 	{
-		meshData->meshs[ inNum ].indexList[ i ]  = ( DWORD )inIndex[ i ];
+		meshData->meshs[ inNum ].indexList[ i ]  = static_cast< int >( inIndex[ i ] );
 	}
 	meshData->meshs[ inNum ].indexBuffer.Create( faceNum, sizeof( int ), meshData->meshs[ inNum ].indexList );
 }

@@ -4,6 +4,7 @@
 #include <queue>
 #include "Scene/Factory/TitleFactory.h"
 #include "Scene/SceneFactory.h"
+#include "Graphic/Graphic.h"
 
 namespace{
 	std::stack<Scene*> scenes;
@@ -13,6 +14,7 @@ namespace{
 bool SceneManager::Initialize(){
 	TitleFactory tf;
 	SceneFactory::Stack(&tf);
+	Graphic::SetClearColor ( 0, 0, 1, 1 );
 	return true;
 }
 
@@ -58,9 +60,9 @@ int SceneManager::Execute(){
 }
 
 void SceneManager::Draw(){
-
+	Graphic::Clear ();
 	scenes.top()->Draw();
-
+	Graphic::Present ( 0, 0 );
 }
 
 void SceneManager::Stack(Scene* _scene){
