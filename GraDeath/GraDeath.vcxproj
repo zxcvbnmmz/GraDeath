@@ -93,7 +93,7 @@
     <ClCompile Include="Source\Graphic\Buffer\ConstantBuffer.cpp" />
     <ClCompile Include="Source\Graphic\Buffer\IndexBuffer.cpp" />
     <ClCompile Include="Source\Graphic\Buffer\VertexBuffer.cpp" />
-    <ClCompile Include="Source\Graphic\Camera\Source.cpp" />
+    <ClCompile Include="Source\Graphic\Camera\Camera.cpp" />
     <ClCompile Include="Source\Graphic\D2DGraphic.cpp" />
     <ClCompile Include="Source\Graphic\D3DGraphic.cpp" />
     <ClCompile Include="Source\Graphic\DepthStencil\DepthStencil.cpp" />

@@ -124,7 +124,7 @@ float4 SkinMeshPS(PS_SkinIn input) : SV_Target
 //
 	//return Out;
 
-    float4 TexDiffuse = texDecal.Sample( samLinear, input.Tex ); 
+	float4 TexDiffuse = texDecal.Sample ( samLinear, input.Tex );
 
 	return TexDiffuse;
 }

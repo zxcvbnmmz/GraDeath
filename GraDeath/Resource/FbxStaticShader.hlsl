@@ -17,7 +17,7 @@ cbuffer globalbuffer
 struct VS_OUTPUT
 {
 	float4	pos		: SV_POSITION;
-	float4	color	: COLOR0;
+	float4	color	: NORMAL0;
 	float2	uv		: TEXCOORD;
 };
 

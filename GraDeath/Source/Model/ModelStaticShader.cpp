@@ -10,6 +10,10 @@
 #include "Model/ModelStaticShader.h"
 #include "Graphic/Sampler/Sampler.h"
 
+#include "../Resource/FbxStaticShaderpso.h"
+#include "../Resource/FbxStaticShadervso.h"
+
+ModelStaticShader modelStaticShader;
 
 // コンストラクタ
 ModelStaticShader::ModelStaticShader (){}
@@ -20,8 +24,8 @@ ModelStaticShader::~ModelStaticShader (){}
 // コンパイル
 HRESULT ModelStaticShader::Compile ()
 {
-	buffer[ 1 ].Create ( sizeof( ModelStaticDatas::BufferData ) );
-	buffer[ 0 ].Create ( sizeof( ModelStaticDatas::GameData ) );
+	buffer.Create ( sizeof( ModelStaticDatas::Data ) );
+//	buffer.Create ( 192 );
 
 	D3D10_INPUT_ELEMENT_DESC layout[ ] =
 	{
@@ -31,7 +35,7 @@ HRESULT ModelStaticShader::Compile ()
 	};
 	UINT numElements = sizeof( layout ) / sizeof( layout[ 0 ] );
 
-	SHADER_STATUS status;
+	SHADER_STATUS status = { g_FbxStaticShaderVS, sizeof( g_FbxStaticShaderVS ), g_FbxStaticShaderPS, sizeof( g_FbxStaticShaderPS ), layout, numElements };
 	CreateFromPrecompiledShader ( status );
 
 	return S_OK;
@@ -43,35 +47,26 @@ void ModelStaticShader::SetParameters ( ConstantDataBase* _data )
 	void* temp = _data;
 	ModelStaticDatas* tData = static_cast< ModelStaticDatas* >( _data );
 
-	ModelStaticDatas::GameData* gameData;
-	if ( buffer[ 0 ].Map ( ( void** )&gameData ) )
+	ModelStaticDatas* datas;
+	if ( buffer.Map ( ( void** )&datas ) )
 	{
-		gameData->eye = tData->gameData.eye;
-		gameData->lightDir = tData->gameData.lightDir;
-		buffer[ 0 ].Unmap ();
-	}
+		D3DXMatrixTranspose ( &datas->world, &tData->world );
+		D3DXMatrixTranspose ( &datas->wvp, &tData->wvp );
 
-	ModelStaticDatas::BufferData* bufferData;
-	if ( buffer[ 1 ].Map ( ( void** )&bufferData ) )
-	{
-		bufferData->ambient = tData->bufferData.ambient;
-		bufferData->diffuse = tData->bufferData.diffuse;
-		bufferData->specular = tData->bufferData.specular;
-		bufferData->world = tData->bufferData.world;
-		bufferData->wvp = tData->bufferData.wvp;
-
-		buffer[ 1 ].Unmap ();
+		datas->ambient = tData->ambient;
+		datas->diffuse = tData->diffuse;
+		datas->specular = tData->specular;
+		datas->light = tData->light;
+		
+		buffer.Unmap ();
 	}
 
 	// レイアウトとかサンプラとか渡す
 	SetShaderLayout ();
 
 	// コンスタントバッファ渡す
-	for ( int i = 0; i < 2; ++i )
-	{
-		buffer[ i ].SetToShader ( i );
-	}
+	buffer.SetToShader ( 0 );
 
 	// サンプラー渡す
-	Sampler::SetPointWrap ();
+	//Sampler::SetPointWrap ();
 }

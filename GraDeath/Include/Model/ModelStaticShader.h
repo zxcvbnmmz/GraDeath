@@ -20,33 +20,28 @@
 // struct	ModelStaticDatas
 // brief	モデルの静的シェーダに使用するコンスタントバッファ
 // ************************************************************
+
+#pragma pack( push, 1 )
 struct ModelStaticDatas : public ConstantDataBase
 {
-	struct GameData
+	struct Data
 	{
-		D3DXVECTOR4 lightDir;
-		D3DXVECTOR4 eye;
-	}gameData;
-
-	struct BufferData
-	{
-		D3DXMATRIX world;
-		D3DXMATRIX wvp;
-		D3DXVECTOR4 ambient;
+		D3DXMATRIX	world;
+		D3DXMATRIX	wvp;
+		D3DXVECTOR4	ambient;
 		D3DXVECTOR4 diffuse;
 		D3DXVECTOR4 specular;
-		BufferData (){
-			for ( int i = 0; i<4; ++i ){
-				ambient[ i ] = 1;
-				diffuse[ i ] = 1;
-				specular[ i ] = 0;
-			}
-			D3DXMatrixIdentity ( &world );
-			D3DXMatrixIdentity ( &wvp );
-		}
-	}bufferData;
+		D3DXVECTOR4 light;
+	}data;	
 
+	D3DXMATRIX	world;
+	D3DXMATRIX	wvp;
+	D3DXVECTOR4	ambient;
+	D3DXVECTOR4 diffuse;
+	D3DXVECTOR4 specular;
+	D3DXVECTOR4 light;
 };
+#pragma pack( pop )
 
 // ************************************************************
 // class	ModelStaticShader
@@ -55,7 +50,7 @@ struct ModelStaticDatas : public ConstantDataBase
 class ModelStaticShader : public Shader
 {
 private:
-	ConstantBuffer buffer[ 2 ];
+	ConstantBuffer buffer;
 
 public:
 	// ************************************************************
@@ -80,5 +75,6 @@ public:
 
 };
 
+extern ModelStaticShader modelStaticShader;
 
 #endif

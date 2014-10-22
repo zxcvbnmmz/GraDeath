@@ -20,9 +20,9 @@ void CwnStaticMesh::Render ( Shader* shader, ModelStaticDatas* fscb )
 {
 	if ( !meshData ) return;
 
-	//ModelStaticDatas mds;
+	ModelStaticDatas mds;
 
-	for ( unsigned int num = 0; num < meshData->numMesh; num++ )
+	for ( DWORD num = 0; num < meshData->numMesh; num++ )
 	{
 		// 頂点バッファをセット
 		meshData->meshs[ num ].vertexBuffer.SetToIA();
@@ -30,26 +30,24 @@ void CwnStaticMesh::Render ( Shader* shader, ModelStaticDatas* fscb )
 		// インデックスバッファをセット
 		meshData->meshs[ num ].indexBuffer.SetToIA ();
 
-		for ( unsigned int i = 0; i < meshData->meshs[ num ].numMaterial; i++ )
+		for ( DWORD i = 0; i < meshData->meshs[ num ].numMaterial; i++ )
 		{
-			fscb->bufferData.ambient = meshData->meshs[ num ].material[ i ].ambient;
-			fscb->bufferData.diffuse = meshData->meshs[ num ].material[ i ].diffuse;
-			fscb->bufferData.specular = meshData->meshs[ num ].material[ i ].specular;
+			//fscb->ambient = meshData->meshs[ num ].material[ i ].ambient;
+			//fscb->diffuse = meshData->meshs[ num ].material[ i ].diffuse;
+			//fscb->specular = meshData->meshs[ num ].material[ i ].specular;
 
-			/*
-			mds.gameData.lightDir = fscb->gameData.lightDir;
-			mds.gameData.eye = fscb->gameData.eye;
+		
+			mds.light = fscb->light;
+			mds.world = fscb->world;
+			mds.wvp = fscb->wvp;
 
-			mds.bufferData.world = fscb->bufferData.world;
-			mds.bufferData.wvp = fscb->bufferData.wvp;
-			mds.bufferData.ambient = meshData->meshs[ num ].material[ i ].ambient;
-			mds.bufferData.diffuse = meshData->meshs[ num ].material[ i ].diffuse;
-			mds.bufferData.specular = meshData->meshs[ num ].material[ i ].specular;
-			*/
+			mds.ambient = meshData->meshs[ num ].material[ i ].ambient;
+			mds.diffuse = meshData->meshs[ num ].material[ i ].diffuse;
+			mds.specular = meshData->meshs[ num ].material[ i ].specular;
 
-			shader->SetParameters( fscb );
+			shader->SetParameters ( &mds );
 
-			if ( meshData->meshs[ num ].material[ meshData->meshs[ num ].subSet[ i ].matIndex ].m_texture != NULL )
+			if ( meshData->meshs[ num ].material[ meshData->meshs[ num ].subSet[ i ].matIndex ].m_texture != nullptr )
 			{
 				// サンプリングステートを渡す
 				Sampler::SetLinearWrap ();
