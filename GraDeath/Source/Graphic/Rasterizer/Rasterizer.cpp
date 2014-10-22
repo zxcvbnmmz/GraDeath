@@ -1,5 +1,6 @@
 #include "System/D3DCore.h"
 #include "Graphic/Rasterizer/Rasterizer.h"
+#include "Graphic/D3DGraphic.h"
 #include <atlbase.h>
 
 namespace Graphic{
@@ -41,31 +42,32 @@ HRESULT Rasterizer::Pimpl::CreateState(D3D10_CULL_MODE cull, D3D10_FILL_MODE fil
 	return D3DCore::GetD3DDevice()->CreateRasterizerState(&desc, dst);
 }
 
-ID3D10RasterizerState* Rasterizer::CullNone(){
+void Rasterizer::CullNone(){
 	if(!pimpl.cullNone && FAILED(pimpl.CreateState(D3D10_CULL_NONE, D3D10_FILL_SOLID, &pimpl.cullNone))){
-		return nullptr;
+		return;
 	}
-	return pimpl.cullNone;
+
+	Graphic::D3D::RS::SetRasterizeState(pimpl.cullNone);
 }
 
-ID3D10RasterizerState* Rasterizer::CullClockWise(){
+void Rasterizer::CullClockWise(){
 	if(!pimpl.cullClockWise && FAILED(pimpl.CreateState(D3D10_CULL_FRONT, D3D10_FILL_SOLID, &pimpl.cullClockWise))){
-		return nullptr;
+		return;
 	}
-	return pimpl.cullClockWise;
+	Graphic::D3D::RS::SetRasterizeState(pimpl.cullClockWise);
 }
 
-ID3D10RasterizerState* Rasterizer::CullCounterClockWise(){
+void Rasterizer::CullCounterClockWise(){
 	if(!pimpl.cullCounterClockWise && FAILED(pimpl.CreateState(D3D10_CULL_BACK, D3D10_FILL_SOLID, &pimpl.cullCounterClockWise))){
-		return nullptr;
+		return ;
 	}
-	return pimpl.cullCounterClockWise;
+	Graphic::D3D::RS::SetRasterizeState(pimpl.cullCounterClockWise);
 }
 
-ID3D10RasterizerState* Rasterizer::WireFrame(){
+void Rasterizer::WireFrame(){
 	if(!pimpl.wireFrame && FAILED(pimpl.CreateState(D3D10_CULL_BACK, D3D10_FILL_WIREFRAME, &pimpl.wireFrame))){
-		return nullptr;
+		return;
 	}
-	return pimpl.wireFrame;
+	Graphic::D3D::RS::SetRasterizeState(pimpl.wireFrame);
 }
 

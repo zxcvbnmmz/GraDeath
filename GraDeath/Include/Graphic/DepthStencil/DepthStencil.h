@@ -5,9 +5,9 @@ struct ID3D10DepthStencilState;
 
 namespace Graphic{
 namespace DepthStencil{
-	ID3D10DepthStencilState* DepthNone();
-	ID3D10DepthStencilState* DepthDefault();
-	ID3D10DepthStencilState* DepthRead();
+	void DepthNone();
+	void DepthDefault();
+	void DepthRead();
 };
 }
 

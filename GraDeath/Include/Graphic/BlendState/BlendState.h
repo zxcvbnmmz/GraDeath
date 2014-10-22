@@ -5,11 +5,11 @@ struct ID3D10BlendState;
 
 namespace Graphic{
 namespace BlendState{
-	ID3D10BlendState* Add();
-	ID3D10BlendState* AlphaBlend();
-	ID3D10BlendState* Multiple();
-	ID3D10BlendState* Lenear();
-	ID3D10BlendState* Default();
+	void Add();
+	void AlphaBlend();
+	void Multiple();
+	void Lenear();
+	void Default();
 };
 }
 

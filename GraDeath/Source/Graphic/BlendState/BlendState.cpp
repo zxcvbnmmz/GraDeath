@@ -1,5 +1,6 @@
 #include "System/D3DCore.h"
 #include "Graphic/BlendState/BlendState.h"
+#include "Graphic/D3DGraphic.h"
 #include <atlbase.h>
 
 namespace Graphic{
@@ -43,39 +44,39 @@ HRESULT BlendState::Pimpl::CreateState(D3D10_BLEND srcBlend, D3D10_BLEND destBle
 	return D3DCore::GetD3DDevice()->CreateBlendState(&desc,dst);
 }
 
-ID3D10BlendState* BlendState::Default(){
+void BlendState::Default(){
 	if(!pimpl.normal && FAILED(pimpl.CreateState(D3D10_BLEND_ONE,D3D10_BLEND_ZERO,&pimpl.normal))){
-		return nullptr;
+		return ;
 	}
-	return pimpl.normal;
+	Graphic::D3D::OM::SetBlendMode(pimpl.normal);
 }
 
-ID3D10BlendState* BlendState::AlphaBlend(){
+void BlendState::AlphaBlend(){
 	if(!pimpl.alphaBlend && FAILED(pimpl.CreateState(D3D10_BLEND_ONE,D3D10_BLEND_INV_SRC_ALPHA,&pimpl.alphaBlend))){
-		return nullptr;
+		return ;
 	}
-	return pimpl.alphaBlend;
+	Graphic::D3D::OM::SetBlendMode(pimpl.alphaBlend);
 }
 
-ID3D10BlendState* BlendState::Add(){
+void BlendState::Add(){
 	if(!pimpl.add && FAILED(pimpl.CreateState(D3D10_BLEND_SRC_ALPHA,D3D10_BLEND_ONE,&pimpl.add))){
-		return nullptr;
+		return ;
 	}
-	return pimpl.add;
+	Graphic::D3D::OM::SetBlendMode(pimpl.add);
 }
 
-ID3D10BlendState* BlendState::Lenear(){
+void BlendState::Lenear(){
 	if(!pimpl.lenear && FAILED(pimpl.CreateState(D3D10_BLEND_SRC_ALPHA,D3D10_BLEND_INV_SRC_ALPHA,&pimpl.lenear))){
-		return nullptr;
+		return ;
 	}
-	return pimpl.lenear;
+	Graphic::D3D::OM::SetBlendMode(pimpl.lenear);
 }
 
-ID3D10BlendState* BlendState::Multiple(){
+void BlendState::Multiple(){
 	if(!pimpl.multiple && FAILED(pimpl.CreateState(D3D10_BLEND_ZERO,D3D10_BLEND_SRC_COLOR,&pimpl.multiple))){
-		return nullptr;
+		return ;
 	}
-	return pimpl.multiple;
+	Graphic::D3D::OM::SetBlendMode(pimpl.multiple);
 }
 
 //ID3D10BlendState* BlendState::Subtract()const{

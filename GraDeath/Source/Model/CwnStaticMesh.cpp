@@ -37,13 +37,13 @@ void CwnStaticMesh::Render ( Shader* shader, ModelStaticDatas* fscb )
 			//fscb->specular = meshData->meshs[ num ].material[ i ].specular;
 
 		
-			mds.light = fscb->light;
-			mds.world = fscb->world;
-			mds.wvp = fscb->wvp;
+			mds.data.light = fscb->data.light;
+			mds.data.world = fscb->data.world;
+			mds.data.wvp = fscb->data.wvp;
 
-			mds.ambient = meshData->meshs[ num ].material[ i ].ambient;
-			mds.diffuse = meshData->meshs[ num ].material[ i ].diffuse;
-			mds.specular = meshData->meshs[ num ].material[ i ].specular;
+			mds.data.ambient = meshData->meshs[num].material[i].ambient;
+			mds.data.diffuse = meshData->meshs[num].material[i].diffuse;
+			mds.data.specular = meshData->meshs[num].material[i].specular;
 
 			shader->SetParameters ( &mds );
 

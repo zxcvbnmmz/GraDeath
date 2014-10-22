@@ -20,11 +20,9 @@
 // struct	ModelStaticDatas
 // brief	モデルの静的シェーダに使用するコンスタントバッファ
 // ************************************************************
-
-#pragma pack( push, 1 )
 struct ModelStaticDatas : public ConstantDataBase
 {
-	struct Data
+	struct GameData
 	{
 		D3DXMATRIX	world;
 		D3DXMATRIX	wvp;
@@ -33,15 +31,7 @@ struct ModelStaticDatas : public ConstantDataBase
 		D3DXVECTOR4 specular;
 		D3DXVECTOR4 light;
 	}data;	
-
-	D3DXMATRIX	world;
-	D3DXMATRIX	wvp;
-	D3DXVECTOR4	ambient;
-	D3DXVECTOR4 diffuse;
-	D3DXVECTOR4 specular;
-	D3DXVECTOR4 light;
 };
-#pragma pack( pop )
 
 // ************************************************************
 // class	ModelStaticShader

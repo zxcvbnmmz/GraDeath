@@ -24,7 +24,7 @@ ModelStaticShader::~ModelStaticShader (){}
 // ƒRƒ“ƒpƒCƒ‹
 HRESULT ModelStaticShader::Compile ()
 {
-	buffer.Create ( sizeof( ModelStaticDatas::Data ) );
+	buffer.Create ( sizeof( ModelStaticDatas::GameData ) );
 //	buffer.Create ( 192 );
 
 	D3D10_INPUT_ELEMENT_DESC layout[ ] =
@@ -47,16 +47,16 @@ void ModelStaticShader::SetParameters ( ConstantDataBase* _data )
 	void* temp = _data;
 	ModelStaticDatas* tData = static_cast< ModelStaticDatas* >( _data );
 
-	ModelStaticDatas* datas;
+	ModelStaticDatas::GameData* datas;
 	if ( buffer.Map ( ( void** )&datas ) )
 	{
-		D3DXMatrixTranspose ( &datas->world, &tData->world );
-		D3DXMatrixTranspose ( &datas->wvp, &tData->wvp );
+		D3DXMatrixTranspose(&datas->world, &tData->data.world);
+		D3DXMatrixTranspose(&datas->wvp, &tData->data.wvp);
 
-		datas->ambient = tData->ambient;
-		datas->diffuse = tData->diffuse;
-		datas->specular = tData->specular;
-		datas->light = tData->light;
+		datas->ambient = tData->data.ambient;
+		datas->diffuse = tData->data.diffuse;
+		datas->specular = tData->data.specular;
+		datas->light = tData->data.light;
 		
 		buffer.Unmap ();
 	}

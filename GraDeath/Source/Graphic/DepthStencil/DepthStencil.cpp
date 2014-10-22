@@ -1,5 +1,6 @@
 #include "System/D3DCore.h"
 #include "Graphic/DepthStencil/DepthStencil.h"
+#include "Graphic/D3DGraphic.h"
 #include <atlbase.h>
 
 namespace Graphic{
@@ -47,24 +48,24 @@ HRESULT DepthStencil::Pimpl::CreateState(bool enable, bool writeEnable, ID3D10De
 	return D3DCore::GetD3DDevice()->CreateDepthStencilState(&desc,dst);
 }
 
-ID3D10DepthStencilState* DepthStencil::DepthNone(){
+void DepthStencil::DepthNone(){
 	if(!pimpl.depthNone && FAILED(pimpl.CreateState(false,false,&pimpl.depthNone))){
-		return nullptr;
+		return ;
 	}
-	return pimpl.depthNone;
+	Graphic::D3D::OM::SetDepthStencil(pimpl.depthNone);
 }
 
-ID3D10DepthStencilState* DepthStencil::DepthDefault(){
+void DepthStencil::DepthDefault(){
 	if(!pimpl.depthDefault && FAILED(pimpl.CreateState(true,true,&pimpl.depthDefault))){
-		return nullptr;
+		return ;
 	}
-	return pimpl.depthDefault;
+	Graphic::D3D::OM::SetDepthStencil(pimpl.depthDefault);
 }
 
-ID3D10DepthStencilState* DepthStencil::DepthRead(){
+void DepthStencil::DepthRead(){
 	if(!pimpl.depthRead && FAILED(pimpl.CreateState(true,false,&pimpl.depthRead))){
-		return nullptr;
+		return ;
 	}
-	return pimpl.depthRead;
+	Graphic::D3D::OM::SetDepthStencil(pimpl.depthRead);
 }
 
