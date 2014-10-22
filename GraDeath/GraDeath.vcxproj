@@ -160,6 +160,7 @@
     <ClInclude Include="Include\Graphic\Sampler\Sampler.h" />
     <ClInclude Include="Include\Graphic\ShaderResource\ShaderResource.h" />
     <ClInclude Include="Include\Input\GamePad.h" />
+    <ClInclude Include="Include\Loader\Loader.h" />
     <ClInclude Include="Include\Model\BoneAnimeData.h" />
     <ClInclude Include="Include\Model\CwnBaseMesh.h" />
     <ClInclude Include="Include\Model\CwnDecoder.h" />
@@ -168,6 +169,7 @@
     <ClInclude Include="Include\Model\MeshDef.h" />
     <ClInclude Include="Include\Model\ModelSkinShader.h" />
     <ClInclude Include="Include\Model\ModelStaticShader.h" />
+    <ClInclude Include="Include\Object\Block.h" />
     <ClInclude Include="Include\Object\Character.h" />
     <ClInclude Include="Include\Object\Object.h" />
     <ClInclude Include="Include\Scene\Factory\TitleFactory.h" />
@@ -188,6 +190,7 @@
     <ClInclude Include="Include\Sound\Voice\SubmixVoice.h" />
     <ClInclude Include="Include\Sound\WaveData.h" />
     <ClInclude Include="Include\Sound\WaveDecoder.h" />
+    <ClInclude Include="Include\Stage\Factory\StageFactory.h" />
     <ClInclude Include="Include\System\D2DCore.h" />
     <ClInclude Include="Include\System\D3DCore.h" />
     <ClInclude Include="Include\System\System.h" />
