@@ -22,9 +22,7 @@ ModelSkinShader::~ModelSkinShader (){}
 // コンパイル
 HRESULT ModelSkinShader::Compile ()
 {
-	buffer[ 2 ].Create ( sizeof( ModelSkinDatas::BoneDate ) );
-	buffer[ 1 ].Create ( sizeof( ModelSkinDatas::BufferData ) );
-	buffer[ 0 ].Create ( sizeof( ModelSkinDatas::GameData ) );
+	buffer.Create ( sizeof( ModelSkinDatas::GameData ) );
 
 	// シェーダー用プログラム宣言の追加
 	D3D10_INPUT_ELEMENT_DESC layout[ ] =
@@ -50,41 +48,20 @@ void ModelSkinShader::SetParameters ( ConstantDataBase* _data )
 	ModelSkinDatas* tData = static_cast< ModelSkinDatas* >( _data );
 
 	ModelSkinDatas::GameData* gameData;
-	if ( buffer[ 0 ].Map ( ( void** )&gameData ) )
+	if ( buffer.Map ( ( void** )&gameData ) )
 	{
-		gameData->eye = tData->gameData.eye;
-		gameData->lightDir = tData->gameData.lightDir;
-		buffer[ 0 ].Unmap ();
-	}
+		D3DXMatrixTranspose ( &gameData->world, &tData->data.world );
+		D3DXMatrixTranspose ( &gameData->wvp, &tData->data.wvp );
 
-	ModelSkinDatas::BufferData* bufferData;
-	if ( buffer[ 1 ].Map ( ( void** )&bufferData ) )
-	{
-		bufferData->ambient = tData->bufferData.ambient;
-		bufferData->diffuse = tData->bufferData.diffuse;
-		bufferData->specular = tData->bufferData.specular;
-		bufferData->world = tData->bufferData.world;
-		bufferData->wvp = tData->bufferData.wvp;
-
-		buffer[ 1 ].Unmap ();
-	}
-
-	ModelSkinDatas::BoneDate* boneData;
-	if ( buffer[ 2 ].Map ( ( void** )&boneData ) )
-	{
-		memcpy ( boneData->bone, tData->boneData.bone, sizeof( tData->boneData.bone ) );
-
-		buffer[ 2 ].Unmap ();
+		memcpy ( gameData->bone, tData->data.bone, sizeof( tData->data.bone ) );
+		buffer.Unmap ();
 	}
 
 	// レイアウトとかサンプラとか渡す
 	SetShaderLayout ();
 
 	// コンスタントバッファ渡す
-	for ( int i = 0; i < 3; ++i )
-	{
-		buffer[ i ].SetToShader ( i );
-	}
+	buffer.SetToShader ( 0 );
 
 	// サンプラー渡す
 	Sampler::SetPointWrap ();
