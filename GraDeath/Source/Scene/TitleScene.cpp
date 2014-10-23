@@ -1,9 +1,11 @@
 #include "Scene/TitleScene.h"
-#include "Model/CwnStaticMesh.h"
-#include "Model/ModelStaticShader.h"
-#include "Graphic/Camera/Camera.h"
+#include "Model/ModelSkinShader.h"
+#include "Model/CwnSkinMesh.h"
+
+#include "Model/BoneAnimeData.h"
 #include "System/Window.h"
 
+#include "Graphic/Camera/Camera.h"
 #include "Graphic/Rasterizer/Rasterizer.h"
 #include "Graphic/BlendState/BlendState.h"
 #include "Graphic/DepthStencil/DepthStencil.h"
@@ -17,9 +19,15 @@ TitleScene::TitleScene(){
 	Graphic::Camera::SetLookAt ( D3DXVECTOR3 (  0, 40 ,-60 ), D3DXVECTOR3 ( 0, 0, 0 ) );
 	Graphic::Camera::Update ();
 
-	testModel = std::shared_ptr< CwnStaticMesh > ( new CwnStaticMesh );
+	testModel = std::shared_ptr< CwnSkinMesh > ( new CwnSkinMesh );
 	testModel->LoadCwn ( "Magician.cwn", "Resource/Model/Character/Archer/" );
-	modelStaticShader.Compile ();
+	modelSkinShader.Compile ();
+
+	testAnime = std::shared_ptr< BoneAnimeData > ( new BoneAnimeData );
+	testAnime->LoadAnime ( "Resource/Model/Charactor/Archer/run.sia" );
+
+	testModel->SetAnimeData ( testAnime->GetAnimeData( 0 ) );
+
 }
 
 SCENE_STATUS TitleScene::Execute(){
@@ -45,10 +53,12 @@ void TitleScene::Draw(){
 	// ƒ[ƒ‹ƒhs—ñ‚ÉŠ|‚¯‡‚í‚¹
 	world = matScale * matRot * matTrans;
 
-	ModelStaticDatas msDatas;
-	msDatas.data.light = D3DXVECTOR4(0.5, 0.5, 0.5, 1);
+	ModelSkinDatas msDatas;
+	//ModelStaticDatas msDatas;
+	//msDatas.data.light = D3DXVECTOR4(0.5, 0.5, 0.5, 1);
 	msDatas.data.world = world;
 	msDatas.data.wvp = world * Graphic::Camera::GetView() * Graphic::Camera::GetProjection();
 
-	testModel->Render ( &modelStaticShader, &msDatas );
+	testModel->Render ( &modelSkinShader, &msDatas );
+	testModel->AddAnimeCount ( 1 );
 }

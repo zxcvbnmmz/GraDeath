@@ -8,14 +8,12 @@
 
 // インクルード ***********************************************
 #include "Graphic/D3DGraphic.h"
-#include "Model/CwnSkinMesh.h"
-#include "Model/CwnDecoder.h"
-//#include "Shader.h"
-//#include "Model/ModelSkinShader.h"
-#include "Model/MeshDef.h"
-
 #include "Graphic/Sampler/Sampler.h"
 #include "Graphic/ShaderResource/ShaderResource.h"
+#include "Model/ModelSkinShader.h"
+#include "Model/CwnSkinMesh.h"
+#include "Model/CwnDecoder.h"
+#include "Model/MeshDef.h"
 
 
 // コンストラクタ
@@ -36,7 +34,7 @@ void CwnSkinMesh::SetAnimeData( AnimeData* inData )
 }
 
 // 描画
-void CwnSkinMesh::Render( Shader* shader, ModelSkinConstantBuffer* fscb )
+void CwnSkinMesh::Render ( Shader* shader, ModelSkinDatas* fscb )
 {
 	if ( !meshData ) return;
 
@@ -49,9 +47,10 @@ void CwnSkinMesh::Render( Shader* shader, ModelSkinConstantBuffer* fscb )
 }
 
 // サブ描画
-void CwnSkinMesh::SubRender( int num, CwnMesh& mesh, Shader* shader, ModelSkinConstantBuffer* fscb )
+void CwnSkinMesh::SubRender ( int num, CwnMesh& mesh, Shader* shader, ModelSkinDatas* fscb )
 {
-	//ModelSkinConstantBuffer temp;
+	//ModelSkinDatas temp;
+
 	// シェーダーに渡すためのメンバ変数にコピー
 	for ( DWORD j = 0; j < animeData->animes[ num ].numBone; j++ )
 	{
@@ -62,7 +61,7 @@ void CwnSkinMesh::SubRender( int num, CwnMesh& mesh, Shader* shader, ModelSkinCo
 		D3DXMatrixTranspose( &mat, &mat );
 
 		// 行列をコピー
-		//fscb->bone[ j ] = mat;
+		fscb->data.bone[ j ] = mat;
 	}
 	// 頂点バッファをセット
 	mesh.vertexBuffer.SetToIA();
@@ -71,7 +70,7 @@ void CwnSkinMesh::SubRender( int num, CwnMesh& mesh, Shader* shader, ModelSkinCo
 
 	for ( DWORD i = 0; i < mesh.numMaterial; i++ )
 	{	
-		//shader->SetConstantBuffer( fscb );
+		shader->SetParameters ( fscb );
 
 		if ( mesh.material[ mesh.subSet[ i ].matIndex ].m_texture != NULL )
 		{

@@ -12,7 +12,6 @@
 
 // インクルード ***********************************************
 #include <vector>
-#include <D3DX10math.h>
 #include "Model/MeshDef.h"
 
 

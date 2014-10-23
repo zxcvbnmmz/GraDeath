@@ -7,11 +7,13 @@
 // ************************************************************
 
 // インクルード ***********************************************
-#include "Model/ModelSkinShader.h"
 #include "Graphic/Sampler/Sampler.h"
+#include "Model/ModelSkinShader.h"
 
 #include "../Resource/FbxSkinMeshShadervso.h"
 #include "../Resource/FbxSkinMeshShaderpso.h"
+
+ModelSkinShader modelSkinShader;
 
 // コンストラクタ
 ModelSkinShader::ModelSkinShader (){}
