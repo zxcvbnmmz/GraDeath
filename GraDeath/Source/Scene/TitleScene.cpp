@@ -23,7 +23,11 @@ TitleScene::TitleScene(){
 	testModel->LoadCwn ( "Magician.cwn", "Resource/Model/Character/Archer/" );
 	modelSkinShader.Compile ();
 
-	testAnime = std::shared_ptr< BoneAnimeData > ( new BoneAnimeData );
+	testAnime = std::shared_ptr< BoneAnimeData > ( new BoneAnimeData, []( BoneAnimeData* instance ){
+		instance->Release (); 
+		delete instance;
+		instance = nullptr;
+	} );
 	testAnime->LoadAnime ( "Resource/Model/Charactor/Archer/run.sia" );
 
 	testModel->SetAnimeData ( testAnime->GetAnimeData( 0 ) );
