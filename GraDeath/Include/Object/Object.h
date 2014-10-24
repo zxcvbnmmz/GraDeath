@@ -21,9 +21,6 @@ public:
 
 protected:
 	b2Body* body;
-	b2Vec2 pos;
-	b2Vec2 scale;
-	float rot;
 };
 
 #endif	// end of Object

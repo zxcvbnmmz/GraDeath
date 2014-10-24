@@ -24,6 +24,9 @@ namespace System{
 		HWND hwnd;
 		Window::GetHWND(&hwnd);
 
+		CoInitialize(NULL);
+		CoInitializeEx(NULL, COINIT_MULTITHREADED);
+
 		if (FAILED(D3DCore::Init(hwnd, width, height)))return FALSE;
 		if (FAILED(D2DCore::Init()))return FALSE;
 

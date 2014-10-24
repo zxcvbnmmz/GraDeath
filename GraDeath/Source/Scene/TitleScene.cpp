@@ -8,6 +8,10 @@
 #include "Graphic/BlendState/BlendState.h"
 #include "Graphic/DepthStencil/DepthStencil.h"
 
+#include "D2D/Sprite/Sprite.h"
+
+Sprite sprite;
+
 TitleScene::TitleScene(){
 
 	int _w, _h;
@@ -20,6 +24,8 @@ TitleScene::TitleScene(){
 	testModel = std::shared_ptr< CwnStaticMesh > ( new CwnStaticMesh );
 	testModel->LoadCwn ( "Magician.cwn", "Resource/Model/Character/Archer/" );
 	modelStaticShader.Compile ();
+
+	sprite.Create(L"Resource/Texture/Test.png");
 }
 
 SCENE_STATUS TitleScene::Execute(){
@@ -38,7 +44,7 @@ void TitleScene::Draw(){
 	D3DXMatrixScaling ( &matScale, 1.0f, 1.0f, 1.0f );
 
 	static float r = 0;
-	r += 0.005;
+	r += 0.005f;
 	D3DXMatrixRotationYawPitchRoll ( &matRot, r, 0, 0 );
 	D3DXMatrixTranslation ( &matTrans, 0, 0, 0 );
 
@@ -50,5 +56,7 @@ void TitleScene::Draw(){
 	msDatas.data.world = world;
 	msDatas.data.wvp = world * Graphic::Camera::GetView() * Graphic::Camera::GetProjection();
 
-	testModel->Render ( &modelStaticShader, &msDatas );
+	//testModel->Render ( &modelStaticShader, &msDatas );
+
+	sprite.Draw();
 }

@@ -38,9 +38,6 @@
     <Filter Include="ソース ファイル\Library\Graphic\D2D\Brush">
       <UniqueIdentifier>{0f65e6cb-7eeb-4a7b-b725-46a1ca0b0ee5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D2D\Interface">
-      <UniqueIdentifier>{2d524031-f694-4bc6-90ba-7a179eb0dfc2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Library\Graphic\D3D">
       <UniqueIdentifier>{a4d65da7-6352-4bf9-901f-9c006529379f}</UniqueIdentifier>
     </Filter>
@@ -182,6 +179,15 @@
     <Filter Include="ソース ファイル\Game\Object\Block">
       <UniqueIdentifier>{e050a88f-07f2-4638-916d-15f5e7c2b726}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\World">
+      <UniqueIdentifier>{b02991aa-1ddb-4690-9b35-ccbca62d0431}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Library\Graphic\D2D\Sprite">
+      <UniqueIdentifier>{2cee7c2b-8159-414e-a96e-71b4546741ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Library\Graphic\D2D\Interface">
+      <UniqueIdentifier>{340fe4cb-38fc-4691-a6ee-6ff07f673cf3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -222,9 +228,6 @@
     </ClCompile>
     <ClCompile Include="Source\Graphic\Sampler\Sampler.cpp">
       <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Sampler</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\D2DGraphic.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Geometory</Filter>
     </ClCompile>
     <ClCompile Include="Source\D3D\Device\Device.cpp">
       <Filter>ソース ファイル\Library\System\D3D\Interface\Device</Filter>
@@ -337,6 +340,24 @@
     <ClCompile Include="Source\Graphic\Camera\Camera.cpp">
       <Filter>ソース ファイル\Library\Graphic\Camera</Filter>
     </ClCompile>
+    <ClCompile Include="Source\World\World.cpp">
+      <Filter>ソース ファイル\Game\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Sprite\Sprite.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Interface\ImagingFactory.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Interface\D2DRenderTarget.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\D2DGraphic.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Sprite\SpriteDecoder.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Sprite</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Object\Object.h">
@@ -378,12 +399,6 @@
     <ClInclude Include="Include\Graphic\D3DGraphic.h">
       <Filter>ソース ファイル\Library\Graphic\D3D</Filter>
     </ClInclude>
-    <ClInclude Include="Include\D2D\D2DGeometry.h">
-      <Filter>ソース ファイル\Library\Graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\D2DGraphic.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Geometory</Filter>
-    </ClInclude>
     <ClInclude Include="Include\D2D\Brush\BitmapBrush.h">
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
     </ClInclude>
@@ -395,9 +410,6 @@
     </ClInclude>
     <ClInclude Include="Include\D2D\Brush\SolidBrush.h">
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D2D\Interface\ImagingFactory.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
     </ClInclude>
     <ClInclude Include="Include\D3D\SwapChain\SwapChain.h">
       <Filter>ソース ファイル\Library\System\D3D\Interface\SwapChain</Filter>
@@ -530,6 +542,27 @@
     </ClInclude>
     <ClInclude Include="Include\Stage\Factory\StageFactory.h">
       <Filter>ソース ファイル\Game\StageFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\World\World.h">
+      <Filter>ソース ファイル\Game\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Sprite\Sprite.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Interface\ImagingFactory.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\D2D\Interface\D2DRenderTarget.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\D2DGraphic.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\D2DGeometry.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Geometory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Sprite\SpriteDecoder.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Sprite</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -19,8 +19,6 @@ SoundCore::MasterVoice& SoundCore::GetMasteringVoice(){
 }
 
 bool SoundCore::Initialize(){
-	CoInitializeEx(NULL,COINIT_MULTITHREADED);	
-
 	unsigned int flag = 0;
 #ifdef _DEBUG
 	flag |= XAUDIO2_DEBUG_ENGINE;

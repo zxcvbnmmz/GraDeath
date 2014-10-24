@@ -56,6 +56,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <DisableSpecificWarnings>4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -86,6 +87,10 @@
   <ItemGroup>
     <ClCompile Include="Include\Input\GamePad.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source\D2D\Interface\D2DRenderTarget.cpp" />
+    <ClCompile Include="Source\D2D\Interface\ImagingFactory.cpp" />
+    <ClCompile Include="Source\D2D\Sprite\Sprite.cpp" />
+    <ClCompile Include="Source\D2D\Sprite\SpriteDecoder.cpp" />
     <ClCompile Include="Source\D3D\Device\Device.cpp" />
     <ClCompile Include="Source\D3D\SwapChain\SwapChain.cpp" />
     <ClCompile Include="Source\Graphic\BlendState\BlendState.cpp" />
@@ -135,6 +140,7 @@
     <ClCompile Include="Source\Utility\Converter.cpp" />
     <ClCompile Include="Source\Utility\Debug.cpp" />
     <ClCompile Include="Source\Utility\Delegate.cpp" />
+    <ClCompile Include="Source\World\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\D2D\Brush\BitmapBrush.h" />
@@ -142,7 +148,10 @@
     <ClInclude Include="Include\D2D\Brush\RGBrush.h" />
     <ClInclude Include="Include\D2D\Brush\SolidBrush.h" />
     <ClInclude Include="Include\D2D\D2DGeometry.h" />
+    <ClInclude Include="include\D2D\Interface\D2DRenderTarget.h" />
     <ClInclude Include="Include\D2D\Interface\ImagingFactory.h" />
+    <ClInclude Include="Include\D2D\Sprite\Sprite.h" />
+    <ClInclude Include="Include\D2D\Sprite\SpriteDecoder.h" />
     <ClInclude Include="Include\D3D\Device\Device.h" />
     <ClInclude Include="Include\D3D\SwapChain\SwapChain.h" />
     <ClInclude Include="Include\Graphic\BlendState\BlendState.h" />
@@ -201,6 +210,7 @@
     <ClInclude Include="Include\Utility\DelegateBase.h" />
     <ClInclude Include="Include\Utility\DelegateList.h" />
     <ClInclude Include="Include\Utility\SafeDelete.h" />
+    <ClInclude Include="Include\World\World.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Resource\FbxSkinMeshShader.hlsl">
@@ -212,12 +222,14 @@ fxc $(ProjectDir)\Resource\%(Filename).hlsl /T ps_4_0 /Fh $(ProjectDir)\Resource
       </LinkObjects>
       <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
       </TreatOutputAsContent>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </CustomBuild>
     <CustomBuild Include="Resource\FbxStaticShader.hlsl">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc $(ProjectDir)\Resource\%(Filename).hlsl /T vs_4_0 /Fh $(ProjectDir)\Resource\%(Filename)vso.h /E FbxStaticShaderVS
 fxc $(ProjectDir)\Resource\%(Filename).hlsl /T ps_4_0 /Fh $(ProjectDir)\Resource\%(Filename)pso.h /E FbxStaticShaderPS</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Inputname)vso.h;$(Inputname)pso.h</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

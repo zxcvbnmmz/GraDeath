@@ -5,6 +5,7 @@
 #include "Scene/Factory/TitleFactory.h"
 #include "Scene/SceneFactory.h"
 #include "Graphic/Graphic.h"
+#include "World/World.h"
 
 namespace{
 	std::stack<Scene*> scenes;
@@ -56,12 +57,19 @@ int SceneManager::Execute(){
 	}else{
 		Draw();
 	}
+
+	World::Step();
+
 	return 1;
 }
 
 void SceneManager::Draw(){
 	Graphic::Clear ();
+	Graphic::D2D::BeginDraw();
+
 	scenes.top()->Draw();
+
+	Graphic::D2D::EndDraw();
 	Graphic::Present ( 0, 0 );
 }
 
