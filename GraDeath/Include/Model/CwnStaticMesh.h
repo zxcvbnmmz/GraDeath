@@ -24,10 +24,6 @@ struct ModelStaticDatas;
 // brief	独自フォーマット静的メッシュ
 // ************************************************************
 class CwnStaticMesh : public CwnBaseMesh{
-private:
-	// D3DGraphicsから自由にアクセス可能にする
-	friend class D3DGraphics;
-
 public:
 	// ************************************************************
 	// コンストラクタ

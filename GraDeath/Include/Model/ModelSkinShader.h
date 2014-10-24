@@ -62,6 +62,6 @@ public:
 
 };
 
-extern ModelSkinDatas modelSkinDatas;
+extern ModelSkinShader modelSkinShader;
 
 #endif

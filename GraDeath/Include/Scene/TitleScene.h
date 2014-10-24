@@ -4,9 +4,9 @@
 #include "Scene.h"
 #include <memory>
 
-class CwnStaticMesh;
+class CwnSkinMesh;
+class BoneAnimeData;
 class Shader;
-class TestCamera;
 
 class TitleScene : public Scene{
 public:
@@ -17,8 +17,8 @@ public:
 
 private:
 
-	std::shared_ptr< CwnStaticMesh > testModel;
-	std::shared_ptr< TestCamera > testCamera;
+	std::shared_ptr< CwnSkinMesh > testModel;
+	std::shared_ptr< BoneAnimeData > testAnime;
 
 };
 

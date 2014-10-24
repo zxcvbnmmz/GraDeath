@@ -11,14 +11,14 @@
 #define	_CWN_SKINMESH_H_
 
 // インクルード ***********************************************
-#include "Model/CwnBaseMesh.h"
 #include <D3DX10math.h>
+#include "Model/CwnBaseMesh.h"
 
 
 // 前方宣言 ***************************************************
 class D3DGraphics;
 class Shader;
-struct ModelSkinConstantBuffer;
+struct ModelSkinDatas;
 struct CwnMesh;
 struct AnimeData;
 
@@ -29,9 +29,6 @@ struct AnimeData;
 // ************************************************************
 class CwnSkinMesh : public CwnBaseMesh{
 private:
-	// D3DGraphicsから自由にアクセス可能にする
-	friend class D3DGraphics;
-
 	D3DXMATRIX		boneData[ 255 ];	// ボーン行列
 
 	int				animeFrame;			// アニメーションフレーム
@@ -94,13 +91,13 @@ public:
 	// ************************************************************
 	// 描画
 	// ************************************************************
-	void Render( Shader* shader, ModelSkinConstantBuffer* fscb );
+	void Render ( Shader* shader, ModelSkinDatas* fscb );
 
 private:
 	// ************************************************************
 	// サブ描画
 	// ************************************************************
-	void SubRender( int num, CwnMesh& mesh, Shader* shader, ModelSkinConstantBuffer* fscb );
+	void SubRender ( int num, CwnMesh& mesh, Shader* shader, ModelSkinDatas* fscb );
 
 	// ************************************************************
 	// 現在の姿勢行列を取得

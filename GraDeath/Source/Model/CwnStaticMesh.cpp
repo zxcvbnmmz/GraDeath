@@ -7,10 +7,10 @@
 
 // インクルード ***********************************************
 #include "Graphic/D3DGraphic.h"
-#include "Model/CwnStaticMesh.h"
-#include "Model/CwnDecoder.h"
 #include "Graphic/Sampler/Sampler.h"
 #include "Graphic/ShaderResource/ShaderResource.h"
+#include "Model/CwnStaticMesh.h"
+#include "Model/CwnDecoder.h"
 #include "Model/MeshDef.h"
 #include "Model/ModelStaticShader.h"
 
@@ -32,11 +32,6 @@ void CwnStaticMesh::Render ( Shader* shader, ModelStaticDatas* fscb )
 
 		for ( DWORD i = 0; i < meshData->meshs[ num ].numMaterial; i++ )
 		{
-			//fscb->ambient = meshData->meshs[ num ].material[ i ].ambient;
-			//fscb->diffuse = meshData->meshs[ num ].material[ i ].diffuse;
-			//fscb->specular = meshData->meshs[ num ].material[ i ].specular;
-
-		
 			mds.data.light = fscb->data.light;
 			mds.data.world = fscb->data.world;
 			mds.data.wvp = fscb->data.wvp;
