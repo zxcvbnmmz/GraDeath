@@ -178,7 +178,6 @@
     <ClInclude Include="Include\Graphic\Sampler\Sampler.h" />
     <ClInclude Include="Include\Graphic\ShaderResource\ShaderResource.h" />
     <ClInclude Include="Include\Input\GamePad.h" />
-    <ClInclude Include="Include\Loader\Loader.h" />
     <ClInclude Include="Include\Model\BoneAnimeData.h" />
     <ClInclude Include="Include\Model\CwnBaseMesh.h" />
     <ClInclude Include="Include\Model\CwnDecoder.h" />
@@ -187,7 +186,6 @@
     <ClInclude Include="Include\Model\MeshDef.h" />
     <ClInclude Include="Include\Model\ModelSkinShader.h" />
     <ClInclude Include="Include\Model\ModelStaticShader.h" />
-    <ClInclude Include="Include\Object\Block.h" />
     <ClInclude Include="Include\Object\Character.h" />
     <ClInclude Include="Include\Object\Menu.h" />
     <ClInclude Include="Include\Object\Object.h" />

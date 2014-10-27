@@ -170,9 +170,6 @@
     <Filter Include="ソース ファイル\Game\StageFactory">
       <UniqueIdentifier>{7d4445dd-ca9b-4961-be22-180bcc9f39fa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Block">
-      <UniqueIdentifier>{e050a88f-07f2-4638-916d-15f5e7c2b726}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\World">
       <UniqueIdentifier>{b02991aa-1ddb-4690-9b35-ccbca62d0431}</UniqueIdentifier>
     </Filter>
@@ -590,12 +587,6 @@
     </ClInclude>
     <ClInclude Include="Include\Graphic\Camera\Camera.h">
       <Filter>ソース ファイル\Library\Graphic\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Block.h">
-      <Filter>ソース ファイル\Game\Object\Block</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Loader\Loader.h">
-      <Filter>ソース ファイル\Game</Filter>
     </ClInclude>
     <ClInclude Include="Include\Stage\Factory\StageFactory.h">
       <Filter>ソース ファイル\Game\StageFactory</Filter>
