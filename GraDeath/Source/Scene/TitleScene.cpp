@@ -23,7 +23,6 @@ TitleScene::TitleScene(){
 SCENE_STATUS TitleScene::Execute(){
 
 	Graphic::Camera::Update ();
-
 	if (GamePad::getAnyGamePadPressed(BUTTON_A)){
 		CharacterSelectFactory cf;
 		SceneFactory::Reserve(&cf);
