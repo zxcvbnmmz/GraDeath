@@ -87,6 +87,7 @@
   <ItemGroup>
     <ClCompile Include="Include\Input\GamePad.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp" />
     <ClCompile Include="Source\D2D\Interface\D2DRenderTarget.cpp" />
     <ClCompile Include="Source\D2D\Interface\ImagingFactory.cpp" />
     <ClCompile Include="Source\D2D\Sprite\Sprite.cpp" />
@@ -152,6 +153,8 @@
     <ClCompile Include="Source\World\World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\CharacterController\CharacterController.h" />
+    <ClInclude Include="Include\CharacterController\PlayerController\PlayerController.h" />
     <ClInclude Include="Include\D2D\Brush\BitmapBrush.h" />
     <ClInclude Include="Include\D2D\Brush\Brush.h" />
     <ClInclude Include="Include\D2D\Brush\RGBrush.h" />

@@ -92,12 +92,6 @@
     <Filter Include="ソース ファイル\Game\Scene">
       <UniqueIdentifier>{7efec26a-90ca-4ee5-8dd1-ec4880063813}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Manager">
-      <UniqueIdentifier>{a22ab5af-0858-49e6-a27f-06bbe6ba1314}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Factory">
-      <UniqueIdentifier>{d42c9950-67f4-4191-a3aa-351e9b5c275b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Other">
       <UniqueIdentifier>{9483e723-dc65-4a7b-a5f3-420f05e47fa7}</UniqueIdentifier>
     </Filter>
@@ -206,6 +200,42 @@
     <Filter Include="ソース ファイル\Game\CharacterController\PlayerController">
       <UniqueIdentifier>{bc975a74-01b3-45ce-939f-13883fd22e84}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Other">
+      <UniqueIdentifier>{df1d6be1-cf4a-480a-8e61-18a348a00f1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Other\Factory">
+      <UniqueIdentifier>{d42c9950-67f4-4191-a3aa-351e9b5c275b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Other\Manager">
+      <UniqueIdentifier>{a22ab5af-0858-49e6-a27f-06bbe6ba1314}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Game">
+      <UniqueIdentifier>{246434b2-3118-4c62-9306-48e824349f1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Game\Factory">
+      <UniqueIdentifier>{612524f0-4b5f-4682-88e5-1e0d13015a8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect">
+      <UniqueIdentifier>{632b4635-4221-413b-a5e4-7b5765c65dff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Factory">
+      <UniqueIdentifier>{2bf87f19-2ef0-4d49-9a82-c256ff970cf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Menu">
+      <UniqueIdentifier>{73f2a9a2-5279-415f-933f-b35c8649c462}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\StageSelect">
+      <UniqueIdentifier>{e53e33bf-2aed-4579-891c-f7f6330c3cce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\StageSelect\Factory">
+      <UniqueIdentifier>{b9b3a0e6-3fd4-412c-89f0-2d6c1e1a781a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Result">
+      <UniqueIdentifier>{46ed4dc5-a2e1-44e1-b2aa-3b67c965550c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Result\Factory">
+      <UniqueIdentifier>{cd1b4f33-ea8b-47df-8ece-de4bd5287cce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -290,10 +320,10 @@
       <Filter>ソース ファイル\Game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\SceneFactory.cpp">
-      <Filter>ソース ファイル\Game\Scene\Factory</Filter>
+      <Filter>ソース ファイル\Game\Scene\Other\Factory</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\SceneManager.cpp">
-      <Filter>ソース ファイル\Game\Scene\Manager</Filter>
+      <Filter>ソース ファイル\Game\Scene\Other\Manager</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\TitleScene.cpp">
       <Filter>ソース ファイル\Game\Scene\Title</Filter>
@@ -376,32 +406,35 @@
     <ClCompile Include="Source\D2D\Sprite\SpriteDecoder.cpp">
       <Filter>ソース ファイル\Library\Graphic\D2D\Sprite</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\Menu.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Source\Scene\Factory\CharacterSelectFactory.cpp">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Factory</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\CharacterSelectScene.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\Factory\CharacterSelectFactory.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\Factory\GameFactory.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\Factory\ResultFactory.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\Factory\StageSelectFactory.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\ResultScene.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Game\Scene\Game\Factory</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\GameScene.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Game\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Menu.cpp">
+      <Filter>ソース ファイル\Game\Object\Menu</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\StageSelectScene.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Game\Scene\StageSelect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\StageSelectFactory.cpp">
+      <Filter>ソース ファイル\Game\Scene\StageSelect\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\ResultScene.cpp">
+      <Filter>ソース ファイル\Game\Scene\Result</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\ResultFactory.cpp">
+      <Filter>ソース ファイル\Game\Scene\Result\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp">
+      <Filter>ソース ファイル\Game\CharacterController\PlayerController</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -499,10 +532,10 @@
       <Filter>ソース ファイル\Game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Include\Scene\SceneFactory.h">
-      <Filter>ソース ファイル\Game\Scene\Factory</Filter>
+      <Filter>ソース ファイル\Game\Scene\Other\Factory</Filter>
     </ClInclude>
     <ClInclude Include="Include\Scene\SceneManager.h">
-      <Filter>ソース ファイル\Game\Scene\Manager</Filter>
+      <Filter>ソース ファイル\Game\Scene\Other\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Include\Scene\TitleScene.h">
       <Filter>ソース ファイル\Game\Scene\Title</Filter>
@@ -603,15 +636,39 @@
     <ClInclude Include="Include\D2D\Sprite\SpriteDecoder.h">
       <Filter>ソース ファイル\Library\Graphic\D2D\Sprite</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\Menu.h" />
-    <ClInclude Include="include\Scene\CharacterSelectScene.h" />
-    <ClInclude Include="Include\Scene\Factory\CharacterSelectFactory.h" />
-    <ClInclude Include="Include\Scene\Factory\GameFactory.h" />
-    <ClInclude Include="Include\Scene\Factory\ResultFactory.h" />
-    <ClInclude Include="Include\Scene\Factory\StageSelectFactory.h" />
-    <ClInclude Include="Include\Scene\GameScene.h" />
-    <ClInclude Include="Include\Scene\ResultScene.h" />
-    <ClInclude Include="Include\Scene\StageSelectScene.h" />
+    <ClInclude Include="Include\Scene\Factory\CharacterSelectFactory.h">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scene\CharacterSelectScene.h">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Factory\GameFactory.h">
+      <Filter>ソース ファイル\Game\Scene\Game\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\GameScene.h">
+      <Filter>ソース ファイル\Game\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Menu.h">
+      <Filter>ソース ファイル\Game\Object\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\StageSelectScene.h">
+      <Filter>ソース ファイル\Game\Scene\StageSelect</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Factory\StageSelectFactory.h">
+      <Filter>ソース ファイル\Game\Scene\StageSelect\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\ResultScene.h">
+      <Filter>ソース ファイル\Game\Scene\Result</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Factory\ResultFactory.h">
+      <Filter>ソース ファイル\Game\Scene\Result\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CharacterController\CharacterController.h">
+      <Filter>ソース ファイル\Game\CharacterController</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CharacterController\PlayerController\PlayerController.h">
+      <Filter>ソース ファイル\Game\CharacterController\PlayerController</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Resource\FbxSkinMeshShader.hlsl">
