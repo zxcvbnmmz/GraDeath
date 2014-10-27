@@ -87,7 +87,6 @@
   <ItemGroup>
     <ClCompile Include="Include\Input\GamePad.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp" />
     <ClCompile Include="Source\D2D\Interface\D2DRenderTarget.cpp" />
     <ClCompile Include="Source\D2D\Interface\ImagingFactory.cpp" />
     <ClCompile Include="Source\D2D\Sprite\Sprite.cpp" />
@@ -116,14 +115,20 @@
     <ClCompile Include="Source\Model\ModelSkinShader.cpp" />
     <ClCompile Include="Source\Model\ModelStaticShader.cpp" />
     <ClCompile Include="Source\Object\Character.cpp" />
+    <ClCompile Include="Source\Object\Menu.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
-    <ClCompile Include="Source\ResourseManager\AnimetionManager\AnimetionManager.cpp" />
-    <ClCompile Include="Source\ResourseManager\ModelManager\ModelManager.cpp" />
-    <ClCompile Include="Source\ResourseManager\PlayerManager\PlayerManager.cpp" />
+    <ClCompile Include="Source\Scene\CharacterSelectScene.cpp" />
+    <ClCompile Include="Source\Scene\Factory\CharacterSelectFactory.cpp" />
+    <ClCompile Include="Source\Scene\Factory\GameFactory.cpp" />
+    <ClCompile Include="Source\Scene\Factory\ResultFactory.cpp" />
+    <ClCompile Include="Source\Scene\Factory\StageSelectFactory.cpp" />
     <ClCompile Include="Source\Scene\Factory\TitleFactory.cpp" />
+    <ClCompile Include="Source\Scene\ResultScene.cpp" />
     <ClCompile Include="Source\Scene\Scene.cpp" />
     <ClCompile Include="Source\Scene\SceneFactory.cpp" />
     <ClCompile Include="Source\Scene\SceneManager.cpp" />
+    <ClCompile Include="Source\Scene\GameScene.cpp" />
+    <ClCompile Include="Source\Scene\StageSelectScene.cpp" />
     <ClCompile Include="Source\Scene\TitleScene.cpp" />
     <ClCompile Include="Source\Shader\Shader.cpp" />
     <ClCompile Include="Source\Shader\TestShader.cpp" />
@@ -147,8 +152,6 @@
     <ClCompile Include="Source\World\World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include\CharacterController\CharacterController.h" />
-    <ClInclude Include="Include\CharacterController\PlayerController\PlayerController.h" />
     <ClInclude Include="Include\D2D\Brush\BitmapBrush.h" />
     <ClInclude Include="Include\D2D\Brush\Brush.h" />
     <ClInclude Include="Include\D2D\Brush\RGBrush.h" />
@@ -186,14 +189,20 @@
     <ClInclude Include="Include\Model\ModelStaticShader.h" />
     <ClInclude Include="Include\Object\Block.h" />
     <ClInclude Include="Include\Object\Character.h" />
+    <ClInclude Include="Include\Object\Menu.h" />
     <ClInclude Include="Include\Object\Object.h" />
-    <ClInclude Include="Include\ResourseManager\AnimetionManager\AnimetionManager.h" />
-    <ClInclude Include="Include\ResourseManager\ModelManager\ModelManager.h" />
-    <ClInclude Include="Include\ResourseManager\PlayerManager\PlayerManager.h" />
+    <ClInclude Include="include\Scene\CharacterSelectScene.h" />
+    <ClInclude Include="Include\Scene\Factory\CharacterSelectFactory.h" />
+    <ClInclude Include="Include\Scene\Factory\GameFactory.h" />
+    <ClInclude Include="Include\Scene\Factory\ResultFactory.h" />
+    <ClInclude Include="Include\Scene\Factory\StageSelectFactory.h" />
     <ClInclude Include="Include\Scene\Factory\TitleFactory.h" />
+    <ClInclude Include="Include\Scene\GameScene.h" />
+    <ClInclude Include="Include\Scene\ResultScene.h" />
     <ClInclude Include="Include\Scene\Scene.h" />
     <ClInclude Include="Include\Scene\SceneFactory.h" />
     <ClInclude Include="Include\Scene\SceneManager.h" />
+    <ClInclude Include="Include\Scene\StageSelectScene.h" />
     <ClInclude Include="Include\Scene\TitleScene.h" />
     <ClInclude Include="Include\Shader\Shader.h" />
     <ClInclude Include="include\Shader\TestShader.h" />

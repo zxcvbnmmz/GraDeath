@@ -6,6 +6,8 @@
 #include "Scene/SceneFactory.h"
 #include "Graphic/Graphic.h"
 #include "World/World.h"
+#include "Input/Gamepad.h"
+
 
 namespace{
 	std::stack<Scene*> scenes;
@@ -13,6 +15,8 @@ namespace{
 }
 
 bool SceneManager::Initialize(){
+	GamePad::init();
+	
 	TitleFactory tf;
 	SceneFactory::Stack(&tf);
 	Graphic::SetClearColor ( 0, 0, 1, 1 );
@@ -40,6 +44,8 @@ int SceneManager::Execute(){
 	if(scenes.empty()){
 		return 0;
 	}
+
+	GamePad::update();
 
 	Scene* currentScene = scenes.top();
 

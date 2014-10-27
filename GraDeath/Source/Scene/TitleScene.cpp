@@ -1,14 +1,10 @@
+#include "D2D/Sprite/Sprite.h"
 #include "Scene/TitleScene.h"
-#include "Model/CwnStaticMesh.h"
-#include "Model/ModelStaticShader.h"
 #include "Graphic/Camera/Camera.h"
 #include "System/Window.h"
 
-#include "Graphic/Rasterizer/Rasterizer.h"
-#include "Graphic/BlendState/BlendState.h"
-#include "Graphic/DepthStencil/DepthStencil.h"
-
-#include "D2D/Sprite/Sprite.h"
+#include "Scene/Factory/CharacterSelectFactory.h"
+#include "Input/Gamepad.h"
 
 Sprite sprite;
 
@@ -21,10 +17,6 @@ TitleScene::TitleScene(){
 	Graphic::Camera::SetLookAt ( D3DXVECTOR3 (  0, 40 ,-60 ), D3DXVECTOR3 ( 0, 0, 0 ) );
 	Graphic::Camera::Update ();
 
-	//testModel = std::shared_ptr< CwnStaticMesh > ( new CwnStaticMesh );
-	//testModel->LoadCwn ( "Magician.cwn", "Resource/Model/Character/Archer/" );
-	//modelStaticShader.Compile ();
-
 	sprite.Create(L"Resource/Texture/Test.png");
 }
 
@@ -32,31 +24,15 @@ SCENE_STATUS TitleScene::Execute(){
 
 	Graphic::Camera::Update ();
 
+	if (GamePad::getAnyGamePadPressed(BUTTON_A)){
+		CharacterSelectFactory cf;
+		SceneFactory::Reserve(&cf);
+		return END_PROCESS;
+	}
+
 	return STILL_PROCESSING;
 }
 
 void TitleScene::Draw(){
-	Graphic::Rasterizer::CullNone();
-	Graphic::BlendState::Lenear();
-	Graphic::DepthStencil::DepthDefault();
-	D3DXMATRIX world, matScale, matRot, matTrans;
 
-	D3DXMatrixScaling ( &matScale, 1.0f, 1.0f, 1.0f );
-
-	static float r = 0;
-	r += 0.005f;
-	D3DXMatrixRotationYawPitchRoll ( &matRot, r, 0, 0 );
-	D3DXMatrixTranslation ( &matTrans, 0, 0, 0 );
-
-	// ƒ[ƒ‹ƒhs—ñ‚ÉŠ|‚¯‡‚í‚¹
-	world = matScale * matRot * matTrans;
-
-	ModelStaticDatas msDatas;
-	msDatas.data.light = D3DXVECTOR4(0.5, 0.5, 0.5, 1);
-	msDatas.data.world = world;
-	msDatas.data.wvp = world * Graphic::Camera::GetView() * Graphic::Camera::GetProjection();
-
-	//testModel->Render ( &modelStaticShader, &msDatas );
-
-	sprite.Draw();
 }

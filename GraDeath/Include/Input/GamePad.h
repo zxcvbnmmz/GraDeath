@@ -21,7 +21,7 @@ enum INPUT_STATE
 };
 
 // ボタンのステート
-enum BUTTON_STATE
+enum BUTTON_ID
 {
 	BUTTON_UP = 0x0001,
 	BUTTON_DOWN = 0x0002,
@@ -79,7 +79,7 @@ namespace GamePad
 	// ************************************************************
 	// ゲームパッドのボタン情報取得
 	// ************************************************************
-	INPUT_STATE getGamePadState ( PAD_NUM, BUTTON_STATE, int* _count = nullptr );
+	INPUT_STATE getGamePadState(PAD_NUM, BUTTON_ID, int* _count = nullptr);
 
 	// ************************************************************
 	// ゲームパッドのLRトリガー情報取得
@@ -93,6 +93,10 @@ namespace GamePad
 	bool getRStickState ( PAD_NUM, float& );
 	bool getLStickState ( PAD_NUM, float& );
 
+	// ************************************************************
+	// いずれかのゲームパッドのボタン情報取得
+	// ************************************************************
+	bool getAnyGamePadPressed(BUTTON_ID);
 };
 
 #endif

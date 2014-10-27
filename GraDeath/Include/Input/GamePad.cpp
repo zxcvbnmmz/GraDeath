@@ -127,7 +127,7 @@ namespace GamePad
 	}
 
 	// ゲームパッドの情報取得
-	INPUT_STATE getGamePadState ( PAD_NUM _num, BUTTON_STATE _button, int* _count )
+	INPUT_STATE getGamePadState(PAD_NUM _num, BUTTON_ID _button, int* _count)
 	{
 		if ( !pad[ _num ].isActive )
 			return INPUT_FREE;
@@ -185,4 +185,15 @@ namespace GamePad
 		return ( threshold < tempLen );
 	}
 
+	bool getAnyGamePadPressed(BUTTON_ID _button){
+		for (int i = 0; i < 4; ++i){
+			if (!pad[i].isActive)
+				continue;
+
+			DWORD button = (pad[i].state.Gamepad.wButtons & _button);
+
+			return button != 0;
+		}
+		return false;
+	}
 }

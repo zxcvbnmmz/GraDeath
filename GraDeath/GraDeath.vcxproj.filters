@@ -92,12 +92,6 @@
     <Filter Include="ソース ファイル\Game\Scene">
       <UniqueIdentifier>{7efec26a-90ca-4ee5-8dd1-ec4880063813}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Manager">
-      <UniqueIdentifier>{a22ab5af-0858-49e6-a27f-06bbe6ba1314}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Factory">
-      <UniqueIdentifier>{d42c9950-67f4-4191-a3aa-351e9b5c275b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Other">
       <UniqueIdentifier>{9483e723-dc65-4a7b-a5f3-420f05e47fa7}</UniqueIdentifier>
     </Filter>
@@ -188,29 +182,41 @@
     <Filter Include="ソース ファイル\Library\Graphic\D2D\Interface">
       <UniqueIdentifier>{340fe4cb-38fc-4691-a6ee-6ff07f673cf3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Library\Model\AnimetionTrans">
-      <UniqueIdentifier>{8784ba23-107e-4c59-936d-9f263b2f590f}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect">
+      <UniqueIdentifier>{a3e91b19-0b3a-4d40-847f-fc9a33b3fb47}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\ResourseManager">
-      <UniqueIdentifier>{507ce35b-660d-487c-afcd-2627694496fa}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Factory">
+      <UniqueIdentifier>{39b0c2f3-e8d8-43f4-9213-c41b45b307c3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\ResourseManager\ModelManager">
-      <UniqueIdentifier>{5241480f-baa3-4d85-9605-94e95dc59af4}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Scene\StageSelect">
+      <UniqueIdentifier>{56158103-5850-433e-b54c-30fa8360b523}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\ResourseManager\AnimetionManager">
-      <UniqueIdentifier>{0d3e2844-64b4-4b7c-abff-84e236bf8cea}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Scene\Other">
+      <UniqueIdentifier>{9df70827-9168-4d79-8cf1-0b4d7fa27303}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\ResourseManager\PlayerManager">
-      <UniqueIdentifier>{fbc065f5-eef9-41d4-aff8-d6967b2f9d5e}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Scene\Other\Manager">
+      <UniqueIdentifier>{a22ab5af-0858-49e6-a27f-06bbe6ba1314}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\CharactorController">
-      <UniqueIdentifier>{e18948e8-2d4c-44af-87e7-30ef911c4761}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Scene\Other\Factory">
+      <UniqueIdentifier>{d42c9950-67f4-4191-a3aa-351e9b5c275b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\CharactorController\PlayerController">
-      <UniqueIdentifier>{0bf220bf-3b2b-4bcf-8cb6-d3381767f69e}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Scene\StageSelect\Factory">
+      <UniqueIdentifier>{651107e8-2c5b-408b-951b-c9af025df7fe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\CharactorController\AIController">
-      <UniqueIdentifier>{f1a65681-6169-4904-8ebb-517b59f693cd}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Scene\Game">
+      <UniqueIdentifier>{74612538-0482-4b0b-bf49-60dbfbcdd8e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Game\Factory">
+      <UniqueIdentifier>{0b642411-7fa0-4d2d-9364-70b4aa27f017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Result">
+      <UniqueIdentifier>{c9abb601-b46c-445f-8640-846d970d10a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Result\Factory">
+      <UniqueIdentifier>{110ac6a8-159a-4a9d-957b-2234866f5def}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Menu">
+      <UniqueIdentifier>{ba930ab4-3753-4cbd-9984-7d795ccd9717}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -296,10 +302,10 @@
       <Filter>ソース ファイル\Game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\SceneFactory.cpp">
-      <Filter>ソース ファイル\Game\Scene\Factory</Filter>
+      <Filter>ソース ファイル\Game\Scene\Other\Factory</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\SceneManager.cpp">
-      <Filter>ソース ファイル\Game\Scene\Manager</Filter>
+      <Filter>ソース ファイル\Game\Scene\Other\Manager</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\TitleScene.cpp">
       <Filter>ソース ファイル\Game\Scene\Title</Filter>
@@ -382,17 +388,32 @@
     <ClCompile Include="Source\D2D\Sprite\SpriteDecoder.cpp">
       <Filter>ソース ファイル\Library\Graphic\D2D\Sprite</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ResourseManager\ModelManager\ModelManager.cpp">
-      <Filter>ソース ファイル\Game\ResourseManager\ModelManager</Filter>
+    <ClCompile Include="Source\Scene\Factory\CharacterSelectFactory.cpp">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Factory</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ResourseManager\AnimetionManager\AnimetionManager.cpp">
-      <Filter>ソース ファイル\Game\ResourseManager\AnimetionManager</Filter>
+    <ClCompile Include="Source\Scene\CharacterSelectScene.cpp">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ResourseManager\PlayerManager\PlayerManager.cpp">
-      <Filter>ソース ファイル\Game\ResourseManager\PlayerManager</Filter>
+    <ClCompile Include="Source\Scene\Factory\StageSelectFactory.cpp">
+      <Filter>ソース ファイル\Game\Scene\StageSelect\Factory</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp">
-      <Filter>ソース ファイル\Game\CharactorController\PlayerController</Filter>
+    <ClCompile Include="Source\Scene\StageSelectScene.cpp">
+      <Filter>ソース ファイル\Game\Scene\StageSelect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\GameFactory.cpp">
+      <Filter>ソース ファイル\Game\Scene\Game\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\ResultFactory.cpp">
+      <Filter>ソース ファイル\Game\Scene\Result\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\ResultScene.cpp">
+      <Filter>ソース ファイル\Game\Scene\Result</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\GameScene.cpp">
+      <Filter>ソース ファイル\Game\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Menu.cpp">
+      <Filter>ソース ファイル\Game\Object\Menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -490,10 +511,10 @@
       <Filter>ソース ファイル\Game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Include\Scene\SceneFactory.h">
-      <Filter>ソース ファイル\Game\Scene\Factory</Filter>
+      <Filter>ソース ファイル\Game\Scene\Other\Factory</Filter>
     </ClInclude>
     <ClInclude Include="Include\Scene\SceneManager.h">
-      <Filter>ソース ファイル\Game\Scene\Manager</Filter>
+      <Filter>ソース ファイル\Game\Scene\Other\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Include\Scene\TitleScene.h">
       <Filter>ソース ファイル\Game\Scene\Title</Filter>
@@ -600,20 +621,32 @@
     <ClInclude Include="Include\D2D\Sprite\SpriteDecoder.h">
       <Filter>ソース ファイル\Library\Graphic\D2D\Sprite</Filter>
     </ClInclude>
-    <ClInclude Include="Include\ResourseManager\ModelManager\ModelManager.h">
-      <Filter>ソース ファイル\Game\ResourseManager\ModelManager</Filter>
+    <ClInclude Include="Include\Scene\Factory\CharacterSelectFactory.h">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Factory</Filter>
     </ClInclude>
-    <ClInclude Include="Include\ResourseManager\AnimetionManager\AnimetionManager.h">
-      <Filter>ソース ファイル\Game\ResourseManager\AnimetionManager</Filter>
+    <ClInclude Include="include\Scene\CharacterSelectScene.h">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect</Filter>
     </ClInclude>
-    <ClInclude Include="Include\ResourseManager\PlayerManager\PlayerManager.h">
-      <Filter>ソース ファイル\Game\ResourseManager\PlayerManager</Filter>
+    <ClInclude Include="Include\Scene\StageSelectScene.h">
+      <Filter>ソース ファイル\Game\Scene\StageSelect</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CharacterController\PlayerController\PlayerController.h">
-      <Filter>ソース ファイル\Game\CharactorController\PlayerController</Filter>
+    <ClInclude Include="Include\Scene\Factory\StageSelectFactory.h">
+      <Filter>ソース ファイル\Game\Scene\StageSelect\Factory</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CharacterController\CharacterController.h">
-      <Filter>ソース ファイル\Game\CharactorController</Filter>
+    <ClInclude Include="Include\Scene\GameScene.h">
+      <Filter>ソース ファイル\Game\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Factory\GameFactory.h">
+      <Filter>ソース ファイル\Game\Scene\Game\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\ResultScene.h">
+      <Filter>ソース ファイル\Game\Scene\Result</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Factory\ResultFactory.h">
+      <Filter>ソース ファイル\Game\Scene\Result\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Menu.h">
+      <Filter>ソース ファイル\Game\Object\Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
