@@ -183,6 +183,7 @@ public:
 	void SetTrimming(const D3DXVECTOR2& pos, int wSize, int hSize);
 
 	void SetReverseFlag(REVERSE_FLAG flag);
+	bool IsValid();
 
 private:
 	Sprite(const Sprite&);

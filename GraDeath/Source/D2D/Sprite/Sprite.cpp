@@ -13,8 +13,6 @@ Sprite::~Sprite(){
 }
 
 bool Sprite::Create(LPCWSTR fileName){
-	assert(fileName != L"" && "Bad Strings!");
-
 	assert(bitmap == NULL);
 
 	if (!D2D::CreateSprite(&bitmap, fileName)){
@@ -155,4 +153,8 @@ void Sprite::SetWeight(int x, int y){
 
 void Sprite::SetReverseFlag(REVERSE_FLAG flag){
 	reverseFlag = flag;
+}
+
+bool Sprite::IsValid(){
+	return bitmap != nullptr;
 }

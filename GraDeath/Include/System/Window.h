@@ -28,8 +28,10 @@ namespace System{
 	}
 
 	inline void Window::GetWindowSize(int* _width, int* _height){
-		*_width = windowData.width;
-		*_height = windowData.height;
+		if(_width != NULL)
+			*_width = windowData.width;
+		if(_height != NULL)
+			*_height = windowData.height;
 	}
 
 
