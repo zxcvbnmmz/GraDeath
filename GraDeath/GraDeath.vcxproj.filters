@@ -188,6 +188,30 @@
     <Filter Include="ソース ファイル\Library\Graphic\D2D\Interface">
       <UniqueIdentifier>{340fe4cb-38fc-4691-a6ee-6ff07f673cf3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Library\Model\AnimetionTrans">
+      <UniqueIdentifier>{8784ba23-107e-4c59-936d-9f263b2f590f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\ResourseManager">
+      <UniqueIdentifier>{507ce35b-660d-487c-afcd-2627694496fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\ResourseManager\ModelManager">
+      <UniqueIdentifier>{5241480f-baa3-4d85-9605-94e95dc59af4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\ResourseManager\AnimetionManager">
+      <UniqueIdentifier>{0d3e2844-64b4-4b7c-abff-84e236bf8cea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\ResourseManager\PlayerManager">
+      <UniqueIdentifier>{fbc065f5-eef9-41d4-aff8-d6967b2f9d5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\CharactorController">
+      <UniqueIdentifier>{e18948e8-2d4c-44af-87e7-30ef911c4761}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\CharactorController\PlayerController">
+      <UniqueIdentifier>{0bf220bf-3b2b-4bcf-8cb6-d3381767f69e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\CharactorController\AIController">
+      <UniqueIdentifier>{f1a65681-6169-4904-8ebb-517b59f693cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -357,6 +381,18 @@
     </ClCompile>
     <ClCompile Include="Source\D2D\Sprite\SpriteDecoder.cpp">
       <Filter>ソース ファイル\Library\Graphic\D2D\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ResourseManager\ModelManager\ModelManager.cpp">
+      <Filter>ソース ファイル\Game\ResourseManager\ModelManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ResourseManager\AnimetionManager\AnimetionManager.cpp">
+      <Filter>ソース ファイル\Game\ResourseManager\AnimetionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ResourseManager\PlayerManager\PlayerManager.cpp">
+      <Filter>ソース ファイル\Game\ResourseManager\PlayerManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp">
+      <Filter>ソース ファイル\Game\CharactorController\PlayerController</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -563,6 +599,21 @@
     </ClInclude>
     <ClInclude Include="Include\D2D\Sprite\SpriteDecoder.h">
       <Filter>ソース ファイル\Library\Graphic\D2D\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ResourseManager\ModelManager\ModelManager.h">
+      <Filter>ソース ファイル\Game\ResourseManager\ModelManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ResourseManager\AnimetionManager\AnimetionManager.h">
+      <Filter>ソース ファイル\Game\ResourseManager\AnimetionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ResourseManager\PlayerManager\PlayerManager.h">
+      <Filter>ソース ファイル\Game\ResourseManager\PlayerManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CharacterController\PlayerController\PlayerController.h">
+      <Filter>ソース ファイル\Game\CharactorController\PlayerController</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CharacterController\CharacterController.h">
+      <Filter>ソース ファイル\Game\CharactorController</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -21,9 +21,9 @@ TitleScene::TitleScene(){
 	Graphic::Camera::SetLookAt ( D3DXVECTOR3 (  0, 40 ,-60 ), D3DXVECTOR3 ( 0, 0, 0 ) );
 	Graphic::Camera::Update ();
 
-	testModel = std::shared_ptr< CwnStaticMesh > ( new CwnStaticMesh );
-	testModel->LoadCwn ( "Magician.cwn", "Resource/Model/Character/Archer/" );
-	modelStaticShader.Compile ();
+	//testModel = std::shared_ptr< CwnStaticMesh > ( new CwnStaticMesh );
+	//testModel->LoadCwn ( "Magician.cwn", "Resource/Model/Character/Archer/" );
+	//modelStaticShader.Compile ();
 
 	sprite.Create(L"Resource/Texture/Test.png");
 }

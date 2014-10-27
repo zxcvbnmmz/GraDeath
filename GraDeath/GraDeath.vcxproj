@@ -87,6 +87,7 @@
   <ItemGroup>
     <ClCompile Include="Include\Input\GamePad.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp" />
     <ClCompile Include="Source\D2D\Interface\D2DRenderTarget.cpp" />
     <ClCompile Include="Source\D2D\Interface\ImagingFactory.cpp" />
     <ClCompile Include="Source\D2D\Sprite\Sprite.cpp" />
@@ -116,6 +117,9 @@
     <ClCompile Include="Source\Model\ModelStaticShader.cpp" />
     <ClCompile Include="Source\Object\Character.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
+    <ClCompile Include="Source\ResourseManager\AnimetionManager\AnimetionManager.cpp" />
+    <ClCompile Include="Source\ResourseManager\ModelManager\ModelManager.cpp" />
+    <ClCompile Include="Source\ResourseManager\PlayerManager\PlayerManager.cpp" />
     <ClCompile Include="Source\Scene\Factory\TitleFactory.cpp" />
     <ClCompile Include="Source\Scene\Scene.cpp" />
     <ClCompile Include="Source\Scene\SceneFactory.cpp" />
@@ -143,6 +147,8 @@
     <ClCompile Include="Source\World\World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\CharacterController\CharacterController.h" />
+    <ClInclude Include="Include\CharacterController\PlayerController\PlayerController.h" />
     <ClInclude Include="Include\D2D\Brush\BitmapBrush.h" />
     <ClInclude Include="Include\D2D\Brush\Brush.h" />
     <ClInclude Include="Include\D2D\Brush\RGBrush.h" />
@@ -181,6 +187,9 @@
     <ClInclude Include="Include\Object\Block.h" />
     <ClInclude Include="Include\Object\Character.h" />
     <ClInclude Include="Include\Object\Object.h" />
+    <ClInclude Include="Include\ResourseManager\AnimetionManager\AnimetionManager.h" />
+    <ClInclude Include="Include\ResourseManager\ModelManager\ModelManager.h" />
+    <ClInclude Include="Include\ResourseManager\PlayerManager\PlayerManager.h" />
     <ClInclude Include="Include\Scene\Factory\TitleFactory.h" />
     <ClInclude Include="Include\Scene\Scene.h" />
     <ClInclude Include="Include\Scene\SceneFactory.h" />
