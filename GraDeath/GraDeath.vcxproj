@@ -119,6 +119,7 @@
     <ClCompile Include="Source\Object\Menu.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene.cpp" />
+    <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp" />
     <ClCompile Include="Source\Scene\Factory\CharacterSelectFactory.cpp" />
     <ClCompile Include="Source\Scene\Factory\GameFactory.cpp" />
     <ClCompile Include="Source\Scene\Factory\ResultFactory.cpp" />
@@ -193,6 +194,7 @@
     <ClInclude Include="Include\Object\Menu.h" />
     <ClInclude Include="Include\Object\Object.h" />
     <ClInclude Include="include\Scene\CharacterSelectScene.h" />
+    <ClInclude Include="Include\Scene\CharacterSelectScene\Icon\SelectIcon.h" />
     <ClInclude Include="Include\Scene\Factory\CharacterSelectFactory.h" />
     <ClInclude Include="Include\Scene\Factory\GameFactory.h" />
     <ClInclude Include="Include\Scene\Factory\ResultFactory.h" />

@@ -236,6 +236,15 @@
     <Filter Include="ソース ファイル\Game\Scene\Result\Factory">
       <UniqueIdentifier>{cd1b4f33-ea8b-47df-8ece-de4bd5287cce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Icon">
+      <UniqueIdentifier>{3cb1bda8-8a9e-4089-9712-445b214b6d7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Icon\CharacterIcon">
+      <UniqueIdentifier>{174011d8-b36c-4b13-a150-d723707ef54e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Icon\SelectIcon">
+      <UniqueIdentifier>{c8ba4dce-c701-432a-b5b8-117f46e77441}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -435,6 +444,9 @@
     </ClCompile>
     <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp">
       <Filter>ソース ファイル\Game\CharacterController\PlayerController</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Icon\SelectIcon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -668,6 +680,9 @@
     </ClInclude>
     <ClInclude Include="Include\CharacterController\PlayerController\PlayerController.h">
       <Filter>ソース ファイル\Game\CharacterController\PlayerController</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CharacterSelectScene\Icon\SelectIcon.h">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Icon\SelectIcon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
