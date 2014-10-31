@@ -85,7 +85,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Include\Input\GamePad.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp" />
     <ClCompile Include="Source\D2D\Interface\D2DRenderTarget.cpp" />
@@ -108,6 +107,7 @@
     <ClCompile Include="Source\Graphic\RenderTarget\RenderTarget.cpp" />
     <ClCompile Include="Source\Graphic\Sampler\Sampler.cpp" />
     <ClCompile Include="Source\Graphic\ShaderResource\ShaderResource.cpp" />
+    <ClCompile Include="Source\Input\GamePad.cpp" />
     <ClCompile Include="Source\Model\BoneAnimeData.cpp" />
     <ClCompile Include="Source\Model\CwnBaseMesh.cpp" />
     <ClCompile Include="Source\Model\CwnDecoder.cpp" />
@@ -119,6 +119,7 @@
     <ClCompile Include="Source\Object\Menu.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene.cpp" />
+    <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor..cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp" />
     <ClCompile Include="Source\Scene\Factory\CharacterSelectFactory.cpp" />
     <ClCompile Include="Source\Scene\Factory\GameFactory.cpp" />
@@ -194,6 +195,7 @@
     <ClInclude Include="Include\Object\Menu.h" />
     <ClInclude Include="Include\Object\Object.h" />
     <ClInclude Include="include\Scene\CharacterSelectScene.h" />
+    <ClInclude Include="Include\Scene\CharacterSelectScene\Cursor\SelectCursor.h" />
     <ClInclude Include="Include\Scene\CharacterSelectScene\Icon\SelectIcon.h" />
     <ClInclude Include="Include\Scene\Factory\CharacterSelectFactory.h" />
     <ClInclude Include="Include\Scene\Factory\GameFactory.h" />

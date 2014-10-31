@@ -239,11 +239,8 @@
     <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Icon">
       <UniqueIdentifier>{3cb1bda8-8a9e-4089-9712-445b214b6d7a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Icon\CharacterIcon">
-      <UniqueIdentifier>{174011d8-b36c-4b13-a150-d723707ef54e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Icon\SelectIcon">
-      <UniqueIdentifier>{c8ba4dce-c701-432a-b5b8-117f46e77441}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Cursor">
+      <UniqueIdentifier>{6933f619-7b92-4cee-8bb2-6513e1f11817}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -376,9 +373,6 @@
     <ClCompile Include="Source\Model\CwnSkinMesh.cpp">
       <Filter>ソース ファイル\Library\Model\Skin</Filter>
     </ClCompile>
-    <ClCompile Include="Include\Input\GamePad.cpp">
-      <Filter>ソース ファイル\Library\Input\GamePad</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Shader\Shader.cpp">
       <Filter>ソース ファイル\Library\Shader</Filter>
     </ClCompile>
@@ -386,9 +380,6 @@
       <Filter>ソース ファイル\Library\Shader\Test</Filter>
     </ClCompile>
     <ClCompile Include="Source\Model\ModelStaticShader.cpp">
-      <Filter>ソース ファイル\Library\Model\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Model\ModelSkinShader.cpp">
       <Filter>ソース ファイル\Library\Model\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Source\Model\BoneAnimeData.cpp">
@@ -446,7 +437,16 @@
       <Filter>ソース ファイル\Game\CharacterController\PlayerController</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp">
-      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Icon\SelectIcon</Filter>
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Icon</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor..cpp">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Cursor</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\ModelSkinShader.cpp">
+      <Filter>ソース ファイル\Library\Model\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Input\GamePad.cpp">
+      <Filter>ソース ファイル\Library\Input\GamePad</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -682,7 +682,10 @@
       <Filter>ソース ファイル\Game\CharacterController\PlayerController</Filter>
     </ClInclude>
     <ClInclude Include="Include\Scene\CharacterSelectScene\Icon\SelectIcon.h">
-      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Icon\SelectIcon</Filter>
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Icon</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CharacterSelectScene\Cursor\SelectCursor.h">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Cursor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -15,6 +15,8 @@ private:
 	Sprite iconSprite;
 	Sprite charSprite[ 4 ];
 
+	Sprite selectSprite[ 5 ];
+
 public:
 	SelectIcon ();
 
@@ -25,6 +27,8 @@ public:
 	void Draw ();
 
 	void ChangeIcon ( int, int );
+
+	void CursorCollision ();
 
 };
 
