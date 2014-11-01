@@ -236,11 +236,11 @@
     <Filter Include="ソース ファイル\Game\Scene\Result\Factory">
       <UniqueIdentifier>{cd1b4f33-ea8b-47df-8ece-de4bd5287cce}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Stage">
-      <UniqueIdentifier>{dc6a3ba5-46f4-4afe-bf68-db090c0790ef}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Icon">
+      <UniqueIdentifier>{3cb1bda8-8a9e-4089-9712-445b214b6d7a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Library\Input\Keyboard">
-      <UniqueIdentifier>{92eb04ae-0147-4c74-b10f-f0db269d45c7}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Cursor">
+      <UniqueIdentifier>{6933f619-7b92-4cee-8bb2-6513e1f11817}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -373,9 +373,6 @@
     <ClCompile Include="Source\Model\CwnSkinMesh.cpp">
       <Filter>ソース ファイル\Library\Model\Skin</Filter>
     </ClCompile>
-    <ClCompile Include="Include\Input\GamePad.cpp">
-      <Filter>ソース ファイル\Library\Input\GamePad</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Shader\Shader.cpp">
       <Filter>ソース ファイル\Library\Shader</Filter>
     </ClCompile>
@@ -383,9 +380,6 @@
       <Filter>ソース ファイル\Library\Shader\Test</Filter>
     </ClCompile>
     <ClCompile Include="Source\Model\ModelStaticShader.cpp">
-      <Filter>ソース ファイル\Library\Model\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Model\ModelSkinShader.cpp">
       <Filter>ソース ファイル\Library\Model\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Source\Model\BoneAnimeData.cpp">
@@ -442,11 +436,17 @@
     <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp">
       <Filter>ソース ファイル\Game\CharacterController\PlayerController</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Stage\Stage.cpp">
-      <Filter>ソース ファイル\Game\Stage</Filter>
+    <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Icon</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Input\Keyboard.cpp">
-      <Filter>ソース ファイル\Library\Input\Keyboard</Filter>
+    <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor..cpp">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Cursor</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\ModelSkinShader.cpp">
+      <Filter>ソース ファイル\Library\Model\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Input\GamePad.cpp">
+      <Filter>ソース ファイル\Library\Input\GamePad</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -681,14 +681,11 @@
     <ClInclude Include="Include\CharacterController\PlayerController\PlayerController.h">
       <Filter>ソース ファイル\Game\CharacterController\PlayerController</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Stage\Stage.h">
-      <Filter>ソース ファイル\Game\Stage</Filter>
+    <ClInclude Include="Include\Scene\CharacterSelectScene\Icon\SelectIcon.h">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Icon</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Input\Keyboard.h">
-      <Filter>ソース ファイル\Library\Input\Keyboard</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Input\InputState.h">
-      <Filter>ソース ファイル\Library\Input</Filter>
+    <ClInclude Include="Include\Scene\CharacterSelectScene\Cursor\SelectCursor.h">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Cursor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
