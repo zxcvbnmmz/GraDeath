@@ -3,12 +3,17 @@
 
 #include "Object.h"
 
+typedef void* CharacterData;
+
 class Character : public Object{
 public:
-	Character();
+	Character(CharacterData data);
 	virtual ~Character(){}
 
 private:
+	void* ID;
+	class CwnSkinMesh* mesh;
+	class CwnSkinMesh* collisionMesh;
 };
 
 #endif	// end of Character
