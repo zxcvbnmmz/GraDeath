@@ -236,6 +236,12 @@
     <Filter Include="ソース ファイル\Game\Scene\Result\Factory">
       <UniqueIdentifier>{cd1b4f33-ea8b-47df-8ece-de4bd5287cce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Stage">
+      <UniqueIdentifier>{dc6a3ba5-46f4-4afe-bf68-db090c0790ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Library\Input\Keyboard">
+      <UniqueIdentifier>{92eb04ae-0147-4c74-b10f-f0db269d45c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -435,6 +441,12 @@
     </ClCompile>
     <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp">
       <Filter>ソース ファイル\Game\CharacterController\PlayerController</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Stage\Stage.cpp">
+      <Filter>ソース ファイル\Game\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Input\Keyboard.cpp">
+      <Filter>ソース ファイル\Library\Input\Keyboard</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -668,6 +680,15 @@
     </ClInclude>
     <ClInclude Include="Include\CharacterController\PlayerController\PlayerController.h">
       <Filter>ソース ファイル\Game\CharacterController\PlayerController</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Stage\Stage.h">
+      <Filter>ソース ファイル\Game\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Input\Keyboard.h">
+      <Filter>ソース ファイル\Library\Input\Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Input\InputState.h">
+      <Filter>ソース ファイル\Library\Input</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

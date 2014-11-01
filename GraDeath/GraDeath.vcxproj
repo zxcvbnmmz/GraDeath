@@ -108,6 +108,7 @@
     <ClCompile Include="Source\Graphic\RenderTarget\RenderTarget.cpp" />
     <ClCompile Include="Source\Graphic\Sampler\Sampler.cpp" />
     <ClCompile Include="Source\Graphic\ShaderResource\ShaderResource.cpp" />
+    <ClCompile Include="Source\Input\Keyboard.cpp" />
     <ClCompile Include="Source\Model\BoneAnimeData.cpp" />
     <ClCompile Include="Source\Model\CwnBaseMesh.cpp" />
     <ClCompile Include="Source\Model\CwnDecoder.cpp" />
@@ -143,6 +144,7 @@
     <ClCompile Include="Source\Sound\Voice\SourceVoice.cpp" />
     <ClCompile Include="Source\Sound\Voice\SubmixVoice.cpp" />
     <ClCompile Include="Source\Sound\WaveDecoder.cpp" />
+    <ClCompile Include="Source\Stage\Stage.cpp" />
     <ClCompile Include="Source\System\D2DCore.cpp" />
     <ClCompile Include="Source\System\D3DCore.cpp" />
     <ClCompile Include="Source\System\System.cpp" />
@@ -181,6 +183,8 @@
     <ClInclude Include="Include\Graphic\Sampler\Sampler.h" />
     <ClInclude Include="Include\Graphic\ShaderResource\ShaderResource.h" />
     <ClInclude Include="Include\Input\GamePad.h" />
+    <ClInclude Include="Include\Input\InputState.h" />
+    <ClInclude Include="Include\Input\Keyboard.h" />
     <ClInclude Include="Include\Model\BoneAnimeData.h" />
     <ClInclude Include="Include\Model\CwnBaseMesh.h" />
     <ClInclude Include="Include\Model\CwnDecoder.h" />
@@ -219,6 +223,7 @@
     <ClInclude Include="Include\Sound\WaveData.h" />
     <ClInclude Include="Include\Sound\WaveDecoder.h" />
     <ClInclude Include="Include\Stage\Factory\StageFactory.h" />
+    <ClInclude Include="Include\Stage\Stage.h" />
     <ClInclude Include="Include\System\D2DCore.h" />
     <ClInclude Include="Include\System\D3DCore.h" />
     <ClInclude Include="Include\System\System.h" />

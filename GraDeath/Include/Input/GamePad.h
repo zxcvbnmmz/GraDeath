@@ -10,15 +10,7 @@
 #ifndef _GAME_PAD_H_
 #define _GAME_PAD_H_
 
-
-// インプットの状態
-enum INPUT_STATE
-{
-	INPUT_FREE = 0,		// 離している
-	INPUT_PUSH,			// 押した瞬間
-	INPUT_PRESS,		// 押している
-	INPUT_RELEASE,		// 離した瞬間
-};
+#include "InputState.h"
 
 // ボタンのステート
 enum BUTTON_ID

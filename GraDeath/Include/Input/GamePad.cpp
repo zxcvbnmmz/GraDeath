@@ -190,9 +190,9 @@ namespace GamePad
 			if (!pad[i].isActive)
 				continue;
 
-			DWORD button = (pad[i].state.Gamepad.wButtons & _button);
-
-			return button != 0;
+			if ((pad[i].state.Gamepad.wButtons & _button) != 0){
+				return true;
+			}
 		}
 		return false;
 	}
