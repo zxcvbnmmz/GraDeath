@@ -242,6 +242,9 @@
     <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Cursor">
       <UniqueIdentifier>{6933f619-7b92-4cee-8bb2-6513e1f11817}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Library\Input\KeyBoard">
+      <UniqueIdentifier>{86665b5e-a945-46e3-8998-cf98a83a5296}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -447,6 +450,9 @@
     </ClCompile>
     <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor.cpp">
       <Filter>ソース ファイル\Game\Scene\CharacterSelect\Cursor</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Input\Keyboard.cpp">
+      <Filter>ソース ファイル\Library\Input\KeyBoard</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -686,6 +692,9 @@
     </ClInclude>
     <ClInclude Include="Include\Scene\CharacterSelectScene\Cursor\SelectCursor.h">
       <Filter>ソース ファイル\Game\Scene\CharacterSelect\Cursor</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Input\Keyboard.h">
+      <Filter>ソース ファイル\Library\Input\KeyBoard</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
