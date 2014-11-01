@@ -6,8 +6,9 @@
 #include "Scene/SceneFactory.h"
 #include "Graphic/Graphic.h"
 #include "World/World.h"
-#include "Input/Gamepad.h"
 
+#include "Input/Gamepad.h"
+#include "Input/Keyboard.h"
 
 namespace{
 	std::stack<Scene*> scenes;
@@ -46,6 +47,7 @@ int SceneManager::Execute(){
 	}
 
 	GamePad::update();
+	Keyboard::Update();
 
 	Scene* currentScene = scenes.top();
 
