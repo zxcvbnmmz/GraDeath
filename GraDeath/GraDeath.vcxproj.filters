@@ -439,14 +439,14 @@
     <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp">
       <Filter>ソース ファイル\Game\Scene\CharacterSelect\Icon</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor..cpp">
-      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Cursor</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Model\ModelSkinShader.cpp">
       <Filter>ソース ファイル\Library\Model\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Source\Input\GamePad.cpp">
       <Filter>ソース ファイル\Library\Input\GamePad</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor.cpp">
+      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Cursor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

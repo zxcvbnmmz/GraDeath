@@ -6,6 +6,7 @@
 
 class SelectIcon;
 class CharacterIcon;
+class SelectCursor;
 
 class CharacterSelectScene : public Scene{
 public:
@@ -16,7 +17,7 @@ public:
 
 private:
 	std::shared_ptr< SelectIcon >		selectIcon;
-	//std::shared_ptr< CharacterIcon >	characterIcon;
+	std::shared_ptr< SelectCursor >		selectCursor;
 };
 
 #endif	// end of CharacterSelectScene

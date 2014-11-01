@@ -119,7 +119,7 @@
     <ClCompile Include="Source\Object\Menu.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene.cpp" />
-    <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor..cpp" />
+    <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp" />
     <ClCompile Include="Source\Scene\Factory\CharacterSelectFactory.cpp" />
     <ClCompile Include="Source\Scene\Factory\GameFactory.cpp" />

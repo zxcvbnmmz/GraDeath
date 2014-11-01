@@ -5,6 +5,7 @@
 
 
 Sprite::Sprite():alpha(1){
+	bitmap = nullptr;
 	scale = {1,1};
 }
 

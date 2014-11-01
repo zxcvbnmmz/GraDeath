@@ -2,10 +2,11 @@
 #define _SELECT_CURSOR_H_
 
 #include <memory>
-#include "D2D/Sprite/Sprite.h"
 
 
+struct D3DXVECTOR2;
 struct CursorState;
+
 class SelectCursor
 {
 private:
@@ -17,6 +18,8 @@ public:
 	~SelectCursor ();
 
 	void SetUp ();
+
+	void Update ();
 
 	void Draw ();
 
