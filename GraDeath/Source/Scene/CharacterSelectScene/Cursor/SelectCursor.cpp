@@ -1,13 +1,11 @@
 #include "Scene/CharacterSelectScene/Cursor/SelectCursor.h"
 #include "Utility/SafeDelete.h"
 #include "Input/GamePad.h"
-#include "D2D/Sprite/Sprite.h"
 
 #define MOVE_SPEED ( 2.0F )
 
 struct CursorState
 {
-	Sprite			cursor;
 	D3DXVECTOR2		pos;
 	bool			active;
 };
@@ -38,9 +36,9 @@ void SelectCursor::SetUp ()
 	for ( int i = 0; i < 4; i++ )
 	{
 		cursorState[ i ].pos = cursorPos[ i ];
-		cursorState[ i ].cursor.Create ( cursorName );
-		cursorState[ i ].cursor.SetPosition ( cursorState[ i ].pos );
 		cursorState[ i ].active = false;
+		cursorIcon[ i ].Create ( cursorName );
+		cursorIcon[ i ].SetPosition ( cursorPos[ i ] );
 	}
 	cursorState[ 0 ].active = true;
 }
@@ -64,8 +62,8 @@ void SelectCursor::Draw ()
 	{
 		if ( cursorState[ i ].active )
 		{
-			cursorState[ i ].cursor.SetPosition ( cursorState[ i ].pos );
-			cursorState[ i ].cursor.Draw ();
+			cursorIcon[ i ].SetPosition ( cursorState[ i ].pos );
+			cursorIcon[ i ].Draw ();
 		}
 	}
 }

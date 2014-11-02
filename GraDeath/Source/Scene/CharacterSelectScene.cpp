@@ -29,7 +29,7 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 }
 
 void CharacterSelectScene::Draw(){
-	//selectIcon->Draw ();
+	selectIcon->Draw ();
 	selectCursor->Draw ();
 }
 
