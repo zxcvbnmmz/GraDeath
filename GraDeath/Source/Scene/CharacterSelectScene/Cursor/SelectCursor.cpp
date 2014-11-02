@@ -2,64 +2,73 @@
 #include "Utility/SafeDelete.h"
 #include "Input/GamePad.h"
 
+#define MOVE_SPEED ( 2.0F )
+
 struct CursorState
 {
-	Sprite			cursor;
 	D3DXVECTOR2		pos;
 	bool			active;
 };
 
-wchar_t* cursorName[] =
+wchar_t* cursorName = L"Resource/Scene/CharacterSelect/Cursor.png";
+
+D3DXVECTOR2 cursorPos[ ] =
 {
-	L"Resource/Scene/CharacterSelect/CharacterSelect_PlayerIcon_1.png",
-	L"Resource/Scene/CharacterSelect/CharacterSelect_PlayerIcon_2.png",
-	L"Resource/Scene/CharacterSelect/CharacterSelect_PlayerIcon_3.png",
-	L"Resource/Scene/CharacterSelect/CharacterSelect_PlayerIcon_4.png"
+	D3DXVECTOR2 ( 100, 100 ),
+	D3DXVECTOR2 ( 100, 100 ),
+	D3DXVECTOR2 ( 100, 100 ),
+	D3DXVECTOR2 ( 100, 100 ),
 };
 
-D3DXVECTOR2 cursorPos[] =
+SelectCursor::SelectCursor ()
 {
-	D3DXVECTOR2(50, 100),
-	D3DXVECTOR2(870, 100),
-	D3DXVECTOR2(50, 450),
-	D3DXVECTOR2(870, 450),
-};
-
-
-SelectCursor::SelectCursor()
-{
-	cursorState = new CursorState[4];
+	cursorState = new CursorState[ 4 ];
+	GamePad::setThreshold ( 0.3f );
 }
 
-SelectCursor::~SelectCursor()
+SelectCursor::~SelectCursor ()
 {
-	Util::safeDeleteArray(cursorState);
+	Util::safeDeleteArray ( cursorState );
 }
 
-void SelectCursor::SetUp()
+void SelectCursor::SetUp ()
+{
+	for ( int i = 0; i < 4; i++ )
 	{
 		cursorState[ i ].pos = cursorPos[ i ];
-		cursorState[ i ].cursor.Create ( cursorName );
-		cursorState[ i ].cursor.SetPosition ( cursorState[ i ].pos );
 		cursorState[ i ].active = false;
+		cursorIcon[ i ].Create ( cursorName );
+		cursorIcon[ i ].SetPosition ( cursorPos[ i ] );
 	}
 	cursorState[ 0 ].active = true;
 }
 
-void SelectCursor::Update()
+void SelectCursor::Update ()
+{
+	float angle[ 4 ] = { 0 };
+	for ( int i = 0; i < 4; i++ )
+	{
+		if ( GamePad::getLStickState ( ( PAD_NUM )i, angle[ i ] ) )
 		{
-
-}
-
-void SelectCursor::Draw()
-		{
-			cursorState[ i ].cursor.SetPosition ( cursorState[ i ].pos );
-			cursorState[ i ].cursor.Draw ();
+			cursorState[ i ].pos.x -= cos ( angle[ i ] ) * MOVE_SPEED;
+			cursorState[ i ].pos.y += sin ( angle[ i ] ) * MOVE_SPEED;
 		}
 	}
 }
 
-D3DXVECTOR2& SelectCursor::GetPadCursorPositon(int num)
+void SelectCursor::Draw ()
 {
-	return cursorState[num].pos;
+	for ( int i = 0; i < 4; i++ )
+	{
+		if ( cursorState[ i ].active )
+		{
+			cursorIcon[ i ].SetPosition ( cursorState[ i ].pos );
+			cursorIcon[ i ].Draw ();
+		}
+	}
+}
+
+D3DXVECTOR2& SelectCursor::GetPadCursorPositon ( int num )
+{
+	return cursorState[ num ].pos;
 }
