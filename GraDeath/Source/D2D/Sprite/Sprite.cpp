@@ -4,17 +4,19 @@
 #include "Graphic/D2DGraphic.h"
 
 
-Sprite::Sprite():alpha(1){
-	bitmap = nullptr;
+Sprite::Sprite():alpha(1),bitmap(nullptr){
 	scale = {1,1};
 }
 
 Sprite::~Sprite(){
-	bitmap->Release();
+	if (bitmap){
+		bitmap->Release();
+		bitmap = nullptr;
+	}
 }
 
 bool Sprite::Create(LPCWSTR fileName){
-	assert(bitmap == NULL);
+	assert(bitmap == nullptr);
 
 	if (!D2D::CreateSprite(&bitmap, fileName)){
 		MessageBox(NULL, L"エラー", L"テクスチャの読み込みに失敗", MB_OK);

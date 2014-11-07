@@ -15,6 +15,11 @@ CharacterSelectScene::CharacterSelectScene(){
 	selectCursor->SetUp ();
 }
 
+CharacterSelectScene::~CharacterSelectScene(){
+	selectIcon.reset();
+	selectCursor.reset();
+}
+
 SCENE_STATUS CharacterSelectScene::Execute(){
 
 	if (GamePad::getAnyGamePadPressed(BUTTON_X)){
@@ -29,7 +34,7 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 }
 
 void CharacterSelectScene::Draw(){
-	//selectIcon->Draw ();
+	selectIcon->Draw ();
 	selectCursor->Draw ();
 }
 

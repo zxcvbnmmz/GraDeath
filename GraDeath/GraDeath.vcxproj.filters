@@ -245,6 +245,15 @@
     <Filter Include="ソース ファイル\Library\Input\KeyBoard">
       <UniqueIdentifier>{86665b5e-a945-46e3-8998-cf98a83a5296}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Library\Input\Manager">
+      <UniqueIdentifier>{13aca0da-7c57-4cb9-8980-0b8a0466d214}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Character\Manager">
+      <UniqueIdentifier>{9a104ccb-760c-4f2b-853d-d07edc266df6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Stage">
+      <UniqueIdentifier>{d4a4c2b5-27d5-45a3-a067-76fa53fe43d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -453,6 +462,18 @@
     </ClCompile>
     <ClCompile Include="Source\Input\Keyboard.cpp">
       <Filter>ソース ファイル\Library\Input\KeyBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Input\InputManager.cpp">
+      <Filter>ソース ファイル\Library\Input\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Manager\CharacterManager.cpp">
+      <Filter>ソース ファイル\Game\Object\Character\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharacterController\CharacterController.cpp">
+      <Filter>ソース ファイル\Game\CharacterController</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Stage\Stage.cpp">
+      <Filter>ソース ファイル\Game\Object\Stage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -695,6 +716,15 @@
     </ClInclude>
     <ClInclude Include="Include\Input\Keyboard.h">
       <Filter>ソース ファイル\Library\Input\KeyBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Input\InputManager.h">
+      <Filter>ソース ファイル\Library\Input\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Manager\CharacterManager.h">
+      <Filter>ソース ファイル\Game\Object\Character\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Stage\Stage.h">
+      <Filter>ソース ファイル\Game\Object\Stage</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

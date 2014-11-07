@@ -6,6 +6,8 @@
 typedef void* CharacterData;
 
 class Character : public Object{
+	friend class CharacterController;
+
 public:
 	Character(CharacterData data);
 	virtual ~Character(){}

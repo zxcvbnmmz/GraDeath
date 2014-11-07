@@ -1,22 +1,20 @@
 #include "Scene/SceneManager.h"
 #include "Scene/Scene.h"
 #include <stack>
-#include <queue>
 #include "Scene/Factory/TitleFactory.h"
 #include "Scene/SceneFactory.h"
 #include "Graphic/Graphic.h"
 #include "World/World.h"
 
-#include "Input/Gamepad.h"
-#include "Input/Keyboard.h"
+#include "Input/InputManager.h"
 
 namespace{
 	std::stack<Scene*> scenes;
-	std::queue<Scene*> reserve;
+	Scene* reserve;
 }
 
 bool SceneManager::Initialize(){
-	GamePad::init();
+	InputManager::Initialize();
 	
 	TitleFactory tf;
 	SceneFactory::Stack(&tf);
@@ -26,6 +24,7 @@ bool SceneManager::Initialize(){
 
 void SceneManager::Release(){
 	Scene* tempScene;
+
 	while(!scenes.empty()){
 		tempScene = scenes.top();
 		delete tempScene;
@@ -33,11 +32,9 @@ void SceneManager::Release(){
 		scenes.pop();
 	}
 
-	while(!reserve.empty()){
-		tempScene = reserve.front();
-		delete tempScene;
-		tempScene = nullptr;
-		reserve.pop();
+	if (reserve != nullptr){
+		delete reserve;
+		reserve = nullptr;
 	}
 }
 
@@ -46,8 +43,7 @@ int SceneManager::Execute(){
 		return 0;
 	}
 
-	GamePad::update();
-	Keyboard::Update();
+	InputManager::Update();
 
 	Scene* currentScene = scenes.top();
 
@@ -58,9 +54,9 @@ int SceneManager::Execute(){
 		currentScene = nullptr;
 		scenes.pop();
 
-		if(!reserve.empty()){
-			scenes.push(reserve.front());
-			reserve.pop();
+		if(reserve){
+			scenes.push(reserve);
+			reserve = nullptr;
 		}
 	}else{
 		Draw();
@@ -88,5 +84,6 @@ void SceneManager::Stack(Scene* _scene){
 }
 
 void SceneManager::Reserve(Scene* _scene){
-	reserve.push(_scene);
+	if(reserve == nullptr)
+		reserve = _scene;
 }

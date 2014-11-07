@@ -2,8 +2,16 @@
 #include "World/World.h"
 #include "System/Window.h"
 #include <Box2D\Box2D.h>
+#include "D2D/Sprite/Sprite.h"
+#include <vector>
+#include <memory>
+#include <algorithm>
+#include <functional>
 
-#define PTM_RATIO 32.0
+namespace{
+	const static float PTM_RATIO = 32.0f;
+	std::vector<Sprite*> sprites;
+}
 
 void CreateWorldEdge();
 void CreateEachStage(int stageLevel = 1);
@@ -18,6 +26,10 @@ bool Stage::Initialize(int stageID){
 	CreateEachStage();
 
 	return true;
+}
+
+void Stage::Draw(){
+	std::for_each(sprites[0], sprites[sprites.size()-1], std::bind2nd(std::mem_fun_ref(&Sprite::Draw),DRAW_NORMAL));
 }
 
 void Stage::Release(){
@@ -72,12 +84,15 @@ void CreateEachStage(int stageLevel){
 		polygon.Set(b2Vec2(pos[0][i],pos[1][i]);
 	}
 	*/
-	
-	//b2CircleShape shape;
-	//b2FixtureDef def;
-	//def.shape = &shape;
-	//def.
 
+	int spriteNum = 0;
+
+	for (int i = 0; i < spriteNum; ++i){
+		Sprite* sprite;
+		/*各種パラメータの設定*/
+
+		sprites.push_back(sprite);
+	}
 }
 
 
