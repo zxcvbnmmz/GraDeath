@@ -11,7 +11,6 @@ class SelectCursor;
 class CharacterSelectScene : public Scene{
 public:
 	CharacterSelectScene();
-	~CharacterSelectScene();
 
 
 	SCENE_STATUS Execute();

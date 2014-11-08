@@ -4,7 +4,6 @@
 #include <Box2D\Box2D.h>
 #include "D2D/Sprite/Sprite.h"
 #include <vector>
-#include <memory>
 #include <algorithm>
 #include <functional>
 

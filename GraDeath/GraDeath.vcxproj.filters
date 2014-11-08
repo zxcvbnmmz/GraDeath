@@ -254,6 +254,9 @@
     <Filter Include="ソース ファイル\Game\Object\Stage">
       <UniqueIdentifier>{d4a4c2b5-27d5-45a3-a067-76fa53fe43d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Other\ScreenShot">
+      <UniqueIdentifier>{02a9bad1-9c98-4597-b986-cf1b4ea62b17}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -474,6 +477,9 @@
     </ClCompile>
     <ClCompile Include="Source\Stage\Stage.cpp">
       <Filter>ソース ファイル\Game\Object\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\ScreenShot.cpp">
+      <Filter>ソース ファイル\Other\ScreenShot</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -725,6 +731,9 @@
     </ClInclude>
     <ClInclude Include="Include\Stage\Stage.h">
       <Filter>ソース ファイル\Game\Object\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\ScreenShot.h">
+      <Filter>ソース ファイル\Other\ScreenShot</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
