@@ -162,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\CharacterController\CharacterController.h" />
+    <ClInclude Include="Include\CharacterController\CharacterInfo.h" />
     <ClInclude Include="Include\CharacterController\PlayerController\PlayerController.h" />
     <ClInclude Include="Include\D2D\Brush\BitmapBrush.h" />
     <ClInclude Include="Include\D2D\Brush\Brush.h" />

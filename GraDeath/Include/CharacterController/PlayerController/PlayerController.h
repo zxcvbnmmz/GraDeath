@@ -16,6 +16,16 @@
 
 class Character;
 
+enum CHAR_NUM
+{
+	CHAR_RED = 0,
+	CHAR_BULE,
+	CHAR_GREEN,
+	CHAR_YELLOW,
+	CHAR_RANDOM,
+	CHAR_NON,
+};
+
 
 class PlayerController : public CharacterController
 {

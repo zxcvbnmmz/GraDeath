@@ -7,10 +7,13 @@
 Sprite::Sprite():alpha(1){
 	bitmap = nullptr;
 	scale = {1,1};
+	this->weight = { 0, 0 };
+	reverseFlag = FLIP_NONE;
 }
 
 Sprite::~Sprite(){
-	bitmap->Release();
+	if (bitmap)
+		bitmap->Release();
 }
 
 bool Sprite::Create(LPCWSTR fileName){
@@ -34,11 +37,13 @@ void Sprite::Draw(DRAW_EFFECT effect){
 	_rect.right = _rect.left + size.width;
 	_rect.bottom = _rect.top + size.height;
 
+	D2D1_SIZE_F localScale = scale;
+
 	if (reverseFlag & FLIP_HORIZONTAL){
-		scale.width *= -1;
+		localScale.width *= -1;
 	}
 	if (reverseFlag & FLIP_VERTICAL){
-		scale.height *= -1;
+		localScale.height *= -1;
 	}
 
 	D2D1::Matrix3x2F _rot, _scale, mat;
@@ -47,7 +52,7 @@ void Sprite::Draw(DRAW_EFFECT effect){
 
 	center.x = (_rect.left + _rect.right) / 2;
 	center.y = (_rect.top + _rect.bottom) / 2;
-	_scale = D2D1::Matrix3x2F::Scale(scale, center);
+	_scale = D2D1::Matrix3x2F::Scale(localScale, center);
 
 	center.x = _rect.left + weight.x;
 	center.y = _rect.top + weight.y;

@@ -3,7 +3,7 @@
 
 #include <memory>
 #include "D2D/Sprite/Sprite.h"
-
+#include "CharacterController/CharacterInfo.h"
 
 
 class SelectIcon
@@ -13,8 +13,7 @@ private:
 	IconState* iconState;
 
 	Sprite iconSprite;
-	Sprite charSprite[ 4 ];
-
+	Sprite charSprite[ 5 ];
 	Sprite selectSprite[ 5 ];
 
 public:
@@ -26,9 +25,9 @@ public:
 
 	void Draw ();
 
-	void ChangeIcon ( int, int );
+	void CursorCollision ( int, D3DXVECTOR2& );
 
-	void CursorCollision ();
+	CharacterInfo GetCharacterInfo ( int );
 
 };
 

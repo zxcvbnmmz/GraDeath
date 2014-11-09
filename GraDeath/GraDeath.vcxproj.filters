@@ -696,6 +696,9 @@
     <ClInclude Include="Include\Input\Keyboard.h">
       <Filter>ソース ファイル\Library\Input\KeyBoard</Filter>
     </ClInclude>
+    <ClInclude Include="Include\CharacterController\CharacterInfo.h">
+      <Filter>ソース ファイル\Game\CharacterController</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Resource\FbxSkinMeshShader.hlsl">

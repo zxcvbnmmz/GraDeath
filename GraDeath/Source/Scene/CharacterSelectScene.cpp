@@ -24,6 +24,12 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 	}
 
 	selectCursor->Update ();
+	for ( int i = 0; i < 4; i++ )
+	{
+		D3DXVECTOR2 pos;
+		if ( selectCursor->GetPadCursorPositon ( i, pos ) )
+			selectIcon->CursorCollision ( i, pos );
+	}
 
 	return STILL_PROCESSING;
 }
