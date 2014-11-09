@@ -91,6 +91,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source\CharacterController\CharacterController.cpp" />
     <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp" />
     <ClCompile Include="Source\D2D\Interface\D2DRenderTarget.cpp" />
     <ClCompile Include="Source\D2D\Interface\ImagingFactory.cpp" />
@@ -113,6 +114,7 @@
     <ClCompile Include="Source\Graphic\Sampler\Sampler.cpp" />
     <ClCompile Include="Source\Graphic\ShaderResource\ShaderResource.cpp" />
     <ClCompile Include="Source\Input\GamePad.cpp" />
+    <ClCompile Include="Source\Input\InputManager.cpp" />
     <ClCompile Include="Source\Input\Keyboard.cpp" />
     <ClCompile Include="Source\Model\BoneAnimeData.cpp" />
     <ClCompile Include="Source\Model\CwnBaseMesh.cpp" />
@@ -122,6 +124,7 @@
     <ClCompile Include="Source\Model\ModelSkinShader.cpp" />
     <ClCompile Include="Source\Model\ModelStaticShader.cpp" />
     <ClCompile Include="Source\Object\Character.cpp" />
+    <ClCompile Include="Source\Object\Manager\CharacterManager.cpp" />
     <ClCompile Include="Source\Object\Menu.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene.cpp" />
@@ -151,6 +154,7 @@
     <ClCompile Include="Source\Sound\Voice\SourceVoice.cpp" />
     <ClCompile Include="Source\Sound\Voice\SubmixVoice.cpp" />
     <ClCompile Include="Source\Sound\WaveDecoder.cpp" />
+    <ClCompile Include="Source\Stage\Stage.cpp" />
     <ClCompile Include="Source\System\D2DCore.cpp" />
     <ClCompile Include="Source\System\D3DCore.cpp" />
     <ClCompile Include="Source\System\System.cpp" />
@@ -158,6 +162,7 @@
     <ClCompile Include="Source\Utility\Converter.cpp" />
     <ClCompile Include="Source\Utility\Debug.cpp" />
     <ClCompile Include="Source\Utility\Delegate.cpp" />
+    <ClCompile Include="Source\Utility\ScreenShot.cpp" />
     <ClCompile Include="Source\World\World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -190,6 +195,7 @@
     <ClInclude Include="Include\Graphic\Sampler\Sampler.h" />
     <ClInclude Include="Include\Graphic\ShaderResource\ShaderResource.h" />
     <ClInclude Include="Include\Input\GamePad.h" />
+    <ClInclude Include="Include\Input\InputManager.h" />
     <ClInclude Include="Include\Input\Keyboard.h" />
     <ClInclude Include="Include\Model\BoneAnimeData.h" />
     <ClInclude Include="Include\Model\CwnBaseMesh.h" />
@@ -200,6 +206,7 @@
     <ClInclude Include="Include\Model\ModelSkinShader.h" />
     <ClInclude Include="Include\Model\ModelStaticShader.h" />
     <ClInclude Include="Include\Object\Character.h" />
+    <ClInclude Include="Include\Object\Manager\CharacterManager.h" />
     <ClInclude Include="Include\Object\Menu.h" />
     <ClInclude Include="Include\Object\Object.h" />
     <ClInclude Include="include\Scene\CharacterSelectScene.h" />
@@ -231,6 +238,7 @@
     <ClInclude Include="Include\Sound\WaveData.h" />
     <ClInclude Include="Include\Sound\WaveDecoder.h" />
     <ClInclude Include="Include\Stage\Factory\StageFactory.h" />
+    <ClInclude Include="Include\Stage\Stage.h" />
     <ClInclude Include="Include\System\D2DCore.h" />
     <ClInclude Include="Include\System\D3DCore.h" />
     <ClInclude Include="Include\System\System.h" />
@@ -241,6 +249,7 @@
     <ClInclude Include="Include\Utility\DelegateBase.h" />
     <ClInclude Include="Include\Utility\DelegateList.h" />
     <ClInclude Include="Include\Utility\SafeDelete.h" />
+    <ClInclude Include="Include\Utility\ScreenShot.h" />
     <ClInclude Include="Include\World\World.h" />
   </ItemGroup>
   <ItemGroup>

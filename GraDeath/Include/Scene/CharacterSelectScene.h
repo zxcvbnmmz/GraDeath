@@ -12,6 +12,7 @@ class CharacterSelectScene : public Scene{
 public:
 	CharacterSelectScene();
 
+
 	SCENE_STATUS Execute();
 	void Draw();
 

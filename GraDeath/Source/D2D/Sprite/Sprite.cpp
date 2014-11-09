@@ -4,20 +4,19 @@
 #include "Graphic/D2DGraphic.h"
 
 
-Sprite::Sprite():alpha(1){
-	bitmap = nullptr;
+Sprite::Sprite():alpha(1),bitmap(nullptr){
 	scale = {1,1};
-	this->weight = { 0, 0 };
-	reverseFlag = FLIP_NONE;
 }
 
 Sprite::~Sprite(){
-	if (bitmap)
+	if (bitmap){
 		bitmap->Release();
+		bitmap = nullptr;
+	}
 }
 
 bool Sprite::Create(LPCWSTR fileName){
-	assert(bitmap == NULL);
+	assert(bitmap == nullptr);
 
 	if (!D2D::CreateSprite(&bitmap, fileName)){
 		MessageBox(NULL, L"エラー", L"テクスチャの読み込みに失敗", MB_OK);
@@ -37,13 +36,11 @@ void Sprite::Draw(DRAW_EFFECT effect){
 	_rect.right = _rect.left + size.width;
 	_rect.bottom = _rect.top + size.height;
 
-	D2D1_SIZE_F localScale = scale;
-
 	if (reverseFlag & FLIP_HORIZONTAL){
-		localScale.width *= -1;
+		scale.width *= -1;
 	}
 	if (reverseFlag & FLIP_VERTICAL){
-		localScale.height *= -1;
+		scale.height *= -1;
 	}
 
 	D2D1::Matrix3x2F _rot, _scale, mat;
@@ -52,7 +49,7 @@ void Sprite::Draw(DRAW_EFFECT effect){
 
 	center.x = (_rect.left + _rect.right) / 2;
 	center.y = (_rect.top + _rect.bottom) / 2;
-	_scale = D2D1::Matrix3x2F::Scale(localScale, center);
+	_scale = D2D1::Matrix3x2F::Scale(scale, center);
 
 	center.x = _rect.left + weight.x;
 	center.y = _rect.top + weight.y;

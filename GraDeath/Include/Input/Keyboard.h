@@ -1,7 +1,7 @@
 #ifndef _KEYBOARD_H__
 #define _KEYBOARD_H__
 
-#include <D3D10.h>
+#include <D3D10_1.h>
 #include "InputState.h"
 
 enum KEY_CODE{

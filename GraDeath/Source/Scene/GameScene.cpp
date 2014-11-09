@@ -1,10 +1,11 @@
 #include "Scene/GameScene.h"
-
 #include "Scene/Factory/ResultFactory.h"
 #include "Input/Gamepad.h"
+#include "Stage/Stage.h"
+
 
 GameScene::GameScene(){
-
+	Stage::Initialize(0);
 }
 
 SCENE_STATUS GameScene::Execute(){

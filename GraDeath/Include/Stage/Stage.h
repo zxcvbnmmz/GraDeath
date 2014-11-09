@@ -3,6 +3,7 @@
 
 namespace Stage{
 	bool Initialize(int stageID);
+	void Draw();
 	void Release();
 };
 
