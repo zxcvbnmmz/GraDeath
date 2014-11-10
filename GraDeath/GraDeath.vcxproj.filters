@@ -86,9 +86,6 @@
     <Filter Include="ソース ファイル\Game\Object">
       <UniqueIdentifier>{021ee829-1c33-4ba4-b553-105299534a7e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Character">
-      <UniqueIdentifier>{45a4405f-e47e-446f-bb87-5e072ef5010d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Scene">
       <UniqueIdentifier>{7efec26a-90ca-4ee5-8dd1-ec4880063813}</UniqueIdentifier>
     </Filter>
@@ -248,9 +245,6 @@
     <Filter Include="ソース ファイル\Library\Input\Manager">
       <UniqueIdentifier>{13aca0da-7c57-4cb9-8980-0b8a0466d214}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Character\Manager">
-      <UniqueIdentifier>{9a104ccb-760c-4f2b-853d-d07edc266df6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Object\Stage">
       <UniqueIdentifier>{d4a4c2b5-27d5-45a3-a067-76fa53fe43d7}</UniqueIdentifier>
     </Filter>
@@ -276,9 +270,6 @@
     </ClCompile>
     <ClCompile Include="Source\Object\Object.cpp">
       <Filter>ソース ファイル\Game\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Character.cpp">
-      <Filter>ソース ファイル\Game\Object\Character</Filter>
     </ClCompile>
     <ClCompile Include="Source\System\Window.cpp">
       <Filter>ソース ファイル\Library\System\Window</Filter>
@@ -481,9 +472,6 @@
     <ClCompile Include="Source\Input\InputManager.cpp">
       <Filter>ソース ファイル\Library\Input\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\Manager\CharacterManager.cpp">
-      <Filter>ソース ファイル\Game\Object\Character\Manager</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Stage\Stage.cpp">
       <Filter>ソース ファイル\Game\Object\Stage</Filter>
     </ClCompile>
@@ -503,9 +491,6 @@
   <ItemGroup>
     <ClInclude Include="Include\Object\Object.h">
       <Filter>ソース ファイル\Game\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Character.h">
-      <Filter>ソース ファイル\Game\Object\Character</Filter>
     </ClInclude>
     <ClInclude Include="Include\System\System.h">
       <Filter>ソース ファイル\Library\System</Filter>
@@ -743,9 +728,6 @@
     </ClInclude>
     <ClInclude Include="Include\Input\InputManager.h">
       <Filter>ソース ファイル\Library\Input\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Manager\CharacterManager.h">
-      <Filter>ソース ファイル\Game\Object\Character\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Include\Stage\Stage.h">
       <Filter>ソース ファイル\Game\Object\Stage</Filter>

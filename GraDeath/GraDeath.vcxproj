@@ -122,9 +122,7 @@
     <ClCompile Include="Source\Model\CwnStaticMesh.cpp" />
     <ClCompile Include="Source\Model\ModelSkinShader.cpp" />
     <ClCompile Include="Source\Model\ModelStaticShader.cpp" />
-    <ClCompile Include="Source\Object\Character.cpp" />
     <ClCompile Include="Source\Object\Factory\PlayerFactory.cpp" />
-    <ClCompile Include="Source\Object\Manager\CharacterManager.cpp" />
     <ClCompile Include="Source\Object\Manager\PlayerManager.cpp" />
     <ClCompile Include="Source\Object\Menu.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
@@ -208,9 +206,7 @@
     <ClInclude Include="Include\Model\MeshDef.h" />
     <ClInclude Include="Include\Model\ModelSkinShader.h" />
     <ClInclude Include="Include\Model\ModelStaticShader.h" />
-    <ClInclude Include="Include\Object\Character.h" />
     <ClInclude Include="Include\Object\Factory\PlayerFactory.h" />
-    <ClInclude Include="Include\Object\Manager\CharacterManager.h" />
     <ClInclude Include="Include\Object\Manager\PlayerManager.h" />
     <ClInclude Include="Include\Object\Menu.h" />
     <ClInclude Include="Include\Object\Object.h" />
