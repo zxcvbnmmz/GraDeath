@@ -10,9 +10,6 @@
 #ifndef _CHARACTER_CONTROLLER_H_
 #define _CHARACTER_CONTROLLER_H_
 
-
-#define PLAYER_NUM ( 4 )
-
 #include <vector>
 
 class Character;
@@ -33,6 +30,10 @@ public:
 
 	virtual void Release () = 0;
 
+protected:
+	enum {
+		PLAYER_NUM = 4
+	};
 };
 
 #endif
