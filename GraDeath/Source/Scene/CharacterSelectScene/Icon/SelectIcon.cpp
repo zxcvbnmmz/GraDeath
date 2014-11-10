@@ -61,6 +61,9 @@ void SelectIcon::SetUp ()
 
 	for ( int i = 0; i < 4; i++ )
 	{
+		info[ i ].pType = CharacterInfo::PLAYER_TYPE::PLAYER_NON;
+		info[ i ].pcType = CharacterInfo::PC_TYPE::PC_NON;
+
 		iconState[ i ].iconNum = 5;
 		iconState[ i ].info.pType = CharacterInfo::PLAYER_TYPE::PLAYER_NON;
 		iconState[ i ].info.pcType = CharacterInfo::PC_TYPE::PC_NON;
@@ -110,6 +113,7 @@ void SelectIcon::CursorCollision ( int num, D3DXVECTOR2& _pos )
 			_pos.y >  pos.y )
 		{
 			iconState[ num ].iconNum = i;
+			iconState[ num ].info.pType = ( CharacterInfo::PLAYER_TYPE )i;
 			break;
 		}
 	} 

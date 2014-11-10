@@ -12,6 +12,8 @@ private:
 	struct IconState;
 	IconState* iconState;
 
+	CharacterInfo info[ 4 ];
+
 	Sprite iconSprite;
 	Sprite charSprite[ 5 ];
 	Sprite selectSprite[ 5 ];
