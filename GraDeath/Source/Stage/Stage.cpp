@@ -6,6 +6,7 @@
 #include <vector>
 #include <algorithm>
 #include <functional>
+#include "Utility/SafeDelete.h"
 
 namespace{
 	const static float PTM_RATIO = 32.0f;
@@ -33,6 +34,8 @@ void Stage::Draw(){
 
 void Stage::Release(){
 	World::DestoryBody(screenEdgeBody);
+	for ( auto& obj : sprites )
+		Util::safeDelete ( obj );
 }
 
 void CreateWorldEdge(){
@@ -87,8 +90,9 @@ void CreateEachStage(int stageLevel){
 	int spriteNum = 0;
 
 	for (int i = 0; i < spriteNum; ++i){
-		Sprite* sprite;
+		Sprite* sprite = new Sprite;
 		/*各種パラメータの設定*/
+		//sprite->Create ( L"Resource/Scene/Game/Stage" );
 
 		sprites.push_back(sprite);
 	}

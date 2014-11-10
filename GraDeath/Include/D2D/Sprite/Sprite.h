@@ -197,8 +197,8 @@ private:
 	D2D1_SIZE_F scale;
 	D2D1_POINT_2F skew;
 	REVERSE_FLAG reverseFlag;
-	float degree;
-	float alpha;
+	float degree = 0;
+	float alpha = 0;
 };
 
 #endif	// end of Sprite

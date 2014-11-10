@@ -5,14 +5,15 @@
 
 #include "D2D/Sprite/Sprite.h"
 
+
 struct D3DXVECTOR2;
 struct CursorState;
+
 
 class SelectCursor
 {
 private:
 	CursorState* cursorState;
-	Sprite cursorIcon[ 4 ];
 
 public:
 	SelectCursor ();
@@ -25,7 +26,12 @@ public:
 
 	void Draw ();
 
-	D3DXVECTOR2& GetPadCursorPositon ( int num );
+	bool AllSelectCheck ();
+
+	bool GetPadCursorPositon ( int, D3DXVECTOR2& );
+
+private:
+	void SubUpdate ( int );
 
 };
 

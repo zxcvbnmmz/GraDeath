@@ -21,6 +21,6 @@ SCENE_STATUS GameScene::Execute(){
 }
 
 void GameScene::Draw(){
-
+	Stage::Draw ();
 }
 

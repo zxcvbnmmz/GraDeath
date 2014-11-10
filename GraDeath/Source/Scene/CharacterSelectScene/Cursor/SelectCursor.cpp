@@ -2,12 +2,16 @@
 #include "Utility/SafeDelete.h"
 #include "Input/GamePad.h"
 
-#define MOVE_SPEED ( 2.0F )
+
+#define MOVE_SPEED ( 5.0F )
 
 struct CursorState
 {
 	D3DXVECTOR2		pos;
 	bool			active;
+	bool			selectFlg;
+	int				selectChara;
+	Sprite			icon;
 };
 
 wchar_t* cursorName = L"Resource/Scene/CharacterSelect/Cursor.png";
@@ -23,7 +27,7 @@ D3DXVECTOR2 cursorPos[ ] =
 SelectCursor::SelectCursor ()
 {
 	cursorState = new CursorState[ 4 ];
-	GamePad::setThreshold ( 0.3f );
+	GamePad::setThreshold ( 0.4f );
 }
 
 SelectCursor::~SelectCursor ()
@@ -31,44 +35,82 @@ SelectCursor::~SelectCursor ()
 	Util::safeDeleteArray ( cursorState );
 }
 
+// 初期化
 void SelectCursor::SetUp ()
 {
 	for ( int i = 0; i < 4; i++ )
 	{
 		cursorState[ i ].pos = cursorPos[ i ];
 		cursorState[ i ].active = false;
-		cursorIcon[ i ].Create ( cursorName );
-		cursorIcon[ i ].SetPosition ( cursorPos[ i ] );
+		cursorState[ i ].icon.Create ( cursorName );
+		cursorState[ i ].icon.SetPosition ( cursorPos[ i ] );
 	}
 	cursorState[ 0 ].active = true;
+	
 }
 
+// 更新
 void SelectCursor::Update ()
 {
 	float angle[ 4 ] = { 0 };
 	for ( int i = 0; i < 4; i++ )
-	{
-		if ( GamePad::getLStickState ( ( PAD_NUM )i, angle[ i ] ) )
-		{
-			cursorState[ i ].pos.x -= cos ( angle[ i ] ) * MOVE_SPEED;
-			cursorState[ i ].pos.y += sin ( angle[ i ] ) * MOVE_SPEED;
-		}
-	}
+		SubUpdate ( i );
 }
 
+// 描画
 void SelectCursor::Draw ()
 {
 	for ( int i = 0; i < 4; i++ )
 	{
 		if ( cursorState[ i ].active )
 		{
-			cursorIcon[ i ].SetPosition ( cursorState[ i ].pos );
-			cursorIcon[ i ].Draw ();
+			cursorState[ i ].icon.SetPosition ( cursorState[ i ].pos );
+			cursorState[ i ].icon.Draw ();
 		}
 	}
 }
 
-D3DXVECTOR2& SelectCursor::GetPadCursorPositon ( int num )
+bool SelectCursor::AllSelectCheck ()
 {
-	return cursorState[ num ].pos;
+	for ( int i = 0; i < 4; i++ )
+	{
+		if ( cursorState[ i ].active &&
+			!cursorState[ i ].selectFlg )
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+// 各カーソルの位置取得
+bool SelectCursor::GetPadCursorPositon ( int num, D3DXVECTOR2& _pos )
+{
+	if ( cursorState[ num ].active )
+	{
+		_pos = cursorState[ num ].pos;
+		return true;
+	}
+	return false;
+}
+
+// サブ更新
+void SelectCursor::SubUpdate ( int _num )
+{
+	PAD_NUM padID = ( PAD_NUM )_num;
+
+	if ( !cursorState[ _num ].active )
+	{
+		if ( INPUT_STATE::INPUT_PUSH == GamePad::getGamePadState ( padID, BUTTON_ID::BUTTON_START ) )
+			cursorState[ _num ].active = true;
+		else
+			return;
+	}
+
+	float angle = .0f;
+	if ( GamePad::getLStickState ( padID, angle ) )
+	{
+		cursorState[ _num ].pos.x += cos ( angle ) * MOVE_SPEED;
+		cursorState[ _num ].pos.y -= sin ( angle) * MOVE_SPEED;
+	}
 }
