@@ -484,9 +484,6 @@
     <ClCompile Include="Source\Object\Manager\CharacterManager.cpp">
       <Filter>ソース ファイル\Game\Object\Character\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CharacterController\CharacterController.cpp">
-      <Filter>ソース ファイル\Game\CharacterController</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Stage\Stage.cpp">
       <Filter>ソース ファイル\Game\Object\Stage</Filter>
     </ClCompile>
@@ -765,7 +762,8 @@
     <ClInclude Include="Include\Object\Factory\PlayerFactory.h">
       <Filter>ソース ファイル\Game\Object\Player\Factory</Filter>
     </ClInclude>
-    <ClInclude Include="inculde\Object\Manager\PlayerManager.h">
+    <ClInclude Include="Include\CharacterController\CharacterInfo.h" />
+    <ClInclude Include="Include\Object\Manager\PlayerManager.h">
       <Filter>ソース ファイル\Game\Object\Player\Manager</Filter>
     </ClInclude>
   </ItemGroup>

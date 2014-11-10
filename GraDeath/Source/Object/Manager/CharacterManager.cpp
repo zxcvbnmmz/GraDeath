@@ -6,7 +6,7 @@ namespace{
 }
 
 bool CharacterManager::Initialize(){
-	controller.Init();
+	controller.Init(0);
 
 	return true;
 }
