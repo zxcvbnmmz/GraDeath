@@ -23,11 +23,11 @@ TitleScene::TitleScene(){
 SCENE_STATUS TitleScene::Execute(){
 
 	Graphic::Camera::Update ();
-	//if (GamePad::getAnyGamePadPressed(BUTTON_A)){
+	if (GamePad::getAnyGamePadPressed(BUTTON_START)){
 		CharacterSelectFactory cf;
 		SceneFactory::Reserve(&cf);
 		return END_PROCESS;
-	//}
+	}
 
 	return STILL_PROCESSING;
 }

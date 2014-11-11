@@ -8,6 +8,11 @@ GameScene::GameScene(){
 	Stage::Initialize(0);
 }
 
+GameScene::~GameScene ()
+{
+	Stage::Release ();
+}
+
 SCENE_STATUS GameScene::Execute(){
 
 	if (GamePad::getAnyGamePadPressed(BUTTON_A)){

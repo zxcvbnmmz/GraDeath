@@ -61,9 +61,6 @@ void SelectIcon::SetUp ()
 
 	for ( int i = 0; i < 4; i++ )
 	{
-		info[ i ].pType = CharacterInfo::PLAYER_TYPE::PLAYER_NON;
-		info[ i ].pcType = CharacterInfo::PC_TYPE::PC_NON;
-
 		iconState[ i ].iconNum = 5;
 		iconState[ i ].info.pType = CharacterInfo::PLAYER_TYPE::PLAYER_NON;
 		iconState[ i ].info.pcType = CharacterInfo::PC_TYPE::PC_NON;

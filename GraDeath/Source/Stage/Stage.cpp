@@ -29,7 +29,9 @@ bool Stage::Initialize(int stageID){
 }
 
 void Stage::Draw(){
-	std::for_each(sprites[0], sprites[sprites.size()-1], std::bind2nd(std::mem_fun_ref(&Sprite::Draw),DRAW_NORMAL));
+	for ( Sprite* sprite : sprites ){
+		sprite->Draw ();
+	}
 }
 
 void Stage::Release(){
@@ -87,12 +89,14 @@ void CreateEachStage(int stageLevel){
 	}
 	*/
 
-	int spriteNum = 0;
+	int spriteNum = 1;
 
 	for (int i = 0; i < spriteNum; ++i){
 		Sprite* sprite = new Sprite;
 		/*各種パラメータの設定*/
-		//sprite->Create ( L"Resource/Scene/Game/Stage" );
+		sprite->Create ( L"Resource/Scene/Game/Stage/GroundSample.png" );
+		D3DXVECTOR2 size ( 0, 768.f - 150.f );
+		sprite->SetPosition ( size );
 
 		sprites.push_back(sprite);
 	}

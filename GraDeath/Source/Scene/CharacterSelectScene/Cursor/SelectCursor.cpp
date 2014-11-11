@@ -42,6 +42,7 @@ void SelectCursor::SetUp ()
 	{
 		cursorState[ i ].pos = cursorPos[ i ];
 		cursorState[ i ].active = false;
+		cursorState[ i ].selectFlg = false;
 		cursorState[ i ].icon.Create ( cursorName );
 		cursorState[ i ].icon.SetPosition ( cursorPos[ i ] );
 	}
@@ -62,7 +63,7 @@ void SelectCursor::Draw ()
 {
 	for ( int i = 0; i < 4; i++ )
 	{
-		if ( cursorState[ i ].active )
+		if ( cursorState[ i ].active && !cursorState[ i ].selectFlg )
 		{
 			cursorState[ i ].icon.SetPosition ( cursorState[ i ].pos );
 			cursorState[ i ].icon.Draw ();
@@ -107,10 +108,28 @@ void SelectCursor::SubUpdate ( int _num )
 			return;
 	}
 
+	Move ( _num );
+	Determination ( _num );
+}
+
+void SelectCursor::Move ( int _num )
+{
+	PAD_NUM padID = ( PAD_NUM )_num;
+
 	float angle = .0f;
 	if ( GamePad::getLStickState ( padID, angle ) )
 	{
 		cursorState[ _num ].pos.x += cos ( angle ) * MOVE_SPEED;
-		cursorState[ _num ].pos.y -= sin ( angle) * MOVE_SPEED;
+		cursorState[ _num ].pos.y -= sin ( angle ) * MOVE_SPEED;
+	}
+}
+
+void SelectCursor::Determination ( int _num )
+{
+	PAD_NUM padID = ( PAD_NUM )_num;
+
+	if ( INPUT_STATE::INPUT_PUSH == GamePad::getGamePadState ( padID, BUTTON_ID::BUTTON_A ) )
+	{
+		cursorState[ _num ].selectFlg = true;
 	}
 }

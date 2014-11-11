@@ -20,7 +20,8 @@ CharacterSelectScene::CharacterSelectScene(){
 
 SCENE_STATUS CharacterSelectScene::Execute(){
 
-	if (GamePad::getAnyGamePadPressed(BUTTON_X)){
+	if ( selectCursor->AllSelectCheck () ||
+		GamePad::getAnyGamePadPressed ( BUTTON_X ) ){
 		StageSelectFactory sf;
 		SceneFactory::Reserve(&sf);
 		return END_PROCESS;

@@ -7,6 +7,8 @@ class GameScene : public Scene{
 public:
 	GameScene();
 
+	~GameScene ();
+
 	SCENE_STATUS Execute();
 	void Draw();
 

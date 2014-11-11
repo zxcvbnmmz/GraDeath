@@ -33,6 +33,10 @@ public:
 private:
 	void SubUpdate ( int );
 
+	void Move ( int );
+
+	void Determination ( int  );
+
 };
 
 
