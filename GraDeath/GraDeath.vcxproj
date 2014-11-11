@@ -91,7 +91,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Source\CharacterController\CharacterController.cpp" />
     <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp" />
     <ClCompile Include="Source\D2D\Interface\D2DRenderTarget.cpp" />
     <ClCompile Include="Source\D2D\Interface\ImagingFactory.cpp" />
@@ -123,10 +122,11 @@
     <ClCompile Include="Source\Model\CwnStaticMesh.cpp" />
     <ClCompile Include="Source\Model\ModelSkinShader.cpp" />
     <ClCompile Include="Source\Model\ModelStaticShader.cpp" />
-    <ClCompile Include="Source\Object\Character.cpp" />
-    <ClCompile Include="Source\Object\Manager\CharacterManager.cpp" />
+    <ClCompile Include="Source\Object\Factory\PlayerFactory.cpp" />
+    <ClCompile Include="Source\Object\Manager\PlayerManager.cpp" />
     <ClCompile Include="Source\Object\Menu.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
+    <ClCompile Include="Source\Object\Player.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp" />
@@ -197,6 +197,7 @@
     <ClInclude Include="Include\Input\GamePad.h" />
     <ClInclude Include="Include\Input\InputManager.h" />
     <ClInclude Include="Include\Input\Keyboard.h" />
+    <ClInclude Include="Include\Loader\CharacterLoader.h" />
     <ClInclude Include="Include\Model\BoneAnimeData.h" />
     <ClInclude Include="Include\Model\CwnBaseMesh.h" />
     <ClInclude Include="Include\Model\CwnDecoder.h" />
@@ -205,10 +206,11 @@
     <ClInclude Include="Include\Model\MeshDef.h" />
     <ClInclude Include="Include\Model\ModelSkinShader.h" />
     <ClInclude Include="Include\Model\ModelStaticShader.h" />
-    <ClInclude Include="Include\Object\Character.h" />
-    <ClInclude Include="Include\Object\Manager\CharacterManager.h" />
+    <ClInclude Include="Include\Object\Factory\PlayerFactory.h" />
+    <ClInclude Include="Include\Object\Manager\PlayerManager.h" />
     <ClInclude Include="Include\Object\Menu.h" />
     <ClInclude Include="Include\Object\Object.h" />
+    <ClInclude Include="Include\Object\Player.h" />
     <ClInclude Include="include\Scene\CharacterSelectScene.h" />
     <ClInclude Include="Include\Scene\CharacterSelectScene\Cursor\SelectCursor.h" />
     <ClInclude Include="Include\Scene\CharacterSelectScene\Icon\SelectIcon.h" />

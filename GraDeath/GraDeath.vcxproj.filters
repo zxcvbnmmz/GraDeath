@@ -86,9 +86,6 @@
     <Filter Include="ソース ファイル\Game\Object">
       <UniqueIdentifier>{021ee829-1c33-4ba4-b553-105299534a7e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Character">
-      <UniqueIdentifier>{45a4405f-e47e-446f-bb87-5e072ef5010d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Scene">
       <UniqueIdentifier>{7efec26a-90ca-4ee5-8dd1-ec4880063813}</UniqueIdentifier>
     </Filter>
@@ -167,6 +164,9 @@
     <Filter Include="ソース ファイル\Library\Graphic\Camera">
       <UniqueIdentifier>{9908b7d4-9b5d-4a75-abdf-ea5f9f438f85}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\StageFactory">
+      <UniqueIdentifier>{7d4445dd-ca9b-4961-be22-180bcc9f39fa}</UniqueIdentifier>
+    </Filter>
     <Filter Include="ソース ファイル\Game\World">
       <UniqueIdentifier>{b02991aa-1ddb-4690-9b35-ccbca62d0431}</UniqueIdentifier>
     </Filter>
@@ -175,6 +175,9 @@
     </Filter>
     <Filter Include="ソース ファイル\Library\Graphic\D2D\Interface">
       <UniqueIdentifier>{340fe4cb-38fc-4691-a6ee-6ff07f673cf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Library\Model\AnimetionTrans">
+      <UniqueIdentifier>{8784ba23-107e-4c59-936d-9f263b2f590f}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\Game\ResourseManager">
       <UniqueIdentifier>{507ce35b-660d-487c-afcd-2627694496fa}</UniqueIdentifier>
@@ -239,14 +242,26 @@
     <Filter Include="ソース ファイル\Library\Input\KeyBoard">
       <UniqueIdentifier>{86665b5e-a945-46e3-8998-cf98a83a5296}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Stage">
-      <UniqueIdentifier>{0c50bd46-17e5-4edf-8ab2-ab1dc8131d6f}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Library\Input\Manager">
+      <UniqueIdentifier>{13aca0da-7c57-4cb9-8980-0b8a0466d214}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Stage\StageFactory">
-      <UniqueIdentifier>{7d4445dd-ca9b-4961-be22-180bcc9f39fa}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Object\Stage">
+      <UniqueIdentifier>{d4a4c2b5-27d5-45a3-a067-76fa53fe43d7}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\Other\ScreenShot">
-      <UniqueIdentifier>{03537139-e0c6-4127-84e5-e33d5e8362b7}</UniqueIdentifier>
+      <UniqueIdentifier>{02a9bad1-9c98-4597-b986-cf1b4ea62b17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Loader">
+      <UniqueIdentifier>{6312fc9c-9b4d-423a-868b-6cbfe26a45ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Player">
+      <UniqueIdentifier>{34d19fe1-f72b-4e0d-a679-de923b085fb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Player\Factory">
+      <UniqueIdentifier>{548253c3-2730-4e7b-8de3-47cc13314cdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Player\Manager">
+      <UniqueIdentifier>{5bcb69c0-c4a8-4bfa-9fa8-00fb88315e5c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -255,9 +270,6 @@
     </ClCompile>
     <ClCompile Include="Source\Object\Object.cpp">
       <Filter>ソース ファイル\Game\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Character.cpp">
-      <Filter>ソース ファイル\Game\Object\Character</Filter>
     </ClCompile>
     <ClCompile Include="Source\System\Window.cpp">
       <Filter>ソース ファイル\Library\System\Window</Filter>
@@ -457,28 +469,28 @@
     <ClCompile Include="Source\Input\Keyboard.cpp">
       <Filter>ソース ファイル\Library\Input\KeyBoard</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CharacterController\CharacterController.cpp">
-      <Filter>ソース ファイル\Game\CharacterController</Filter>
+    <ClCompile Include="Source\Input\InputManager.cpp">
+      <Filter>ソース ファイル\Library\Input\Manager</Filter>
     </ClCompile>
     <ClCompile Include="Source\Stage\Stage.cpp">
-      <Filter>ソース ファイル\Game\Stage</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\InputManager.cpp">
-      <Filter>ソース ファイル\Library\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Manager\CharacterManager.cpp">
-      <Filter>ソース ファイル\Game\Object\Character</Filter>
+      <Filter>ソース ファイル\Game\Object\Stage</Filter>
     </ClCompile>
     <ClCompile Include="Source\Utility\ScreenShot.cpp">
       <Filter>ソース ファイル\Other\ScreenShot</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Factory\PlayerFactory.cpp">
+      <Filter>ソース ファイル\Game\Object\Player\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Manager\PlayerManager.cpp">
+      <Filter>ソース ファイル\Game\Object\Player\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Player.cpp">
+      <Filter>ソース ファイル\Game\Object\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Object\Object.h">
       <Filter>ソース ファイル\Game\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Character.h">
-      <Filter>ソース ファイル\Game\Object\Character</Filter>
     </ClInclude>
     <ClInclude Include="Include\System\System.h">
       <Filter>ソース ファイル\Library\System</Filter>
@@ -649,7 +661,7 @@
       <Filter>ソース ファイル\Library\Graphic\Camera</Filter>
     </ClInclude>
     <ClInclude Include="Include\Stage\Factory\StageFactory.h">
-      <Filter>ソース ファイル\Game\Stage\StageFactory</Filter>
+      <Filter>ソース ファイル\Game\StageFactory</Filter>
     </ClInclude>
     <ClInclude Include="Include\World\World.h">
       <Filter>ソース ファイル\Game\World</Filter>
@@ -714,20 +726,27 @@
     <ClInclude Include="Include\Input\Keyboard.h">
       <Filter>ソース ファイル\Library\Input\KeyBoard</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CharacterController\CharacterInfo.h">
-      <Filter>ソース ファイル\Game\CharacterController</Filter>
+    <ClInclude Include="Include\Input\InputManager.h">
+      <Filter>ソース ファイル\Library\Input\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Include\Stage\Stage.h">
-      <Filter>ソース ファイル\Game\Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Input\InputManager.h">
-      <Filter>ソース ファイル\Library\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Manager\CharacterManager.h">
-      <Filter>ソース ファイル\Game\Object\Character</Filter>
+      <Filter>ソース ファイル\Game\Object\Stage</Filter>
     </ClInclude>
     <ClInclude Include="Include\Utility\ScreenShot.h">
       <Filter>ソース ファイル\Other\ScreenShot</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Loader\CharacterLoader.h">
+      <Filter>ソース ファイル\Game\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Player.h">
+      <Filter>ソース ファイル\Game\Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Factory\PlayerFactory.h">
+      <Filter>ソース ファイル\Game\Object\Player\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CharacterController\CharacterInfo.h" />
+    <ClInclude Include="Include\Object\Manager\PlayerManager.h">
+      <Filter>ソース ファイル\Game\Object\Player\Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -10,12 +10,7 @@
 #ifndef _CHARACTER_CONTROLLER_H_
 #define _CHARACTER_CONTROLLER_H_
 
-
-#define PLAYER_NUM ( 4 )
-
 #include <vector>
-
-class Character;
 
 class CharacterController
 {
@@ -24,15 +19,16 @@ public:
 
 	virtual ~CharacterController (){}
 
-	virtual void Init () = 0;
+	virtual void Init (int _padID) = 0;
 
-	virtual void Update () = 0;
+	virtual void Update (class Player* _player) = 0;
 
-	virtual void Draw () = 0;
-	void Draw(Character* character);
+	virtual void Draw (class Player* _player) = 0;
 
 	virtual void Release () = 0;
 
+protected:
+	int padID;
 };
 
 #endif
