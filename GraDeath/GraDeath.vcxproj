@@ -90,6 +90,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Include\Object\ObjectParameter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp" />
     <ClCompile Include="Source\D2D\Interface\D2DRenderTarget.cpp" />
@@ -115,6 +116,7 @@
     <ClCompile Include="Source\Input\GamePad.cpp" />
     <ClCompile Include="Source\Input\InputManager.cpp" />
     <ClCompile Include="Source\Input\Keyboard.cpp" />
+    <ClCompile Include="Source\Loader\PlayerLoader.cpp" />
     <ClCompile Include="Source\Model\BoneAnimeData.cpp" />
     <ClCompile Include="Source\Model\CwnBaseMesh.cpp" />
     <ClCompile Include="Source\Model\CwnDecoder.cpp" />
@@ -198,6 +200,7 @@
     <ClInclude Include="Include\Input\InputManager.h" />
     <ClInclude Include="Include\Input\Keyboard.h" />
     <ClInclude Include="Include\Loader\CharacterLoader.h" />
+    <ClInclude Include="Include\Loader\PlayerLoader.h" />
     <ClInclude Include="Include\Model\BoneAnimeData.h" />
     <ClInclude Include="Include\Model\CwnBaseMesh.h" />
     <ClInclude Include="Include\Model\CwnDecoder.h" />
@@ -210,6 +213,7 @@
     <ClInclude Include="Include\Object\Manager\PlayerManager.h" />
     <ClInclude Include="Include\Object\Menu.h" />
     <ClInclude Include="Include\Object\Object.h" />
+    <ClInclude Include="Include\Object\ObjectParameter.h" />
     <ClInclude Include="Include\Object\Player.h" />
     <ClInclude Include="include\Scene\CharacterSelectScene.h" />
     <ClInclude Include="Include\Scene\CharacterSelectScene\Cursor\SelectCursor.h" />

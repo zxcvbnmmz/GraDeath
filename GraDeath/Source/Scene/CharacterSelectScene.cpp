@@ -7,7 +7,8 @@
 #include "Scene/CharacterSelectScene/Cursor/SelectCursor.h"
 
 #include "Utility/ScreenShot.h"
-
+#include "Object/Manager/PlayerManager.h"
+#include "CharacterController/CharacterInfo.h"
 
 CharacterSelectScene::CharacterSelectScene(){
 
@@ -21,7 +22,19 @@ CharacterSelectScene::CharacterSelectScene(){
 SCENE_STATUS CharacterSelectScene::Execute(){
 
 	if ( selectCursor->AllSelectCheck () ||
-		GamePad::getAnyGamePadPressed ( BUTTON_X ) ){
+		GamePad::getAnyGamePadPressed ( BUTTON_X ) ||
+		Keyboard::CheckKey ( KC_ENTER ) ){
+
+		CharacterInfo info[4];
+		for ( int i = 0; i < 4; i++ )
+		{
+			info[ i ].pType = CharacterInfo::PLAYER_TYPE::PLAYER_RED;
+			info[ i ].pcType = CharacterInfo::PC_TYPE::PC_PLAYER;
+			//info[ i ] = selectIcon->GetCharacterInfo ( i );
+		}
+		PlayerData date = &info;
+		PlayerManager::Init ( ( PlayerData* )info );
+
 		StageSelectFactory sf;
 		SceneFactory::Reserve(&sf);
 		return END_PROCESS;

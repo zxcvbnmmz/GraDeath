@@ -2,6 +2,9 @@
 #include "CharacterController/CharacterController.h"
 #include "Object/Player.h"
 
+#include "CharacterController/CharacterInfo.h"
+#include "Loader/PlayerLoader.h"
+
 namespace{
 	const static int PLAYERS = 4;
 	CharacterController* controllers[PLAYERS];
@@ -9,9 +12,11 @@ namespace{
 }
 
 bool PlayerManager::Init(PlayerData* _data){
+	CharacterInfo* data = ( CharacterInfo* )_data;
 	for (int i = 0; i < PLAYERS; ++i){
-		controllers[i]->Init(0);
-		players[i].Init("");
+		data[ i ];
+		//controllers[i]->Init(0);
+		players[ i ].Init ( PlayerLoader::GetLoadFileName ( data[i].pType ) );
 	}
 
 	return true;

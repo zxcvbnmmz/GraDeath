@@ -6,6 +6,8 @@
 #include "Scene/Factory/CharacterSelectFactory.h"
 #include "Input/Gamepad.h"
 
+#include "Input\Keyboard.h"
+
 Sprite sprite;
 
 TitleScene::TitleScene(){
@@ -23,7 +25,8 @@ TitleScene::TitleScene(){
 SCENE_STATUS TitleScene::Execute(){
 
 	Graphic::Camera::Update ();
-	if (GamePad::getAnyGamePadPressed(BUTTON_START)){
+	if (GamePad::getAnyGamePadPressed(BUTTON_START) ||
+		Keyboard::CheckKey ( KC_ENTER ) ){
 		CharacterSelectFactory cf;
 		SceneFactory::Reserve(&cf);
 		return END_PROCESS;
