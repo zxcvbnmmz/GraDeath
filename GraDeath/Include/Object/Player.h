@@ -8,6 +8,7 @@
 using namespace std;
 
 class Sprite;
+struct ObjectParameter;
 
 class Player : public Object{
 	friend class PlayerController;
@@ -23,6 +24,7 @@ public:
 
 private:
 	vector<vector<shared_ptr<Sprite>>> sprites;
+	shared_ptr<ObjectParameter> parameter;
 	float hitPoint;
 };
 
