@@ -218,9 +218,6 @@
     <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Factory">
       <UniqueIdentifier>{2bf87f19-2ef0-4d49-9a82-c256ff970cf8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Menu">
-      <UniqueIdentifier>{73f2a9a2-5279-415f-933f-b35c8649c462}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Scene\StageSelect">
       <UniqueIdentifier>{e53e33bf-2aed-4579-891c-f7f6330c3cce}</UniqueIdentifier>
     </Filter>
@@ -257,11 +254,14 @@
     <Filter Include="ソース ファイル\Game\Object\Player">
       <UniqueIdentifier>{34d19fe1-f72b-4e0d-a679-de923b085fb7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Player\Factory">
-      <UniqueIdentifier>{548253c3-2730-4e7b-8de3-47cc13314cdd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Object\Player\Manager">
       <UniqueIdentifier>{5bcb69c0-c4a8-4bfa-9fa8-00fb88315e5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Shape">
+      <UniqueIdentifier>{2b4f57ed-7259-4b89-a780-3b934242ab27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Direction">
+      <UniqueIdentifier>{ba166d44-106c-4631-8103-de81116d8fe3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -436,9 +436,6 @@
     <ClCompile Include="Source\Scene\GameScene.cpp">
       <Filter>ソース ファイル\Game\Scene\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\Menu.cpp">
-      <Filter>ソース ファイル\Game\Object\Menu</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Scene\StageSelectScene.cpp">
       <Filter>ソース ファイル\Game\Scene\StageSelect</Filter>
     </ClCompile>
@@ -478,14 +475,14 @@
     <ClCompile Include="Source\Utility\ScreenShot.cpp">
       <Filter>ソース ファイル\Other\ScreenShot</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\Factory\PlayerFactory.cpp">
-      <Filter>ソース ファイル\Game\Object\Player\Factory</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Object\Manager\PlayerManager.cpp">
       <Filter>ソース ファイル\Game\Object\Player\Manager</Filter>
     </ClCompile>
     <ClCompile Include="Source\Object\Player.cpp">
       <Filter>ソース ファイル\Game\Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharacterController\CharacterController.cpp">
+      <Filter>ソース ファイル\Game\CharacterController</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -696,9 +693,6 @@
     <ClInclude Include="Include\Scene\GameScene.h">
       <Filter>ソース ファイル\Game\Scene\Game</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\Menu.h">
-      <Filter>ソース ファイル\Game\Object\Menu</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Scene\StageSelectScene.h">
       <Filter>ソース ファイル\Game\Scene\StageSelect</Filter>
     </ClInclude>
@@ -741,12 +735,18 @@
     <ClInclude Include="Include\Object\Player.h">
       <Filter>ソース ファイル\Game\Object\Player</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\Factory\PlayerFactory.h">
-      <Filter>ソース ファイル\Game\Object\Player\Factory</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CharacterController\CharacterInfo.h" />
     <ClInclude Include="Include\Object\Manager\PlayerManager.h">
       <Filter>ソース ファイル\Game\Object\Player\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\CollisionShape.h">
+      <Filter>ソース ファイル\Game\Object\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Direction\Direction.h">
+      <Filter>ソース ファイル\Game\Direction</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Direction\Fade.h">
+      <Filter>ソース ファイル\Game\Direction</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

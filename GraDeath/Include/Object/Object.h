@@ -17,7 +17,6 @@ public:
 	void SetScaleY(float y);
 
 	void SetRotation(float _rot);
-	void Move(float x, float y);
 
 protected:
 	b2Body* body;

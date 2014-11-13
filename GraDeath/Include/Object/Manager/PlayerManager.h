@@ -6,6 +6,7 @@ typedef void* PlayerData;
 
 namespace PlayerManager{
 	bool Init(PlayerData* data);
+	void Release();
 	void Update();
 	void Draw();
 };

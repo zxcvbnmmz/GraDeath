@@ -91,6 +91,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source\CharacterController\CharacterController.cpp" />
     <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp" />
     <ClCompile Include="Source\D2D\Interface\D2DRenderTarget.cpp" />
     <ClCompile Include="Source\D2D\Interface\ImagingFactory.cpp" />
@@ -122,9 +123,7 @@
     <ClCompile Include="Source\Model\CwnStaticMesh.cpp" />
     <ClCompile Include="Source\Model\ModelSkinShader.cpp" />
     <ClCompile Include="Source\Model\ModelStaticShader.cpp" />
-    <ClCompile Include="Source\Object\Factory\PlayerFactory.cpp" />
     <ClCompile Include="Source\Object\Manager\PlayerManager.cpp" />
-    <ClCompile Include="Source\Object\Menu.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
     <ClCompile Include="Source\Object\Player.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene.cpp" />
@@ -180,6 +179,8 @@
     <ClInclude Include="Include\D2D\Sprite\SpriteDecoder.h" />
     <ClInclude Include="Include\D3D\Device\Device.h" />
     <ClInclude Include="Include\D3D\SwapChain\SwapChain.h" />
+    <ClInclude Include="Include\Direction\Direction.h" />
+    <ClInclude Include="Include\Direction\Fade.h" />
     <ClInclude Include="Include\Graphic\BlendState\BlendState.h" />
     <ClInclude Include="Include\Graphic\Buffer\Buffer.h" />
     <ClInclude Include="Include\Graphic\Buffer\ConstantBuffer.h" />
@@ -206,9 +207,8 @@
     <ClInclude Include="Include\Model\MeshDef.h" />
     <ClInclude Include="Include\Model\ModelSkinShader.h" />
     <ClInclude Include="Include\Model\ModelStaticShader.h" />
-    <ClInclude Include="Include\Object\Factory\PlayerFactory.h" />
+    <ClInclude Include="Include\Object\CollisionShape.h" />
     <ClInclude Include="Include\Object\Manager\PlayerManager.h" />
-    <ClInclude Include="Include\Object\Menu.h" />
     <ClInclude Include="Include\Object\Object.h" />
     <ClInclude Include="Include\Object\Player.h" />
     <ClInclude Include="include\Scene\CharacterSelectScene.h" />
