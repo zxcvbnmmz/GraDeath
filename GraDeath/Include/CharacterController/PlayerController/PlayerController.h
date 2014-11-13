@@ -33,11 +33,19 @@ public:
 
 	void Init (int padID);
 
-	void Update ();
+	void Update(class Player* _player);
+	void Draw(class Player* _player);
 
-	void Draw ();
 
 	void Release ();
+
+private:
+	virtual void Idle(Player*);
+	virtual void Run(Player*);
+	virtual void Walk(Player*);
+	virtual void Attack(Player*);
+	virtual void Damage(Player*);
+	virtual void Jump(Player*);
 };
 
 #endif

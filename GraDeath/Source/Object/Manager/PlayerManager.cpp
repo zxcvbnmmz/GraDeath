@@ -2,9 +2,6 @@
 #include "CharacterController/CharacterController.h"
 #include "Object/Player.h"
 
-#include "CharacterController/CharacterInfo.h"
-#include "Loader/PlayerLoader.h"
-
 namespace{
 	const static int PLAYERS = 4;
 	CharacterController* controllers[PLAYERS];
@@ -12,14 +9,27 @@ namespace{
 }
 
 bool PlayerManager::Init(PlayerData* _data){
-	CharacterInfo* data = ( CharacterInfo* )_data;
+	/*
+	ここら辺でロード
+	現在PlayerDataとなっているのは初期化に必要なデータ群
+	どのプレイヤーがどのキャラクーを使うのかなどの情報が入っているはず
+	それらのデータを使って下記の初期化を行う
+	playersをコントローラー順にソートするとかやるならもここでやる
+	*/
+
 	for (int i = 0; i < PLAYERS; ++i){
-		data[ i ];
-		//controllers[i]->Init(0);
-		players[ i ].Init ( PlayerLoader::GetLoadFileName ( data[i].pType ) );
+		controllers[i]->Init(i);
+		players[i].Init("");
 	}
 
 	return true;
+}
+
+void PlayerManager::Release(){
+	for (int i = 0; i < PLAYERS; ++i){
+		controllers[i]->Release();
+		players[i].Release();
+	}
 }
 
 void PlayerManager::Update(){
@@ -30,7 +40,7 @@ void PlayerManager::Update(){
 
 void PlayerManager::Draw(){
 	for (int i = 0; i < PLAYERS; ++i){
-
+		controllers[i]->Draw(&players[i]);
 	}
 }
 
