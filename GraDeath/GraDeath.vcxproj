@@ -159,6 +159,8 @@
     <ClCompile Include="Source\System\D3DCore.cpp" />
     <ClCompile Include="Source\System\System.cpp" />
     <ClCompile Include="Source\System\Window.cpp" />
+    <ClCompile Include="Source\UI\UI.cpp" />
+    <ClCompile Include="Source\UI\UIManager.cpp" />
     <ClCompile Include="Source\Utility\Converter.cpp" />
     <ClCompile Include="Source\Utility\Debug.cpp" />
     <ClCompile Include="Source\Utility\Delegate.cpp" />
@@ -248,6 +250,8 @@
     <ClInclude Include="Include\System\D3DCore.h" />
     <ClInclude Include="Include\System\System.h" />
     <ClInclude Include="Include\System\Window.h" />
+    <ClInclude Include="Include\UI\UI.h" />
+    <ClInclude Include="Include\UI\UIManager.h" />
     <ClInclude Include="Include\Utility\Converter.h" />
     <ClInclude Include="Include\Utility\Debug.h" />
     <ClInclude Include="Include\Utility\Delegate.h" />
