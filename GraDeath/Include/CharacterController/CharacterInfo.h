@@ -25,4 +25,11 @@ struct CharacterInfo
 	PC_TYPE		pcType;
 };
 
+namespace CharacterInfoFunc
+{
+	void SetCharacterInfo ( CharacterInfo* _info );
+
+	CharacterInfo* GetCharacterInfo ();
+}
+
 #endif

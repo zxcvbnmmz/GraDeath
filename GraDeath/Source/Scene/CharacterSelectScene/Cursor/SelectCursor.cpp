@@ -1,4 +1,5 @@
 #include "Scene/CharacterSelectScene/Cursor/SelectCursor.h"
+#include "Scene/CharacterSelectScene/Icon/SelectIcon.h"
 #include "Utility/SafeDelete.h"
 #include "Input/GamePad.h"
 
@@ -28,6 +29,7 @@ SelectCursor::SelectCursor ()
 {
 	cursorState = new CursorState[ 4 ];
 	GamePad::setThreshold ( 0.4f );
+	icon = std::shared_ptr<SelectIcon> ( new SelectIcon );
 }
 
 SelectCursor::~SelectCursor ()
@@ -47,7 +49,8 @@ void SelectCursor::SetUp ()
 		cursorState[ i ].icon.SetPosition ( cursorPos[ i ] );
 	}
 	cursorState[ 0 ].active = true;
-	
+
+	icon->SetUp ();
 }
 
 // 更新
@@ -55,12 +58,17 @@ void SelectCursor::Update ()
 {
 	float angle[ 4 ] = { 0 };
 	for ( int i = 0; i < 4; i++ )
+	{
 		SubUpdate ( i );
+		if ( cursorState[ i ].active )
+			icon->CursorCollision ( i, cursorState[ i ].pos );
+	}
 }
 
 // 描画
 void SelectCursor::Draw ()
 {
+	icon->Draw ();
 	for ( int i = 0; i < 4; i++ )
 	{
 		if ( cursorState[ i ].active && !cursorState[ i ].selectFlg )
@@ -84,16 +92,11 @@ bool SelectCursor::AllSelectCheck ()
 	return true;
 }
 
-// 各カーソルの位置取得
-bool SelectCursor::GetPadCursorPositon ( int num, D3DXVECTOR2& _pos )
+CharacterInfo SelectCursor::GetCharacterInfo ( int _num )
 {
-	if ( cursorState[ num ].active )
-	{
-		_pos = cursorState[ num ].pos;
-		return true;
-	}
-	return false;
+	return icon->GetCharacterInfo ( _num );
 }
+
 
 // サブ更新
 void SelectCursor::SubUpdate ( int _num )
@@ -128,7 +131,8 @@ void SelectCursor::Determination ( int _num )
 {
 	PAD_NUM padID = ( PAD_NUM )_num;
 
-	if ( INPUT_STATE::INPUT_PUSH == GamePad::getGamePadState ( padID, BUTTON_ID::BUTTON_A ) )
+	if ( INPUT_STATE::INPUT_PUSH == GamePad::getGamePadState ( padID, BUTTON_ID::BUTTON_A ) ||
+		icon->GetCharacterInfo( _num ).pType != CharacterInfo::PLAYER_TYPE::PLAYER_NON )
 	{
 		cursorState[ _num ].selectFlg = true;
 	}

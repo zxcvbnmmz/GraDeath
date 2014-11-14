@@ -1,6 +1,10 @@
 #ifndef _OBJECT_PARAMETER_H_
 #define _OBJECT_PARAMETER_H_
 
+#include <vector>
+#include <D3DX10math.h>
+#include <memory>
+
 struct CollisionParameter
 {
 	int	collisionModel;
@@ -20,11 +24,14 @@ struct AnimetionParameter
 	int	annimaType;
 	int	animaCount;
 	int	effectCount;
-	char*	effectFile;
+	std::shared_ptr<char> effectFile;
 	int	soundCount;
-	char*	soudnFile;
+	std::shared_ptr<char> soudnFile;
 	int	shortformCount;
-	CollisionParameter* collisionParameter;
+
+	D3DXVECTOR2 size;
+
+	std::vector<CollisionParameter*> collisionParameter;
 
 	AnimetionParameter (){}
 };
@@ -32,13 +39,14 @@ struct AnimetionParameter
 struct ObjectParameter
 {
 	int count;
-	char* fileName;
+	std::shared_ptr<char> fileName;
 	int widthLength;
 	int heightLength;
-	AnimetionParameter* animeParameter;
+
+	std::vector<AnimetionParameter*> animeParameter;
 
 	ObjectParameter (){}
 };
 
 
-#endif	// end of CharacterLoader
+#endif

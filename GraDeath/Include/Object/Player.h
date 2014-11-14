@@ -9,6 +9,7 @@ using namespace std;
 
 class Sprite;
 struct ObjectParameter;
+struct AnimetionParameter;
 
 class Player : public Object{
 	friend class PlayerController;
@@ -23,8 +24,13 @@ public:
 	void AddForce(b2Vec2& _force);
 
 private:
+	void SetParameter ( ObjectParameter& _param );
+
+	//void Set
+
 	vector<vector<shared_ptr<Sprite>>> sprites;
-	shared_ptr<ObjectParameter> parameter;
+	vector<shared_ptr<AnimetionParameter>> animeParameter;
+	shared_ptr<Sprite> sprite;
 	float hitPoint;
 };
 

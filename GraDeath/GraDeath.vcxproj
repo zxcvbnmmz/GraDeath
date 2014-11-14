@@ -90,6 +90,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Include\CharacterController\CharacterInfo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Source\CharacterController\CharacterController.cpp" />
     <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp" />
@@ -213,6 +214,7 @@
     <ClInclude Include="Include\Object\Manager\PlayerManager.h" />
     <ClInclude Include="Include\Object\Object.h" />
     <ClInclude Include="Include\Object\ObjectParameter.h" />
+    <ClInclude Include="Include\Object\ObjectParameterDefine.h" />
     <ClInclude Include="Include\Object\Player.h" />
     <ClInclude Include="include\Scene\CharacterSelectScene.h" />
     <ClInclude Include="Include\Scene\CharacterSelectScene\Cursor\SelectCursor.h" />

@@ -4,8 +4,6 @@
 #include "Scene.h"
 #include <memory>
 
-class SelectIcon;
-class CharacterIcon;
 class SelectCursor;
 
 class CharacterSelectScene : public Scene{
@@ -17,7 +15,6 @@ public:
 	void Draw();
 
 private:
-	std::shared_ptr< SelectIcon >		selectIcon;
 	std::shared_ptr< SelectCursor >		selectCursor;
 };
 

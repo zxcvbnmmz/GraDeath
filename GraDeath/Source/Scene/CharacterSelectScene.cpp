@@ -12,9 +12,6 @@
 
 CharacterSelectScene::CharacterSelectScene(){
 
-	selectIcon = std::shared_ptr< SelectIcon > ( new SelectIcon );
-	selectIcon->SetUp ();
-
 	selectCursor = std::shared_ptr< SelectCursor > ( new SelectCursor );
 	selectCursor->SetUp ();
 }
@@ -30,7 +27,7 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 		{
 			info[ i ].pType = CharacterInfo::PLAYER_TYPE::PLAYER_RED;
 			info[ i ].pcType = CharacterInfo::PC_TYPE::PC_PLAYER;
-			//info[ i ] = selectIcon->GetCharacterInfo ( i );
+			//info[ i ] = selectCursor->GetCharacterInfo ( i );
 		}
 		PlayerData date = &info;
 		PlayerManager::Init ( ( PlayerData* )info );
@@ -48,18 +45,10 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 	}
 
 	selectCursor->Update ();
-	for ( int i = 0; i < 4; i++ )
-	{
-		D3DXVECTOR2 pos;
-		if ( selectCursor->GetPadCursorPositon ( i, pos ) )
-			selectIcon->CursorCollision ( i, pos );
-	}
-
 	return STILL_PROCESSING;
 }
 
 void CharacterSelectScene::Draw(){
-	selectIcon->Draw ();
 	selectCursor->Draw ();
 }
 

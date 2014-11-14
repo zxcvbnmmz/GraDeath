@@ -3,7 +3,7 @@
 #include "Loader/PlayerLoader.h"
 #include "Object/ObjectParameter.h"
 #include <assert.h>
-
+#include <string>
 
 // アニメーションのループ
 struct AnimationData
@@ -49,9 +49,11 @@ namespace PlayerLoader
 		ifs.read ( ( char* )&temp, sizeof( char ) );
 		parameter.count = static_cast< int >( temp );
 
-		char* file = new char[ parameter.count ];
-		ifs.read ( ( char* )file, sizeof( char )* parameter.count );
-		parameter.fileName = file;
+		parameter.fileName = std::shared_ptr<char> ( new char[ parameter.count ], []( char* str ){
+			delete[] str;
+			str = nullptr;
+		} );
+		ifs.read ( ( char* )parameter.fileName.get(), sizeof( char )* parameter.count );
 
 		ifs.read ( ( char* )&temp, sizeof( char ) );
 		parameter.widthLength = static_cast< int >( temp );
