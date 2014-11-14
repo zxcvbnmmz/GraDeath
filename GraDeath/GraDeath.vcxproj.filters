@@ -269,8 +269,8 @@
     <Filter Include="ソース ファイル\Game\Loader\Player">
       <UniqueIdentifier>{fa8fc087-9923-4533-9465-f91706ca45cf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\CharacterController\CharacterInfo">
-      <UniqueIdentifier>{0fa9bf81-9099-4475-a995-1742886074a6}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\UI">
+      <UniqueIdentifier>{000948f6-77d1-4e37-8a19-d29c26d56c88}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -496,8 +496,11 @@
     <ClCompile Include="Source\Loader\PlayerLoader.cpp">
       <Filter>ソース ファイル\Game\Loader\Player</Filter>
     </ClCompile>
-    <ClCompile Include="Include\CharacterController\CharacterInfo.cpp">
-      <Filter>ソース ファイル\Game\CharacterController\CharacterInfo</Filter>
+    <ClCompile Include="Source\UI\UIManager.cpp">
+      <Filter>ソース ファイル\Game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\UI\UI.cpp">
+      <Filter>ソース ファイル\Game\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -768,11 +771,14 @@
     <ClInclude Include="Include\Loader\PlayerLoader.h">
       <Filter>ソース ファイル\Game\Loader\Player</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\ObjectParameterDefine.h">
-      <Filter>ソース ファイル\Game\Object\ObjectParameter</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CharacterController\CharacterInfo.h">
-      <Filter>ソース ファイル\Game\CharacterController\CharacterInfo</Filter>
+      <Filter>ソース ファイル\Game\CharacterController</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\UI\UI.h">
+      <Filter>ソース ファイル\Game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\UI\UIManager.h">
+      <Filter>ソース ファイル\Game\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,9 +6,11 @@ public:
 	Direction();
 	virtual ~Direction();
 
-	virtual void Advance()=0;
+	void Advance();
 	virtual void Draw()=0;
 
+private:
+	float frame;
 	class Sprite* sprite;
 };
 

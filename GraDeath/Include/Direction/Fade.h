@@ -5,6 +5,7 @@
 
 class Fade : public Direction{
 public:
+	Fade();
 	
 };
 

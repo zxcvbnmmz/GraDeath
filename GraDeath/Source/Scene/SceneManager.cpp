@@ -7,6 +7,7 @@
 #include "World/World.h"
 
 #include "Input/InputManager.h"
+#include "UI/UIManager.h"
 
 namespace{
 	std::stack<Scene*> scenes;
@@ -20,6 +21,7 @@ bool SceneManager::Initialize(){
 	SceneFactory::Stack(&tf);
 	Graphic::SetClearColor ( 0, 0, 1, 1 );
 	return true;
+
 }
 
 void SceneManager::Release(){
@@ -72,6 +74,7 @@ void SceneManager::Draw(){
 	Graphic::D2D::BeginDraw();
 
 	scenes.top()->Draw();
+	UIManager::Draw();
 
 	Graphic::D2D::EndDraw();
 	Graphic::Present ( 0, 0 );
