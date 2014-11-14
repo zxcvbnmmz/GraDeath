@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include "Loader/PlayerLoader.h"
+#include "Object/ObjectParameter.h"
+#include <assert.h>
 
 
 // アニメーションのループ
@@ -37,14 +39,11 @@ char* playerIconName[ ] =
 namespace PlayerLoader
 {
 
-	ObjectParameter LoadFile ( const char* _filename )
+	void LoadFile ( const char* _filename, ObjectParameter& parameter )
 	{
 		std::ifstream ifs ( _filename, std::ios::binary );
 
-		ObjectParameter parameter;
-
-		if ( ifs.fail () )
-			return parameter;
+		assert ( !ifs.fail () );
 		
 		char temp;
 		ifs.read ( ( char* )&temp, sizeof( char ) );
@@ -60,8 +59,6 @@ namespace PlayerLoader
 		ifs.read ( ( char* )&temp, sizeof( char ) );
 		int h_count = static_cast< int >( temp );
 		parameter.heightLength = static_cast< int >( temp );
-
-		return parameter;
 	}
 
 	char* GetLoadFileName ( CharacterInfo::PLAYER_TYPE _type )

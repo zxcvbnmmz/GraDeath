@@ -90,7 +90,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Include\Object\ObjectParameter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Source\CharacterController\CharacterController.cpp" />
     <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp" />

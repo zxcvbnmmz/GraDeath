@@ -22,7 +22,7 @@ bool PlayerManager::Init(PlayerData* _data){
 	CharacterInfo* data = ( CharacterInfo* )_data;
 
 	for (int i = 0; i < PLAYERS; ++i){
-		controllers[i]->Init(i);
+		//controllers[i]->Init(i);
 		players[ i ].Init ( PlayerLoader::GetLoadFileName ( data[ i ].pType ) );
 	}
 

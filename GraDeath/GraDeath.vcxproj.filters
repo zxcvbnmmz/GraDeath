@@ -263,6 +263,12 @@
     <Filter Include="ソース ファイル\Game\Direction">
       <UniqueIdentifier>{ba166d44-106c-4631-8103-de81116d8fe3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Object\ObjectParameter">
+      <UniqueIdentifier>{37c39109-d9ff-4e62-a2b4-86fc030132c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Loader\Player">
+      <UniqueIdentifier>{fa8fc087-9923-4533-9465-f91706ca45cf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -483,6 +489,9 @@
     </ClCompile>
     <ClCompile Include="Source\CharacterController\CharacterController.cpp">
       <Filter>ソース ファイル\Game\CharacterController</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Loader\PlayerLoader.cpp">
+      <Filter>ソース ファイル\Game\Loader\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -735,7 +744,6 @@
     <ClInclude Include="Include\Object\Player.h">
       <Filter>ソース ファイル\Game\Object\Player</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CharacterController\CharacterInfo.h" />
     <ClInclude Include="Include\Object\Manager\PlayerManager.h">
       <Filter>ソース ファイル\Game\Object\Player\Manager</Filter>
     </ClInclude>
@@ -747,6 +755,15 @@
     </ClInclude>
     <ClInclude Include="Include\Direction\Fade.h">
       <Filter>ソース ファイル\Game\Direction</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\ObjectParameter.h">
+      <Filter>ソース ファイル\Game\Object\ObjectParameter</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Loader\PlayerLoader.h">
+      <Filter>ソース ファイル\Game\Loader\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CharacterController\CharacterInfo.h">
+      <Filter>ソース ファイル\Game\CharacterController</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

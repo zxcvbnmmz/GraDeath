@@ -2,13 +2,14 @@
 #define _PLAYER_LOADER_H_
 
 #include "CharacterController/CharacterInfo.h"
-#include "Object/ObjectParameter.h"
 
+
+struct ObjectParameter;
 
 namespace PlayerLoader
 {
 
-	ObjectParameter LoadFile ( const char* _filename );
+	void LoadFile ( const char* _filename, ObjectParameter& parameter );
 
 	char* GetLoadFileName ( CharacterInfo::PLAYER_TYPE _type );
 
