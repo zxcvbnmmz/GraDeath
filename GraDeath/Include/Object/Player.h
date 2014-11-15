@@ -26,8 +26,6 @@ public:
 private:
 	void SetParameter ( ObjectParameter& _param );
 
-	//void Set
-
 	vector<vector<shared_ptr<Sprite>>> sprites;
 	vector<shared_ptr<AnimetionParameter>> animeParameter;
 	shared_ptr<Sprite> sprite;

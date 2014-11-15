@@ -16,6 +16,7 @@ bool Player::Init(const char* fileName){
 	ObjectParameter objParameter;
 	PlayerLoader::LoadFile ( fileName, objParameter );
 
+	// 素材が来たらこの処理を変更
 	std::wstring file = L"Resource/Object/Player/Player_Test.bmp";
 	sprite->Create ( file.c_str () );
 
@@ -44,6 +45,7 @@ void Player::SetParameter ( ObjectParameter& _param )
 
 		for ( int j = 0; j < _param.widthLength; j++ )
 		{
+			// エディタ読み込みが終了後ここを変更
 			//AnimetionParameter* temp = _param.animeParameter[ j ];
 			param->annimaType = 0; // temp->annimaType;
 			param->animaCount = _param.widthLength; //temp->animaCount;
@@ -51,7 +53,7 @@ void Player::SetParameter ( ObjectParameter& _param )
 			//strcpy_s ( param->soudnFile, param->soundCount, temp->soudnFile );
 			//param->shortformCount = temp->shortformCount;
 
-
+			//param->collisionParameter = std::move ( param->collisionParameter );
 		}
 		animeParameter.push_back ( param );
 	}

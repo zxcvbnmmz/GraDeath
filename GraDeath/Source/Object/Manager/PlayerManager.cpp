@@ -1,5 +1,6 @@
 #include "Object/Manager/PlayerManager.h"
 #include "CharacterController/CharacterController.h"
+#include "CharacterController/PlayerController/PlayerController.h"
 #include "Object/Player.h"
 
 #include "CharacterController/CharacterInfo.h"
@@ -22,6 +23,7 @@ bool PlayerManager::Init(PlayerData* _data){
 	CharacterInfo* data = ( CharacterInfo* )_data;
 
 	for (int i = 0; i < PLAYERS; ++i){
+		controllers[ i ] = new PlayerController;
 		//controllers[i]->Init(i);
 		players[ i ].Init ( PlayerLoader::GetLoadFileName ( data[ i ].pType ) );
 	}
