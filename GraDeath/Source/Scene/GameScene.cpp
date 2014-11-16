@@ -7,7 +7,7 @@
 
 GameScene::GameScene(){
 	Stage::Initialize(0);
-	PlayerManager::Init(nullptr);
+	//PlayerManager::Init(nullptr);
 }
 
 GameScene::~GameScene ()

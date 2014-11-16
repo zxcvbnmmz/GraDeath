@@ -17,7 +17,8 @@ bool Player::Init(const char* fileName){
 	PlayerLoader::LoadFile ( fileName, objParameter );
 
 	// ‘fÞ‚ª—ˆ‚½‚ç‚±‚Ìˆ—‚ð•ÏX
-	std::wstring file = L"Resource/Object/Player/Player_Test.bmp";
+	//Resource/Object/Player/Player_Test.bmp
+	std::wstring file = L"Resource/Object/Player/Player_Test.bmp";//"Resource/Object/Player/Player_Test.bmp";
 	sprite->Create ( file.c_str () );
 
 	SetParameter ( objParameter );
@@ -40,8 +41,8 @@ void Player::SetParameter ( ObjectParameter& _param )
 		shared_ptr<AnimetionParameter> param = shared_ptr<AnimetionParameter> ( new AnimetionParameter );
 		param->size = D3DXVECTOR2 ( sprite->GetDefaultSize ().x / _param.widthLength, sprite->GetDefaultSize ().y / _param.heightLength );
 		sprite->GetDefaultSize ();
-		if ( _param.animeParameter.size () == 0 )
-			continue;
+		//if ( _param.animeParameter.size () == 0 )
+		//	continue;
 
 		for ( int j = 0; j < _param.widthLength; j++ )
 		{

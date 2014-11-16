@@ -46,6 +46,8 @@ private:
 	virtual void Attack(Player*);
 	virtual void Damage(Player*);
 	virtual void Jump(Player*);
+
+	int count = 0;
 };
 
 #endif

@@ -19,8 +19,8 @@ CharacterSelectScene::CharacterSelectScene(){
 SCENE_STATUS CharacterSelectScene::Execute(){
 
 	if ( selectCursor->AllSelectCheck () ||
-		GamePad::getAnyGamePadPressed ( BUTTON_X )){// ||
-		//Keyboard::CheckKey ( KC_ENTER ) ){
+		GamePad::getAnyGamePadPressed ( BUTTON_X ) ||
+		INPUT_STATE::INPUT_PUSH == Keyboard::CheckKey ( KC_ENTER ) ){
 
 		CharacterInfo info[4];
 		for ( int i = 0; i < 4; i++ )

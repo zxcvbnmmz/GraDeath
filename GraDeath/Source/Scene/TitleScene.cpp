@@ -25,8 +25,8 @@ TitleScene::TitleScene(){
 SCENE_STATUS TitleScene::Execute(){
 
 	Graphic::Camera::Update ();
-	if (GamePad::getAnyGamePadPressed(BUTTON_START)){// ||
-		//Keyboard::CheckKey ( KC_ENTER ) ){
+	if (GamePad::getAnyGamePadPressed(BUTTON_START) ||
+		Keyboard::CheckKey ( KC_ENTER ) ){
 		CharacterSelectFactory cf;
 		SceneFactory::Reserve(&cf);
 		return END_PROCESS;

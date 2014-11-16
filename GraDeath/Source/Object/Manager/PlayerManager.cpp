@@ -6,10 +6,13 @@
 #include "CharacterController/CharacterInfo.h"
 #include "Loader/PlayerLoader.h"
 
-namespace{
-	const static int PLAYERS = 4;
-	CharacterController* controllers[PLAYERS];
-	Player players[PLAYERS];
+namespace PlayerManager
+{
+	namespace{
+		const static int PLAYERS = 4;
+		CharacterController* controllers[ PLAYERS ];
+		Player players[ PLAYERS ];
+	}
 }
 
 bool PlayerManager::Init(PlayerData* _data){
@@ -24,7 +27,7 @@ bool PlayerManager::Init(PlayerData* _data){
 
 	for (int i = 0; i < PLAYERS; ++i){
 		controllers[ i ] = new PlayerController;
-		//controllers[i]->Init(i);
+		controllers[i]->Init(i);
 		players[ i ].Init ( PlayerLoader::GetLoadFileName ( data[ i ].pType ) );
 	}
 
@@ -34,6 +37,8 @@ bool PlayerManager::Init(PlayerData* _data){
 void PlayerManager::Release(){
 	for (int i = 0; i < PLAYERS; ++i){
 		controllers[i]->Release();
+		delete controllers[ i ];
+		controllers[ i ] = nullptr;
 		players[i].Release();
 	}
 }

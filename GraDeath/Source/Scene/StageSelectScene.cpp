@@ -10,8 +10,8 @@ StageSelectScene::StageSelectScene(){
 
 SCENE_STATUS StageSelectScene::Execute(){
 
-	if (GamePad::getAnyGamePadPressed(BUTTON_Y)){//||
-		//Keyboard::CheckKey ( KC_ENTER ) ){
+	if (GamePad::getAnyGamePadPressed(BUTTON_Y)||
+		Keyboard::CheckKey ( KC_ENTER ) ){
 		GameFactory gf;
 		SceneFactory::Reserve(&gf);
 		return END_PROCESS;
