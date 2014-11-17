@@ -3,9 +3,11 @@
 
 #include <Windows.h>
 
+namespace Utility{
 #define DebugAssert(boolean, text) OutputError(boolean, text, __FILE__, __LINE__);
 
-bool DebugPrint(const char *str, ...);
-void OutputError(bool b, LPCWSTR text, const char* file, int line);
+	bool DebugPrint(const char *str, ...);
+	void OutputError(bool b, LPCWSTR text, const char* file, int line);
+}
 
 #endif	// end of Debug
