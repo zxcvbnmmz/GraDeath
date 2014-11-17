@@ -275,6 +275,9 @@
     <Filter Include="ソース ファイル\Game\CharacterController\CharacterInfo">
       <UniqueIdentifier>{cab79343-f297-4698-8f36-15b00da0f34f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Other\FPS">
+      <UniqueIdentifier>{abf00207-f986-44a0-b45d-f54adc7f3cb8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -507,6 +510,9 @@
     </ClCompile>
     <ClCompile Include="Source\CharacterController\CharacterInfo.cpp">
       <Filter>ソース ファイル\Game\CharacterController\CharacterInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\FPS.cpp">
+      <Filter>ソース ファイル\Other\FPS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -785,6 +791,9 @@
     </ClInclude>
     <ClInclude Include="Include\CharacterController\CharacterInfo.h">
       <Filter>ソース ファイル\Game\CharacterController\CharacterInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\FPS.h">
+      <Filter>ソース ファイル\Other\FPS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

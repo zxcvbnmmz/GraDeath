@@ -8,10 +8,13 @@
 
 #include "Input/InputManager.h"
 #include "UI/UIManager.h"
+#include "Utility/FPS.h"
 
 namespace{
 	std::stack<Scene*> scenes;
 	Scene* reserve;
+
+	FPS fps;
 }
 
 bool SceneManager::Initialize(){
@@ -20,6 +23,9 @@ bool SceneManager::Initialize(){
 	TitleFactory tf;
 	SceneFactory::Stack(&tf);
 	Graphic::SetClearColor ( 0, 0, 1, 1 );
+
+	fps.SetFPS(60);
+
 	return true;
 
 }
@@ -78,6 +84,8 @@ void SceneManager::Draw(){
 
 	Graphic::D2D::EndDraw();
 	Graphic::Present ( 0, 0 );
+
+	fps.WaitFrame();
 }
 
 void SceneManager::Stack(Scene* _scene){

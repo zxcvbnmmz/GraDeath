@@ -165,6 +165,7 @@
     <ClCompile Include="Source\Utility\Converter.cpp" />
     <ClCompile Include="Source\Utility\Debug.cpp" />
     <ClCompile Include="Source\Utility\Delegate.cpp" />
+    <ClCompile Include="Source\Utility\FPS.cpp" />
     <ClCompile Include="Source\Utility\ScreenShot.cpp" />
     <ClCompile Include="Source\World\World.cpp" />
   </ItemGroup>
@@ -258,6 +259,7 @@
     <ClInclude Include="Include\Utility\Delegate.h" />
     <ClInclude Include="Include\Utility\DelegateBase.h" />
     <ClInclude Include="Include\Utility\DelegateList.h" />
+    <ClInclude Include="Include\Utility\FPS.h" />
     <ClInclude Include="Include\Utility\SafeDelete.h" />
     <ClInclude Include="Include\Utility\ScreenShot.h" />
     <ClInclude Include="Include\World\World.h" />

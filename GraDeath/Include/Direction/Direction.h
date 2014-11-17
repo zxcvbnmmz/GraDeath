@@ -6,8 +6,8 @@ public:
 	Direction();
 	virtual ~Direction();
 
-	void Advance();
-	virtual void Draw()=0;
+	static void Advance();
+	static void Draw(){}
 
 private:
 	float frame;
