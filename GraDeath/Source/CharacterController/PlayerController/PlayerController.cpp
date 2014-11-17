@@ -13,21 +13,27 @@
 #include "Input/GamePad.h"
 #include "Object/Player.h"
 #include "Object/ObjectParameter.h"
+#include "Input/GamePad.h"
 
 void PlayerController::Init (int _padID)
 {
 	Release ();
 	this->padID = _padID;
+	currentAction = IDLE;
+	enable = true;
 }
 
 void PlayerController::Update(class Player* _player){
-	Idle ( _player );
+	CharacterController::Update ( _player );
+
+
 }
 
 void PlayerController::Draw(class Player* _player){
 	D3DXVECTOR2 size = _player->animeParameter[ 0 ]->size;
 	_player->sprite->SetTrimming ( ( int )size.x * count, ( int )size.y * 0, ( int )size.x, ( int )size.y );
 	_player->sprite->SetPosition ( D3DXVECTOR2( 0, 0 ) );
+	_player->sprite->SetSize ( size );
 	_player->sprite->Draw ( DRAW_RECT );
 }
 
@@ -53,7 +59,8 @@ void PlayerController::Idle(Player* _player){
 
 void PlayerController::Run(Player* _player){}
 
-void PlayerController::Walk(Player* _player){}
+void PlayerController::Walk(Player* _player){
+}
 
 void PlayerController::Attack(Player* _player){
 	currentAction = IDLE;
