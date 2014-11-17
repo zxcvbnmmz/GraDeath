@@ -29,6 +29,8 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 			info[ i ].pcType = CharacterInfo::PC_TYPE::PC_PLAYER;
 			//info[ i ] = selectCursor->GetCharacterInfo ( i );
 		}
+		
+		CharacterInfoFunc::SetCharacterInfo ( info );
 		PlayerData date = &info;
 		PlayerManager::Init ( ( PlayerData* )info );
 
