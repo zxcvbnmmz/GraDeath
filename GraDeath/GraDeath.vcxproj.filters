@@ -281,6 +281,15 @@
     <Filter Include="ソース ファイル\Game\Direction\Fade">
       <UniqueIdentifier>{2f6fbde4-1296-468d-805d-dcac6ab6fa01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Effect">
+      <UniqueIdentifier>{a489f420-2d78-43fa-8b5f-4b9a5236e7e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Effect\Pool">
+      <UniqueIdentifier>{a527b4e8-e33b-4b7d-bff9-290f1677c036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\ObjectPool">
+      <UniqueIdentifier>{3f45befd-bea4-4874-8011-cf8b11f436ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -519,6 +528,9 @@
     </ClCompile>
     <ClCompile Include="Source\Direction\Fade.cpp">
       <Filter>ソース ファイル\Game\Direction\Fade</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Effect\Effect.cpp">
+      <Filter>ソース ファイル\Game\Effect</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -800,6 +812,15 @@
     </ClInclude>
     <ClInclude Include="Include\Direction\Fade.h">
       <Filter>ソース ファイル\Game\Direction\Fade</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Effect\Effect.h">
+      <Filter>ソース ファイル\Game\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Effect\EffectPool.h">
+      <Filter>ソース ファイル\Game\Effect\Pool</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Pool\ObjectPool.h">
+      <Filter>ソース ファイル\Game\ObjectPool</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
