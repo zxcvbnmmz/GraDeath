@@ -3,13 +3,12 @@
 
 #include "CharacterController/CharacterInfo.h"
 
-
-struct ObjectParameter;
+struct AnimationData;
 
 namespace PlayerLoader
 {
 
-	void LoadFile ( const char* _filename, ObjectParameter& parameter );
+	void LoadFile ( const char* _filename, AnimationData* parameter );
 
 	char* GetLoadFileName ( CharacterInfo::PLAYER_TYPE _type );
 

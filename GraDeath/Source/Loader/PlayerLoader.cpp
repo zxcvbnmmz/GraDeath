@@ -4,29 +4,7 @@
 #include "Object/ObjectParameter.h"
 #include <assert.h>
 #include <string>
-
-// アニメーションのループ
-struct AnimationData
-{
-	char	annimaType;
-	char	animaCount;
-	char	effectCount;
-	char*	effectFile;
-	char	soundCount;
-	char*	soudnFile;
-	char	shortformCount;
-};
-
-struct ShortFormData
-{
-	char	collisionModel;
-	char	collisionType;
-	char	strength;
-	int		left;
-	int		top;
-	unsigned int	right;	// 四角なら横幅、円なら半径
-	unsigned int	bottom; // 四角なら縦幅、円なら0
-};
+#include "Utility/Converter.h"
 
 char* playerIconName[ ] =
 {
@@ -36,31 +14,131 @@ char* playerIconName[ ] =
 	"Resource/Object/Player/TestData.bin",
 };
 
+
 namespace PlayerLoader
 {
+	void LoadShapeData ( std::ifstream* _ifs, short _count, std::vector< std::shared_ptr< ShapeData > > _shapeData );
 
-	void LoadFile ( const char* _filename, ObjectParameter& parameter )
+	void LoadFile ( const char* _filename, AnimationData* parameter )
 	{
 		std::ifstream ifs ( _filename, std::ios::binary );
 
 		assert ( !ifs.fail () );
-		
-		char temp;
-		ifs.read ( ( char* )&temp, sizeof( char ) );
-		parameter.count = static_cast< int >( temp );
 
-		parameter.fileName = std::shared_ptr<char> ( new char[ parameter.count ], []( char* str ){
-			delete[] str;
-			str = nullptr;
-		} );
-		ifs.read ( ( char* )parameter.fileName.get(), sizeof( char )* parameter.count );
+		char hedCount;
+		ifs.read ( ( char* )&hedCount, sizeof( char ) );
+		int count = static_cast< int >( hedCount );
 
-		ifs.read ( ( char* )&temp, sizeof( char ) );
-		parameter.widthLength = static_cast< int >( temp );
+		parameter->fileName = new char[ count ];
+		ifs.read ( ( char* )parameter->fileName, sizeof( char )* count );
 
-		ifs.read ( ( char* )&temp, sizeof( char ) );
-		int h_count = static_cast< int >( temp );
-		parameter.heightLength = static_cast< int >( temp );
+		ifs.read ( ( char* )&hedCount, sizeof( char ) );
+		parameter->rectWCount = static_cast< int >( hedCount );
+
+		ifs.read ( ( char* )&hedCount, sizeof( char ) );
+		parameter->rectHCount = static_cast< int >( hedCount );
+
+		AnimationData animData;
+
+		for ( int i = 0; i < parameter->rectHCount; i++ )
+		{
+			std::vector< std::shared_ptr< CellData > > cellData;
+			for ( int j = 0; j < parameter->rectWCount; j++ )
+			{
+				std::shared_ptr< CellData > cell = std::shared_ptr< CellData > ( new CellData );
+				char temp = 0;
+
+				// セルを使用するか
+				ifs.read ( ( char* )&temp, sizeof( char ) );
+				cell->animUse = static_cast< short >( temp );
+
+				// 1だとそのセルは使用しない
+				if ( cell->animUse )
+					continue;
+
+				// アニメーションタイプ
+				ifs.read ( ( char* )&temp, sizeof( char ) );
+				cell->animType = static_cast< short >( temp );
+
+				// 使用するフレーム数
+				ifs.read ( ( char* )&temp, sizeof( char ) );
+				cell->animFrame = static_cast< short >( temp );
+
+				short fileCount = 0;
+				// エフェクトの文字数
+				ifs.read ( ( char* )&temp, sizeof( char ) );
+				fileCount = static_cast< short >( temp );
+				//ifs.read ( ( char* )&temp, sizeof( char ) );
+				//cell->effectCount = static_cast< short >( temp );
+
+				// エフェクト名取得
+				char* effectName = new char[ fileCount ];
+				ifs.read ( ( char* )effectName, sizeof( char )* fileCount );
+				delete[] effectName;
+				//cell->effectFile = new char[ cell->effectCount ];
+				//ifs.read ( ( char* )cell->effectFile, sizeof( char )* cell->effectCount );
+
+				// サウンドの文字数
+				ifs.read ( ( char* )&temp, sizeof( char ) );
+				fileCount = static_cast< short >( temp );
+				//ifs.read ( ( char* )&temp, sizeof( char ) );
+				//cell->soundCount = static_cast< short >( temp );
+
+				// サウンド名取得
+				char* soundName = new char[ fileCount ];
+				ifs.read ( ( char* )soundName, sizeof( char )* fileCount );
+				delete[ ] soundName;
+				//cell->soundFile = new char[ cell->soundCount ];
+				//ifs.read ( ( char* )cell->soundFile, sizeof( char )* cell->effectCount );
+
+				// shapeカウント
+				ifs.read ( ( char* )&temp, sizeof( char ) );
+				cell->shapeCount = static_cast< short >( temp );
+
+				//LoadShapeData ( &ifs, cell->shapeCount, cell->shapeData );
+				for ( int k = 0; k < cell->shapeCount; k++ )
+				{
+					auto shape = std::shared_ptr<ShapeData> ( new ShapeData );
+					char tempShape = 0;
+
+					// あたり判定のモデル
+					ifs.read ( ( char* )&tempShape, sizeof( char ) );
+					shape->collisionModel = static_cast< short >( tempShape );
+
+					// あたり判定の種類
+					ifs.read ( ( char* )&tempShape, sizeof( char ) );
+					shape->collisionType = static_cast< short >( tempShape );
+
+					// 強さ
+					ifs.read ( ( char* )&tempShape, sizeof( char ) );
+					shape->strength = static_cast< short >( tempShape );
+
+					if ( shape->collisionModel )
+					{// 真だと円
+						// 中心X
+						ifs.read ( ( char* )&shape->shape.circle.x, sizeof( int ) );
+						// 中心Y
+						ifs.read ( ( char* )&shape->shape.circle.y, sizeof( int ) );
+						// 半径
+						ifs.read ( ( char* )&shape->shape.circle.rad, sizeof( int ) );
+					}
+					else
+					{// 偽だと四角
+						for ( int l = 0; l < 4; l++ )
+						{
+							// 中心X
+							ifs.read ( ( char* )&shape->shape.square.x[ l ], sizeof( int ) );
+							// 中心Y
+							ifs.read ( ( char* )&shape->shape.square.y[ l ], sizeof( int ) );
+						}
+					}
+					cell->shapeData.push_back ( shape );
+				}
+				cellData.push_back ( cell );
+			}
+			// セルデータのpush
+			parameter->cellDatas.push_back ( cellData );
+		}
 	}
 
 	char* GetLoadFileName ( CharacterInfo::PLAYER_TYPE _type )

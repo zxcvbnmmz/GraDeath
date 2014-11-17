@@ -9,10 +9,9 @@
 // インクルード ***********************************************
 #include "D2D/Sprite/Sprite.h"
 #include "CharacterController/PlayerController/PlayerController.h"
-#include "Utility/SafeDelete.h"
+#include "Object/ObjectParameter.h"
 #include "Input/GamePad.h"
 #include "Object/Player.h"
-#include "Object/ObjectParameter.h"
 #include "Input/GamePad.h"
 
 void PlayerController::Init (int _padID)
@@ -30,7 +29,7 @@ void PlayerController::Update(class Player* _player){
 }
 
 void PlayerController::Draw(class Player* _player){
-	D3DXVECTOR2 size = _player->animeParameter[ 0 ]->size;
+	D3DXVECTOR2 size = _player->animData.cellSize;
 	_player->sprite->SetTrimming ( ( int )size.x * count, ( int )size.y * 0, ( int )size.x, ( int )size.y );
 	_player->sprite->SetPosition ( D3DXVECTOR2( 0, 0 ) );
 	_player->sprite->SetSize ( size );
@@ -54,7 +53,9 @@ void PlayerController::Idle(Player* _player){
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH){
 		currentAction = JUMP;
 	}
-	count = ( count + 1 ) % _player->animeParameter[ 0 ]->animaCount;
+	count = ( count + 1 ) % 6;
+	//std::vector< std::shared_ptr< CellData > > cellData = _player->animData.cellDatas[ 0 ];
+	//cellData[ 0 ]->animFrame;
 }
 
 void PlayerController::Run(Player* _player){}
