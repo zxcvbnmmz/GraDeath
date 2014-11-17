@@ -3,14 +3,16 @@
 
 class Direction{
 public:
-	Direction();
-	virtual ~Direction();
+	Direction(){}
+	virtual ~Direction(){}
 
-	static void Advance();
-	static void Draw(){}
+	void Advance(float elapsed = 1){
+		frame += elapsed;
+	}
+	virtual void Draw(){}
 
-private:
-	float frame;
+protected:
+	float frame = 0;
 	class Sprite* sprite;
 };
 
