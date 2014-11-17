@@ -278,6 +278,9 @@
     <Filter Include="ソース ファイル\Other\FPS">
       <UniqueIdentifier>{abf00207-f986-44a0-b45d-f54adc7f3cb8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Direction\Fade">
+      <UniqueIdentifier>{2f6fbde4-1296-468d-805d-dcac6ab6fa01}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -513,6 +516,9 @@
     </ClCompile>
     <ClCompile Include="Source\Utility\FPS.cpp">
       <Filter>ソース ファイル\Other\FPS</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Direction\Fade.cpp">
+      <Filter>ソース ファイル\Game\Direction\Fade</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -774,9 +780,6 @@
     <ClInclude Include="Include\Direction\Direction.h">
       <Filter>ソース ファイル\Game\Direction</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Direction\Fade.h">
-      <Filter>ソース ファイル\Game\Direction</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Object\ObjectParameter.h">
       <Filter>ソース ファイル\Game\Object\ObjectParameter</Filter>
     </ClInclude>
@@ -794,6 +797,9 @@
     </ClInclude>
     <ClInclude Include="Include\Utility\FPS.h">
       <Filter>ソース ファイル\Other\FPS</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Direction\Fade.h">
+      <Filter>ソース ファイル\Game\Direction\Fade</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,39 @@
+#include "Direction/Fade.h"
+#include "D2D/Sprite/Sprite.h"
+#include <System/Window.h>
+
+Fade::Fade(LPCWSTR fileName){
+	sprite = new Sprite;
+	sprite->Create(fileName);
+
+	int w, h;
+	System::Window::GetWindowSize(&w, &h);
+	sprite->SetSize((float)w, (float) h);
+	sprite->SetPosition(0, 0);
+}
+
+Fade::~Fade(){
+	if (sprite){
+		delete sprite;
+		sprite = nullptr;
+	}
+}
+
+FADE_STATUS Fade::AddAlpha(float _alpha){
+	alpha += _alpha;
+	sprite->SetAlpha(alpha);
+
+	if (alpha >= 1)
+		return FADE_UNCLEAR;
+	if (alpha <= 0)
+		return FADE_CLEAR;
+
+	return FADE_HALF_CLEAR;
+
+}
+
+void Fade::Draw(){
+	sprite->Draw();
+}
+
+

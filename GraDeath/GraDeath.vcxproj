@@ -100,6 +100,7 @@
     <ClCompile Include="Source\D2D\Sprite\SpriteDecoder.cpp" />
     <ClCompile Include="Source\D3D\Device\Device.cpp" />
     <ClCompile Include="Source\D3D\SwapChain\SwapChain.cpp" />
+    <ClCompile Include="Source\Direction\Fade.cpp" />
     <ClCompile Include="Source\Graphic\BlendState\BlendState.cpp" />
     <ClCompile Include="Source\Graphic\Buffer\Buffer.cpp" />
     <ClCompile Include="Source\Graphic\Buffer\ConstantBuffer.cpp" />
