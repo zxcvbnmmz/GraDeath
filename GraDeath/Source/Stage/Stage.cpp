@@ -11,6 +11,7 @@
 namespace{
 	const static float PTM_RATIO = 32.0f;
 	std::vector<Sprite*> sprites;
+	std::vector<Sprite*> bgSprite;
 }
 
 void CreateWorldEdge();
@@ -29,15 +30,20 @@ bool Stage::Initialize(int stageID){
 }
 
 void Stage::Draw(){
+	bgSprite[ 0 ]->Draw ();
+	bgSprite[ 1 ]->Draw ();
 	for ( Sprite* sprite : sprites ){
 		sprite->Draw ();
 	}
+	bgSprite[ 2 ]->Draw ();
 }
 
 void Stage::Release(){
 	World::DestoryBody(screenEdgeBody);
 	for ( auto& obj : sprites )
 		Util::safeDelete ( obj );
+	for ( auto& bg : bgSprite )
+		Util::safeDelete ( bg );
 }
 
 void CreateWorldEdge(){
@@ -100,6 +106,18 @@ void CreateEachStage(int stageLevel){
 
 		sprites.push_back(sprite);
 	}
+
+	Sprite* sprite1 = new Sprite;
+	sprite1->Create ( L"Resource/Scene/Game/Stage/bg01.png" );
+	bgSprite.push_back ( sprite1 );
+	Sprite* sprite2 = new Sprite;
+	sprite2->Create ( L"Resource/Scene/Game/Stage/bg02.png" );
+	bgSprite.push_back ( sprite2 );
+	Sprite* sprite3 = new Sprite;
+	sprite3->Create ( L"Resource/Scene/Game/Stage/bg02.png" );
+	bgSprite.push_back ( sprite3 );
+	for ( auto& bg : bgSprite )
+		bg->SetPosition ( 0, 0 );
 }
 
 

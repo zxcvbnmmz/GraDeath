@@ -19,47 +19,50 @@ enum Type
 	SUPER_ARMOR = 4,
 };
 
-struct CollisionParameter
+// 形データ
+struct ShapeData
 {
-	int	collisionModel;
-	int	collisionType;
-	int	strength;
-	int		left;
-	int		top;
-	unsigned int	right;	// 四角なら横幅、円なら半径
-	unsigned int	bottom; // 四角なら縦幅、円なら0
-
-	CollisionParameter (){}
+	short	collisionModel;	// 当たり判定の形(0=長方形:1=円)
+	short	collisionType;	// 当たり判定の種類(0=攻め:1=受け:2=両方:3=無敵)
+	short	strength;		// 強さ
+	union {
+		struct {
+			int x[ 4 ];		// 0:左上 1:右上 2:右下 3:左下
+			int y[ 4 ];
+		}square;
+		struct {
+			int x;			// 中心
+			int y;
+			int rad;		// 半径
+		}circle;
+	}shape;
 };
 
-// アニメーション
-struct AnimetionParameter
+
+// アニメーションのループ
+struct CellData
 {
-	int	annimaType;
-	int	animaCount;
-	int	effectCount;
-	std::shared_ptr<char> effectFile;
-	int	soundCount;
-	std::shared_ptr<char> soudnFile;
-	int	shortformCount;
+	short	animUse;		// セルを使用するかしないか
+	short	animType;		// アニメーションタイプ(0=立ち:1=移動:2=ジャンプ:3=攻撃:4=空白)
+	short	animFrame;		// 1コマに必要なフレーム数
+	//short	effectCount;	// エフェクト名の文字数
+	//char*	effectFile;		// エフェクト名
+	//short	soundCount;		// サウンド名の文字数
+	//char*	soundFile;		// サウンドファイル
+	short	shapeCount;		// 形数
 
-	D3DXVECTOR2 size;
-
-	std::vector<CollisionParameter*> collisionParameter;
-
-	AnimetionParameter (){}
+	std::vector< std::shared_ptr< ShapeData > > shapeData;	// 形データ
 };
 
-struct ObjectParameter
+
+struct AnimationData
 {
-	int count;
-	std::shared_ptr<char> fileName;
-	int widthLength;
-	int heightLength;
-
-	std::vector<AnimetionParameter*> animeParameter;
-
-	ObjectParameter (){}
+	// 今後HPなどのデータを格納する可能性あり(証言：正田)
+	char* fileName;
+	D3DXVECTOR2 cellSize;		// セルのサイズ
+	int rectWCount;		// 分割数
+	int rectHCount;		// 分割数
+	std::vector< std::vector< std::shared_ptr< CellData > > > cellDatas;
 };
 
 

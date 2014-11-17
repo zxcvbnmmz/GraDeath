@@ -2,7 +2,9 @@
 #include "Object/Player.h"
 #include"Object/CollisionShape.h"
 #include "Loader/PlayerLoader.h"
-#include "Object/ObjectParameter.h"
+#include "Utility/Converter.h"
+#include "Utility/Debug.h"
+
 #include <string>
 
 
@@ -10,18 +12,26 @@ Player::Player(){
 	sprite = shared_ptr<Sprite> (new Sprite);
 }
 
-Player::~Player(){}
+Player::~Player(){
+	if ( animData.fileName )
+	{
+		delete[] animData.fileName;
+	}
+}
 
 bool Player::Init(const char* fileName){
-	ObjectParameter objParameter;
-	PlayerLoader::LoadFile ( fileName, objParameter );
+	//ObjectParameter objParameter;
+	PlayerLoader::LoadFile ( fileName, &animData );
+
+	Utility::DebugPrint ( "%s\n", animData.fileName );
+	//wchar_t* _file = 0;
+	//Utility::ConvertToWChar ( _file, animData.fileName );
 
 	// 素材が来たらこの処理を変更
-	//Resource/Object/Player/Player_Test.bmp
 	std::wstring file = L"Resource/Object/Player/Player_Test.bmp";//"Resource/Object/Player/Player_Test.bmp";
 	sprite->Create ( file.c_str () );
 
-	SetParameter ( objParameter );
+	animData.cellSize = D3DXVECTOR2 ( sprite->GetDefaultSize ().x / animData.rectWCount, sprite->GetDefaultSize ().y / animData.rectHCount );
 
 	return true;
 }
@@ -32,30 +42,4 @@ void Player::Release(){
 
 void Player::AddForce(b2Vec2& force){
 	body->ApplyForce(force, body->GetWorldCenter(),true);
-}
-
-void Player::SetParameter ( ObjectParameter& _param )
-{
-	for ( int i = 0; i < _param.heightLength; i++ )
-	{
-		shared_ptr<AnimetionParameter> param = shared_ptr<AnimetionParameter> ( new AnimetionParameter );
-		param->size = D3DXVECTOR2 ( sprite->GetDefaultSize ().x / _param.widthLength, sprite->GetDefaultSize ().y / _param.heightLength );
-		sprite->GetDefaultSize ();
-		//if ( _param.animeParameter.size () == 0 )
-		//	continue;
-
-		for ( int j = 0; j < _param.widthLength; j++ )
-		{
-			// エディタ読み込みが終了後ここを変更
-			//AnimetionParameter* temp = _param.animeParameter[ j ];
-			param->annimaType = 0; // temp->annimaType;
-			param->animaCount = _param.widthLength; //temp->animaCount;
-			//strcpy_s ( param->effectFile, param->effectCount, temp->effectFile );
-			//strcpy_s ( param->soudnFile, param->soundCount, temp->soudnFile );
-			//param->shortformCount = temp->shortformCount;
-
-			//param->collisionParameter = std::move ( param->collisionParameter );
-		}
-		animeParameter.push_back ( param );
-	}
 }
