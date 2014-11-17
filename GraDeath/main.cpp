@@ -7,6 +7,7 @@
 #include "System/System.h"
 #include "Graphic/Graphic.h"
 #include "Scene/SceneManager.h"
+#include "Utility/Debug.h"
 
 INT WINAPI WinMain(HINSTANCE inst, HINSTANCE, LPSTR, INT){
 #ifdef _DEBUG
