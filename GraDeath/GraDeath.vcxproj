@@ -216,7 +216,6 @@
     <ClInclude Include="Include\Object\Manager\PlayerManager.h" />
     <ClInclude Include="Include\Object\Object.h" />
     <ClInclude Include="Include\Object\ObjectParameter.h" />
-    <ClInclude Include="Include\Object\ObjectParameterDefine.h" />
     <ClInclude Include="Include\Object\Player.h" />
     <ClInclude Include="include\Scene\CharacterSelectScene.h" />
     <ClInclude Include="Include\Scene\CharacterSelectScene\Cursor\SelectCursor.h" />

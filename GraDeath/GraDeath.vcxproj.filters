@@ -783,7 +783,6 @@
     <ClInclude Include="Include\UI\UIManager.h">
       <Filter>ソース ファイル\Game\UI</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\ObjectParameterDefine.h" />
     <ClInclude Include="Include\CharacterController\CharacterInfo.h">
       <Filter>ソース ファイル\Game\CharacterController\CharacterInfo</Filter>
     </ClInclude>

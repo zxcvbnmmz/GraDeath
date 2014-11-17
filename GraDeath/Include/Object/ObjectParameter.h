@@ -5,6 +5,20 @@
 #include <D3DX10math.h>
 #include <memory>
 
+enum COLLISION_MODEL
+{
+	CUBE = 0,
+	SPHERE = 1,
+};
+
+enum Type
+{
+	ATTACK = 0,
+	DAMEGE = 1,
+	ATTACK_AND_DAMEGE = 2,
+	SUPER_ARMOR = 4,
+};
+
 struct CollisionParameter
 {
 	int	collisionModel;
