@@ -44,6 +44,18 @@ void ObjectPool::Erase(Ref* object){
 	}
 }
 
+bool ObjectPool::IsContains(Ref* object)const{
+	auto it = std::find(managedObject.begin(), managedObject.end(), object);
+	if (it != managedObject.end()){
+		return true;
+	}
+	return false;
+}
+
+unsigned int ObjectPool::GetContainCount(){
+	return managedObject.size();
+}
+
 
 ObjectPoolManager::ObjectPoolManager(){
 	pools.reserve(20);
@@ -74,6 +86,15 @@ void ObjectPoolManager::Destroy(){
 
 ObjectPool* ObjectPoolManager::GetCurrentPool(){
 	return pools.back();
+}
+
+bool ObjectPoolManager::IsObjectInPool(Ref* object){
+	for (auto pool : pools){
+		if (pool->IsContains(object)){
+			return true;
+		}
+	}
+	return false;
 }
 
 void ObjectPoolManager::Push(ObjectPool* _pool){

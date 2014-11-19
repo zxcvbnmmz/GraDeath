@@ -25,6 +25,7 @@ public:
 	void Clear();
 	void Erase(Ref* object);
 	bool IsContains(Ref* object)const;
+	unsigned int GetContainCount();
 
 private:
 	std::vector<Ref*> managedObject;
@@ -35,7 +36,7 @@ public:
 	ObjectPool* GetCurrentPool();
 	static ObjectPoolManager* GetInstance();
 	static void Destroy();
-	bool IsObjectInPool();
+	bool IsObjectInPool(Ref* object);
 
 	friend class ObjectPool;
 private:
