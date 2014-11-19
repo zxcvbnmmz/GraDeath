@@ -284,11 +284,11 @@
     <Filter Include="ソース ファイル\Game\Effect">
       <UniqueIdentifier>{a489f420-2d78-43fa-8b5f-4b9a5236e7e7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Effect\Pool">
-      <UniqueIdentifier>{a527b4e8-e33b-4b7d-bff9-290f1677c036}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\ObjectPool">
       <UniqueIdentifier>{3f45befd-bea4-4874-8011-cf8b11f436ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Ref">
+      <UniqueIdentifier>{88a0ceb2-e817-4ad1-8b90-29c4453d9f52}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -531,6 +531,12 @@
     </ClCompile>
     <ClCompile Include="Source\Effect\Effect.cpp">
       <Filter>ソース ファイル\Game\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pool\ObjectPool.cpp">
+      <Filter>ソース ファイル\Game\ObjectPool</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pool\Ref.cpp">
+      <Filter>ソース ファイル\Game\Object\Ref</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -816,11 +822,11 @@
     <ClInclude Include="Include\Effect\Effect.h">
       <Filter>ソース ファイル\Game\Effect</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Effect\EffectPool.h">
-      <Filter>ソース ファイル\Game\Effect\Pool</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Pool\ObjectPool.h">
       <Filter>ソース ファイル\Game\ObjectPool</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Pool\Ref.h">
+      <Filter>ソース ファイル\Game\Object\Ref</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

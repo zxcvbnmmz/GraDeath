@@ -1,14 +1,17 @@
 #ifndef _EFFECT_H__
 #define _EFFECT_H__
 
+#include "Pool/Ref.h"
 
-class Effect{
+class Effect : public Ref{
 public:
 	Effect();
 	virtual ~Effect();
 
 	void Update();
-	virtual void Draw() = 0;
+	virtual void Draw(){}
+
+	CREATE(Effect);
 };
 
 #endif	// end of Effect

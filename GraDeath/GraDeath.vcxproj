@@ -130,6 +130,8 @@
     <ClCompile Include="Source\Object\Manager\PlayerManager.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
     <ClCompile Include="Source\Object\Player.cpp" />
+    <ClCompile Include="Source\Pool\ObjectPool.cpp" />
+    <ClCompile Include="Source\Pool\Ref.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp" />
@@ -189,7 +191,6 @@
     <ClInclude Include="Include\Direction\Direction.h" />
     <ClInclude Include="Include\Direction\Fade.h" />
     <ClInclude Include="Include\Effect\Effect.h" />
-    <ClInclude Include="Include\Effect\EffectPool.h" />
     <ClInclude Include="Include\Graphic\BlendState\BlendState.h" />
     <ClInclude Include="Include\Graphic\Buffer\Buffer.h" />
     <ClInclude Include="Include\Graphic\Buffer\ConstantBuffer.h" />
@@ -223,6 +224,7 @@
     <ClInclude Include="Include\Object\ObjectParameter.h" />
     <ClInclude Include="Include\Object\Player.h" />
     <ClInclude Include="Include\Pool\ObjectPool.h" />
+    <ClInclude Include="Include\Pool\Ref.h" />
     <ClInclude Include="include\Scene\CharacterSelectScene.h" />
     <ClInclude Include="Include\Scene\CharacterSelectScene\Cursor\SelectCursor.h" />
     <ClInclude Include="Include\Scene\CharacterSelectScene\Icon\SelectIcon.h" />

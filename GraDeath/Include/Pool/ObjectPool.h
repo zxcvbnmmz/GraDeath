@@ -3,6 +3,17 @@
 
 #include <vector>
 
+#define CREATE(C)									\
+	static C* Create(){									\
+		C* c = new C;									\
+		if(c != nullptr){								\
+			ObjectPoolManager::GetInstance()->			\
+						GetCurrentPool()->Add(c);		\
+			return c;									\
+		}												\
+		return nullptr;									\
+	}
+
 class Ref;
 
 class ObjectPool{
@@ -12,6 +23,7 @@ public:
 
 	void Add(Ref* object);
 	void Clear();
+	void Erase(Ref* object);
 	bool IsContains(Ref* object)const;
 
 private:
@@ -20,10 +32,10 @@ private:
 
 class ObjectPoolManager{
 public:
-	void Add();
 	ObjectPool* GetCurrentPool();
+	static ObjectPoolManager* GetInstance();
+	static void Destroy();
 	bool IsObjectInPool();
-
 
 	friend class ObjectPool;
 private:
@@ -32,8 +44,11 @@ private:
 	ObjectPoolManager& operator=(const ObjectPoolManager&);
 	~ObjectPoolManager();
 
+	void Push(ObjectPool* _pool);
+	void Pop();
+
 	static ObjectPoolManager* manager;
-	std::vector<ObjectPool*> pool;
+	std::vector<ObjectPool*> pools;
 };
 
 #endif	// end of ObjectPool
