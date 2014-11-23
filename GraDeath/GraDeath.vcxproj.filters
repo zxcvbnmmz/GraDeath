@@ -290,6 +290,9 @@
     <Filter Include="ソース ファイル\Game\Object\Ref">
       <UniqueIdentifier>{88a0ceb2-e817-4ad1-8b90-29c4453d9f52}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\StageSelect\Icon">
+      <UniqueIdentifier>{a556ac02-7315-4a0c-a556-47c0142ede60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -537,6 +540,9 @@
     </ClCompile>
     <ClCompile Include="Source\Pool\Ref.cpp">
       <Filter>ソース ファイル\Game\Object\Ref</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\StageSelectScene\StageIcon.cpp">
+      <Filter>ソース ファイル\Game\Scene\StageSelect\Icon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -827,6 +833,9 @@
     </ClInclude>
     <ClInclude Include="Include\Pool\Ref.h">
       <Filter>ソース ファイル\Game\Object\Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\StageSelectScene\StageIcon.h">
+      <Filter>ソース ファイル\Game\Scene\StageSelect\Icon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

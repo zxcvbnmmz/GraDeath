@@ -146,6 +146,7 @@
     <ClCompile Include="Source\Scene\SceneManager.cpp" />
     <ClCompile Include="Source\Scene\GameScene.cpp" />
     <ClCompile Include="Source\Scene\StageSelectScene.cpp" />
+    <ClCompile Include="Source\Scene\StageSelectScene\StageIcon.cpp" />
     <ClCompile Include="Source\Scene\TitleScene.cpp" />
     <ClCompile Include="Source\Shader\Shader.cpp" />
     <ClCompile Include="Source\Shader\TestShader.cpp" />
@@ -239,6 +240,7 @@
     <ClInclude Include="Include\Scene\SceneFactory.h" />
     <ClInclude Include="Include\Scene\SceneManager.h" />
     <ClInclude Include="Include\Scene\StageSelectScene.h" />
+    <ClInclude Include="Include\Scene\StageSelectScene\StageIcon.h" />
     <ClInclude Include="Include\Scene\TitleScene.h" />
     <ClInclude Include="Include\Shader\Shader.h" />
     <ClInclude Include="include\Shader\TestShader.h" />

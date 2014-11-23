@@ -31,8 +31,6 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 		}
 		
 		CharacterInfoFunc::SetCharacterInfo ( info );
-		PlayerData date = &info;
-		PlayerManager::Init ( ( PlayerData* )info );
 
 		StageSelectFactory sf;
 		SceneFactory::Reserve(&sf);
