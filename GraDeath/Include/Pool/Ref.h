@@ -2,6 +2,7 @@
 #define _REF_H__
 
 #include "ObjectPool.h"
+#include "Utility/Macro.h"
 
 class Ref{
 protected:
@@ -11,6 +12,7 @@ protected:
 public:
 	virtual ~Ref(){}
 	void Release();
+	__declspec(deprecated("Please use Derived class's function"))CREATE(Ref);
 
 private:
 	unsigned int refCount;

@@ -16,6 +16,8 @@ public:
 
 private:
 	std::shared_ptr< SelectCursor >		selectCursor;
+	int ExecutePreDecide();
+	int ExecuteFadeOut();
 };
 
 #endif	// end of CharacterSelectScene

@@ -1,7 +1,9 @@
 #ifndef _DIRECTION_H__
 #define _DIRECTION_H__
 
-class Direction{
+#include "Pool/Ref.h"
+
+class Direction : public Ref{
 public:
 	Direction(){}
 	virtual ~Direction(){}

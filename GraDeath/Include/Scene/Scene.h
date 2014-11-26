@@ -14,20 +14,18 @@ public:
 	Scene();
 	virtual ~Scene();
 
-	template<class T>
-	void AddDelegateList(Scene* scene, int(Scene::*func)()){
-		list.Add<T>(scene, func);
-	}
-
 	virtual SCENE_STATUS Execute() = 0;
 	virtual void Draw() = 0;
 
 	virtual void OnStack(){}
 
 protected:
-	std::vector<class SceneDelegateBase*> executes;
-	std::vector<class SceneDelegateBase*> draws;
+	std::vector<class DelegateBase*> executes;
+	std::vector<class DelegateBase*> draws;
 	DelegateList list;
 };
+
+#define ADD_DELEGATE(CLASS,INST,FUNC)				\
+	list.Add(Delegate<CLASS>::Create(INST,FUNC))	\
 
 #endif	// end of Scene

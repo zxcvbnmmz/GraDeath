@@ -140,6 +140,7 @@
     <ClCompile Include="Source\Scene\Factory\ResultFactory.cpp" />
     <ClCompile Include="Source\Scene\Factory\StageSelectFactory.cpp" />
     <ClCompile Include="Source\Scene\Factory\TitleFactory.cpp" />
+    <ClCompile Include="Source\Scene\GameScene\GameSceneUI.cpp" />
     <ClCompile Include="Source\Scene\ResultScene.cpp" />
     <ClCompile Include="Source\Scene\Scene.cpp" />
     <ClCompile Include="Source\Scene\SceneFactory.cpp" />
@@ -234,6 +235,7 @@
     <ClInclude Include="Include\Scene\Factory\StageSelectFactory.h" />
     <ClInclude Include="Include\Scene\Factory\TitleFactory.h" />
     <ClInclude Include="Include\Scene\GameScene.h" />
+    <ClInclude Include="Include\Scene\GameScene\GameSceneUI.h" />
     <ClInclude Include="Include\Scene\ResultScene.h" />
     <ClInclude Include="Include\Scene\Scene.h" />
     <ClInclude Include="Include\Scene\SceneFactory.h" />
@@ -267,6 +269,7 @@
     <ClInclude Include="Include\Utility\DelegateBase.h" />
     <ClInclude Include="Include\Utility\DelegateList.h" />
     <ClInclude Include="Include\Utility\FPS.h" />
+    <ClInclude Include="Include\Utility\Macro.h" />
     <ClInclude Include="Include\Utility\SafeDelete.h" />
     <ClInclude Include="Include\Utility\ScreenShot.h" />
     <ClInclude Include="Include\World\World.h" />
