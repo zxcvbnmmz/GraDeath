@@ -2,6 +2,9 @@
 #define _STAGE_SELECT_SCENE_H__
 
 #include "Scene.h"
+#include <memory>
+
+class StageIcon;
 
 class StageSelectScene : public Scene{
 public:
@@ -11,6 +14,7 @@ public:
 	void Draw();
 
 private:
+	std::shared_ptr< StageIcon > stageIcon;
 };
 
 

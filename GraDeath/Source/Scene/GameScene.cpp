@@ -3,11 +3,12 @@
 #include "Input/Gamepad.h"
 #include "Stage/Stage.h"
 #include "Object/Manager/PlayerManager.h"
-
+#include "CharacterController/CharacterInfo.h"
 
 GameScene::GameScene(){
 	Stage::Initialize(0);
-	//PlayerManager::Init(nullptr);
+	
+	PlayerManager::Init ( ( PlayerData* )CharacterInfoFunc::GetCharacterInfo () );
 }
 
 GameScene::~GameScene ()
