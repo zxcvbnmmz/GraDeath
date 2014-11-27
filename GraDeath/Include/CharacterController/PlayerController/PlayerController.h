@@ -11,6 +11,7 @@
 #define _PLAYER_CONTROLLER_H_
 
 #include "CharacterController/CharacterController.h"
+#include <D3DX10math.h>
 
 class Character;
 
@@ -48,6 +49,9 @@ private:
 	virtual void Jump(Player*);
 
 	int count = 0;
+	// ˆê“I‚ÉéŒ¾
+	D3DXVECTOR2 pos;
+	float ground;
 };
 
 #endif
