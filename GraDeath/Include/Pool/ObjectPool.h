@@ -3,17 +3,6 @@
 
 #include <vector>
 
-#define CREATE(C)									\
-	static C* Create(){									\
-		C* c = new C;									\
-		if(c != nullptr){								\
-			ObjectPoolManager::GetInstance()->			\
-						GetCurrentPool()->Add(c);		\
-			return c;									\
-		}												\
-		return nullptr;									\
-	}
-
 class Ref;
 
 class ObjectPool{

@@ -14,3 +14,4 @@ void Ref::Release(){
 		ObjectPoolManager::GetInstance()->GetCurrentPool()->Erase(this);
 	}
 }
+

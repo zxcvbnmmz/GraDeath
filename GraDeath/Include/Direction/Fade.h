@@ -20,6 +20,8 @@ public:
 
 	void Draw();
 
+	//CREATE(Fade);
+
 private:
 	float alpha = 0;
 };

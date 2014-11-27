@@ -14,6 +14,7 @@
 //--------------------------------------------
 #include <D2D1.h>
 #include <D3DX10.h>
+#include "Pool/Ref.h"
 
 //--------------------------------------------
 // —ñ‹“‘Ì
@@ -44,7 +45,7 @@ enum DRAW_EFFECT{
 //--------------------------------------------
 // ƒNƒ‰ƒX–{‘Ì
 //--------------------------------------------
-class Sprite{
+class Sprite : public Ref{
 public:
 	//--------------------------------------------
 	// @name
@@ -184,6 +185,8 @@ public:
 
 	void SetReverseFlag(REVERSE_FLAG flag);
 	bool IsValid();
+
+	CREATE(Sprite);
 
 private:
 	Sprite(const Sprite&);

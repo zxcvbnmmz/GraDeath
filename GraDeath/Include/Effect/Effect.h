@@ -3,7 +3,7 @@
 
 #include "Pool/Ref.h"
 
-class Effect : public Ref{
+class REF_CLASS(Effect){
 public:
 	Effect();
 	virtual ~Effect();
@@ -15,3 +15,4 @@ public:
 };
 
 #endif	// end of Effect
+
