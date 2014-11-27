@@ -81,6 +81,12 @@ void PlayerController::Walk(Player* _player){
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PUSH ){
 		pos.x -= 4 * 0.5f;
 	}
+	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_A ) == INPUT_PUSH ){
+		//currentAction = JUMP;
+	}
+	else{
+		currentAction = IDLE;
+	}
 }
 
 void PlayerController::Attack(Player* _player){
