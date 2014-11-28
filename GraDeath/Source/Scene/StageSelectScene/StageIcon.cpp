@@ -28,10 +28,7 @@ StageIcon::StageIcon ()
 	selectSprite.Create ( L"Resource/Scene/StageSelect/StageIcon_Cursor.png" );
 }
 
-StageIcon::~StageIcon ()
-{
-
-}
+StageIcon::~StageIcon (){}
 
 void StageIcon::SetUp ()
 {
@@ -64,18 +61,17 @@ int StageIcon::GetStageNum ()
 
 void StageIcon::CursorMovw ()
 {
-	if ( INPUT_STATE::INPUT_PUSH == GamePad::getGamePadState ( PAD_1, BUTTON_LEFT ) )
-	{
-		stageNum = ( stageNum + 5 ) % 6;
-	}
 	if ( INPUT_STATE::INPUT_PUSH == GamePad::getGamePadState ( PAD_1, BUTTON_RIGTH ) )
 	{
 		stageNum = ( stageNum + 1 ) % 6;
+	}
+	if ( INPUT_STATE::INPUT_PUSH == GamePad::getGamePadState ( PAD_1, BUTTON_LEFT ) )
+	{
+		stageNum = ( stageNum + 5 ) % 6;
 	}
 	if ( INPUT_STATE::INPUT_PUSH == GamePad::getGamePadState ( PAD_1, BUTTON_UP ) ||
 		INPUT_STATE::INPUT_PUSH == GamePad::getGamePadState ( PAD_1, BUTTON_DOWN ) )
 	{
 		stageNum = ( stageNum + 3 ) % 6;
 	}
-
 }

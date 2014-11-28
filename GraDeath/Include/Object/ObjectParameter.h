@@ -52,6 +52,7 @@ struct CellData
 	short	shapeCount;		// 形数
 
 	std::vector< std::shared_ptr< ShapeData > > shapeData;	// 形データ
+	std::vector< std::shared_ptr< struct CollisionShape > > shapes;	// 形データ2
 };
 
 

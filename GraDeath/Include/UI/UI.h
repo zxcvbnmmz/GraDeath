@@ -10,7 +10,7 @@ typedef std::shared_ptr<UIData> UI;
 
 namespace UIManager{
 	void Release();
-	UI Create(int size, int priority = 0);
+	UI Create(int priority = 0);
 }
 
 struct UIData{

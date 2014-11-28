@@ -299,6 +299,9 @@
     <Filter Include="ソース ファイル\Game\Scene\StageSelect\StageIcon">
       <UniqueIdentifier>{a5b5bc13-0952-40db-9bf0-dc3d26511274}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\AnimationManager">
+      <UniqueIdentifier>{e042859b-d0f7-48d2-b135-54075fda38fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -851,6 +854,9 @@
     </ClInclude>
     <ClInclude Include="Include\Scene\StageSelectScene\StageIcon.h">
       <Filter>ソース ファイル\Game\Scene\StageSelect\StageIcon</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AnimationManager\AnimationManager.h">
+      <Filter>ソース ファイル\Game\AnimationManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

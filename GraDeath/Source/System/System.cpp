@@ -66,27 +66,24 @@ namespace System{
 		case WM_KEYDOWN:
 			switch ((char)wParam){
 			case VK_ESCAPE:
+				//HWND _hwnd;
+				//System::Window::GetHWND(&_hwnd);
+				//DestroyWindow(hWnd);
 				PostQuitMessage(0);
-				break;
+				return 0;
 			}
-			break;
+			return 0;
+		case WM_CLOSE:
+			//DestroyWindow(hWnd);
+			PostQuitMessage(0);
+			return 0;
+
 		case WM_DESTROY:
 			PostQuitMessage(0);
-			break;
-		case WM_SIZE:
-			//RECT rect;
-			//::GetClientRect(hwnd, &rect);
-			break;
-		case WM_PAINT:
-			break;
-
+			return 0;
 		case WM_ERASEBKGND:
-			HWND hwnd;
-			Window::GetHWND(&hwnd);
-			InvalidateRect(hwnd, NULL, FALSE);
-			break;
-		default:
-			break;
+			InvalidateRect(hWnd, NULL, FALSE);
+			return 0;
 		}
 		return DefWindowProc(hWnd, iMsg, wParam, lParam);
 	}

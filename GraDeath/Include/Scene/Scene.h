@@ -20,12 +20,19 @@ public:
 	virtual void OnStack(){}
 
 protected:
-	std::vector<class DelegateBase*> executes;
-	std::vector<class DelegateBase*> draws;
-	DelegateList list;
+	DelegateList executes;
+	DelegateList draws;
+
+	template<class T>
+	void AddFunction(T* inst, int (T::*Func)(void)){
+		executes.Add(Delegate<T>::Create(inst, Func));
+	}
+
+	template<class T>
+	void AddFunction(T* inst, void (T::*Func)(void)){
+		draws.Add(Delegate<T>::Create(inst, Func));
+	}
 };
 
-#define ADD_DELEGATE(CLASS,INST,FUNC)				\
-	list.Add(Delegate<CLASS>::Create(INST,FUNC))	\
 
 #endif	// end of Scene

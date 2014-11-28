@@ -3,7 +3,7 @@
 
 #include <Box2D\Box2D.h>
 
-struct CollisionDef{};
+struct CollisionDef{ virtual ~CollisionDef(){} };
 
 struct CircleDef:public CollisionDef{
 	int x, y;
@@ -27,7 +27,7 @@ public:
 		_shape->m_p.y = (float)def.y;
 		_shape->m_radius = (float)def.r;
 
-		shape.reset(_shape);		
+		shape.reset(_shape);
 	}
 
 	CollisionShape(SquareDef& def){

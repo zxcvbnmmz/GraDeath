@@ -21,8 +21,8 @@ namespace Utility{
 
 		OutputDebugStringA(debugOutBuff);
 
-		return true;
 #endif
+		return true;
 	}
 
 	void OutputError(bool _b, LPCWSTR _text, const char* _file, int _line){

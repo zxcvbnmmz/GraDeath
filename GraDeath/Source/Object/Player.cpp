@@ -20,17 +20,12 @@ Player::~Player(){
 }
 
 bool Player::Init(const char* fileName){
-	//ObjectParameter objParameter;
 	PlayerLoader::LoadFile ( fileName, &animData );
 
-	Utility::DebugPrint ( "%s\n", animData.fileName );
-	//wchar_t* _file = 0;
-	//Utility::ConvertToWChar ( _file, animData.fileName );
-
 	// ‘fÞ‚ª—ˆ‚½‚ç‚±‚Ìˆ—‚ð•ÏX
-	std::wstring file = L"Resource/Object/Player/Player_Test.bmp";//"Resource/Object/Player/Player_Test.bmp";
+	std::wstring file = L"Resource/Object/Player/Player_Test.png";//"Resource/Object/Player/Player_Test.bmp";
 	sprite->Create ( file.c_str () );
-
+	
 	animData.cellSize = D3DXVECTOR2 ( sprite->GetDefaultSize ().x / animData.rectWCount, sprite->GetDefaultSize ().y / animData.rectHCount );
 
 	return true;
