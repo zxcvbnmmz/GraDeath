@@ -7,11 +7,15 @@
 #include <algorithm>
 #include <functional>
 #include "Utility/SafeDelete.h"
+#include <stdio.h>
+#include "Input\Keyboard.h"
 
 namespace{
 	const static float PTM_RATIO = 32.0f;
 	std::vector<Sprite*> sprites;
 	std::vector<Sprite*> bgSprite;
+    Sprite* sprite = new Sprite;
+    float HP = 20.f + rand() % 10;
 }
 
 void CreateWorldEdge();
@@ -32,10 +36,26 @@ bool Stage::Initialize(int stageID){
 void Stage::Draw(){
 	bgSprite[ 0 ]->Draw ();
 	bgSprite[ 1 ]->Draw ();
+    if (Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH){
+        HP = 0;
+//        for (int i = 1; i < 6; i++){
+            //@ x 1366* y 768
+            sprite->SetTrimming(0, 575 * 2, 1366, 193);
+            D2D1_SIZE_F size;
+            size.height = 193.f;
+            size.width = 1366.f;
+            sprite->SetSize(size);
+            sprites.push_back(sprite);
+ //        }
+    }
 	for ( Sprite* sprite : sprites ){
-		sprite->Draw ();
+        sprite->Draw(DRAW_RECT);
 	}
 	bgSprite[ 2 ]->Draw ();
+}
+
+void GetDamage(float _damage){
+    HP -= _damage;
 }
 
 void Stage::Release(){
@@ -98,13 +118,17 @@ void CreateEachStage(int stageLevel){
 	int spriteNum = 1;
 
 	for (int i = 0; i < spriteNum; ++i){
-		Sprite* sprite = new Sprite;
 		/*各種パラメータの設定*/
-		sprite->Create ( L"Resource/Scene/Game/Stage/GroundSample.png" );
-		D3DXVECTOR2 size ( 0, 768.f - 150.f );
-		sprite->SetPosition ( size );
-
-		sprites.push_back(sprite);
+		sprite->Create ( L"Resource/Scene/Game/Stage/Ground.png" );
+		D3DXVECTOR2 pos ( 0, 580 );
+		sprite->SetPosition ( pos );
+        //@ x 1366* y 768
+        sprite->SetTrimming (0,575,1366,193);
+        D2D1_SIZE_F size;
+        size.height = 193.f;
+        size.width = 1366.f;
+        sprite->SetSize(size);
+        sprites.push_back(sprite);
 	}
 
 	Sprite* sprite1 = new Sprite;
