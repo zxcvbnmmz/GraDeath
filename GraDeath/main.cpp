@@ -25,7 +25,7 @@ INT WINAPI WinMain(HINSTANCE inst, HINSTANCE, LPSTR, INT){
 #ifdef _DEBUG
 	HWND hwnd;
 	System::Window::GetHWND(&hwnd);
-	MoveWindow(hwnd, 0, 0, 800, 600, false);
+	MoveWindow(hwnd, 0, 0, 854, 480, false);
 #endif
 
 	SceneManager::Initialize();
