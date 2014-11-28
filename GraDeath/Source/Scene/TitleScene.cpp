@@ -23,9 +23,6 @@ TitleScene::TitleScene(){
 	Graphic::Camera::Update ();
 
 	sprite.Create(L"Resource/Texture/Test.png");
-	ui = UIManager::Create();
-	ui->sprite.push_back(new Sprite);
-	ui->sprite[0]->Create(L"Resource/Texture/Test.png");
 
 	Add(this, &TitleScene::ExecuteFadeOut);
 }
