@@ -12,7 +12,10 @@ protected:
 public:
 	virtual ~Ref(){}
 	void Release();
-	__declspec(deprecated("Please use Derived class's function"))CREATE(Ref);
+
+	// 派生クラスでCreateマクロが実装されていない場合、Ref::Createが呼ばれる
+	// この関数はdeprecatedにより使用を禁止しているので、派生クラスでのCreate関数の実装を強要している
+	__declspec(deprecated("Please use the function of a derived class"))CREATE(Ref);
 
 private:
 	unsigned int refCount;

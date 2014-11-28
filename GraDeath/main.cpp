@@ -7,7 +7,11 @@
 #include "System/System.h"
 #include "Graphic/Graphic.h"
 #include "Scene/SceneManager.h"
+
+#ifdef _DEBUG
 #include "Utility/Debug.h"
+#include <System/Window.h>
+#endif
 
 INT WINAPI WinMain(HINSTANCE inst, HINSTANCE, LPSTR, INT){
 #ifdef _DEBUG
@@ -17,6 +21,12 @@ INT WINAPI WinMain(HINSTANCE inst, HINSTANCE, LPSTR, INT){
 	if (!System::Initialize(inst)){
 		return 0;
 	}
+
+#ifdef _DEBUG
+	HWND hwnd;
+	System::Window::GetHWND(&hwnd);
+	MoveWindow(hwnd, 0, 0, 800, 600, false);
+#endif
 
 	SceneManager::Initialize();
 
