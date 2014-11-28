@@ -20,7 +20,7 @@ UIData::~UIData(){
 
 class UICreator{
 public:
-	static UI Create(int size, int priority){
+	static UI Create(int priority){
 		std::shared_ptr<UIData> newUI;
 		newUI.reset(new UIData);
 
@@ -45,15 +45,15 @@ public:
 };
 
 void UIManager::Draw(){
-	/*for (UI ui : UIs){
+	for (UI ui : UIs){
 		for (Sprite* sprite : ui->sprite){
 			sprite->Draw();
 		}
-	}*/
+	}
 }
 
-UI UIManager::Create(int size, int priority){
-	return UICreator::Create(size, priority);
+UI UIManager::Create(int priority){
+	return UICreator::Create(priority);
 }
 
 void UIManager::Release(){
