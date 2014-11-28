@@ -20,14 +20,19 @@ public:
 	virtual void OnStack(){}
 
 protected:
-	DelegateList list;
 	DelegateList executes;
 	DelegateList draws;
 
 	template<class T>
-	void Add(T* inst, int (T::*Func)(void)){
-		list.Add(Delegate<T>::Create(inst, Func));
+	void AddFunction(T* inst, int (T::*Func)(void)){
+		executes.Add(Delegate<T>::Create(inst, Func));
+	}
+
+	template<class T>
+	void AddFunction(T* inst, void (T::*Func)(void)){
+		draws.Add(Delegate<T>::Create(inst, Func));
 	}
 };
+
 
 #endif	// end of Scene

@@ -182,6 +182,7 @@ public:
 	void SetTrimming(const D3DXVECTOR2& pos, const D3DXVECTOR2& size);
 	void SetTrimming(int x, int y, const D3DXVECTOR2& size);
 	void SetTrimming(const D3DXVECTOR2& pos, int wSize, int hSize);
+	void SetTrimming(const D2D1_RECT_F& rect);
 
 	void SetReverseFlag(REVERSE_FLAG flag);
 	bool IsValid();

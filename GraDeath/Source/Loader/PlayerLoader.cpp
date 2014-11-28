@@ -6,6 +6,8 @@
 #include <string>
 #include "Utility/Converter.h"
 
+#include "Object/CollisionShape.h"
+
 char* playerIconName[ ] =
 {
 	"Resource/Object/Player/TestData.bin",
@@ -99,6 +101,9 @@ namespace PlayerLoader
 				for ( int k = 0; k < cell->shapeCount; k++ )
 				{
 					auto shape = std::shared_ptr<ShapeData> ( new ShapeData );
+					// ‰¼’Ç‰Á
+					std::shared_ptr<CollisionShape> collisionShape;
+
 					char tempShape = 0;
 
 					// ‚ ‚½‚è”»’è‚Ìƒ‚ƒfƒ‹
@@ -115,15 +120,24 @@ namespace PlayerLoader
 
 					if ( shape->collisionModel )
 					{// ^‚¾‚Æ‰~
+						CircleDef def;
+
 						// ’†SX
 						ifs.read ( ( char* )&shape->shape.circle.x, sizeof( int ) );
 						// ’†SY
 						ifs.read ( ( char* )&shape->shape.circle.y, sizeof( int ) );
 						// ”¼Œa
 						ifs.read ( ( char* )&shape->shape.circle.rad, sizeof( int ) );
+
+						// ‰¼’Ç‰Á
+						def.r = shape->shape.circle.rad;
+						def.x = shape->shape.circle.x;
+						def.y = shape->shape.circle.y;
+						collisionShape = std::make_shared<CollisionShape>(def);
 					}
 					else
 					{// ‹U‚¾‚ÆŽlŠp
+						SquareDef def;
 						for ( int l = 0; l < 4; l++ )
 						{
 							// ’†SX
@@ -131,8 +145,16 @@ namespace PlayerLoader
 							// ’†SY
 							ifs.read ( ( char* )&shape->shape.square.y[ l ], sizeof( int ) );
 						}
+
+						// ‰¼’Ç‰Á
+						memcpy_s(def.x, sizeof(int)* 4, shape->shape.square.x, 4);
+						memcpy_s(def.y, sizeof(int)* 4, shape->shape.square.y, 4);
+						collisionShape = std::make_shared<CollisionShape>(def);
 					}
 					cell->shapeData.push_back ( shape );
+
+					// ‰¼’Ç‰Á
+					cell->shapes.push_back(collisionShape);
 				}
 				cellData.push_back ( cell );
 			}

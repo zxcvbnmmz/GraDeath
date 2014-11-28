@@ -25,7 +25,7 @@ bool Player::Init(const char* fileName){
 	// ‘fÞ‚ª—ˆ‚½‚ç‚±‚Ìˆ—‚ð•ÏX
 	std::wstring file = L"Resource/Object/Player/Player_Test.png";//"Resource/Object/Player/Player_Test.bmp";
 	sprite->Create ( file.c_str () );
-
+	
 	animData.cellSize = D3DXVECTOR2 ( sprite->GetDefaultSize ().x / animData.rectWCount, sprite->GetDefaultSize ().y / animData.rectHCount );
 
 	return true;

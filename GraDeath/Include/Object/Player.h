@@ -6,6 +6,7 @@
 #include <vector>
 #include <memory>
 
+#include "Object/CollisionShape.h"
 
 using namespace std;
 
@@ -26,10 +27,11 @@ public:
 
 	void AddForce(b2Vec2& _force);
 
+	void AttachFixture();
+	void DettachFixture();
+
 private:
 	AnimationData animData;
-	vector<vector<shared_ptr<Sprite>>> sprites;
-	//vector<shared_ptr<AnimetionParameter>> animeParameter;
 	shared_ptr<Sprite> sprite;
 	float hitPoint;
 };

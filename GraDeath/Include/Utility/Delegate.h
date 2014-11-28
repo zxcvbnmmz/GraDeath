@@ -11,17 +11,16 @@ public:
 		return (void*)(obj->*func)();
 	}
 
-	typedef int (T::*Func)();
-
-	static std::shared_ptr<DelegateBase> Create(T* _obj, Func _func){
+	template<class R>
+	static std::shared_ptr<DelegateBase> Create(T* _obj, R(T::*_func)(void)){
 		std::shared_ptr<Delegate> delegate(new Delegate);
 		delegate->obj = _obj;
-		delegate->func = _func;
+		delegate->func = reinterpret_cast<void* (T::*)(void)>(_func);
 		return delegate;
 	}
 
 private:
-	Func func;
+	void* (T::*func)(void);
 	T* obj;
 };
 

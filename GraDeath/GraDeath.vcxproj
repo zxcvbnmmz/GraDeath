@@ -176,6 +176,7 @@
     <ClCompile Include="Source\World\World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\AnimationManager\AnimationManager.h" />
     <ClInclude Include="Include\CharacterController\CharacterController.h" />
     <ClInclude Include="Include\CharacterController\CharacterInfo.h" />
     <ClInclude Include="Include\CharacterController\PlayerController\PlayerController.h" />

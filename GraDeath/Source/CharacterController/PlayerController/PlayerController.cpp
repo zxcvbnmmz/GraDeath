@@ -14,7 +14,7 @@
 #include "Object/Player.h"
 #include "Input/GamePad.h"
 #include "System/Window.h"
-
+#include "AnimationManager/AnimationManager.h"
 void PlayerController::Init (int _padID)
 {
 	Release ();
