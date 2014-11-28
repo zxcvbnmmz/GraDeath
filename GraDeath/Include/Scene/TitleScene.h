@@ -11,6 +11,7 @@ public:
 	void Draw();
 
 private:
+	int ExecuteFadeOut(){ return 2; }
 };
 
 #endif	// end of TitleScene

@@ -7,8 +7,12 @@
 #include "Input/Gamepad.h"
 
 #include "Input\Keyboard.h"
+#include "UI/UI.h"
 
-Sprite sprite;
+#include "Utility/Delegate.h"
+
+//Sprite sprite;
+//UI ui;
 
 TitleScene::TitleScene(){
 
@@ -19,7 +23,13 @@ TitleScene::TitleScene(){
 	Graphic::Camera::SetLookAt ( D3DXVECTOR3 (  0, 40 ,-60 ), D3DXVECTOR3 ( 0, 0, 0 ) );
 	Graphic::Camera::Update ();
 
-	sprite.Create(L"Resource/Texture/Test.png");
+	//sprite.Create(L"Resource/Texture/Test.png");
+	//ui = UIManager::Create();
+	//ui->sprite.push_back(new Sprite);
+	//ui->sprite[0]->Create(L"Resource/Texture/Test.png");
+
+	//ADD_DELEGATE(TitleScene, this, &TitleScene::ExecuteFadeOut);
+	//executes.push_back(Delegate<TitleScene>::Create(this, &TitleScene::ExecuteFadeOut));
 }
 
 SCENE_STATUS TitleScene::Execute(){
@@ -36,5 +46,5 @@ SCENE_STATUS TitleScene::Execute(){
 }
 
 void TitleScene::Draw(){
-	sprite.Draw();
+	//sprite.Draw();
 }
