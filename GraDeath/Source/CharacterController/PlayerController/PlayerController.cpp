@@ -78,11 +78,12 @@ void PlayerController::Walk(Player* _player){
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
 		pos.x -= 4.0f;
 	}
-	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_A ) == INPUT_PUSH ){
-		currentAction = JUMP;
-	}
 	else{
 		currentAction = IDLE;
+	}
+
+	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_A ) == INPUT_PUSH ){
+		currentAction = JUMP;
 	}
 }
 
@@ -94,14 +95,20 @@ void PlayerController::Damage(Player* _player){}
 
 void PlayerController::Jump(Player* _player){
 
-	static float jumpCount = -10.0f;
+	static float jumpCount = -20.0f;
 	jumpCount += 0.98f;
 	pos.y += jumpCount;
 	if ( pos.y > ground )
 	{
 		pos.y = ground;
 		currentAction = IDLE;
-		jumpCount = -5.0f;
+		jumpCount = -20.0f;
+	}
+	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
+		pos.x += 4.0f;
+	}
+	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
+		pos.x -= 4.0f;
 	}
 }
 
