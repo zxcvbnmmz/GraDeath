@@ -2,6 +2,7 @@
 #define _CHARACTER_DELEGATE_H__
 
 #include "DelegateBase.h"
+#include <memory>
 
 template <class T>
 class Delegate : public DelegateBase{
@@ -12,8 +13,8 @@ public:
 
 	typedef int (T::*Func)();
 
-	static DelegateBase* Create(T* _obj, Func _func){
-		Delegate* delegate = new Delegate;
+	static std::shared_ptr<DelegateBase> Create(T* _obj, Func _func){
+		std::shared_ptr<Delegate> delegate(new Delegate);
 		delegate->obj = _obj;
 		delegate->func = _func;
 		return delegate;
