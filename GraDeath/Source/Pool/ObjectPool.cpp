@@ -28,7 +28,7 @@ void ObjectPool::Clear(){
 	// この要素の消し方はエラーが起きる
 	// 理由は分からないが、deleteした瞬間にmanagedObjectの要素数が減っていることから
 	// erase的な操作が行われている可能性あり
-	//for (auto* ref : managedObject){
+	// for (auto* ref : managedObject){
 	//	if (ref != nullptr){
 	//		delete ref;
 	//	}

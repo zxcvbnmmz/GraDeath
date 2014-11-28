@@ -3,13 +3,16 @@
 
 #include "Pool/Ref.h"
 
-class REF_CLASS(Effect){
+REF_CLASS(Effect){
 public:
 	Effect();
 	virtual ~Effect();
 
 	void Update();
-	virtual void Draw(){}
+	virtual void Draw(){
+		auto effect = Effect::Create();
+		ObjectPoolManager::GetInstance()->GetCurrentPool()->Erase(effect);
+	}
 
 	CREATE(Effect);
 };

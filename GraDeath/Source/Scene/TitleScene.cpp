@@ -23,10 +23,10 @@ TitleScene::TitleScene(){
 }
 
 SCENE_STATUS TitleScene::Execute(){
-
-	Graphic::Camera::Update ();
 	if (GamePad::getAnyGamePadPressed(BUTTON_START) ||
-		Keyboard::CheckKey ( KC_ENTER ) ){
+#ifdef _DEBUG
+		Keyboard::CheckKey ( KC_ENTER ) == INPUT_PUSH ){
+#endif
 		CharacterSelectFactory cf;
 		SceneFactory::Reserve(&cf);
 		return END_PROCESS;
@@ -36,5 +36,5 @@ SCENE_STATUS TitleScene::Execute(){
 }
 
 void TitleScene::Draw(){
-
+	sprite.Draw();
 }
