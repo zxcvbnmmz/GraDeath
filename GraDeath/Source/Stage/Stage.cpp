@@ -114,7 +114,7 @@ void CreateEachStage(int stageLevel){
 	sprite2->Create ( L"Resource/Scene/Game/Stage/bg02.png" );
 	bgSprite.push_back ( sprite2 );
 	Sprite* sprite3 = new Sprite;
-	sprite3->Create ( L"Resource/Scene/Game/Stage/bg02.png" );
+	sprite3->Create ( L"Resource/Scene/Game/Stage/bg03.png" );
 	bgSprite.push_back ( sprite3 );
 	for ( auto& bg : bgSprite )
 		bg->SetPosition ( 0, 0 );

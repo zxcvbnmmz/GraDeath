@@ -19,7 +19,7 @@ GameScene::~GameScene ()
 
 SCENE_STATUS GameScene::Execute(){
 
-	if (GamePad::getAnyGamePadPressed(BUTTON_A)){
+	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS){
 		ResultFactory rf;
 		SceneFactory::Reserve(&rf);
 		return END_PROCESS;

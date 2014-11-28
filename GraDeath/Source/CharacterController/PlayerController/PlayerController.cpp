@@ -61,10 +61,10 @@ void PlayerController::Idle(Player* _player){
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH){
 		currentAction = JUMP;
 	}
-	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PUSH ){
+	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
 		currentAction = WALK;
 	}
-	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PUSH ){
+	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
 		currentAction = WALK;
 	}
 	count = ( count + 1 ) % 6;
@@ -75,11 +75,11 @@ void PlayerController::Idle(Player* _player){
 void PlayerController::Run(Player* _player){}
 
 void PlayerController::Walk(Player* _player){
-	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PUSH ){
-		pos.x += 4 * 0.5f;
+	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
+		pos.x += 4.0f;
 	}
-	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PUSH ){
-		pos.x -= 4 * 0.5f;
+	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
+		pos.x -= 4.0f;
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_A ) == INPUT_PUSH ){
 		//currentAction = JUMP;
