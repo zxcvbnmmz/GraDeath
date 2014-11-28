@@ -28,10 +28,7 @@ StageIcon::StageIcon ()
 	selectSprite.Create ( L"Resource/Scene/StageSelect/StageIcon_Cursor.png" );
 }
 
-StageIcon::~StageIcon ()
-{
-
-}
+StageIcon::~StageIcon (){}
 
 void StageIcon::SetUp ()
 {
@@ -77,5 +74,4 @@ void StageIcon::CursorMovw ()
 	{
 		stageNum = ( stageNum + 3 ) % 6;
 	}
-
 }
