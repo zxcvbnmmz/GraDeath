@@ -1,4 +1,4 @@
-#include "D2D/Sprite/Sprite.h"
+//#include "D2D/Sprite/Sprite.h"
 #include "Scene/TitleScene.h"
 #include "Graphic/Camera/Camera.h"
 #include "System/Window.h"
@@ -7,10 +7,6 @@
 #include "Input/Gamepad.h"
 
 #include "Input\Keyboard.h"
-
-Sprite sprite, sStart, sCredit, sExit, sVector;
-D3DXVECTOR2 start_pos, credit_pos, exit_pos, vect_pos, select_pos;
-int tCount, select_i;
 
 TitleScene::TitleScene(){
 
