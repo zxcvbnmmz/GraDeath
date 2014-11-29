@@ -1,4 +1,3 @@
-//#include "D2D/Sprite/Sprite.h"
 #include "Scene/TitleScene.h"
 #include "Graphic/Camera/Camera.h"
 #include "System/Window.h"

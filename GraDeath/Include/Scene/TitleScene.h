@@ -16,7 +16,6 @@ private:
 	Sprite sprite, sStart, sCredit, sExit, sVector;
 	D3DXVECTOR2 start_pos, credit_pos, exit_pos, vect_pos, select_pos;
 	int tCount, select_i;
-
 };
 
 #endif	// end of TitleScene
