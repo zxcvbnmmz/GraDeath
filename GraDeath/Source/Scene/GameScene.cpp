@@ -4,11 +4,28 @@
 #include "Stage/Stage.h"
 #include "Object/Manager/PlayerManager.h"
 #include "CharacterController/CharacterInfo.h"
-
+#include "Utility/Delegate.h"
 GameScene::GameScene(){
 	Stage::Initialize(0);
 	
 	PlayerManager::Init ( ( PlayerData* )CharacterInfoFunc::GetCharacterInfo () );
+
+	/*
+	AddFunction(this, &GameScene::ExecuteSample);
+	AddFunction(this, &GameScene::DrawSample);
+	AddFunction(this, &GameScene::DrawSample2);
+
+	(*executes[0])();	// ExecuteSample
+	(*draws[0])();		// DrawSample
+	(*draws[1])();		// DrawSample2
+
+	int i = 1;
+	(*executes[i])();	// error
+	(*draws[i])();		// DrawSample2
+
+	int a = (*executes[0])();		// error
+	int b = (int)(*executes[0])();	// not error
+	*/
 }
 
 GameScene::~GameScene ()
@@ -27,7 +44,6 @@ SCENE_STATUS GameScene::Execute(){
 
 	PlayerManager::Update();
 
-
 	return STILL_PROCESSING;
 }
 
@@ -36,3 +52,14 @@ void GameScene::Draw(){
 	PlayerManager::Draw();
 }
 
+int GameScene::ExecuteSample(){
+	return 1;
+}
+
+void GameScene::DrawSample(){
+
+}
+
+void GameScene::DrawSample2(){
+
+}
