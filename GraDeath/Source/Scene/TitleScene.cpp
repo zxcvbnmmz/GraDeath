@@ -21,11 +21,11 @@ TitleScene::TitleScene(){
 	Graphic::Camera::SetLookAt ( D3DXVECTOR3 (  0, 40 ,-60 ), D3DXVECTOR3 ( 0, 0, 0 ) );
 	Graphic::Camera::Update ();
 
-	sprite.Create(L"Resource/Texture/Test.png");
-	sStart.Create(L"Resource/Texture/Start.png");
-	sCredit.Create(L"Resource/Texture/Credit.png");
-	sExit.Create(L"Resource/Texture/Exit.png");
-	sVector.Create(L"Resource/Texture/Vector.png");
+	//sprite.Create(L"Resource/Texture/Test.png");
+	//sStart.Create(L"Resource/Texture/Start.png");
+	//sCredit.Create(L"Resource/Texture/Credit.png");
+	//sExit.Create(L"Resource/Texture/Exit.png");
+	//sVector.Create(L"Resource/Texture/Vector.png");
 
 	start_pos = D3DXVECTOR2(800, 200);
 	credit_pos = D3DXVECTOR2(800, 400);
@@ -68,25 +68,25 @@ SCENE_STATUS TitleScene::Execute(){
 }
 
 void TitleScene::Draw(){
-	sprite.Draw();
-	sStart.SetPosition(start_pos);
-	sCredit.SetPosition(credit_pos);
-	sExit.SetPosition(exit_pos);
-	sVector.SetPosition(vect_pos);
-	switch (select_i){
-	case 0:
-		sStart.SetPosition(start_pos - select_pos);
-		break;
-	case 1:
-		sCredit.SetPosition(credit_pos - select_pos);
-		break;
-	case 2:
-		sExit.SetPosition(exit_pos - select_pos);
-		break;
-	}
-	sStart.Draw();
-	sCredit.Draw();
-	sExit.Draw();
-	sVector.SetPositionY(vect_pos.y + select_i * 200);
-	sVector.Draw();
+	//sprite.Draw();
+	//sStart.SetPosition(start_pos);
+	//sCredit.SetPosition(credit_pos);
+	//sExit.SetPosition(exit_pos);
+	//sVector.SetPosition(vect_pos);
+	//switch (select_i){
+	//case 0:
+	//	sStart.SetPosition(start_pos - select_pos);
+	//	break;
+	//case 1:
+	//	sCredit.SetPosition(credit_pos - select_pos);
+	//	break;
+	//case 2:
+	//	sExit.SetPosition(exit_pos - select_pos);
+	//	break;
+	//}
+	//sStart.Draw();
+	//sCredit.Draw();
+	//sExit.Draw();
+	//sVector.SetPositionY(vect_pos.y + select_i * 200);
+	//sVector.Draw();
 }
