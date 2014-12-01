@@ -5,9 +5,9 @@ GameSceneUI* GameSceneUI::ui = nullptr;
 GameSceneUI::GameSceneUI(){
 	// ‚±‚±‚ÅŠeUI‚Ì‰Šú‰»
 	ground.Create ( L"Resource/UI/Game/player_ui_frame.png" );
-	for (int i = 0; i < PLAYER_MAX; ++i){
-		sprites[i][IDENTIFIER].Create(L"");
-	}
+	//for (int i = 0; i < PLAYER_MAX; ++i){
+	//	sprites[i][IDENTIFIER].Create(L"");
+	//}
 }
 
 GameSceneUI::~GameSceneUI(){
@@ -15,9 +15,10 @@ GameSceneUI::~GameSceneUI(){
 
 void GameSceneUI::Draw(){
 	for (int i = 0; i < PLAYER_MAX; ++i){
-		for (Sprite& sprite : sprites[i]){
-			sprite.Draw();
-		}
+		ground.SetPosition ( 20 + ( 320 * i), 160 );
+		//for (Sprite& sprite : sprites[i]){
+		//	sprite.Draw();
+		//}
 	}
 }
 
