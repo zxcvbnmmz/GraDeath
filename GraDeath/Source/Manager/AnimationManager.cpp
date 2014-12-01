@@ -1,6 +1,10 @@
 #include "Manager/AnimationManager.h"
+#include "Loader/PlayerLoader.h"
 
 bool AnimationManager::Create(const char* fileName){
+	PlayerLoader::LoadFile(fileName, &animation);
+	
+
 	return true;
 }
 
