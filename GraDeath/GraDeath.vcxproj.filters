@@ -302,6 +302,9 @@
     <Filter Include="ソース ファイル\Game\AnimationManager">
       <UniqueIdentifier>{e042859b-d0f7-48d2-b135-54075fda38fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Other\SizeGetter">
+      <UniqueIdentifier>{33b7bbc5-b925-42f1-be65-3eac36418ee3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -558,6 +561,9 @@
     </ClCompile>
     <ClCompile Include="Source\Manager\AnimationManager.cpp">
       <Filter>ソース ファイル\Game\AnimationManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\Source.cpp">
+      <Filter>ソース ファイル\Other\SizeGetter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -860,6 +866,10 @@
     </ClInclude>
     <ClInclude Include="Include\Manager\AnimationManager.h">
       <Filter>ソース ファイル\Game\AnimationManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AnimationManager\AnimationManager.h" />
+    <ClInclude Include="Include\Utility\SizeGetter.h">
+      <Filter>ソース ファイル\Other\SizeGetter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

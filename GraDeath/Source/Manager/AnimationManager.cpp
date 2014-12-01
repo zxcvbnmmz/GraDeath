@@ -3,7 +3,7 @@
 
 bool AnimationManager::Create(unsigned int playerNum){
 	PlayerLoader::LoadFile(playerNum, &animation);
-	
+	ChangeAction(ACTION_IDLE, true);
 
 	return true;
 }
@@ -41,7 +41,7 @@ void AnimationManager::GetDrawingRect(D2D1_RECT_F& rect){
 	auto size = animation.cellSize;
 	size_t pos = std::distance(animation.cellDatas[currentAction].begin(), currentCell);
 	rect.left = size.x * pos;
-	rect.top = size.y * pos;
+	rect.top = size.y * (int)currentAction;
 	rect.right = size.x;
 	rect.bottom = size.y;
 }

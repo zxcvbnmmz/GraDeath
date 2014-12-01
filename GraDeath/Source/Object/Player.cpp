@@ -13,10 +13,6 @@ Player::Player(){
 }
 
 Player::~Player(){
-	if ( animData.fileName )
-	{
-		delete[] animData.fileName;
-	}
 }
 
 bool Player::Init(const char* fileName){
