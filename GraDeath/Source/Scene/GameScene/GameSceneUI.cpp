@@ -4,7 +4,7 @@ GameSceneUI* GameSceneUI::ui = nullptr;
 
 GameSceneUI::GameSceneUI(){
 	// ‚±‚±‚ÅŠeUI‚Ì‰Šú‰»
-	ground.Create ( L"Resource/UI/Game/player_ui_frame.png" );
+	//ground.Create ( L"Resource/UI/Game/player_ui_frame.png" );
 	//for (int i = 0; i < PLAYER_MAX; ++i){
 	//	sprites[i][IDENTIFIER].Create(L"");
 	//}
@@ -15,7 +15,7 @@ GameSceneUI::~GameSceneUI(){
 
 void GameSceneUI::Draw(){
 	for (int i = 0; i < PLAYER_MAX; ++i){
-		ground.SetPosition ( 20 + ( 320 * i), 160 );
+	//	ground.SetPosition ( 20 + ( 320 * i), 160 );
 		//for (Sprite& sprite : sprites[i]){
 		//	sprite.Draw();
 		//}
@@ -24,15 +24,15 @@ void GameSceneUI::Draw(){
 
 GameSceneUI* GameSceneUI::Create(){
 	if (ui == nullptr){
-		ui = new GameSceneUI;
-		ObjectPoolManager::GetInstance()->GetCurrentPool()->Add(ui);
+		//ui = new GameSceneUI;
+		//ObjectPoolManager::GetInstance()->GetCurrentPool()->Add(ui);
 	}
 
 	return ui;
 }
 
 void GameSceneUI::Release(){
-	ObjectPoolManager::GetInstance()->GetCurrentPool()->Erase(ui);
+	//ObjectPoolManager::GetInstance()->GetCurrentPool()->Erase(ui);
 }
 
 
