@@ -6,11 +6,14 @@
 #include "Object/Manager/PlayerManager.h"
 #include "CharacterController/CharacterInfo.h"
 #include "Utility/Delegate.h"
+#include "Scene/GameScene/GameSceneUI.h"
+
 GameScene::GameScene(){
 	Stage::Initialize(0);
 	
 	PlayerManager::Init ( ( PlayerData* )CharacterInfoFunc::GetCharacterInfo () );
 
+	GameSceneUI::Create ();
 	/*
 	AddFunction(this, &GameScene::ExecuteSample);
 	AddFunction(this, &GameScene::DrawSample);
@@ -33,6 +36,7 @@ GameScene::~GameScene ()
 {
 	PlayerManager::Release();
 	Stage::Release ();
+	GameSceneUI::Release ();
 }
 
 SCENE_STATUS GameScene::Execute(){
@@ -53,7 +57,7 @@ SCENE_STATUS GameScene::Execute(){
 
 void GameScene::Draw(){
 	Stage::Draw ();
-//	PlayerManager::Draw();
+	PlayerManager::Draw();
 }
 
 int GameScene::ExecuteSample(){
