@@ -32,13 +32,17 @@ TitleScene::TitleScene(){
 }
 
 SCENE_STATUS TitleScene::Execute(){
-	if (GamePad::getAnyGamePadPressed(BUTTON_START) ||
+	if (GamePad::getGamePadState(PAD_1, BUTTON_DOWN, 0) == INPUT_PUSH ||
 #ifdef _DEBUG
 		Keyboard::CheckKey ( KC_ENTER ) == INPUT_PUSH ){
 #endif
-		CharacterSelectFactory cf;
-		SceneFactory::Reserve(&cf);
-		return END_PROCESS;
+		switch (select_i){
+		case 0:
+			CharacterSelectFactory cf;
+			SceneFactory::Reserve(&cf);
+			return END_PROCESS;
+			break;
+		}
 	}
 
 	if (GamePad::getGamePadState(PAD_1, BUTTON_DOWN, 0) == INPUT_PUSH ||
