@@ -63,25 +63,25 @@ SCENE_STATUS TitleScene::Execute(){
 }
 
 void TitleScene::Draw(){
-	//sprite.Draw();
-	//sStart.SetPosition(start_pos);
-	//sCredit.SetPosition(credit_pos);
-	//sExit.SetPosition(exit_pos);
-	//sVector.SetPosition(vect_pos);
-	//switch (select_i){
-	//case 0:
-	//	sStart.SetPosition(start_pos - select_pos);
-	//	break;
-	//case 1:
-	//	sCredit.SetPosition(credit_pos - select_pos);
-	//	break;
-	//case 2:
-	//	sExit.SetPosition(exit_pos - select_pos);
-	//	break;
-	//}
-	//sStart.Draw();
-	//sCredit.Draw();
-	//sExit.Draw();
-	//sVector.SetPositionY(vect_pos.y + select_i * 200);
-	//sVector.Draw();
+	sprite.Draw();
+	sStart.SetPosition(start_pos);
+	sCredit.SetPosition(credit_pos);
+	sExit.SetPosition(exit_pos);
+	sVector.SetPosition(vect_pos);
+	switch (select_i){
+	case 0:
+		sStart.SetPosition(start_pos - select_pos);
+		break;
+	case 1:
+		sCredit.SetPosition(credit_pos - select_pos);
+		break;
+	case 2:
+		sExit.SetPosition(exit_pos - select_pos);
+		break;
+	}
+	sStart.Draw();
+	sCredit.Draw();
+	sExit.Draw();
+	sVector.SetPositionY(vect_pos.y + select_i * 200);
+	sVector.Draw();
 }
