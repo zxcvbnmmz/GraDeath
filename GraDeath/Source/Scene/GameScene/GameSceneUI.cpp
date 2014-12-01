@@ -2,12 +2,20 @@
 
 GameSceneUI* GameSceneUI::ui = nullptr;
 
+wchar_t* playerIconUI[ ] =
+{
+	L"Resource/UI/Game/player_icon_1.bin",
+	L"Resource/UI/Game/player_icon_2.bin",
+	L"Resource/UI/Game/player_icon_3.bin",
+	L"Resource/UI/Game/player_icon_4.bin",
+};
+
 GameSceneUI::GameSceneUI(){
 	// Ç±Ç±Ç≈äeUIÇÃèâä˙âª
 	ground.Create ( L"Resource/UI/Game/player_ui_frame.png" );
-	//for (int i = 0; i < PLAYER_MAX; ++i){
-	//	sprites[i][IDENTIFIER].Create(L"");
-	//}
+	for (int i = 0; i < PLAYER_MAX; ++i){
+		sprites[ i ][ IDENTIFIER ].Create ( playerIconUI[ i ] );
+	}
 }
 
 GameSceneUI::~GameSceneUI(){

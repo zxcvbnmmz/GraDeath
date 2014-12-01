@@ -8,18 +8,33 @@ private:
 	float hp = 0;
 
 public:
-	HitPoint ();
+	HitPoint (){}
 
-	~HitPoint ();
+	~HitPoint (){}
 
 	void Init ();
 
-	bool IsAlive ();
+	bool IsDead ();
 
-	float SetHP ( float _hp );
+	void SetHP ( float _hp );
 
 	float GetHP();
 
 };
+
+inline bool HitPoint::IsDead ()
+{
+	return ( hp <= .0f );
+}
+
+inline void HitPoint::SetHP ( float _hp )
+{
+	hp = _hp;
+}
+
+inline float HitPoint::GetHP ()
+{
+	return hp;
+}
 
 #endif
