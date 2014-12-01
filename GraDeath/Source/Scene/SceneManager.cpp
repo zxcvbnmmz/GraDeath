@@ -9,6 +9,7 @@
 #include "Input/InputManager.h"
 #include "UI/UIManager.h"
 #include "Utility/FPS.h"
+#include "Pool/ObjectPool.h"
 
 namespace{
 	std::stack<Scene*> scenes;
@@ -44,6 +45,8 @@ void SceneManager::Release(){
 		delete reserve;
 		reserve = nullptr;
 	}
+
+	ObjectPoolManager::Destroy();
 }
 
 int SceneManager::Execute(){
