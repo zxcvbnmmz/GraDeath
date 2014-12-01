@@ -22,12 +22,9 @@ public:
 	AnimationManager(){}
 	virtual ~AnimationManager(){}
 
-	bool Create(unsigned int );
-
+	bool Create(unsigned int playerNum);
 	void ChangeAction(PLAYER_ACTION _action, bool _loop);
-
 	CURRENT_STATE Update();
-
 	void GetDrawingRect(D2D1_RECT_F& rect);
 
 	void Enable(bool flag){
