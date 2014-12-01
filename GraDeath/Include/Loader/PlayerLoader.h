@@ -8,9 +8,9 @@ struct AnimationData;
 namespace PlayerLoader
 {
 
-	void LoadFile ( const char* _filename, AnimationData* parameter );
+	void LoadFile ( const int _num, AnimationData* parameter );
 
-	char* GetLoadFileName ( CharacterInfo::PLAYER_TYPE _type );
+	//char* GetLoadFileName ( CharacterInfo::PLAYER_TYPE _type );
 
 };
 
