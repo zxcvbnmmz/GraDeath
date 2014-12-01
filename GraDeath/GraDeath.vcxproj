@@ -225,6 +225,7 @@
     <ClInclude Include="Include\Model\ModelSkinShader.h" />
     <ClInclude Include="Include\Model\ModelStaticShader.h" />
     <ClInclude Include="Include\Object\CollisionShape.h" />
+    <ClInclude Include="Include\Object\HitPoint.h" />
     <ClInclude Include="Include\Object\Manager\PlayerManager.h" />
     <ClInclude Include="Include\Object\Object.h" />
     <ClInclude Include="Include\Object\ObjectParameter.h" />
