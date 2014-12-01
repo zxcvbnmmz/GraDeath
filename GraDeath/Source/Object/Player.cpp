@@ -20,7 +20,7 @@ Player::~Player(){
 }
 
 bool Player::Init(const char* fileName){
-	PlayerLoader::LoadFile ( fileName, &animData );
+	PlayerLoader::LoadFile ( 0, &animData );
 
 	// ‘fŞ‚ª—ˆ‚½‚ç‚±‚Ìˆ—‚ğ•ÏX
 	std::wstring file = L"Resource/Object/Player/Player_Test.png";//"Resource/Object/Player/Player_Test.bmp";

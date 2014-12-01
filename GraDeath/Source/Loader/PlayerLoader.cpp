@@ -10,7 +10,7 @@
 
 char* playerIconName[ ] =
 {
-	"Resource/Object/Player/TestData.bin",
+	"Resource/Object/Player/shirokuro.bin",
 	"Resource/Object/Player/TestData.bin",
 	"Resource/Object/Player/TestData.bin",
 	"Resource/Object/Player/TestData.bin",
@@ -19,11 +19,11 @@ char* playerIconName[ ] =
 
 namespace PlayerLoader
 {
-	void LoadShapeData ( std::ifstream* _ifs, short _count, std::vector< std::shared_ptr< ShapeData > > _shapeData );
+	//void LoadShapeData ( std::ifstream* _ifs, short _count, std::vector< std::shared_ptr< ShapeData > > _shapeData );
 
-	void LoadFile ( const char* _filename, AnimationData* parameter )
+	void LoadFile ( const int _num, AnimationData* parameter )
 	{
-		std::ifstream ifs ( _filename, std::ios::binary );
+		std::ifstream ifs ( playerIconName[_num], std::ios::binary );
 
 		assert ( !ifs.fail () );
 
@@ -147,9 +147,9 @@ namespace PlayerLoader
 						}
 
 						// ‰¼’Ç‰Á
-						memcpy_s(def.x, sizeof(int)* 4, shape->shape.square.x, 4);
-						memcpy_s(def.y, sizeof(int)* 4, shape->shape.square.y, 4);
-						collisionShape = std::make_shared<CollisionShape>(def);
+						memcpy ( def.x, shape->shape.square.x, sizeof( int )* 4 );
+						memcpy ( def.y, shape->shape.square.y, sizeof( int )* 4 );
+						collisionShape.reset ( new CollisionShape ( def ) );
 					}
 					cell->shapeData.push_back ( shape );
 
@@ -163,8 +163,8 @@ namespace PlayerLoader
 		}
 	}
 
-	char* GetLoadFileName ( CharacterInfo::PLAYER_TYPE _type )
-	{
-		return playerIconName[ _type ];
-	}
+	//char* GetLoadFileName ( CharacterInfo::PLAYER_TYPE _type )
+	////{
+	//	return playerIconName[ _type ];
+	//}
 };
