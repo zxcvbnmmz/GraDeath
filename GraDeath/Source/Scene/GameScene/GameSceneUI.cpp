@@ -15,7 +15,9 @@ GameSceneUI::~GameSceneUI(){
 
 void GameSceneUI::Draw(){
 	for (int i = 0; i < PLAYER_MAX; ++i){
-		ground.SetPosition ( 20 + ( 320 * i), 160 );
+		ground.SetPosition ( 50 + ( 320 * i), 630 );
+		ground.Draw ();
+
 		//for (Sprite& sprite : sprites[i]){
 		//	sprite.Draw();
 		//}
