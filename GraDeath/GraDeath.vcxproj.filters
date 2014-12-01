@@ -302,6 +302,9 @@
     <Filter Include="ソース ファイル\Game\AnimationManager">
       <UniqueIdentifier>{e042859b-d0f7-48d2-b135-54075fda38fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Object\HitPoint">
+      <UniqueIdentifier>{cacefda7-4380-4252-bbc4-7ae1fc5314b6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -860,6 +863,10 @@
     </ClInclude>
     <ClInclude Include="Include\Manager\AnimationManager.h">
       <Filter>ソース ファイル\Game\AnimationManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AnimationManager\AnimationManager.h" />
+    <ClInclude Include="Include\Object\HitPoint.h">
+      <Filter>ソース ファイル\Game\Object\HitPoint</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
