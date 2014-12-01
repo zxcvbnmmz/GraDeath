@@ -33,10 +33,7 @@ public:
 	~PlayerController (){}
 
 	void Init (int padID);
-
-	void Update(class Player* _player);
 	void Draw(class Player* _player);
-
 
 	void Release ();
 

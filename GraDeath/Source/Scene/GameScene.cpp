@@ -41,16 +41,16 @@ GameScene::~GameScene ()
 
 SCENE_STATUS GameScene::Execute(){
 
-	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS ||
-#ifdef _DEBUG
-		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH){
-#endif
-		ResultFactory rf;
-		SceneFactory::Reserve(&rf);
-		return END_PROCESS;
-	}
-
-//	PlayerManager::Update();
+//	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS ||
+//#ifdef _DEBUG
+//		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH){
+//#endif
+//		ResultFactory rf;
+//		SceneFactory::Reserve(&rf);
+//		return END_PROCESS;
+//	}
+//
+	PlayerManager::Update();
 
 	return STILL_PROCESSING;
 }
@@ -58,6 +58,8 @@ SCENE_STATUS GameScene::Execute(){
 void GameScene::Draw(){
 	Stage::Draw ();
 	PlayerManager::Draw();
+
+	GameSceneUI::Create ()->Draw ();
 }
 
 int GameScene::ExecuteSample(){

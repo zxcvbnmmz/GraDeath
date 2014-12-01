@@ -27,15 +27,15 @@ void PlayerController::Init (int _padID)
 	pos = D3DXVECTOR2 ( 150 + static_cast<float>( _padID )* 300.f, ground );
 }
 
-void PlayerController::Update(class Player* _player){
-	CharacterController::Update ( _player );
-
-	count = ( count + 1 ) % 6;
-}
-
 void PlayerController::Draw(class Player* _player){
+	count = (count + 1) % 6;
+
+	D2D1_RECT_F rect;
+	animManager.GetDrawingRect(rect);
+
+
 	D3DXVECTOR2 size = _player->animData.cellSize;
-	_player->sprite->SetTrimming ( ( int )size.x * count, ( int )size.y * 0, ( int )size.x, ( int )size.y );
+	_player->sprite->SetTrimming ( rect );
 	_player->sprite->SetPosition ( pos );
 	_player->sprite->SetSize ( size );
 	_player->sprite->Draw ( DRAW_RECT );
