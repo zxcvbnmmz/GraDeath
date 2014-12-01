@@ -22,7 +22,7 @@ public:
 	AnimationManager(){}
 	virtual ~AnimationManager(){}
 
-	bool Create(const char* fileName);
+	bool Create(unsigned int );
 
 	void ChangeAction(PLAYER_ACTION _action, bool _loop);
 

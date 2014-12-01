@@ -40,6 +40,7 @@ public:
 			pos[i].y = (float)def.y[i]/32.0f;
 		}
 		_shape->Set(pos, 4);
+		shape.reset(_shape);
 	}
 
 	void AddFixture(b2Body* body){
