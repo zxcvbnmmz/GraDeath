@@ -1,8 +1,8 @@
 #include "Manager/AnimationManager.h"
 #include "Loader/PlayerLoader.h"
 
-bool AnimationManager::Create(const char* fileName){
-	PlayerLoader::LoadFile(0, &animation);
+bool AnimationManager::Create(unsigned int playerNum){
+	PlayerLoader::LoadFile(playerNum, &animation);
 	
 
 	return true;
