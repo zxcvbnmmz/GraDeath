@@ -8,7 +8,7 @@ class TitleScene : public Scene{
 public:
 	TitleScene();
 
-	SCENE_STATUS Execute();
+	SCENE_STATUS Execute();    
 	void Draw();
 
 private:
