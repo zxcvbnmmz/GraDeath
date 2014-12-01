@@ -2,7 +2,7 @@
 #include "Loader/PlayerLoader.h"
 
 bool AnimationManager::Create(const char* fileName){
-	PlayerLoader::LoadFile(fileName, &animation);
+	PlayerLoader::LoadFile(0, &animation);
 	
 
 	return true;
