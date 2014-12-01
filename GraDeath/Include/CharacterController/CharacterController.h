@@ -11,6 +11,7 @@
 #define _CHARACTER_CONTROLLER_H_
 
 #include <vector>
+#include "Manager/AnimationManager.h"
 
 class Player;
 
@@ -23,7 +24,7 @@ public:
 
 	virtual void Init(int _padID) = 0;
 
-	virtual void Update(class Player* _player) = 0;
+	virtual void Update(class Player* _player);
 
 	virtual void Draw(class Player* _player) = 0;
 
@@ -32,6 +33,7 @@ public:
 protected:
 	int padID;
 	bool enable;
+	AnimationManager animManager;
 
 	// à»â∫ç°å„ÇÃé¿ëïÇ…ÇÊÇËè¡Ç¶ÇÈÇ©Ç‡
 

@@ -50,7 +50,7 @@ SCENE_STATUS GameScene::Execute(){
 //		return END_PROCESS;
 //	}
 //
-//	PlayerManager::Update();
+	PlayerManager::Update();
 
 	return STILL_PROCESSING;
 }

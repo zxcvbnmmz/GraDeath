@@ -7,6 +7,8 @@
 #include "Utility/Converter.h"
 
 #include "Object/CollisionShape.h"
+#include "Utility/SizeGetter.h"
+#include "Utility/Converter.h"
 
 char* playerIconName[ ] =
 {
@@ -38,9 +40,18 @@ namespace PlayerLoader
 		parameter->rectWCount = static_cast< int >( hedCount );
 
 		ifs.read ( ( char* )&hedCount, sizeof( char ) );
-		parameter->rectHCount = static_cast< int >( hedCount );
+		parameter->rectHCount = static_cast<int>(hedCount);
 
-		AnimationData animData;
+		char t[64];
+		strncpy_s(t, parameter->fileName, count);
+		char path[64] = "Resource/Object/Player/";
+		strcat_s(path, t);
+
+		WCHAR f[80];
+		Utility::ConvertToWChar(f, path);
+		D3DXVECTOR2 size;
+		GetTextureSize(f, &size);
+		parameter->cellSize = D3DXVECTOR2(size.x / parameter->rectWCount, size.y / parameter->rectHCount);
 
 		for ( int i = 0; i < parameter->rectHCount; i++ )
 		{
