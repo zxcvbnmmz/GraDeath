@@ -12,6 +12,10 @@ public:
 	SCENE_STATUS Execute();
 	void Draw();
 
+	int ExecuteSample();
+	void DrawSample();
+	void DrawSample2();
+
 private:
 };
 

@@ -44,7 +44,7 @@ struct CellData
 {
 	short	animUse;		// セルを使用するかしないか
 	short	animType;		// アニメーションタイプ(0=立ち:1=移動:2=ジャンプ:3=攻撃:4=空白)
-	short	animFrame;		// 1コマに必要なフレーム数
+	unsigned short	animFrame;		// 1コマに必要なフレーム数
 	//short	effectCount;	// エフェクト名の文字数
 	//char*	effectFile;		// エフェクト名
 	//short	soundCount;		// サウンド名の文字数

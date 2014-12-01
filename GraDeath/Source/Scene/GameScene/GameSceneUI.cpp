@@ -4,6 +4,7 @@ GameSceneUI* GameSceneUI::ui = nullptr;
 
 GameSceneUI::GameSceneUI(){
 	// ‚±‚±‚ÅŠeUI‚Ì‰Šú‰»
+	ground.Create ( L"Resource/UI/Game/player_ui_frame.png" );
 	for (int i = 0; i < PLAYER_MAX; ++i){
 		sprites[i][IDENTIFIER].Create(L"");
 	}

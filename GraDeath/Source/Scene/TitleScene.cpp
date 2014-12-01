@@ -16,11 +16,11 @@ TitleScene::TitleScene(){
 	Graphic::Camera::SetLookAt ( D3DXVECTOR3 (  0, 40 ,-60 ), D3DXVECTOR3 ( 0, 0, 0 ) );
 	Graphic::Camera::Update ();
 
-	sprite.Create(L"Resource/Texture/Test.png");
-	sStart.Create(L"Resource/Texture/Start.png");
-	sCredit.Create(L"Resource/Texture/Credit.png");
-	sExit.Create(L"Resource/Texture/Exit.png");
-	sVector.Create(L"Resource/Texture/Vector.png");
+	//sprite.Create(L"Resource/Texture/Test.png");
+	//sStart.Create(L"Resource/Texture/Start.png");
+	//sCredit.Create(L"Resource/Texture/Credit.png");
+	//sExit.Create(L"Resource/Texture/Exit.png");
+	//sVector.Create(L"Resource/Texture/Vector.png");
 
 	start_pos = D3DXVECTOR2(800, 200);
 	credit_pos = D3DXVECTOR2(800, 400);

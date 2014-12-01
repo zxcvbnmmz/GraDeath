@@ -556,6 +556,9 @@
     <ClCompile Include="Source\Scene\StageSelectScene\StageIcon.cpp">
       <Filter>ソース ファイル\Game\Scene\StageSelect\StageIcon</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Manager\AnimationManager.cpp">
+      <Filter>ソース ファイル\Game\AnimationManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Object\Object.h">
@@ -855,7 +858,7 @@
     <ClInclude Include="Include\Scene\StageSelectScene\StageIcon.h">
       <Filter>ソース ファイル\Game\Scene\StageSelect\StageIcon</Filter>
     </ClInclude>
-    <ClInclude Include="Include\AnimationManager\AnimationManager.h">
+    <ClInclude Include="Include\Manager\AnimationManager.h">
       <Filter>ソース ファイル\Game\AnimationManager</Filter>
     </ClInclude>
   </ItemGroup>

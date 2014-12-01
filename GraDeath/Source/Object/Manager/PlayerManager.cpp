@@ -28,7 +28,7 @@ bool PlayerManager::Init(PlayerData* _data){
 	for (int i = 0; i < PLAYERS; ++i){
 		controllers[ i ] = new PlayerController;
 		controllers[i]->Init(i);
-		players[ i ].Init ( PlayerLoader::GetLoadFileName ( data[ i ].pType ) );
+		players[ i ].Init ( "test" );
 	}
 
 	return true;

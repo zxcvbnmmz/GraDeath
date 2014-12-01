@@ -120,6 +120,7 @@
     <ClCompile Include="Source\Input\InputManager.cpp" />
     <ClCompile Include="Source\Input\Keyboard.cpp" />
     <ClCompile Include="Source\Loader\PlayerLoader.cpp" />
+    <ClCompile Include="Source\Manager\AnimationManager.cpp" />
     <ClCompile Include="Source\Model\BoneAnimeData.cpp" />
     <ClCompile Include="Source\Model\CwnBaseMesh.cpp" />
     <ClCompile Include="Source\Model\CwnDecoder.cpp" />
@@ -213,6 +214,7 @@
     <ClInclude Include="Include\Input\Keyboard.h" />
     <ClInclude Include="Include\Loader\CharacterLoader.h" />
     <ClInclude Include="Include\Loader\PlayerLoader.h" />
+    <ClInclude Include="Include\Manager\AnimationManager.h" />
     <ClInclude Include="Include\Model\BoneAnimeData.h" />
     <ClInclude Include="Include\Model\CwnBaseMesh.h" />
     <ClInclude Include="Include\Model\CwnDecoder.h" />
