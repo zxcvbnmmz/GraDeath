@@ -10,7 +10,7 @@ namespace PlayerManager
 {
 	namespace{
 		const static int PLAYERS = 4;
-		CharacterController* controllers[ PLAYERS ];
+		CharacterController* controllers[PLAYERS] = { nullptr };
 		Player players[ PLAYERS ];
 	}
 }
@@ -35,6 +35,10 @@ bool PlayerManager::Init(PlayerData* _data){
 }
 
 void PlayerManager::Release(){
+	if (controllers == nullptr){
+		return;
+	}
+
 	for (int i = 0; i < PLAYERS; ++i){
 		controllers[i]->Release();
 		delete controllers[ i ];
