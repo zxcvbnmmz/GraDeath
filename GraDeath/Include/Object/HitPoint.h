@@ -2,17 +2,22 @@
 #define _HITPOINT_H_
 
 
+class Player;
+
 class HitPoint
 {
 private:
 	float hp = 0;
+	Player* player;
 
 public:
 	HitPoint (){}
 
 	~HitPoint (){}
 
-	void Init ();
+	void Init ( Player* _player );
+
+	void IsDamage ( float _hit );
 
 	bool IsDead ();
 
@@ -21,11 +26,6 @@ public:
 	float GetHP();
 
 };
-
-inline bool HitPoint::IsDead ()
-{
-	return ( hp <= .0f );
-}
 
 inline void HitPoint::SetHP ( float _hp )
 {

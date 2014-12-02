@@ -121,6 +121,7 @@
     <ClCompile Include="Source\Input\Keyboard.cpp" />
     <ClCompile Include="Source\Loader\PlayerLoader.cpp" />
     <ClCompile Include="Source\Manager\AnimationManager.cpp" />
+    <ClCompile Include="Source\Manager\HitPointManager.cpp" />
     <ClCompile Include="Source\Model\BoneAnimeData.cpp" />
     <ClCompile Include="Source\Model\CwnBaseMesh.cpp" />
     <ClCompile Include="Source\Model\CwnDecoder.cpp" />
@@ -128,6 +129,7 @@
     <ClCompile Include="Source\Model\CwnStaticMesh.cpp" />
     <ClCompile Include="Source\Model\ModelSkinShader.cpp" />
     <ClCompile Include="Source\Model\ModelStaticShader.cpp" />
+    <ClCompile Include="Source\Object\HitPoint.cpp" />
     <ClCompile Include="Source\Object\Manager\PlayerManager.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
     <ClCompile Include="Source\Object\Player.cpp" />
@@ -216,6 +218,7 @@
     <ClInclude Include="Include\Loader\CharacterLoader.h" />
     <ClInclude Include="Include\Loader\PlayerLoader.h" />
     <ClInclude Include="Include\Manager\AnimationManager.h" />
+    <ClInclude Include="Include\Manager\HitPointManager.h" />
     <ClInclude Include="Include\Model\BoneAnimeData.h" />
     <ClInclude Include="Include\Model\CwnBaseMesh.h" />
     <ClInclude Include="Include\Model\CwnDecoder.h" />

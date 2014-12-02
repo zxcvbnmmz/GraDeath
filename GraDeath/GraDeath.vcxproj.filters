@@ -305,6 +305,12 @@
     <Filter Include="ソース ファイル\Other\SizeGetter">
       <UniqueIdentifier>{33b7bbc5-b925-42f1-be65-3eac36418ee3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Object\HitPoint">
+      <UniqueIdentifier>{ea1e043a-4fe2-4c88-be11-a1ef74db4a68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\HitPoint\HitPointManager">
+      <UniqueIdentifier>{c4f471f2-17e4-43aa-b0eb-8e786d053c69}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -564,6 +570,12 @@
     </ClCompile>
     <ClCompile Include="Source\Utility\Source.cpp">
       <Filter>ソース ファイル\Other\SizeGetter</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Manager\HitPointManager.cpp">
+      <Filter>ソース ファイル\Game\Object\HitPoint\HitPointManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\HitPoint.cpp">
+      <Filter>ソース ファイル\Game\Object\HitPoint</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -870,6 +882,12 @@
     <ClInclude Include="Include\AnimationManager\AnimationManager.h" />
     <ClInclude Include="Include\Utility\SizeGetter.h">
       <Filter>ソース ファイル\Other\SizeGetter</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\HitPoint.h">
+      <Filter>ソース ファイル\Game\Object\HitPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Manager\HitPointManager.h">
+      <Filter>ソース ファイル\Game\Object\HitPoint\HitPointManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

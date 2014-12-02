@@ -4,10 +4,10 @@ GameSceneUI* GameSceneUI::ui = nullptr;
 
 wchar_t* playerIconUI[ ] =
 {
-	L"Resource/UI/Game/player_icon_1.bin",
-	L"Resource/UI/Game/player_icon_2.bin",
-	L"Resource/UI/Game/player_icon_3.bin",
-	L"Resource/UI/Game/player_icon_4.bin",
+	L"Resource/UI/Game/player_icon_1.png",
+	L"Resource/UI/Game/player_icon_2.png",
+	L"Resource/UI/Game/player_icon_3.png",
+	L"Resource/UI/Game/player_icon_4.png",
 };
 
 GameSceneUI::GameSceneUI(){
@@ -23,8 +23,10 @@ GameSceneUI::~GameSceneUI(){
 
 void GameSceneUI::Draw(){
 	for (int i = 0; i < PLAYER_MAX; ++i){
-		ground.SetPosition ( 50 + ( 320 * i), 630 );
+		ground.SetPosition ( 50 + ( 320 * (float)i), 630 );
 		ground.Draw ();
+
+		D3DXVECTOR2 tempPos = ground.GetPosition ();
 
 		//for (Sprite& sprite : sprites[i]){
 		//	sprite.Draw();
