@@ -4,15 +4,18 @@
 #include <D2D1.h>
 #include "Object/ObjectParameter.h"
 
-
-enum PLAYER_ACTION{
-	ACTION_IDLE,
-	ACTION_WALK,
+enum PLAYER_ACTION : unsigned int {
 	ACTION_RUN,
+	ACTION_WALK,
 	ACTION_ATTACK,
+	ACTION_IDLE,
+	ACTION_DAMAGE,
+	ACTION_JUMP,
+	ACTION_NOTHING,
+	ACTION_MAX
 };
 
-enum CURRENT_STATE{
+enum CURRENT_ANIMATION_STATE{
 	PROCESSED,
 	FINISHED,
 };
@@ -24,12 +27,14 @@ public:
 
 	bool Create(unsigned int playerNum);
 	void ChangeAction(PLAYER_ACTION _action, bool _loop);
-	CURRENT_STATE Update();
+	CURRENT_ANIMATION_STATE Update();
 	void GetDrawingRect(D2D1_RECT_F& rect);
 
 	void Enable(bool flag){
 		isEnable = flag;
 	}
+
+	bool IsEnd();
 
 private:
 	std::vector<std::shared_ptr<CellData>>::iterator currentCell;

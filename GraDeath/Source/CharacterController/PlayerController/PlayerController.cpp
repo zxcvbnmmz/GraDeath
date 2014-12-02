@@ -14,17 +14,21 @@
 #include "Object/Player.h"
 #include "Input/GamePad.h"
 #include "System/Window.h"
+#include "Input/Keyboard.h"
 
 void PlayerController::Init (int _padID)
 {
 	Release ();
 	this->padID = _padID;
-	currentAction = IDLE;
+	currentAction = ACTION_IDLE;
 	enable = true;
 	int x, y;
 	System::Window::GetWindowSize ( &x, &y );
 	ground = static_cast<float>(y) - 300;
 	pos = D3DXVECTOR2 ( 150 + static_cast<float>( _padID )* 300.f, ground );
+
+	animManager.Create(padID);
+	animManager.Enable(true);
 }
 
 void PlayerController::Draw(class Player* _player){
@@ -50,19 +54,20 @@ void PlayerController::Idle(Player* _player){
 
 	float angle;
 	if (GamePad::getLStickState((PAD_NUM)padID, angle)){
-		currentAction = WALK;
+		currentAction = ACTION_WALK;
 	}
-	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_B) == INPUT_PUSH){
-		currentAction = ATTACK;
+	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_B) == INPUT_PUSH ||
+		  Keyboard::CheckKey(KC_A) == INPUT_PUSH){
+		ChangeAction(ACTION_ATTACK, false);
 	}
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH){
-		currentAction = JUMP;
+		currentAction = ACTION_JUMP;
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
-		currentAction = WALK;
+		currentAction = ACTION_WALK;
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
-		currentAction = WALK;
+		currentAction = ACTION_WALK;
 	}
 	//count = ( count + 1 ) % 6;
 	//std::vector< std::shared_ptr< CellData > > cellData = _player->animData.cellDatas[ 0 ];
@@ -79,16 +84,18 @@ void PlayerController::Walk(Player* _player){
 		pos.x -= 4.0f;
 	}
 	else{
-		currentAction = IDLE;
+		currentAction = ACTION_IDLE;
 	}
 
 	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_A ) == INPUT_PUSH ){
-		currentAction = JUMP;
+		currentAction = ACTION_JUMP;
 	}
 }
 
 void PlayerController::Attack(Player* _player){
-	currentAction = IDLE;
+	if (currentAnimState == FINISHED){
+		ChangeAction(ACTION_IDLE, true);
+	}
 }
 
 void PlayerController::Damage(Player* _player){}
@@ -101,7 +108,7 @@ void PlayerController::Jump(Player* _player){
 	if ( pos.y > ground )
 	{
 		pos.y = ground;
-		currentAction = IDLE;
+		currentAction = ACTION_IDLE;
 		jumpCount = -20.0f;
 	}
 	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){

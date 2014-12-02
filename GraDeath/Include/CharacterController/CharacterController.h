@@ -34,19 +34,11 @@ protected:
 	int padID;
 	bool enable;
 	AnimationManager animManager;
+	CURRENT_ANIMATION_STATE currentAnimState;
+	PLAYER_ACTION currentAction;
 
-	// à»â∫ç°å„ÇÃé¿ëïÇ…ÇÊÇËè¡Ç¶ÇÈÇ©Ç‡
+	void ChangeAction(PLAYER_ACTION newAction, bool loop);
 
-	enum PLAYER_ACTION : unsigned int {
-		IDLE,
-		RUN,
-		WALK,
-		ATTACK,
-		DAMAGE,
-		JUMP,
-		NOTHING,
-		ACTION_MAX
-	}currentAction;
 	void(CharacterController::*Actions[ACTION_MAX])(Player*);
 
 	virtual void Idle(Player*){}
