@@ -5,6 +5,7 @@
 
 #include "CharacterController/CharacterInfo.h"
 #include "Loader/PlayerLoader.h"
+#include "Manager/HitPointManager.h"
 
 namespace PlayerManager
 {
@@ -24,11 +25,12 @@ bool PlayerManager::Init(PlayerData* _data){
 	playersをコントローラー順にソートするとかやるならもここでやる
 	*/
 	CharacterInfo* data = ( CharacterInfo* )_data;
-	
+
 	for (int i = 0; i < PLAYERS; ++i){
-		controllers[i] = new PlayerController;
-		players[i].Init("test");
-		controllers[i]->Init(i, &players[i]);
+		controllers[ i ] = new PlayerController;
+		controllers[i]->Init(i);
+		players[ i ].Init ( "test" );
+		HitPointManager::Init ( i, &players[ i ], 100.0f );
 	}
 
 	return true;
@@ -49,13 +51,13 @@ void PlayerManager::Release(){
 
 void PlayerManager::Update(){
 	for (int i = 0; i < PLAYERS; ++i){
-		controllers[i]->Update();
+		controllers[i]->Update(&players[i]);
 	}
 }
 
 void PlayerManager::Draw(){
 	for (int i = 0; i < PLAYERS; ++i){
-		controllers[i]->Draw();
+		controllers[i]->Draw(&players[i]);
 	}
 }
 

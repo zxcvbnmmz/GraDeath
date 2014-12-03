@@ -8,6 +8,7 @@ class HitPoint
 {
 private:
 	float hp = 0;
+	float maxHP;
 	Player* player;
 
 public:
@@ -29,12 +30,13 @@ public:
 
 inline void HitPoint::SetHP ( float _hp )
 {
-	hp = _hp;
+	maxHP = hp = _hp;
 }
 
 inline float HitPoint::GetHP ()
 {
-	return hp;
+	return ( hp / maxHP );
 }
+
 
 #endif
