@@ -28,8 +28,8 @@ bool PlayerManager::Init(PlayerData* _data){
 
 	for (int i = 0; i < PLAYERS; ++i){
 		controllers[ i ] = new PlayerController;
-		controllers[i]->Init(i);
-		players[ i ].Init ( "test" );
+		players[i].Init("test");
+		controllers[i]->Init(i,&players[i]);
 		HitPointManager::Init ( i, &players[ i ], 100.0f );
 	}
 
@@ -51,13 +51,13 @@ void PlayerManager::Release(){
 
 void PlayerManager::Update(){
 	for (int i = 0; i < PLAYERS; ++i){
-		controllers[i]->Update(&players[i]);
+		controllers[i]->Update();
 	}
 }
 
 void PlayerManager::Draw(){
 	for (int i = 0; i < PLAYERS; ++i){
-		controllers[i]->Draw(&players[i]);
+		controllers[i]->Draw();
 	}
 }
 
