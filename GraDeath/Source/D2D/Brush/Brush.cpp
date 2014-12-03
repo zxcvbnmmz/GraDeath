@@ -2,5 +2,3 @@
 
 Brush::Brush(){}
 
-Brush::~Brush(){}
-

@@ -8,8 +8,13 @@
 class Brush : public Ref{
 public:
 	Brush();
-	virtual ~Brush();
-	ID2D1Brush* Get(){ return brush; }
+	virtual ~Brush(){
+		if (brush != nullptr){
+			brush->Release();
+			brush = nullptr;
+		}
+	}
+	ID2D1Brush* Get(){return brush;}
 
 protected:
 	ID2D1Brush* brush;

@@ -14,7 +14,8 @@ TitleScene::TitleScene(){
 	t.format = D2D::TextFormat::Create(L"MS明朝", 30);
 
 	// もしレイアウト（固定位置に固定文字）を使うのなら、フォーマットを使用してレイアウトを作成
-	t.layout = t.format->CreateLayout(50, 10, 20, L"TestLayout");
+	// 文字を描画する領域幅、描画する文字数と文字を指定する
+	t.layout = t.format->CreateLayout(300, 100, 13, L"TestLayout");
 
 	// 文字色をSolidBrushのCreate関数を使い作成
 	t.brush = SolidBrush::Create(255, 255, 255, 255);
@@ -100,7 +101,9 @@ void TitleScene::Draw(){
 	sVector.Draw();
 
 	// 描画
-	// 今回はフォーマットを使用せずに、自由な位置に自由なテキストを描画する
-	t.DrawString(0, 0, L"Test");
+	// DrawLayoutは事前に作成されたレイアウトを指定位置に描画する
+	// DrawStringはレイアウトは関係なしに、指定位置に自由な文字を描画する
+	t.DrawLayout(0, 0);
+	t.DrawString(0, 30, L"TextString");
 
 }

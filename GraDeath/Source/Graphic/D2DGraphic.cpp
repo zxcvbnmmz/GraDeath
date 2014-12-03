@@ -40,20 +40,20 @@ namespace Graphic{
 			target->SetAntialiasMode(D2D1_ANTIALIAS_MODE_PER_PRIMITIVE);
 		}
 
-		void Geometry::DrawLine(SolidBrush* brush, const D3DXVECTOR2& _p1, const D3DXVECTOR2& _p2, float width){
+		void Geometry::DrawLine(class Brush* brush, const D3DXVECTOR2& _p1, const D3DXVECTOR2& _p2, float width){
 			D2D1_POINT_2F p1 = {_p1.x,_p1.y};
 			D2D1_POINT_2F p2 = {_p2.x,_p2.y};
 
 			target->DrawLine(p1,p2,brush->Get(),width);
 		}
 
-		void Geometry::DrawLine(SolidBrush* brush, float px1, float py1, float px2, float py2, float width){
+		void Geometry::DrawLine(class Brush* brush, float px1, float py1, float px2, float py2, float width){
 			D2D1_POINT_2F p1 = {px1, py1};
 			D2D1_POINT_2F p2 = {px2, py2};
 			target->DrawLine(p1,p2,brush->Get(),width);
 		}
 
-		void Geometry::DrawRect(SolidBrush* brush, const D3DXVECTOR2& pos, const D3DXVECTOR2& size, bool fill){
+		void Geometry::DrawRect(class Brush* brush, const D3DXVECTOR2& pos, const D3DXVECTOR2& size, bool fill){
 			D2D1_RECT_F rect = RectF(pos.x,pos.y,pos.x+size.x,pos.y+size.y);
 			if(fill)
 				target->FillRectangle(rect,brush->Get());
@@ -61,15 +61,16 @@ namespace Graphic{
 				target->DrawRectangle(rect,brush->Get());
 		}
 
-		void Geometry::DrawRect(SolidBrush* brush, float x, float y, const D3DXVECTOR2& size, bool fill){
+		void Geometry::DrawRect(class Brush* brush, float x, float y, const D3DXVECTOR2& size, bool fill){
 			D2D1_RECT_F rect = RectF(x,y,x+size.x,y+size.y);
+
 			if(fill)
 				target->FillRectangle(rect, brush->Get());
 			else
 				target->DrawRectangle(rect, brush->Get());
 		}
 
-		void Geometry::DrawRect(SolidBrush* brush, float x, float y, float xSize, float ySize, bool fill){
+		void Geometry::DrawRect(class Brush* brush, float x, float y, float xSize, float ySize, bool fill){
 			D2D1_RECT_F rect = RectF(x,y,x+xSize,y+ySize);
 			if(fill)
 				target->FillRectangle(rect, brush->Get());
@@ -77,7 +78,7 @@ namespace Graphic{
 				target->DrawRectangle(rect, brush->Get());
 		}
 
-		void Geometry::DrawEllipse(SolidBrush* brush, const D3DXVECTOR2& center, float radius, bool fill){
+		void Geometry::DrawEllipse(class Brush* brush, const D3DXVECTOR2& center, float radius, bool fill){
 			D2D1_POINT_2F p = {center.x, center.y};
 			D2D1_ELLIPSE ellipse = Ellipse(p,radius,radius);
 			if(fill)
@@ -86,7 +87,7 @@ namespace Graphic{
 				target->DrawEllipse(ellipse, brush->Get());
 		}
 
-		void Geometry::DrawEllipse(SolidBrush* brush, float x, float y, float radius, bool fill){
+		void Geometry::DrawEllipse(class Brush* brush, float x, float y, float radius, bool fill){
 			D2D1_POINT_2F p = {x, y};
 			D2D1_ELLIPSE ellipse = Ellipse(p,radius,radius);
 			if(fill)
@@ -95,7 +96,7 @@ namespace Graphic{
 				target->DrawEllipse(ellipse, brush->Get());
 		}
 
-		void Geometry::DrawEllipse(SolidBrush* brush, const D3DXVECTOR2& center, const D3DXVECTOR2& radius, bool fill){
+		void Geometry::DrawEllipse(class Brush* brush, const D3DXVECTOR2& center, const D3DXVECTOR2& radius, bool fill){
 			D2D1_POINT_2F p = {center.x, center.y};
 			D2D1_ELLIPSE ellipse = Ellipse(p,radius.x,radius.y);
 			if(fill)
@@ -104,7 +105,7 @@ namespace Graphic{
 				target->DrawEllipse(ellipse, brush->Get());
 		}
 
-		void Geometry::DrawEllipse(SolidBrush* brush, float x, float y, float radX, float radY, bool fill){
+		void Geometry::DrawEllipse(class Brush* brush, float x, float y, float radX, float radY, bool fill){
 			D2D1_POINT_2F p = {x, y};
 			D2D1_ELLIPSE ellipse = Ellipse(p,radX,radY);
 			if(fill)

@@ -19,5 +19,5 @@ void D2D::TextObject::DrawString(float x, float y, const wchar_t* str, ...){
 
 void D2D::TextObject::DrawLayout(float x, float y){
 	D2D1_POINT_2F point = { x, y };
-	D2D::RenderTarget::Get()->DrawTextLayout(point, layout->layout, NULL);
+	D2D::RenderTarget::Get()->DrawTextLayout(point, layout->layout, brush->Get());
 }
