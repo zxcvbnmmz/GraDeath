@@ -14,7 +14,7 @@ void AnimationManager::ChangeAction(PLAYER_ACTION _action, bool _loop){
 	currentCell = animation.cellDatas[currentAction].begin();
 }
 
-CURRENT_STATE AnimationManager::Update(){
+CURRENT_ANIMATION_STATE AnimationManager::Update(){
 	// アニメーションが有効で、現在の表示フレームがセル毎の設定フレームより大きくなったら
 	// 次のセルに進もうとする
 	if (isEnable && (*currentCell)->animFrame <= currentFrame++){

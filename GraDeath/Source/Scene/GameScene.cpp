@@ -13,7 +13,7 @@ GameScene::GameScene(){
 	
 	PlayerManager::Init ( ( PlayerData* )CharacterInfoFunc::GetCharacterInfo () );
 
-	GameSceneUI::Create ();
+	//GameSceneUI::Create ();
 	/*
 	AddFunction(this, &GameScene::ExecuteSample);
 	AddFunction(this, &GameScene::DrawSample);
@@ -36,7 +36,7 @@ GameScene::~GameScene ()
 {
 	PlayerManager::Release();
 	Stage::Release ();
-	GameSceneUI::Release ();
+	//GameSceneUI::Release ();
 }
 
 SCENE_STATUS GameScene::Execute(){
@@ -59,7 +59,7 @@ void GameScene::Draw(){
 	Stage::Draw ();
 	PlayerManager::Draw();
 
-	GameSceneUI::Create ()->Draw ();
+	//GameSceneUI::Create ()->Draw ();
 }
 
 int GameScene::ExecuteSample(){
