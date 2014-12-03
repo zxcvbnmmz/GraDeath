@@ -28,6 +28,7 @@ private:
 
 	static const int PLAYER_MAX = 4;
 	class Sprite ground;
+	class Sprite hpBar;
 	class Sprite sprites[PLAYER_MAX][UI_MAX];
 };
 
