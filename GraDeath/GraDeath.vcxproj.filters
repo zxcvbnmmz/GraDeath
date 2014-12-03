@@ -311,6 +311,15 @@
     <Filter Include="ソース ファイル\Game\Object\HitPoint\HitPointManager">
       <UniqueIdentifier>{c4f471f2-17e4-43aa-b0eb-8e786d053c69}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Library\Graphic\D2D\TextObject">
+      <UniqueIdentifier>{54489ff8-79fa-41fb-bebe-61875a008f23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Library\Graphic\D2D\Brush\BitmapBrush">
+      <UniqueIdentifier>{e9b64177-2b43-4375-ad06-2ce3a7a76004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush">
+      <UniqueIdentifier>{4bd421a9-0389-4f40-8b47-c866fca8d968}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -577,6 +586,21 @@
     <ClCompile Include="Source\Object\HitPoint.cpp">
       <Filter>ソース ファイル\Game\Object\HitPoint</Filter>
     </ClCompile>
+    <ClCompile Include="Source\D2D\Interface\WriteFactory.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Text\TextObject.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D\TextObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Brush\Brush.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Brush\BitmapBrush.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Brush\BitmapBrush</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Brush\SolidBrush.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Object\Object.h">
@@ -615,16 +639,10 @@
     <ClInclude Include="Include\Graphic\D3DGraphic.h">
       <Filter>ソース ファイル\Library\Graphic\D3D</Filter>
     </ClInclude>
-    <ClInclude Include="Include\D2D\Brush\BitmapBrush.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
-    </ClInclude>
     <ClInclude Include="Include\D2D\Brush\Brush.h">
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
     </ClInclude>
     <ClInclude Include="Include\D2D\Brush\RGBrush.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D2D\Brush\SolidBrush.h">
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
     </ClInclude>
     <ClInclude Include="Include\D3D\SwapChain\SwapChain.h">
@@ -879,7 +897,6 @@
     <ClInclude Include="Include\Manager\AnimationManager.h">
       <Filter>ソース ファイル\Game\AnimationManager</Filter>
     </ClInclude>
-    <ClInclude Include="Include\AnimationManager\AnimationManager.h" />
     <ClInclude Include="Include\Utility\SizeGetter.h">
       <Filter>ソース ファイル\Other\SizeGetter</Filter>
     </ClInclude>
@@ -888,6 +905,24 @@
     </ClInclude>
     <ClInclude Include="Include\Manager\HitPointManager.h">
       <Filter>ソース ファイル\Game\Object\HitPoint\HitPointManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Interface\WriteFactory.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Interface\TextFormat.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Interface\TextLayout.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Text\TextObject.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\TextObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Brush\BitmapBrush.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Brush\BitmapBrush</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Brush\SolidBrush.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

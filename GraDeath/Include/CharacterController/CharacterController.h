@@ -22,11 +22,11 @@ public:
 
 	virtual ~CharacterController(){}
 
-	virtual void Init(int _padID) = 0;
+	virtual void Init(int _padID,Player* _player) = 0;
 
-	virtual void Update(class Player* _player);
+	virtual void Update();
 
-	virtual void Draw(class Player* _player) = 0;
+	virtual void Draw() = 0;
 
 	virtual void Release() = 0;
 
@@ -36,17 +36,18 @@ protected:
 	AnimationManager animManager;
 	CURRENT_ANIMATION_STATE currentAnimState;
 	PLAYER_ACTION currentAction;
+	Player* player;
 
 	void ChangeAction(PLAYER_ACTION newAction, bool loop);
 
-	void(CharacterController::*Actions[ACTION_MAX])(Player*);
+	void(CharacterController::*Actions[ACTION_MAX])();
 
-	virtual void Idle(Player*){}
-	virtual void Run(Player*){}
-	virtual void Walk(Player*){}
-	virtual void Attack(Player*){}
-	virtual void Damage(Player*){}
-	virtual void Jump(Player*){}
+	virtual void Idle(){}
+	virtual void Run(){}
+	virtual void Walk(){}
+	virtual void Attack(){}
+	virtual void Damage(){}
+	virtual void Jump(){}
 };
 
 #endif

@@ -7,7 +7,17 @@
 
 #include "Input\Keyboard.h"
 
+#include "D2D/Brush/SolidBrush.h"
+
 TitleScene::TitleScene(){
+	// まず文字描画に当たりフォーマット（フォントと大きさ）を決める
+	t.format = D2D::TextFormat::Create(L"MS明朝", 30);
+
+	// もしレイアウト（固定位置に固定文字）を使うのなら、フォーマットを使用してレイアウトを作成
+	t.layout = t.format->CreateLayout(50, 10, 20, L"TestLayout");
+
+	// 文字色をSolidBrushのCreate関数を使い作成
+	t.brush = SolidBrush::Create(255, 255, 255, 255);
 
 	int _w, _h;
 	System::Window::GetWindowSize ( &_w, &_h );
@@ -16,7 +26,6 @@ TitleScene::TitleScene(){
 	Graphic::Camera::SetLookAt ( D3DXVECTOR3 (  0, 40 ,-60 ), D3DXVECTOR3 ( 0, 0, 0 ) );
 	Graphic::Camera::Update ();
 
-	sprite.Create(L"Resource/Texture/Test.png");
 	sStart.Create(L"Resource/Texture/Start.png");
 	sCredit.Create(L"Resource/Texture/Credit.png");
 	sExit.Create(L"Resource/Texture/Exit.png");
@@ -30,6 +39,8 @@ TitleScene::TitleScene(){
 	tCount = 0;
 	select_i = 0;
 }
+
+TitleScene::~TitleScene(){}
 
 SCENE_STATUS TitleScene::Execute(){
 	if (GamePad::getGamePadState(PAD_1, BUTTON_DOWN, 0) == INPUT_PUSH ||
@@ -67,7 +78,6 @@ SCENE_STATUS TitleScene::Execute(){
 }
 
 void TitleScene::Draw(){
-	sprite.Draw();
 	sStart.SetPosition(start_pos);
 	sCredit.SetPosition(credit_pos);
 	sExit.SetPosition(exit_pos);
@@ -88,4 +98,9 @@ void TitleScene::Draw(){
 	sExit.Draw();
 	sVector.SetPositionY(vect_pos.y + select_i * 200);
 	sVector.Draw();
+
+	// 描画
+	// 今回はフォーマットを使用せずに、自由な位置に自由なテキストを描画する
+	t.DrawString(0, 0, L"Test");
+
 }

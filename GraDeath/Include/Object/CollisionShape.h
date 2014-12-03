@@ -18,7 +18,7 @@ struct SquareDef:public CollisionDef{
 struct CollisionShape{
 private:
 	std::shared_ptr<b2Shape> shape;
-	b2Fixture* fixture;
+	b2Fixture* fixture = nullptr;
 
 public:
 	CollisionShape(CircleDef& def){
@@ -52,8 +52,10 @@ public:
 	}
 
 	void DestoryFixture(b2Body* body){
-		body->DestroyFixture(fixture);
-	}
+		if (fixture != nullptr){
+			body->DestroyFixture(fixture);
+		}
+	} 
 };
 
 #endif	// end of CollisionShape

@@ -9,10 +9,10 @@ CharacterController::CharacterController() :currentAction(ACTION_IDLE), enable(f
 	Actions[ACTION_IDLE] = &CharacterController::Idle;
 }
 
-void CharacterController::Update(Player* _player){
+void CharacterController::Update(){
 	if (enable){
 		currentAnimState = animManager.Update();
-		(this->*Actions[currentAction])(_player);
+		(this->*Actions[currentAction])();
 	}
 }
 

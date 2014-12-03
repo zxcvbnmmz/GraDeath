@@ -25,24 +25,27 @@ public:
 	AnimationManager(){}
 	virtual ~AnimationManager(){}
 
-	bool Create(unsigned int playerNum);
+	bool Create(unsigned int playerNum, class Player* _player);
 	void ChangeAction(PLAYER_ACTION _action, bool _loop);
 	CURRENT_ANIMATION_STATE Update();
 	void GetDrawingRect(D2D1_RECT_F& rect);
+	const D3DXVECTOR2& GetCellSize();
 
 	void Enable(bool flag){
 		isEnable = flag;
 	}
 
-	bool IsEnd();
-
 private:
+	void AttachFixtureToPlayer();
+
 	std::vector<std::shared_ptr<CellData>>::iterator currentCell;
 	PLAYER_ACTION currentAction;
 	unsigned int currentFrame;
 	AnimationData animation;
 	bool isEnable;
 	bool loop;
+
+	class Player* player;
 };
 
 #endif	// end of AnimationManager

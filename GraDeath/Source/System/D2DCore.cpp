@@ -4,6 +4,7 @@
 #include <atlbase.h>
 
 #include "D2D/Interface/ImagingFactory.h"
+#include "D2D/Interface/WriteFactory.h"
 #include "D2D/Interface/D2DRenderTarget.h"
 
 namespace{
@@ -11,7 +12,8 @@ namespace{
 }
 
 void D2DCore::Destroy(){
-	D2D::RenderTarget::Release();
+	D2D::WriteFactory::Release();
+	D2D::RenderTarget:: Release();
 	D2D::ImagingFactory::Release();
 	factory.Release();
 }
@@ -25,10 +27,13 @@ HRESULT D2DCore::Init(){
 		return E_FAIL;
 	}
 
-	if(!D2D::RenderTarget::Create(factory)){
+	if (!D2D::RenderTarget::Create(factory)){
 		return E_FAIL;
 	}
 
+	if (!D2D::WriteFactory::Create()){
+		return E_FAIL;
+	}
 
 	D2D::RenderTarget::SetBackBuffer();
 	

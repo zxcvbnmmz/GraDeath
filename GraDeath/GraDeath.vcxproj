@@ -94,10 +94,15 @@
     <ClCompile Include="Source\CharacterController\CharacterController.cpp" />
     <ClCompile Include="Source\CharacterController\CharacterInfo.cpp" />
     <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp" />
+    <ClCompile Include="Source\D2D\Brush\BitmapBrush.cpp" />
+    <ClCompile Include="Source\D2D\Brush\Brush.cpp" />
+    <ClCompile Include="Source\D2D\Brush\SolidBrush.cpp" />
     <ClCompile Include="Source\D2D\Interface\D2DRenderTarget.cpp" />
     <ClCompile Include="Source\D2D\Interface\ImagingFactory.cpp" />
+    <ClCompile Include="Source\D2D\Interface\WriteFactory.cpp" />
     <ClCompile Include="Source\D2D\Sprite\Sprite.cpp" />
     <ClCompile Include="Source\D2D\Sprite\SpriteDecoder.cpp" />
+    <ClCompile Include="Source\D2D\Text\TextObject.cpp" />
     <ClCompile Include="Source\D3D\Device\Device.cpp" />
     <ClCompile Include="Source\D3D\SwapChain\SwapChain.cpp" />
     <ClCompile Include="Source\Direction\Fade.cpp" />
@@ -180,7 +185,6 @@
     <ClCompile Include="Source\World\World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include\AnimationManager\AnimationManager.h" />
     <ClInclude Include="Include\CharacterController\CharacterController.h" />
     <ClInclude Include="Include\CharacterController\CharacterInfo.h" />
     <ClInclude Include="Include\CharacterController\PlayerController\PlayerController.h" />
@@ -189,10 +193,14 @@
     <ClInclude Include="Include\D2D\Brush\RGBrush.h" />
     <ClInclude Include="Include\D2D\Brush\SolidBrush.h" />
     <ClInclude Include="Include\D2D\D2DGeometry.h" />
+    <ClInclude Include="Include\D2D\Interface\TextFormat.h" />
+    <ClInclude Include="Include\D2D\Interface\TextLayout.h" />
     <ClInclude Include="include\D2D\Interface\D2DRenderTarget.h" />
     <ClInclude Include="Include\D2D\Interface\ImagingFactory.h" />
+    <ClInclude Include="Include\D2D\Interface\WriteFactory.h" />
     <ClInclude Include="Include\D2D\Sprite\Sprite.h" />
     <ClInclude Include="Include\D2D\Sprite\SpriteDecoder.h" />
+    <ClInclude Include="Include\D2D\Text\TextObject.h" />
     <ClInclude Include="Include\D3D\Device\Device.h" />
     <ClInclude Include="Include\D3D\SwapChain\SwapChain.h" />
     <ClInclude Include="Include\Direction\Direction.h" />

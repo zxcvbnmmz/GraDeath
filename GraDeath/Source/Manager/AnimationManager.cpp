@@ -1,7 +1,10 @@
 #include "Manager/AnimationManager.h"
 #include "Loader/PlayerLoader.h"
+#include "Object/Player.h"
 
-bool AnimationManager::Create(unsigned int playerNum){
+bool AnimationManager::Create(unsigned int playerNum, Player* _player){
+	player = _player;
+
 	PlayerLoader::LoadFile(playerNum, &animation);
 	ChangeAction(ACTION_IDLE, true);
 
@@ -12,6 +15,7 @@ void AnimationManager::ChangeAction(PLAYER_ACTION _action, bool _loop){
 	currentAction = _action;
 	loop = _loop;
 	currentCell = animation.cellDatas[currentAction].begin();
+	AttachFixtureToPlayer();
 }
 
 CURRENT_ANIMATION_STATE AnimationManager::Update(){
@@ -31,6 +35,7 @@ CURRENT_ANIMATION_STATE AnimationManager::Update(){
 		// Ÿ‚ÌƒZƒ‹‚ª‚ ‚ê‚Î‚»‚ÌƒZƒ‹‚ğŒ»İ‚ÌƒZƒ‹‚Æ‚·‚é
 		else{
 			++currentCell;
+			AttachFixtureToPlayer();
 			currentFrame = 0;
 		}
 	}
@@ -44,4 +49,12 @@ void AnimationManager::GetDrawingRect(D2D1_RECT_F& rect){
 	rect.top = size.y * (int)currentAction;
 	rect.right = size.x;
 	rect.bottom = size.y;
+}
+
+const D3DXVECTOR2& AnimationManager::GetCellSize(){
+	return animation.cellSize;
+}
+
+void AnimationManager::AttachFixtureToPlayer(){
+	player->AttachFixture((*currentCell)->shapes);
 }
