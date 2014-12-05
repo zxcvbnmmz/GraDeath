@@ -15,6 +15,7 @@ GameSceneUI::GameSceneUI(){
 	// ‚±‚±‚ÅŠeUI‚Ì‰Šú‰»
 	ground.Create ( L"Resource/UI/Game/player_ui_frame.png" );
 	hpBar.Create (L"Resource/UI/Game/hpbar.png");
+	deadlyGage.Create ( L"Resource/UI/Game/deadlygage.png" );
 	for (int i = 0; i < PLAYER_MAX; ++i){
 		sprites[ i ][ IDENTIFIER ].Create ( playerIconUI[ i ] );
 	}
@@ -25,7 +26,7 @@ GameSceneUI::~GameSceneUI(){
 
 void GameSceneUI::Draw(){
 	D3DXVECTOR2 tempPos;
-	D3DXVECTOR2 hpSize;
+	D3DXVECTOR2 gageSize;
 	for (int i = 0; i < PLAYER_MAX; ++i){
 		// Frame
 		ground.SetPosition ( 50 + ( 320 * (float)i), 630 );
@@ -42,11 +43,17 @@ void GameSceneUI::Draw(){
 		//}
 
 		// HPBar
-		hpSize = hpBar.GetDefaultSize ();
-		hpSize.x *= HitPointManager::GetHitPoint ( i );
+		gageSize = hpBar.GetDefaultSize ();
+		gageSize.x *= HitPointManager::GetHitPoint ( i );
 		hpBar.SetPosition ( tempPos.x + 15, tempPos.y + 15 );
-		hpBar.SetSize ( hpSize );
+		hpBar.SetSize ( gageSize );
 		hpBar.Draw ();
+
+		// DeadlyGage
+		gageSize = deadlyGage.GetDefaultSize ();
+		deadlyGage.SetPosition ( tempPos.x + 15, tempPos.y + 50 );
+		deadlyGage.SetSize ( gageSize );
+		deadlyGage.Draw ();
 	}
 }
 
