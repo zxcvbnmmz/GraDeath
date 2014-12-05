@@ -58,7 +58,7 @@ public:
 		rect.left = size.x * pos;
 		rect.top = size.y * pos;
 		rect.right = size.x;
-		rect.bottom = size.y
+        rect.bottom = size.y;
 	}
 
 	void Enable(bool flag){

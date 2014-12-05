@@ -7,11 +7,19 @@
 #include <algorithm>
 #include <functional>
 #include "Utility/SafeDelete.h"
+#include <stdio.h>
+#include "Input\Keyboard.h"
 
 namespace{
 	const static float PTM_RATIO = 32.0f;
 	std::vector<Sprite*> sprites;
 	std::vector<Sprite*> bgSprite;
+    std::vector<Sprite*> sprite_animes;
+    Sprite* sprite_anime = new Sprite;
+    float HP = 20.f + rand() % 10;
+    bool Stageflg = false;
+    int StageCoolTime = 0;
+    int count = 0;
 }
 
 void CreateWorldEdge();
@@ -32,10 +40,45 @@ bool Stage::Initialize(int stageID){
 void Stage::Draw(){
 	bgSprite[ 0 ]->Draw ();
 	bgSprite[ 1 ]->Draw ();
-	for ( Sprite* sprite : sprites ){
-		sprite->Draw ();
-	}
+    if (Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH  /*HP <= 0*/){
+        HP = 0;
+        //@ x 1366* y 768
+        Stageflg = true;
+    }
+    if (Stageflg == true){
+        StageCoolTime++;
+        sprite_anime->SetTrimming(0, 0 + (768 * count), 1366, 768);
+    }
+    if (StageCoolTime > 10){
+        StageCoolTime = 0;
+        count++;
+        if (count > 5){
+            Stageflg = false;
+            count = 0;
+//            D3DXVECTOR2 pos(0, 580);
+//            sprite_anime->SetPosition(pos);
+            //@ x 1366* y 768
+            sprite_anime->SetTrimming(0, 0, 1366, 768);
+            D2D1_SIZE_F size;
+            size.height = 768.f;
+            size.width = 1366.f;
+            sprite_anime->SetSize(size);
+            HP = 20.f + rand() % 10;
+        }
+    }
+    if (Stageflg == false){
+        for (Sprite* sprite : sprites){
+            sprite->Draw(DRAW_RECT);
+        }
+    }
+    else{
+        sprite_anime->Draw(DRAW_RECT);
+    }
 	bgSprite[ 2 ]->Draw ();
+}
+
+void GetDamage(float _damage){
+    HP -= _damage;
 }
 
 void Stage::Release(){
@@ -44,6 +87,8 @@ void Stage::Release(){
 		Util::safeDelete ( obj );
 	for ( auto& bg : bgSprite )
 		Util::safeDelete ( bg );
+    for (auto& anime : sprite_animes)
+        Util::safeDelete(anime);
 }
 
 void CreateWorldEdge(){
@@ -98,13 +143,30 @@ void CreateEachStage(int stageLevel){
 	int spriteNum = 1;
 
 	for (int i = 0; i < spriteNum; ++i){
-		Sprite* sprite = new Sprite;
+        Sprite* sprite = new Sprite;
 		/*各種パラメータの設定*/
-		sprite->Create ( L"Resource/Scene/Game/Stage/GroundSample.png" );
-		D3DXVECTOR2 size ( 0, 768.f - 150.f );
-		sprite->SetPosition ( size );
+		sprite->Create ( L"Resource/Scene/Game/Stage/Stage.png" );
+		D3DXVECTOR2 pos ( 0, 580 );
+		sprite->SetPosition ( pos );
+        //@ x 1366* y 768
+        sprite->SetTrimming (0,575,1366,193);
+        D2D1_SIZE_F size;
+        size.height = 193.f;
+        size.width = 1366.f;
+        sprite->SetSize(size);
+        sprites.push_back(sprite);
 
-		sprites.push_back(sprite);
+        //アニメーション用
+        sprite_anime->Create(L"Resource/Scene/Game/Stage/Stage.png");
+        D3DXVECTOR2 animepos(0, 0);
+        sprite_anime->SetPosition(animepos);
+        //@ x 1366* y 768
+        sprite_anime->SetTrimming(0, 0, 1366, 768);
+        D2D1_SIZE_F anime_size;
+        anime_size.height = 768.f;
+        anime_size.width = 1366.f;
+        sprite_anime->SetSize(anime_size);
+        sprite_animes.push_back(sprite_anime);
 	}
 
 	Sprite* sprite1 = new Sprite;

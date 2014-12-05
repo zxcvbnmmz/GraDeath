@@ -19,6 +19,7 @@ Player::~Player(){
 	}
 }
 
+
 bool Player::Init(const char* fileName){
 	PlayerLoader::LoadFile ( fileName, &animData );
 

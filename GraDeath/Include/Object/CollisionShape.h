@@ -39,7 +39,7 @@ public:
 			pos[i].x = (float)def.x[i];
 			pos[i].y = (float)def.y[i];
 		}
-		_shape->Set(pos, 4);
+		//_shape->Set(pos, 4);
 	}
 
 	void AddFixture(b2Body* body){
