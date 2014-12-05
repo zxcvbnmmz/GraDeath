@@ -37,15 +37,16 @@ GameScene::~GameScene ()
 {
 	PlayerManager::Release();
 	Stage::Release ();
-	//GameSceneUI::Release ();
+	GameSceneUI::Release ();
 }
 
 SCENE_STATUS GameScene::Execute(){
 
-	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS ||
+	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS 
 #ifdef _DEBUG
-		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH){
+		//|| Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH
 #endif
+		){
 		ResultFactory rf;
 		SceneFactory::Reserve(&rf);
 		return END_PROCESS;

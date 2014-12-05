@@ -127,6 +127,7 @@
     <ClCompile Include="Source\Loader\PlayerLoader.cpp" />
     <ClCompile Include="Source\Manager\AnimationManager.cpp" />
     <ClCompile Include="Source\Manager\HitPointManager.cpp" />
+    <ClCompile Include="Source\Manager\SkillManager.cpp" />
     <ClCompile Include="Source\Model\BoneAnimeData.cpp" />
     <ClCompile Include="Source\Model\CwnBaseMesh.cpp" />
     <ClCompile Include="Source\Model\CwnDecoder.cpp" />
@@ -138,6 +139,7 @@
     <ClCompile Include="Source\Object\Manager\PlayerManager.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
     <ClCompile Include="Source\Object\Player.cpp" />
+    <ClCompile Include="Source\Object\Skill.cpp" />
     <ClCompile Include="Source\Pool\ObjectPool.cpp" />
     <ClCompile Include="Source\Pool\Ref.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene.cpp" />
@@ -227,6 +229,7 @@
     <ClInclude Include="Include\Loader\PlayerLoader.h" />
     <ClInclude Include="Include\Manager\AnimationManager.h" />
     <ClInclude Include="Include\Manager\HitPointManager.h" />
+    <ClInclude Include="Include\Manager\SkillManager.h" />
     <ClInclude Include="Include\Model\BoneAnimeData.h" />
     <ClInclude Include="Include\Model\CwnBaseMesh.h" />
     <ClInclude Include="Include\Model\CwnDecoder.h" />
@@ -241,6 +244,8 @@
     <ClInclude Include="Include\Object\Object.h" />
     <ClInclude Include="Include\Object\ObjectParameter.h" />
     <ClInclude Include="Include\Object\Player.h" />
+    <ClInclude Include="Include\Object\Skill.h" />
+    <ClInclude Include="Include\Object\SkillDefine.h" />
     <ClInclude Include="Include\Pool\ObjectPool.h" />
     <ClInclude Include="Include\Pool\Ref.h" />
     <ClInclude Include="include\Scene\CharacterSelectScene.h" />

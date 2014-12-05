@@ -320,6 +320,12 @@
     <Filter Include="ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush">
       <UniqueIdentifier>{4bd421a9-0389-4f40-8b47-c866fca8d968}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Skil">
+      <UniqueIdentifier>{bc645eec-2593-4efb-89a8-b74e2f2f9a4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Skil\SkillManager">
+      <UniqueIdentifier>{d241b64d-ea06-495e-ab57-e6ea9c943425}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -600,6 +606,12 @@
     </ClCompile>
     <ClCompile Include="Source\D2D\Brush\SolidBrush.cpp">
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Manager\SkillManager.cpp">
+      <Filter>ソース ファイル\Game\Object\Skil\SkillManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill.cpp">
+      <Filter>ソース ファイル\Game\Object\Skil</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -923,6 +935,15 @@
     </ClInclude>
     <ClInclude Include="Include\D2D\Brush\SolidBrush.h">
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Manager\SkillManager.h">
+      <Filter>ソース ファイル\Game\Object\Skil\SkillManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\SkillDefine.h">
+      <Filter>ソース ファイル\Game\Object\Skil</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill.h">
+      <Filter>ソース ファイル\Game\Object\Skil</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,12 @@
+#ifndef _SKIL_DEFINE_H_
+#define _SKIL_DEFINE_H_
+
+enum SKILL_ID
+{
+	SKILL_FIRST,
+	SKILL_SECOND,
+	SKILL_THIRD,
+	SKILL_MAX
+};
+
+#endif
