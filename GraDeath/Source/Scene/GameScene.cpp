@@ -41,15 +41,15 @@ GameScene::~GameScene ()
 
 SCENE_STATUS GameScene::Execute(){
 
-//	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS ||
-//#ifdef _DEBUG
-//		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH){
-//#endif
-//		ResultFactory rf;
-//		SceneFactory::Reserve(&rf);
-//		return END_PROCESS;
-//	}
-//
+	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS ||
+#ifdef _DEBUG
+		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH){
+#endif
+		ResultFactory rf;
+		SceneFactory::Reserve(&rf);
+		return END_PROCESS;
+	}
+
 	PlayerManager::Update();
 
 	return STILL_PROCESSING;
