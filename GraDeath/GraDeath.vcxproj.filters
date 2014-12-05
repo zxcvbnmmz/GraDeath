@@ -320,6 +320,9 @@
     <Filter Include="ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush">
       <UniqueIdentifier>{4bd421a9-0389-4f40-8b47-c866fca8d968}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Library\Sound\Callback">
+      <UniqueIdentifier>{eeea39db-ccc8-474c-ba56-016046e821ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -381,9 +384,6 @@
     </ClCompile>
     <ClCompile Include="Source\Sound\BGM\BGM.cpp">
       <Filter>ソース ファイル\Library\Sound\BGM</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Sound\SE\SEPimpl.cpp">
-      <Filter>ソース ファイル\Library\Sound\SE</Filter>
     </ClCompile>
     <ClCompile Include="Source\Sound\SE\SE.cpp">
       <Filter>ソース ファイル\Library\Sound\SE</Filter>
@@ -657,9 +657,6 @@
     <ClInclude Include="Include\Sound\BGM\BGMPimpl.h">
       <Filter>ソース ファイル\Library\Sound\BGM</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Sound\SE\SEPimpl.h">
-      <Filter>ソース ファイル\Library\Sound\SE</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Sound\SE\SE.h">
       <Filter>ソース ファイル\Library\Sound\SE</Filter>
     </ClInclude>
@@ -923,6 +920,9 @@
     </ClInclude>
     <ClInclude Include="Include\D2D\Brush\SolidBrush.h">
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\SoundCallBack.h">
+      <Filter>ソース ファイル\Library\Sound\Callback</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

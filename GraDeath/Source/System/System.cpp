@@ -66,9 +66,6 @@ namespace System{
 		case WM_KEYDOWN:
 			switch ((char)wParam){
 			case VK_ESCAPE:
-				//HWND _hwnd;
-				//System::Window::GetHWND(&_hwnd);
-				//DestroyWindow(hWnd);
 				PostQuitMessage(0);
 				return 0;
 			}

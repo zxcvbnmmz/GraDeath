@@ -13,14 +13,13 @@ public:
 
 	SCENE_STATUS Execute();    
 	void Draw();
+	void OnSoundEnd();
 
 private:
 	int ExecuteFadeOut(){ return 2; }
 	Sprite sprite, sStart, sCredit, sExit, sVector;
 	D3DXVECTOR2 start_pos, credit_pos, exit_pos, vect_pos, select_pos;
 	int tCount, select_i;
-
-	D2D::TextObject t;
 };
 
 #endif	// end of TitleScene
