@@ -18,6 +18,7 @@ Player::Player(){
 Player::~Player(){
 }
 
+
 bool Player::Init(const char* fileName){
 
 	// ‘fŞ‚ª—ˆ‚½‚ç‚±‚Ìˆ—‚ğ•ÏX
