@@ -4,7 +4,7 @@
 BitmapBrush::BitmapBrush():brush(nullptr){
 }
 
-BitmapBrush::BitmapBrush(ID2D1Bitmap* _bitmap):Brush(_bitmap),brush(nullptr){
+BitmapBrush::BitmapBrush(ID2D1Bitmap* _bitmap):brush(nullptr){
 	Graphic::D2D::Brush::CreateBitmapBrush(&brush,_bitmap);
 }
 

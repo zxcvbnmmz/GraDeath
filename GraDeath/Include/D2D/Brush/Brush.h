@@ -3,15 +3,21 @@
 
 #include <atlbase.h>
 #include <d2d1.h>
+#include "Pool/Ref.h"
 
-class Brush{
+class Brush : public Ref{
 public:
 	Brush();
-	Brush(ID2D1Bitmap* _bitmap);
-	virtual ~Brush();
+	virtual ~Brush(){
+		if (brush != nullptr){
+			brush->Release();
+			brush = nullptr;
+		}
+	}
+	ID2D1Brush* Get(){return brush;}
 
 protected:
-	CComPtr<ID2D1Bitmap> bitmap;
+	ID2D1Brush* brush;
 };
 
 #endif	// end of Brush

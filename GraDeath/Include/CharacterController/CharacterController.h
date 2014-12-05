@@ -11,6 +11,7 @@
 #define _CHARACTER_CONTROLLER_H_
 
 #include <vector>
+#include "Manager/AnimationManager.h"
 
 class Player;
 
@@ -21,38 +22,32 @@ public:
 
 	virtual ~CharacterController(){}
 
-	virtual void Init(int _padID) = 0;
+	virtual void Init(int _padID,Player* _player) = 0;
 
-	virtual void Update(class Player* _player) = 0;
+	virtual void Update();
 
-	virtual void Draw(class Player* _player) = 0;
+	virtual void Draw() = 0;
 
 	virtual void Release() = 0;
 
 protected:
 	int padID;
 	bool enable;
+	AnimationManager animManager;
+	CURRENT_ANIMATION_STATE currentAnimState;
+	PLAYER_ACTION currentAction;
+	Player* player;
 
-	// à»â∫ç°å„ÇÃé¿ëïÇ…ÇÊÇËè¡Ç¶ÇÈÇ©Ç‡
+	void ChangeAction(PLAYER_ACTION newAction, bool loop);
 
-	enum PLAYER_ACTION : unsigned int {
-		IDLE,
-		RUN,
-		WALK,
-		ATTACK,
-		DAMAGE,
-		JUMP,
-		NOTHING,
-		ACTION_MAX
-	}currentAction;
-	void(CharacterController::*Actions[ACTION_MAX])(Player*);
+	void(CharacterController::*Actions[ACTION_MAX])();
 
-	virtual void Idle(Player*){}
-	virtual void Run(Player*){}
-	virtual void Walk(Player*){}
-	virtual void Attack(Player*){}
-	virtual void Damage(Player*){}
-	virtual void Jump(Player*){}
+	virtual void Idle(){}
+	virtual void Run(){}
+	virtual void Walk(){}
+	virtual void Attack(){}
+	virtual void Damage(){}
+	virtual void Jump(){}
 };
 
 #endif

@@ -32,21 +32,18 @@ public:
 
 	~PlayerController (){}
 
-	void Init (int padID);
-
-	void Update(class Player* _player);
-	void Draw(class Player* _player);
-
+	void Init (int padID, Player* _player);
+	void Draw();
 
 	void Release ();
 
 private:
-	virtual void Idle(Player*);
-	virtual void Run(Player*);
-	virtual void Walk(Player*);
-	virtual void Attack(Player*);
-	virtual void Damage(Player*);
-	virtual void Jump(Player*);
+	virtual void Idle();
+	virtual void Run();
+	virtual void Walk();
+	virtual void Attack();
+	virtual void Damage();
+	virtual void Jump();
 
 	int count = 0;
 	// ˆê“I‚ÉéŒ¾

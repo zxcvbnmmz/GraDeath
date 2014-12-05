@@ -4,8 +4,11 @@
 #include "Loader/PlayerLoader.h"
 #include "Utility/Converter.h"
 #include "Utility/Debug.h"
-
 #include <string>
+
+
+#include "System/Window.h"
+#include "World/World.h"
 
 
 Player::Player(){
@@ -13,29 +16,55 @@ Player::Player(){
 }
 
 Player::~Player(){
-	if ( animData.fileName )
-	{
-		delete[] animData.fileName;
-	}
 }
 
 
 bool Player::Init(const char* fileName){
-	PlayerLoader::LoadFile ( fileName, &animData );
 
 	// 素材が来たらこの処理を変更
-	std::wstring file = L"Resource/Object/Player/Player_Test.png";//"Resource/Object/Player/Player_Test.bmp";
+	std::wstring file = L"Resource/Object/Player/shirokuro.png";//"Resource/Object/Player/Player_Test.bmp";
 	sprite->Create ( file.c_str () );
-	
-	animData.cellSize = D3DXVECTOR2 ( sprite->GetDefaultSize ().x / animData.rectWCount, sprite->GetDefaultSize ().y / animData.rectHCount );
+
+	int x, y;
+	System::Window::GetWindowSize(&x, &y);
+	b2Vec2 pos = b2Vec2((float)150, (float)y-300);
+
+	b2BodyDef def;
+	def.position = pos;
+	body = World::CreateBody(&def);
 
 	return true;
 }
 
 void Player::Release(){
-
+	World::DestoryBody(body);
 }
 
 void Player::AddForce(b2Vec2& force){
 	body->ApplyForce(force, body->GetWorldCenter(),true);
+}
+
+void DettachFixture(b2Body* body);
+
+void Player::AttachFixture(vector<shared_ptr<CollisionShape>>& shapes){
+	// 新しいフィクスチャーを作る前に一旦前のを消しておく
+	DettachFixture(body);
+
+	// 各セルに配置されたCollisionShapeを新しいフィクスチャーとして全てbodyに追加する
+	for (auto shape : shapes){
+		shape->AddFixture(body);
+	}
+}
+
+void DettachFixture(b2Body* body){
+	b2Fixture* fixture = body->GetFixtureList();
+	if (fixture == nullptr){
+		return;
+	}
+
+	while (fixture != nullptr){
+		b2Fixture* temp = fixture->GetNext();
+		body->DestroyFixture(fixture);
+		fixture = temp;
+	}
 }

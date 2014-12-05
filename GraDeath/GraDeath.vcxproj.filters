@@ -302,6 +302,24 @@
     <Filter Include="ソース ファイル\Game\AnimationManager">
       <UniqueIdentifier>{e042859b-d0f7-48d2-b135-54075fda38fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Other\SizeGetter">
+      <UniqueIdentifier>{33b7bbc5-b925-42f1-be65-3eac36418ee3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\HitPoint">
+      <UniqueIdentifier>{ea1e043a-4fe2-4c88-be11-a1ef74db4a68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\HitPoint\HitPointManager">
+      <UniqueIdentifier>{c4f471f2-17e4-43aa-b0eb-8e786d053c69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Library\Graphic\D2D\TextObject">
+      <UniqueIdentifier>{54489ff8-79fa-41fb-bebe-61875a008f23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Library\Graphic\D2D\Brush\BitmapBrush">
+      <UniqueIdentifier>{e9b64177-2b43-4375-ad06-2ce3a7a76004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush">
+      <UniqueIdentifier>{4bd421a9-0389-4f40-8b47-c866fca8d968}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -556,6 +574,33 @@
     <ClCompile Include="Source\Scene\StageSelectScene\StageIcon.cpp">
       <Filter>ソース ファイル\Game\Scene\StageSelect\StageIcon</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Manager\AnimationManager.cpp">
+      <Filter>ソース ファイル\Game\AnimationManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\Source.cpp">
+      <Filter>ソース ファイル\Other\SizeGetter</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Manager\HitPointManager.cpp">
+      <Filter>ソース ファイル\Game\Object\HitPoint\HitPointManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\HitPoint.cpp">
+      <Filter>ソース ファイル\Game\Object\HitPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Interface\WriteFactory.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Text\TextObject.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D\TextObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Brush\Brush.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Brush\BitmapBrush.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Brush\BitmapBrush</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Brush\SolidBrush.cpp">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Object\Object.h">
@@ -594,16 +639,10 @@
     <ClInclude Include="Include\Graphic\D3DGraphic.h">
       <Filter>ソース ファイル\Library\Graphic\D3D</Filter>
     </ClInclude>
-    <ClInclude Include="Include\D2D\Brush\BitmapBrush.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
-    </ClInclude>
     <ClInclude Include="Include\D2D\Brush\Brush.h">
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
     </ClInclude>
     <ClInclude Include="Include\D2D\Brush\RGBrush.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D2D\Brush\SolidBrush.h">
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
     </ClInclude>
     <ClInclude Include="Include\D3D\SwapChain\SwapChain.h">
@@ -855,8 +894,35 @@
     <ClInclude Include="Include\Scene\StageSelectScene\StageIcon.h">
       <Filter>ソース ファイル\Game\Scene\StageSelect\StageIcon</Filter>
     </ClInclude>
-    <ClInclude Include="Include\AnimationManager\AnimationManager.h">
+    <ClInclude Include="Include\Manager\AnimationManager.h">
       <Filter>ソース ファイル\Game\AnimationManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\SizeGetter.h">
+      <Filter>ソース ファイル\Other\SizeGetter</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\HitPoint.h">
+      <Filter>ソース ファイル\Game\Object\HitPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Manager\HitPointManager.h">
+      <Filter>ソース ファイル\Game\Object\HitPoint\HitPointManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Interface\WriteFactory.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Interface\TextFormat.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Interface\TextLayout.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Text\TextObject.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\TextObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Brush\BitmapBrush.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Brush\BitmapBrush</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Brush\SolidBrush.h">
+      <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,18 +6,19 @@
 
 class SolidBrush : public Brush{
 public:
-	SolidBrush();
-	~SolidBrush();
+	SolidBrush(){}
+	~SolidBrush(){}
 
-	ID2D1SolidColorBrush* operator&(){return brush;}
+	static SolidBrush* Create(float r, float g, float b, float a);
+	ID2D1SolidColorBrush* Get();
+
+	bool InitBrush(float r, float g, float b, float a);
 
 	void SetColor(const D2D1_COLOR_F& color);
 	void SetColor(const D3DXVECTOR4& color);
 	void SetColor(const D3DXVECTOR3& color, float a = 1.0f);
 	void SetColor(float r, float g, float b, float a = 1.0f);
 
-private:
-	ID2D1SolidColorBrush* brush;
 };
 
 #endif	// end of SolidBrush

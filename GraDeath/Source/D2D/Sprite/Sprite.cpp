@@ -149,7 +149,10 @@ void Sprite::SetTrimming(int x, int y, int wSize, int hSize){
 }
 
 void Sprite::SetTrimming(const D2D1_RECT_F& rect){
-	trim = rect;
+	trim.left = rect.left;
+	trim.top = rect.top;
+	trim.right = rect.right + rect.left;
+	trim.bottom = rect.bottom + rect.top;
 }
 
 void Sprite::SetScale(float x, float y){

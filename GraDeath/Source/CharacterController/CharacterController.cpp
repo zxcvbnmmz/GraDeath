@@ -1,16 +1,22 @@
 #include "CharacterController/CharacterController.h"
 
-CharacterController::CharacterController() :currentAction(IDLE), enable(false){
-	Actions[RUN] = &CharacterController::Run;
-	Actions[WALK] = &CharacterController::Walk;
-	Actions[ATTACK] = &CharacterController::Attack;
-	Actions[DAMAGE] = &CharacterController::Damage;
-	Actions[JUMP] = &CharacterController::Jump;
-	Actions[IDLE] = &CharacterController::Idle;
+CharacterController::CharacterController() :currentAction(ACTION_IDLE), enable(false){
+	Actions[ACTION_RUN] = &CharacterController::Run;
+	Actions[ACTION_WALK] = &CharacterController::Walk;
+	Actions[ACTION_ATTACK] = &CharacterController::Attack;
+	Actions[ACTION_DAMAGE] = &CharacterController::Damage;
+	Actions[ACTION_JUMP] = &CharacterController::Jump;
+	Actions[ACTION_IDLE] = &CharacterController::Idle;
 }
 
-void CharacterController::Update(Player* _player){
+void CharacterController::Update(){
 	if (enable){
-		(this->*Actions[currentAction])(_player);
+		currentAnimState = animManager.Update();
+		(this->*Actions[currentAction])();
 	}
+}
+
+void CharacterController::ChangeAction(PLAYER_ACTION newAction, bool loop){
+	currentAction = newAction;
+	animManager.ChangeAction(newAction, loop);
 }

@@ -18,7 +18,7 @@ struct SquareDef:public CollisionDef{
 struct CollisionShape{
 private:
 	std::shared_ptr<b2Shape> shape;
-	b2Fixture* fixture;
+	b2Fixture* fixture = nullptr;
 
 public:
 	CollisionShape(CircleDef& def){
@@ -35,11 +35,12 @@ public:
 		b2Vec2 pos[4];
 
 		for (int i = 0; i < 4; ++i){
-			// 多分代入の際に、単位変換の為に32.0fで割るか掛ける必要あり
-			pos[i].x = (float)def.x[i];
-			pos[i].y = (float)def.y[i];
+			// 代入の際に、単位変換の為に32.0fで割る必要あり
+			pos[i].x = (float)def.x[i] / 32.0f;
+			pos[i].y = (float)def.y[i] / 32.0f;
 		}
-		//_shape->Set(pos, 4);
+		_shape->Set(pos, 4);
+		shape.reset(_shape);
 	}
 
 	void AddFixture(b2Body* body){
@@ -51,11 +52,12 @@ public:
 	}
 
 	void DestoryFixture(b2Body* body){
-		body->DestroyFixture(fixture);
-	}
+		if (fixture != nullptr){
+			body->DestroyFixture(fixture);
+		}
+	} 
 };
 
 #endif	// end of CollisionShape
-
 
 

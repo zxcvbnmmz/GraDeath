@@ -7,10 +7,15 @@
 #include "Utility/Converter.h"
 
 #include "Object/CollisionShape.h"
+#include "Utility/SizeGetter.h"
+#include "Utility/Converter.h"
 
 char* playerIconName[ ] =
 {
-	"Resource/Object/Player/TestData.bin",
+	"Resource/Object/Player/shirokuro.bin",
+	"Resource/Object/Player/shirokuro.bin",
+	"Resource/Object/Player/shirokuro.bin",
+	"Resource/Object/Player/shirokuro.bin",
 	"Resource/Object/Player/TestData.bin",
 	"Resource/Object/Player/TestData.bin",
 	"Resource/Object/Player/TestData.bin",
@@ -19,11 +24,11 @@ char* playerIconName[ ] =
 
 namespace PlayerLoader
 {
-	void LoadShapeData ( std::ifstream* _ifs, short _count, std::vector< std::shared_ptr< ShapeData > > _shapeData );
+	//void LoadShapeData ( std::ifstream* _ifs, short _count, std::vector< std::shared_ptr< ShapeData > > _shapeData );
 
-	void LoadFile ( const char* _filename, AnimationData* parameter )
+	void LoadFile ( const int _num, AnimationData* parameter )
 	{
-		std::ifstream ifs ( _filename, std::ios::binary );
+		std::ifstream ifs ( playerIconName[_num], std::ios::binary );
 
 		assert ( !ifs.fail () );
 
@@ -38,9 +43,18 @@ namespace PlayerLoader
 		parameter->rectWCount = static_cast< int >( hedCount );
 
 		ifs.read ( ( char* )&hedCount, sizeof( char ) );
-		parameter->rectHCount = static_cast< int >( hedCount );
+		parameter->rectHCount = static_cast<int>(hedCount);
 
-		AnimationData animData;
+		char t[64];
+		strncpy_s(t, parameter->fileName, count);
+		char path[64] = "Resource/Object/Player/";
+		strcat_s(path, t);
+
+		WCHAR f[80];
+		Utility::ConvertToWChar(f, path);
+		D3DXVECTOR2 size;
+		GetTextureSize(f, &size);
+		parameter->cellSize = D3DXVECTOR2(size.x / parameter->rectWCount, size.y / parameter->rectHCount);
 
 		for ( int i = 0; i < parameter->rectHCount; i++ )
 		{
@@ -147,9 +161,9 @@ namespace PlayerLoader
 						}
 
 						// ‰¼’Ç‰Á
-						memcpy_s(def.x, sizeof(int)* 4, shape->shape.square.x, 4);
-						memcpy_s(def.y, sizeof(int)* 4, shape->shape.square.y, 4);
-						collisionShape = std::make_shared<CollisionShape>(def);
+						memcpy ( def.x, shape->shape.square.x, sizeof( int )* 4 );
+						memcpy ( def.y, shape->shape.square.y, sizeof( int )* 4 );
+						collisionShape.reset ( new CollisionShape ( def ) );
 					}
 					cell->shapeData.push_back ( shape );
 
@@ -163,8 +177,8 @@ namespace PlayerLoader
 		}
 	}
 
-	char* GetLoadFileName ( CharacterInfo::PLAYER_TYPE _type )
-	{
-		return playerIconName[ _type ];
-	}
+	//char* GetLoadFileName ( CharacterInfo::PLAYER_TYPE _type )
+	////{
+	//	return playerIconName[ _type ];
+	//}
 };

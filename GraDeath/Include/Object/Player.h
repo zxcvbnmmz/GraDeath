@@ -27,13 +27,10 @@ public:
 
 	void AddForce(b2Vec2& _force);
 
-	void AttachFixture();
-	void DettachFixture();
+	void AttachFixture(vector<shared_ptr<CollisionShape>>& shapes);
 
 private:
-	AnimationData animData;
 	shared_ptr<Sprite> sprite;
-	float hitPoint;
 };
 
 #endif	// end of Player

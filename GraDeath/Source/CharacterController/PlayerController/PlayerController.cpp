@@ -14,31 +14,36 @@
 #include "Object/Player.h"
 #include "Input/GamePad.h"
 #include "System/Window.h"
-#include "AnimationManager/AnimationManager.h"
-void PlayerController::Init (int _padID)
+#include "Input/Keyboard.h"
+
+void PlayerController::Init (int _padID, Player* _player)
 {
 	Release ();
 	this->padID = _padID;
-	currentAction = IDLE;
+	this->player = _player;
+	currentAction = ACTION_IDLE;
 	enable = true;
 	int x, y;
 	System::Window::GetWindowSize ( &x, &y );
 	ground = static_cast<float>(y) - 300;
 	pos = D3DXVECTOR2 ( 150 + static_cast<float>( _padID )* 300.f, ground );
+
+	animManager.Create(padID, player);
+	animManager.Enable(true);
 }
 
-void PlayerController::Update(class Player* _player){
-	CharacterController::Update ( _player );
+void PlayerController::Draw(){
+	count = (count + 1) % 6;
 
-	count = ( count + 1 ) % 6;
-}
+	D2D1_RECT_F rect;
+	animManager.GetDrawingRect(rect);
 
-void PlayerController::Draw(class Player* _player){
-	D3DXVECTOR2 size = _player->animData.cellSize;
-	_player->sprite->SetTrimming ( ( int )size.x * count, ( int )size.y * 0, ( int )size.x, ( int )size.y );
-	_player->sprite->SetPosition ( pos );
-	_player->sprite->SetSize ( size );
-	_player->sprite->Draw ( DRAW_RECT );
+
+	D3DXVECTOR2 size = animManager.GetCellSize();
+	player->sprite->SetTrimming ( rect );
+	player->sprite->SetPosition ( pos );
+	player->sprite->SetSize ( size );
+	player->sprite->Draw ( DRAW_RECT );
 }
 
 void PlayerController::Release ()
@@ -46,32 +51,33 @@ void PlayerController::Release ()
 
 }
 
-void PlayerController::Idle(Player* _player){
+void PlayerController::Idle(){
 
 	float angle;
 	if (GamePad::getLStickState((PAD_NUM)padID, angle)){
-		currentAction = WALK;
+		currentAction = ACTION_WALK;
 	}
-	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_B) == INPUT_PUSH){
-		currentAction = ATTACK;
+	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_B) == INPUT_PUSH ||
+		  Keyboard::CheckKey(KC_A) == INPUT_PUSH){
+		ChangeAction(ACTION_ATTACK, false);
 	}
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH){
-		currentAction = JUMP;
+		currentAction = ACTION_JUMP;
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
-		currentAction = WALK;
+		currentAction = ACTION_WALK;
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
-		currentAction = WALK;
+		currentAction = ACTION_WALK;
 	}
 	//count = ( count + 1 ) % 6;
 	//std::vector< std::shared_ptr< CellData > > cellData = _player->animData.cellDatas[ 0 ];
 	//cellData[ 0 ]->animFrame;
 }
 
-void PlayerController::Run(Player* _player){}
+void PlayerController::Run(){}
 
-void PlayerController::Walk(Player* _player){
+void PlayerController::Walk(){
 	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
 		pos.x += 4.0f;
 	}
@@ -79,21 +85,23 @@ void PlayerController::Walk(Player* _player){
 		pos.x -= 4.0f;
 	}
 	else{
-		currentAction = IDLE;
+		currentAction = ACTION_IDLE;
 	}
 
 	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_A ) == INPUT_PUSH ){
-		currentAction = JUMP;
+		currentAction = ACTION_JUMP;
 	}
 }
 
-void PlayerController::Attack(Player* _player){
-	currentAction = IDLE;
+void PlayerController::Attack(){
+	if (currentAnimState == FINISHED){
+		ChangeAction(ACTION_IDLE, true);
+	}
 }
 
-void PlayerController::Damage(Player* _player){}
+void PlayerController::Damage(){}
 
-void PlayerController::Jump(Player* _player){
+void PlayerController::Jump(){
 
 	static float jumpCount = -20.0f;
 	jumpCount += 0.98f;
@@ -101,7 +109,7 @@ void PlayerController::Jump(Player* _player){
 	if ( pos.y > ground )
 	{
 		pos.y = ground;
-		currentAction = IDLE;
+		currentAction = ACTION_IDLE;
 		jumpCount = -20.0f;
 	}
 	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){

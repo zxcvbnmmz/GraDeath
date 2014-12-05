@@ -5,12 +5,13 @@
 
 #include "CharacterController/CharacterInfo.h"
 #include "Loader/PlayerLoader.h"
+#include "Manager/HitPointManager.h"
 
 namespace PlayerManager
 {
 	namespace{
 		const static int PLAYERS = 4;
-		CharacterController* controllers[ PLAYERS ];
+		CharacterController* controllers[PLAYERS] = { nullptr };
 		Player players[ PLAYERS ];
 	}
 }
@@ -27,14 +28,19 @@ bool PlayerManager::Init(PlayerData* _data){
 
 	for (int i = 0; i < PLAYERS; ++i){
 		controllers[ i ] = new PlayerController;
-		controllers[i]->Init(i);
-		players[ i ].Init ( PlayerLoader::GetLoadFileName ( data[ i ].pType ) );
+		players[i].Init("test");
+		controllers[i]->Init(i,&players[i]);
+		HitPointManager::Init ( i, &players[ i ], 100.0f );
 	}
 
 	return true;
 }
 
 void PlayerManager::Release(){
+	if (controllers == nullptr){
+		return;
+	}
+
 	for (int i = 0; i < PLAYERS; ++i){
 		controllers[i]->Release();
 		delete controllers[ i ];
@@ -45,13 +51,13 @@ void PlayerManager::Release(){
 
 void PlayerManager::Update(){
 	for (int i = 0; i < PLAYERS; ++i){
-		controllers[i]->Update(&players[i]);
+		controllers[i]->Update();
 	}
 }
 
 void PlayerManager::Draw(){
 	for (int i = 0; i < PLAYERS; ++i){
-		controllers[i]->Draw(&players[i]);
+		controllers[i]->Draw();
 	}
 }
 

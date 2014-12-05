@@ -94,10 +94,15 @@
     <ClCompile Include="Source\CharacterController\CharacterController.cpp" />
     <ClCompile Include="Source\CharacterController\CharacterInfo.cpp" />
     <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp" />
+    <ClCompile Include="Source\D2D\Brush\BitmapBrush.cpp" />
+    <ClCompile Include="Source\D2D\Brush\Brush.cpp" />
+    <ClCompile Include="Source\D2D\Brush\SolidBrush.cpp" />
     <ClCompile Include="Source\D2D\Interface\D2DRenderTarget.cpp" />
     <ClCompile Include="Source\D2D\Interface\ImagingFactory.cpp" />
+    <ClCompile Include="Source\D2D\Interface\WriteFactory.cpp" />
     <ClCompile Include="Source\D2D\Sprite\Sprite.cpp" />
     <ClCompile Include="Source\D2D\Sprite\SpriteDecoder.cpp" />
+    <ClCompile Include="Source\D2D\Text\TextObject.cpp" />
     <ClCompile Include="Source\D3D\Device\Device.cpp" />
     <ClCompile Include="Source\D3D\SwapChain\SwapChain.cpp" />
     <ClCompile Include="Source\Direction\Fade.cpp" />
@@ -120,6 +125,8 @@
     <ClCompile Include="Source\Input\InputManager.cpp" />
     <ClCompile Include="Source\Input\Keyboard.cpp" />
     <ClCompile Include="Source\Loader\PlayerLoader.cpp" />
+    <ClCompile Include="Source\Manager\AnimationManager.cpp" />
+    <ClCompile Include="Source\Manager\HitPointManager.cpp" />
     <ClCompile Include="Source\Model\BoneAnimeData.cpp" />
     <ClCompile Include="Source\Model\CwnBaseMesh.cpp" />
     <ClCompile Include="Source\Model\CwnDecoder.cpp" />
@@ -127,6 +134,7 @@
     <ClCompile Include="Source\Model\CwnStaticMesh.cpp" />
     <ClCompile Include="Source\Model\ModelSkinShader.cpp" />
     <ClCompile Include="Source\Model\ModelStaticShader.cpp" />
+    <ClCompile Include="Source\Object\HitPoint.cpp" />
     <ClCompile Include="Source\Object\Manager\PlayerManager.cpp" />
     <ClCompile Include="Source\Object\Object.cpp" />
     <ClCompile Include="Source\Object\Player.cpp" />
@@ -173,6 +181,7 @@
     <ClCompile Include="Source\Utility\Delegate.cpp" />
     <ClCompile Include="Source\Utility\FPS.cpp" />
     <ClCompile Include="Source\Utility\ScreenShot.cpp" />
+    <ClCompile Include="Source\Utility\Source.cpp" />
     <ClCompile Include="Source\World\World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -184,10 +193,14 @@
     <ClInclude Include="Include\D2D\Brush\RGBrush.h" />
     <ClInclude Include="Include\D2D\Brush\SolidBrush.h" />
     <ClInclude Include="Include\D2D\D2DGeometry.h" />
+    <ClInclude Include="Include\D2D\Interface\TextFormat.h" />
+    <ClInclude Include="Include\D2D\Interface\TextLayout.h" />
     <ClInclude Include="include\D2D\Interface\D2DRenderTarget.h" />
     <ClInclude Include="Include\D2D\Interface\ImagingFactory.h" />
+    <ClInclude Include="Include\D2D\Interface\WriteFactory.h" />
     <ClInclude Include="Include\D2D\Sprite\Sprite.h" />
     <ClInclude Include="Include\D2D\Sprite\SpriteDecoder.h" />
+    <ClInclude Include="Include\D2D\Text\TextObject.h" />
     <ClInclude Include="Include\D3D\Device\Device.h" />
     <ClInclude Include="Include\D3D\SwapChain\SwapChain.h" />
     <ClInclude Include="Include\Direction\Direction.h" />
@@ -212,6 +225,8 @@
     <ClInclude Include="Include\Input\Keyboard.h" />
     <ClInclude Include="Include\Loader\CharacterLoader.h" />
     <ClInclude Include="Include\Loader\PlayerLoader.h" />
+    <ClInclude Include="Include\Manager\AnimationManager.h" />
+    <ClInclude Include="Include\Manager\HitPointManager.h" />
     <ClInclude Include="Include\Model\BoneAnimeData.h" />
     <ClInclude Include="Include\Model\CwnBaseMesh.h" />
     <ClInclude Include="Include\Model\CwnDecoder.h" />
@@ -221,6 +236,7 @@
     <ClInclude Include="Include\Model\ModelSkinShader.h" />
     <ClInclude Include="Include\Model\ModelStaticShader.h" />
     <ClInclude Include="Include\Object\CollisionShape.h" />
+    <ClInclude Include="Include\Object\HitPoint.h" />
     <ClInclude Include="Include\Object\Manager\PlayerManager.h" />
     <ClInclude Include="Include\Object\Object.h" />
     <ClInclude Include="Include\Object\ObjectParameter.h" />
@@ -274,6 +290,7 @@
     <ClInclude Include="Include\Utility\Macro.h" />
     <ClInclude Include="Include\Utility\SafeDelete.h" />
     <ClInclude Include="Include\Utility\ScreenShot.h" />
+    <ClInclude Include="Include\Utility\SizeGetter.h" />
     <ClInclude Include="Include\World\World.h" />
   </ItemGroup>
   <ItemGroup>

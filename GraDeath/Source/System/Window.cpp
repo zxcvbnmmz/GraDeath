@@ -47,6 +47,13 @@ bool Window::Create(WNDPROC proc, HINSTANCE inst){
 		return FALSE;
 	}
 
+
+#ifdef _DEBUG
+	int resizeX = GetPrivateProfileInt(L"WindowInfo", L"WindowResizedWidth", 0, fileName);
+	int resizeY = GetPrivateProfileInt(L"WindowInfo", L"WindowResizedHeight", 0, fileName);
+	MoveWindow(windowData.hwnd, x, y, resizeX, resizeY, false);
+#endif
+
 	ShowWindow(windowData.hwnd, SW_SHOW);
 	UpdateWindow(windowData.hwnd);
 
