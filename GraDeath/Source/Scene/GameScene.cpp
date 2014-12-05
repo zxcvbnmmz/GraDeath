@@ -7,13 +7,14 @@
 #include "CharacterController/CharacterInfo.h"
 #include "Utility/Delegate.h"
 #include "Scene/GameScene/GameSceneUI.h"
+#include "Manager/HitPointManager.h"
 
 GameScene::GameScene(){
 	Stage::Initialize(0);
 	
 	PlayerManager::Init ( ( PlayerData* )CharacterInfoFunc::GetCharacterInfo () );
 
-	//GameSceneUI::Create ();
+	GameSceneUI::Create ();
 	/*
 	AddFunction(this, &GameScene::ExecuteSample);
 	AddFunction(this, &GameScene::DrawSample);
@@ -41,15 +42,15 @@ GameScene::~GameScene ()
 
 SCENE_STATUS GameScene::Execute(){
 
-//	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS ||
-//#ifdef _DEBUG
-//		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH){
-//#endif
-//		ResultFactory rf;
-//		SceneFactory::Reserve(&rf);
-//		return END_PROCESS;
-//	}
-//
+	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS ||
+#ifdef _DEBUG
+		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH){
+#endif
+		ResultFactory rf;
+		SceneFactory::Reserve(&rf);
+		return END_PROCESS;
+	}
+
 	PlayerManager::Update();
 
 	return STILL_PROCESSING;
@@ -59,7 +60,7 @@ void GameScene::Draw(){
 	Stage::Draw ();
 	PlayerManager::Draw();
 
-	//GameSceneUI::Create ()->Draw ();
+	GameSceneUI::Create ()->Draw ();
 }
 
 int GameScene::ExecuteSample(){

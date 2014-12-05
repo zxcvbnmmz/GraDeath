@@ -7,7 +7,19 @@
 
 #include "Input\Keyboard.h"
 
+#include "D2D/Brush/SolidBrush.h"
+
 TitleScene::TitleScene(){
+	// まず文字描画に当たりフォーマット（フォントと大きさ）を決める
+	t.format = D2D::TextFormat::Create(L"MS明朝", 30);
+
+	// もしレイアウト（固定位置に固定文字）を使うのなら、フォーマットを使用してレイアウトを作成
+	// 文字を描画する領域幅、描画する文字数と文字を指定する
+	t.layout = t.format->CreateLayout(300, 100, 13, L"TestLayout");
+
+	// 文字色をSolidBrushのCreate関数を使い作成
+	t.brush = SolidBrush::Create(255, 255, 255, 255);
+
 	int _w, _h;
 	System::Window::GetWindowSize ( &_w, &_h );
 	Graphic::Camera::SetViewport ( _w, _h );
@@ -25,15 +37,15 @@ TitleScene::TitleScene(){
 	exit_pos = D3DXVECTOR2(800, 600);
 	vect_pos = D3DXVECTOR2(600, 200);
 	select_pos = D3DXVECTOR2(100, 0);
+	move_pos = D3DXVECTOR2(0, 0);
 	tCount = 0;
 	select_i = 0;
 }
 
-TitleScene::~TitleScene(){
-}
+TitleScene::~TitleScene(){}
 
 SCENE_STATUS TitleScene::Execute(){
-	if (GamePad::getGamePadState(PAD_1, BUTTON_DOWN, 0) == INPUT_PUSH ||
+	if (GamePad::getGamePadState(PAD_1, BUTTON_A, 0) == INPUT_PUSH ||
 #ifdef _DEBUG
 		Keyboard::CheckKey ( KC_ENTER ) == INPUT_PUSH ){
 #endif
@@ -51,18 +63,27 @@ SCENE_STATUS TitleScene::Execute(){
 		Keyboard::CheckKey(KC_DOWN) == INPUT_PUSH) {
 #endif
 		select_i++;
+		move_pos += D3DXVECTOR2(0, -200);
 	}
 	if (GamePad::getGamePadState(PAD_1, BUTTON_UP, 0) == INPUT_PUSH ||
 #ifdef _DEBUG
 		Keyboard::CheckKey(KC_UP) == INPUT_PUSH) {
 #endif
 		select_i--;
+		move_pos += D3DXVECTOR2(0, 200);
 	}
 
-	if (select_i < 0)
+	if (select_i < 0) {
 		select_i = 2;
+		move_pos = D3DXVECTOR2(0, -400);
+	}
 	else if (select_i >= 3)
+	{
 		select_i = 0;
+		move_pos = D3DXVECTOR2(0, 400);
+	}
+
+	move_pos *= .85f;
 
 	return STILL_PROCESSING;
 }
@@ -71,7 +92,7 @@ void TitleScene::Draw(){
 	sStart.SetPosition(start_pos);
 	sCredit.SetPosition(credit_pos);
 	sExit.SetPosition(exit_pos);
-	sVector.SetPosition(vect_pos);
+	sVector.SetPosition(vect_pos + move_pos);
 	switch (select_i){
 	case 0:
 		sStart.SetPosition(start_pos - select_pos);
@@ -86,6 +107,13 @@ void TitleScene::Draw(){
 	sStart.Draw();
 	sCredit.Draw();
 	sExit.Draw();
-	sVector.SetPositionY(vect_pos.y + select_i * 200);
+	sVector.SetPositionY(vect_pos.y + select_i * 200 + move_pos.y);
 	sVector.Draw();
+
+	// 描画
+	// DrawLayoutは事前に作成されたレイアウトを指定位置に描画する
+	// DrawStringはレイアウトは関係なしに、指定位置に自由な文字を描画する
+	t.DrawLayout(0, 0);
+	t.DrawString(0, 30, L"TextString");
+
 }
