@@ -32,12 +32,14 @@ TitleScene::TitleScene(){
 	sExit.Create(L"Resource/Texture/Exit.png");
 	sVector.Create(L"Resource/Texture/Vector.png");
 
-	start_pos = D3DXVECTOR2(800, 200);
+	start_pos = D3DXVECTOR2(700, 200);
 	credit_pos = D3DXVECTOR2(800, 400);
 	exit_pos = D3DXVECTOR2(800, 600);
 	vect_pos = D3DXVECTOR2(600, 200);
-	select_pos = D3DXVECTOR2(100, 0);
-	move_pos = D3DXVECTOR2(0, 0);
+	vect_move =
+	start_move =
+	credit_move =
+	exit_move = D3DXVECTOR2(0, 0);
 	tCount = 0;
 	select_i = 0;
 }
@@ -63,51 +65,44 @@ SCENE_STATUS TitleScene::Execute(){
 		Keyboard::CheckKey(KC_DOWN) == INPUT_PUSH) {
 #endif
 		select_i++;
-		move_pos += D3DXVECTOR2(0, -200);
+		vect_move += D3DXVECTOR2(0, -200);
+		Move();
 	}
 	if (GamePad::getGamePadState(PAD_1, BUTTON_UP, 0) == INPUT_PUSH ||
 #ifdef _DEBUG
 		Keyboard::CheckKey(KC_UP) == INPUT_PUSH) {
 #endif
 		select_i--;
-		move_pos += D3DXVECTOR2(0, 200);
+		vect_move += D3DXVECTOR2(0, 200);
+		Move();
 	}
 
-	if (select_i < 0) {
-		select_i = 2;
-		move_pos = D3DXVECTOR2(0, -400);
-	}
-	else if (select_i >= 3)
-	{
-		select_i = 0;
-		move_pos = D3DXVECTOR2(0, 400);
-	}
 
-	move_pos *= .85f;
+	vect_move *= .85f;
+	start_move *= .9f;
+	credit_move *= .9f;
+	exit_move *= .9f;
 
 	return STILL_PROCESSING;
 }
 
 void TitleScene::Draw(){
-	sStart.SetPosition(start_pos);
-	sCredit.SetPosition(credit_pos);
-	sExit.SetPosition(exit_pos);
-	sVector.SetPosition(vect_pos + move_pos);
+	sVector.SetPosition(vect_pos + vect_move);
 	switch (select_i){
 	case 0:
-		sStart.SetPosition(start_pos - select_pos);
 		break;
 	case 1:
-		sCredit.SetPosition(credit_pos - select_pos);
 		break;
 	case 2:
-		sExit.SetPosition(exit_pos - select_pos);
 		break;
 	}
+	sStart.SetPosition(start_pos + start_move);
+	sCredit.SetPosition(credit_pos + credit_move);
+	sExit.SetPosition(exit_pos + exit_move);
 	sStart.Draw();
 	sCredit.Draw();
 	sExit.Draw();
-	sVector.SetPositionY(vect_pos.y + select_i * 200 + move_pos.y);
+	sVector.SetPositionY(vect_pos.y + select_i * 200 + vect_move.y);
 	sVector.Draw();
 
 	// •`‰æ
@@ -116,4 +111,44 @@ void TitleScene::Draw(){
 	t.DrawLayout(0, 0);
 	t.DrawString(0, 30, L"TextString");
 
+}
+
+void TitleScene::Move() {
+
+	if (select_i < 0) {
+		select_i = 2;
+		vect_move = D3DXVECTOR2(0, -400);
+	}
+	else if (select_i >= 3)
+	{
+		select_i = 0;
+		vect_move = D3DXVECTOR2(0, 400);
+	}
+
+	switch (select_i){
+	case 0:
+		start_move.x = 100;
+		if(credit_pos.x == 700)credit_move.x -= 100;
+		if (exit_pos.x == 700)exit_move.x -= 100;
+		start_pos.x = 700;
+		credit_pos.x = 800;
+		exit_pos.x = 800;
+		break;
+	case 1:
+		credit_move.x = 100;
+		if(start_pos.x == 700)start_move.x -= 100;
+		if (exit_pos.x == 700)exit_move.x -= 100;
+		start_pos.x = 800;
+		credit_pos.x = 700;
+		exit_pos.x = 800;
+		break;
+	case 2:
+		exit_move.x = 100;
+		if (start_pos.x == 700)start_move.x -= 100;
+		if (credit_pos.x == 700)credit_move.x -= 100;
+		start_pos.x = 800;
+		credit_pos.x = 800;
+		exit_pos.x = 700;
+		break;
+	}
 }

@@ -13,7 +13,7 @@ namespace Sound{
 	std::shared_ptr<SubmixVoice> submixBGM;
 }
 
-Sound::SourceVoice* Decode(char* fileName);
+Sound::SourceVoice* Decode(char* fileName, IXAudio2VoiceCallback* callback = nullptr);
 
 bool Sound::Initialize(){
 	IXAudio2* xaudio = SoundCore::GetXAudio();
@@ -40,12 +40,10 @@ void Sound::Release(){
 	SoundCore::Release();
 }
 
-::SE Sound::CreateSE(char* fileName){
-	std::shared_ptr<SourceVoice> voice;
-	voice.reset(Decode(fileName));
+::SE Sound::CreateSE(char* fileName, IXAudio2VoiceCallback* callback){
+	std::shared_ptr<SourceVoice> voice(Decode(fileName, callback));
 
-	::SE se;
-	se.reset(new SE(voice,submixSE.get()));
+	::SE se(new SE(voice,submixSE.get()));
 
 	return se;
 }
@@ -72,6 +70,6 @@ void Sound::SetAllVolume(float volume){
 	SoundCore::GetMasteringVoice().SetVolume(volume);
 }
 
-Sound::SourceVoice* Decode(char* fileName){
-	return new Sound::SourceVoice(Sound::DecodeWave(fileName),&(*Sound::submixSE));
+Sound::SourceVoice* Decode(char* fileName, IXAudio2VoiceCallback* callback){
+	return new Sound::SourceVoice(Sound::DecodeWave(fileName),&(*Sound::submixSE), callback);
 }

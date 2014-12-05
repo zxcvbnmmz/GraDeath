@@ -320,11 +320,8 @@
     <Filter Include="ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush">
       <UniqueIdentifier>{4bd421a9-0389-4f40-8b47-c866fca8d968}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skil">
-      <UniqueIdentifier>{bc645eec-2593-4efb-89a8-b74e2f2f9a4d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skil\SkillManager">
-      <UniqueIdentifier>{d241b64d-ea06-495e-ab57-e6ea9c943425}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Library\Sound\Callback">
+      <UniqueIdentifier>{eeea39db-ccc8-474c-ba56-016046e821ca}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -387,9 +384,6 @@
     </ClCompile>
     <ClCompile Include="Source\Sound\BGM\BGM.cpp">
       <Filter>ソース ファイル\Library\Sound\BGM</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Sound\SE\SEPimpl.cpp">
-      <Filter>ソース ファイル\Library\Sound\SE</Filter>
     </ClCompile>
     <ClCompile Include="Source\Sound\SE\SE.cpp">
       <Filter>ソース ファイル\Library\Sound\SE</Filter>
@@ -607,12 +601,6 @@
     <ClCompile Include="Source\D2D\Brush\SolidBrush.cpp">
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Manager\SkillManager.cpp">
-      <Filter>ソース ファイル\Game\Object\Skil\SkillManager</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Skill.cpp">
-      <Filter>ソース ファイル\Game\Object\Skil</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Object\Object.h">
@@ -668,9 +656,6 @@
     </ClInclude>
     <ClInclude Include="Include\Sound\BGM\BGMPimpl.h">
       <Filter>ソース ファイル\Library\Sound\BGM</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Sound\SE\SEPimpl.h">
-      <Filter>ソース ファイル\Library\Sound\SE</Filter>
     </ClInclude>
     <ClInclude Include="Include\Sound\SE\SE.h">
       <Filter>ソース ファイル\Library\Sound\SE</Filter>
@@ -936,14 +921,8 @@
     <ClInclude Include="Include\D2D\Brush\SolidBrush.h">
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Manager\SkillManager.h">
-      <Filter>ソース ファイル\Game\Object\Skil\SkillManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\SkillDefine.h">
-      <Filter>ソース ファイル\Game\Object\Skil</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Skill.h">
-      <Filter>ソース ファイル\Game\Object\Skil</Filter>
+    <ClInclude Include="Include\Sound\SoundCallBack.h">
+      <Filter>ソース ファイル\Library\Sound\Callback</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
