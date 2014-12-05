@@ -47,4 +47,20 @@ namespace HitPointManager
 		}
 		return tempNum;
 	}
+
+	// ˆêl‚¾‚¯‚É‚È‚Á‚½
+	bool IsOnlyOne ()
+	{
+		bool temp = false;
+		for ( int i = 0; i < 4; i++ )
+		{
+			if ( temp == !hitPoint[ i ].IsDead () )
+				return false;
+
+			if ( !hitPoint[ i ].IsDead () )
+				temp = true;
+		}
+		return temp;
+	}
+
 }

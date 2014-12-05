@@ -7,13 +7,14 @@
 #include "CharacterController/CharacterInfo.h"
 #include "Utility/Delegate.h"
 #include "Scene/GameScene/GameSceneUI.h"
+#include "Manager/HitPointManager.h"
 
 GameScene::GameScene(){
 	Stage::Initialize(0);
 	
 	PlayerManager::Init ( ( PlayerData* )CharacterInfoFunc::GetCharacterInfo () );
 
-	//GameSceneUI::Create ();
+	GameSceneUI::Create ();
 	/*
 	AddFunction(this, &GameScene::ExecuteSample);
 	AddFunction(this, &GameScene::DrawSample);
@@ -59,7 +60,7 @@ void GameScene::Draw(){
 	Stage::Draw ();
 	PlayerManager::Draw();
 
-	//GameSceneUI::Create ()->Draw ();
+	GameSceneUI::Create ()->Draw ();
 }
 
 int GameScene::ExecuteSample(){

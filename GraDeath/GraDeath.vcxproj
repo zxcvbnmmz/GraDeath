@@ -162,7 +162,6 @@
     <ClCompile Include="Source\Sound\BGM\BGM.cpp" />
     <ClCompile Include="Source\Sound\BGM\BGMPimpl.cpp" />
     <ClCompile Include="Source\Sound\SE\SE.cpp" />
-    <ClCompile Include="Source\Sound\SE\SEPimpl.cpp" />
     <ClCompile Include="Source\Sound\Sound.cpp" />
     <ClCompile Include="Source\Sound\SoundCore.cpp" />
     <ClCompile Include="Source\Sound\Voice\MasterVoice.cpp" />
@@ -265,8 +264,8 @@
     <ClInclude Include="Include\Sound\BGM\BGM.h" />
     <ClInclude Include="Include\Sound\BGM\BGMPimpl.h" />
     <ClInclude Include="Include\Sound\SE\SE.h" />
-    <ClInclude Include="Include\Sound\SE\SEPimpl.h" />
     <ClInclude Include="Include\Sound\Sound.h" />
+    <ClInclude Include="Include\Sound\SoundCallBack.h" />
     <ClInclude Include="Include\Sound\SoundCore.h" />
     <ClInclude Include="Include\Sound\Voice\MasterVoice.h" />
     <ClInclude Include="Include\Sound\Voice\SourceVoice.h" />
