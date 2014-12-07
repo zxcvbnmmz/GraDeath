@@ -23,9 +23,9 @@ private:
 public:
 	CollisionShape(CircleDef& def){
 		b2CircleShape* _shape = new b2CircleShape;
-		_shape->m_p.x = (float)def.x;
-		_shape->m_p.y = (float)def.y;
-		_shape->m_radius = (float)def.r;
+		_shape->m_p.x = (float)def.x / 32.0f; 
+		_shape->m_p.y = (float)def.y / 32.0f;
+		_shape->m_radius = (float)def.r / 32.0f;
 
 		shape.reset(_shape);
 	}
@@ -45,6 +45,9 @@ public:
 
 	void AddFixture(b2Body* body){
 		fixture = body->CreateFixture(shape.get(),0);
+		// 摩擦係数の設定
+		// ステージが不完全なので、ここで多めに設定しておく
+		fixture->SetFriction(20.0f);
 	}
 
 	b2Body* GetBody(){

@@ -102,10 +102,10 @@ void CreateWorldEdge(){
 
 	float widthInMeters = (float)windowWidth / (float)PTM_RATIO;
 	float heightInMeters = (float)windowHeight / (float)PTM_RATIO;
-	b2Vec2 lowerLeftCorner = b2Vec2(0, 0);
-	b2Vec2 lowerRightCorner = b2Vec2(widthInMeters, 0);
-	b2Vec2 upperLeftCorner = b2Vec2(0, heightInMeters);
-	b2Vec2 upperRightCorner = b2Vec2(widthInMeters, heightInMeters);
+	b2Vec2 upperLeftCorner = b2Vec2(0, 0);
+	b2Vec2 upperRightCorner = b2Vec2(widthInMeters, 0);
+	b2Vec2 lowerLeftCorner = b2Vec2(0, heightInMeters);
+	b2Vec2 lowerRightCorner = b2Vec2(widthInMeters, heightInMeters);
 
 	// ã•Ó
 	screenEdgeShape.Set(upperLeftCorner, upperRightCorner);
@@ -118,6 +118,12 @@ void CreateWorldEdge(){
 	screenEdgeBody->CreateFixture(&screenEdgeShape, density);
 	// ‰E•Ó
 	screenEdgeShape.Set(upperRightCorner, lowerRightCorner);
+	screenEdgeBody->CreateFixture(&screenEdgeShape, density);
+
+	heightInMeters = (float)(windowHeight - 150) / (float)PTM_RATIO;
+	b2Vec2 middleFloorLeft = b2Vec2(0, heightInMeters);
+	b2Vec2 middleFloorRight = b2Vec2(widthInMeters, heightInMeters);
+	screenEdgeShape.Set(middleFloorLeft, middleFloorRight);
 	screenEdgeBody->CreateFixture(&screenEdgeShape, density);
 }
 

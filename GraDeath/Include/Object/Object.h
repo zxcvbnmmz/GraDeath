@@ -8,6 +8,8 @@ public:
 	Object();
 	virtual ~Object(){}
 
+	const b2Vec2& GetPosition();
+
 	void SetPosition(float x, float y);
 	void SetPositionX(float x);
 	void SetPositionY(float y);

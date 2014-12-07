@@ -22,7 +22,7 @@ public:
 	Player();
 	virtual ~Player();
 
-	bool Init(const char* fileName);
+	bool Init(const char* fileName, const b2Vec2& bodyPos);
 	void Release();
 
 	void AddForce(b2Vec2& _force);

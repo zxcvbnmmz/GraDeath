@@ -7,6 +7,8 @@
 #include "Loader/PlayerLoader.h"
 #include "Manager/HitPointManager.h"
 
+#include "World/World.h"
+
 namespace PlayerManager
 {
 	namespace{
@@ -28,7 +30,6 @@ bool PlayerManager::Init(PlayerData* _data){
 
 	for (int i = 0; i < PLAYERS; ++i){
 		controllers[ i ] = new PlayerController;
-		players[i].Init("test");
 		controllers[i]->Init(i,&players[i]);
 		HitPointManager::Init ( i, &players[ i ], 100.0f );
 	}
@@ -53,6 +54,19 @@ void PlayerManager::Update(){
 	for (int i = 0; i < PLAYERS; ++i){
 		controllers[i]->Update();
 	}
+
+	int c = World::GetContactCount();
+	b2Contact* contacts = World::GetContactList();
+	for (int i = 0; i < c; ++i){
+		b2Body* bodyA = contacts->GetFixtureA()->GetBody();
+		b2Body* bodyB = contacts->GetFixtureB()->GetBody();
+
+		b2Fixture* fixA = contacts->GetFixtureA();
+		b2Fixture* fixB = contacts->GetFixtureB();
+		contacts = contacts->GetNext();
+		int a = 0;
+	}
+
 }
 
 void PlayerManager::Draw(){

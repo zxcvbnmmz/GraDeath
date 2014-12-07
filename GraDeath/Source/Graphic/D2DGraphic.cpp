@@ -70,9 +70,9 @@ namespace Graphic{
 				target->DrawRectangle(rect, brush->Get());
 		}
 
-		void Geometry::DrawRect(class Brush* brush, float x, float y, float xSize, float ySize, bool fill){
-			D2D1_RECT_F rect = RectF(x,y,x+xSize,y+ySize);
-			if(fill)
+		void Geometry::DrawRect(class Brush* brush, float px, float py, float qx, float qy, bool fill){
+			D2D1_RECT_F rect = RectF(px, py, qx, qy);
+			if (fill)
 				target->FillRectangle(rect, brush->Get());
 			else
 				target->DrawRectangle(rect, brush->Get());

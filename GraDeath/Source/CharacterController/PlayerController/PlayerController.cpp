@@ -16,6 +16,11 @@
 #include "System/Window.h"
 #include "Input/Keyboard.h"
 
+#include "D2D/Text/TextObject.h"
+#include "D2D/Brush/SolidBrush.h"
+
+D2D::TextObject t;
+
 void PlayerController::Init (int _padID, Player* _player)
 {
 	Release ();
@@ -30,6 +35,9 @@ void PlayerController::Init (int _padID, Player* _player)
 
 	animManager.Create(padID, player);
 	animManager.Enable(true);
+
+	t.format = D2D::TextFormat::Create(L"MS–¾’©", 20);
+	t.brush = SolidBrush::Create(255, 255, 255, 255);
 }
 
 void PlayerController::Draw(){
@@ -37,11 +45,21 @@ void PlayerController::Draw(){
 
 	D2D1_RECT_F rect;
 	animManager.GetDrawingRect(rect);
+	
+	b2Vec2 pos = player->GetPosition();
+
+	if (padID == 0){
+		static int a;
+		a++;
+		t.DrawString(0, 0, L"X = %f", pos.x);
+		t.DrawString(0, 20, L"frame = %d", a);
+	}
+
 
 
 	D3DXVECTOR2 size = animManager.GetCellSize();
 	player->sprite->SetTrimming ( rect );
-	player->sprite->SetPosition ( pos );
+	player->sprite->SetPosition ( pos.x * 32.0f, pos.y * 32.0f);
 	player->sprite->SetSize ( size );
 	player->sprite->Draw ( DRAW_RECT );
 }
@@ -73,11 +91,29 @@ void PlayerController::Idle(){
 	//count = ( count + 1 ) % 6;
 	//std::vector< std::shared_ptr< CellData > > cellData = _player->animData.cellDatas[ 0 ];
 	//cellData[ 0 ]->animFrame;
+
+	if (Keyboard::CheckKey(KC_RIGHT) == INPUT_PRESS || Keyboard::CheckKey(KC_LEFT) == INPUT_PRESS){
+		currentAction = ACTION_WALK;
+	}
 }
 
 void PlayerController::Run(){}
 
 void PlayerController::Walk(){
+	if (padID != 0){
+		return;
+	}
+
+	if (Keyboard::CheckKey(KC_RIGHT) == INPUT_PRESS){
+		pos.x += 3.0f;
+		player->AddForce(b2Vec2(10, 0));
+	}
+
+	if (Keyboard::CheckKey(KC_LEFT) == INPUT_PRESS){
+		pos.x += 3.0f;
+		player->AddForce(b2Vec2(-10, 0));
+	}
+
 	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
 		pos.x += 4.0f;
 	}

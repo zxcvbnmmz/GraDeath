@@ -19,7 +19,7 @@ Player::~Player(){
 }
 
 
-bool Player::Init(const char* fileName){
+bool Player::Init(const char* fileName, const b2Vec2& bodyPos){
 
 	// ‘fÞ‚ª—ˆ‚½‚ç‚±‚Ìˆ—‚ð•ÏX
 	std::wstring file = L"Resource/Object/Player/shirokuro.png";//"Resource/Object/Player/Player_Test.bmp";
@@ -27,12 +27,12 @@ bool Player::Init(const char* fileName){
 
 	int x, y;
 	System::Window::GetWindowSize(&x, &y);
-	b2Vec2 pos = b2Vec2((float)150, (float)y-300);
 
 	b2BodyDef def;
-	def.position = pos;
+	def.position = bodyPos;
+	def.type = b2_dynamicBody;
+	
 	body = World::CreateBody(&def);
-
 	return true;
 }
 
@@ -41,7 +41,7 @@ void Player::Release(){
 }
 
 void Player::AddForce(b2Vec2& force){
-	body->ApplyForce(force, body->GetWorldCenter(),true);
+	body->SetLinearVelocity(force);
 }
 
 void DettachFixture(b2Body* body);

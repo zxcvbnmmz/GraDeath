@@ -85,6 +85,10 @@ void SceneManager::Draw(){
 	scenes.top()->Draw();
 	UIManager::Draw();
 
+#ifdef _DEBUG
+	World::DrawDebugData();
+#endif
+
 	Graphic::D2D::EndDraw();
 	Graphic::Present ( 0, 0 );
 

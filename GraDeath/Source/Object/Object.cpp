@@ -3,5 +3,7 @@
 
 Object::Object():body(nullptr){}
 
-
+const b2Vec2& Object::GetPosition(){
+	return body->GetPosition();
+}
 

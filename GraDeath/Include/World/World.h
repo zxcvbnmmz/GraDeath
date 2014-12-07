@@ -17,6 +17,7 @@ namespace World{
 	int GetContactCount();
 	b2Contact* GetContactList();
 	void Step(float timeStep = 1.0f / 60.0f);
+	void DrawDebugData();
 }
 
 #endif	// end of World

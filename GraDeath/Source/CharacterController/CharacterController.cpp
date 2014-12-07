@@ -11,7 +11,7 @@ CharacterController::CharacterController() :currentAction(ACTION_IDLE), enable(f
 
 void CharacterController::Update(){
 	if (enable){
-		currentAnimState = animManager.Update();
+		//currentAnimState = animManager.Update();
 		(this->*Actions[currentAction])();
 	}
 }
