@@ -6,6 +6,7 @@
 #include "CharacterController/CharacterInfo.h"
 #include "Loader/PlayerLoader.h"
 #include "Manager/HitPointManager.h"
+#include "Manager/SkillManager.h"
 
 namespace PlayerManager
 {
@@ -31,6 +32,7 @@ bool PlayerManager::Init(PlayerData* _data){
 		players[i].Init("test");
 		controllers[i]->Init(i,&players[i]);
 		HitPointManager::Init ( i, &players[ i ], 100.0f );
+		SkillManager::Init ( i, data[ i ].pType );
 	}
 
 	return true;

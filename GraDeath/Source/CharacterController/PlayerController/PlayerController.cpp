@@ -15,6 +15,7 @@
 #include "Input/GamePad.h"
 #include "System/Window.h"
 #include "Input/Keyboard.h"
+#include "Manager/SkillManager.h"
 
 void PlayerController::Init (int _padID, Player* _player)
 {
@@ -57,8 +58,9 @@ void PlayerController::Idle(){
 	if (GamePad::getLStickState((PAD_NUM)padID, angle)){
 		currentAction = ACTION_WALK;
 	}
-	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_B) == INPUT_PUSH ||
-		  Keyboard::CheckKey(KC_A) == INPUT_PUSH){
+	else if ((GamePad::getGamePadState((PAD_NUM)padID, BUTTON_B) == INPUT_PUSH ||
+		  Keyboard::CheckKey(KC_A) == INPUT_PUSH ) &&
+		  SkillManager::GetSkillUse ( padID, (SKILL_ID)0 ) ){
 		ChangeAction(ACTION_ATTACK, false);
 	}
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH){

@@ -8,6 +8,7 @@
 #include "Utility/Delegate.h"
 #include "Scene/GameScene/GameSceneUI.h"
 #include "Manager/HitPointManager.h"
+#include "Manager/SkillManager.h"
 
 GameScene::GameScene(){
 	Stage::Initialize(0);
@@ -53,6 +54,7 @@ SCENE_STATUS GameScene::Execute(){
 	}
 
 	PlayerManager::Update();
+	SkillManager::Update ();
 
 	return STILL_PROCESSING;
 }

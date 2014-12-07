@@ -8,19 +8,32 @@ namespace SkillManager
 		Skill skill[ 4 ];
 	}
 
-	void SetSkil ( int _num )
+	void Init ( int _num, CharacterInfo::PLAYER_TYPE _type )
 	{
-
+		skill[ _num ].Init ( _type );
 	}
 
 	void Update ()
 	{
-
+		for ( int i = 0; i < 4; i++ )
+		{
+			skill[ i ].Update ();
+		}
 	}
 
-	bool SkilUse ( int _num, SKILL_ID _id )
+	bool GetSkillUse ( int _num, SKILL_ID _id )
 	{
-		return true;
+		return skill[ _num ].GetUseSkill ( _id  );
+	}
+
+	float GetCoolTime ( int _num, SKILL_ID _id )
+	{
+		return skill[ _num ].GetCoolTime ( _id );
+	}
+
+	CharacterInfo::PLAYER_TYPE GetPlayerType ( int _num )
+	{
+		return skill[ _num ].GetPlayerType ();
 	}
 
 }

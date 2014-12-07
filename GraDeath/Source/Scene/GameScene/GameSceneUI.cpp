@@ -1,5 +1,6 @@
 #include "Scene/GameScene/GameSceneUI.h"
 #include "Manager/HitPointManager.h"
+#include "Manager/SkillManager.h"
 
 GameSceneUI* GameSceneUI::ui = nullptr;
 
@@ -11,14 +12,27 @@ wchar_t* playerIconUI[ ] =
 	L"Resource/UI/Game/player_icon_4.png",
 };
 
+wchar_t* skillIconUI[ ] =
+{
+	L"Resource/UI/Game/skill_first.png",
+	L"Resource/UI/Game/skill_scond.png",
+	L"Resource/UI/Game/skill_third.png",
+};
+
 GameSceneUI::GameSceneUI(){
 	// Ç±Ç±Ç≈äeUIÇÃèâä˙âª
 	ground.Create ( L"Resource/UI/Game/player_ui_frame.png" );
-	hpBar.Create (L"Resource/UI/Game/hpbar.png");
-	deadlyGage.Create ( L"Resource/UI/Game/deadlygage.png" );
+	gageUI[ HP_BAR ].Create ( L"Resource/UI/Game/hpbar.png" );
+	gageUI[ DEADLY_GAGE ].Create ( L"Resource/UI/Game/deadlygage.png" );
 	for (int i = 0; i < PLAYER_MAX; ++i){
 		sprites[ i ][ IDENTIFIER ].Create ( playerIconUI[ i ] );
 	}
+	for ( int i = 0; i < SKILL_ID::SKILL_MAX; i++ )
+	{
+		skillIcon[ i ].Create ( skillIconUI[ i ] );
+	}
+	skillMask.Create ( L"Resource/UI/Game/skill_mask.png" );
+	skillMask.SetAlpha ( 0.6f );
 }
 
 GameSceneUI::~GameSceneUI(){
@@ -43,17 +57,19 @@ void GameSceneUI::Draw(){
 		//}
 
 		// HPBar
-		gageSize = hpBar.GetDefaultSize ();
+		gageSize = gageUI[ HP_BAR ].GetDefaultSize ();
 		gageSize.x *= HitPointManager::GetHitPoint ( i );
-		hpBar.SetPosition ( tempPos.x + 15, tempPos.y + 15 );
-		hpBar.SetSize ( gageSize );
-		hpBar.Draw ();
+		gageUI[ HP_BAR ].SetPosition ( tempPos.x + 15, tempPos.y + 15 );
+		gageUI[ HP_BAR ].SetSize ( gageSize );
+		gageUI[ HP_BAR ].Draw ();
 
 		// DeadlyGage
-		gageSize = deadlyGage.GetDefaultSize ();
-		deadlyGage.SetPosition ( tempPos.x + 15, tempPos.y + 50 );
-		deadlyGage.SetSize ( gageSize );
-		deadlyGage.Draw ();
+		gageSize = gageUI[ DEADLY_GAGE ].GetDefaultSize ();
+		gageUI[ DEADLY_GAGE ].SetPosition ( tempPos.x + 15, tempPos.y + 50 );
+		gageUI[ DEADLY_GAGE ].SetSize ( gageSize );
+		gageUI[ DEADLY_GAGE ].Draw ();
+
+		DrawSkillUI ( i, tempPos );
 	}
 }
 
@@ -70,3 +86,20 @@ void GameSceneUI::Release(){
 }
 
 
+void GameSceneUI::DrawSkillUI ( int _num, D3DXVECTOR2& _pos )
+{
+	D3DXVECTOR2 tempSize;
+	for ( int i = 0; i < SKILL_ID::SKILL_MAX; i++ )
+	{
+		//int tempType = SkillManager::GetPlayerType ( _num );
+		//skillIcon[ tempType ][ i ].
+		skillIcon[ i ].SetPosition ( _pos.x + 15 + ( 50 * ( float )i ), _pos.y + 85 );
+		skillIcon[ i ].Draw ();
+
+		tempSize = skillMask.GetDefaultSize ();
+		tempSize.y *= SkillManager::GetCoolTime ( _num, ( SKILL_ID )i );
+		skillMask.SetPosition ( _pos.x + 15 + ( 50 * ( float )i ), _pos.y + 85 );
+		skillMask.SetSize ( tempSize );
+		skillMask.Draw ();
+	}
+}
