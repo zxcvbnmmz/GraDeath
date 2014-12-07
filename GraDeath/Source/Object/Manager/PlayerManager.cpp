@@ -6,6 +6,7 @@
 #include "CharacterController/CharacterInfo.h"
 #include "Loader/PlayerLoader.h"
 #include "Manager/HitPointManager.h"
+#include "Manager/SkillManager.h"
 
 #include "World/World.h"
 
@@ -32,6 +33,7 @@ bool PlayerManager::Init(PlayerData* _data){
 		controllers[ i ] = new PlayerController;
 		controllers[i]->Init(i,&players[i]);
 		HitPointManager::Init ( i, &players[ i ], 100.0f );
+		SkillManager::Init ( i, data[ i ].pType );
 	}
 
 	return true;
