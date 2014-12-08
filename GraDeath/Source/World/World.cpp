@@ -54,13 +54,13 @@ public:
 	}
 };
 
-//std::shared_ptr<b2DebugDraw> d;
+std::shared_ptr<b2DebugDraw> d;
 
 b2Body* World::CreateBody(const b2BodyDef* def){
-	//if (d == nullptr){
-	//	d.reset(new b2DebugDraw);
-	//	d->SetFlags(b2Draw::e_aabbBit | b2Draw::e_shapeBit);
-	//}
+	if (d == nullptr){
+		d.reset(new b2DebugDraw);
+		d->SetFlags(b2Draw::e_aabbBit | b2Draw::e_shapeBit);
+	}
 
 	return world.CreateBody(def);
 }
@@ -98,7 +98,8 @@ void World::Step(float timeStep){
 }
 
 void World::DrawDebugData(b2Draw* drawer){
-	//b2DebugDraw* temp = d.get();
-	//world.SetDebugDraw(temp);
+	b2DebugDraw* temp = d.get();
+	world.SetDebugDraw(temp);
 	world.DrawDebugData();
 }
+

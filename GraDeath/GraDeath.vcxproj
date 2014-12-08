@@ -184,6 +184,7 @@
     <ClCompile Include="Source\Utility\FPS.cpp" />
     <ClCompile Include="Source\Utility\ScreenShot.cpp" />
     <ClCompile Include="Source\Utility\Source.cpp" />
+    <ClCompile Include="Source\World\DebugDrawer.cpp" />
     <ClCompile Include="Source\World\World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -297,6 +298,7 @@
     <ClInclude Include="Include\Utility\SafeDelete.h" />
     <ClInclude Include="Include\Utility\ScreenShot.h" />
     <ClInclude Include="Include\Utility\SizeGetter.h" />
+    <ClInclude Include="Include\World\DebugDrawer.h" />
     <ClInclude Include="Include\World\World.h" />
   </ItemGroup>
   <ItemGroup>

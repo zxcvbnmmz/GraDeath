@@ -329,8 +329,8 @@
     <Filter Include="ソース ファイル\Game\Object\Skill">
       <UniqueIdentifier>{3a938afc-0696-4586-b016-92a8d45e1c60}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skill\SkillManagerr">
-      <UniqueIdentifier>{58e39dfc-78e6-4323-9b02-41cc6d71040b}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\World\DebugDraw">
+      <UniqueIdentifier>{95ab9237-b331-43d3-be13-723d13c4db31}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -611,10 +611,13 @@
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
     </ClCompile>
     <ClCompile Include="Source\Manager\SkillManager.cpp">
-      <Filter>ソース ファイル\Game\Object\Skill\SkillManagerr</Filter>
+      <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClCompile>
     <ClCompile Include="Source\Object\Skill.cpp">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\World\DebugDrawer.cpp">
+      <Filter>ソース ファイル\Game\World\DebugDraw</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -942,14 +945,17 @@
     <ClInclude Include="Include\Utility\Memory.h">
       <Filter>ソース ファイル\Other\Memory</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Manager\SkillManager.h">
+      <Filter>ソース ファイル\Game\Object\Skill</Filter>
+    </ClInclude>
     <ClInclude Include="Include\Object\SkillDefine.h">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Manager\SkillManager.h">
-      <Filter>ソース ファイル\Game\Object\Skill\SkillManagerr</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Object\Skill.h">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\World\DebugDrawer.h">
+      <Filter>ソース ファイル\Game\World\DebugDraw</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
