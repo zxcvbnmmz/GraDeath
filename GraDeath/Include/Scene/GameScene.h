@@ -2,6 +2,7 @@
 #define _GAME_SCENE_H__
 
 #include "Scene.h"
+#include "World/DebugDrawer.h"
 
 class GameScene : public Scene{
 public:
@@ -17,6 +18,7 @@ public:
 	void DrawSample2();
 
 private:
+	DefaultDebugDrawer drawer;
 };
 
 
