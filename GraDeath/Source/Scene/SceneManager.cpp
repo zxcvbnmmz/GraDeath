@@ -19,11 +19,11 @@ namespace{
 }
 
 bool SceneManager::Initialize(){
-	InputManager::Initialize();
+	//InputManager::Initialize();
 	
-	TitleFactory tf;
-	SceneFactory::Stack(&tf);
-	Graphic::SetClearColor ( 0, 0, 1, 1 );
+	//TitleFactory tf;
+	//SceneFactory::Stack(&tf);
+	//Graphic::SetClearColor ( 0, 0, 1, 1 );
 
 	fps.SetFPS(60);
 

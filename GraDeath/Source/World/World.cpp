@@ -45,15 +45,22 @@ class b2DebugDraw : public b2Draw{
 	void DrawTransform(const b2Transform& xf){}
 
 	SolidBrush* brush = SolidBrush::Create(255, 255, 255, 255);
+
+public:
+	~b2DebugDraw(){
+		if (brush){
+			brush->Release();
+		}
+	}
 };
 
-std::shared_ptr<b2DebugDraw> d;
+//std::shared_ptr<b2DebugDraw> d;
 
 b2Body* World::CreateBody(const b2BodyDef* def){
-	if (d == nullptr){
-		d.reset(new b2DebugDraw);
-		d->SetFlags(b2Draw::e_aabbBit | b2Draw::e_shapeBit);
-	}
+	//if (d == nullptr){
+	//	d.reset(new b2DebugDraw);
+	//	d->SetFlags(b2Draw::e_aabbBit | b2Draw::e_shapeBit);
+	//}
 
 	return world.CreateBody(def);
 }
@@ -90,8 +97,8 @@ void World::Step(float timeStep){
 	world.Step(timeStep,velocityIterations,positionIterations);
 }
 
-void World::DrawDebugData(){
-	b2DebugDraw* temp = d.get();
-	world.SetDebugDraw(temp);
+void World::DrawDebugData(b2Draw* drawer){
+	//b2DebugDraw* temp = d.get();
+	//world.SetDebugDraw(temp);
 	world.DrawDebugData();
 }

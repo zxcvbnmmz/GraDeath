@@ -8,8 +8,6 @@
 #include "Manager/HitPointManager.h"
 #include "Manager/SkillManager.h"
 
-#include "World/World.h"
-
 namespace PlayerManager
 {
 	namespace{
@@ -56,19 +54,6 @@ void PlayerManager::Update(){
 	for (int i = 0; i < PLAYERS; ++i){
 		controllers[i]->Update();
 	}
-
-	int c = World::GetContactCount();
-	b2Contact* contacts = World::GetContactList();
-	for (int i = 0; i < c; ++i){
-		b2Body* bodyA = contacts->GetFixtureA()->GetBody();
-		b2Body* bodyB = contacts->GetFixtureB()->GetBody();
-
-		b2Fixture* fixA = contacts->GetFixtureA();
-		b2Fixture* fixB = contacts->GetFixtureB();
-		contacts = contacts->GetNext();
-		int a = 0;
-	}
-
 }
 
 void PlayerManager::Draw(){

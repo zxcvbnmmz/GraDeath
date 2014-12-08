@@ -323,11 +323,11 @@
     <Filter Include="ソース ファイル\Library\Sound\Callback">
       <UniqueIdentifier>{eeea39db-ccc8-474c-ba56-016046e821ca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skill">
-      <UniqueIdentifier>{f899a14b-ebe1-4386-91cf-f2b366f52ce5}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Other\Memory">
+      <UniqueIdentifier>{e415da17-9d5e-4b31-a1c2-25badaacd0af}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skill\Manager">
-      <UniqueIdentifier>{c79df467-7143-4e4f-9a58-8cde09ebb54b}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Object\Skill">
+      <UniqueIdentifier>{3a938afc-0696-4586-b016-92a8d45e1c60}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -607,11 +607,11 @@
     <ClCompile Include="Source\D2D\Brush\SolidBrush.cpp">
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\Skill.cpp">
+    <ClCompile Include="Source\Manager\SkillManager.cpp">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Manager\SkillManager.cpp">
-      <Filter>ソース ファイル\Game\Object\Skill\Manager</Filter>
+    <ClCompile Include="Source\Object\Skill.cpp">
+      <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -936,11 +936,14 @@
     <ClInclude Include="Include\Sound\SoundCallBack.h">
       <Filter>ソース ファイル\Library\Sound\Callback</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\SkillDefine.h">
-      <Filter>ソース ファイル\Game\Object\Skill</Filter>
+    <ClInclude Include="Include\Utility\Memory.h">
+      <Filter>ソース ファイル\Other\Memory</Filter>
     </ClInclude>
     <ClInclude Include="Include\Manager\SkillManager.h">
-      <Filter>ソース ファイル\Game\Object\Skill\Manager</Filter>
+      <Filter>ソース ファイル\Game\Object\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\SkillDefine.h">
+      <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClInclude>
     <ClInclude Include="Include\Object\Skill.h">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>

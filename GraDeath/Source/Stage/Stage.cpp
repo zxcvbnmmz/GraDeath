@@ -15,7 +15,7 @@ namespace{
 	std::vector<Sprite*> sprites;
 	std::vector<Sprite*> bgSprite;
     std::vector<Sprite*> sprite_animes;
-    Sprite* sprite_anime = new Sprite;
+	Sprite* sprite_anime = new Sprite;
     float HP = 20.f + rand() % 10;
     bool Stageflg = false;
     int StageCoolTime = 0;
@@ -120,6 +120,11 @@ void CreateWorldEdge(){
 	screenEdgeShape.Set(upperRightCorner, lowerRightCorner);
 	screenEdgeBody->CreateFixture(&screenEdgeShape, density);
 
+
+	// ステージに衝突判定がつくまでの仮追加
+	// 判定がつき次第ここを消す
+	// 内容は「画面下部から150上がったところにステージ幅のエッジ(足場)を作る」
+	// これがないと、プレイヤーたちは画面下部まで落ち、UIの後ろに隠れてしまう
 	heightInMeters = (float)(windowHeight - 150) / (float)PTM_RATIO;
 	b2Vec2 middleFloorLeft = b2Vec2(0, heightInMeters);
 	b2Vec2 middleFloorRight = b2Vec2(widthInMeters, heightInMeters);

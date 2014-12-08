@@ -18,7 +18,7 @@ protected:
 private:
 	SceneFactoryBase(const SceneFactoryBase&);
 	SceneFactoryBase& operator=(const SceneFactoryBase&);
-	void* operator new(size_t);
+	//void* operator new(size_t);
 };
 
 

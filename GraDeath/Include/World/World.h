@@ -6,6 +6,7 @@ class b2Joint;
 class b2Contact;
 struct b2BodyDef;
 struct b2JointDef;
+class b2Draw;
 
 namespace World{
 	b2Body* CreateBody(const b2BodyDef* def);
@@ -17,7 +18,7 @@ namespace World{
 	int GetContactCount();
 	b2Contact* GetContactList();
 	void Step(float timeStep = 1.0f / 60.0f);
-	void DrawDebugData();
+	void DrawDebugData(b2Draw* drawer = nullptr);
 }
 
 #endif	// end of World

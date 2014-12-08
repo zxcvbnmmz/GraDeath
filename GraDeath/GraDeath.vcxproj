@@ -59,6 +59,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <DisableSpecificWarnings>4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>Utility/Memory.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -292,6 +293,7 @@
     <ClInclude Include="Include\Utility\DelegateList.h" />
     <ClInclude Include="Include\Utility\FPS.h" />
     <ClInclude Include="Include\Utility\Macro.h" />
+    <ClInclude Include="Include\Utility\Memory.h" />
     <ClInclude Include="Include\Utility\SafeDelete.h" />
     <ClInclude Include="Include\Utility\ScreenShot.h" />
     <ClInclude Include="Include\Utility\SizeGetter.h" />
