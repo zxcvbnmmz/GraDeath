@@ -1,11 +1,10 @@
-#ifndef _SKILL_H_
-#define _SKILL_H_
+#ifndef _SKILL_STATE_H_
+#define _SKILL_STATE_H_
 
 #include "Object/SkillDefine.h"
 #include "CharacterController/CharacterInfo.h"
 
-/*
-class Skill
+class SkillState
 {
 private:
 	enum
@@ -18,9 +17,9 @@ private:
 	CharacterInfo::PLAYER_TYPE type;
 
 public:
-	Skill (){}
+	SkillState (){}
 
-	~Skill (){}
+	~SkillState (){}
 
 	void Init ( CharacterInfo::PLAYER_TYPE _type );
 
@@ -33,5 +32,5 @@ public:
 	CharacterInfo::PLAYER_TYPE GetPlayerType ();
 
 };
-*/
+
 #endif

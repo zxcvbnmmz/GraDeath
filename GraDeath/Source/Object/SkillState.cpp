@@ -1,7 +1,7 @@
-#include "Object/Skill.h"
+#include "Object/SkillState.h"
 
-/*
-void Skill::Init ( CharacterInfo::PLAYER_TYPE _type )
+
+void SkillState::Init ( CharacterInfo::PLAYER_TYPE _type )
 {
 	for ( int i = 0; i < SKILL_MAX; i++ )
 	{
@@ -11,7 +11,7 @@ void Skill::Init ( CharacterInfo::PLAYER_TYPE _type )
 	type = _type;
 }
 
-void Skill::Update ()
+void SkillState::Update ()
 {
 	for ( int i = 0; i < SKILL_MAX; i++ )
 	{
@@ -24,7 +24,7 @@ void Skill::Update ()
 	}
 }
 
-bool Skill::GetUseSkill ( SKILL_ID _id )
+bool SkillState::GetUseSkill ( SKILL_ID _id )
 {
 	if ( ( time[ COOLTIME ][ _id ] == .0f ) )
 	{
@@ -34,13 +34,12 @@ bool Skill::GetUseSkill ( SKILL_ID _id )
 	return false;
 }
 
-float Skill::GetCoolTime ( SKILL_ID _id )
+float SkillState::GetCoolTime ( SKILL_ID _id )
 {
 	return ( time[ COOLTIME ][ _id ] / time[ RECAST ][ _id ] );
 }
 
-CharacterInfo::PLAYER_TYPE Skill::GetPlayerType ()
+CharacterInfo::PLAYER_TYPE SkillState::GetPlayerType ()
 {
 	return type;
 }
-*/
