@@ -3,7 +3,11 @@
 
 #include <Box2D\Box2D.h>
 
-struct CollisionDef{ virtual ~CollisionDef(){} };
+struct CollisionDef{ 
+	virtual ~CollisionDef(){} 
+	int strength;
+	int mask;
+};
 
 struct CircleDef:public CollisionDef{
 	int x, y;
@@ -19,6 +23,8 @@ struct CollisionShape{
 private:
 	std::shared_ptr<b2Shape> shape;
 	b2Fixture* fixture = nullptr;
+	int maskBit = 0;
+	int strength = 0;
 
 public:
 	CollisionShape(CircleDef& def){
@@ -41,6 +47,9 @@ public:
 		}
 		_shape->Set(pos, 4);
 		shape.reset(_shape);
+
+		this->maskBit = def.mask;
+		this->strength = def.strength;
 	}
 
 	void AddFixture(b2Body* body){
@@ -48,6 +57,13 @@ public:
 		// 摩擦係数の設定
 		// ステージが不完全なので、ここで多めに設定しておく
 		fixture->SetFriction(20.0f);
+		
+		// 反発係数
+		//fixture->SetRestitution(0);
+
+		b2Filter filter;
+		filter.maskBits = this->maskBit;
+		//fixture->SetFilterData(filter);
 	}
 
 	b2Body* GetBody(){

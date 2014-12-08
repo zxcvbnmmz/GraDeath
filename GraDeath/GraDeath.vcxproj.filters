@@ -329,6 +329,9 @@
     <Filter Include="ソース ファイル\Game\Object\Skill">
       <UniqueIdentifier>{3a938afc-0696-4586-b016-92a8d45e1c60}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\World\DebugDraw">
+      <UniqueIdentifier>{95ab9237-b331-43d3-be13-723d13c4db31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -612,6 +615,9 @@
     </ClCompile>
     <ClCompile Include="Source\Object\Skill.cpp">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\World\DebugDrawer.cpp">
+      <Filter>ソース ファイル\Game\World\DebugDraw</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -947,6 +953,9 @@
     </ClInclude>
     <ClInclude Include="Include\Object\Skill.h">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\World\DebugDrawer.h">
+      <Filter>ソース ファイル\Game\World\DebugDraw</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

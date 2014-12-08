@@ -10,6 +10,7 @@ SolidBrush* SolidBrush::Create(float r, float g, float b, float a){
 		D2D::RenderTarget::Get()->CreateSolidColorBrush(color, reinterpret_cast<ID2D1SolidColorBrush**>(&brush->brush));
 		return brush;
 	}
+	
 	return nullptr;
 }
 
@@ -27,8 +28,4 @@ void SolidBrush::SetColor(const D3DXVECTOR3& color, float a){
 
 void SolidBrush::SetColor(float r, float g, float b, float a){
 	reinterpret_cast<ID2D1SolidColorBrush*>(brush)->SetColor(D2D1::ColorF::ColorF(r, g, b, a));
-}
-
-ID2D1SolidColorBrush* SolidBrush::Get(){
-	return reinterpret_cast<ID2D1SolidColorBrush*>(brush);
 }
