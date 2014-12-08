@@ -89,23 +89,11 @@
     <Filter Include="ソース ファイル\Game\Scene">
       <UniqueIdentifier>{7efec26a-90ca-4ee5-8dd1-ec4880063813}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Other">
-      <UniqueIdentifier>{9483e723-dc65-4a7b-a5f3-420f05e47fa7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\Delegate">
-      <UniqueIdentifier>{6e3ee4e5-5342-4f2d-99b0-027e077642db}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Scene\Title">
       <UniqueIdentifier>{2335c5a1-3bac-4cee-989b-deaae2ac744e}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\Game\Scene\Title\Factory">
       <UniqueIdentifier>{d666477e-c984-4e96-abe5-77e9c584271d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\Converter">
-      <UniqueIdentifier>{fcf1d913-de9d-462d-bcd5-f7ce0810a038}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\Debug">
-      <UniqueIdentifier>{ae2a00c2-068d-4e54-bb31-115b327521a1}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\Library\Graphic\D3D\Interface\ShaderResource">
       <UniqueIdentifier>{4d03dbc4-76e9-4bbe-bd65-2ceae4bd9567}</UniqueIdentifier>
@@ -127,9 +115,6 @@
     </Filter>
     <Filter Include="ソース ファイル\Library\Model\Base">
       <UniqueIdentifier>{34942b5e-42da-4462-a9b0-30929ebe5d9c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\SafeDelete">
-      <UniqueIdentifier>{e851be66-1df2-4f76-b2e1-7756200af772}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\Library\Model\Decoder">
       <UniqueIdentifier>{e99a9ca6-950e-411c-9f7d-17837945fb63}</UniqueIdentifier>
@@ -245,9 +230,6 @@
     <Filter Include="ソース ファイル\Game\Object\Stage">
       <UniqueIdentifier>{d4a4c2b5-27d5-45a3-a067-76fa53fe43d7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Other\ScreenShot">
-      <UniqueIdentifier>{02a9bad1-9c98-4597-b986-cf1b4ea62b17}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Loader">
       <UniqueIdentifier>{6312fc9c-9b4d-423a-868b-6cbfe26a45ce}</UniqueIdentifier>
     </Filter>
@@ -275,9 +257,6 @@
     <Filter Include="ソース ファイル\Game\CharacterController\CharacterInfo">
       <UniqueIdentifier>{cab79343-f297-4698-8f36-15b00da0f34f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Other\FPS">
-      <UniqueIdentifier>{abf00207-f986-44a0-b45d-f54adc7f3cb8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Direction\Fade">
       <UniqueIdentifier>{2f6fbde4-1296-468d-805d-dcac6ab6fa01}</UniqueIdentifier>
     </Filter>
@@ -290,9 +269,6 @@
     <Filter Include="ソース ファイル\Game\Object\Ref">
       <UniqueIdentifier>{88a0ceb2-e817-4ad1-8b90-29c4453d9f52}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Other\Macro">
-      <UniqueIdentifier>{ee8ac081-9d61-41c8-ade6-c4c162966769}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Scene\Game\UI">
       <UniqueIdentifier>{7cc91caa-684a-46f4-a0c1-fe785ce88899}</UniqueIdentifier>
     </Filter>
@@ -301,9 +277,6 @@
     </Filter>
     <Filter Include="ソース ファイル\Game\AnimationManager">
       <UniqueIdentifier>{e042859b-d0f7-48d2-b135-54075fda38fa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\SizeGetter">
-      <UniqueIdentifier>{33b7bbc5-b925-42f1-be65-3eac36418ee3}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\Game\Object\HitPoint">
       <UniqueIdentifier>{ea1e043a-4fe2-4c88-be11-a1ef74db4a68}</UniqueIdentifier>
@@ -323,14 +296,41 @@
     <Filter Include="ソース ファイル\Library\Sound\Callback">
       <UniqueIdentifier>{eeea39db-ccc8-474c-ba56-016046e821ca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Other\Memory">
-      <UniqueIdentifier>{e415da17-9d5e-4b31-a1c2-25badaacd0af}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Object\Skill">
       <UniqueIdentifier>{3a938afc-0696-4586-b016-92a8d45e1c60}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\World\DebugDraw">
-      <UniqueIdentifier>{95ab9237-b331-43d3-be13-723d13c4db31}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Object\Skill\SkillManagerr">
+      <UniqueIdentifier>{58e39dfc-78e6-4323-9b02-41cc6d71040b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other">
+      <UniqueIdentifier>{9483e723-dc65-4a7b-a5f3-420f05e47fa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other\Delegate">
+      <UniqueIdentifier>{6e3ee4e5-5342-4f2d-99b0-027e077642db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other\Converter">
+      <UniqueIdentifier>{fcf1d913-de9d-462d-bcd5-f7ce0810a038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other\Debug">
+      <UniqueIdentifier>{ae2a00c2-068d-4e54-bb31-115b327521a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other\SafeDelete">
+      <UniqueIdentifier>{e851be66-1df2-4f76-b2e1-7756200af772}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other\ScreenShot">
+      <UniqueIdentifier>{02a9bad1-9c98-4597-b986-cf1b4ea62b17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other\FPS">
+      <UniqueIdentifier>{abf00207-f986-44a0-b45d-f54adc7f3cb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other\Macro">
+      <UniqueIdentifier>{ee8ac081-9d61-41c8-ade6-c4c162966769}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other\SizeGetter">
+      <UniqueIdentifier>{33b7bbc5-b925-42f1-be65-3eac36418ee3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other\Memory">
+      <UniqueIdentifier>{e415da17-9d5e-4b31-a1c2-25badaacd0af}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -611,13 +611,13 @@
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
     </ClCompile>
     <ClCompile Include="Source\Manager\SkillManager.cpp">
-      <Filter>ソース ファイル\Game\Object\Skill</Filter>
+      <Filter>ソース ファイル\Game\Object\Skill\SkillManagerr</Filter>
     </ClCompile>
     <ClCompile Include="Source\Object\Skill.cpp">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClCompile>
     <ClCompile Include="Source\World\DebugDrawer.cpp">
-      <Filter>ソース ファイル\Game\World\DebugDraw</Filter>
+      <Filter>ソース ファイル\Game\World</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -945,17 +945,17 @@
     <ClInclude Include="Include\Utility\Memory.h">
       <Filter>ソース ファイル\Other\Memory</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Manager\SkillManager.h">
-      <Filter>ソース ファイル\Game\Object\Skill</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Object\SkillDefine.h">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Manager\SkillManager.h">
+      <Filter>ソース ファイル\Game\Object\Skill\SkillManagerr</Filter>
     </ClInclude>
     <ClInclude Include="Include\Object\Skill.h">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClInclude>
     <ClInclude Include="Include\World\DebugDrawer.h">
-      <Filter>ソース ファイル\Game\World\DebugDraw</Filter>
+      <Filter>ソース ファイル\Game\World</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
