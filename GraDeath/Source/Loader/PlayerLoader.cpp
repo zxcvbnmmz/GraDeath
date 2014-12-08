@@ -24,11 +24,21 @@ char* playerIconName[ ] =
 
 namespace PlayerLoader
 {
-	//void LoadShapeData ( std::ifstream* _ifs, short _count, std::vector< std::shared_ptr< ShapeData > > _shapeData );
+	void Load ( const char* filename, AnimationData* parameter );
 
 	void LoadFile ( const int _num, AnimationData* parameter )
 	{
-		std::ifstream ifs ( playerIconName[_num], std::ios::binary );
+		Load ( playerIconName[ _num ], parameter );
+	}
+
+	void LoadFile ( const char* filename, AnimationData* parameter )
+	{
+		Load ( filename, parameter );
+	}
+
+	void Load ( const char* filename, AnimationData* parameter )
+	{
+		std::ifstream ifs ( filename, std::ios::binary );
 
 		assert ( !ifs.fail () );
 
@@ -43,18 +53,18 @@ namespace PlayerLoader
 		parameter->rectWCount = static_cast< int >( hedCount );
 
 		ifs.read ( ( char* )&hedCount, sizeof( char ) );
-		parameter->rectHCount = static_cast<int>(hedCount);
+		parameter->rectHCount = static_cast<int>( hedCount );
 
-		char t[64];
-		strncpy_s(t, parameter->fileName, count);
-		char path[64] = "Resource/Object/Player/";
-		strcat_s(path, t);
+		char t[ 64 ];
+		strncpy_s ( t, parameter->fileName, count );
+		char path[ 64 ] = "Resource/Object/Player/";
+		strcat_s ( path, t );
 
-		WCHAR f[80];
-		Utility::ConvertToWChar(f, path);
+		WCHAR f[ 80 ];
+		Utility::ConvertToWChar ( f, path );
 		D3DXVECTOR2 size;
-		GetTextureSize(f, &size);
-		parameter->cellSize = D3DXVECTOR2(size.x / parameter->rectWCount, size.y / parameter->rectHCount);
+		GetTextureSize ( f, &size );
+		parameter->cellSize = D3DXVECTOR2 ( size.x / parameter->rectWCount, size.y / parameter->rectHCount );
 
 		for ( int i = 0; i < parameter->rectHCount; i++ )
 		{
@@ -84,34 +94,25 @@ namespace PlayerLoader
 				// エフェクトの文字数
 				ifs.read ( ( char* )&temp, sizeof( char ) );
 				fileCount = static_cast< short >( temp );
-				//ifs.read ( ( char* )&temp, sizeof( char ) );
-				//cell->effectCount = static_cast< short >( temp );
 
 				// エフェクト名取得
 				char* effectName = new char[ fileCount ];
 				ifs.read ( ( char* )effectName, sizeof( char )* fileCount );
-				delete[] effectName;
-				//cell->effectFile = new char[ cell->effectCount ];
-				//ifs.read ( ( char* )cell->effectFile, sizeof( char )* cell->effectCount );
+				delete[ ] effectName;
 
 				// サウンドの文字数
 				ifs.read ( ( char* )&temp, sizeof( char ) );
 				fileCount = static_cast< short >( temp );
-				//ifs.read ( ( char* )&temp, sizeof( char ) );
-				//cell->soundCount = static_cast< short >( temp );
 
 				// サウンド名取得
 				char* soundName = new char[ fileCount ];
 				ifs.read ( ( char* )soundName, sizeof( char )* fileCount );
 				delete[ ] soundName;
-				//cell->soundFile = new char[ cell->soundCount ];
-				//ifs.read ( ( char* )cell->soundFile, sizeof( char )* cell->effectCount );
 
 				// shapeカウント
 				ifs.read ( ( char* )&temp, sizeof( char ) );
 				cell->shapeCount = static_cast< short >( temp );
 
-				//LoadShapeData ( &ifs, cell->shapeCount, cell->shapeData );
 				for ( int k = 0; k < cell->shapeCount; k++ )
 				{
 					auto shape = std::shared_ptr<ShapeData> ( new ShapeData );
@@ -149,7 +150,7 @@ namespace PlayerLoader
 						def.y = shape->shape.circle.y;
 						def.mask = shape->collisionType;
 						def.strength = shape->strength;
-						collisionShape = std::make_shared<CollisionShape>(def);
+						collisionShape = std::make_shared<CollisionShape> ( def );
 					}
 					else
 					{// 偽だと四角
@@ -167,12 +168,12 @@ namespace PlayerLoader
 						memcpy ( def.y, shape->shape.square.y, sizeof( int )* 4 );
 						def.mask = shape->collisionType;
 						def.strength = shape->strength;
-						collisionShape.reset(new CollisionShape(def));
+						collisionShape.reset ( new CollisionShape ( def ) );
 					}
 					cell->shapeData.push_back ( shape );
 
 					// 仮追加
-					cell->shapes.push_back(collisionShape);
+					cell->shapes.push_back ( collisionShape );
 				}
 				cellData.push_back ( cell );
 			}
@@ -180,9 +181,4 @@ namespace PlayerLoader
 			parameter->cellDatas.push_back ( cellData );
 		}
 	}
-
-	//char* GetLoadFileName ( CharacterInfo::PLAYER_TYPE _type )
-	////{
-	//	return playerIconName[ _type ];
-	//}
 };

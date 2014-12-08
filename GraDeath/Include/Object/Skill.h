@@ -3,35 +3,31 @@
 
 #include "Object/SkillDefine.h"
 #include "CharacterController/CharacterInfo.h"
+#include <memory>
 
-/*
+class Sprite;
+struct D3DXVECTOR2;
+struct AnimationData;
+
 class Skill
 {
 private:
-	enum
-	{
-		RECAST = 0,
-		COOLTIME = 1,
-		CAST_MAX,
-	};
-	float time[ CAST_MAX ][ SKILL_MAX ];
-	CharacterInfo::PLAYER_TYPE type;
+	Sprite* skillAnim;
+	std::shared_ptr< AnimationData > animSkill;
 
 public:
 	Skill (){}
 
 	~Skill (){}
 
-	void Init ( CharacterInfo::PLAYER_TYPE _type );
+	void Init ( wchar_t* _filename );
 
 	void Update ();
 
-	bool GetUseSkill ( SKILL_ID _id );
+	void Draw ();
 
-	float GetCoolTime ( SKILL_ID _id );
-
-	CharacterInfo::PLAYER_TYPE GetPlayerType ();
+	void SetPosition ( const D3DXVECTOR2& _pos );
 
 };
-*/
+
 #endif

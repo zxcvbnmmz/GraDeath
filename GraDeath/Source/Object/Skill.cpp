@@ -1,46 +1,24 @@
 #include "Object/Skill.h"
+#include "Loader/PlayerLoader.h"
+#include "Object/ObjectParameter.h"
 
-/*
-void Skill::Init ( CharacterInfo::PLAYER_TYPE _type )
+void Skill::Init ( wchar_t* _filename )
 {
-	for ( int i = 0; i < SKILL_MAX; i++ )
-	{
-		time[ RECAST ][ i ] = 180.0f + ( 180.0f * ( float )i );
-		time[ COOLTIME ][ i ] = .0f;
-	}
-	type = _type;
+	animSkill = std::shared_ptr< AnimationData > ( new AnimationData );
+	//PlayerLoader::LoadFile ();
 }
 
 void Skill::Update ()
 {
-	for ( int i = 0; i < SKILL_MAX; i++ )
-	{
-		if ( time[ COOLTIME ][ i ] >= .0f )
-		{
-			time[ COOLTIME ][ i ] -= 1.f;
-			if ( time[ COOLTIME ][ i ] <= .0f )
-				time[ COOLTIME ][ i ] = .0f;
-		}
-	}
+
 }
 
-bool Skill::GetUseSkill ( SKILL_ID _id )
+void Skill::Draw ()
 {
-	if ( ( time[ COOLTIME ][ _id ] == .0f ) )
-	{
-		time[ COOLTIME ][ _id ] = time[ RECAST ][ _id ];
-		return true;
-	}
-	return false;
+
 }
 
-float Skill::GetCoolTime ( SKILL_ID _id )
+void Skill::SetPosition ( const D3DXVECTOR2& _pos )
 {
-	return ( time[ COOLTIME ][ _id ] / time[ RECAST ][ _id ] );
-}
 
-CharacterInfo::PLAYER_TYPE Skill::GetPlayerType ()
-{
-	return type;
 }
-*/
