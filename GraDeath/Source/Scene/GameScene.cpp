@@ -10,6 +10,8 @@
 #include "Manager/HitPointManager.h"
 #include "Manager/SkillManager.h"
 
+#include "World/World.h"
+
 GameScene::GameScene(){
 	Stage::Initialize(0);
 	
@@ -64,6 +66,8 @@ void GameScene::Draw(){
 	PlayerManager::Draw();
 
 	GameSceneUI::Create ()->Draw ();
+
+	World::DrawDebugData(&drawer);
 }
 
 int GameScene::ExecuteSample(){

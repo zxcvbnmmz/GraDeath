@@ -332,6 +332,9 @@
     <Filter Include="ソース ファイル\Other\Memory">
       <UniqueIdentifier>{e415da17-9d5e-4b31-a1c2-25badaacd0af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\World\DebugDrawer">
+      <UniqueIdentifier>{aed95295-ff82-42e8-b2d6-6e43de1fa964}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -617,7 +620,7 @@
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClCompile>
     <ClCompile Include="Source\World\DebugDrawer.cpp">
-      <Filter>ソース ファイル\Game\World</Filter>
+      <Filter>ソース ファイル\Game\World\DebugDrawer</Filter>
     </ClCompile>
     <ClCompile Include="Source\Object\SkillState.cpp">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
@@ -958,7 +961,7 @@
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClInclude>
     <ClInclude Include="Include\World\DebugDrawer.h">
-      <Filter>ソース ファイル\Game\World</Filter>
+      <Filter>ソース ファイル\Game\World\DebugDrawer</Filter>
     </ClInclude>
     <ClInclude Include="Include\Object\SkillState.h">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
