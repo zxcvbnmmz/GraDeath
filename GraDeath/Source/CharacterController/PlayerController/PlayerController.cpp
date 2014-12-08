@@ -112,6 +112,7 @@ void PlayerController::Walk(){
 	}
 
 	if (Keyboard::CheckKey(KC_LEFT) == INPUT_PRESS){
+
 		pos.x += 3.0f;
 		player->AddForce(b2Vec2(-10, 0));
 	}
