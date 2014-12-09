@@ -7,6 +7,7 @@ namespace HitPointManager
 	namespace
 	{
 		HitPoint hitPoint[ 4 ];
+		unsigned int rank;
 	}
 
 	// ‰Šú‰»
@@ -14,12 +15,18 @@ namespace HitPointManager
 	{
 		hitPoint[ _num ].Init ( _player );
 		hitPoint[ _num ].SetHP ( _hp );
+		rank = 4;
 	}
 
 	// ƒ_ƒ[ƒW
 	void HitDamage ( int _num, float _hit )
 	{
 		hitPoint[ _num ].IsDamage ( _hit );
+		if ( hitPoint[ _num ].IsDead () )
+		{
+			hitPoint[ _num ].SetRank ( rank );
+			rank--;
+		}
 	}
 
 	// HP‚Ìæ“¾

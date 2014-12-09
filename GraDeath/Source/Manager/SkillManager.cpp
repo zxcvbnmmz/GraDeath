@@ -1,11 +1,11 @@
 #include "Manager/SkillManager.h"
-#include "Object/Skill.h"
+#include "Object/SkillState.h"
 
 namespace SkillManager
 {
 	namespace
 	{
-		Skill skill[ 4 ];
+		SkillState skill[ 4 ];
 	}
 
 	void Init ( int _num, CharacterInfo::PLAYER_TYPE _type )

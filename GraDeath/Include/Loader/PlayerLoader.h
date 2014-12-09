@@ -10,6 +10,8 @@ namespace PlayerLoader
 
 	void LoadFile ( const int _num, AnimationData* parameter );
 
+	void LoadFile ( const char* filename, AnimationData* parameter );
+
 	//char* GetLoadFileName ( CharacterInfo::PLAYER_TYPE _type );
 
 };

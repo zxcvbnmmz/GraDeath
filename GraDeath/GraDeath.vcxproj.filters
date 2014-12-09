@@ -622,6 +622,9 @@
     <ClCompile Include="Source\World\DebugDrawer.cpp">
       <Filter>ソース ファイル\Game\World\DebugDrawer</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Object\SkillState.cpp">
+      <Filter>ソース ファイル\Game\Object\Skill</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Object\Object.h">
@@ -959,6 +962,9 @@
     </ClInclude>
     <ClInclude Include="Include\World\DebugDrawer.h">
       <Filter>ソース ファイル\Game\World\DebugDrawer</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\SkillState.h">
+      <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

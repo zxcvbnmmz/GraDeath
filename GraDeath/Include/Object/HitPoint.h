@@ -7,6 +7,7 @@ class Player;
 class HitPoint
 {
 private:
+	int rank = 0;
 	float hp = 0;
 	float maxHP;
 	Player* player;
@@ -26,6 +27,10 @@ public:
 
 	float GetHP();
 
+	void SetRank ( int _rank );
+
+	int GetRank ();
+
 };
 
 inline void HitPoint::SetHP ( float _hp )
@@ -38,5 +43,14 @@ inline float HitPoint::GetHP ()
 	return ( hp / maxHP );
 }
 
+inline void HitPoint::SetRank ( int _rank )
+{
+	rank = _rank;
+}
+
+inline int HitPoint::GetRank ()
+{
+	return rank;
+}
 
 #endif

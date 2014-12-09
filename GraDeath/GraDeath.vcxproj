@@ -141,6 +141,7 @@
     <ClCompile Include="Source\Object\Object.cpp" />
     <ClCompile Include="Source\Object\Player.cpp" />
     <ClCompile Include="Source\Object\Skill.cpp" />
+    <ClCompile Include="Source\Object\SkillState.cpp" />
     <ClCompile Include="Source\Pool\ObjectPool.cpp" />
     <ClCompile Include="Source\Pool\Ref.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene.cpp" />
@@ -247,6 +248,7 @@
     <ClInclude Include="Include\Object\Player.h" />
     <ClInclude Include="Include\Object\Skill.h" />
     <ClInclude Include="Include\Object\SkillDefine.h" />
+    <ClInclude Include="Include\Object\SkillState.h" />
     <ClInclude Include="Include\Pool\ObjectPool.h" />
     <ClInclude Include="Include\Pool\Ref.h" />
     <ClInclude Include="include\Scene\CharacterSelectScene.h" />
