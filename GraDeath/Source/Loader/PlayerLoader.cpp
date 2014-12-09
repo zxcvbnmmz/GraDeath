@@ -131,7 +131,6 @@ namespace PlayerLoader
 					// ‹­‚³
 					ifs.read ( ( char* )&tempShape, sizeof( char ) );
 					shape->strength = static_cast< short >( tempShape );
-
 					if ( shape->collisionModel )
 					{// ^‚¾‚Æ‰~
 						CircleDef def;
@@ -168,7 +167,7 @@ namespace PlayerLoader
 						def.mask = shape->collisionType;
 						def.strength = shape->strength;
 						collisionShape.reset(new CollisionShape(def));
-					}
+					};
 					cell->shapeData.push_back ( shape );
 
 					// ‰¼’Ç‰Á

@@ -23,8 +23,8 @@ struct CollisionShape{
 private:
 	std::shared_ptr<b2Shape> shape;
 	b2Fixture* fixture = nullptr;
-	int maskBit = 0;
-	int strength = 0;
+	b2Filter filter;
+	int strength;
 
 public:
 	CollisionShape(CircleDef& def){
@@ -34,6 +34,9 @@ public:
 		_shape->m_radius = (float)def.r / 32.0f;
 
 		shape.reset(_shape);
+		filter.categoryBits = def.mask;
+		filter.maskBits = def.mask;
+		strength = def.strength;
 	}
 
 	CollisionShape(SquareDef& def){
@@ -48,7 +51,7 @@ public:
 		_shape->Set(pos, 4);
 		shape.reset(_shape);
 
-		this->maskBit = def.mask;
+		filter.maskBits = def.mask;
 		this->strength = def.strength;
 	}
 
@@ -61,9 +64,7 @@ public:
 		// ”½”­ŒW”
 		//fixture->SetRestitution(0);
 
-		b2Filter filter;
-		filter.maskBits = this->maskBit;
-		//fixture->SetFilterData(filter);
+		fixture->SetFilterData(filter);
 	}
 
 	b2Body* GetBody(){

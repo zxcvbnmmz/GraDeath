@@ -65,7 +65,7 @@ void GameScene::Draw(){
 	Stage::Draw ();
 	PlayerManager::Draw();
 
-	GameSceneUI::Create ()->Draw ();
+	GameSceneUI::Create()->Draw();
 
 	World::DrawDebugData(&drawer);
 }
