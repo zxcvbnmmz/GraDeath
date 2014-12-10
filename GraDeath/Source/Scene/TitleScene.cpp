@@ -7,26 +7,7 @@
 
 #include "Input\Keyboard.h"
 
-#include "D2D/Brush/SolidBrush.h"
-
 TitleScene::TitleScene(){
-	// まず文字描画に当たりフォーマット（フォントと大きさ）を決める
-	t.format = D2D::TextFormat::Create(L"MS明朝", 30);
-
-	// もしレイアウト（固定位置に固定文字）を使うのなら、フォーマットを使用してレイアウトを作成
-	// 文字を描画する領域幅、描画する文字数と文字を指定する
-	t.layout = t.format->CreateLayout(300, 100, 13, L"TestLayout");
-
-	// 文字色をSolidBrushのCreate関数を使い作成
-	t.brush = SolidBrush::Create(255, 255, 255, 255);
-
-	int _w, _h;
-	System::Window::GetWindowSize ( &_w, &_h );
-	Graphic::Camera::SetViewport ( _w, _h );
-	Graphic::Camera::SetPerspective ( ( float )D3DX_PI / 4.0f, (float)_w / (float)_h, 0.1f, 100.0f );
-	Graphic::Camera::SetLookAt ( D3DXVECTOR3 (  0, 40 ,-60 ), D3DXVECTOR3 ( 0, 0, 0 ) );
-	Graphic::Camera::Update ();
-
 	sStart.Create(L"Resource/Texture/Start.png");
 	sCredit.Create(L"Resource/Texture/Credit.png");
 	sExit.Create(L"Resource/Texture/Exit.png");
@@ -44,7 +25,9 @@ TitleScene::TitleScene(){
 	select_i = 0;
 }
 
-TitleScene::~TitleScene(){}
+TitleScene::~TitleScene(){
+	ObjectPoolManager::GetInstance()->GetCurrentPool()->Clear();
+}
 
 SCENE_STATUS TitleScene::Execute(){
 	if (GamePad::getGamePadState(PAD_1, BUTTON_A, 0) == INPUT_PUSH ||
@@ -104,13 +87,6 @@ void TitleScene::Draw(){
 	sExit.Draw();
 	sVector.SetPositionY(vect_pos.y + select_i * 200 + vect_move.y);
 	sVector.Draw();
-
-	// 描画
-	// DrawLayoutは事前に作成されたレイアウトを指定位置に描画する
-	// DrawStringはレイアウトは関係なしに、指定位置に自由な文字を描画する
-	t.DrawLayout(0, 0);
-	t.DrawString(0, 30, L"TextString");
-
 }
 
 void TitleScene::Move() {

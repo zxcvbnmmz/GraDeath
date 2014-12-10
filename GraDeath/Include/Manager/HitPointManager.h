@@ -17,6 +17,8 @@ namespace HitPointManager
 	// ŸÒ
 	int AlivePlayer ();
 
+	int PlayerRanking ( int _num );
+
 	// ˆêl‚¾‚¯‚É‚È‚Á‚½
 	bool IsOnlyOne ();
 

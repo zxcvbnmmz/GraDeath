@@ -49,15 +49,6 @@ void PlayerController::Draw(){
 	
 	b2Vec2 pos = player->GetPosition();
 
-	if (padID == 0){
-		static int a;
-		a++;
-		t.DrawString(0, 0, L"X = %f", pos.x);
-		t.DrawString(0, 20, L"frame = %d", a);
-	}
-
-
-
 	D3DXVECTOR2 size = animManager.GetCellSize();
 	player->sprite->SetTrimming ( rect );
 	player->sprite->SetPosition ( pos.x * 32.0f, pos.y * 32.0f);
@@ -112,6 +103,7 @@ void PlayerController::Walk(){
 	}
 
 	if (Keyboard::CheckKey(KC_LEFT) == INPUT_PRESS){
+
 		pos.x += 3.0f;
 		player->AddForce(b2Vec2(-10, 0));
 	}

@@ -56,9 +56,10 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_ATL_DISABLE_NOTHROW_NEW;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <DisableSpecificWarnings>4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>Utility/Memory.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -140,6 +141,7 @@
     <ClCompile Include="Source\Object\Object.cpp" />
     <ClCompile Include="Source\Object\Player.cpp" />
     <ClCompile Include="Source\Object\Skill.cpp" />
+    <ClCompile Include="Source\Object\SkillState.cpp" />
     <ClCompile Include="Source\Pool\ObjectPool.cpp" />
     <ClCompile Include="Source\Pool\Ref.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene.cpp" />
@@ -183,6 +185,7 @@
     <ClCompile Include="Source\Utility\FPS.cpp" />
     <ClCompile Include="Source\Utility\ScreenShot.cpp" />
     <ClCompile Include="Source\Utility\Source.cpp" />
+    <ClCompile Include="Source\World\DebugDrawer.cpp" />
     <ClCompile Include="Source\World\World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -245,6 +248,7 @@
     <ClInclude Include="Include\Object\Player.h" />
     <ClInclude Include="Include\Object\Skill.h" />
     <ClInclude Include="Include\Object\SkillDefine.h" />
+    <ClInclude Include="Include\Object\SkillState.h" />
     <ClInclude Include="Include\Pool\ObjectPool.h" />
     <ClInclude Include="Include\Pool\Ref.h" />
     <ClInclude Include="include\Scene\CharacterSelectScene.h" />
@@ -292,9 +296,11 @@
     <ClInclude Include="Include\Utility\DelegateList.h" />
     <ClInclude Include="Include\Utility\FPS.h" />
     <ClInclude Include="Include\Utility\Macro.h" />
+    <ClInclude Include="Include\Utility\Memory.h" />
     <ClInclude Include="Include\Utility\SafeDelete.h" />
     <ClInclude Include="Include\Utility\ScreenShot.h" />
     <ClInclude Include="Include\Utility\SizeGetter.h" />
+    <ClInclude Include="Include\World\DebugDrawer.h" />
     <ClInclude Include="Include\World\World.h" />
   </ItemGroup>
   <ItemGroup>
