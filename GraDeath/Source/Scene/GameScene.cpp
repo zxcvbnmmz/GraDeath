@@ -45,7 +45,7 @@ SCENE_STATUS GameScene::Execute(){
 
 	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS 
 #ifdef _DEBUG
-		//|| Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH
+		|| Keyboard::CheckKey(KC_R) == INPUT_PUSH
 #endif
 		){
 		ResultFactory rf;

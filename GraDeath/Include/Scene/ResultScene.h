@@ -12,8 +12,10 @@ public:
 	void Draw();
 
 private:
-	Sprite s1st, s2nd, s3rd, s4th;
-	D3DXVECTOR2 pos_1st, pos_2nd, pos_3rd, pos_4th;
+	Sprite sRank[4];
+	D3DXVECTOR2 pos_rank[4], move_rank[4];
+	float alpha[4];
+	int timer;
 };
 
 
