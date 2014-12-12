@@ -18,9 +18,9 @@ TitleScene::TitleScene(){
 	exit_pos = D3DXVECTOR2(800, 600);
 	vect_pos = D3DXVECTOR2(600, 200);
 	vect_move =
-	start_move =
-	credit_move =
-	exit_move = D3DXVECTOR2(0, 0);
+		start_move =
+		credit_move =
+		exit_move = D3DXVECTOR2(0, 0);
 	tCount = 0;
 	select_i = 0;
 }
@@ -32,7 +32,7 @@ TitleScene::~TitleScene(){
 SCENE_STATUS TitleScene::Execute(){
 	if (GamePad::getGamePadState(PAD_1, BUTTON_A, 0) == INPUT_PUSH ||
 #ifdef _DEBUG
-		Keyboard::CheckKey ( KC_ENTER ) == INPUT_PUSH ){
+		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH){
 #endif
 		switch (select_i){
 		case 0:
@@ -62,9 +62,9 @@ SCENE_STATUS TitleScene::Execute(){
 
 
 	vect_move *= .85f;
-	start_move *= .9f;
-	credit_move *= .9f;
-	exit_move *= .9f;
+	start_move *= .95f;
+	credit_move *= .95f;
+	exit_move *= .95f;
 
 	return STILL_PROCESSING;
 }
@@ -103,23 +103,23 @@ void TitleScene::Move() {
 
 	switch (select_i){
 	case 0:
-		start_move.x = 100;
-		if(credit_pos.x == 700)credit_move.x -= 100;
+		start_move.x += 100;
+		if (credit_pos.x == 700)credit_move.x -= 100;
 		if (exit_pos.x == 700)exit_move.x -= 100;
 		start_pos.x = 700;
 		credit_pos.x = 800;
 		exit_pos.x = 800;
 		break;
 	case 1:
-		credit_move.x = 100;
-		if(start_pos.x == 700)start_move.x -= 100;
+		credit_move.x += 100;
+		if (start_pos.x == 700)start_move.x -= 100;
 		if (exit_pos.x == 700)exit_move.x -= 100;
 		start_pos.x = 800;
 		credit_pos.x = 700;
 		exit_pos.x = 800;
 		break;
 	case 2:
-		exit_move.x = 100;
+		exit_move.x += 100;
 		if (start_pos.x == 700)start_move.x -= 100;
 		if (credit_pos.x == 700)credit_move.x -= 100;
 		start_pos.x = 800;
