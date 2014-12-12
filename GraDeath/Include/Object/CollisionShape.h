@@ -7,8 +7,9 @@
 struct CollisionDef{ 
 	virtual ~CollisionDef(){} 
 	int strength = 0;
-	int categoryBit = 0x0000;
-	int maskBit = 0x0000;
+	int categoryBit = 0x0002;
+	int maskBit = 0x0001;
+	int groupIndex = 0;
 };
 
 struct CircleDef:public CollisionDef{
@@ -38,7 +39,7 @@ public:
 		shape.reset(_shape);
 		filter.categoryBits = def.categoryBit;
 		filter.maskBits = def.maskBit;
-		filter.groupIndex = 0;
+		filter.groupIndex = def.groupIndex;
 		strength = def.strength;
 	}
 
@@ -56,7 +57,7 @@ public:
 
 		filter.categoryBits = def.categoryBit;
 		filter.maskBits = def.maskBit;
-		filter.groupIndex = 0;
+		filter.groupIndex = def.groupIndex;
 		this->strength = def.strength;
 	}
 
