@@ -5,8 +5,9 @@ namespace Stage{
     bool Initialize(int stageID);
 	void Draw();
 	void Release();
-    float GetHP();
-
+    float GetStageHP();
+    void StageDamage(float _damage);
+    void SetStageHP(float _HP);
 };
 
 #endif	// end of Stage

@@ -43,7 +43,7 @@ bool Stage::Initialize(int stageID){
 void Stage::Draw(){
 	bgSprite[ 0 ]->Draw ();
 	bgSprite[ 1 ]->Draw ();
-    if (Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH  /*HP <= 0*/){
+    if (Keyboard::CheckKey(KC_A) == INPUT_PUSH  /*HP <= 0*/){
         HP = 0;
         //@ x 1366* y 768
         Stageflg = true;
@@ -202,6 +202,14 @@ b2Vec2 StageGetSize(){
     return b2Vec2(42,19);
 }
 
-float Stage::GetHP(){
+float Stage::GetStageHP(){
     return HP;
+}
+
+
+void StageDamage(float _damage){
+    HP = HP - _damage;
+}
+void SetStageHP(float _HP){
+
 }
