@@ -2,11 +2,13 @@
 #define _COLLISION_SHAPE_H__
 
 #include <Box2D\Box2D.h>
+#include "Object/ObjectMask.h"
 
 struct CollisionDef{ 
 	virtual ~CollisionDef(){} 
 	int strength;
-	int mask;
+	int categoryBit;
+	int maskBit;
 };
 
 struct CircleDef:public CollisionDef{

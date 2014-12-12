@@ -109,6 +109,8 @@ void CreateWorldEdge(){
 
 	b2Filter filter;
 	filter.groupIndex = 1;
+	filter.categoryBits = 0x0001;
+	filter.maskBits = 0x0002;
 
 	// è„ï”
 	screenEdgeShape.Set(upperLeftCorner, upperRightCorner);

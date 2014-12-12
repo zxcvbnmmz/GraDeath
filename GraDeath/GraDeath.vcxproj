@@ -77,7 +77,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_ATL_DISABLE_NOTHROW_NEW;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <DisableSpecificWarnings>4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
@@ -244,6 +244,7 @@
     <ClInclude Include="Include\Object\HitPoint.h" />
     <ClInclude Include="Include\Object\Manager\PlayerManager.h" />
     <ClInclude Include="Include\Object\Object.h" />
+    <ClInclude Include="Include\Object\ObjectMask.h" />
     <ClInclude Include="Include\Object\ObjectParameter.h" />
     <ClInclude Include="Include\Object\Player.h" />
     <ClInclude Include="Include\Object\Skill.h" />
