@@ -8,7 +8,7 @@ struct CollisionDef{
 	virtual ~CollisionDef(){} 
 	int strength = 0;
 	int categoryBit = 0x0002;
-	int maskBit = 0x0001;
+	int maskBit = 0x0003;
 	int groupIndex = 0;
 };
 
@@ -62,16 +62,16 @@ public:
 	}
 
 	void AddFixture(b2Body* body){
-		fixture = body->CreateFixture(shape.get(),0);
+		b2FixtureDef def;
+		def.shape = shape.get();
+		def.filter = filter;
+		def.density = 0.0f;
+
 		// 摩擦係数の設定
 		// ステージが不完全なので、ここで多めに設定しておく
-		fixture->SetFriction(20.0f);
-		fixture->SetDensity(0.f);
-		
-		// 反発係数
-		//fixture->SetRestitution(0);
+		def.friction = 20.0f;
 
-		fixture->SetFilterData(filter);
+		body->CreateFixture(&def);
 	}
 
 	b2Body* GetBody(){

@@ -12,32 +12,28 @@
 
 #include "World/World.h"
 
-GameScene::GameScene(){
+GameScene::GameScene() :currentState(FADE_IN) {
 	Stage::Initialize(0);
 	
 	PlayerManager::Init ( ( PlayerData* )CharacterInfoFunc::GetCharacterInfo () );
 
 	GameSceneUI::Create ();
-	/*
-	AddFunction(this, &GameScene::ExecuteSample);
-	AddFunction(this, &GameScene::DrawSample);
-	AddFunction(this, &GameScene::DrawSample2);
+	
+	AddFunction(this, &GameScene::ExecuteFadeIn);
+	AddFunction(this, &GameScene::ExecuteStageCall);
+	AddFunction(this, &GameScene::ExecuteButtle);
 
 	(*executes[0])();	// ExecuteSample
 	(*draws[0])();		// DrawSample
-	(*draws[1])();		// DrawSample2
+	(*draws[1])();
 
-	int i = 1;
-	(*executes[i])();	// error
-	(*draws[i])();		// DrawSample2
-
-	int a = (*executes[0])();		// error
-	int b = (int)(*executes[0])();	// not error
-	*/
+	stageCall.Initialize();
 }
 
 GameScene::~GameScene ()
 {
+	stageCall.Release();
+
 	PlayerManager::Release();
 	Stage::Release ();
 	GameSceneUI::Release ();
@@ -45,39 +41,67 @@ GameScene::~GameScene ()
 
 SCENE_STATUS GameScene::Execute(){
 
-	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS 
-#ifdef _DEBUG
-		|| Keyboard::CheckKey(KC_R) == INPUT_PUSH
-#endif
-		){
-		ResultFactory rf;
-		SceneFactory::Reserve(&rf);
-		return END_PROCESS;
-	}
+	int status = (int)(*executes[currentState])();
+//	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS 
+//#ifdef _DEBUG
+//		|| Keyboard::CheckKey(KC_R) == INPUT_PUSH
+//#endif
+//		){
+//		ResultFactory rf;
+//		SceneFactory::Reserve(&rf);
+//		return END_PROCESS;
+//	}
 
-	PlayerManager::Update();
-	SkillManager::Update ();
+	return (SCENE_STATUS)(status);
+}
+
+void GameScene::Draw(){
+	(*draws[currentState])();
+
+#ifdef _DEBUG
+	World::DrawDebugData(&drawer);
+#endif
+}
+
+int GameScene::ExecuteFadeIn(){
+	//ここでフェード作業
+	currentState = STAGE_CALL;
 
 	return STILL_PROCESSING;
 }
 
-void GameScene::Draw(){
-	Stage::Draw ();
+int GameScene::ExecuteStageCall(){
+	// ここでステージコール作業
+	if (stageCall.Update() == StageCall::FINISHED){
+		currentState = BUTTLE;
+	}
+
+	return STILL_PROCESSING;
+}
+
+int GameScene::ExecuteButtle(){
+	// ここで通常作業
+	PlayerManager::Update();
+	SkillManager::Update();
+
+
+	return STILL_PROCESSING;
+}
+
+void GameScene::DrawFadeIn(){
+	DrawButtle();
+}
+
+void GameScene::DrawStageCall(){
+	DrawButtle();
+	stageCall.Draw();
+}
+
+void GameScene::DrawButtle(){
+	Stage::Draw();
 	PlayerManager::Draw();
 
 	GameSceneUI::Create()->Draw();
-
-	World::DrawDebugData(&drawer);
 }
 
-int GameScene::ExecuteSample(){
-	return 1;
-}
 
-void GameScene::DrawSample(){
-
-}
-
-void GameScene::DrawSample2(){
-
-}

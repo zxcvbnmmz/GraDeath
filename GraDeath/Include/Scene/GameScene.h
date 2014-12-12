@@ -3,6 +3,7 @@
 
 #include "Scene.h"
 #include "World/DebugDrawer.h"
+#include "Scene/GameScene/StageCall.h"
 
 class GameScene : public Scene{
 public:
@@ -13,11 +14,24 @@ public:
 	SCENE_STATUS Execute();
 	void Draw();
 
-	int ExecuteSample();
-	void DrawSample();
-	void DrawSample2();
-
 private:
+	int ExecuteFadeIn();
+	int ExecuteStageCall();
+	int ExecuteButtle();
+
+	void DrawFadeIn();
+	void DrawStageCall();
+	void DrawButtle();
+
+	StageCall stageCall;
+
+	enum CURRENT_GAME_STATE{
+		FADE_IN,
+		STAGE_CALL,
+		BUTTLE,
+	};
+	CURRENT_GAME_STATE currentState;
+
 	DefaultDebugDrawer drawer;
 };
 
