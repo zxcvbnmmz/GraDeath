@@ -242,9 +242,6 @@
     <Filter Include="ソース ファイル\Game\Object\Shape">
       <UniqueIdentifier>{2b4f57ed-7259-4b89-a780-3b934242ab27}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Direction">
-      <UniqueIdentifier>{ba166d44-106c-4631-8103-de81116d8fe3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Object\ObjectParameter">
       <UniqueIdentifier>{37c39109-d9ff-4e62-a2b4-86fc030132c5}</UniqueIdentifier>
     </Filter>
@@ -256,9 +253,6 @@
     </Filter>
     <Filter Include="ソース ファイル\Game\CharacterController\CharacterInfo">
       <UniqueIdentifier>{cab79343-f297-4698-8f36-15b00da0f34f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Direction\Fade">
-      <UniqueIdentifier>{2f6fbde4-1296-468d-805d-dcac6ab6fa01}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\Game\Effect">
       <UniqueIdentifier>{a489f420-2d78-43fa-8b5f-4b9a5236e7e7}</UniqueIdentifier>
@@ -337,6 +331,12 @@
     </Filter>
     <Filter Include="ソース ファイル\Game\Scene\Game\StageCall">
       <UniqueIdentifier>{37cf14e7-b1f9-4382-9ad4-ed0173bd2d0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Effect\Direction">
+      <UniqueIdentifier>{ba166d44-106c-4631-8103-de81116d8fe3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Effect\Direction\Fade">
+      <UniqueIdentifier>{2f6fbde4-1296-468d-805d-dcac6ab6fa01}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -572,7 +572,7 @@
       <Filter>ソース ファイル\Other\FPS</Filter>
     </ClCompile>
     <ClCompile Include="Source\Direction\Fade.cpp">
-      <Filter>ソース ファイル\Game\Direction\Fade</Filter>
+      <Filter>ソース ファイル\Game\Effect\Direction\Fade</Filter>
     </ClCompile>
     <ClCompile Include="Source\Effect\Effect.cpp">
       <Filter>ソース ファイル\Game\Effect</Filter>
@@ -880,7 +880,7 @@
       <Filter>ソース ファイル\Game\Object\Shape</Filter>
     </ClInclude>
     <ClInclude Include="Include\Direction\Direction.h">
-      <Filter>ソース ファイル\Game\Direction</Filter>
+      <Filter>ソース ファイル\Game\Effect\Direction</Filter>
     </ClInclude>
     <ClInclude Include="Include\Object\ObjectParameter.h">
       <Filter>ソース ファイル\Game\Object\ObjectParameter</Filter>
@@ -901,7 +901,7 @@
       <Filter>ソース ファイル\Other\FPS</Filter>
     </ClInclude>
     <ClInclude Include="Include\Direction\Fade.h">
-      <Filter>ソース ファイル\Game\Direction\Fade</Filter>
+      <Filter>ソース ファイル\Game\Effect\Direction\Fade</Filter>
     </ClInclude>
     <ClInclude Include="Include\Effect\Effect.h">
       <Filter>ソース ファイル\Game\Effect</Filter>

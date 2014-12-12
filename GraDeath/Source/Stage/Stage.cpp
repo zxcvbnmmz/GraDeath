@@ -89,6 +89,7 @@ void Stage::Release(){
 		Util::safeDelete ( bg );
     for (auto& anime : sprite_animes)
         Util::safeDelete(anime);
+	bgSprite.clear();
 }
 
 void CreateWorldEdge(){
