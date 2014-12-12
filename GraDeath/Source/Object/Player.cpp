@@ -33,6 +33,8 @@ bool Player::Init(const char* fileName, const b2Vec2& bodyPos){
 	def.type = b2_dynamicBody;
 	
 	body = World::CreateBody(&def);
+	body->SetUserData(this);
+
 	return true;
 }
 

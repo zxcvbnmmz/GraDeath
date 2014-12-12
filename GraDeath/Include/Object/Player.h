@@ -6,14 +6,9 @@
 #include <vector>
 #include <memory>
 
-#include "Object/CollisionShape.h"
-
 using namespace std;
 
 class Sprite;
-struct ObjectParameter;
-struct AnimetionParameter;
-struct AnimationData;
 
 class Player : public Object{
 	friend class PlayerController;
@@ -27,7 +22,7 @@ public:
 
 	void AddForce(b2Vec2& _force);
 
-	void AttachFixture(vector<shared_ptr<CollisionShape>>& shapes);
+	void AttachFixture(vector<shared_ptr<struct CollisionShape>>& shapes);
 
 private:
 	shared_ptr<Sprite> sprite;

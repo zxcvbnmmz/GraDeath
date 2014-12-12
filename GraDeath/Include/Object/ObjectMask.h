@@ -1,0 +1,16 @@
+#ifndef _OBJECT_MASK_H__
+#define _OBJECT_MASK_H__
+
+enum OBJECT_MASK{
+	MASK_STAGE = 0x0001,
+	MASK_COL_ATK = 0x0002 | MASK_STAGE,
+	MASK_COL_DEF = 0x0004 | MASK_STAGE,
+	MASK_PLAYER = MASK_COL_ATK | MASK_COL_DEF,
+	MASK_OTHER,
+};
+
+static OBJECT_MASK objectMasks[] = {
+	MASK_STAGE, MASK_PLAYER, MASK_COL_ATK, MASK_COL_DEF,
+};
+
+#endif	// end of ObjectMask

@@ -109,6 +109,8 @@ void CreateWorldEdge(){
 
 	b2Filter filter;
 	filter.groupIndex = 1;
+	filter.categoryBits = 0x0001;
+	filter.maskBits = 0xffff;
 
 	// ã•Ó
 	screenEdgeShape.Set(upperLeftCorner, upperRightCorner);
@@ -131,7 +133,8 @@ void CreateWorldEdge(){
 	b2Vec2 middleFloorLeft = b2Vec2(0, heightInMeters);
 	b2Vec2 middleFloorRight = b2Vec2(widthInMeters, heightInMeters);
 	screenEdgeShape.Set(middleFloorLeft, middleFloorRight);
-	screenEdgeBody->CreateFixture(&screenEdgeShape, density)->SetFilterData(filter);
+	b2Fixture* fixture = screenEdgeBody->CreateFixture(&screenEdgeShape, density);
+	fixture->SetFilterData(filter);
 }
 
 void CreateEachStage(int stageLevel){
