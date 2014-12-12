@@ -9,7 +9,7 @@ public:
 	TitleScene();
 	~TitleScene();
 
-	SCENE_STATUS Execute();    
+	SCENE_STATUS Execute();
 	void Draw();
 
 private:
