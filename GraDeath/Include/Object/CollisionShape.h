@@ -6,9 +6,9 @@
 
 struct CollisionDef{ 
 	virtual ~CollisionDef(){} 
-	int strength;
-	int categoryBit;
-	int maskBit;
+	int strength = 0;
+	int categoryBit = 0x0000;
+	int maskBit = 0x0000;
 };
 
 struct CircleDef:public CollisionDef{
@@ -34,10 +34,11 @@ public:
 		_shape->m_p.x = (float)def.x / 32.0f; 
 		_shape->m_p.y = (float)def.y / 32.0f;
 		_shape->m_radius = (float)def.r / 32.0f;
-
+		 
 		shape.reset(_shape);
-		filter.categoryBits = def.mask;
-		filter.maskBits = def.mask;
+		filter.categoryBits = def.categoryBit;
+		filter.maskBits = def.maskBit;
+		filter.groupIndex = 0;
 		strength = def.strength;
 	}
 
@@ -53,7 +54,9 @@ public:
 		_shape->Set(pos, 4);
 		shape.reset(_shape);
 
-		filter.maskBits = def.mask;
+		filter.categoryBits = def.categoryBit;
+		filter.maskBits = def.maskBit;
+		filter.groupIndex = 0;
 		this->strength = def.strength;
 	}
 
@@ -62,6 +65,7 @@ public:
 		// 摩擦係数の設定
 		// ステージが不完全なので、ここで多めに設定しておく
 		fixture->SetFriction(20.0f);
+		fixture->SetDensity(0.f);
 		
 		// 反発係数
 		//fixture->SetRestitution(0);
