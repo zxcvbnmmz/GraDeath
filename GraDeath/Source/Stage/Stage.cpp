@@ -107,29 +107,33 @@ void CreateWorldEdge(){
 	b2Vec2 lowerLeftCorner = b2Vec2(0, heightInMeters);
 	b2Vec2 lowerRightCorner = b2Vec2(widthInMeters, heightInMeters);
 
+	b2Filter filter;
+	filter.groupIndex = 1;
+	filter.categoryBits = 0x0001;
+	filter.maskBits = 0x0002;
+
 	// 上辺
 	screenEdgeShape.Set(upperLeftCorner, upperRightCorner);
-	screenEdgeBody->CreateFixture(&screenEdgeShape, density);
+	screenEdgeBody->CreateFixture(&screenEdgeShape, density)->SetFilterData(filter);
 	// 下辺
 	screenEdgeShape.Set(lowerLeftCorner, lowerRightCorner);
-	screenEdgeBody->CreateFixture(&screenEdgeShape, density);
+	screenEdgeBody->CreateFixture(&screenEdgeShape, density)->SetFilterData(filter);
 	// 左辺
 	screenEdgeShape.Set(upperLeftCorner, lowerLeftCorner);
-	screenEdgeBody->CreateFixture(&screenEdgeShape, density);
+	screenEdgeBody->CreateFixture(&screenEdgeShape, density)->SetFilterData(filter);
 	// 右辺
 	screenEdgeShape.Set(upperRightCorner, lowerRightCorner);
-	screenEdgeBody->CreateFixture(&screenEdgeShape, density);
+	screenEdgeBody->CreateFixture(&screenEdgeShape, density)->SetFilterData(filter);
 
 
 	// ステージに衝突判定がつくまでの仮追加
 	// 判定がつき次第ここを消す
-	// 内容は「画面下部から150上がったところにステージ幅のエッジ(足場)を作る」
-	// これがないと、プレイヤーたちは画面下部まで落ち、UIの後ろに隠れてしまう
+	// これがないとプレイヤーたちは画面下部まで落ち、UIの後ろに隠れてしまう
 	heightInMeters = (float)(windowHeight - 150) / (float)PTM_RATIO;
 	b2Vec2 middleFloorLeft = b2Vec2(0, heightInMeters);
 	b2Vec2 middleFloorRight = b2Vec2(widthInMeters, heightInMeters);
 	screenEdgeShape.Set(middleFloorLeft, middleFloorRight);
-	screenEdgeBody->CreateFixture(&screenEdgeShape, density);
+	screenEdgeBody->CreateFixture(&screenEdgeShape, density)->SetFilterData(filter);
 }
 
 void CreateEachStage(int stageLevel){

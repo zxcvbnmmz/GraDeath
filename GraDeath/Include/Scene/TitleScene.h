@@ -14,7 +14,8 @@ public:
 
 private:
 	Sprite sprite, sStart, sCredit, sExit, sVector;
-	D3DXVECTOR2 start_pos, credit_pos, exit_pos, vect_pos, vect_move, start_move, credit_move, exit_move;
+	D3DXVECTOR2 start_pos, credit_pos, exit_pos, vect_pos,
+		vect_move, start_move, credit_move, exit_move;
 	int tCount, select_i;
 
 	void Move();

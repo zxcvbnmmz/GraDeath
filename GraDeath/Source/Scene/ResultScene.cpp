@@ -5,15 +5,17 @@
 #include "Input/Gamepad.h"
 #include "Input\Keyboard.h"
 ResultScene::ResultScene(){
-	s1st.Create(L"Resource/Scene/Result/1st.png");
-	s2nd.Create(L"Resource/Scene/Result/2nd.png");
-	s3rd.Create(L"Resource/Scene/Result/3rd.png");
-	s4th.Create(L"Resource/Scene/Result/4th.png");
+	sRank[0].Create(L"Resource/Scene/Result/1st.png");
+	sRank[1].Create(L"Resource/Scene/Result/2nd.png");
+	sRank[2].Create(L"Resource/Scene/Result/3rd.png");
+	sRank[3].Create(L"Resource/Scene/Result/4th.png");
 
-	pos_1st = D3DXVECTOR2(1000, 100);
-	pos_2nd = D3DXVECTOR2(800, 200);
-	pos_3rd = D3DXVECTOR2(600, 300);
-	pos_4th = D3DXVECTOR2(400, 400);
+	for (int i = 0; i < 4; i++) {
+		pos_rank[i] = D3DXVECTOR2(550 - i * 150, 100 + 100 * i);
+		move_rank[i] = D3DXVECTOR2(0, 300);
+		alpha[i] = 1.f;
+	}
+	timer = 0;
 }
 
 SCENE_STATUS ResultScene::Execute(){
@@ -27,18 +29,31 @@ SCENE_STATUS ResultScene::Execute(){
 		return END_PROCESS;
 	}
 */
+	if (GamePad::getAnyGamePadPressed(BUTTON_A) ||
+		GamePad::getAnyGamePadPressed(BUTTON_START)
+#ifdef _DEBUG
+		||
+		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH
+#endif
+		) {
+		timer = 90;
+	}
 
+	for (int i = 0; i < 4; i++){
+		if (timer > 30 + 15 * (3 - i))
+		{
+			move_rank[i].y *= .9f;
+			alpha[i] *= .9f;
+		}
+	}
+	timer++;
 	return STILL_PROCESSING;
 }
 
 void ResultScene::Draw(){
-	s1st.SetPosition(pos_1st);
-	s2nd.SetPosition(pos_2nd);
-	s3rd.SetPosition(pos_3rd);
-	s4th.SetPosition(pos_4th);
-
-	s1st.Draw();
-	s2nd.Draw();
-	s3rd.Draw();
-	s4th.Draw();
+	for (int i = 0; i < 4; i++){
+		sRank[i].SetPosition(pos_rank[i] + move_rank[i]);
+		sRank[i].SetAlpha(1.f - alpha[i]);
+		sRank[i].Draw();
+	}
 }

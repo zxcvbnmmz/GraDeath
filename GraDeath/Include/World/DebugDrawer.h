@@ -15,7 +15,7 @@ class DefaultDebugDrawer : public b2Draw{
 
 public:
 	DefaultDebugDrawer();
-	~DefaultDebugDrawer();
+	virtual ~DefaultDebugDrawer();
 };
 
 

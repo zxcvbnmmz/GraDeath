@@ -148,7 +148,7 @@ namespace PlayerLoader
 						def.r = shape->shape.circle.rad;
 						def.x = shape->shape.circle.x;
 						def.y = shape->shape.circle.y;
-						def.mask = shape->collisionType;
+						//def.mask = shape->collisionType;
 						def.strength = shape->strength;
 						collisionShape = std::make_shared<CollisionShape> ( def );
 					}
@@ -166,7 +166,7 @@ namespace PlayerLoader
 						// ‰¼’Ç‰Á
 						memcpy ( def.x, shape->shape.square.x, sizeof( int )* 4 );
 						memcpy ( def.y, shape->shape.square.y, sizeof( int )* 4 );
-						def.mask = shape->collisionType;
+						//def.mask = shape->collisionType;
 						def.strength = shape->strength;
 						collisionShape.reset ( new CollisionShape ( def ) );
 					}
