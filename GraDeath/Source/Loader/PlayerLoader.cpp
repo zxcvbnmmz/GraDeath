@@ -57,8 +57,8 @@ namespace PlayerLoader
 		char path[2][64] = {
 			"Resource/Object/Player/",
 			"Resource/Object/Skill/WhiteBlack/" };
-
-		parameter->fileName = new char[count + strlen(path[_type])];
+		int s = count + strlen(path[_type]);
+		parameter->fileName = new char[count + strlen(path[_type])+1];
 		ifs.read ( ( char* )parameter->fileName, sizeof( char )* count );
 
 		ifs.read ( ( char* )&hedCount, sizeof( char ) );
@@ -76,6 +76,8 @@ namespace PlayerLoader
 		D3DXVECTOR2 size;
 		GetTextureSize ( f, &size );
 		parameter->cellSize = D3DXVECTOR2 ( size.x / parameter->rectWCount, size.y / parameter->rectHCount );
+
+		int s2 = strlen(path[_type]);
 		strcpy_s(parameter->fileName, strlen(path[_type])+1, path[_type]);
 
 		for ( int i = 0; i < parameter->rectHCount; i++ )
