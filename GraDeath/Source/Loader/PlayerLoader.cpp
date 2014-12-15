@@ -122,7 +122,7 @@ namespace PlayerLoader
 				ifs.read ( ( char* )&temp, sizeof( char ) );
 				cell->shapeCount = static_cast< short >( temp );
 
-				if ( cell->shapeCount != 1 )
+				//if ( ( cell->shapeCount != 1 ) && ( _type == _PLAYER_TYPE) )
 				for ( int k = 0; k < cell->shapeCount; k++ )
 				{
 					auto shape = std::shared_ptr<ShapeData> ( new ShapeData );
