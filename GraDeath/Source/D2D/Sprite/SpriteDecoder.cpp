@@ -23,7 +23,9 @@ bool D2D::CreateSprite(ID2D1Bitmap** _bitmap, LPCWSTR _fileName){
 	imagingFactory->CreateFormatConverter(&converter);
 	converter->Initialize(frame, GUID_WICPixelFormat32bppPBGRA, WICBitmapDitherTypeNone, NULL, 0.f, WICBitmapPaletteTypeMedianCut);
 
-	D2D::RenderTarget::Get()->CreateBitmapFromWicBitmap(converter, NULL, _bitmap);
+	if (FAILED(D2D::RenderTarget::Get()->CreateBitmapFromWicBitmap(converter, NULL, _bitmap))){
+		return false;
+	}
 
 	return true;
 }
