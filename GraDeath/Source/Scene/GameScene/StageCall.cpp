@@ -17,7 +17,7 @@ namespace{
 
 StageCall::StageCall(){
 	// ファイル名とコールバックを指定
-	se = Sound::CreateSE("", &stageCallBack);
+	//se = Sound::CreateSE("", &stageCallBack);
 }
 
 void StageCall::Initialize(){
