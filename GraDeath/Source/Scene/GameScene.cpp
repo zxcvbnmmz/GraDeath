@@ -22,10 +22,9 @@ GameScene::GameScene() :currentState(FADE_IN) {
 	AddFunction(this, &GameScene::ExecuteFadeIn);
 	AddFunction(this, &GameScene::ExecuteStageCall);
 	AddFunction(this, &GameScene::ExecuteButtle);
-
-	(*executes[0])();	// ExecuteSample
-	(*draws[0])();		// DrawSample
-	(*draws[1])();
+	AddFunction(this, &GameScene::DrawFadeIn);
+	AddFunction(this, &GameScene::DrawStageCall);
+	AddFunction(this, &GameScene::DrawButtle);
 
 	stageCall.Initialize();
 }
