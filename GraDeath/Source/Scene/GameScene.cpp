@@ -94,12 +94,12 @@ void GameScene::DrawFadeIn(){
 void GameScene::DrawStageCall(){
 	DrawButtle();
 	stageCall.Draw();
-	SkillManager::Draw ();
 }
 
 void GameScene::DrawButtle(){
 	Stage::Draw();
 	PlayerManager::Draw();
+	SkillManager::Draw ();
 
 	GameSceneUI::Create()->Draw();
 }

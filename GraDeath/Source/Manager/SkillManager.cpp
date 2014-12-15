@@ -37,6 +37,7 @@ namespace SkillManager
 	void SkillOn ( int _num, int _id, const D3DXVECTOR2 _pos )
 	{
 		skill[ _num ].SetPosition ( _pos );
+		skill[ _num ].SkillOn ();
 	}
 
 	bool GetSkillUse ( int _num, SKILL_ID _id )

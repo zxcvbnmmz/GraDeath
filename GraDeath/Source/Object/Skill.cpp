@@ -62,7 +62,7 @@ void Skill::Draw ()
 
 	D3DXVECTOR2 texSize = animSkill.cellSize;
 	skillAnim->SetTrimming ( rect );
-	skillAnim->SetPosition ( pos.x * 32.0f, pos.y * 32.0f );
+	skillAnim->SetPosition ( pos.x, pos.y );
 	skillAnim->SetSize ( texSize );
 	skillAnim->Draw ( DRAW_RECT );
 }
