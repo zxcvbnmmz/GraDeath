@@ -69,7 +69,7 @@ void Skill::Draw ()
 
 void Skill::SetPosition ( const D3DXVECTOR2& _pos )
 {
-	pos = D3DXVECTOR2( _pos.x, _pos.y - 160.0f);
+	pos = D3DXVECTOR2 ( _pos.x * 32.0f, ( _pos.y  * 32.0f ) - 160.0f );
 }
 
 void Skill::SkillOn ()
