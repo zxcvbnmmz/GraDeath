@@ -9,6 +9,7 @@
 #include "Object/CollisionShape.h"
 #include "Utility/SizeGetter.h"
 #include "Utility/Converter.h"
+#include "Object/ObjectMask.h"
 
 char* playerIconName[ ] =
 {
@@ -160,7 +161,8 @@ namespace PlayerLoader
 						def.r = shape->shape.circle.rad;
 						def.x = shape->shape.circle.x;
 						def.y = shape->shape.circle.y;
-						//def.mask = shape->collisionType;
+						def.categoryBit = categoryBits[shape->collisionType];
+						def.maskBit = MASK_COL_ATK_DEF;
 						def.strength = shape->strength;
 						collisionShape = std::make_shared<CollisionShape> ( def );
 					}
