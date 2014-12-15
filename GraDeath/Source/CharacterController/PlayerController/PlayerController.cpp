@@ -71,6 +71,7 @@ void PlayerController::Idle(){
 		  Keyboard::CheckKey(KC_A) == INPUT_PUSH ) &&
 		  SkillManager::GetSkillUse ( padID, (SKILL_ID)0 ) ){
 		ChangeAction(ACTION_ATTACK, false);
+		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y) );
 	}
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH){
 		currentAction = ACTION_JUMP;

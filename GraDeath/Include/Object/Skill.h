@@ -9,7 +9,6 @@
 
 class Sprite;
 struct D3DXVECTOR2;
-struct AnimationData;
 struct CellData;
 
 class Skill
@@ -20,6 +19,7 @@ private:
 	int frameCount = 0;
 	int animeMax = 0;
 	int nowAnime = 0;
+	bool skillFlg = false;
 	D3DXVECTOR2 pos;
 	std::vector<std::shared_ptr<CellData>>::iterator currentCell;
 
@@ -35,6 +35,8 @@ public:
 	void Draw ();
 
 	void SetPosition ( const D3DXVECTOR2& _pos );
+
+	void SkillOn ();
 
 	AnimationData& GetAnimationData ();
 

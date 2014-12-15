@@ -4,18 +4,32 @@
 #include <xutility>
 #include "Utility/Converter.h"
 #include <string>
+#include <iostream>
+#include <fstream>
 
 void Skill::Init ( char* _filename )
 {
 	PlayerLoader::LoadFile ( _filename, &animSkill );
 	currentCell = animSkill.cellDatas[ nowAnime ].begin ();
+
 	skillAnim = std::shared_ptr< Sprite >( new Sprite );
-	std::wstring filepass = L"";
-	skillAnim->Create (L"");
+
+	char t[ 64 ];
+	strncpy_s ( t, animSkill.fileName, animSkill.nameCount );	
+	char path[ 64 ] = "Resource/Object/Skill/WhiteBlack/";
+	strcat_s ( path, t );
+
+	WCHAR f[ 80 ];
+	Utility::ConvertToWChar ( f, path );
+
+	skillAnim->Create ( L"Resource/Object/Skill/WhiteBlack/skill01.png" );// f );
 }
 
 void Skill::Update ()
 {
+	if ( !skillFlg )
+		return;
+
 	if ( ( *currentCell )->animFrame <= frameCount++ )
 	{
 		auto nextCell = currentCell + 1;
@@ -27,6 +41,7 @@ void Skill::Update ()
 		else
 		{
 			nowAnime = 0;
+			skillFlg = false;
 			currentCell = animSkill.cellDatas[ nowAnime ].begin ();
 		}
 	}
@@ -34,6 +49,9 @@ void Skill::Update ()
 
 void Skill::Draw ()
 {
+	if ( !skillFlg )
+		return;
+
 	auto size = animSkill.cellSize;
 	D2D1_RECT_F rect;
 	size_t _pos = std::distance ( animSkill.cellDatas[ nowAnime ].begin (), currentCell );
@@ -51,7 +69,12 @@ void Skill::Draw ()
 
 void Skill::SetPosition ( const D3DXVECTOR2& _pos )
 {
-	pos = _pos;
+	pos = D3DXVECTOR2( _pos.x, _pos.y - 160.0f);
+}
+
+void Skill::SkillOn ()
+{
+	skillFlg = true;
 }
 
 AnimationData& Skill::GetAnimationData ()

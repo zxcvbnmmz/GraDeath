@@ -24,19 +24,25 @@ char* playerIconName[ ] =
 
 namespace PlayerLoader
 {
-	void Load ( const char* filename, AnimationData* parameter );
+	enum
+	{
+		_PLAYER_TYPE,
+		_SKILL_TYPE
+	};
+
+	void Load ( const char* filename, AnimationData* parameter, int _type );
 
 	void LoadFile ( const int _num, AnimationData* parameter )
 	{
-		Load ( playerIconName[ _num ], parameter );
+		Load ( playerIconName[ _num ], parameter, _PLAYER_TYPE );
 	}
 
 	void LoadFile ( const char* filename, AnimationData* parameter )
 	{
-		Load ( filename, parameter );
+		Load ( filename, parameter, _SKILL_TYPE );
 	}
 
-	void Load ( const char* filename, AnimationData* parameter )
+	void Load ( const char* filename, AnimationData* parameter, int _type )
 	{
 		std::ifstream ifs ( filename, std::ios::binary );
 
@@ -45,6 +51,7 @@ namespace PlayerLoader
 		char hedCount;
 		ifs.read ( ( char* )&hedCount, sizeof( char ) );
 		int count = static_cast< int >( hedCount );
+		parameter->nameCount = count;
 
 		parameter->fileName = new char[ count ];
 		ifs.read ( ( char* )parameter->fileName, sizeof( char )* count );
@@ -57,11 +64,13 @@ namespace PlayerLoader
 
 		char t[ 64 ];
 		strncpy_s ( t, parameter->fileName, count );
-		char path[ 64 ] = "Resource/Object/Player/";
-		strcat_s ( path, t );
+		char path[ 2 ][ 64 ] = {
+			"Resource/Object/Player/",
+			"Resource/Object/Skill/WhiteBlack/" };
+		strcat_s ( path[_type], t );
 
 		WCHAR f[ 80 ];
-		Utility::ConvertToWChar ( f, path );
+		Utility::ConvertToWChar ( f, path[ _type ] );
 		D3DXVECTOR2 size;
 		GetTextureSize ( f, &size );
 		parameter->cellSize = D3DXVECTOR2 ( size.x / parameter->rectWCount, size.y / parameter->rectHCount );
@@ -113,6 +122,7 @@ namespace PlayerLoader
 				ifs.read ( ( char* )&temp, sizeof( char ) );
 				cell->shapeCount = static_cast< short >( temp );
 
+				if ( cell->shapeCount != 1 )
 				for ( int k = 0; k < cell->shapeCount; k++ )
 				{
 					auto shape = std::shared_ptr<ShapeData> ( new ShapeData );

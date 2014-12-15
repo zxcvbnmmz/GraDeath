@@ -36,8 +36,8 @@ public:
 		_shape->m_radius = (float)def.r / 32.0f;
 
 		shape.reset(_shape);
-		filter.categoryBits = def.mask;
-		filter.maskBits = def.mask;
+		//filter.categoryBits = def.mask;
+		//filter.maskBits = def.mask;
 		strength = def.strength;
 	}
 
@@ -53,7 +53,7 @@ public:
 		_shape->Set(pos, 4);
 		shape.reset(_shape);
 
-		filter.maskBits = def.mask;
+		//filter.maskBits = def.mask;
 		this->strength = def.strength;
 	}
 

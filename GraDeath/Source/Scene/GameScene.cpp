@@ -64,7 +64,7 @@ SCENE_STATUS GameScene::Execute(){
 void GameScene::Draw(){
 	Stage::Draw ();
 	PlayerManager::Draw();
-
+	SkillManager::Draw ();
 	GameSceneUI::Create()->Draw();
 
 	World::DrawDebugData(&drawer);

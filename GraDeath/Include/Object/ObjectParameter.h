@@ -59,6 +59,7 @@ struct CellData
 struct AnimationData
 {
 	// 今後HPなどのデータを格納する可能性あり(証言：正田)
+	int nameCount;
 	char* fileName = nullptr;
 	D3DXVECTOR2 cellSize;		// セルのサイズ
 	int rectWCount;		// 分割数
