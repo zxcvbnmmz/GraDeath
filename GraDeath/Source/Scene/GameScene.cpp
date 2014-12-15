@@ -95,6 +95,7 @@ void GameScene::DrawFadeIn(){
 void GameScene::DrawStageCall(){
 	DrawButtle();
 	stageCall.Draw();
+	SkillManager::Draw ();
 }
 
 void GameScene::DrawButtle(){
