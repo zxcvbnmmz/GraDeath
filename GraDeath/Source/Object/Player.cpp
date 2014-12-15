@@ -22,8 +22,8 @@ Player::~Player(){
 bool Player::Init(const char* fileName, const b2Vec2& bodyPos){
 
 	// ‘fÞ‚ª—ˆ‚½‚ç‚±‚Ìˆ—‚ð•ÏX
-	std::wstring file = L"Resource/Object/Player/shirokuro.png";//"Resource/Object/Player/Player_Test.bmp";
-	sprite->Create ( file.c_str () );
+	WCHAR temp[80];
+	sprite->Create( Utility::ConvertToWChar(temp,fileName));
 
 	int x, y;
 	System::Window::GetWindowSize(&x, &y);
