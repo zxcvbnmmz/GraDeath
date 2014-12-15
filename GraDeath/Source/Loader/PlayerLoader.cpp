@@ -9,6 +9,7 @@
 #include "Object/CollisionShape.h"
 #include "Utility/SizeGetter.h"
 #include "Utility/Converter.h"
+#include "Object/ObjectMask.h"
 
 char* playerIconName[ ] =
 {
@@ -56,8 +57,8 @@ namespace PlayerLoader
 		char path[2][64] = {
 			"Resource/Object/Player/",
 			"Resource/Object/Skill/WhiteBlack/" };
-
-		parameter->fileName = new char[count + strlen(path[_type])];
+		int s = count + strlen(path[_type]);
+		parameter->fileName = new char[count + strlen(path[_type])+1];
 		ifs.read ( ( char* )parameter->fileName, sizeof( char )* count );
 
 		ifs.read ( ( char* )&hedCount, sizeof( char ) );
@@ -75,6 +76,8 @@ namespace PlayerLoader
 		D3DXVECTOR2 size;
 		GetTextureSize ( f, &size );
 		parameter->cellSize = D3DXVECTOR2 ( size.x / parameter->rectWCount, size.y / parameter->rectHCount );
+
+		int s2 = strlen(path[_type]);
 		strcpy_s(parameter->fileName, strlen(path[_type])+1, path[_type]);
 
 		for ( int i = 0; i < parameter->rectHCount; i++ )
@@ -159,7 +162,8 @@ namespace PlayerLoader
 						def.r = shape->shape.circle.rad;
 						def.x = shape->shape.circle.x;
 						def.y = shape->shape.circle.y;
-						//def.mask = shape->collisionType;
+						def.categoryBit = categoryBits[shape->collisionType];
+						def.maskBit = MASK_COL_ATK_DEF;
 						def.strength = shape->strength;
 						collisionShape = std::make_shared<CollisionShape> ( def );
 					}
