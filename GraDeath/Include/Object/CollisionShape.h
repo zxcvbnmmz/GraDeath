@@ -6,9 +6,10 @@
 
 struct CollisionDef{ 
 	virtual ~CollisionDef(){} 
-	int strength;
-	int categoryBit;
-	int maskBit;
+	int strength = 0;
+	int categoryBit = 0x0002;
+	int maskBit = 0x0003;
+	int groupIndex = 0;
 };
 
 struct CircleDef:public CollisionDef{
@@ -34,10 +35,11 @@ public:
 		_shape->m_p.x = (float)def.x / 32.0f; 
 		_shape->m_p.y = (float)def.y / 32.0f;
 		_shape->m_radius = (float)def.r / 32.0f;
-
+		 
 		shape.reset(_shape);
-		//filter.categoryBits = def.mask;
-		//filter.maskBits = def.mask;
+		filter.categoryBits = def.categoryBit;
+		filter.maskBits = def.maskBit;
+		filter.groupIndex = def.groupIndex;
 		strength = def.strength;
 	}
 
@@ -53,20 +55,23 @@ public:
 		_shape->Set(pos, 4);
 		shape.reset(_shape);
 
-		//filter.maskBits = def.mask;
+		filter.categoryBits = def.categoryBit;
+		filter.maskBits = def.maskBit;
+		filter.groupIndex = def.groupIndex;
 		this->strength = def.strength;
 	}
 
 	void AddFixture(b2Body* body){
-		fixture = body->CreateFixture(shape.get(),0);
+		b2FixtureDef def;
+		def.shape = shape.get();
+		def.filter = filter;
+		def.density = 0.0f;
+
 		// 摩擦係数の設定
 		// ステージが不完全なので、ここで多めに設定しておく
-		fixture->SetFriction(20.0f);
-		
-		// 反発係数
-		//fixture->SetRestitution(0);
+		def.friction = 20.0f;
 
-		fixture->SetFilterData(filter);
+		body->CreateFixture(&def);
 	}
 
 	b2Body* GetBody(){

@@ -20,7 +20,7 @@ ResultScene::ResultScene(){
 
 SCENE_STATUS ResultScene::Execute(){
 
-	/*if (GamePad::getAnyGamePadPressed(BUTTON_B) ||
+	if (GamePad::getAnyGamePadPressed(BUTTON_B) ||
 #ifdef _DEBUG
 		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH){
 #endif
@@ -28,12 +28,12 @@ SCENE_STATUS ResultScene::Execute(){
 		SceneFactory::Reserve(&cf);
 		return END_PROCESS;
 	}
-*/
+
 	if (GamePad::getAnyGamePadPressed(BUTTON_A) ||
 		GamePad::getAnyGamePadPressed(BUTTON_START)
 #ifdef _DEBUG
 		||
-		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH
+		Keyboard::CheckKey(KC_S) == INPUT_PUSH
 #endif
 		) {
 		timer = 90;
