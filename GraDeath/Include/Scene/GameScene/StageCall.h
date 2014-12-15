@@ -15,7 +15,7 @@ class StageCall{
 	};
 
 	StageCall();
-	~StageCall();
+	~StageCall(){}
 
 	int Update();
 	void Draw();
