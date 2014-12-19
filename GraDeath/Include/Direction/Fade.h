@@ -12,15 +12,14 @@ enum FADE_STATUS{
 
 class Fade : public Direction{
 public:
-	Fade(const char* fileName);
-	Fade(LPCWSTR fileName);
+	Fade(LPCWSTR fileName = L"Resource/UI/Game/skill_mask.png");
 	~Fade();
 
 	FADE_STATUS AddAlpha(float _alpha);
-
+	void SetAlpha(float _alpha);
 	void Draw();
 
-	//CREATE(Fade);
+	CREATE(Fade);
 
 private:
 	float alpha = 0;

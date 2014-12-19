@@ -29,6 +29,8 @@ CURRENT_ANIMATION_STATE AnimationManager::Update(){
 		if (nextCell == animation.cellDatas[currentAction].end()){
 			if (loop){
 				currentCell = animation.cellDatas[currentAction].begin();
+				AttachFixtureToPlayer();
+				currentFrame = 0;
 			}
 			else{
 				return FINISHED;
