@@ -11,6 +11,8 @@
 #include "Utility/FPS.h"
 #include "Pool/ObjectPool.h"
 
+#include <time.h>
+
 namespace{
 	std::stack<Scene*> scenes;
 	Scene* reserve;
@@ -26,6 +28,7 @@ bool SceneManager::Initialize(){
 	Graphic::SetClearColor ( 0, 0, 1, 1 );
 
 	fps.SetFPS(60);
+	srand((unsigned)time(NULL));
 
 	return true;
 

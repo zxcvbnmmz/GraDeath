@@ -5,7 +5,7 @@ static const int32 velocityIterations = 6;
 static const int32 positionIterations = 2;
 
 namespace{
-	b2World world(b2Vec2(0.0f, 9.8f));
+	b2World world(b2Vec2(0.0f, 3.8f));
 }
 
 b2Body* World::CreateBody(const b2BodyDef* def){

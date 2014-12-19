@@ -6,6 +6,7 @@
 #include "Input/Gamepad.h"
 
 #include "Input\Keyboard.h"
+#include "Utility/Delegate.h"
 
 TitleScene::TitleScene(){
 	sStart.Create(L"Resource/Texture/Start.png");
@@ -23,6 +24,14 @@ TitleScene::TitleScene(){
 		exit_move = D3DXVECTOR2(0, 0);
 	tCount = 0;
 	select_i = 0;
+
+	AddFunction(this, &TitleScene::ExecuteSelect);
+	AddFunction(this, &TitleScene::ExecuteFadeOut);
+	AddFunction(this, &TitleScene::DrawSelect);
+	AddFunction(this, &TitleScene::DrawFadeOut);
+	currentState = SELECT;
+	fade.SetAlpha(0);
+	timer.Set(60);
 }
 
 TitleScene::~TitleScene(){
@@ -30,46 +39,16 @@ TitleScene::~TitleScene(){
 }
 
 SCENE_STATUS TitleScene::Execute(){
-	if (GamePad::getGamePadState(PAD_1, BUTTON_A, 0) == INPUT_PUSH ||
-#ifdef _DEBUG
-		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH){
-#endif
-		switch (select_i){
-		case 0:
-			CharacterSelectFactory cf;
-			SceneFactory::Reserve(&cf);
-			return END_PROCESS;
-			break;
-		}
-	}
-
-	if (GamePad::getGamePadState(PAD_1, BUTTON_DOWN, 0) == INPUT_PUSH ||
-#ifdef _DEBUG
-		Keyboard::CheckKey(KC_DOWN) == INPUT_PUSH) {
-#endif
-		select_i++;
-		vect_move += D3DXVECTOR2(0, -200);
-		Move();
-	}
-	if (GamePad::getGamePadState(PAD_1, BUTTON_UP, 0) == INPUT_PUSH ||
-#ifdef _DEBUG
-		Keyboard::CheckKey(KC_UP) == INPUT_PUSH) {
-#endif
-		select_i--;
-		vect_move += D3DXVECTOR2(0, 200);
-		Move();
-	}
-
-
-	vect_move *= .85f;
-	start_move *= .95f;
-	credit_move *= .95f;
-	exit_move *= .95f;
-
-	return STILL_PROCESSING;
+	int status = (int)(*executes[currentState])();
+	//return STILL_PROCESSING;
+	return (SCENE_STATUS)status;
 }
 
 void TitleScene::Draw(){
+	(*draws[currentState])();
+}
+
+void TitleScene::DrawSelect(){
 	sVector.SetPosition(vect_pos + vect_move);
 	switch (select_i){
 	case 0:
@@ -87,6 +66,11 @@ void TitleScene::Draw(){
 	sExit.Draw();
 	sVector.SetPositionY(vect_pos.y + select_i * 200 + vect_move.y);
 	sVector.Draw();
+}
+
+void TitleScene::DrawFadeOut(){
+	DrawSelect();
+	fade.Draw();
 }
 
 void TitleScene::Move() {
@@ -128,3 +112,49 @@ void TitleScene::Move() {
 		break;
 	}
 }
+
+int TitleScene::ExecuteSelect(){
+	if (GamePad::getGamePadState(PAD_1, BUTTON_A, 0) == INPUT_PUSH ||
+#ifdef _DEBUG
+		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH){
+#endif
+		switch (select_i){
+		case 0:
+			currentState = FADE_OUT;
+		}
+	}
+	if (GamePad::getGamePadState(PAD_1, BUTTON_DOWN, 0) == INPUT_PUSH ||
+#ifdef _DEBUG
+		Keyboard::CheckKey(KC_DOWN) == INPUT_PUSH) {
+#endif
+		select_i++;
+		vect_move += D3DXVECTOR2(0, -200);
+		Move();
+	}
+	if (GamePad::getGamePadState(PAD_1, BUTTON_UP, 0) == INPUT_PUSH ||
+#ifdef _DEBUG
+		Keyboard::CheckKey(KC_UP) == INPUT_PUSH) {
+#endif
+		select_i--;
+		vect_move += D3DXVECTOR2(0, 200);
+		Move();
+	}
+	vect_move *= .85f;
+	start_move *= .95f;
+	credit_move *= .95f;
+	exit_move *= .95f;
+	return STILL_PROCESSING;
+}
+
+int TitleScene::ExecuteFadeOut(){
+	if (fade.AddAlpha(1.0f / 120.0f) == FADE_UNCLEAR){
+		if (timer.Step() == FrameTimer::TIME_OUT)	{
+			CharacterSelectFactory cf;
+			SceneFactory::Reserve(&cf);
+			return END_PROCESS;
+		}
+	}
+	return STILL_PROCESSING;
+}
+
+
