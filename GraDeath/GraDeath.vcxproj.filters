@@ -338,6 +338,12 @@
     <Filter Include="ソース ファイル\Game\Effect\Direction\Fade">
       <UniqueIdentifier>{2f6fbde4-1296-468d-805d-dcac6ab6fa01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Collision">
+      <UniqueIdentifier>{b517b699-d5ca-404c-99d8-9131654499a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other\FrameTimer">
+      <UniqueIdentifier>{e7258f46-4ba1-4176-8650-4a4517a4f567}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -630,6 +636,12 @@
     </ClCompile>
     <ClCompile Include="Source\Scene\GameScene\StageCall.cpp">
       <Filter>ソース ファイル\Game\Scene\Game\StageCall</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Collision\Collision.cpp">
+      <Filter>ソース ファイル\Game\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\FrameTimer.cpp">
+      <Filter>ソース ファイル\Other\FrameTimer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -977,6 +989,12 @@
     </ClInclude>
     <ClInclude Include="Include\Scene\GameScene\StageCall.h">
       <Filter>ソース ファイル\Game\Scene\Game\StageCall</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Collision\Collision.h">
+      <Filter>ソース ファイル\Game\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\FrameTimer.h">
+      <Filter>ソース ファイル\Other\FrameTimer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

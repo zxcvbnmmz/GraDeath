@@ -13,7 +13,7 @@
 
 char* playerIconName[ ] =
 {
-	"Resource/Object/Player/shirokuro.bin",
+	"Resource/Object/Player/shirokuro_old.bin",
 	"Resource/Object/Player/shirokuro.bin",
 	"Resource/Object/Player/shirokuro.bin",
 	"Resource/Object/Player/shirokuro.bin",
@@ -102,7 +102,8 @@ namespace PlayerLoader
 
 				// 使用するフレーム数
 				ifs.read ( ( char* )&temp, sizeof( char ) );
-				cell->animFrame = static_cast< short >( temp );
+				cell->animFrame= static_cast< short >(temp);
+				cell->animFrame = rand() % 3 + 5;
 
 				short fileCount = 0;
 				// エフェクトの文字数
@@ -181,7 +182,9 @@ namespace PlayerLoader
 						// 仮追加
 						memcpy ( def.x, shape->shape.square.x, sizeof( int )* 4 );
 						memcpy ( def.y, shape->shape.square.y, sizeof( int )* 4 );
-						//def.mask = shape->collisionType;
+						def.categoryBit = categoryBits[shape->collisionType];
+						def.categoryBit = MASK_COL_ATK_DEF;
+						def.maskBit = MASK_COL_ATK_DEF;
 						def.strength = shape->strength;
 						collisionShape.reset ( new CollisionShape ( def ) );
 					}

@@ -7,6 +7,11 @@
 template <class T>
 class Delegate : public DelegateBase{
 public:
+	~Delegate(){
+		func = nullptr;
+		obj = nullptr;
+	}
+
 	void* operator()(){
 		return (void*)(obj->*func)();
 	}

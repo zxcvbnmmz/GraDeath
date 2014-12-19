@@ -15,7 +15,7 @@ namespace{
 	std::vector<Sprite*> sprites;
 	std::vector<Sprite*> bgSprite;
     std::vector<Sprite*> sprite_animes;
-	Sprite* sprite_anime = new Sprite;
+	std::shared_ptr<Sprite> sprite_anime;
     float HP = 20.f + rand() % 10;
     bool Stageflg = false;
     int StageCoolTime = 0;
@@ -30,6 +30,8 @@ namespace{
 }
 
 bool Stage::Initialize(int stageID){
+	sprite_anime.reset(new Sprite);
+
 	CreateWorldEdge();
 
 	CreateEachStage();
@@ -87,8 +89,7 @@ void Stage::Release(){
 		Util::safeDelete ( obj );
 	for ( auto& bg : bgSprite )
 		Util::safeDelete ( bg );
-    for (auto& anime : sprite_animes)
-        Util::safeDelete(anime);
+	sprite_anime.reset();
 	bgSprite.clear();
 }
 
@@ -183,7 +184,7 @@ void CreateEachStage(int stageLevel){
         anime_size.height = 768.f;
         anime_size.width = 1366.f;
         sprite_anime->SetSize(anime_size);
-        sprite_animes.push_back(sprite_anime);
+        sprite_animes.push_back(sprite_anime.get());
 	}
 
 	Sprite* sprite1 = new Sprite;

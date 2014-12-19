@@ -3,7 +3,7 @@
 #include <System/Window.h>
 
 Fade::Fade(LPCWSTR fileName){
-	sprite = new Sprite;
+	sprite = Sprite::Create();
 	sprite->Create(fileName);
 
 	int w, h;
@@ -13,10 +13,7 @@ Fade::Fade(LPCWSTR fileName){
 }
 
 Fade::~Fade(){
-	if (sprite){
-		delete sprite;
-		sprite = nullptr;
-	}
+	//sprite->Release();
 }
 
 FADE_STATUS Fade::AddAlpha(float _alpha){
@@ -29,7 +26,11 @@ FADE_STATUS Fade::AddAlpha(float _alpha){
 		return FADE_CLEAR;
 
 	return FADE_HALF_CLEAR;
+}
 
+void Fade::SetAlpha(float _alpha){
+	alpha = _alpha;
+	sprite->SetAlpha(alpha);
 }
 
 void Fade::Draw(){

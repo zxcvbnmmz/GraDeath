@@ -3,6 +3,8 @@
 
 #include "Scene.h"
 #include "D2D/Sprite/Sprite.h"
+#include "Direction/Fade.h"
+#include "Utility/FrameTimer.h"
 
 class TitleScene : public Scene{
 public:
@@ -18,7 +20,19 @@ private:
 		vect_move, start_move, credit_move, exit_move;
 	int tCount, select_i;
 
+	enum CURRENT_GAME_STATE{
+		SELECT,
+		FADE_OUT
+	}currentState;
+	int ExecuteSelect();
+	int ExecuteFadeOut();
+
+	void DrawSelect();
+	void DrawFadeOut();
+
 	void Move();
+	Fade fade;
+	FrameTimer timer;
 };
 
 #endif	// end of TitleScene
