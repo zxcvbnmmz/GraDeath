@@ -24,6 +24,8 @@ namespace{
 
 void CreateWorldEdge();
 void CreateEachStage(int stageLevel = 1);
+b2Vec2 StageGetPos();
+b2Vec2 StageGetSize();
 
 namespace{
 	b2Body* screenEdgeBody;
@@ -40,7 +42,7 @@ bool Stage::Initialize(int stageID){
 void Stage::Draw(){
 	bgSprite[ 0 ]->Draw ();
 	bgSprite[ 1 ]->Draw ();
-    if (Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH  /*HP <= 0*/){
+    if (Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH  || HP <= 0 ){
         HP = 0;
         //@ x 1366* y 768
         Stageflg = true;
@@ -127,15 +129,11 @@ void CreateWorldEdge(){
 	screenEdgeBody->CreateFixture(&screenEdgeShape, density)->SetFilterData(filter);
 
 
-	// ステージに衝突判定がつくまでの仮追加
-	// 判定がつき次第ここを消す
-	// これがないとプレイヤーたちは画面下部まで落ち、UIの後ろに隠れてしまう
-	heightInMeters = (float)(windowHeight - 150) / (float)PTM_RATIO;
-	b2Vec2 middleFloorLeft = b2Vec2(0, heightInMeters);
-	b2Vec2 middleFloorRight = b2Vec2(widthInMeters, heightInMeters);
-	screenEdgeShape.Set(middleFloorLeft, middleFloorRight);
-	b2Fixture* fixture = screenEdgeBody->CreateFixture(&screenEdgeShape, density);
-	fixture->SetFilterData(filter);
+    //Stageの当たり判定
+    screenEdgeShape.Set(StageGetPos(), StageGetSize());
+    b2Fixture* fixture = screenEdgeBody->CreateFixture(&screenEdgeShape, density);
+    fixture->SetFilterData(filter);
+
 }
 
 void CreateEachStage(int stageLevel){
@@ -199,6 +197,21 @@ void CreateEachStage(int stageLevel){
 		bg->SetPosition ( 0, 0 );
 }
 
+b2Vec2 StageGetPos(){
+    return b2Vec2(0, 19);
+}
+b2Vec2 StageGetSize(){
+    return b2Vec2(42, 19);
+}
 
+float Stage::GetStageHP(){
+    return HP;
+}
 
+void StageDamage(float _damage){
+    HP = HP - _damage;
+}
+void SetStageHP(float _HP){
+    HP = _HP;
+}
 
