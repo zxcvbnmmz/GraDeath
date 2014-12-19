@@ -74,6 +74,7 @@ void PlayerController::Idle(){
 		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y) );
 	}
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH){
+		player->SetAngularVelocity(b2Vec2(0, -2000));
 		currentAction = ACTION_JUMP;
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
@@ -133,22 +134,7 @@ void PlayerController::Attack(){
 void PlayerController::Damage(){}
 
 void PlayerController::Jump(){
-
-	static float jumpCount = -20.0f;
-	jumpCount += 0.98f;
-	pos.y += jumpCount;
-	if ( pos.y > ground )
-	{
-		pos.y = ground;
-		currentAction = ACTION_IDLE;
-		jumpCount = -20.0f;
-	}
-	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
-		pos.x += 4.0f;
-	}
-	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
-		pos.x -= 4.0f;
-	}
+	ChangeAction(ACTION_IDLE, true);
 }
 
 

@@ -46,6 +46,10 @@ void Player::AddForce(b2Vec2& force){
 	body->SetLinearVelocity(force);
 }
 
+void Player::SetAngularVelocity(b2Vec2& force){
+	body->ApplyForce(force,body->GetPosition(),false);
+}
+
 void DettachFixture(b2Body* body);
 
 void Player::AttachFixture(vector<shared_ptr<CollisionShape>>& shapes){

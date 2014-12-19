@@ -21,6 +21,7 @@ public:
 	void Release();
 
 	void AddForce(b2Vec2& _force);
+	void SetAngularVelocity(b2Vec2& _force);
 
 	void AttachFixture(vector<shared_ptr<struct CollisionShape>>& shapes);
 
