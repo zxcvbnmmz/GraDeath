@@ -1,4 +1,4 @@
-#include "Object/Skill.h"
+#include "Object/Skill/Skill.h"
 #include "Loader/PlayerLoader.h"
 #include "D2D/Sprite/Sprite.h"
 #include <xutility>
@@ -7,20 +7,19 @@
 #include <iostream>
 #include <fstream>
 
-void Skill::Init ( char* _filename )
+void Skill::Init ( std::string _filename, std::wstring _path )
 {
-	PlayerLoader::LoadFile ( _filename, &animSkill );
+	PlayerLoader::LoadFile ( _filename.c_str(), &animSkill );
 	currentCell = animSkill.cellDatas[ nowAnime ].begin ();
 
 	skillAnim = std::shared_ptr< Sprite >( new Sprite );
 
 	char t[ 64 ];
 	strncpy_s ( t, animSkill.fileName, animSkill.nameCount );	
-	char path[ 64 ] = "Resource/Object/Skill/WhiteBlack/";
-	strcat_s ( path, t );
 
-	WCHAR f[ 80 ];
-	Utility::ConvertToWChar ( f, path );
+	WCHAR f[ 40 ];
+	Utility::ConvertToWChar ( f, t );
+	_path += f;
 
 	skillAnim->Create ( L"Resource/Object/Skill/WhiteBlack/skill01.png" );// f );
 }
@@ -74,7 +73,7 @@ void Skill::Draw ()
 
 void Skill::SetPosition ( const D3DXVECTOR2& _pos )
 {
-	pos = D3DXVECTOR2 ( _pos.x * 32.0f, ( _pos.y  * 32.0f ) - 290.0f );
+	pos = _pos;
 }
 
 void Skill::SkillOn ()

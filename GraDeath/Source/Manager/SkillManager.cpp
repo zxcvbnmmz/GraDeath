@@ -1,6 +1,9 @@
 #include "Manager/SkillManager.h"
-#include "Object/SkillState.h"
-#include "Object/Skill.h"
+#include "Object/Skill/SkillState.h"
+#include "Object/Skill/Skill.h"
+#include <vector>
+#include "Object/Skill/SkillSet.h"
+#include "Object/Skill/WhiteBlackSkill.h"
 
 namespace SkillManager
 {
@@ -8,13 +11,18 @@ namespace SkillManager
 	{
 		SkillState skillState[ 4 ];
 		Skill skill[4];
+		std::vector<SkillSet*> skillset;
 	}
 
 	void Init ( int _num, CharacterInfo::PLAYER_TYPE _type )
 	{
 		skillState[ _num ].Init ( _type );
 
-		skill[ _num ].Init ("Resource/Object/Skill/WhiteBlack/shirokuro_skill01.bin");
+		SkillSet* tempSkill = new WhiteBlackSkill;
+		tempSkill->Init ();
+		skillset.push_back ( tempSkill );
+
+		//skill[ _num ].Init ("Resource/Object/Skill/WhiteBlack/shirokuro_skill01.bin", L"" );
 	}
 
 	void Update ()
@@ -22,7 +30,8 @@ namespace SkillManager
 		for ( int i = 0; i < 4; i++ )
 		{
 			skillState[ i ].Update ();
-			skill[ i ].Update ();
+			skillset[ i ]->Update ();
+			//skill[ i ].Update ();
 		}
 	}
 
@@ -30,14 +39,30 @@ namespace SkillManager
 	{
 		for ( int i = 0; i < 4; i++ )
 		{
-			skill[ i ].Draw();
+			skillset[ i ]->Draw ();
+			//skill[ i ].Draw();
 		}
+	}
+
+	void Release ()
+	{
+		int size = skillset.size ();
+		for ( int i = 0; i < size; i++ )
+		{
+			if ( skillset[i] != nullptr )
+			{
+				delete skillset[ i ];
+				skillset[ i ] = nullptr;
+			}
+		}
+		skillset.clear ();
 	}
 
 	void SkillOn ( int _num, int _id, const D3DXVECTOR2 _pos )
 	{
-		skill[ _num ].SetPosition ( _pos );
-		skill[ _num ].SkillOn ();
+		skillset[ _num ]->SetPosition ( _id, _pos );
+		//skill[ _num ].SetPosition ( _pos );
+		//skill[ _num ].SkillOn ();
 	}
 
 	bool GetSkillUse ( int _num, SKILL_ID _id )
