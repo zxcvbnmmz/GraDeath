@@ -18,10 +18,12 @@ private:
 	int ExecuteFadeIn();
 	int ExecuteStageCall();
 	int ExecuteButtle();
+	int ExecuteEndCall();
 
 	void DrawFadeIn();
 	void DrawStageCall();
 	void DrawButtle();
+	void DrawEndCall();
 
 	StageCall stageCall;
 
@@ -29,10 +31,13 @@ private:
 		FADE_IN,
 		STAGE_CALL,
 		BUTTLE,
+		END_CALL,
 	};
 	CURRENT_GAME_STATE currentState;
 
 	DefaultDebugDrawer drawer;
+
+	int stageTimer;
 };
 
 
