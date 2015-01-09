@@ -7,6 +7,7 @@
 #include "Loader/PlayerLoader.h"
 #include "Manager/HitPointManager.h"
 #include "Manager/SkillManager.h"
+#include "Collision/Collision.h"
 
 namespace PlayerManager
 {
@@ -53,6 +54,12 @@ void PlayerManager::Release(){
 void PlayerManager::Update(){
 	for (int i = 0; i < PLAYERS; ++i){
 		controllers[i]->Update();
+	}
+
+	for (int i = 0; i < PLAYERS - 1; ++i){
+		for (int k = i + 1; k < PLAYERS; ++k){
+			Collision::Collide(&players[i], &players[k]);
+		}
 	}
 }
 
