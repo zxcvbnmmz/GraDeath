@@ -338,11 +338,26 @@
     <Filter Include="ソース ファイル\Game\Effect\Direction\Fade">
       <UniqueIdentifier>{2f6fbde4-1296-468d-805d-dcac6ab6fa01}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Collision">
-      <UniqueIdentifier>{b517b699-d5ca-404c-99d8-9131654499a4}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Object\Skill\Skill">
+      <UniqueIdentifier>{0da2254e-9615-4bd9-8ef4-0de4b834630a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Other\FrameTimer">
-      <UniqueIdentifier>{e7258f46-4ba1-4176-8650-4a4517a4f567}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Game\Object\Skill\SkillState">
+      <UniqueIdentifier>{12cc3dde-2d0a-44c5-b444-57fd0e9a63d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Skill\Skill\First">
+      <UniqueIdentifier>{6f6b080a-e5a6-4e1a-855f-940ca1f56b6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Skill\Skill\Secound">
+      <UniqueIdentifier>{5d0d0830-e835-434a-9782-86181c72a33d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Skill\Skill\Third">
+      <UniqueIdentifier>{c86a3cf2-9d9f-4c73-8131-f51d1fb89c89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Skill\SkillSet">
+      <UniqueIdentifier>{05db0fbd-1b14-47a2-b013-14196e163d49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Skill\SkillSet\WhiteBlack">
+      <UniqueIdentifier>{244d5271-cca1-480d-88c8-2e77e785ebfc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -622,26 +637,32 @@
     <ClCompile Include="Source\D2D\Brush\SolidBrush.cpp">
       <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Manager\SkillManager.cpp">
-      <Filter>ソース ファイル\Game\Object\Skill\SkillManagerr</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Skill.cpp">
-      <Filter>ソース ファイル\Game\Object\Skill</Filter>
-    </ClCompile>
     <ClCompile Include="Source\World\DebugDrawer.cpp">
       <Filter>ソース ファイル\Game\World\DebugDrawer</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\SkillState.cpp">
-      <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\GameScene\StageCall.cpp">
       <Filter>ソース ファイル\Game\Scene\Game\StageCall</Filter>
     </ClCompile>
     <ClCompile Include="Source\Collision\Collision.cpp">
-      <Filter>ソース ファイル\Game\Collision</Filter>
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Source\Utility\FrameTimer.cpp">
-      <Filter>ソース ファイル\Other\FrameTimer</Filter>
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Manager\SkillManager.cpp">
+      <Filter>ソース ファイル\Game\Object\Skill\SkillManagerr</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\WhiteBlackFirstSkill.cpp">
+      <Filter>ソース ファイル\Game\Object\Skill\Skill\First</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\WhiteBlackSkill.cpp">
+      <Filter>ソース ファイル\Game\Object\Skill\SkillSet\WhiteBlack</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\SkillState.cpp">
+      <Filter>ソース ファイル\Game\Object\Skill\SkillState</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\Skill.cpp">
+      <Filter>ソース ファイル\Game\Object\Skill\Skill</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -969,20 +990,8 @@
     <ClInclude Include="Include\Utility\Memory.h">
       <Filter>ソース ファイル\Other\Memory</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\SkillDefine.h">
-      <Filter>ソース ファイル\Game\Object\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Manager\SkillManager.h">
-      <Filter>ソース ファイル\Game\Object\Skill\SkillManagerr</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Skill.h">
-      <Filter>ソース ファイル\Game\Object\Skill</Filter>
-    </ClInclude>
     <ClInclude Include="Include\World\DebugDrawer.h">
       <Filter>ソース ファイル\Game\World\DebugDrawer</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\SkillState.h">
-      <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClInclude>
     <ClInclude Include="Include\Object\ObjectMask.h">
       <Filter>ソース ファイル\Game\Object</Filter>
@@ -990,11 +999,28 @@
     <ClInclude Include="Include\Scene\GameScene\StageCall.h">
       <Filter>ソース ファイル\Game\Scene\Game\StageCall</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Collision\Collision.h">
-      <Filter>ソース ファイル\Game\Collision</Filter>
+    <ClInclude Include="Include\Collision\Collision.h" />
+    <ClInclude Include="Include\Utility\FrameTimer.h" />
+    <ClInclude Include="Include\Object\Skill\SkillDefine.h">
+      <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Utility\FrameTimer.h">
-      <Filter>ソース ファイル\Other\FrameTimer</Filter>
+    <ClInclude Include="Include\Manager\SkillManager.h">
+      <Filter>ソース ファイル\Game\Object\Skill\SkillManagerr</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\WhiteBlackFirstSkill.h">
+      <Filter>ソース ファイル\Game\Object\Skill\Skill\First</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\WhiteBlackSkill.h">
+      <Filter>ソース ファイル\Game\Object\Skill\SkillSet\WhiteBlack</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\SkillState.h">
+      <Filter>ソース ファイル\Game\Object\Skill\SkillState</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\SkillSet.h">
+      <Filter>ソース ファイル\Game\Object\Skill\SkillSet</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\Skill.h">
+      <Filter>ソース ファイル\Game\Object\Skill\Skill</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

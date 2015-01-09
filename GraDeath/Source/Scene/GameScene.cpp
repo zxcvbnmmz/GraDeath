@@ -36,6 +36,7 @@ GameScene::~GameScene ()
 	PlayerManager::Release();
 	Stage::Release ();
 	GameSceneUI::Release ();
+	SkillManager::Release ();
 }
 
 SCENE_STATUS GameScene::Execute(){

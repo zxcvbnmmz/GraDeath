@@ -1,7 +1,7 @@
 #ifndef _SKILL_STATE_H_
 #define _SKILL_STATE_H_
 
-#include "Object/SkillDefine.h"
+#include "Object/Skill/SkillDefine.h"
 #include "CharacterController/CharacterInfo.h"
 
 class SkillState

@@ -3,7 +3,7 @@
 
 #include "Pool/Ref.h"
 #include "D2D/Sprite/Sprite.h"
-#include "Object/SkillDefine.h"
+#include "Object/Skill/SkillDefine.h"
 
 class GameSceneUI : public Ref{
 public:

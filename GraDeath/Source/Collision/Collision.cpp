@@ -2,9 +2,7 @@
 #include "World/World.h"
 #include <Box2D\Box2D.h>
 
-bool Collision::Collide(){
-	b2Body* bodyA = NULL;
-	b2Body* bodyB = NULL;
+bool Collision::Collide(b2Body* bodyA, b2Body* bodyB){
 
 	const b2Transform& xfA = bodyA->GetTransform();
 	const b2Transform& xfB = bodyB->GetTransform();

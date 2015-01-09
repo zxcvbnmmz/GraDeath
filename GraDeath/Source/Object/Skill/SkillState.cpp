@@ -1,4 +1,4 @@
-#include "Object/SkillState.h"
+#include "Object/Skill/SkillState.h"
 
 
 void SkillState::Init ( CharacterInfo::PLAYER_TYPE _type )
