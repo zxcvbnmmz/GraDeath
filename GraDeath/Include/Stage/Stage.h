@@ -7,7 +7,10 @@ namespace Stage{
 	void Release();
     float GetStageHP();
     void StageDamage(float _damage);
-    void SetStageHP(float _HP);
+    void SetStageHP(float _HP,int playernum);
+    bool GetStageStatus();
+    void CriateStage();
+    int StageBrakePlayerNum();
 };
 
 #endif	// end of Stage

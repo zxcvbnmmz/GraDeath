@@ -71,16 +71,19 @@ void PlayerController::Idle(){
 		  Keyboard::CheckKey(KC_A) == INPUT_PUSH ) &&
 		  SkillManager::GetSkillUse ( padID, (SKILL_ID)0 ) ){
 		ChangeAction(ACTION_ATTACK, false);
-		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y) );
+		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), dirFlg );
 	}
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH){
+		player->SetAngularVelocity(b2Vec2(0, -2000));
 		currentAction = ACTION_JUMP;
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
 		currentAction = ACTION_WALK;
+		dirFlg = 0;
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
 		currentAction = ACTION_WALK;
+		dirFlg = 1;
 	}
 	//count = ( count + 1 ) % 6;
 	//std::vector< std::shared_ptr< CellData > > cellData = _player->animData.cellDatas[ 0 ];
@@ -133,22 +136,7 @@ void PlayerController::Attack(){
 void PlayerController::Damage(){}
 
 void PlayerController::Jump(){
-
-	static float jumpCount = -20.0f;
-	jumpCount += 0.98f;
-	pos.y += jumpCount;
-	if ( pos.y > ground )
-	{
-		pos.y = ground;
-		currentAction = ACTION_IDLE;
-		jumpCount = -20.0f;
-	}
-	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
-		pos.x += 4.0f;
-	}
-	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
-		pos.x -= 4.0f;
-	}
+	ChangeAction(ACTION_IDLE, true);
 }
 
 

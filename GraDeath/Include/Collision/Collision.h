@@ -1,10 +1,10 @@
 #ifndef _COLLIDE_H__
 #define _COLLIDE_H__
 
-class b2Body;
+class Player;
 
 namespace Collision{
-	bool Collide(b2Body* bodyA, b2Body* bodyB);
+	bool Collide(Player* bodyA, Player* bodyB);
 }
 
 #endif	// end of Collide

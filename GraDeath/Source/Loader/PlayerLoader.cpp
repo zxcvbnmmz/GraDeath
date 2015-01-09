@@ -13,7 +13,7 @@
 
 char* playerIconName[ ] =
 {
-	"Resource/Object/Player/shirokuro_old.bin",
+	"Resource/Object/Player/shirokuro.bin",
 	"Resource/Object/Player/shirokuro.bin",
 	"Resource/Object/Player/shirokuro.bin",
 	"Resource/Object/Player/shirokuro.bin",

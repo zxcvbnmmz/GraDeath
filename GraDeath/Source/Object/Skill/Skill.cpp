@@ -67,13 +67,21 @@ void Skill::Draw ()
 	D3DXVECTOR2 texSize = animSkill.cellSize;
 	skillAnim->SetTrimming ( rect );
 	skillAnim->SetPosition ( pos.x, pos.y );
+	if ( dirFlg == 1 )
+		skillAnim->SetReverseFlag ( FLIP_HORIZONTAL );
 	skillAnim->SetSize ( texSize );
 	skillAnim->Draw ( DRAW_RECT );
 }
 
-void Skill::SetPosition ( const D3DXVECTOR2& _pos )
+void Skill::SetPosition ( const D3DXVECTOR2& _pos, unsigned int _dirFlg )
 {
+	dirFlg = _dirFlg;
 	pos = _pos;
+}
+
+D3DXVECTOR2& Skill::GetPosition ()
+{
+	return pos;
 }
 
 void Skill::SkillOn ()

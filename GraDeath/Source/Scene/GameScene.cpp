@@ -111,7 +111,7 @@ void GameScene::DrawButtle(){
 	Stage::Draw();
 	PlayerManager::Draw();
 	SkillManager::Draw ();
-
+//    Special();
 	GameSceneUI::Create()->Draw();
 }
 

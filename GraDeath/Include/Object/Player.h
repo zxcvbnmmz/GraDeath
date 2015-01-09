@@ -19,8 +19,12 @@ public:
 
 	bool Init(const char* fileName, const b2Vec2& bodyPos);
 	void Release();
+	class b2Body* GetBody(){
+		return body;
+	}
 
 	void AddForce(b2Vec2& _force);
+	void SetAngularVelocity(b2Vec2& _force);
 
 	void AttachFixture(vector<shared_ptr<struct CollisionShape>>& shapes);
 
