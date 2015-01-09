@@ -1,7 +1,7 @@
 #ifndef _SKIL_MANAGER_H_
 #define _SKIL_MANAGER_H_
 
-#include "Object/SkillDefine.h"
+#include "Object/Skill/SkillDefine.h"
 #include "CharacterController/CharacterInfo.h"
 
 struct D3DXVECTOR2;
@@ -13,6 +13,8 @@ namespace SkillManager
 	void Update ();
 
 	void Draw ();
+
+	void Release ();
 
 	void SkillOn ( int _num, int _id, const D3DXVECTOR2 _pos );
 
