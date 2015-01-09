@@ -664,6 +664,9 @@
     <ClCompile Include="Source\Object\Skill\Skill.cpp">
       <Filter>ソース ファイル\Game\Object\Skill\Skill</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Object\Skill\WhiteBlackSecond.cpp">
+      <Filter>ソース ファイル\Game\Object\Skill\Skill\Secound</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Object\Object.h">
@@ -1021,6 +1024,9 @@
     </ClInclude>
     <ClInclude Include="Include\Object\Skill\Skill.h">
       <Filter>ソース ファイル\Game\Object\Skill\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\WhiteBlackSecond.h">
+      <Filter>ソース ファイル\Game\Object\Skill\Skill\Secound</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

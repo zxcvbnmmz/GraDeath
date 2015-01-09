@@ -22,7 +22,7 @@ namespace SkillManager
 		tempSkill->Init ();
 		skillset.push_back ( tempSkill );
 
-		//skill[ _num ].Init ("Resource/Object/Skill/WhiteBlack/shirokuro_skill01.bin", L"" );
+		//skill[ _num ].Init ("Resource/Object/Skill/WhiteBlack/shirokuro_skill01.bin", L"Resource/Object/Skill/WhiteBlack/" );
 	}
 
 	void Update ()
@@ -58,9 +58,9 @@ namespace SkillManager
 		skillset.clear ();
 	}
 
-	void SkillOn ( int _num, int _id, const D3DXVECTOR2 _pos )
+	void SkillOn ( int _num, int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
 	{
-		skillset[ _num ]->SetPosition ( _id, _pos );
+		skillset[ _num ]->SetPosition ( _id, _pos, dirFlg );
 		//skill[ _num ].SetPosition ( _pos );
 		//skill[ _num ].SkillOn ();
 	}

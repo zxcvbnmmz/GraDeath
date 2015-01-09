@@ -16,7 +16,7 @@ namespace SkillManager
 
 	void Release ();
 
-	void SkillOn ( int _num, int _id, const D3DXVECTOR2 _pos );
+	void SkillOn ( int _num, int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg );
 
 	bool GetSkillUse ( int _num, SKILL_ID _id );
 

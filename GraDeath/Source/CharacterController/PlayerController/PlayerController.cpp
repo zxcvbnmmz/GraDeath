@@ -71,16 +71,18 @@ void PlayerController::Idle(){
 		  Keyboard::CheckKey(KC_A) == INPUT_PUSH ) &&
 		  SkillManager::GetSkillUse ( padID, (SKILL_ID)0 ) ){
 		ChangeAction(ACTION_ATTACK, false);
-		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y) );
+		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), dirFlg );
 	}
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH){
 		currentAction = ACTION_JUMP;
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
 		currentAction = ACTION_WALK;
+		dirFlg = 0;
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
 		currentAction = ACTION_WALK;
+		dirFlg = 1;
 	}
 	//count = ( count + 1 ) % 6;
 	//std::vector< std::shared_ptr< CellData > > cellData = _player->animData.cellDatas[ 0 ];

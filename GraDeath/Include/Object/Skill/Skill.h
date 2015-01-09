@@ -24,6 +24,8 @@ protected:
 	D3DXVECTOR2 pos;
 	std::vector<std::shared_ptr<CellData>>::iterator currentCell;
 
+	unsigned int dirFlg;
+
 public:
 	Skill (){}
 
@@ -35,11 +37,16 @@ public:
 
 	virtual void Draw ();
 
-	virtual void SetPosition ( const D3DXVECTOR2& _pos );
+	virtual void SetPosition ( const D3DXVECTOR2& _pos, unsigned int _dirFlg );
+
+	D3DXVECTOR2& GetPosition ();
+
+	virtual void Move (){}
 
 	void SkillOn ();
 
 	AnimationData& GetAnimationData ();
+
 
 };
 

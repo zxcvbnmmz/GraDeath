@@ -144,6 +144,7 @@
     <ClCompile Include="Source\Object\Skill\Skill.cpp" />
     <ClCompile Include="Source\Object\Skill\SkillState.cpp" />
     <ClCompile Include="Source\Object\Skill\WhiteBlackFirstSkill.cpp" />
+    <ClCompile Include="Source\Object\Skill\WhiteBlackSecond.cpp" />
     <ClCompile Include="Source\Object\Skill\WhiteBlackSkill.cpp" />
     <ClCompile Include="Source\Pool\ObjectPool.cpp" />
     <ClCompile Include="Source\Pool\Ref.cpp" />
@@ -258,6 +259,7 @@
     <ClInclude Include="Include\Object\Skill\SkillSet.h" />
     <ClInclude Include="Include\Object\Skill\SkillState.h" />
     <ClInclude Include="Include\Object\Skill\WhiteBlackFirstSkill.h" />
+    <ClInclude Include="Include\Object\Skill\WhiteBlackSecond.h" />
     <ClInclude Include="Include\Object\Skill\WhiteBlackSkill.h" />
     <ClInclude Include="Include\Pool\ObjectPool.h" />
     <ClInclude Include="Include\Pool\Ref.h" />

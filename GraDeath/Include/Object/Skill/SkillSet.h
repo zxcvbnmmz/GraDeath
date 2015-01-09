@@ -24,7 +24,7 @@ public:
 
 	virtual void Draw () = 0;
 
-	virtual void SetPosition ( int _id, const D3DXVECTOR2 _pos ) = 0;
+	virtual void SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg ) = 0;
 
 	virtual AnimationData& GetAnimationData ( int _num ) = 0;
 
