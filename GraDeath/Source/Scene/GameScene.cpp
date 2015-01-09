@@ -36,6 +36,7 @@ GameScene::~GameScene ()
 	PlayerManager::Release();
 	Stage::Release ();
 	GameSceneUI::Release ();
+	SkillManager::Release ();
 }
 
 SCENE_STATUS GameScene::Execute(){
@@ -100,7 +101,7 @@ void GameScene::DrawButtle(){
 	Stage::Draw();
 	PlayerManager::Draw();
 	SkillManager::Draw ();
-
+//    Special();
 	GameSceneUI::Create()->Draw();
 }
 

@@ -20,6 +20,7 @@ namespace{
     bool Stageflg = false;
     int StageCoolTime = 0;
     int count = 0;
+    int playernum = 0;
 }
 
 void CreateWorldEdge();
@@ -55,19 +56,12 @@ void Stage::Draw(){
         StageCoolTime = 0;
         count++;
         if (count > 5){
-            Stageflg = false;
-            count = 0;
-//            D3DXVECTOR2 pos(0, 580);
-//            sprite_anime->SetPosition(pos);
-            //@ x 1366* y 768
-            sprite_anime->SetTrimming(0, 0, 1366, 768);
-            D2D1_SIZE_F size;
-            size.height = 768.f;
-            size.width = 1366.f;
-            sprite_anime->SetSize(size);
-            HP = 20.f + rand() % 10;
+            count = 6;
         }
     }
+    if (Keyboard::CheckKey(KC_P) == INPUT_PUSH)
+        CriateStage();
+
     if (Stageflg == false){
         for (Sprite* sprite : sprites){
             sprite->Draw(DRAW_RECT);
@@ -159,7 +153,8 @@ void CreateEachStage(int stageLevel){
 
 	for (int i = 0; i < spriteNum; ++i){
         Sprite* sprite = new Sprite;
-		/*各種パラメータの設定*/
+
+        /*各種パラメータの設定*/
 		sprite->Create ( L"Resource/Scene/Game/Stage/Stage.png" );
 		D3DXVECTOR2 pos ( 0, 580 );
 		sprite->SetPosition ( pos );
@@ -208,10 +203,35 @@ float Stage::GetStageHP(){
     return HP;
 }
 
-void StageDamage(float _damage){
+void StageDamage(float _damage, int _playernum){
     HP = HP - _damage;
+    playernum = _playernum;
 }
 void SetStageHP(float _HP){
     HP = _HP;
 }
 
+void Stage::CriateStage(){
+    Stageflg = false;
+    count = 0;
+    //            D3DXVECTOR2 pos(0, 580);
+    //            sprite_anime->SetPosition(pos);
+    //@ x 1366* y 768
+    sprite_anime->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F size;
+    size.height = 768.f;
+    size.width = 1366.f;
+    sprite_anime->SetSize(size);
+    HP = 20.f + rand() % 10;
+}
+
+bool Stage::GetStageStatus(){
+    if (GetStageHP() <= 0){
+        return false;
+    }
+    return true;
+}
+
+int StageBrakePlayerNum(){
+    return playernum;
+}

@@ -1,11 +1,12 @@
 #ifndef _SKILL_H_
 #define _SKILL_H_
 
-#include "Object/SkillDefine.h"
+#include "Object/Skill/SkillDefine.h"
 #include "CharacterController/CharacterInfo.h"
 #include "Object/ObjectParameter.h"
 #include <memory>
 #include <vector>
+#include <string>
 
 class Sprite;
 struct D3DXVECTOR2;
@@ -13,7 +14,7 @@ struct CellData;
 
 class Skill
 {
-private:
+protected:
 	std::shared_ptr< Sprite > skillAnim;
 	AnimationData animSkill;
 	int frameCount = 0;
@@ -28,13 +29,13 @@ public:
 
 	~Skill (){}
 
-	void Init ( char* _filename );
+	void Init ( std::string _filename, std::wstring _path );
 
-	void Update ();
+	virtual void Update ();
 
-	void Draw ();
+	virtual void Draw ();
 
-	void SetPosition ( const D3DXVECTOR2& _pos );
+	virtual void SetPosition ( const D3DXVECTOR2& _pos );
 
 	void SkillOn ();
 
