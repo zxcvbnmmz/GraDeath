@@ -5,7 +5,7 @@
 D3DXVECTOR2 setPosition[] =
 {
 	D3DXVECTOR2 ( 0, -290.0f ),
-	D3DXVECTOR2 ( 0, 0 ),
+	D3DXVECTOR2 ( 0, -290.0f ),
 	D3DXVECTOR2 ( 0, 0 )
 };
 

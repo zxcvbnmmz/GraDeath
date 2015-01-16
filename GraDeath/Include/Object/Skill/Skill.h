@@ -45,6 +45,8 @@ public:
 
 	void SkillOn ();
 
+	void SkillOff ();
+
 	AnimationData& GetAnimationData ();
 
 

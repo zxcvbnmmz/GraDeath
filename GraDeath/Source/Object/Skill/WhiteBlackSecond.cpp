@@ -35,9 +35,7 @@ void WhiteBlackSecond::Draw ()
 		return;
 
 	skills[ 0 ].Draw ();
-	skills[ 0 ].SkillOn ();
 	skills[ 1 ].Draw ();
-	skills[ 1 ].SkillOn ();
 }
 
 void WhiteBlackSecond::Move ()
@@ -62,16 +60,19 @@ void WhiteBlackSecond::SetPosition ( const D3DXVECTOR2& _pos, unsigned int dirFl
 {
 	if ( dirFlg == 0 )
 	{
-		skills[ 0 ].SetPosition ( D3DXVECTOR2 ( _pos.x + 50, _pos.y-150.0f ), 0 );
-		skills[ 1 ].SetPosition ( D3DXVECTOR2 ( _pos.x + 1250, _pos.y - 150.0f ), 0 );
-		skills[ 2 ].SetPosition ( D3DXVECTOR2 ( _pos.x + 650, _pos.y - 150.0f ), 0 );
+		skills[ 0 ].SetPosition ( D3DXVECTOR2 ( _pos.x + 50, _pos.y ), 0 );
+		skills[ 1 ].SetPosition ( D3DXVECTOR2 ( _pos.x + 1250, _pos.y ), 0 );
+		skills[ 2 ].SetPosition ( D3DXVECTOR2 ( _pos.x + 650, _pos.y ), 0 );
+
 	}
 	else
 	{
-		skills[ 0 ].SetPosition ( D3DXVECTOR2 ( _pos.x - 1250, _pos.y - 150.0f ), 0 );
-		skills[ 1 ].SetPosition ( D3DXVECTOR2 ( _pos.x - 50, _pos.y - 150.0f ), 0 );
-		skills[ 2 ].SetPosition ( D3DXVECTOR2 ( _pos.x - 650, _pos.y - 150.0f ), 0 );
+		skills[ 0 ].SetPosition ( D3DXVECTOR2 ( _pos.x - 1250, _pos.y ), 0 );
+		skills[ 1 ].SetPosition ( D3DXVECTOR2 ( _pos.x - 50, _pos.y ), 0 );
+		skills[ 2 ].SetPosition ( D3DXVECTOR2 ( _pos.x - 650, _pos.y ), 0 );
 	}
+	skills[ 0 ].SkillOn ();
+	skills[ 1 ].SkillOn ();
 	Flag = true;
 }
 

@@ -89,6 +89,11 @@ void Skill::SkillOn ()
 	skillFlg = true;
 }
 
+void Skill::SkillOff ()
+{
+	skillFlg = false;
+}
+
 AnimationData& Skill::GetAnimationData ()
 {
 	return animSkill;
