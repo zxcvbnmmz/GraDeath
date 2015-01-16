@@ -1,5 +1,6 @@
 #include "Object/Skill/WhiteBlackSkill.h"
 #include "Object/Skill/WhiteBlackFirstSkill.h"
+#include "Object/Skill/WhiteBlackSecond.h"
 
 D3DXVECTOR2 setPosition[] =
 {
@@ -26,8 +27,16 @@ WhiteBlackSkill::~WhiteBlackSkill ()
 void WhiteBlackSkill::Init ()
 {
 	Skill* first = new Skill;
-	first->Init ( "Resource/Object/Skill/WhiteBlack/shirokuro_skill01.bin", L"Resource/Object/Skill/WhiteBlack/" );
+	first->Init ( "Resource/Object/Skill/WhiteBlack/shirokuro_skill01.bin", L"Resource/Object/Skill/WhiteBlack/skill01.png" );
 	skills.push_back ( first );
+
+	WhiteBlackSecond* second = new WhiteBlackSecond;
+	second->Init ( "", L"" );
+	skills.push_back ( second );
+
+	//Skill* third = new Skill;
+	//third->Init ( "Resource/Object/Skill/Blue/Blue_Skill_Third.bin", L"Resource/Object/Skill/Blue/Blue_Skill_Third.png" );
+	//skills.push_back ( third );
 }
 
 void WhiteBlackSkill::Update ()

@@ -73,6 +73,12 @@ void PlayerController::Idle(){
 		ChangeAction(ACTION_ATTACK, false);
 		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), dirFlg );
 	}
+	else if ( ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_B ) == INPUT_PUSH ||
+		Keyboard::CheckKey ( KC_S ) == INPUT_PUSH ) &&
+		SkillManager::GetSkillUse ( padID, ( SKILL_ID )1 ) ){
+		ChangeAction ( ACTION_ATTACK, false );
+		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_SECOND, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), dirFlg );
+	}
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH){
 		player->SetAngularVelocity(b2Vec2(0, -2000));
 		currentAction = ACTION_JUMP;

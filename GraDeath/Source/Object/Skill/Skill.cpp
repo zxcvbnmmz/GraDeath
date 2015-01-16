@@ -19,9 +19,9 @@ void Skill::Init ( std::string _filename, std::wstring _path )
 
 	WCHAR f[ 40 ];
 	Utility::ConvertToWChar ( f, t );
-	_path += f;
+	//_path += f;
 
-	skillAnim->Create ( L"Resource/Object/Skill/WhiteBlack/skill01.png" );// f );
+	skillAnim->Create ( _path.c_str() );// L"Resource/Object/Skill/WhiteBlack/skill01.png" );// f );
 }
 
 void Skill::Update ()

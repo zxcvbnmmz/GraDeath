@@ -13,6 +13,9 @@ private:
 	};
 	Skill skills[ WHITE_BLACK_SECOND_MAX ];
 
+	bool Flag = false;
+	float dir = 0.0f;
+
 public:
 	WhiteBlackSecond ();
 
