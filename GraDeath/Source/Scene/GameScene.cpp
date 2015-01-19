@@ -28,7 +28,7 @@ GameScene::GameScene() :currentState(FADE_IN) {
 	AddFunction(this, &GameScene::DrawButtle);
 	AddFunction(this, &GameScene::DrawEndCall);
 
-	stageCall.Initialize();
+	stageCall.Initialize(false);
 
 	stageTimer = 300;
 }
@@ -88,13 +88,18 @@ int GameScene::ExecuteButtle(){
 	PlayerManager::Update();
 	SkillManager::Update();
 
-	// ここでエンドコールへ移行
-	/*if (stageTimer-- < 0)
-		currentState = END_CALL;*/
+	// ここでエンドコールへ移行(コメントアウト)
+	//if (stageTimer-- < 0){
+	//	currentState = END_CALL;
+	//	stageCall.Initialize(true);
+	//	}
 	return STILL_PROCESSING;
 }
 
 int GameScene::ExecuteEndCall(){
+	if (stageCall.Update() == StageCall::FINISHED){
+		return END_PROCESS;
+	}
 	return STILL_PROCESSING;
 }
 
@@ -117,5 +122,5 @@ void GameScene::DrawButtle(){
 
 void GameScene::DrawEndCall(){
 	DrawButtle();
-
+	stageCall.Draw();
 }

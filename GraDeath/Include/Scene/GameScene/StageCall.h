@@ -7,7 +7,7 @@
 class StageCall{
 	friend class GameScene;
 
-	void Initialize();
+	void Initialize(bool pIsEndCall);
 	void Release();
 
 	enum {
@@ -21,15 +21,18 @@ class StageCall{
 	int Update();
 	void Draw();
 
-	SE se;
+	SE startSE;
+	SE endSE;
 
-	Sprite sCallText;
+	Sprite startText;
+	Sprite endText;
 
 	D3DXVECTOR2 text_pos, text_move;
 
 	int cTimer;
 
 	bool callFlg;
+	bool isEndCall;
 };
 
 #endif	// end of StageCall
