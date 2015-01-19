@@ -29,6 +29,7 @@ void Skill::Update ()
 	if ( !skillFlg )
 		return;
 
+	int frame = ( *currentCell )->animFrame;
 	if ( ( *currentCell )->animFrame <= frameCount++ )
 	{
 		auto nextCell = currentCell + 1;

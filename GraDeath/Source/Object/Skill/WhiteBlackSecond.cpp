@@ -53,6 +53,8 @@ void WhiteBlackSecond::Move ()
 	{
 		skillFlg = Flag = false;
 		dir = .0f;
+		skills[ 0 ].SkillOff ();
+		skills[ 1 ].SkillOff ();
 	}
 }
 

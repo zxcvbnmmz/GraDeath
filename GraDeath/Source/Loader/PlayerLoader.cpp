@@ -103,7 +103,7 @@ namespace PlayerLoader
 				// 使用するフレーム数
 				ifs.read ( ( char* )&temp, sizeof( char ) );
 				cell->animFrame= static_cast< short >(temp);
-				cell->animFrame = rand() % 3 + 5;
+				//cell->animFrame = rand() % 3 + 5;
 
 				short fileCount = 0;
 				// エフェクトの文字数
