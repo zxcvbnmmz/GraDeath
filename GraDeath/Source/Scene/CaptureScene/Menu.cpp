@@ -166,4 +166,4 @@ void Menu::CaptureAnimation(){
 			isCapturing = false;
 		}
 	}
-}
+} 
