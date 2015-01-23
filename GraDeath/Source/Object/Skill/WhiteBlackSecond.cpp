@@ -1,4 +1,5 @@
 #include "Object/Skill/WhiteBlackSecond.h"
+#include "Loader/PlayerLoader.h"
 
 WhiteBlackSecond::WhiteBlackSecond ()
 {
@@ -11,9 +12,9 @@ WhiteBlackSecond::~WhiteBlackSecond ()
 
 void WhiteBlackSecond::Init ( std::string _filename, std::wstring _path )
 {
-	skills[ 0 ].Init ( "Resource/Object/Skill/WhiteBlack/shiro.bin", L"Resource/Object/Skill/WhiteBlack/shiro.png" );
-	skills[ 1 ].Init ( "Resource/Object/Skill/WhiteBlack/kuro.bin", L"Resource/Object/Skill/WhiteBlack/kuro.png" );
-	skills[ 2 ].Init ( "Resource/Object/Skill/WhiteBlack/explo.bin", L"Resource/Object/Skill/WhiteBlack/explo.png" );
+	skills[ 0 ].Init ( "Resource/Object/Skill/WhiteBlack/shiro.bin", L"Resource/Object/Skill/WhiteBlack/shiro.png", SKILL_ID_LOAD::SKILL_ID_BLACKWHITE );
+	skills[ 1 ].Init ( "Resource/Object/Skill/WhiteBlack/kuro.bin", L"Resource/Object/Skill/WhiteBlack/kuro.png", SKILL_ID_LOAD::SKILL_ID_BLACKWHITE );
+	skills[ 2 ].Init ( "Resource/Object/Skill/WhiteBlack/explo.bin", L"Resource/Object/Skill/WhiteBlack/explo.png", SKILL_ID_LOAD::SKILL_ID_BLACKWHITE );
 }
 
 void WhiteBlackSecond::Update ()
@@ -53,6 +54,8 @@ void WhiteBlackSecond::Move ()
 	{
 		skillFlg = Flag = false;
 		dir = .0f;
+		skills[ 0 ].SkillOff ();
+		skills[ 1 ].SkillOff ();
 	}
 }
 
