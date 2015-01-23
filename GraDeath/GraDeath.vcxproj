@@ -267,6 +267,7 @@
     <ClInclude Include="Include\Object\Player.h" />
     <ClInclude Include="Include\Object\Skill\Skill.h" />
     <ClInclude Include="Include\Object\Skill\SkillDefine.h" />
+    <ClInclude Include="Include\Object\Skill\SkillExtend.h" />
     <ClInclude Include="Include\Object\Skill\SkillSet.h" />
     <ClInclude Include="Include\Object\Skill\SkillState.h" />
     <ClInclude Include="Include\Object\Skill\WhiteBlackFirstSkill.h" />

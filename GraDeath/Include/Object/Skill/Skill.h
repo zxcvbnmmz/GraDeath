@@ -20,6 +20,7 @@ protected:
 	int frameCount = 0;
 	int animeMax = 0;
 	int nowAnime = 0;
+	int nowFrame = 0;
 	bool skillFlg = false;
 	D3DXVECTOR2 pos;
 	std::vector<std::shared_ptr<CellData>>::iterator currentCell;
@@ -46,6 +47,8 @@ public:
 	void SkillOn ();
 
 	void SkillOff ();
+
+	void SetSize ( const D3DXVECTOR2& _pos );
 
 	AnimationData& GetAnimationData ();
 
