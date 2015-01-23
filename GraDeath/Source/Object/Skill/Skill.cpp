@@ -7,9 +7,9 @@
 #include <iostream>
 #include <fstream>
 
-void Skill::Init ( std::string _filename, std::wstring _path )
+void Skill::Init ( std::string _filename, std::wstring _path, int skill_id )
 {
-	PlayerLoader::LoadFile ( _filename.c_str(), &animSkill );
+	PlayerLoader::LoadFile ( _filename.c_str (), &animSkill, skill_id );
 	currentCell = animSkill.cellDatas[ nowAnime ].begin ();
 
 	skillAnim = std::shared_ptr< Sprite >( new Sprite );

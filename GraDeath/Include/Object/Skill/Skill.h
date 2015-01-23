@@ -31,7 +31,7 @@ public:
 
 	~Skill (){}
 
-	void Init ( std::string _filename, std::wstring _path );
+	void Init ( std::string _filename, std::wstring _path, int skill_id );
 
 	virtual void Update ();
 

@@ -21,8 +21,16 @@ char* playerIconName[ ] =
 	"Resource/Object/Player/TestData.bin",
 	"Resource/Object/Player/TestData.bin",
 };
-
-
+/*
+char skillPassName[5][64] =
+{
+	"Resource/Object/Skill/WhiteBlack/",
+	"Resource/Object/Skill/Red/",
+	"Resource/Object/Skill/Yellow/",
+	"Resource/Object/Skill/Blue/",
+	"Resource/Object/Player/",
+};
+*/
 namespace PlayerLoader
 {
 	enum
@@ -35,12 +43,12 @@ namespace PlayerLoader
 
 	void LoadFile ( const int _num, AnimationData* parameter )
 	{
-		Load ( playerIconName[ _num ], parameter, _PLAYER_TYPE );
+		Load ( playerIconName[ _num ], parameter, SKILL_ID_MAX );
 	}
 
-	void LoadFile ( const char* filename, AnimationData* parameter )
+	void LoadFile ( const char* filename, AnimationData* parameter, int skill_id )
 	{
-		Load ( filename, parameter, _SKILL_TYPE );
+		Load ( filename, parameter, skill_id );
 	}
 
 	void Load ( const char* filename, AnimationData* parameter, int _type )
@@ -54,11 +62,21 @@ namespace PlayerLoader
 		int count = static_cast< int >( hedCount );
 		parameter->nameCount = count;
 
-		char path[2][64] = {
+		//char path[2][64] = {
+		//	"Resource/Object/Player/",
+		//	"Resource/Object/Skill/WhiteBlack/" };
+
+		char path[ 5 ][ 64 ] =
+		{
+			"Resource/Object/Skill/WhiteBlack/",
+			"Resource/Object/Skill/Red/",
+			"Resource/Object/Skill/Yellow/",
+			"Resource/Object/Skill/Blue/",
 			"Resource/Object/Player/",
-			"Resource/Object/Skill/WhiteBlack/" };
-		int s = count + strlen(path[_type]);
-		parameter->fileName = new char[count + strlen(path[_type])+1];
+		};
+
+		int s = count + strlen ( path[ _type ] );
+		parameter->fileName = new char[ count + strlen ( path[ _type ] ) + 1 ];
 		ifs.read ( ( char* )parameter->fileName, sizeof( char )* count );
 
 		ifs.read ( ( char* )&hedCount, sizeof( char ) );
@@ -69,7 +87,7 @@ namespace PlayerLoader
 
 		char t[ 64 ];
 		strncpy_s ( t, parameter->fileName, count );
-		strcat_s ( path[_type], t );
+		strcat_s ( path[ _type ], t );
 
 		WCHAR f[ 80 ];
 		Utility::ConvertToWChar ( f, path[ _type ] );
@@ -77,8 +95,8 @@ namespace PlayerLoader
 		GetTextureSize ( f, &size );
 		parameter->cellSize = D3DXVECTOR2 ( size.x / parameter->rectWCount, size.y / parameter->rectHCount );
 
-		int s2 = strlen(path[_type]);
-		strcpy_s(parameter->fileName, strlen(path[_type])+1, path[_type]);
+		int s2 = strlen ( path[ _type ] );
+		strcpy_s ( parameter->fileName, strlen ( path[ _type ] ) + 1, path[ _type ] );
 
 		for ( int i = 0; i < parameter->rectHCount; i++ )
 		{

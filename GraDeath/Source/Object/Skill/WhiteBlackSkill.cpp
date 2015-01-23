@@ -1,12 +1,13 @@
 #include "Object/Skill/WhiteBlackSkill.h"
 #include "Object/Skill/WhiteBlackFirstSkill.h"
 #include "Object/Skill/WhiteBlackSecond.h"
+#include "Loader/PlayerLoader.h"
 
 D3DXVECTOR2 setPosition[] =
 {
 	D3DXVECTOR2 ( 0, -290.0f ),
-	D3DXVECTOR2 ( 0, -290.0f ),
-	D3DXVECTOR2 ( 0, -290.0f )
+	D3DXVECTOR2 ( -450, -390.0f ),
+	D3DXVECTOR2 ( -100, -290.0f )
 };
 
 
@@ -27,7 +28,7 @@ WhiteBlackSkill::~WhiteBlackSkill ()
 void WhiteBlackSkill::Init ()
 {
 	Skill* first = new Skill;
-	first->Init ( "Resource/Object/Skill/WhiteBlack/shirokuro_skill01.bin", L"Resource/Object/Skill/WhiteBlack/skill01.png" );
+	first->Init ( "Resource/Object/Skill/WhiteBlack/shirokuro_skill01.bin", L"Resource/Object/Skill/WhiteBlack/skill01.png", SKILL_ID_LOAD::SKILL_ID_BLACKWHITE );
 	skills.push_back ( first );
 
 	//WhiteBlackSecond* second = new WhiteBlackSecond;
@@ -35,7 +36,7 @@ void WhiteBlackSkill::Init ()
 	//skills.push_back ( second );
 
 	Skill* third = new Skill;
-	third->Init ( "Resource/Object/Skill/Blue/Blue_Skill_Test.bin", L"Resource/Object/Skill/Blue/Blue_Skill_Test.png" );
+	third->Init ( "Resource/Object/Skill/Blue/Blue_Skill_Test.bin", L"Resource/Object/Skill/Blue/Blue_Skill_Test.png", SKILL_ID_LOAD::SKILL_ID_BLUE );
 	skills.push_back ( third );
 }
 
