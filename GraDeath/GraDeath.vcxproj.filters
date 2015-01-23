@@ -374,6 +374,12 @@
     <Filter Include="ソース ファイル\Game\Scene\Capture\Factory">
       <UniqueIdentifier>{4e85029e-899f-4dd1-85d3-6be75773f036}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Credit">
+      <UniqueIdentifier>{cee916e3-0f1b-4ecb-a3a3-70968d5f6cd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Credit\Factory">
+      <UniqueIdentifier>{c5828ca4-858c-4cb3-8cf0-84d456e0f90d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -708,6 +714,12 @@
     </ClCompile>
     <ClCompile Include="Source\Scene\Factory\CaptureFactory.cpp">
       <Filter>ソース ファイル\Game\Scene\Capture\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\CreditFactroy.cpp">
+      <Filter>ソース ファイル\Game\Scene\Credit\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CreditScene.cpp">
+      <Filter>ソース ファイル\Game\Scene\Credit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1100,6 +1112,12 @@
     </ClInclude>
     <ClInclude Include="Include\Scene\Factory\CaptureFactory.h">
       <Filter>ソース ファイル\Game\Scene\Capture\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Factory\CreditFactory.h">
+      <Filter>ソース ファイル\Game\Scene\Credit\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CreditScene.h">
+      <Filter>ソース ファイル\Game\Scene\Credit</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

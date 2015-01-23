@@ -159,8 +159,10 @@
     <ClCompile Include="Source\Scene\CharacterSelectScene.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor.cpp" />
     <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp" />
+    <ClCompile Include="Source\Scene\CreditScene.cpp" />
     <ClCompile Include="Source\Scene\Factory\CaptureFactory.cpp" />
     <ClCompile Include="Source\Scene\Factory\CharacterSelectFactory.cpp" />
+    <ClCompile Include="Source\Scene\Factory\CreditFactroy.cpp" />
     <ClCompile Include="Source\Scene\Factory\GameFactory.cpp" />
     <ClCompile Include="Source\Scene\Factory\ResultFactory.cpp" />
     <ClCompile Include="Source\Scene\Factory\StageSelectFactory.cpp" />
@@ -285,6 +287,7 @@
     <ClInclude Include="Include\Scene\CharacterSelectScene\Icon\SelectIcon.h" />
     <ClInclude Include="Include\Scene\Factory\CaptureFactory.h" />
     <ClInclude Include="Include\Scene\Factory\CharacterSelectFactory.h" />
+    <ClInclude Include="Include\Scene\Factory\CreditFactory.h" />
     <ClInclude Include="Include\Scene\Factory\GameFactory.h" />
     <ClInclude Include="Include\Scene\Factory\ResultFactory.h" />
     <ClInclude Include="Include\Scene\Factory\StageSelectFactory.h" />
@@ -292,6 +295,7 @@
     <ClInclude Include="Include\Scene\GameScene.h" />
     <ClInclude Include="Include\Scene\GameScene\GameSceneUI.h" />
     <ClInclude Include="Include\Scene\GameScene\StageCall.h" />
+    <ClInclude Include="Include\Scene\CreditScene.h" />
     <ClInclude Include="Include\Scene\ResultScene.h" />
     <ClInclude Include="Include\Scene\Scene.h" />
     <ClInclude Include="Include\Scene\SceneFactory.h" />
