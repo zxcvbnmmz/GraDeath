@@ -1028,6 +1028,9 @@
     <ClInclude Include="Include\Object\Skill\WhiteBlackSecond.h">
       <Filter>ソース ファイル\Game\Object\Skill\Skill\Secound</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Object\Skill\SkillExtend.h">
+      <Filter>ソース ファイル\Game\Object\Skill\Skill</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Resource\FbxSkinMeshShader.hlsl">
