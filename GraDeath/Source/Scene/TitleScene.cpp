@@ -3,10 +3,12 @@
 #include "System/Window.h"
 
 #include "Scene/Factory/CharacterSelectFactory.h"
+#include "Scene/Factory/CaptureFactory.h"
 #include "Input/Gamepad.h"
 
 #include "Input\Keyboard.h"
 #include "Utility/Delegate.h"
+#include "Utility/ScreenShot.h"
 
 TitleScene::TitleScene(){
 	sStart.Create(L"Resource/Texture/Start.png");
@@ -35,12 +37,18 @@ TitleScene::TitleScene(){
 }
 
 TitleScene::~TitleScene(){
-	ObjectPoolManager::GetInstance()->GetCurrentPool()->Clear();
+
 }
 
 SCENE_STATUS TitleScene::Execute(){
 	int status = (int)(*executes[currentState])();
 	//return STILL_PROCESSING;
+	if (Keyboard::CheckKey(KC_P) == INPUT_STATE::INPUT_PUSH){
+		CaptureFactory cf;
+		SceneFactory::Reserve(&cf);
+		return END_PROCESS;
+	}
+
 	return (SCENE_STATUS)status;
 }
 
