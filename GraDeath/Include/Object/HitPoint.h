@@ -31,6 +31,8 @@ public:
 
 	int GetRank ();
 
+	bool IsCompared(Player* _player);
+
 };
 
 inline void HitPoint::SetHP ( float _hp )

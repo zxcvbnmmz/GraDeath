@@ -83,6 +83,7 @@ GameSceneUI* GameSceneUI::Create(){
 
 void GameSceneUI::Release(){
 	ObjectPoolManager::GetInstance()->GetCurrentPool()->Erase(ui);
+	ui = nullptr;
 }
 
 
