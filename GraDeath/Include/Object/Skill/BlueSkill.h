@@ -1,16 +1,16 @@
-#ifndef _WHITE_BLACK_SKILL_H_
-#define _WHITE_BLACK_SKILL_H_
+#ifndef _BLUE_SKILL_H_
+#define _BLUE_SKILL_H_
 
 #include "Object/Skill/SkillSet.h"
 
 struct D3DXVECTOR2;
 
-class WhiteBlackSkill : public SkillSet
+class BlueSkill : public SkillSet
 {
 public:
-	WhiteBlackSkill (){}
+	BlueSkill (){}
 
-	~WhiteBlackSkill ();
+	~BlueSkill ();
 
 	void Init ();
 

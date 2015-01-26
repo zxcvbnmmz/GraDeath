@@ -4,6 +4,7 @@
 #include "Input/Gamepad.h"
 #include "Input/Keyboard.h"
 #include "Scene/StageSelectScene/StageIcon.h"
+#include "Stage/Stage.h"
 
 StageSelectScene::StageSelectScene(){
 	stageIcon = std::shared_ptr< StageIcon > ( new StageIcon );
@@ -16,6 +17,7 @@ SCENE_STATUS StageSelectScene::Execute(){
 		INPUT_STATE::INPUT_PUSH == Keyboard::CheckKey ( KC_ENTER ) ){
 		GameFactory gf;
 		SceneFactory::Reserve(&gf);
+		Stage::SetStageID ( stageIcon->GetStageNum() );
 		return END_PROCESS;
 	}
 	stageIcon->Update ();

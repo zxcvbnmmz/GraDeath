@@ -1,8 +1,8 @@
-#include "Object/Skill/WhiteBlackSkill.h"
-#include "Object/Skill/WhiteBlackSecond.h"
+#include "Object/Skill/YellowSkill.h"
+#include "Object/Skill/Skill.h"
 #include "Loader/PlayerLoader.h"
 
-D3DXVECTOR2 setPosition[] =
+D3DXVECTOR2 yellowPosition[ ] =
 {
 	D3DXVECTOR2 ( 0, -290.0f ),
 	D3DXVECTOR2 ( -400, -400.0f ),
@@ -10,21 +10,21 @@ D3DXVECTOR2 setPosition[] =
 };
 
 
-WhiteBlackSkill::~WhiteBlackSkill ()
+YellowSkill::~YellowSkill ()
 {
 	int size = skills.size ();
 	for ( int i = 0; i < size; i++ )
 	{
-		if ( skills[i] != nullptr )
+		if ( skills[ i ] != nullptr )
 		{
-			delete skills[i];
-			skills[i] = nullptr;
+			delete skills[ i ];
+			skills[ i ] = nullptr;
 		}
 	}
 	skills.clear ();
 }
 
-void WhiteBlackSkill::Init ()
+void YellowSkill::Init ()
 {
 	Skill* first = new Skill;
 	first->Init ( "Resource/Object/Skill/WhiteBlack/shirokuro_skill01.bin", L"Resource/Object/Skill/WhiteBlack/skill01.png", SKILL_ID_LOAD::SKILL_ID_BLACKWHITE );
@@ -40,26 +40,26 @@ void WhiteBlackSkill::Init ()
 	skills.push_back ( third );
 }
 
-void WhiteBlackSkill::Update ()
+void YellowSkill::Update ()
 {
 	for ( auto& skill : skills )
 		skill->Update ();
 }
 
-void WhiteBlackSkill::Draw ()
+void YellowSkill::Draw ()
 {
 	for ( auto& skill : skills )
 		skill->Draw ();
 }
 
-void WhiteBlackSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
+void YellowSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
 {
 	D3DXVECTOR2 temp = ( _pos * 32.0f );
-	skills[ _id ]->SetPosition ( temp + setPosition[ _id ], dirFlg );
+	skills[ _id ]->SetPosition ( temp + yellowPosition[ _id ], dirFlg );
 	skills[ _id ]->SkillOn ();
 }
 
-AnimationData& WhiteBlackSkill::GetAnimationData ( int _num )
+AnimationData& YellowSkill::GetAnimationData ( int _num )
 {
 	return skills[ _num ]->GetAnimationData ();
 }
