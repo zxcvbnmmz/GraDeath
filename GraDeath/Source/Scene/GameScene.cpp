@@ -1,4 +1,5 @@
 #include "Scene/GameScene.h"
+#include "Scene/Factory/TitleFactory.h"
 #include "Scene/Factory/ResultFactory.h"
 #include "Input/Gamepad.h"
 #include "Input\Keyboard.h"
@@ -32,7 +33,7 @@ GameScene::GameScene() :currentState(FADE_IN) {
 
 	stageTimer = 300;
 
-	bgm = Sound::CreateBGM("Resource/Scene/Game/Stage/StageBGM_Chara1.wav");
+	bgm = Sound::CreateBGM("Resource/BGM/StageBGM_Chara1.wav");
 }
 
 GameScene::~GameScene ()
@@ -48,15 +49,19 @@ GameScene::~GameScene ()
 SCENE_STATUS GameScene::Execute(){
 
 	int status = (int)(*executes[currentState])();
-//	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS 
-//#ifdef _DEBUG
-//		|| Keyboard::CheckKey(KC_R) == INPUT_PUSH
-//#endif
-//		){
-//		ResultFactory rf;
-//		SceneFactory::Reserve(&rf);
-//		return END_PROCESS;
-//	}
+
+	if (HitPointManager::IsOnlyOne()){
+		currentState = SURVIVE_ONE;
+	}
+	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS 
+#ifdef _DEBUG
+		|| Keyboard::CheckKey(KC_R) == INPUT_PUSH
+#endif
+		){
+		TitleFactory rf;
+		SceneFactory::Reserve(&rf);
+		return END_PROCESS;
+	}
 
 	return (SCENE_STATUS)(status);
 }

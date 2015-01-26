@@ -20,3 +20,7 @@ bool HitPoint::IsDead ()
 {
 	return ( hp <= .0f );
 }
+
+bool HitPoint::IsCompared(Player* _player){
+	return player == _player;
+}
