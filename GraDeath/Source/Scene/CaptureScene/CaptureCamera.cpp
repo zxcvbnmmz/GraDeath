@@ -13,7 +13,7 @@ namespace{
 	const static float CLOSE_DISTANCE = 5;
 }
 
-CaptureCamera::CaptureCamera() :height(40.0f), distance(80.0f), rotate(0), lookHeight(0.0f), captureInterval(2) {
+CaptureCamera::CaptureCamera() :height(15.0f), distance(30.0f), rotate(0), lookHeight(15.0f), captureInterval(2) {
 	Graphic::Camera::SetLookAt(D3DXVECTOR3(.0f, height, distance), D3DXVECTOR3(0.0f, lookHeight, 0.0f), D3DXVECTOR3(0, 1, 0));
 
 	int x, y;
@@ -22,7 +22,7 @@ CaptureCamera::CaptureCamera() :height(40.0f), distance(80.0f), rotate(0), lookH
 	Graphic::Camera::SetPerspective(60.0f / 180.0f*3.14159264f, (float)x / (float)y, 0.1, 1000.f);
 	Graphic::Camera::Update();
 
-	textObject.format = ::D2D::TextFormat::Create(L"メオリオ", 40.0f);
+	textObject.format = ::D2D::TextFormat::Create(L"メオリオ", 20.0f);
 	textObject.brush = SolidBrush::Create(1, 1, 1, 1);
 
 }
@@ -41,11 +41,11 @@ void CaptureCamera::Update(){
 }
 
 void CaptureCamera::DrawDetail(){
-	textObject.DrawString(0, 500, L"x = %f, y = %f, z = %f", x, height, z);
-	textObject.DrawString(0, 530, L"rotate = %f", rotate);
-	textObject.DrawString(0, 560, L"distance = %f", distance);
-	textObject.DrawString(0, 590, L"lookAt = %f", lookHeight);
-	textObject.DrawString(0, 630, L"回転 = A,D  上下移動 = W,S  ズーム = Shift+W,S  注視点上下移動 = E,Q");
+	textObject.DrawString(0, 200, L"x = %f, y = %f, z = %f", x, height, z);
+	textObject.DrawString(0, 220, L"rotate = %f", rotate);
+	textObject.DrawString(0, 240, L"distance = %f", distance);
+	textObject.DrawString(0, 260, L"lookAt = %f", lookHeight);
+	textObject.DrawString(0, 280, L"回転 = A,D  上下移動 = W,S  ズーム = Shift+W,S  注視点上下移動 = E,Q");
 }
 
 void CaptureCamera::RotateDegree(){
