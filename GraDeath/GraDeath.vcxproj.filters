@@ -368,6 +368,9 @@
     <Filter Include="ソース ファイル\Game\Object\Skill\SkillSet\Yellow">
       <UniqueIdentifier>{485cdbfa-0e58-48bf-b2e8-5c9b227d4b7b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Capture\CaptureCamera">
+      <UniqueIdentifier>{a3748f18-5838-45ef-99b6-e136d4db588c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -717,6 +720,9 @@
     </ClCompile>
     <ClCompile Include="Source\Object\Skill\RedSkill.cpp">
       <Filter>ソース ファイル\Game\Object\Skill\SkillSet\Red</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\CaptureCamera.cpp">
+      <Filter>ソース ファイル\Game\Scene\Capture\CaptureCamera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1098,6 +1104,10 @@
     </ClInclude>
     <ClInclude Include="Include\Object\Skill\RedSkill.h">
       <Filter>ソース ファイル\Game\Object\Skill\SkillSet\Red</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\SkillExtend.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\CaptureCamera.h">
+      <Filter>ソース ファイル\Game\Scene\Capture\CaptureCamera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -151,6 +151,7 @@
     <ClCompile Include="Source\Object\Skill\YellowSkill.cpp" />
     <ClCompile Include="Source\Pool\ObjectPool.cpp" />
     <ClCompile Include="Source\Pool\Ref.cpp" />
+    <ClCompile Include="Source\Scene\CaptureScene\CaptureCamera.cpp" />
     <ClCompile Include="Source\Scene\CaptureScene\CaptureScene.cpp" />
     <ClCompile Include="Source\Scene\CaptureScene\ConvertChar.cpp" />
     <ClCompile Include="Source\Scene\CaptureScene\FileUtility.cpp" />
@@ -280,6 +281,7 @@
     <ClInclude Include="Include\Object\Skill\YellowSkill.h" />
     <ClInclude Include="Include\Pool\ObjectPool.h" />
     <ClInclude Include="Include\Pool\Ref.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\CaptureCamera.h" />
     <ClInclude Include="Include\Scene\CaptureScene\CaptureScene.h" />
     <ClInclude Include="Include\Scene\CaptureScene\ConvertChar.h" />
     <ClInclude Include="Include\Scene\CaptureScene\FileLoader.h" />

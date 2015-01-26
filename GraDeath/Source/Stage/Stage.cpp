@@ -15,7 +15,7 @@ namespace{
 	std::vector<Sprite*> sprites;
 	std::vector<Sprite*> bgSprite;
     std::vector<Sprite*> sprite_animes;
-	Sprite* sprite_anime = new Sprite;
+	Sprite* sprite_anime;// = new Sprite;
     float HP = 20.f + rand() % 10;
     bool Stageflg = false;
     int StageCoolTime = 0;
