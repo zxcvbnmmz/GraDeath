@@ -4,6 +4,7 @@
 
 #include "Scene/Factory/CharacterSelectFactory.h"
 #include "Scene/Factory/CaptureFactory.h"
+#include "Scene/Factory/CreditFactory.h"
 #include "Input/Gamepad.h"
 
 #include "Input\Keyboard.h"
@@ -128,6 +129,7 @@ int TitleScene::ExecuteSelect(){
 #endif
 		switch (select_i){
 		case 0:
+		case 1:
 			currentState = FADE_OUT;
 		}
 	}
@@ -157,8 +159,19 @@ int TitleScene::ExecuteSelect(){
 int TitleScene::ExecuteFadeOut(){
 	if (fade.AddAlpha(1.0f / 120.0f) == FADE_UNCLEAR){
 		if (timer.Step() == FrameTimer::TIME_OUT)	{
-			CharacterSelectFactory cf;
-			SceneFactory::Reserve(&cf);
+			switch (select_i)
+			{
+			case 0:{
+				CharacterSelectFactory cf;
+				SceneFactory::Reserve(&cf);
+				break;
+			}
+			case 1:{
+				CreditFactory cf;
+				SceneFactory::Reserve(&cf);
+				break;
+			}
+			}
 			return END_PROCESS;
 		}
 	}
