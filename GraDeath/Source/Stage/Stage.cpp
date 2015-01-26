@@ -21,6 +21,7 @@ namespace{
     int StageCoolTime = 0;
     int count = 0;
     int playernum = 0;
+	int stageID = 0;
 }
 
 void CreateWorldEdge();
@@ -30,6 +31,11 @@ b2Vec2 StageGetSize();
 
 namespace{
 	b2Body* screenEdgeBody;
+}
+
+void Stage::SetStageID ( int stageID )
+{
+	stageID = stageID;
 }
 
 bool Stage::Initialize(int stageID){
