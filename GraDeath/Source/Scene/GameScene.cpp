@@ -31,6 +31,8 @@ GameScene::GameScene() :currentState(FADE_IN) {
 	stageCall.Initialize(false);
 
 	stageTimer = 300;
+
+	bgm = Sound::CreateBGM("Resource/Scene/Game/Stage/StageBGM_Chara1.wav");
 }
 
 GameScene::~GameScene ()
@@ -79,7 +81,7 @@ int GameScene::ExecuteStageCall(){
 	if (stageCall.Update() == StageCall::FINISHED){
 		currentState = BUTTLE;
 	}
-
+	bgm->Play();
 	return STILL_PROCESSING;
 }
 
@@ -98,6 +100,9 @@ int GameScene::ExecuteButtle(){
 
 int GameScene::ExecuteEndCall(){
 	if (stageCall.Update() == StageCall::FINISHED){
+		ResultFactory rf;
+		SceneFactory::Reserve(&rf);
+		bgm->Stop();
 		return END_PROCESS;
 	}
 	return STILL_PROCESSING;

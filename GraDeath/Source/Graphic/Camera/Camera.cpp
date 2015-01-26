@@ -52,7 +52,7 @@ namespace Graphic{
 		D3DXMatrixIdentity(&view);
 		D3DXMatrixIdentity(&proj);
 
-		mode = MODE_FPS;
+		mode = MODE_TPS;
 		Updates[MODE_FPS] = &Camera::Pimpl::UpdateFPS;
 		Updates[MODE_TPS] = &Camera::Pimpl::UpdateTPS;
 
@@ -87,12 +87,18 @@ namespace Graphic{
 	}
 
 	void Camera::Pimpl::SetLookAt(const D3DXVECTOR3& _pos, const D3DXVECTOR3& _look, const D3DXVECTOR3& _up){
-		pos = _pos;
+		if (mode == MODE_FPS){
+			pos = _pos;
+			lookat = _look;
+		}
+		else{
+			pos == _look;
+			lookat = _pos;
+		}
 		upVector = _up;
-		lookat = _look;
 		D3DXVECTOR3 d = lookat - pos;
 		distance = D3DXVec3Length(&d);
-		normalizeLookVec = d / distance;
+		D3DXVec3Normalize(&normalizeLookVec, &d);
 	}
 
 	void Camera::Pimpl::SetPosition(const D3DXVECTOR3& _pos){

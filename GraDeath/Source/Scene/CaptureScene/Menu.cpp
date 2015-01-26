@@ -13,6 +13,9 @@
 #include "Scene/CaptureScene/ModelAnimeLoader.h"
 #include "Utility/ScreenShot.h"
 #include "D2D/Brush/SolidBrush.h"
+#include "Graphic/Camera/Camera.h"
+#include "System/Window.h"
+#include "Graphic/Rasterizer/Rasterizer.h"
 
 enum VIEWER_MENU
 {
@@ -37,6 +40,15 @@ Menu::Menu() : fontModel(false), fontAnime(false), modelDrawFlg(false), isCaptur
 	pushFlg = true;
 	textObject.format = ::D2D::TextFormat::Create(L"ÉÅÉIÉäÉI", 20.0f);
 	textObject.brush = SolidBrush::Create(1, 1, 1, 1);
+
+	int x, y;
+	System::Window::GetWindowSize(&x, &y);
+	Graphic::Camera::SetViewport(x,y);
+
+	Graphic::Camera::SetLookAt(D3DXVECTOR3(.0f, 40.0f, -80.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(0, 1, 0));
+	Graphic::Camera::SetPerspective(60.0f/180.0f*3.14159264f, (float)x / (float)y, 0.1, 1000.f);
+	Graphic::Camera::Update();
+	Graphic::Rasterizer::CullNone();
 }
 
 Menu::~Menu()
@@ -154,4 +166,4 @@ void Menu::CaptureAnimation(){
 			isCapturing = false;
 		}
 	}
-}
+} 

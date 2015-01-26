@@ -105,6 +105,7 @@ void ModelAnimeLoader::DrawModel()
 		mcb.data.world = world;
 		mcb.data.wvp = world * Camera::GetView() * Camera::GetProjection();
 		mcb.data.light = D3DXVECTOR4(0, 0, 1, 1);
+		mcb.data.ambient = mcb.data.diffuse = D3DXVECTOR4(1, 1, 1, 1);
 
 		static_cast<CwnStaticMesh*>(mesh)->Render(staticShader, &mcb);
 		//D3DGraphics::SetShader(staticShader);
@@ -224,7 +225,7 @@ void ModelAnimeLoader::SelectModel()
 
 			mesh = new CwnSkinMesh;
 			char* name = const_cast< char* >(fileModelList[modelNum].c_str());
-			mesh->LoadCwn(name, "Model\\");
+			mesh->LoadCwn(name, "Resource/Model\\");
 			modelFlg = false;
 		}
 	}
@@ -262,7 +263,7 @@ void ModelAnimeLoader::SelectAnime()
 				}
 			}
 			animes = new BoneAnimeData;
-			std::string temp = "Anime\\";
+			std::string temp = "Resource/Anime\\";
 			temp += fileAnimeList[animeNum].c_str();
 			char* name = const_cast< char* >(temp.c_str());
 			animes->LoadAnime(name);
