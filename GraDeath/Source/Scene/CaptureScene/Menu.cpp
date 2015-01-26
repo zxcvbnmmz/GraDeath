@@ -13,8 +13,6 @@
 #include "Scene/CaptureScene/ModelAnimeLoader.h"
 #include "Utility/ScreenShot.h"
 #include "D2D/Brush/SolidBrush.h"
-#include "Graphic/Camera/Camera.h"
-#include "System/Window.h"
 #include "Graphic/Rasterizer/Rasterizer.h"
 
 enum VIEWER_MENU
@@ -41,13 +39,6 @@ Menu::Menu() : fontModel(false), fontAnime(false), modelDrawFlg(false), isCaptur
 	textObject.format = ::D2D::TextFormat::Create(L"ƒƒIƒŠƒI", 20.0f);
 	textObject.brush = SolidBrush::Create(1, 1, 1, 1);
 
-	int x, y;
-	System::Window::GetWindowSize(&x, &y);
-	Graphic::Camera::SetViewport(x,y);
-
-	Graphic::Camera::SetLookAt(D3DXVECTOR3(.0f, 40.0f, -80.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(0, 1, 0));
-	Graphic::Camera::SetPerspective(60.0f/180.0f*3.14159264f, (float)x / (float)y, 0.1, 1000.f);
-	Graphic::Camera::Update();
 	Graphic::Rasterizer::CullNone();
 }
 
@@ -107,6 +98,8 @@ int Menu::Update()
 		}
 	}
 
+	captureCamera.Update();
+
 	ExecuteToScreenShot();
 
 
@@ -134,6 +127,8 @@ void Menu::Draw()
 		{
 			modelLoader->DrawModel();
 		}
+
+		captureCamera.DrawDetail();
 	}
 }
 
@@ -158,12 +153,16 @@ void Menu::ExecuteToScreenShot(){
 }
 
 void Menu::CaptureAnimation(){
+	static int captureFrame = 0;
 	if (isCapturing){
 		if (!modelLoader->IsAnimationEnd()){
-			Utility::CreateScreenShot(L"ScreenShot/");
+			if(captureFrame % 2 == 0)
+				Utility::CreateScreenShot(L"Resource/ScreenShot/");
+			++captureFrame;
 		}
 		else{
 			isCapturing = false;
+			captureFrame = 0;
 		}
 	}
 } 

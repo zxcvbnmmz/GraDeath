@@ -380,6 +380,9 @@
     <Filter Include="ソース ファイル\Game\Scene\Credit\Factory">
       <UniqueIdentifier>{c5828ca4-858c-4cb3-8cf0-84d456e0f90d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Scene\Capture\CaptureCamera">
+      <UniqueIdentifier>{a3748f18-5838-45ef-99b6-e136d4db588c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -720,6 +723,9 @@
     </ClCompile>
     <ClCompile Include="Source\Scene\CreditScene.cpp">
       <Filter>ソース ファイル\Game\Scene\Credit</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\CaptureCamera.cpp">
+      <Filter>ソース ファイル\Game\Scene\Capture\CaptureCamera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1118,6 +1124,10 @@
     </ClInclude>
     <ClInclude Include="Include\Scene\CreditScene.h">
       <Filter>ソース ファイル\Game\Scene\Credit</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\SkillExtend.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\CaptureCamera.h">
+      <Filter>ソース ファイル\Game\Scene\Capture\CaptureCamera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
