@@ -2,6 +2,7 @@
 #define _STAGE_H__
 
 namespace Stage{
+	void SetStageID (int stageID);
     bool Initialize(int stageID);
 	void Draw();
 	void Release();

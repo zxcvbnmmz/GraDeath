@@ -1,5 +1,4 @@
 #include "Object/Skill/WhiteBlackSkill.h"
-#include "Object/Skill/WhiteBlackFirstSkill.h"
 #include "Object/Skill/WhiteBlackSecond.h"
 #include "Loader/PlayerLoader.h"
 

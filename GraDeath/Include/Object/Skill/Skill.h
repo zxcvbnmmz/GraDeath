@@ -38,6 +38,7 @@ public:
 
 	virtual void Draw ();
 
+	virtual void SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg ){}
 	virtual void SetPosition ( const D3DXVECTOR2& _pos, unsigned int _dirFlg );
 
 	D3DXVECTOR2& GetPosition ();

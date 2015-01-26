@@ -52,7 +52,7 @@ namespace Graphic{
 		D3DXMatrixIdentity(&view);
 		D3DXMatrixIdentity(&proj);
 
-		mode = MODE_TPS;
+		mode = MODE_FPS;
 		Updates[MODE_FPS] = &Camera::Pimpl::UpdateFPS;
 		Updates[MODE_TPS] = &Camera::Pimpl::UpdateTPS;
 
@@ -60,6 +60,10 @@ namespace Graphic{
 	}
 
 	void Camera::Pimpl::Update(){
+		D3DXVECTOR3 d = lookat - pos;
+		distance = D3DXVec3Length(&d);
+		D3DXVec3Normalize(&normalizeLookVec, &d);
+
 		D3DXVec3Scale(&lookat, &normalizeLookVec, distance);
 		D3DXVec3Add(&lookat, &lookat, &pos);
 
@@ -76,14 +80,12 @@ namespace Graphic{
 
 	void Camera::Pimpl::SetLookAt(const D3DXVECTOR3& _at){
 		//mode == MODE_TPS ? lookat = _at : pos = _at;
-		if (mode == MODE_TPS){
+		if (mode == MODE_FPS){
 			lookat = _at;
 		}
 		else{
 			pos = _at;
 		}
-		D3DXVECTOR3 distance = lookat - pos;
-		normalizeLookVec = distance / D3DXVec3Length(&distance);
 	}
 
 	void Camera::Pimpl::SetLookAt(const D3DXVECTOR3& _pos, const D3DXVECTOR3& _look, const D3DXVECTOR3& _up){
@@ -96,9 +98,6 @@ namespace Graphic{
 			lookat = _pos;
 		}
 		upVector = _up;
-		D3DXVECTOR3 d = lookat - pos;
-		distance = D3DXVec3Length(&d);
-		D3DXVec3Normalize(&normalizeLookVec, &d);
 	}
 
 	void Camera::Pimpl::SetPosition(const D3DXVECTOR3& _pos){

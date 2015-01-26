@@ -15,12 +15,13 @@ namespace{
 	std::vector<Sprite*> sprites;
 	std::vector<Sprite*> bgSprite;
     std::vector<Sprite*> sprite_animes;
-	Sprite* sprite_anime = new Sprite;
+	Sprite* sprite_anime;// = new Sprite;
     float HP = 20.f + rand() % 10;
     bool Stageflg = false;
     int StageCoolTime = 0;
     int count = 0;
     int playernum = 0;
+	int stageID = 0;
 }
 
 void CreateWorldEdge();
@@ -30,6 +31,11 @@ b2Vec2 StageGetSize();
 
 namespace{
 	b2Body* screenEdgeBody;
+}
+
+void Stage::SetStageID ( int stageID )
+{
+	stageID = stageID;
 }
 
 bool Stage::Initialize(int stageID){

@@ -3,6 +3,8 @@
 
 #include "Object/Skill/SkillSet.h"
 
+struct D3DXVECTOR2;
+
 class WhiteBlackSkill : public SkillSet
 {
 public:
@@ -14,9 +16,9 @@ public:
 
 	void Update ();
 
-	virtual void Draw ();
+	void Draw ();
 
-	virtual void SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg );
+	void SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg );
 
 	AnimationData& GetAnimationData ( int _num );
 

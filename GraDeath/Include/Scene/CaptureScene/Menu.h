@@ -12,8 +12,8 @@
 
 // インクルード ***********************************************
 #include "Scene\Scene.h"
-
 #include "D2D/Text/TextObject.h"
+#include "CaptureCamera.h"
 
 // 前方宣言 ***************************************************
 class ModelAnimeLoader;
@@ -56,6 +56,7 @@ private:
 	bool isCapturing;
 
 	::D2D::TextObject textObject;
+	CaptureCamera captureCamera;
 };
 
 #endif
