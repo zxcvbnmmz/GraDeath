@@ -12,6 +12,7 @@
 
 
 Player::Player(){
+	sprite = shared_ptr<Sprite> (new Sprite);
 }
 
 Player::~Player(){
@@ -22,8 +23,7 @@ bool Player::Init(const char* fileName, const b2Vec2& bodyPos){
 
 	// ‘fŞ‚ª—ˆ‚½‚ç‚±‚Ìˆ—‚ğ•ÏX
 	WCHAR temp[80];
-	sprite = shared_ptr<Sprite>(new Sprite);
-	sprite->Create(Utility::ConvertToWChar(temp, fileName));
+	sprite->Create( Utility::ConvertToWChar(temp,fileName));
 
 	int x, y;
 	System::Window::GetWindowSize(&x, &y);
@@ -40,7 +40,6 @@ bool Player::Init(const char* fileName, const b2Vec2& bodyPos){
 
 void Player::Release(){
 	World::DestoryBody(body);
-	sprite.reset();
 }
 
 void Player::AddForce(b2Vec2& force){

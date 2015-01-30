@@ -56,6 +56,15 @@ void PlayerController::Draw(){
 	player->sprite->Draw ( DRAW_RECT );
 }
 
+void PlayerController::Move(int _movex, int _movey){
+    //移動したい
+}
+
+void PlayerController::SetPos(int _posx, int _posy){
+    //ポジションをセットしたい
+//    player->SetPosition(10.f,10.f);
+}
+
 void PlayerController::Release ()
 {
 
@@ -108,13 +117,10 @@ void PlayerController::Walk(){
 	}
 
 	if (Keyboard::CheckKey(KC_RIGHT) == INPUT_PRESS){
-		pos.x += 3.0f;
 		player->AddForce(b2Vec2(10, 0));
 	}
 
 	if (Keyboard::CheckKey(KC_LEFT) == INPUT_PRESS){
-
-		pos.x += 3.0f;
 		player->AddForce(b2Vec2(-10, 0));
 	}
 
@@ -144,9 +150,3 @@ void PlayerController::Damage(){}
 void PlayerController::Jump(){
 	ChangeAction(ACTION_IDLE, true);
 }
-
-
-
-
-
-

@@ -20,7 +20,6 @@ protected:
 	int frameCount = 0;
 	int animeMax = 0;
 	int nowAnime = 0;
-	int nowFrame = 0;
 	bool skillFlg = false;
 	D3DXVECTOR2 pos;
 	std::vector<std::shared_ptr<CellData>>::iterator currentCell;
@@ -38,7 +37,6 @@ public:
 
 	virtual void Draw ();
 
-	virtual void SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg ){}
 	virtual void SetPosition ( const D3DXVECTOR2& _pos, unsigned int _dirFlg );
 
 	D3DXVECTOR2& GetPosition ();
@@ -48,8 +46,6 @@ public:
 	void SkillOn ();
 
 	void SkillOff ();
-
-	void SetSize ( const D3DXVECTOR2& _pos );
 
 	AnimationData& GetAnimationData ();
 
