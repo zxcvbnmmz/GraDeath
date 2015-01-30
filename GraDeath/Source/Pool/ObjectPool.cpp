@@ -41,7 +41,6 @@ void ObjectPool::Erase(Ref* object){
 	if (it != managedObject.end()){
 		delete (*it);
 		managedObject.erase(it);
-		object = nullptr;
 	}
 }
 

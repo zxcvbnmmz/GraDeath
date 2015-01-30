@@ -1,8 +1,9 @@
 #ifndef _STAGE_H__
 #define _STAGE_H__
 
+class b2Body;
+
 namespace Stage{
-	void SetStageID (int stageID);
     bool Initialize(int stageID);
 	void Draw();
 	void Release();
@@ -12,6 +13,9 @@ namespace Stage{
     bool GetStageStatus();
     void CriateStage();
     int StageBrakePlayerNum();
+
+	b2Body* GetBreakbleStage();
+	b2Body* GetUnbreakbleStage();
 };
 
 #endif	// end of Stage

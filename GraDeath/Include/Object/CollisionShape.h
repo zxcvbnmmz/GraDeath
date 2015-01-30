@@ -70,7 +70,7 @@ public:
 		// 摩擦係数の設定
 		// ステージが不完全なので、ここで多めに設定しておく
 		def.friction = 20.0f;
-		def.userData = this;
+
 		body->CreateFixture(&def);
 	}
 
@@ -83,9 +83,6 @@ public:
 			body->DestroyFixture(fixture);
 		}
 	} 
-	float GetStrength(){
-		return strength;
-	}
 };
 
 #endif	// end of CollisionShape

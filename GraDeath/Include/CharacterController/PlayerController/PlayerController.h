@@ -35,6 +35,9 @@ public:
 	void Init (int padID, Player* _player);
 	void Draw();
 
+	void Move(int _movex, int _movey){}
+	void SetPos(int _posx, int _posy){}
+
 	void Release ();
 
 private:
@@ -43,7 +46,9 @@ private:
 	virtual void Walk();
 	virtual void Attack();
 	virtual void Damage();
-	virtual void Jump();
+	virtual void Jump_Rise();
+	virtual void Jump_Land();
+	virtual void Skill();
 
 	int count = 0;
 	// ˆê“I‚ÉéŒ¾

@@ -92,7 +92,6 @@ PS_SkinIn SkinMeshVS( VS_SkinIn input )
     
 	//	取得した姿勢行列を頂点に掛け合わせる
     Skin vSkinned = SkinVert( input );
-	//vSkinned.Pos.z *= -1;
 
 	//	行列変換を実行
     output.Pos = mul( vSkinned.Pos, wvp );

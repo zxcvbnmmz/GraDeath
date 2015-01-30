@@ -3,21 +3,16 @@
 #include "System/Window.h"
 
 #include "Scene/Factory/CharacterSelectFactory.h"
-#include "Scene/Factory/CaptureFactory.h"
-#include "Scene/Factory/CreditFactory.h"
 #include "Input/Gamepad.h"
 
 #include "Input\Keyboard.h"
 #include "Utility/Delegate.h"
-#include "Utility/ScreenShot.h"
 
 TitleScene::TitleScene(){
 	sStart.Create(L"Resource/Texture/Start.png");
 	sCredit.Create(L"Resource/Texture/Credit.png");
 	sExit.Create(L"Resource/Texture/Exit.png");
 	sVector.Create(L"Resource/Texture/Vector.png");
-
-	bgm = Sound::CreateBGM("Resource/BGM/GDtitle.wav");
 
 	start_pos = D3DXVECTOR2(700, 200);
 	credit_pos = D3DXVECTOR2(800, 400);
@@ -37,23 +32,15 @@ TitleScene::TitleScene(){
 	currentState = SELECT;
 	fade.SetAlpha(0);
 	timer.Set(60);
-
-	bgm->Play();
 }
 
 TitleScene::~TitleScene(){
-
+	ObjectPoolManager::GetInstance()->GetCurrentPool()->Clear();
 }
 
 SCENE_STATUS TitleScene::Execute(){
 	int status = (int)(*executes[currentState])();
 	//return STILL_PROCESSING;
-	if (Keyboard::CheckKey(KC_P) == INPUT_STATE::INPUT_PUSH){
-		CaptureFactory cf;
-		SceneFactory::Reserve(&cf);
-		return END_PROCESS;
-	}
-
 	return (SCENE_STATUS)status;
 }
 
@@ -133,7 +120,6 @@ int TitleScene::ExecuteSelect(){
 #endif
 		switch (select_i){
 		case 0:
-		case 1:
 			currentState = FADE_OUT;
 		}
 	}
@@ -163,20 +149,8 @@ int TitleScene::ExecuteSelect(){
 int TitleScene::ExecuteFadeOut(){
 	if (fade.AddAlpha(1.0f / 120.0f) == FADE_UNCLEAR){
 		if (timer.Step() == FrameTimer::TIME_OUT)	{
-			switch (select_i)
-			{
-			case 0:{
-				CharacterSelectFactory cf;
-				SceneFactory::Reserve(&cf);
-				break;
-			}
-			case 1:{
-				CreditFactory cf;
-				SceneFactory::Reserve(&cf);
-				break;
-			}
-			}
-			bgm->Stop();
+			CharacterSelectFactory cf;
+			SceneFactory::Reserve(&cf);
 			return END_PROCESS;
 		}
 	}
