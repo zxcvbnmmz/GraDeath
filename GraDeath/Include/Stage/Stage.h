@@ -4,7 +4,6 @@
 class b2Body;
 
 namespace Stage{
-	void SetStageID (int stageID);
     bool Initialize(int stageID);
 	void Draw();
 	void Release();

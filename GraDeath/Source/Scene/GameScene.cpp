@@ -1,5 +1,4 @@
 #include "Scene/GameScene.h"
-#include "Scene/Factory/TitleFactory.h"
 #include "Scene/Factory/ResultFactory.h"
 #include "Input/Gamepad.h"
 #include "Input\Keyboard.h"
@@ -32,8 +31,6 @@ GameScene::GameScene() :currentState(FADE_IN) {
 	stageCall.Initialize(false);
 
 	stageTimer = 300;
-
-	bgm = Sound::CreateBGM("Resource/BGM/StageBGM_Chara1.wav");
 }
 
 GameScene::~GameScene ()
@@ -49,19 +46,15 @@ GameScene::~GameScene ()
 SCENE_STATUS GameScene::Execute(){
 
 	int status = (int)(*executes[currentState])();
-
-	if (HitPointManager::IsOnlyOne()){
-		currentState = SURVIVE_ONE;
-	}
-	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS 
-#ifdef _DEBUG
-		|| Keyboard::CheckKey(KC_R) == INPUT_PUSH
-#endif
-		){
-		TitleFactory rf;
-		SceneFactory::Reserve(&rf);
-		return END_PROCESS;
-	}
+//	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS 
+//#ifdef _DEBUG
+//		|| Keyboard::CheckKey(KC_R) == INPUT_PUSH
+//#endif
+//		){
+//		ResultFactory rf;
+//		SceneFactory::Reserve(&rf);
+//		return END_PROCESS;
+//	}
 
 	return (SCENE_STATUS)(status);
 }
@@ -86,14 +79,22 @@ int GameScene::ExecuteStageCall(){
 	if (stageCall.Update() == StageCall::FINISHED){
 		currentState = BUTTLE;
 	}
-	bgm->Play();
+
 	return STILL_PROCESSING;
 }
 
 int GameScene::ExecuteButtle(){
-	// ここで通常作業
-	PlayerManager::Update();
-	SkillManager::Update();
+	
+    if (Stage::GetStageHP() > 0){
+        // ここで通常作業
+        PlayerManager::Update();
+        SkillManager::Update();
+    }
+    else{
+        PlayerManager::AllPlayerMove(10, 10);
+        PlayerManager::OnPlayerPos(1, 300, 300);
+//        PlayerManager::OnPlayerPos(Stage::StageBrakePlayerNum(),300,300);
+    }
 
 	// ここでエンドコールへ移行(コメントアウト)
 	//if (stageTimer-- < 0){
@@ -105,9 +106,6 @@ int GameScene::ExecuteButtle(){
 
 int GameScene::ExecuteEndCall(){
 	if (stageCall.Update() == StageCall::FINISHED){
-		ResultFactory rf;
-		SceneFactory::Reserve(&rf);
-		bgm->Stop();
 		return END_PROCESS;
 	}
 	return STILL_PROCESSING;

@@ -49,7 +49,7 @@ bool SwapChain::Create(CComPtr<ID3D10Device1> _device){
 	sd.SampleDesc.Count = 1;
 	sd.SampleDesc.Quality = 0;
 	sd.Windowed = TRUE;
-	//sd.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
+	sd.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
 
 
 	if( FAILED( giFactory->CreateSwapChain(giDevice, &sd, &swapChain))){
