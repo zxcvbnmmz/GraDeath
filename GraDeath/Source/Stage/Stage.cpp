@@ -32,6 +32,8 @@ namespace{
 	b2Body* screenEdgeBody;
 	b2Body* breakableStage;
 	b2Body* unbreakableStage;
+    b2Body* GetBreakbleStage();
+    b2Body* GetUnbreakbleStage();
 }
 
 bool Stage::Initialize(int stageID){
@@ -50,6 +52,14 @@ void Stage::Draw(){
         //@ x 1366* y 768
         Stageflg = true;
     }
+#ifdef _DEBUG
+    if (Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH || HP <= 0){
+        HP = 0;
+        //@ x 1366* y 768
+        Stageflg = true;
+    }
+#endif
+
     if (Stageflg == true){
         StageCoolTime++;
         sprite_anime->SetTrimming(0, 0 + (768 * count), 1366, 768);
@@ -61,9 +71,11 @@ void Stage::Draw(){
             count = 6;
         }
     }
+#ifdef _DEBUG
     if (Keyboard::CheckKey(KC_P) == INPUT_PUSH)
         CriateStage();
-
+#endif
+    
     if (Stageflg == false){
         for (Sprite* sprite : sprites){
             sprite->Draw(DRAW_RECT);
@@ -81,6 +93,7 @@ void GetDamage(float _damage){
 
 void Stage::Release(){
 	World::DestoryBody(screenEdgeBody);
+    World::DestoryBody(breakableStage);
 	for ( auto& obj : sprites )
 		Util::safeDelete ( obj );
 	for ( auto& bg : bgSprite )
@@ -90,11 +103,13 @@ void Stage::Release(){
 	sprites.clear();
 	sprite_animes.clear();
 	bgSprite.clear();
+    CriateStage();
 }
 
 void CreateWorldEdge(){
 	b2BodyDef def;
-	screenEdgeBody = World::CreateBody(&def);
+    screenEdgeBody = World::CreateBody(&def);
+    breakableStage = World::CreateBody(&def);
 
 	b2EdgeShape screenEdgeShape;
 	float density = 0.0f;
@@ -131,7 +146,8 @@ void CreateWorldEdge(){
     screenEdgeShape.Set(StageGetPos(), StageGetSize());
     b2Fixture* fixture = screenEdgeBody->CreateFixture(&screenEdgeShape, density);
     fixture->SetFilterData(filter);
-
+    fixture = breakableStage->CreateFixture(&screenEdgeShape, density);
+    fixture->SetFilterData(filter);
 }
 
 void CreateEachStage(int stageLevel){

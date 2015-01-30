@@ -15,20 +15,51 @@ namespace HitPointManager
 	{
 		hitPoint[ _num ].Init ( _player );
 		hitPoint[ _num ].SetHP ( _hp );
+<<<<<<< HEAD
+		hitPoint[ _num ].SetRank(1);
+=======
+>>>>>>> Develop
 		rank = 4;
 	}
 
 	// ƒ_ƒ[ƒW
+<<<<<<< HEAD
+	void HitDamage(int _num, float _hit)
+	{
+		hitPoint[_num].IsDamage(_hit);
+		if (hitPoint[_num].IsDead())
+		{
+			hitPoint[_num].SetRank(rank);
+=======
 	void HitDamage ( int _num, float _hit )
 	{
 		hitPoint[ _num ].IsDamage ( _hit );
 		if ( hitPoint[ _num ].IsDead () )
 		{
 			hitPoint[ _num ].SetRank ( rank );
+>>>>>>> Develop
 			rank--;
 		}
 	}
 
+<<<<<<< HEAD
+	void HitDamage(Player* _player, float _hit)
+	{
+		for (int i = 0; i < 4; ++i){
+			if (hitPoint[i].IsCompared(_player)){
+				hitPoint[i].IsDamage(_hit);
+				if (hitPoint[i].IsDead())
+				{
+					hitPoint[i].SetRank(rank);
+					rank--;
+				}
+				break;
+			}
+		}
+	}
+
+=======
+>>>>>>> Develop
 	// HP‚Ìæ“¾
 	float GetHitPoint ( int _num )
 	{
@@ -70,4 +101,20 @@ namespace HitPointManager
 		return temp;
 	}
 
+<<<<<<< HEAD
+	int GetPlayerRanking(int num){
+		if (hitPoint[num].IsEnabled()){
+			return hitPoint[num].GetRank();
+		}
+
+		return -1;
+	}
+
+	void Release(){
+		for (int i = 0; i < 4; ++i){
+			hitPoint[i].Release();
+		}
+	}
+=======
+>>>>>>> Develop
 }
