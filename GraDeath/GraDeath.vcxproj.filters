@@ -341,9 +341,6 @@
     <Filter Include="ソース ファイル\Game\Object\Skill\Skill">
       <UniqueIdentifier>{0da2254e-9615-4bd9-8ef4-0de4b834630a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skill\SkillState">
-      <UniqueIdentifier>{12cc3dde-2d0a-44c5-b444-57fd0e9a63d5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Object\Skill\Skill\First">
       <UniqueIdentifier>{6f6b080a-e5a6-4e1a-855f-940ca1f56b6e}</UniqueIdentifier>
     </Filter>
@@ -367,6 +364,9 @@
     </Filter>
     <Filter Include="ソース ファイル\Game\Object\Skill\SkillSet\Yellow">
       <UniqueIdentifier>{485cdbfa-0e58-48bf-b2e8-5c9b227d4b7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Skill\SkillSet\SkillState">
+      <UniqueIdentifier>{12cc3dde-2d0a-44c5-b444-57fd0e9a63d5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -668,7 +668,7 @@
       <Filter>ソース ファイル\Game\Object\Skill\SkillSet\WhiteBlack</Filter>
     </ClCompile>
     <ClCompile Include="Source\Object\Skill\SkillState.cpp">
-      <Filter>ソース ファイル\Game\Object\Skill\SkillState</Filter>
+      <Filter>ソース ファイル\Game\Object\Skill\SkillSet\SkillState</Filter>
     </ClCompile>
     <ClCompile Include="Source\Object\Skill\Skill.cpp">
       <Filter>ソース ファイル\Game\Object\Skill\Skill</Filter>
@@ -1071,7 +1071,7 @@
       <Filter>ソース ファイル\Game\Object\Skill\SkillSet\WhiteBlack</Filter>
     </ClInclude>
     <ClInclude Include="Include\Object\Skill\SkillState.h">
-      <Filter>ソース ファイル\Game\Object\Skill\SkillState</Filter>
+      <Filter>ソース ファイル\Game\Object\Skill\SkillSet\SkillState</Filter>
     </ClInclude>
     <ClInclude Include="Include\Object\Skill\SkillSet.h">
       <Filter>ソース ファイル\Game\Object\Skill\SkillSet</Filter>

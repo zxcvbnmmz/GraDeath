@@ -35,7 +35,7 @@ void WhiteBlackSkill::Init ()
 	//skills.push_back ( second );
 
 	Skill* third = new Skill;
-	third->Init ( "Resource/Object/Skill/Blue/Blue_Skill_Third3.bin", L"Resource/Object/Skill/Blue/Blue_Skill_Third3.png", SKILL_ID_LOAD::SKILL_ID_BLUE );
+	third->Init ( "Resource/Object/Skill/WhiteBlack/Blue_Skill_Third3.bin", L"Resource/Object/Skill/WhiteBlack/shirokuro_Skill_Third.png", SKILL_ID_LOAD::SKILL_ID_BLUE );
 	//third->SetSize ( D3DXVECTOR2 ( 600, 600 ));
 	skills.push_back ( third );
 }
