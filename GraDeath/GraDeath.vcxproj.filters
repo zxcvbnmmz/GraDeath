@@ -368,24 +368,6 @@
     <Filter Include="ソース ファイル\Game\Object\Skill\SkillSet\Yellow">
       <UniqueIdentifier>{485cdbfa-0e58-48bf-b2e8-5c9b227d4b7b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Capture">
-      <UniqueIdentifier>{37c9bea3-bd67-4619-8d97-cdc81114ec8c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Credit">
-      <UniqueIdentifier>{d7a06f36-574e-4eda-b4b6-a42bf954e3e0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Collision">
-      <UniqueIdentifier>{fc19c7ec-3259-41b5-b137-b4efac946152}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Capture\Factory">
-      <UniqueIdentifier>{152cf1a5-0469-4137-a3d1-92bd3b14d11a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Credit\Factory">
-      <UniqueIdentifier>{305d618c-6ff5-45cf-8432-c0ff1632f359}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Capture\Utility">
-      <UniqueIdentifier>{46b23324-6a78-4158-b2f1-dd39f360fc64}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -670,6 +652,12 @@
     <ClCompile Include="Source\Scene\GameScene\StageCall.cpp">
       <Filter>ソース ファイル\Game\Scene\Game\StageCall</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Collision\Collision.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\FrameTimer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
     <ClCompile Include="Source\Manager\SkillManager.cpp">
       <Filter>ソース ファイル\Game\Object\Skill\SkillManagerr</Filter>
     </ClCompile>
@@ -688,6 +676,39 @@
     <ClCompile Include="Source\Object\Skill\WhiteBlackSecond.cpp">
       <Filter>ソース ファイル\Game\Object\Skill\Skill\Secound</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\CaptureScene.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\ConvertChar.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\FileUtility.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\KeyboardOperation.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\MathDef.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\Menu.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\ModelAnimeLoader.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\FileLoader.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CreditScene.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\CaptureFactory.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\CreditFactroy.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
     <ClCompile Include="Source\Object\Skill\BlueSkill.cpp">
       <Filter>ソース ファイル\Game\Object\Skill\SkillSet\Blue</Filter>
     </ClCompile>
@@ -697,47 +718,8 @@
     <ClCompile Include="Source\Object\Skill\RedSkill.cpp">
       <Filter>ソース ファイル\Game\Object\Skill\SkillSet\Red</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Collision\Collision.cpp">
-      <Filter>ソース ファイル\Game\Collision</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\CaptureScene\CaptureScene.cpp">
-      <Filter>ソース ファイル\Game\Scene\Capture</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\CaptureScene\Menu.cpp">
-      <Filter>ソース ファイル\Game\Scene\Capture</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\Factory\CaptureFactory.cpp">
-      <Filter>ソース ファイル\Game\Scene\Capture\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\CreditScene.cpp">
-      <Filter>ソース ファイル\Game\Scene\Credit</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\Factory\CreditFactroy.cpp">
-      <Filter>ソース ファイル\Game\Scene\Credit\Factory</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Scene\CaptureScene\CaptureCamera.cpp">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\CaptureScene\ConvertChar.cpp">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\CaptureScene\FileLoader.cpp">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\CaptureScene\FileUtility.cpp">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Utility\FrameTimer.cpp">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\CaptureScene\KeyboardOperation.cpp">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\CaptureScene\MathDef.cpp">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\CaptureScene\ModelAnimeLoader.cpp">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1074,6 +1056,8 @@
     <ClInclude Include="Include\Scene\GameScene\StageCall.h">
       <Filter>ソース ファイル\Game\Scene\Game\StageCall</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Collision\Collision.h" />
+    <ClInclude Include="Include\Utility\FrameTimer.h" />
     <ClInclude Include="Include\Object\Skill\SkillDefine.h">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClInclude>
@@ -1098,6 +1082,17 @@
     <ClInclude Include="Include\Object\Skill\WhiteBlackSecond.h">
       <Filter>ソース ファイル\Game\Object\Skill\Skill\Secound</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Scene\CaptureScene\CaptureScene.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\ConvertChar.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\FileLoader.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\FileUtility.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\KeyboardOperation.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\MathDef.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\ModelAnimeLoader.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\Menu.h" />
+    <ClInclude Include="Include\Scene\Factory\CaptureFactory.h" />
+    <ClInclude Include="Include\Scene\Factory\CreditFactory.h" />
+    <ClInclude Include="Include\Scene\CreditScene.h" />
     <ClInclude Include="Include\Object\Skill\BlueSkill.h">
       <Filter>ソース ファイル\Game\Object\Skill\SkillSet\Blue</Filter>
     </ClInclude>
@@ -1107,48 +1102,7 @@
     <ClInclude Include="Include\Object\Skill\RedSkill.h">
       <Filter>ソース ファイル\Game\Object\Skill\SkillSet\Red</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Scene\CaptureScene\Menu.h">
-      <Filter>ソース ファイル\Game\Scene\Capture</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\CaptureScene\CaptureScene.h">
-      <Filter>ソース ファイル\Game\Scene\Capture</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\CreditScene.h">
-      <Filter>ソース ファイル\Game\Scene\Credit</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Collision\Collision.h">
-      <Filter>ソース ファイル\Game\Collision</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\Factory\CaptureFactory.h">
-      <Filter>ソース ファイル\Game\Scene\Capture\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\Factory\CreditFactory.h">
-      <Filter>ソース ファイル\Game\Scene\Credit\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\CaptureScene\CaptureCamera.h">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\CaptureScene\ConvertChar.h">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\CaptureScene\FileLoader.h">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\CaptureScene\FileUtility.h">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Utility\FrameTimer.h">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\CaptureScene\KeyboardOperation.h">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\CaptureScene\MathDef.h">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\CaptureScene\ModelAnimeLoader.h">
-      <Filter>ソース ファイル\Game\Scene\Capture\Utility</Filter>
-    </ClInclude>
+    <ClInclude Include="Include\Scene\CaptureScene\CaptureCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Resource\FbxSkinMeshShader.hlsl">
