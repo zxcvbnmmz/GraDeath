@@ -61,15 +61,6 @@ void PlayerController::Release ()
 
 }
 
-void PlayerController::Move(int _movex, int _movey){
-    //移動したい
-}
-
-void PlayerController::SetPos(int _posx, int _posy){
-    //ポジションをセットしたい
-    //    player->SetPosition(10.f,10.f);
-}
-
 void PlayerController::Idle(){
 
 	float angle;
@@ -118,12 +109,11 @@ void PlayerController::Walk(){
 	if (Keyboard::CheckKey(KC_RIGHT) == INPUT_PRESS){
 		pos.x += 3.0f;
 		player->AddForce(b2Vec2(10, 0));
-	}
-
-	if (Keyboard::CheckKey(KC_LEFT) == INPUT_PRESS){
-
+		return;
+	}else if (Keyboard::CheckKey(KC_LEFT) == INPUT_PRESS){
 		pos.x += 3.0f;
 		player->AddForce(b2Vec2(-10, 0));
+		return;
 	}
 
 	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){

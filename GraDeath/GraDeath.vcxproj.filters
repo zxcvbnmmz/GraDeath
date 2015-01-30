@@ -359,6 +359,9 @@
     <Filter Include="ソース ファイル\Game\Object\Skill\SkillSet\WhiteBlack">
       <UniqueIdentifier>{244d5271-cca1-480d-88c8-2e77e785ebfc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Other\FrameTimer">
+      <UniqueIdentifier>{f6a4f417-490d-4b31-9dc2-a131053b539b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -646,9 +649,6 @@
     <ClCompile Include="Source\Collision\Collision.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Utility\FrameTimer.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Manager\SkillManager.cpp">
       <Filter>ソース ファイル\Game\Object\Skill\SkillManagerr</Filter>
     </ClCompile>
@@ -666,6 +666,9 @@
     </ClCompile>
     <ClCompile Include="Source\Object\Skill\WhiteBlackSecond.cpp">
       <Filter>ソース ファイル\Game\Object\Skill\Skill\Secound</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\FrameTimer.cpp">
+      <Filter>ソース ファイル\Other\FrameTimer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1003,7 +1006,6 @@
       <Filter>ソース ファイル\Game\Scene\Game\StageCall</Filter>
     </ClInclude>
     <ClInclude Include="Include\Collision\Collision.h" />
-    <ClInclude Include="Include\Utility\FrameTimer.h" />
     <ClInclude Include="Include\Object\Skill\SkillDefine.h">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClInclude>
@@ -1027,6 +1029,9 @@
     </ClInclude>
     <ClInclude Include="Include\Object\Skill\WhiteBlackSecond.h">
       <Filter>ソース ファイル\Game\Object\Skill\Skill\Secound</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\FrameTimer.h">
+      <Filter>ソース ファイル\Other\FrameTimer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
