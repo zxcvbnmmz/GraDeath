@@ -359,8 +359,19 @@
     <Filter Include="ソース ファイル\Game\Object\Skill\SkillSet\WhiteBlack">
       <UniqueIdentifier>{244d5271-cca1-480d-88c8-2e77e785ebfc}</UniqueIdentifier>
     </Filter>
+<<<<<<< HEAD
+    <Filter Include="ソース ファイル\Game\Object\Skill\SkillSet\Blue">
+      <UniqueIdentifier>{b55bdb6d-7988-439f-9226-d18c970f9752}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Skill\SkillSet\Red">
+      <UniqueIdentifier>{f1e664f4-37d1-45bb-8861-4b7487839449}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Object\Skill\SkillSet\Yellow">
+      <UniqueIdentifier>{485cdbfa-0e58-48bf-b2e8-5c9b227d4b7b}</UniqueIdentifier>
+=======
     <Filter Include="ソース ファイル\Other\FrameTimer">
       <UniqueIdentifier>{f6a4f417-490d-4b31-9dc2-a131053b539b}</UniqueIdentifier>
+>>>>>>> Develop
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -649,6 +660,12 @@
     <ClCompile Include="Source\Collision\Collision.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="Source\Utility\FrameTimer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+=======
+>>>>>>> Develop
     <ClCompile Include="Source\Manager\SkillManager.cpp">
       <Filter>ソース ファイル\Game\Object\Skill\SkillManagerr</Filter>
     </ClCompile>
@@ -667,8 +684,55 @@
     <ClCompile Include="Source\Object\Skill\WhiteBlackSecond.cpp">
       <Filter>ソース ファイル\Game\Object\Skill\Skill\Secound</Filter>
     </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="Source\Scene\CaptureScene\CaptureScene.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\ConvertChar.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\FileUtility.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\KeyboardOperation.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\MathDef.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\Menu.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\ModelAnimeLoader.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\FileLoader.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CreditScene.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\CaptureFactory.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\CreditFactroy.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\BlueSkill.cpp">
+      <Filter>ソース ファイル\Game\Object\Skill\SkillSet\Blue</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\YellowSkill.cpp">
+      <Filter>ソース ファイル\Game\Object\Skill\SkillSet\Yellow</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\RedSkill.cpp">
+      <Filter>ソース ファイル\Game\Object\Skill\SkillSet\Red</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\CaptureCamera.cpp">
+      <Filter>ソース ファイル</Filter>
+=======
     <ClCompile Include="Source\Utility\FrameTimer.cpp">
       <Filter>ソース ファイル\Other\FrameTimer</Filter>
+>>>>>>> Develop
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1006,6 +1070,10 @@
       <Filter>ソース ファイル\Game\Scene\Game\StageCall</Filter>
     </ClInclude>
     <ClInclude Include="Include\Collision\Collision.h" />
+<<<<<<< HEAD
+    <ClInclude Include="Include\Utility\FrameTimer.h" />
+=======
+>>>>>>> Develop
     <ClInclude Include="Include\Object\Skill\SkillDefine.h">
       <Filter>ソース ファイル\Game\Object\Skill</Filter>
     </ClInclude>
@@ -1030,9 +1098,33 @@
     <ClInclude Include="Include\Object\Skill\WhiteBlackSecond.h">
       <Filter>ソース ファイル\Game\Object\Skill\Skill\Secound</Filter>
     </ClInclude>
+<<<<<<< HEAD
+    <ClInclude Include="Include\Scene\CaptureScene\CaptureScene.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\ConvertChar.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\FileLoader.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\FileUtility.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\KeyboardOperation.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\MathDef.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\ModelAnimeLoader.h" />
+    <ClInclude Include="Include\Scene\CaptureScene\Menu.h" />
+    <ClInclude Include="Include\Scene\Factory\CaptureFactory.h" />
+    <ClInclude Include="Include\Scene\Factory\CreditFactory.h" />
+    <ClInclude Include="Include\Scene\CreditScene.h" />
+    <ClInclude Include="Include\Object\Skill\BlueSkill.h">
+      <Filter>ソース ファイル\Game\Object\Skill\SkillSet\Blue</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\YellowSkill.h">
+      <Filter>ソース ファイル\Game\Object\Skill\SkillSet\Yellow</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\RedSkill.h">
+      <Filter>ソース ファイル\Game\Object\Skill\SkillSet\Red</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CaptureScene\CaptureCamera.h" />
+=======
     <ClInclude Include="Include\Utility\FrameTimer.h">
       <Filter>ソース ファイル\Other\FrameTimer</Filter>
     </ClInclude>
+>>>>>>> Develop
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Resource\FbxSkinMeshShader.hlsl">

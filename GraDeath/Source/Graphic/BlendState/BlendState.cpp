@@ -24,6 +24,7 @@ public:
 	CComPtr<ID3D10BlendState> lenear;
 };
 
+
 namespace {
 	BlendState::Pimpl pimpl;
 }

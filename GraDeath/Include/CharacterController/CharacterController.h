@@ -30,8 +30,11 @@ public:
 
 	virtual void Release() = 0;
 
+<<<<<<< HEAD
+=======
     virtual void Move(int _movex, int _movey) = 0;
     virtual void SetPos(int _posx, int _posy) = 0;
+>>>>>>> Develop
 protected:
 	int padID;
 	bool enable;

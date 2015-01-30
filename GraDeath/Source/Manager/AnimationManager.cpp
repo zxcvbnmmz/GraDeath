@@ -13,6 +13,7 @@ bool AnimationManager::Create(unsigned int playerNum, Player* _player){
 	return true;
 }
 
+
 void AnimationManager::ChangeAction(PLAYER_ACTION _action, bool _loop){
 	currentAction = _action;
 	loop = _loop;

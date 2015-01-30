@@ -20,6 +20,7 @@ public:
 	
 	bool Play();
 	void Stop();
+
 	void SetVoume(float volume);
 	void SetPitch(float pitch);
 	float GetPlayingTime();
