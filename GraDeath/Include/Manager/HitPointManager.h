@@ -9,8 +9,7 @@ namespace HitPointManager
 	void Init ( int _num, Player* _player, float _hp );
 
 	// ƒ_ƒ[ƒW
-	void HitDamage(int _num, float _hit);
-	void HitDamage(Player* _player, float _hit);
+	void HitDamage ( int _num, float _hit );
 
 	// HP‚Ìæ“¾
 	float GetHitPoint ( int _num );

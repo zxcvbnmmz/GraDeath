@@ -14,14 +14,13 @@ namespace{
 	const static float PTM_RATIO = 32.0f;
 	std::vector<Sprite*> sprites;
 	std::vector<Sprite*> bgSprite;
-    std::vector<std::shared_ptr<Sprite>> sprite_animes;
-	std::shared_ptr<Sprite> sprite_anime;
+    std::vector<Sprite*> sprite_animes;
+	Sprite* sprite_anime = new Sprite;
     float HP = 20.f + rand() % 10;
     bool Stageflg = false;
     int StageCoolTime = 0;
     int count = 0;
     int playernum = 0;
-	int stageID = 0;
 }
 
 void CreateWorldEdge();
@@ -31,17 +30,14 @@ b2Vec2 StageGetSize();
 
 namespace{
 	b2Body* screenEdgeBody;
-}
-
-void Stage::SetStageID ( int stageID )
-{
-	stageID = stageID;
+	b2Body* breakableStage;
+	b2Body* unbreakableStage;
 }
 
 bool Stage::Initialize(int stageID){
 	CreateWorldEdge();
 
-	CreateEachStage();
+	CreateEachStage(stageID);
 
 	return true;
 }
@@ -89,12 +85,9 @@ void Stage::Release(){
 		Util::safeDelete ( obj );
 	for ( auto& bg : bgSprite )
 		Util::safeDelete ( bg );
-	for (auto& anime : sprite_animes)
-		anime.reset();
+    for (auto& anime : sprite_animes)
+        Util::safeDelete(anime);
 	bgSprite.clear();
-	sprites.clear();
-	sprite_animes.clear();
-	sprite_anime.reset();
 }
 
 void CreateWorldEdge(){
@@ -140,35 +133,35 @@ void CreateWorldEdge(){
 }
 
 void CreateEachStage(int stageLevel){
-	/*
+    /*
 
-	int level;
-	struct StageFixtures{
-		float pos[2][8];
-		int count
-	};
+    int level;
+    struct StageFixtures{
+    float pos[2][8];
+    int count
+    };
 
-	std::list<StageFixture>& stageObjects = StageLoader::GetFixture();
+    std::list<StageFixture>& stageObjects = StageLoader::GetFixture();
 
 
-	
-	for (int i = 0; i < 100; ++i){
-		b2PolygonShape polygon;
-		polygon.Set(b2Vec2(pos[0][i],pos[1][i]);
-	}
-	*/
 
-	int spriteNum = 1;
+    for (int i = 0; i < 100; ++i){
+    b2PolygonShape polygon;
+    polygon.Set(b2Vec2(pos[0][i],pos[1][i]);
+    }
+    */
 
-	for (int i = 0; i < spriteNum; ++i){
+    switch (stageLevel)
+    {
+    default:
         Sprite* sprite = new Sprite;
 
         /*各種パラメータの設定*/
-		sprite->Create ( L"Resource/Scene/Game/Stage/Stage.png" );
-		D3DXVECTOR2 pos ( 0, 580 );
-		sprite->SetPosition ( pos );
+        sprite->Create(L"Resource/Scene/Game/Stage/Stage.png");
+        D3DXVECTOR2 pos(0, 580);
+        sprite->SetPosition(pos);
         //@ x 1366* y 768
-        sprite->SetTrimming (0,575,1366,193);
+        sprite->SetTrimming(0, 575, 1366, 193);
         D2D1_SIZE_F size;
         size.height = 193.f;
         size.width = 1366.f;
@@ -176,7 +169,6 @@ void CreateEachStage(int stageLevel){
         sprites.push_back(sprite);
 
         //アニメーション用
-		sprite_anime.reset(new Sprite);
         sprite_anime->Create(L"Resource/Scene/Game/Stage/Stage.png");
         D3DXVECTOR2 animepos(0, 0);
         sprite_anime->SetPosition(animepos);
@@ -187,19 +179,20 @@ void CreateEachStage(int stageLevel){
         anime_size.width = 1366.f;
         sprite_anime->SetSize(anime_size);
         sprite_animes.push_back(sprite_anime);
-	}
 
-	Sprite* sprite1 = new Sprite;
-	sprite1->Create ( L"Resource/Scene/Game/Stage/bg01.png" );
-	bgSprite.push_back ( sprite1 );
-	Sprite* sprite2 = new Sprite;
-	sprite2->Create ( L"Resource/Scene/Game/Stage/bg02.png" );
-	bgSprite.push_back ( sprite2 );
-	Sprite* sprite3 = new Sprite;
-	sprite3->Create ( L"Resource/Scene/Game/Stage/bg03.png" );
-	bgSprite.push_back ( sprite3 );
-	for ( auto& bg : bgSprite )
-		bg->SetPosition ( 0, 0 );
+        Sprite* sprite1 = new Sprite;
+        sprite1->Create(L"Resource/Scene/Game/Stage/bg01.png");
+        bgSprite.push_back(sprite1);
+        Sprite* sprite2 = new Sprite;
+        sprite2->Create(L"Resource/Scene/Game/Stage/bg02.png");
+        bgSprite.push_back(sprite2);
+        Sprite* sprite3 = new Sprite;
+        sprite3->Create(L"Resource/Scene/Game/Stage/bg03.png");
+        bgSprite.push_back(sprite3);
+        for (auto& bg : bgSprite)
+            bg->SetPosition(0, 0);
+        break;
+    }
 }
 
 b2Vec2 StageGetPos(){
@@ -242,6 +235,15 @@ bool Stage::GetStageStatus(){
     return true;
 }
 
-int StageBrakePlayerNum(){
+int Stage::StageBrakePlayerNum(){
     return playernum;
 }
+
+b2Body* Stage::GetBreakbleStage(){
+	return breakableStage;
+}
+
+b2Body* Stage::GetUnbreakbleStage(){
+	return unbreakableStage;
+}
+

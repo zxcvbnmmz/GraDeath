@@ -15,33 +15,17 @@ namespace HitPointManager
 	{
 		hitPoint[ _num ].Init ( _player );
 		hitPoint[ _num ].SetHP ( _hp );
-		hitPoint[ _num ].SetRank(1);
 		rank = 4;
 	}
 
 	// É_ÉÅÅ[ÉW
-	void HitDamage(int _num, float _hit)
+	void HitDamage ( int _num, float _hit )
 	{
-		hitPoint[_num].IsDamage(_hit);
-		if (hitPoint[_num].IsDead())
+		hitPoint[ _num ].IsDamage ( _hit );
+		if ( hitPoint[ _num ].IsDead () )
 		{
-			hitPoint[_num].SetRank(rank);
+			hitPoint[ _num ].SetRank ( rank );
 			rank--;
-		}
-	}
-
-	void HitDamage(Player* _player, float _hit)
-	{
-		for (int i = 0; i < 4; ++i){
-			if (hitPoint[i].IsCompared(_player)){
-				hitPoint[i].IsDamage(_hit);
-				if (hitPoint[i].IsDead())
-				{
-					hitPoint[i].SetRank(rank);
-					rank--;
-				}
-				break;
-			}
 		}
 	}
 

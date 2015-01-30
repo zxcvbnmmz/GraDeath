@@ -30,6 +30,8 @@ public:
 
 	virtual void Release() = 0;
 
+    virtual void Move(int _movex, int _movey) = 0;
+    virtual void SetPos(int _posx, int _posy) = 0;
 protected:
 	int padID;
 	bool enable;
@@ -47,7 +49,9 @@ protected:
 	virtual void Walk(){}
 	virtual void Attack(){}
 	virtual void Damage(){}
-	virtual void Jump(){}
+	virtual void Jump_Rise(){}
+	virtual void Jump_Land(){}
+	virtual void Skill(){}
 };
 
 #endif

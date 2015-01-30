@@ -55,7 +55,7 @@ namespace Utility{
 		// %s%s%03dはファイルパス+ファイル名+3桁の使われていない番号を連結したもの
 		unsigned int n = 0;
 		for (; n < maxFileIndex; ++n){
-			wsprintf(dstFileName, _T("%s%s%03d.png"), filePath, fileHedder, n);
+			wsprintf(dstFileName, _T("%s%s%03d.jpg"), filePath, fileHedder, n);
 			if (PathFileExists(dstFileName) == false){
 				break;
 			}
@@ -77,7 +77,7 @@ namespace Utility{
 		DXGI_SWAP_CHAIN_DESC desc;
 		D3D::SwapChain::GetDesc(&desc);
 		if (desc.SampleDesc.Count == 1 && desc.SampleDesc.Quality == 0){
-			D3DX10SaveTextureToFile(backBuffer, D3DX10_IFF_PNG, dstFileName);
+			D3DX10SaveTextureToFile(backBuffer, D3DX10_IFF_JPG, dstFileName);
 		}
 		else{
 			ID3D10Texture2D* texture = nullptr;

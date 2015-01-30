@@ -35,15 +35,12 @@ void Skill::Update ()
 		auto nextCell = currentCell + 1;
 		if ( nextCell == animSkill.cellDatas[ nowAnime ].end () )
 		{
+			nowAnime = ( nowAnime + 1 ) % animSkill.cellDatas.size ();
+			currentCell = animSkill.cellDatas[ nowAnime ].begin ();
 			if ( nowAnime == ( animSkill.cellDatas.size () - 1 ) )
 			{
 				nowAnime = 0;
 				skillFlg = false;
-				currentCell = animSkill.cellDatas[ nowAnime ].begin ();
-			}
-			else
-			{
-				nowAnime = ( nowAnime + 1 ) % animSkill.cellDatas.size ();
 				currentCell = animSkill.cellDatas[ nowAnime ].begin ();
 			}
 		}
@@ -96,12 +93,6 @@ void Skill::SkillOn ()
 void Skill::SkillOff ()
 {
 	skillFlg = false;
-}
-
-void Skill::SetSize ( const D3DXVECTOR2& _pos )
-{
-	skillAnim->SetScale ( 1, 1 );
-	skillAnim->SetSize ( _pos.x, _pos.y );
 }
 
 AnimationData& Skill::GetAnimationData ()
