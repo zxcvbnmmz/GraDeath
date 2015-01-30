@@ -35,9 +35,12 @@ public:
 	void Init (int padID, Player* _player);
 	void Draw();
 
+<<<<<<< HEAD
+=======
 	void Move(int _movex, int _movey){}
 	void SetPos(int _posx, int _posy){}
 
+>>>>>>> Develop
 	void Release ();
 
 private:

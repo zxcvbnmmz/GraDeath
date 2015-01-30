@@ -26,6 +26,7 @@ void BGM::BGMPimpl::SetVolume(float volume){
 	(*sourceVoice)->SetVolume(volume);
 }
 
+
 void BGM::BGMPimpl::SetPitch(float pitch){
 	(*sourceVoice)->SetFrequencyRatio(pitch);
 }
