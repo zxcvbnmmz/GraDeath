@@ -43,6 +43,12 @@ void Skill::Update ()
 				skillFlg = false;
 				currentCell = animSkill.cellDatas[ nowAnime ].begin ();
 			}
+            else
+            {
+                nowAnime = (nowAnime + 1) % animSkill.cellDatas.size();
+                currentCell = animSkill.cellDatas[nowAnime].begin();
+            }
+
 		}
 		else
 		{
