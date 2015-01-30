@@ -4,6 +4,8 @@
 #include "Scene/Factory/CharacterSelectFactory.h"
 #include "Input/Gamepad.h"
 #include "Input\Keyboard.h"
+#include "Manager/HitpointManager.h"
+
 ResultScene::ResultScene(){
 	sRank[0].Create(L"Resource/Scene/Result/1st.png");
 	sRank[1].Create(L"Resource/Scene/Result/2nd.png");

@@ -86,4 +86,17 @@ namespace HitPointManager
 		return temp;
 	}
 
+	int GetPlayerRanking(int num){
+		if (hitPoint[num].IsEnabled()){
+			return hitPoint[num].GetRank();
+		}
+
+		return -1;
+	}
+
+	void Release(){
+		for (int i = 0; i < 4; ++i){
+			hitPoint[i].Release();
+		}
+	}
 }
