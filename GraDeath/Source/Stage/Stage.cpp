@@ -14,8 +14,8 @@ namespace{
 	const static float PTM_RATIO = 32.0f;
 	std::vector<Sprite*> sprites;
 	std::vector<Sprite*> bgSprite;
-    std::vector<Sprite*> sprite_animes;
-	Sprite* sprite_anime = new Sprite;
+    std::vector<std::shared_ptr<Sprite>> sprite_animes;
+	std::shared_ptr<Sprite> sprite_anime;
     float HP = 20.f + rand() % 10;
     bool Stageflg = false;
     int StageCoolTime = 0;
@@ -85,8 +85,10 @@ void Stage::Release(){
 		Util::safeDelete ( obj );
 	for ( auto& bg : bgSprite )
 		Util::safeDelete ( bg );
-    for (auto& anime : sprite_animes)
-        Util::safeDelete(anime);
+	for (auto& anime : sprite_animes)
+		anime.reset();
+	sprites.clear();
+	sprite_animes.clear();
 	bgSprite.clear();
 }
 
@@ -169,6 +171,7 @@ void CreateEachStage(int stageLevel){
         sprites.push_back(sprite);
 
         //アニメーション用
+		sprite_anime.reset(new Sprite);
         sprite_anime->Create(L"Resource/Scene/Game/Stage/Stage.png");
         D3DXVECTOR2 animepos(0, 0);
         sprite_anime->SetPosition(animepos);

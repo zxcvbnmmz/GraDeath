@@ -60,7 +60,12 @@ bool Collision::CollideOtherFloors(Player* player, b2Body* unbreakableStage){
 			// b2TestOverlapはシェイプとシェイプが衝突しているか判定する関数
 			bool touching = b2TestOverlap(shapeA, 0, shapeB, 0, xfA, stageTrans);
 			if (touching){
+				b2ContactListener l;
+				b2ContactManager m;
+				m.m_contactListener = &l;
+
 				b2Manifold manifold;
+				
 
 				return true;
 				
