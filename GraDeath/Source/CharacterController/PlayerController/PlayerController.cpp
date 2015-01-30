@@ -65,12 +65,12 @@ void PlayerController::Idle(){
 
 	float angle;
 	if (GamePad::getLStickState((PAD_NUM)padID, angle)){
-		currentAction = ACTION_WALK;
+		ChangeAction(ACTION_WALK, true);
 	}
 	else if ((GamePad::getGamePadState((PAD_NUM)padID, BUTTON_B) == INPUT_PUSH ||
 		  Keyboard::CheckKey(KC_A) == INPUT_PUSH ) &&
 		  SkillManager::GetSkillUse ( padID, (SKILL_ID)0 ) ){
-		ChangeAction(ACTION_ATTACK, false);
+		ChangeAction(ACTION_SKILL, false);
 		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), dirFlg );
 	}
 	else if ( ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_B ) == INPUT_PUSH ||
@@ -81,26 +81,25 @@ void PlayerController::Idle(){
 	}
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH){
 		player->SetAngularVelocity(b2Vec2(0, -2000));
-		currentAction = ACTION_JUMP;
+		ChangeAction(ACTION_JUMP_RISE, false);
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
-		currentAction = ACTION_WALK;
+		ChangeAction(ACTION_WALK, true);
 		dirFlg = 0;
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
-		currentAction = ACTION_WALK;
+		ChangeAction(ACTION_WALK, true);
 		dirFlg = 1;
 	}
-	//count = ( count + 1 ) % 6;
-	//std::vector< std::shared_ptr< CellData > > cellData = _player->animData.cellDatas[ 0 ];
-	//cellData[ 0 ]->animFrame;
 
 	if (Keyboard::CheckKey(KC_RIGHT) == INPUT_PRESS || Keyboard::CheckKey(KC_LEFT) == INPUT_PRESS){
-		currentAction = ACTION_WALK;
+		ChangeAction(ACTION_WALK, true);
 	}
 }
 
-void PlayerController::Run(){}
+void PlayerController::Run(){
+
+}
 
 void PlayerController::Walk(){
 	if (padID != 0){
@@ -125,11 +124,11 @@ void PlayerController::Walk(){
 		pos.x -= 4.0f;
 	}
 	else{
-		currentAction = ACTION_IDLE;
+		ChangeAction(ACTION_IDLE, true);
 	}
 
 	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_A ) == INPUT_PUSH ){
-		currentAction = ACTION_JUMP;
+		ChangeAction(ACTION_JUMP_RISE,false);
 	}
 }
 
@@ -141,11 +140,23 @@ void PlayerController::Attack(){
 
 void PlayerController::Damage(){}
 
-void PlayerController::Jump(){
-	ChangeAction(ACTION_IDLE, true);
+void PlayerController::Jump_Rise(){
+	if (currentAnimState == FINISHED){
+		ChangeAction(ACTION_JUMP_LAND, true);
+	}
 }
 
+void PlayerController::Jump_Land(){
+	if (currentAnimState == FINISHED){
+		ChangeAction(ACTION_IDLE, true);
+	}
+}
 
+void PlayerController::Skill(){
+	if (currentAnimState == FINISHED){
+		ChangeAction(ACTION_IDLE, false);
+	}
+}
 
 
 

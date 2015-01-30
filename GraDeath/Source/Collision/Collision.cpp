@@ -56,3 +56,35 @@ bool Collision::Collide(Player* playerA, Player* playerB){
 	return false;
 }
 
+bool Collision::CollideToStage(Player* body, b2Body* breakableStage){
+	return false;
+}
+
+bool Collision::CollideOtherFloors(Player* player, b2Body* unbreakableStage){	
+	b2Body* playerBody = player->GetBody();
+
+	const b2Transform& xfA = playerBody->GetTransform();
+	const b2Transform& stageTrans = unbreakableStage->GetTransform();
+
+	b2Fixture* fixtureA = playerBody->GetFixtureList();
+	while (fixtureA != NULL){
+		const b2Shape* shapeA = fixtureA->GetShape();
+		b2Fixture* fixtureB = unbreakableStage->GetFixtureList();
+
+		while (fixtureB != NULL){
+			const b2Shape* shapeB = fixtureB->GetShape();
+
+			// b2TestOverlapはシェイプとシェイプが衝突しているか判定する関数
+			bool touching = b2TestOverlap(shapeA, 0, shapeB, 0, xfA, stageTrans);
+			if (touching){
+				b2Manifold manifold;
+
+				return true;
+				
+			}
+			fixtureB = fixtureB->GetNext();
+		}
+		fixtureA = fixtureA->GetNext();
+	}
+	return false;
+}

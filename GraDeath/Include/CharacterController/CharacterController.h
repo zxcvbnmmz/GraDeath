@@ -47,7 +47,9 @@ protected:
 	virtual void Walk(){}
 	virtual void Attack(){}
 	virtual void Damage(){}
-	virtual void Jump(){}
+	virtual void Jump_Rise(){}
+	virtual void Jump_Land(){}
+	virtual void Skill(){}
 };
 
 #endif

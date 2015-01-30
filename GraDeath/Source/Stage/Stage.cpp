@@ -31,6 +31,8 @@ b2Vec2 StageGetSize();
 
 namespace{
 	b2Body* screenEdgeBody;
+	b2Body* breakableStage;
+	b2Body* unbreakableStage;
 }
 
 void Stage::SetStageID ( int stageID )
@@ -245,3 +247,12 @@ bool Stage::GetStageStatus(){
 int StageBrakePlayerNum(){
     return playernum;
 }
+
+b2Body* Stage::GetBreakbleStage(){
+	return breakableStage;
+}
+
+b2Body* Stage::GetUnbreakbleStage(){
+	return unbreakableStage;
+}
+
