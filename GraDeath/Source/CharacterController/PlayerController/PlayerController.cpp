@@ -61,6 +61,15 @@ void PlayerController::Release ()
 
 }
 
+void PlayerController::Move(int _movex, int _movey){
+    //移動したい
+}
+
+void PlayerController::SetPos(int _posx, int _posy){
+    //ポジションをセットしたい
+    //    player->SetPosition(10.f,10.f);
+}
+
 void PlayerController::Idle(){
 
 	float angle;
