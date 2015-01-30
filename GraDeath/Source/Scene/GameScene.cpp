@@ -46,15 +46,15 @@ GameScene::~GameScene ()
 SCENE_STATUS GameScene::Execute(){
 
 	int status = (int)(*executes[currentState])();
-//	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS 
-//#ifdef _DEBUG
-//		|| Keyboard::CheckKey(KC_R) == INPUT_PUSH
-//#endif
-//		){
-//		ResultFactory rf;
-//		SceneFactory::Reserve(&rf);
-//		return END_PROCESS;
-//	}
+	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS 
+#ifdef _DEBUG
+		|| Keyboard::CheckKey(KC_R) == INPUT_PUSH
+#endif
+		){
+		ResultFactory rf;
+		SceneFactory::Reserve(&rf);
+		return END_PROCESS;
+	}
 
 	return (SCENE_STATUS)(status);
 }
