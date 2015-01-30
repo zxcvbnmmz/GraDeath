@@ -17,6 +17,8 @@ TitleScene::TitleScene(){
 	sExit.Create(L"Resource/Texture/Exit.png");
 	sVector.Create(L"Resource/Texture/Vector.png");
 
+	bgm = Sound::CreateBGM("Resource/BGM/GDtitle.wav");
+
 	start_pos = D3DXVECTOR2(700, 200);
 	credit_pos = D3DXVECTOR2(800, 400);
 	exit_pos = D3DXVECTOR2(800, 600);
@@ -35,6 +37,8 @@ TitleScene::TitleScene(){
 	currentState = SELECT;
 	fade.SetAlpha(0);
 	timer.Set(60);
+
+	bgm->Play();
 }
 
 TitleScene::~TitleScene(){
@@ -172,6 +176,7 @@ int TitleScene::ExecuteFadeOut(){
 				break;
 			}
 			}
+			bgm->Stop();
 			return END_PROCESS;
 		}
 	}

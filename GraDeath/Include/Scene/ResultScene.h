@@ -12,8 +12,8 @@ public:
 	void Draw();
 
 private:
-	Sprite sRank[4];
-	D3DXVECTOR2 pos_rank[4], move_rank[4];
+	Sprite sRank[4], sChara[4], sPlayer[4], sFrame;
+	D3DXVECTOR2 pRank[4], pMove[4], pPlayer, pChara;
 	float alpha[4];
 	int timer;
 };

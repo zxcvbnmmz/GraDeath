@@ -34,7 +34,7 @@ private:
 		FADE_IN,
 		STAGE_CALL,
 		BUTTLE,
-		SURVIVE_ONE,
+		//SURVIVE_ONE,
 		END_CALL,
 	};
 	CURRENT_GAME_STATE currentState;
