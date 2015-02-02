@@ -1,7 +1,10 @@
 #include "Collision/Collision.h"
 #include "World/World.h"
 #include <Box2D\Box2D.h>
+#include "Object/ObjectMask.h"
 #include "Object/Player.h"
+#include "Object/CollisionShape.h"
+#include "Manager/HitpointManager.h"
 
 bool Collision::Collide(Player* playerA, Player* playerB){
 	b2Body* bodyA = playerA->GetBody();
@@ -27,7 +30,21 @@ bool Collision::Collide(Player* playerA, Player* playerB){
 				// b2TestOverlapはシェイプとシェイプが衝突しているか判定する関数
 				bool touching = b2TestOverlap(shapeA, 0, shapeB, 0, xfA, xfB);
 				if (touching){
+					Player* damagedPlayer;
+					CollisionShape* shape;
+					float strength = 0;
 
+					if (filterA.categoryBits & MASK_COL_ATK){
+						shape = (CollisionShape*)fixtureA->GetUserData();
+						damagedPlayer = playerB;
+					}
+					else{
+						shape = (CollisionShape*)fixtureB->GetUserData();
+						damagedPlayer = playerA;
+					}
+
+					strength = shape->GetStrength();
+					HitPointManager::HitDamage(damagedPlayer, strength);
 
 					return true;
 				}

@@ -12,30 +12,30 @@
 
 
 Player::Player(){
-<<<<<<< HEAD
-=======
+
+
 	sprite = shared_ptr<Sprite> (new Sprite);
->>>>>>> Develop
+
 }
 
 Player::~Player(){
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> Develop
+
+
+
 bool Player::Init(const char* fileName, const b2Vec2& bodyPos){
 
 	// ‘fŞ‚ª—ˆ‚½‚ç‚±‚Ìˆ—‚ğ•ÏX
 	WCHAR temp[80];
-<<<<<<< HEAD
+
 	sprite = shared_ptr<Sprite>(new Sprite);
 	sprite->Create(Utility::ConvertToWChar(temp, fileName));
-=======
+
 	sprite.reset(new Sprite);
 	sprite->Create( Utility::ConvertToWChar(temp,fileName));
->>>>>>> Develop
+
 
 	int x, y;
 	System::Window::GetWindowSize(&x, &y);
