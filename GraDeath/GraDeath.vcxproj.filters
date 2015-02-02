@@ -338,6 +338,9 @@
     <ClCompile Include="Source\Scene\Factory\CaptureFactory.cpp">
       <Filter>Game\Scene\Capture</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\CreditFactroy.cpp">
+      <Filter>Game\Scene\Credit</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Manager\AnimationManager.h">
@@ -731,6 +734,9 @@
       <Filter>Game\Scene\Capture</Filter>
     </ClInclude>
     <ClInclude Include="Include\Scene\CreditScene.h">
+      <Filter>Game\Scene\Credit</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Factory\CreditFactory.h">
       <Filter>Game\Scene\Credit</Filter>
     </ClInclude>
   </ItemGroup>
