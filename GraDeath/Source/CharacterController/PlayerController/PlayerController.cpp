@@ -70,13 +70,13 @@ void PlayerController::Idle(){
 	else if ((GamePad::getGamePadState((PAD_NUM)padID, BUTTON_B) == INPUT_PUSH ||
 		  Keyboard::CheckKey(KC_A) == INPUT_PUSH ) &&
 		  SkillManager::GetSkillUse ( padID, (SKILL_ID)0 ) ){
-		ChangeAction(ACTION_SKILL, false);
+		//ChangeAction(ACTION_SKILL, false);
 		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), dirFlg );
 	}
 	else if ( ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_B ) == INPUT_PUSH ||
 		Keyboard::CheckKey ( KC_S ) == INPUT_PUSH ) &&
 		SkillManager::GetSkillUse ( padID, ( SKILL_ID )1 ) ){
-		ChangeAction ( ACTION_ATTACK, false );
+		//ChangeAction ( ACTION_ATTACK, false );
 		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_SECOND, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), dirFlg );
 	}
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH){

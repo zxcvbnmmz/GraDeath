@@ -35,12 +35,17 @@ void Skill::Update ()
 		auto nextCell = currentCell + 1;
 		if ( nextCell == animSkill.cellDatas[ nowAnime ].end () )
 		{
-			nowAnime = ( nowAnime + 1 ) % animSkill.cellDatas.size ();
+			//nowAnime = ( nowAnime + 1 ) % animSkill.cellDatas.size ();
 			currentCell = animSkill.cellDatas[ nowAnime ].begin ();
 			if ( nowAnime == ( animSkill.cellDatas.size () - 1 ) )
 			{
 				nowAnime = 0;
 				skillFlg = false;
+				currentCell = animSkill.cellDatas[ nowAnime ].begin ();
+			}
+			else
+			{
+				nowAnime++;
 				currentCell = animSkill.cellDatas[ nowAnime ].begin ();
 			}
 		}
