@@ -101,6 +101,13 @@ void PlayerController::Run(){
 
 }
 
+void PlayerController::Move(int _movex, int _movey){
+    pos.y += _movey;
+    player->AddForce(b2Vec2(_movex,_movey));
+}
+void PlayerController::SetPos(int _posx, int _posy){
+}
+
 void PlayerController::Walk(){
 	if (padID != 0){
 		return;

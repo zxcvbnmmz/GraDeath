@@ -91,7 +91,7 @@ int GameScene::ExecuteButtle(){
         SkillManager::Update();
     }
     else{
-        PlayerManager::AllPlayerMove(10, 10);
+        PlayerManager::AllPlayerMove(100, 100);
         PlayerManager::OnPlayerPos(1, 300, 300);
 //        PlayerManager::OnPlayerPos(Stage::StageBrakePlayerNum(),300,300);
     }
