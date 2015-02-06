@@ -31,6 +31,7 @@ public:
 	virtual void Release() = 0;
 
 
+	PLAYER_ACTION GetCurrentAction();
 
     virtual void SetPos(int _posx, int _posy) = 0;
 	void ChangeAction(PLAYER_ACTION newAction, bool loop);

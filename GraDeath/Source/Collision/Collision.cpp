@@ -60,12 +60,18 @@ bool Collision::Collide(Player* playerA, Player* playerB){
 	return false;
 }
 
-bool Collision::CollideToStage(Player* body, b2Body* breakableStage){
+bool Collision::CollideToStage(Player* body, b2Body* stage, CharacterController* controller){
+	CollideFloor(body, stage, controller);
+
 	return false;
 }
 
-bool Collision::CollideOtherFloors(Player* player, b2Body* unbreakableStage, CharacterController* controller){
+bool Collision::CollideFloor(Player* player, b2Body* unbreakableStage, CharacterController* controller){
 	assert(controller != nullptr);
+
+	if (controller->GetCurrentAction() != ACTION_JUMP_FALL){
+		return false;
+	}
 
 	b2Body* playerBody = player->GetBody();
 
@@ -108,7 +114,7 @@ bool Collision::CollideOtherFloors(Player* player, b2Body* unbreakableStage, Cha
 					}
 				}
 
-				if (abs(manifold.localNormal.y) > 0.5 && xfA.p.y < stageTrans.p.y){
+				if (abs(manifold.localNormal.y) > 0.5 && player->GetBody()->GetLinearVelocity().y > 10){
 					controller->ChangeAction(ACTION_JUMP_LAND, false);
 				}
 
@@ -122,7 +128,7 @@ bool Collision::CollideOtherFloors(Player* player, b2Body* unbreakableStage, Cha
 	return false;
 }
 
-bool Collision::CollideToSkill(Player* player){
+bool Collision::CollideSkill(Player* player, Skill* skill){
 
 	return false;
 }
