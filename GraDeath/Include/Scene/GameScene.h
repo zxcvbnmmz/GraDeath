@@ -4,7 +4,6 @@
 #include "Scene.h"
 #include "World/DebugDrawer.h"
 #include "Scene/GameScene/StageCall.h"
-#include "Sound/BGM/BGM.h"
 
 class GameScene : public Scene{
 public:
@@ -42,8 +41,6 @@ private:
 	DefaultDebugDrawer drawer;
 
 	int stageTimer;
-
-	BGM bgm;
 };
 
 

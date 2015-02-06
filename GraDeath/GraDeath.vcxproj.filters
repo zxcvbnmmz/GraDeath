@@ -92,6 +92,9 @@
     <ClCompile Include="Source\Manager\SkillManager.cpp">
       <Filter>Game\Object\Skill</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Object\Skill\SkillState.cpp">
+      <Filter>Game\Object\Skill</Filter>
+    </ClCompile>
     <ClCompile Include="Source\Scene\TitleScene.cpp">
       <Filter>Game\Scene\Title</Filter>
     </ClCompile>
@@ -160,6 +163,12 @@
     </ClCompile>
     <ClCompile Include="Source\Scene\StageSelectScene.cpp">
       <Filter>Game\Scene\StageSelect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\WhiteBlackFirstSkill.cpp">
+      <Filter>Game\Object\Skill\WhiteBlack</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\WhiteBlackSecond.cpp">
+      <Filter>Game\Object\Skill\WhiteBlack</Filter>
     </ClCompile>
     <ClCompile Include="Source\Object\Skill\WhiteBlackSkill.cpp">
       <Filter>Game\Object\Skill\WhiteBlack</Filter>
@@ -272,9 +281,6 @@
     <ClCompile Include="Source\Graphic\RenderTarget\RenderTarget.cpp">
       <Filter>Library\Graphics\D3D\RenderTarget</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp">
-      <Filter>Game\Scene\StageSelect</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor.cpp">
       <Filter>Game\Scene\StageSelect\Cursor</Filter>
     </ClCompile>
@@ -329,20 +335,8 @@
     <ClCompile Include="Source\Scene\Factory\CaptureFactory.cpp">
       <Filter>Game\Scene\Capture</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Scene\Factory\CreditFactroy.cpp">
-      <Filter>Game\Scene\Credit</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Skill\BlueSkill.cpp">
-      <Filter>Game\Object\Skill\Blue</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Skill\YellowSkill.cpp">
-      <Filter>Game\Object\Skill\Yelow</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Skill\SkillState.cpp">
-      <Filter>Game\Object\Skill\State</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Skill\RedSkill.cpp">
-      <Filter>Game\Object\Skill\Red</Filter>
+    <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp">
+      <Filter>Game\Scene\StageSelect\Icon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -457,6 +451,9 @@
     <ClInclude Include="Include\Object\Skill\SkillSet.h">
       <Filter>Game\Object\Skill</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Object\Skill\SkillState.h">
+      <Filter>Game\Object\Skill</Filter>
+    </ClInclude>
     <ClInclude Include="Include\Scene\TitleScene.h">
       <Filter>Game\Scene\Title</Filter>
     </ClInclude>
@@ -528,6 +525,12 @@
     </ClInclude>
     <ClInclude Include="Include\Scene\StageSelectScene.h">
       <Filter>Game\Scene\StageSelect</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\WhiteBlackFirstSkill.h">
+      <Filter>Game\Object\Skill\WhiteBlack</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\WhiteBlackSecond.h">
+      <Filter>Game\Object\Skill\WhiteBlack</Filter>
     </ClInclude>
     <ClInclude Include="Include\Object\Skill\WhiteBlackSkill.h">
       <Filter>Game\Object\Skill\WhiteBlack</Filter>
@@ -729,21 +732,6 @@
     </ClInclude>
     <ClInclude Include="Include\Scene\CreditScene.h">
       <Filter>Game\Scene\Credit</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\Factory\CreditFactory.h">
-      <Filter>Game\Scene\Credit</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Skill\BlueSkill.h">
-      <Filter>Game\Object\Skill\Blue</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Skill\YellowSkill.h">
-      <Filter>Game\Object\Skill\Yelow</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Skill\RedSkill.h">
-      <Filter>Game\Object\Skill\Red</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Skill\SkillState.h">
-      <Filter>Game\Object\Skill\State</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -967,18 +955,6 @@
     </Filter>
     <Filter Include="Game\Shader">
       <UniqueIdentifier>{5c59118c-19a6-46e0-8466-d405ad8ced26}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Object\Skill\Blue">
-      <UniqueIdentifier>{46e546d7-d518-4965-ab71-1f9fa9155d69}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Object\Skill\Yelow">
-      <UniqueIdentifier>{bf76bf2c-110d-42dc-a580-4a045d0b85c9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Object\Skill\Red">
-      <UniqueIdentifier>{24da05c5-8144-42c9-a0f8-7ced4e5e38c1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Object\Skill\State">
-      <UniqueIdentifier>{325739a7-a97f-4ea3-b88a-df9e9049b909}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

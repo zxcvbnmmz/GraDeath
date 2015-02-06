@@ -95,7 +95,6 @@ PS_SkinIn SkinMeshVS( VS_SkinIn input )
 
 	//	s—ñ•ÏŠ·‚ğÀs
     output.Pos = mul( vSkinned.Pos, wvp );
-	//output.Pos.x *= -1;
 
 	//	–@ü‚Ì‰ñ“]
     output.Norm = normalize( mul( vSkinned.Norm, ( float3x3 )world ) );

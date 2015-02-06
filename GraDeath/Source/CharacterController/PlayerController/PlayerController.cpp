@@ -102,6 +102,10 @@ void PlayerController::Run(){
 
 }
 
+void PlayerController::SetPos(int posx, int posy){
+
+}
+
 void PlayerController::Walk(){
 	if (padID != 0){
 		return;
@@ -158,6 +162,8 @@ void PlayerController::Skill(){
 	}
 }
 
-
+PLAYER_ACTION PlayerController::GetCurrentAction(){
+	return currentAction;
+}
 
 

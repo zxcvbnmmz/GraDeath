@@ -37,7 +37,7 @@ GameScene::GameScene() :currentState(FADE_IN) {
 	stageTimer = 300;
 
 
-///	bgm = Sound::CreateBGM("Resource/BGM/StageBGM_Chara1.wav");
+	//bgm = Sound::CreateBGM("Resource/BGM/StageBGM_Chara1.wav");
 }
 
 GameScene::~GameScene ()
@@ -135,7 +135,7 @@ int GameScene::ExecuteEndCall(){
 
 		ResultFactory rf;
 		SceneFactory::Reserve(&rf);
-		bgm->Stop();
+		//bgm->Stop();
 
 
 		return END_PROCESS;
