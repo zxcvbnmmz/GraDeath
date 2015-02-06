@@ -24,10 +24,10 @@
       <Filter>Library\Graphics\D3D\Camera</Filter>
     </ClCompile>
     <ClCompile Include="Source\CharacterController\CharacterController.cpp">
-      <Filter>Game\Object\Character</Filter>
+      <Filter>Game\Object\Direction\Character</Filter>
     </ClCompile>
     <ClCompile Include="Source\CharacterController\CharacterInfo.cpp">
-      <Filter>Game\Object\Character</Filter>
+      <Filter>Game\Object\Direction\Character</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\Factory\CharacterSelectFactory.cpp">
       <Filter>Game\Scene\CharacterSelect</Filter>
@@ -362,13 +362,13 @@
       <Filter>Library\Graphics\D3D\Camera</Filter>
     </ClInclude>
     <ClInclude Include="Include\CharacterController\CharacterController.h">
-      <Filter>Game\Object\Character</Filter>
+      <Filter>Game\Object\Direction\Character</Filter>
     </ClInclude>
     <ClInclude Include="Include\CharacterController\CharacterInfo.h">
-      <Filter>Game\Object\Character</Filter>
+      <Filter>Game\Object\Direction\Character</Filter>
     </ClInclude>
     <ClInclude Include="Include\Loader\CharacterLoader.h">
-      <Filter>Game\Object\Character</Filter>
+      <Filter>Game\Object\Direction\Character</Filter>
     </ClInclude>
     <ClInclude Include="Include\Scene\Factory\CharacterSelectFactory.h">
       <Filter>Game\Scene\CharacterSelect</Filter>
@@ -809,9 +809,6 @@
     <Filter Include="Library\Graphics\D3D\Camera">
       <UniqueIdentifier>{75c1b8b1-4ea1-4bc6-b595-a4b5b6ac79d9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Object\Character">
-      <UniqueIdentifier>{cd342d7f-8a5b-49c4-b7c2-100abf313332}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\Collision">
       <UniqueIdentifier>{df7ff899-5d28-494f-8b7a-9da853ec5ad0}</UniqueIdentifier>
     </Filter>
@@ -955,6 +952,9 @@
     </Filter>
     <Filter Include="Game\Shader">
       <UniqueIdentifier>{5c59118c-19a6-46e0-8466-d405ad8ced26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Direction\Character">
+      <UniqueIdentifier>{cd342d7f-8a5b-49c4-b7c2-100abf313332}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

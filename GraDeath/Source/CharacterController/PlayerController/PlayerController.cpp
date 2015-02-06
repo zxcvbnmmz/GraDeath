@@ -106,7 +106,7 @@ void PlayerController::Run(){
 }
 
 void PlayerController::SetPos(int posx, int posy){
-
+    player->sprite->SetPosition(posx, posy);
 }
 
 void PlayerController::Walk(){

@@ -16,6 +16,8 @@ namespace Stage{
 
 	b2Body* GetBreakbleStage();
 	b2Body* GetUnbreakbleStage();
+    bool GetSkillEnd();
+    void AttachFixture()
 };
 
 #endif	// end of Stage

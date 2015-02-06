@@ -103,15 +103,17 @@ int GameScene::ExecuteStageCall(){
 	return STILL_PROCESSING;
 }
 
-int GameScene::ExecuteButtle(){	
+int GameScene::ExecuteButtle(){
+
+    PlayerManager::Update();
     if (Stage::GetStageHP() > 0){
         // Ç±Ç±Ç≈í èÌçÏã∆
-        PlayerManager::Update();
+        //if ()
+        World::SetGravity(0, 95);
         SkillManager::Update();
     }
     else{
-        PlayerManager::AllPlayerMove(10, 10);
-        PlayerManager::OnPlayerPos(1, 300, 300);
+//        PlayerManager::OnPlayerPos(1, 300, 300);
 //        PlayerManager::OnPlayerPos(Stage::StageBrakePlayerNum(),300,300);
     }
 
