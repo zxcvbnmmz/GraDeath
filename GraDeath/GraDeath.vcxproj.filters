@@ -281,9 +281,6 @@
     <ClCompile Include="Source\Graphic\RenderTarget\RenderTarget.cpp">
       <Filter>Library\Graphics\D3D\RenderTarget</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp">
-      <Filter>Game\Scene\StageSelect</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor.cpp">
       <Filter>Game\Scene\StageSelect\Cursor</Filter>
     </ClCompile>
@@ -337,6 +334,9 @@
     </ClCompile>
     <ClCompile Include="Source\Scene\Factory\CaptureFactory.cpp">
       <Filter>Game\Scene\Capture</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp">
+      <Filter>Game\Scene\StageSelect\Icon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

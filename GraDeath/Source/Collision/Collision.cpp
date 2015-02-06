@@ -5,6 +5,8 @@
 #include "Object/Player.h"
 #include "Object/CollisionShape.h"
 #include "Manager/HitpointManager.h"
+#include "CharacterController/PlayerController/PlayerController.h"
+#include "CharacterController/CharacterController.h"
 
 bool Collision::Collide(Player* playerA, Player* playerB){
 	b2Body* bodyA = playerA->GetBody();
@@ -38,9 +40,11 @@ bool Collision::Collide(Player* playerA, Player* playerB){
 						shape = (CollisionShape*)fixtureA->GetUserData();
 						damagedPlayer = playerB;
 					}
-					else{
+					else if (filterB.categoryBits & MASK_COL_ATK){
 						shape = (CollisionShape*)fixtureB->GetUserData();
 						damagedPlayer = playerA;
+					}else{
+						break;
 					}
 
 					strength = shape->GetStrength();
@@ -60,7 +64,9 @@ bool Collision::CollideToStage(Player* body, b2Body* breakableStage){
 	return false;
 }
 
-bool Collision::CollideOtherFloors(Player* player, b2Body* unbreakableStage){	
+bool Collision::CollideOtherFloors(Player* player, b2Body* unbreakableStage, CharacterController* controller){
+	assert(controller != nullptr);
+
 	b2Body* playerBody = player->GetBody();
 
 	const b2Transform& xfA = playerBody->GetTransform();
@@ -77,12 +83,34 @@ bool Collision::CollideOtherFloors(Player* player, b2Body* unbreakableStage){
 			// b2TestOverlapはシェイプとシェイプが衝突しているか判定する関数
 			bool touching = b2TestOverlap(shapeA, 0, shapeB, 0, xfA, stageTrans);
 			if (touching){
-				b2ContactListener l;
-				b2ContactManager m;
-				m.m_contactListener = &l;
-
 				b2Manifold manifold;
-				
+
+				if (shapeA->m_type == b2Shape::e_circle){
+					const b2CircleShape* polygonShapeA = reinterpret_cast<const b2CircleShape*>(shapeA);
+					if (shapeB->m_type == b2Shape::e_circle){
+						const b2CircleShape* polygonShapeB = reinterpret_cast<const b2CircleShape*>(shapeB);
+						b2CollideCircles(&manifold, polygonShapeA, xfA, polygonShapeB, stageTrans);
+					}
+					else if (shapeB->m_type == b2Shape::e_polygon){
+						const b2PolygonShape* polygonShapeB = reinterpret_cast<const b2PolygonShape*>(shapeB);
+						b2CollidePolygonAndCircle(&manifold, polygonShapeB, stageTrans, polygonShapeA, xfA);
+					}
+				}
+				else if (shapeA->m_type == b2Shape::e_polygon){
+					const b2PolygonShape* polygonShapeA = reinterpret_cast<const b2PolygonShape*>(shapeA);
+					if (shapeB->m_type == b2Shape::e_circle){
+						const b2CircleShape* polygonShapeB = reinterpret_cast<const b2CircleShape*>(shapeB);
+						b2CollidePolygonAndCircle(&manifold, polygonShapeA, xfA, polygonShapeB, stageTrans);
+					}
+					else if (shapeB->m_type == b2Shape::e_polygon){
+						const b2PolygonShape* polygonShapeB = reinterpret_cast<const b2PolygonShape*>(shapeB);
+						b2CollidePolygons(&manifold, polygonShapeA, xfA, polygonShapeB, stageTrans);
+					}
+				}
+
+				if (abs(manifold.localNormal.y) > 0.5 && xfA.p.y < stageTrans.p.y){
+					controller->ChangeAction(ACTION_JUMP_LAND, false);
+				}
 
 				return true;
 				
@@ -91,5 +119,10 @@ bool Collision::CollideOtherFloors(Player* player, b2Body* unbreakableStage){
 		}
 		fixtureA = fixtureA->GetNext();
 	}
+	return false;
+}
+
+bool Collision::CollideToSkill(Player* player){
+
 	return false;
 }

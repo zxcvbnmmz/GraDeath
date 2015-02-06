@@ -21,10 +21,6 @@ Player::Player(){
 Player::~Player(){
 }
 
-
-
-
-
 bool Player::Init(const char* fileName, const b2Vec2& bodyPos){
 
 	// ‘fŞ‚ª—ˆ‚½‚ç‚±‚Ìˆ—‚ğ•ÏX

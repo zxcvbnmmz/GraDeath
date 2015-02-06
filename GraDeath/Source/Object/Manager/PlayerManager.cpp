@@ -59,6 +59,7 @@ void PlayerManager::Update(){
 	for (int i = 0; i < PLAYERS - 1; ++i){
 		for (int k = i + 1; k < PLAYERS; ++k){
 			Collision::Collide(&players[i], &players[k]);
+			//Collision::CollideOtherFloors(&players[i]);
 		}
 	}
 }
