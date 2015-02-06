@@ -158,5 +158,7 @@ void PlayerController::Skill(){
 	}
 }
 
-
+PLAYER_ACTION PlayerController::GetCurrentAction(){
+	return currentAction;
+}
 

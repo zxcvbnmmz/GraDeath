@@ -37,6 +37,7 @@ public:
 
 	void Move(int _movex, int _movey){}
 	void SetPos(int _posx, int _posy){}
+	PLAYER_ACTION GetCurrentAction();
 
 	void Release ();
 
