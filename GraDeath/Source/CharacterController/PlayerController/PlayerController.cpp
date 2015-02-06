@@ -24,6 +24,7 @@ D2D::TextObject t;
 
 void PlayerController::Init (int _padID, Player* _player)
 {
+    
 	Release ();
 	this->padID = _padID;
 	this->player = _player;
@@ -161,6 +162,8 @@ void PlayerController::Skill(){
 	}
 }
 
-
+PLAYER_ACTION PlayerController::GetCurrentAction(){
+	return currentAction;
+}
 
 

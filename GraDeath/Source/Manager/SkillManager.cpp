@@ -75,6 +75,11 @@ namespace SkillManager
 		return skillState[ _num ].GetCoolTime ( _id );
 	}
 
+	b2Body& Getb2Body ( int _num, SKILL_ID _id )
+	{
+		return skillset[ _num ]->Getb2Body ( _id );
+	}
+
 	CharacterInfo::PLAYER_TYPE GetPlayerType ( int _num )
 	{
 		return skillState[ _num ].GetPlayerType ();

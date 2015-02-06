@@ -39,6 +39,7 @@ void RedSkill::Init ()
 	//third->SetSize ( D3DXVECTOR2 ( 600, 600 ));
 	skills.push_back ( third );
 }
+//s
 
 void RedSkill::Update ()
 {
@@ -59,7 +60,7 @@ void RedSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFl
 	skills[ _id ]->SkillOn ();
 }
 
-AnimationData& RedSkill::GetAnimationData ( int _num )
+b2Body& RedSkill::Getb2Body ( int _num )
 {
-	return skills[ _num ]->GetAnimationData ();
+	return skills[ _num ]->Getb2Body ();
 }

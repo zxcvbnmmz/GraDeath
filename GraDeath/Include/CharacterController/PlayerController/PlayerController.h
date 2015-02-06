@@ -36,6 +36,8 @@ public:
 	void Draw();
 
     void SetPos(int _posx, int _posy);
+	PLAYER_ACTION GetCurrentAction();
+
 
 	void Release ();
 
