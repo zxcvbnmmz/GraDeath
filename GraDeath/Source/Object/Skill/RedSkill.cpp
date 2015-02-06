@@ -39,6 +39,7 @@ void RedSkill::Init ()
 	//third->SetSize ( D3DXVECTOR2 ( 600, 600 ));
 	skills.push_back ( third );
 }
+//s
 
 void RedSkill::Update ()
 {
