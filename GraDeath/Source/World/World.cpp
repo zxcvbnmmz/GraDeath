@@ -49,3 +49,7 @@ void World::DrawDebugData(b2Draw* drawer){
 	world.DrawDebugData();
 }
 
+void World::SetGravity(float x, float y){
+    world.SetGravity(b2Vec2(x, y));
+}
+
