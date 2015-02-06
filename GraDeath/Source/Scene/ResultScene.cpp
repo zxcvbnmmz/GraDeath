@@ -18,7 +18,7 @@ ResultScene::ResultScene(){
 	sChara[1].Create(L"Resource/Scene/Result/Chara2.png");
 	sChara[2].Create(L"Resource/Scene/Result/Chara3.png");
 	sChara[3].Create(L"Resource/Scene/Result/Chara4.png");
-	sFrame.Create(L"Resource/Scene/Result/Frame.png");
+	//sFrame.Create(L"Resource/Scene/Result/Frame.png");
 	for (int i = 0; i < 4; i++) {
 		pRank[i] = D3DXVECTOR2(550 - i * 150, 100 + 100 * i);
 		pMove[i] = D3DXVECTOR2(0, 300);
@@ -63,18 +63,18 @@ SCENE_STATUS ResultScene::Execute(){
 
 void ResultScene::Draw(){
 	for (int i = 0; i < 4; i++){
-		sFrame.SetPosition(pRank[i] + pMove[i]);
-		sFrame.SetAlpha(1.f - alpha[i]);
+		//sFrame.SetPosition(pRank[i] + pMove[i]);
+		//sFrame.SetAlpha(1.f - alpha[i]);
 		sRank[i].SetPosition(pRank[i] + pMove[i]);
 		sRank[i].SetAlpha(1.f - alpha[i]);
-		sPlayer[i].SetPosition(pRank[i] + pMove[i] + pPlayer);
+		sPlayer[i].SetPosition(pRank[i] + pMove[i]);
 		sPlayer[i].SetAlpha(1.f - alpha[i]);
-		sChara[i].SetPosition(pRank[i] + pMove[i] + pChara);
+		sChara[i].SetPosition(pRank[i] + pMove[i]);
 		sChara[i].SetAlpha(1.f - alpha[i]);
 
-		sFrame.Draw();
-		sRank[i].Draw();
+		//sFrame.Draw();
 		sChara[i].Draw();
 		sPlayer[i].Draw();
+		sRank[i].Draw();
 	}
 }
