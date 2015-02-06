@@ -1,1045 +1,984 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="ソース ファイル">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="ソース ファイル\Library">
-      <UniqueIdentifier>{05b5b8bb-57c3-4a0b-a558-0bb392bcd050}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Sound">
-      <UniqueIdentifier>{9bd4baa4-269e-47bb-82dc-c10d955315b8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Sound\Voice">
-      <UniqueIdentifier>{26f3ac7d-8185-4992-9132-00c98cc2f80e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Sound\BGM">
-      <UniqueIdentifier>{e2dfd1fe-bbd6-4bb3-9e6e-f08078b84245}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Sound\SE">
-      <UniqueIdentifier>{08a5e876-6b8b-4a33-ab02-cd932a59ca57}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Sound\Core">
-      <UniqueIdentifier>{2bb772c2-52e9-4826-a0f8-e117c082ab05}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Sound\Wave">
-      <UniqueIdentifier>{a9e48941-cd3c-401b-8276-d0a5e1274f99}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic">
-      <UniqueIdentifier>{cb14809b-4aff-473e-9541-00dd520fdd67}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D2D">
-      <UniqueIdentifier>{a6a94156-4a10-4f44-8c80-f1d330ccabc5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D2D\Geometory">
-      <UniqueIdentifier>{4907825a-9136-49e4-87be-cd52b216cb97}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D2D\Brush">
-      <UniqueIdentifier>{0f65e6cb-7eeb-4a7b-b725-46a1ca0b0ee5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D3D">
-      <UniqueIdentifier>{a4d65da7-6352-4bf9-901f-9c006529379f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D3D\Interface">
-      <UniqueIdentifier>{b3547464-89c3-4347-9379-d1fa77a02e7a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D3D\Interface\DepthStencil">
-      <UniqueIdentifier>{a1e3aee1-8838-40ac-ac5f-40ccce191d4c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D3D\Interface\BlendState">
-      <UniqueIdentifier>{59258156-a3d1-49be-aac1-b0bdae56ec89}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D3D\Interface\Rasterizer">
-      <UniqueIdentifier>{0e7c7031-79a7-4391-bc08-5244a6756daa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D3D\Interface\RenderTarget">
-      <UniqueIdentifier>{5939804d-7b37-49bf-8027-d33417039981}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D3D\Interface\Sampler">
-      <UniqueIdentifier>{8f499f69-7ebc-4c5e-b650-c5df3b4f659f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\System">
-      <UniqueIdentifier>{c76fc456-12b5-496e-a12b-f29de0844055}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\System\Window">
-      <UniqueIdentifier>{fcfb4ae6-a97b-493a-b104-0cb9f6834e42}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\System\D3D">
-      <UniqueIdentifier>{facbeddc-414d-495b-b4e0-2febe7e93b98}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\System\D3D\Interface">
-      <UniqueIdentifier>{95867a76-b8d6-4460-a7e2-2ce2bb0a6bb3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\System\D3D\Interface\SwapChain">
-      <UniqueIdentifier>{52169869-5c72-465f-b55f-0d10d1cffe41}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\System\D3D\Interface\Device">
-      <UniqueIdentifier>{03b95c64-1e80-409c-abe0-802b46d6f7c4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\System\D2D">
-      <UniqueIdentifier>{990377f6-ac4f-48ce-97d8-ae44ebb13bb6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game">
-      <UniqueIdentifier>{7d117156-f21e-4fb9-ae6e-fe0c97818ece}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object">
-      <UniqueIdentifier>{021ee829-1c33-4ba4-b553-105299534a7e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene">
-      <UniqueIdentifier>{7efec26a-90ca-4ee5-8dd1-ec4880063813}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Title">
-      <UniqueIdentifier>{2335c5a1-3bac-4cee-989b-deaae2ac744e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Title\Factory">
-      <UniqueIdentifier>{d666477e-c984-4e96-abe5-77e9c584271d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D3D\Interface\ShaderResource">
-      <UniqueIdentifier>{4d03dbc4-76e9-4bbe-bd65-2ceae4bd9567}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D3D\Interface\Buffer">
-      <UniqueIdentifier>{ef41d61e-6c04-478d-8e4c-84b9556c2984}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D3D\Interface\Buffer\ConstantBuffer">
-      <UniqueIdentifier>{3c278d2f-fad9-41a6-9a10-9b61cad3204a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D3D\Interface\Buffer\IndexBuffer">
-      <UniqueIdentifier>{b711065a-bb2c-44e7-9136-545c84f1c0d3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D3D\Interface\Buffer\VertexBuffer">
-      <UniqueIdentifier>{55ff1f20-1ccb-4893-a0c7-de685e5af481}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Model">
-      <UniqueIdentifier>{97c99cbd-976f-4f1f-881d-9b232c555e3d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Model\Base">
-      <UniqueIdentifier>{34942b5e-42da-4462-a9b0-30929ebe5d9c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Model\Decoder">
-      <UniqueIdentifier>{e99a9ca6-950e-411c-9f7d-17837945fb63}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Model\Static">
-      <UniqueIdentifier>{63fbb1de-0462-4361-8dd3-c2be8bb5da2b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Model\Skin">
-      <UniqueIdentifier>{98bb8eb2-0077-4e3d-a978-d0ef70cc2c2e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Input">
-      <UniqueIdentifier>{00e513ce-0ecd-4ec2-913f-89ee7a98a323}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Input\GamePad">
-      <UniqueIdentifier>{462d3bbb-591a-4d1e-8768-54d6ccb2cd03}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Shader">
-      <UniqueIdentifier>{d8e3f975-2735-4275-a070-a8f7fe2ac753}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Shader\Test">
-      <UniqueIdentifier>{0f8a13e1-fcb4-4daa-8b6f-4747a1c6a41c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Model\Shader">
-      <UniqueIdentifier>{1ae425f8-459b-434d-a469-8db6b036dfcb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Model\Anime">
-      <UniqueIdentifier>{c7c10297-eee3-4e0c-81af-7f48f4d29df4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\HLSL">
-      <UniqueIdentifier>{82c00292-273f-4f57-9978-21d0c923d2bd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\Camera">
-      <UniqueIdentifier>{9908b7d4-9b5d-4a75-abdf-ea5f9f438f85}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\StageFactory">
-      <UniqueIdentifier>{7d4445dd-ca9b-4961-be22-180bcc9f39fa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\World">
-      <UniqueIdentifier>{b02991aa-1ddb-4690-9b35-ccbca62d0431}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D2D\Sprite">
-      <UniqueIdentifier>{2cee7c2b-8159-414e-a96e-71b4546741ee}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D2D\Interface">
-      <UniqueIdentifier>{340fe4cb-38fc-4691-a6ee-6ff07f673cf3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Model\AnimetionTrans">
-      <UniqueIdentifier>{8784ba23-107e-4c59-936d-9f263b2f590f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\ResourseManager">
-      <UniqueIdentifier>{507ce35b-660d-487c-afcd-2627694496fa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\ResourseManager\ModelManager">
-      <UniqueIdentifier>{5241480f-baa3-4d85-9605-94e95dc59af4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\ResourseManager\AnimetionManager">
-      <UniqueIdentifier>{0d3e2844-64b4-4b7c-abff-84e236bf8cea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\ResourseManager\PlayerManager">
-      <UniqueIdentifier>{fbc065f5-eef9-41d4-aff8-d6967b2f9d5e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\CharacterController">
-      <UniqueIdentifier>{4c356a44-b2de-4c5e-bd32-886a33b51a01}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\CharacterController\PlayerController">
-      <UniqueIdentifier>{bc975a74-01b3-45ce-939f-13883fd22e84}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Other">
-      <UniqueIdentifier>{df1d6be1-cf4a-480a-8e61-18a348a00f1a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Other\Factory">
-      <UniqueIdentifier>{d42c9950-67f4-4191-a3aa-351e9b5c275b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Other\Manager">
-      <UniqueIdentifier>{a22ab5af-0858-49e6-a27f-06bbe6ba1314}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Game">
-      <UniqueIdentifier>{246434b2-3118-4c62-9306-48e824349f1e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Game\Factory">
-      <UniqueIdentifier>{612524f0-4b5f-4682-88e5-1e0d13015a8c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect">
-      <UniqueIdentifier>{632b4635-4221-413b-a5e4-7b5765c65dff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Factory">
-      <UniqueIdentifier>{2bf87f19-2ef0-4d49-9a82-c256ff970cf8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\StageSelect">
-      <UniqueIdentifier>{e53e33bf-2aed-4579-891c-f7f6330c3cce}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\StageSelect\Factory">
-      <UniqueIdentifier>{b9b3a0e6-3fd4-412c-89f0-2d6c1e1a781a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Result">
-      <UniqueIdentifier>{46ed4dc5-a2e1-44e1-b2aa-3b67c965550c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Result\Factory">
-      <UniqueIdentifier>{cd1b4f33-ea8b-47df-8ece-de4bd5287cce}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Icon">
-      <UniqueIdentifier>{3cb1bda8-8a9e-4089-9712-445b214b6d7a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\CharacterSelect\Cursor">
-      <UniqueIdentifier>{6933f619-7b92-4cee-8bb2-6513e1f11817}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Input\KeyBoard">
-      <UniqueIdentifier>{86665b5e-a945-46e3-8998-cf98a83a5296}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Input\Manager">
-      <UniqueIdentifier>{13aca0da-7c57-4cb9-8980-0b8a0466d214}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Stage">
-      <UniqueIdentifier>{d4a4c2b5-27d5-45a3-a067-76fa53fe43d7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Loader">
-      <UniqueIdentifier>{6312fc9c-9b4d-423a-868b-6cbfe26a45ce}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Player">
-      <UniqueIdentifier>{34d19fe1-f72b-4e0d-a679-de923b085fb7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Player\Manager">
-      <UniqueIdentifier>{5bcb69c0-c4a8-4bfa-9fa8-00fb88315e5c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Shape">
-      <UniqueIdentifier>{2b4f57ed-7259-4b89-a780-3b934242ab27}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\ObjectParameter">
-      <UniqueIdentifier>{37c39109-d9ff-4e62-a2b4-86fc030132c5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Loader\Player">
-      <UniqueIdentifier>{fa8fc087-9923-4533-9465-f91706ca45cf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\UI">
-      <UniqueIdentifier>{000948f6-77d1-4e37-8a19-d29c26d56c88}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\CharacterController\CharacterInfo">
-      <UniqueIdentifier>{cab79343-f297-4698-8f36-15b00da0f34f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Effect">
-      <UniqueIdentifier>{a489f420-2d78-43fa-8b5f-4b9a5236e7e7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\ObjectPool">
-      <UniqueIdentifier>{3f45befd-bea4-4874-8011-cf8b11f436ca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Ref">
-      <UniqueIdentifier>{88a0ceb2-e817-4ad1-8b90-29c4453d9f52}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Game\UI">
-      <UniqueIdentifier>{7cc91caa-684a-46f4-a0c1-fe785ce88899}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\StageSelect\StageIcon">
-      <UniqueIdentifier>{a5b5bc13-0952-40db-9bf0-dc3d26511274}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\AnimationManager">
-      <UniqueIdentifier>{e042859b-d0f7-48d2-b135-54075fda38fa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\HitPoint">
-      <UniqueIdentifier>{ea1e043a-4fe2-4c88-be11-a1ef74db4a68}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\HitPoint\HitPointManager">
-      <UniqueIdentifier>{c4f471f2-17e4-43aa-b0eb-8e786d053c69}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D2D\TextObject">
-      <UniqueIdentifier>{54489ff8-79fa-41fb-bebe-61875a008f23}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D2D\Brush\BitmapBrush">
-      <UniqueIdentifier>{e9b64177-2b43-4375-ad06-2ce3a7a76004}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush">
-      <UniqueIdentifier>{4bd421a9-0389-4f40-8b47-c866fca8d968}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Library\Sound\Callback">
-      <UniqueIdentifier>{eeea39db-ccc8-474c-ba56-016046e821ca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skill">
-      <UniqueIdentifier>{3a938afc-0696-4586-b016-92a8d45e1c60}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skill\SkillManagerr">
-      <UniqueIdentifier>{58e39dfc-78e6-4323-9b02-41cc6d71040b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other">
-      <UniqueIdentifier>{9483e723-dc65-4a7b-a5f3-420f05e47fa7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\Delegate">
-      <UniqueIdentifier>{6e3ee4e5-5342-4f2d-99b0-027e077642db}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\Converter">
-      <UniqueIdentifier>{fcf1d913-de9d-462d-bcd5-f7ce0810a038}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\Debug">
-      <UniqueIdentifier>{ae2a00c2-068d-4e54-bb31-115b327521a1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\SafeDelete">
-      <UniqueIdentifier>{e851be66-1df2-4f76-b2e1-7756200af772}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\ScreenShot">
-      <UniqueIdentifier>{02a9bad1-9c98-4597-b986-cf1b4ea62b17}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\FPS">
-      <UniqueIdentifier>{abf00207-f986-44a0-b45d-f54adc7f3cb8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\Macro">
-      <UniqueIdentifier>{ee8ac081-9d61-41c8-ade6-c4c162966769}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\SizeGetter">
-      <UniqueIdentifier>{33b7bbc5-b925-42f1-be65-3eac36418ee3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\Memory">
-      <UniqueIdentifier>{e415da17-9d5e-4b31-a1c2-25badaacd0af}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\World\DebugDrawer">
-      <UniqueIdentifier>{aed95295-ff82-42e8-b2d6-6e43de1fa964}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Scene\Game\StageCall">
-      <UniqueIdentifier>{37cf14e7-b1f9-4382-9ad4-ed0173bd2d0a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Effect\Direction">
-      <UniqueIdentifier>{ba166d44-106c-4631-8103-de81116d8fe3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Effect\Direction\Fade">
-      <UniqueIdentifier>{2f6fbde4-1296-468d-805d-dcac6ab6fa01}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skill\Skill">
-      <UniqueIdentifier>{0da2254e-9615-4bd9-8ef4-0de4b834630a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skill\SkillState">
-      <UniqueIdentifier>{12cc3dde-2d0a-44c5-b444-57fd0e9a63d5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skill\Skill\First">
-      <UniqueIdentifier>{6f6b080a-e5a6-4e1a-855f-940ca1f56b6e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skill\Skill\Secound">
-      <UniqueIdentifier>{5d0d0830-e835-434a-9782-86181c72a33d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skill\Skill\Third">
-      <UniqueIdentifier>{c86a3cf2-9d9f-4c73-8131-f51d1fb89c89}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skill\SkillSet">
-      <UniqueIdentifier>{05db0fbd-1b14-47a2-b013-14196e163d49}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Object\Skill\SkillSet\WhiteBlack">
-      <UniqueIdentifier>{244d5271-cca1-480d-88c8-2e77e785ebfc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Other\FrameTimer">
-      <UniqueIdentifier>{f6a4f417-490d-4b31-9dc2-a131053b539b}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Object.cpp">
-      <Filter>ソース ファイル\Game\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\System\Window.cpp">
-      <Filter>ソース ファイル\Library\System\Window</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\System\System.cpp">
-      <Filter>ソース ファイル\Library\System</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\System\D3DCore.cpp">
-      <Filter>ソース ファイル\Library\System\D3D</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\System\D2DCore.cpp">
-      <Filter>ソース ファイル\Library\System\D2D</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\Graphic.cpp">
-      <Filter>ソース ファイル\Library\Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\RenderTarget\RenderTarget.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\RenderTarget</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\Rasterizer\Rasterizer.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Rasterizer</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\BlendState\BlendState.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\BlendState</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\DepthStencil\DepthStencil.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\DepthStencil</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\Sampler\Sampler.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Sampler</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\D3D\Device\Device.cpp">
-      <Filter>ソース ファイル\Library\System\D3D\Interface\Device</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\D3D\SwapChain\SwapChain.cpp">
-      <Filter>ソース ファイル\Library\System\D3D\Interface\SwapChain</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Sound\Sound.cpp">
-      <Filter>ソース ファイル\Library\Sound</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Sound\Voice\MasterVoice.cpp">
-      <Filter>ソース ファイル\Library\Sound\Voice</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Sound\Voice\SourceVoice.cpp">
-      <Filter>ソース ファイル\Library\Sound\Voice</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Sound\Voice\SubmixVoice.cpp">
-      <Filter>ソース ファイル\Library\Sound\Voice</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Sound\BGM\BGMPimpl.cpp">
-      <Filter>ソース ファイル\Library\Sound\BGM</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Sound\BGM\BGM.cpp">
-      <Filter>ソース ファイル\Library\Sound\BGM</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Sound\SE\SE.cpp">
-      <Filter>ソース ファイル\Library\Sound\SE</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Sound\SoundCore.cpp">
-      <Filter>ソース ファイル\Library\Sound\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Sound\WaveDecoder.cpp">
-      <Filter>ソース ファイル\Library\Sound\Wave</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\D3DGraphic.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D3D</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\Scene.cpp">
-      <Filter>ソース ファイル\Game\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\SceneFactory.cpp">
-      <Filter>ソース ファイル\Game\Scene\Other\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\SceneManager.cpp">
-      <Filter>ソース ファイル\Game\Scene\Other\Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\TitleScene.cpp">
-      <Filter>ソース ファイル\Game\Scene\Title</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\Factory\TitleFactory.cpp">
-      <Filter>ソース ファイル\Game\Scene\Title\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Utility\Converter.cpp">
-      <Filter>ソース ファイル\Other\Converter</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Utility\Debug.cpp">
-      <Filter>ソース ファイル\Other\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Utility\Delegate.cpp">
-      <Filter>ソース ファイル\Other\Delegate</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\ShaderResource\ShaderResource.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\ShaderResource</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\Buffer\Buffer.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Buffer</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\Buffer\ConstantBuffer.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Buffer\ConstantBuffer</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\Buffer\IndexBuffer.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Buffer\IndexBuffer</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\Buffer\VertexBuffer.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Buffer\VertexBuffer</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Model\CwnBaseMesh.cpp">
-      <Filter>ソース ファイル\Library\Model\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Model\CwnDecoder.cpp">
-      <Filter>ソース ファイル\Library\Model\Decoder</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Model\CwnStaticMesh.cpp">
-      <Filter>ソース ファイル\Library\Model\Static</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Model\CwnSkinMesh.cpp">
-      <Filter>ソース ファイル\Library\Model\Skin</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Shader\Shader.cpp">
-      <Filter>ソース ファイル\Library\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Shader\TestShader.cpp">
-      <Filter>ソース ファイル\Library\Shader\Test</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Model\ModelStaticShader.cpp">
-      <Filter>ソース ファイル\Library\Model\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Model\BoneAnimeData.cpp">
-      <Filter>ソース ファイル\Library\Model\Anime</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\Camera\Camera.cpp">
-      <Filter>ソース ファイル\Library\Graphic\Camera</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\World\World.cpp">
-      <Filter>ソース ファイル\Game\World</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\D2D\Sprite\Sprite.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Sprite</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\D2D\Interface\ImagingFactory.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\D2D\Interface\D2DRenderTarget.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphic\D2DGraphic.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D2D</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\D2D\Sprite\SpriteDecoder.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Sprite</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\Factory\CharacterSelectFactory.cpp">
-      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\CharacterSelectScene.cpp">
-      <Filter>ソース ファイル\Game\Scene\CharacterSelect</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\Factory\GameFactory.cpp">
-      <Filter>ソース ファイル\Game\Scene\Game\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\GameScene.cpp">
-      <Filter>ソース ファイル\Game\Scene\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\StageSelectScene.cpp">
-      <Filter>ソース ファイル\Game\Scene\StageSelect</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\Factory\StageSelectFactory.cpp">
-      <Filter>ソース ファイル\Game\Scene\StageSelect\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\ResultScene.cpp">
-      <Filter>ソース ファイル\Game\Scene\Result</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\Factory\ResultFactory.cpp">
-      <Filter>ソース ファイル\Game\Scene\Result\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp">
-      <Filter>ソース ファイル\Game\CharacterController\PlayerController</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp">
-      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Icon</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Model\ModelSkinShader.cpp">
-      <Filter>ソース ファイル\Library\Model\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\GamePad.cpp">
-      <Filter>ソース ファイル\Library\Input\GamePad</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor.cpp">
-      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Cursor</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\Keyboard.cpp">
-      <Filter>ソース ファイル\Library\Input\KeyBoard</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\InputManager.cpp">
-      <Filter>ソース ファイル\Library\Input\Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Stage\Stage.cpp">
-      <Filter>ソース ファイル\Game\Object\Stage</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Utility\ScreenShot.cpp">
-      <Filter>ソース ファイル\Other\ScreenShot</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Manager\PlayerManager.cpp">
-      <Filter>ソース ファイル\Game\Object\Player\Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Player.cpp">
-      <Filter>ソース ファイル\Game\Object\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharacterController\CharacterController.cpp">
-      <Filter>ソース ファイル\Game\CharacterController</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Loader\PlayerLoader.cpp">
-      <Filter>ソース ファイル\Game\Loader\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\UI\UIManager.cpp">
-      <Filter>ソース ファイル\Game\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\UI\UI.cpp">
-      <Filter>ソース ファイル\Game\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharacterController\CharacterInfo.cpp">
-      <Filter>ソース ファイル\Game\CharacterController\CharacterInfo</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Utility\FPS.cpp">
-      <Filter>ソース ファイル\Other\FPS</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Direction\Fade.cpp">
-      <Filter>ソース ファイル\Game\Effect\Direction\Fade</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Effect\Effect.cpp">
-      <Filter>ソース ファイル\Game\Effect</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Pool\ObjectPool.cpp">
-      <Filter>ソース ファイル\Game\ObjectPool</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Pool\Ref.cpp">
-      <Filter>ソース ファイル\Game\Object\Ref</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\GameScene\GameSceneUI.cpp">
-      <Filter>ソース ファイル\Game\Scene\Game\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\StageSelectScene\StageIcon.cpp">
-      <Filter>ソース ファイル\Game\Scene\StageSelect\StageIcon</Filter>
-    </ClCompile>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Source\Manager\AnimationManager.cpp">
-      <Filter>ソース ファイル\Game\AnimationManager</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Utility\Source.cpp">
-      <Filter>ソース ファイル\Other\SizeGetter</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Manager\HitPointManager.cpp">
-      <Filter>ソース ファイル\Game\Object\HitPoint\HitPointManager</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\HitPoint.cpp">
-      <Filter>ソース ファイル\Game\Object\HitPoint</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\D2D\Interface\WriteFactory.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\D2D\Text\TextObject.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D2D\TextObject</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\D2D\Brush\Brush.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
+      <Filter>Game\Object\Animation</Filter>
     </ClCompile>
     <ClCompile Include="Source\D2D\Brush\BitmapBrush.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Brush\BitmapBrush</Filter>
+      <Filter>Library\Graphics\D2D\Brush</Filter>
     </ClCompile>
-    <ClCompile Include="Source\D2D\Brush\SolidBrush.cpp">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
+    <ClCompile Include="Source\Graphic\BlendState\BlendState.cpp">
+      <Filter>Library\Graphics\D3D\BlendState</Filter>
     </ClCompile>
-    <ClCompile Include="Source\World\DebugDrawer.cpp">
-      <Filter>ソース ファイル\Game\World\DebugDrawer</Filter>
+    <ClCompile Include="Source\Model\BoneAnimeData.cpp">
+      <Filter>Library\Graphics\D3D\Model</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Scene\GameScene\StageCall.cpp">
-      <Filter>ソース ファイル\Game\Scene\Game\StageCall</Filter>
+    <ClCompile Include="Source\D2D\Brush\Brush.cpp">
+      <Filter>Library\Graphics\D2D\Brush</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\Buffer\Buffer.cpp">
+      <Filter>Library\Graphics\D3D\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\Camera\Camera.cpp">
+      <Filter>Library\Graphics\D3D\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharacterController\CharacterController.cpp">
+      <Filter>Game\Object\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharacterController\CharacterInfo.cpp">
+      <Filter>Game\Object\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\CharacterSelectFactory.cpp">
+      <Filter>Game\Scene\CharacterSelect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CharacterSelectScene.cpp">
+      <Filter>Game\Scene\CharacterSelect</Filter>
     </ClCompile>
     <ClCompile Include="Source\Collision\Collision.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Game\Collision</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Manager\SkillManager.cpp">
-      <Filter>ソース ファイル\Game\Object\Skill\SkillManagerr</Filter>
+    <ClCompile Include="Source\Graphic\Buffer\ConstantBuffer.cpp">
+      <Filter>Library\Graphics\D3D\Buffer</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\Skill\WhiteBlackFirstSkill.cpp">
-      <Filter>ソース ファイル\Game\Object\Skill\Skill\First</Filter>
+    <ClCompile Include="Source\Graphic\Buffer\VertexBuffer.cpp">
+      <Filter>Library\Graphics\D3D\Buffer</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\Skill\WhiteBlackSkill.cpp">
-      <Filter>ソース ファイル\Game\Object\Skill\SkillSet\WhiteBlack</Filter>
+    <ClCompile Include="Source\Graphic\Buffer\IndexBuffer.cpp">
+      <Filter>Library\Graphics\D3D\Buffer</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\Skill\SkillState.cpp">
-      <Filter>ソース ファイル\Game\Object\Skill\SkillState</Filter>
+    <ClCompile Include="Source\Utility\Converter.cpp">
+      <Filter>Library\Utility\Converter</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\Skill\Skill.cpp">
-      <Filter>ソース ファイル\Game\Object\Skill\Skill</Filter>
+    <ClCompile Include="Source\Utility\Delegate.cpp">
+      <Filter>Library\Utility\Delegate</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\Skill\WhiteBlackSecond.cpp">
-      <Filter>ソース ファイル\Game\Object\Skill\Skill\Secound</Filter>
+    <ClCompile Include="Source\Utility\FPS.cpp">
+      <Filter>Library\Utility\FPS</Filter>
     </ClCompile>
     <ClCompile Include="Source\Utility\FrameTimer.cpp">
-      <Filter>ソース ファイル\Other\FrameTimer</Filter>
+      <Filter>Library\Utility\FrameTimer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\CwnBaseMesh.cpp">
+      <Filter>Library\Graphics\D3D\Model\CWN</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\CwnDecoder.cpp">
+      <Filter>Library\Graphics\D3D\Model\CWN</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\CwnSkinMesh.cpp">
+      <Filter>Library\Graphics\D3D\Model\CWN</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\CwnStaticMesh.cpp">
+      <Filter>Library\Graphics\D3D\Model\CWN</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\HitPoint.cpp">
+      <Filter>Game\Object\HitPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Manager\HitPointManager.cpp">
+      <Filter>Game\Object\HitPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Scene.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\SceneFactory.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\SceneManager.cpp">
+      <Filter>Game\Scene\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\Skill.cpp">
+      <Filter>Game\Object\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Manager\SkillManager.cpp">
+      <Filter>Game\Object\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\TitleScene.cpp">
+      <Filter>Game\Scene\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\TitleFactory.cpp">
+      <Filter>Game\Scene\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Input\InputManager.cpp">
+      <Filter>Library\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Input\Keyboard.cpp">
+      <Filter>Library\Input\Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Input\GamePad.cpp">
+      <Filter>Library\Input\Gamepad</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D3D\Device\Device.cpp">
+      <Filter>Library\System\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\ScreenShot.cpp">
+      <Filter>Library\Utility\ScreenShot</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Player.cpp">
+      <Filter>Game\Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharacterController\PlayerController\PlayerController.cpp">
+      <Filter>Game\Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Loader\PlayerLoader.cpp">
+      <Filter>Game\Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Manager\PlayerManager.cpp">
+      <Filter>Game\Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\Sound.cpp">
+      <Filter>Library\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\SoundCore.cpp">
+      <Filter>Library\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\SE\SE.cpp">
+      <Filter>Library\Sound\SE</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\BGM\BGMPimpl.cpp">
+      <Filter>Library\Sound\BGM</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\BGM\BGM.cpp">
+      <Filter>Library\Sound\BGM</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\GameScene.cpp">
+      <Filter>Game\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\GameScene\GameSceneUI.cpp">
+      <Filter>Game\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\GameFactory.cpp">
+      <Filter>Game\Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\ResultFactory.cpp">
+      <Filter>Game\Scene\Result</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\ResultScene.cpp">
+      <Filter>Game\Scene\Result</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\StageSelectFactory.cpp">
+      <Filter>Game\Scene\StageSelect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\StageSelectScene.cpp">
+      <Filter>Game\Scene\StageSelect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\WhiteBlackSkill.cpp">
+      <Filter>Game\Object\Skill\WhiteBlack</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\UI\UI.cpp">
+      <Filter>Game\Object\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\UI\UIManager.cpp">
+      <Filter>Game\Object\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\System.cpp">
+      <Filter>Library\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\Window.cpp">
+      <Filter>Library\System\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D3D\SwapChain\SwapChain.cpp">
+      <Filter>Library\System\SwapChain</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\D2DCore.cpp">
+      <Filter>Library\Graphics\D2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\D2DGraphic.cpp">
+      <Filter>Library\Graphics\D2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Interface\D2DRenderTarget.cpp">
+      <Filter>Library\Graphics\D2D\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\Rasterizer\Rasterizer.cpp">
+      <Filter>Library\Graphics\D3D\Rasterizer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Text\TextObject.cpp">
+      <Filter>Library\Graphics\D2D\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\Voice\SubmixVoice.cpp">
+      <Filter>Library\Sound\Voice</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\Voice\MasterVoice.cpp">
+      <Filter>Library\Sound\Voice</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\Voice\SourceVoice.cpp">
+      <Filter>Library\Sound\Voice</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\Debug.cpp">
+      <Filter>Library\Utility\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\World\DebugDrawer.cpp">
+      <Filter>Library\Utility\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\DepthStencil\DepthStencil.cpp">
+      <Filter>Library\Graphics\D3D\DepthStencil</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\Sampler\Sampler.cpp">
+      <Filter>Library\Graphics\D3D\Sampler</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Object.cpp">
+      <Filter>Game\Object\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pool\ObjectPool.cpp">
+      <Filter>Game\Object\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shader\Shader.cpp">
+      <Filter>Library\Graphics\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\ModelSkinShader.cpp">
+      <Filter>Library\Graphics\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model\ModelStaticShader.cpp">
+      <Filter>Library\Graphics\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Brush\SolidBrush.cpp">
+      <Filter>Library\Graphics\D2D\Brush</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Stage\Stage.cpp">
+      <Filter>Game\Object\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\GameScene\StageCall.cpp">
+      <Filter>Game\Object\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\StageSelectScene\StageIcon.cpp">
+      <Filter>Game\Object\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\SizeGetter.cpp">
+      <Filter>Library\Utility\SizeGetter</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Interface\ImagingFactory.cpp">
+      <Filter>Library\Graphics\D2D\ImagingFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Effect\Effect.cpp">
+      <Filter>Game\Object\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Sprite\Sprite.cpp">
+      <Filter>Library\Graphics\D2D\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Sprite\SpriteDecoder.cpp">
+      <Filter>Library\Graphics\D2D\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sound\WaveDecoder.cpp">
+      <Filter>Library\Sound\Wave</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\World\World.cpp">
+      <Filter>Game\Object\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\D2D\Interface\WriteFactory.cpp">
+      <Filter>Library\Graphics\D2D\WriteFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pool\Ref.cpp">
+      <Filter>Game\Object\Ref</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\RenderTarget\RenderTarget.cpp">
+      <Filter>Library\Graphics\D3D\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp">
+      <Filter>Game\Scene\StageSelect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor.cpp">
+      <Filter>Game\Scene\StageSelect\Cursor</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\D3DCore.cpp">
+      <Filter>Library\Graphics\D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\D3DGraphic.cpp">
+      <Filter>Library\Graphics\D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\Graphic.cpp">
+      <Filter>Library\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Direction\Fade.cpp">
+      <Filter>Game\Object\Direction</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shader\TestShader.cpp">
+      <Filter>Game\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphic\ShaderResource\ShaderResource.cpp">
+      <Filter>Library\Graphics\D3D\ShaderResource</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\CaptureCamera.cpp">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\CaptureScene.cpp">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\ConvertChar.cpp">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\FileLoader.cpp">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\FileUtility.cpp">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\KeyboardOperation.cpp">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\MathDef.cpp">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\Menu.cpp">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CaptureScene\ModelAnimeLoader.cpp">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\CreditScene.cpp">
+      <Filter>Game\Scene\Credit</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\CaptureFactory.cpp">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\CreditFactroy.cpp">
+      <Filter>Game\Scene\Credit</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\BlueSkill.cpp">
+      <Filter>Game\Object\Skill\Blue</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\YellowSkill.cpp">
+      <Filter>Game\Object\Skill\Yelow</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\SkillState.cpp">
+      <Filter>Game\Object\Skill\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Skill\RedSkill.cpp">
+      <Filter>Game\Object\Skill\Red</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include\Object\Object.h">
-      <Filter>ソース ファイル\Game\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\System\System.h">
-      <Filter>ソース ファイル\Library\System</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\System\Window.h">
-      <Filter>ソース ファイル\Library\System\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\System\D3DCore.h">
-      <Filter>ソース ファイル\Library\System\D3D</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\System\D2DCore.h">
-      <Filter>ソース ファイル\Library\System\D2D</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\Graphic.h">
-      <Filter>ソース ファイル\Library\Graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\Sampler\Sampler.h">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Sampler</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\RenderTarget\RenderTarget.h">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\RenderTarget</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\Rasterizer\Rasterizer.h">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Rasterizer</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\BlendState\BlendState.h">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\BlendState</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\DepthStencil\DepthStencil.h">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\DepthStencil</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\D3DGraphic.h">
-      <Filter>ソース ファイル\Library\Graphic\D3D</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D2D\Brush\Brush.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D2D\Brush\RGBrush.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Brush</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D3D\SwapChain\SwapChain.h">
-      <Filter>ソース ファイル\Library\System\D3D\Interface\SwapChain</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D3D\Device\Device.h">
-      <Filter>ソース ファイル\Library\System\D3D\Interface\Device</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Sound\BGM\BGM.h">
-      <Filter>ソース ファイル\Library\Sound\BGM</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Sound\BGM\BGMPimpl.h">
-      <Filter>ソース ファイル\Library\Sound\BGM</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Sound\SE\SE.h">
-      <Filter>ソース ファイル\Library\Sound\SE</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Sound\Voice\MasterVoice.h">
-      <Filter>ソース ファイル\Library\Sound\Voice</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Sound\Voice\SourceVoice.h">
-      <Filter>ソース ファイル\Library\Sound\Voice</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Sound\Voice\SubmixVoice.h">
-      <Filter>ソース ファイル\Library\Sound\Voice</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Sound\Sound.h">
-      <Filter>ソース ファイル\Library\Sound</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Sound\SoundCore.h">
-      <Filter>ソース ファイル\Library\Sound\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Sound\WaveDecoder.h">
-      <Filter>ソース ファイル\Library\Sound\Wave</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Sound\WaveData.h">
-      <Filter>ソース ファイル\Library\Sound\Wave</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\Scene.h">
-      <Filter>ソース ファイル\Game\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\SceneFactory.h">
-      <Filter>ソース ファイル\Game\Scene\Other\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\SceneManager.h">
-      <Filter>ソース ファイル\Game\Scene\Other\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\TitleScene.h">
-      <Filter>ソース ファイル\Game\Scene\Title</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\Factory\TitleFactory.h">
-      <Filter>ソース ファイル\Game\Scene\Title\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Utility\Debug.h">
-      <Filter>ソース ファイル\Other\Debug</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Utility\Converter.h">
-      <Filter>ソース ファイル\Other\Converter</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Utility\DelegateBase.h">
-      <Filter>ソース ファイル\Other\Delegate</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Utility\Delegate.h">
-      <Filter>ソース ファイル\Other\Delegate</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Utility\DelegateList.h">
-      <Filter>ソース ファイル\Other\Delegate</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\ShaderResource\ShaderResource.h">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\ShaderResource</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\Buffer\Buffer.h">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Buffer</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\Buffer\ConstantBuffer.h">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Buffer\ConstantBuffer</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\Buffer\IndexBuffer.h">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Buffer\IndexBuffer</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\Buffer\VertexBuffer.h">
-      <Filter>ソース ファイル\Library\Graphic\D3D\Interface\Buffer\VertexBuffer</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Model\MeshDef.h">
-      <Filter>ソース ファイル\Library\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Model\CwnBaseMesh.h">
-      <Filter>ソース ファイル\Library\Model\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Utility\SafeDelete.h">
-      <Filter>ソース ファイル\Other\SafeDelete</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Model\CwnDecoder.h">
-      <Filter>ソース ファイル\Library\Model\Decoder</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Model\CwnStaticMesh.h">
-      <Filter>ソース ファイル\Library\Model\Static</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Model\CwnSkinMesh.h">
-      <Filter>ソース ファイル\Library\Model\Skin</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Input\GamePad.h">
-      <Filter>ソース ファイル\Library\Input\GamePad</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Shader\Shader.h">
-      <Filter>ソース ファイル\Library\Shader</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Shader\TestShader.h">
-      <Filter>ソース ファイル\Library\Shader\Test</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Model\ModelStaticShader.h">
-      <Filter>ソース ファイル\Library\Model\Shader</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Model\ModelSkinShader.h">
-      <Filter>ソース ファイル\Library\Model\Shader</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Model\BoneAnimeData.h">
-      <Filter>ソース ファイル\Library\Model\Anime</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\Camera\Camera.h">
-      <Filter>ソース ファイル\Library\Graphic\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Stage\Factory\StageFactory.h">
-      <Filter>ソース ファイル\Game\StageFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\World\World.h">
-      <Filter>ソース ファイル\Game\World</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D2D\Sprite\Sprite.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D2D\Interface\ImagingFactory.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="include\D2D\Interface\D2DRenderTarget.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Graphic\D2DGraphic.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D2D\D2DGeometry.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Geometory</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D2D\Sprite\SpriteDecoder.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\Factory\CharacterSelectFactory.h">
-      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Scene\CharacterSelectScene.h">
-      <Filter>ソース ファイル\Game\Scene\CharacterSelect</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\Factory\GameFactory.h">
-      <Filter>ソース ファイル\Game\Scene\Game\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\GameScene.h">
-      <Filter>ソース ファイル\Game\Scene\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\StageSelectScene.h">
-      <Filter>ソース ファイル\Game\Scene\StageSelect</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\Factory\StageSelectFactory.h">
-      <Filter>ソース ファイル\Game\Scene\StageSelect\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\ResultScene.h">
-      <Filter>ソース ファイル\Game\Scene\Result</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\Factory\ResultFactory.h">
-      <Filter>ソース ファイル\Game\Scene\Result\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CharacterController\CharacterController.h">
-      <Filter>ソース ファイル\Game\CharacterController</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CharacterController\PlayerController\PlayerController.h">
-      <Filter>ソース ファイル\Game\CharacterController\PlayerController</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\CharacterSelectScene\Icon\SelectIcon.h">
-      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Icon</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\CharacterSelectScene\Cursor\SelectCursor.h">
-      <Filter>ソース ファイル\Game\Scene\CharacterSelect\Cursor</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Input\Keyboard.h">
-      <Filter>ソース ファイル\Library\Input\KeyBoard</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Input\InputManager.h">
-      <Filter>ソース ファイル\Library\Input\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Stage\Stage.h">
-      <Filter>ソース ファイル\Game\Object\Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Utility\ScreenShot.h">
-      <Filter>ソース ファイル\Other\ScreenShot</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Loader\CharacterLoader.h">
-      <Filter>ソース ファイル\Game\Loader</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Player.h">
-      <Filter>ソース ファイル\Game\Object\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Manager\PlayerManager.h">
-      <Filter>ソース ファイル\Game\Object\Player\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\CollisionShape.h">
-      <Filter>ソース ファイル\Game\Object\Shape</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Direction\Direction.h">
-      <Filter>ソース ファイル\Game\Effect\Direction</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\ObjectParameter.h">
-      <Filter>ソース ファイル\Game\Object\ObjectParameter</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Loader\PlayerLoader.h">
-      <Filter>ソース ファイル\Game\Loader\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\UI\UI.h">
-      <Filter>ソース ファイル\Game\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\UI\UIManager.h">
-      <Filter>ソース ファイル\Game\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CharacterController\CharacterInfo.h">
-      <Filter>ソース ファイル\Game\CharacterController\CharacterInfo</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Utility\FPS.h">
-      <Filter>ソース ファイル\Other\FPS</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Direction\Fade.h">
-      <Filter>ソース ファイル\Game\Effect\Direction\Fade</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Effect\Effect.h">
-      <Filter>ソース ファイル\Game\Effect</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Pool\ObjectPool.h">
-      <Filter>ソース ファイル\Game\ObjectPool</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Pool\Ref.h">
-      <Filter>ソース ファイル\Game\Object\Ref</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Utility\Macro.h">
-      <Filter>ソース ファイル\Other\Macro</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\GameScene\GameSceneUI.h">
-      <Filter>ソース ファイル\Game\Scene\Game\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Scene\StageSelectScene\StageIcon.h">
-      <Filter>ソース ファイル\Game\Scene\StageSelect\StageIcon</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Manager\AnimationManager.h">
-      <Filter>ソース ファイル\Game\AnimationManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Utility\SizeGetter.h">
-      <Filter>ソース ファイル\Other\SizeGetter</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\HitPoint.h">
-      <Filter>ソース ファイル\Game\Object\HitPoint</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Manager\HitPointManager.h">
-      <Filter>ソース ファイル\Game\Object\HitPoint\HitPointManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D2D\Interface\WriteFactory.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D2D\Interface\TextFormat.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D2D\Interface\TextLayout.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\D2D\Text\TextObject.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\TextObject</Filter>
+      <Filter>Game\Object\Animation</Filter>
     </ClInclude>
     <ClInclude Include="Include\D2D\Brush\BitmapBrush.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Brush\BitmapBrush</Filter>
+      <Filter>Library\Graphics\D2D\Brush</Filter>
     </ClInclude>
-    <ClInclude Include="Include\D2D\Brush\SolidBrush.h">
-      <Filter>ソース ファイル\Library\Graphic\D2D\Brush\SolidBrush</Filter>
+    <ClInclude Include="Include\Graphic\BlendState\BlendState.h">
+      <Filter>Library\Graphics\D3D\BlendState</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Sound\SoundCallBack.h">
-      <Filter>ソース ファイル\Library\Sound\Callback</Filter>
+    <ClInclude Include="Include\Model\BoneAnimeData.h">
+      <Filter>Library\Graphics\D3D\Model</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Utility\Memory.h">
-      <Filter>ソース ファイル\Other\Memory</Filter>
+    <ClInclude Include="Include\D2D\Brush\Brush.h">
+      <Filter>Library\Graphics\D2D\Brush</Filter>
     </ClInclude>
-    <ClInclude Include="Include\World\DebugDrawer.h">
-      <Filter>ソース ファイル\Game\World\DebugDrawer</Filter>
+    <ClInclude Include="Include\Graphic\Buffer\Buffer.h">
+      <Filter>Library\Graphics\D3D\Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\ObjectMask.h">
-      <Filter>ソース ファイル\Game\Object</Filter>
+    <ClInclude Include="Include\Graphic\Camera\Camera.h">
+      <Filter>Library\Graphics\D3D\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Scene\GameScene\StageCall.h">
-      <Filter>ソース ファイル\Game\Scene\Game\StageCall</Filter>
+    <ClInclude Include="Include\CharacterController\CharacterController.h">
+      <Filter>Game\Object\Character</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Collision\Collision.h" />
-    <ClInclude Include="Include\Object\Skill\SkillDefine.h">
-      <Filter>ソース ファイル\Game\Object\Skill</Filter>
+    <ClInclude Include="Include\CharacterController\CharacterInfo.h">
+      <Filter>Game\Object\Character</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Manager\SkillManager.h">
-      <Filter>ソース ファイル\Game\Object\Skill\SkillManagerr</Filter>
+    <ClInclude Include="Include\Loader\CharacterLoader.h">
+      <Filter>Game\Object\Character</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\Skill\WhiteBlackFirstSkill.h">
-      <Filter>ソース ファイル\Game\Object\Skill\Skill\First</Filter>
+    <ClInclude Include="Include\Scene\Factory\CharacterSelectFactory.h">
+      <Filter>Game\Scene\CharacterSelect</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\Skill\WhiteBlackSkill.h">
-      <Filter>ソース ファイル\Game\Object\Skill\SkillSet\WhiteBlack</Filter>
+    <ClInclude Include="include\Scene\CharacterSelectScene.h">
+      <Filter>Game\Scene\CharacterSelect</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\Skill\SkillState.h">
-      <Filter>ソース ファイル\Game\Object\Skill\SkillState</Filter>
+    <ClInclude Include="Include\Collision\Collision.h">
+      <Filter>Game\Collision</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\Skill\SkillSet.h">
-      <Filter>ソース ファイル\Game\Object\Skill\SkillSet</Filter>
+    <ClInclude Include="Include\Object\CollisionShape.h">
+      <Filter>Game\Collision</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\Skill\Skill.h">
-      <Filter>ソース ファイル\Game\Object\Skill\Skill</Filter>
+    <ClInclude Include="Include\Graphic\Buffer\ConstantBuffer.h">
+      <Filter>Library\Graphics\D3D\Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\Skill\WhiteBlackSecond.h">
-      <Filter>ソース ファイル\Game\Object\Skill\Skill\Secound</Filter>
+    <ClInclude Include="Include\Graphic\Buffer\VertexBuffer.h">
+      <Filter>Library\Graphics\D3D\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\Buffer\IndexBuffer.h">
+      <Filter>Library\Graphics\D3D\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\Converter.h">
+      <Filter>Library\Utility\Converter</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\DelegateList.h">
+      <Filter>Library\Utility\Delegate</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\Delegate.h">
+      <Filter>Library\Utility\Delegate</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\DelegateBase.h">
+      <Filter>Library\Utility\Delegate</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\FPS.h">
+      <Filter>Library\Utility\FPS</Filter>
     </ClInclude>
     <ClInclude Include="Include\Utility\FrameTimer.h">
-      <Filter>ソース ファイル\Other\FrameTimer</Filter>
+      <Filter>Library\Utility\FrameTimer</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\Memory.h">
+      <Filter>Library\Utility\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Model\CwnBaseMesh.h">
+      <Filter>Library\Graphics\D3D\Model\CWN</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Model\CwnDecoder.h">
+      <Filter>Library\Graphics\D3D\Model\CWN</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Model\CwnSkinMesh.h">
+      <Filter>Library\Graphics\D3D\Model\CWN</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Model\CwnStaticMesh.h">
+      <Filter>Library\Graphics\D3D\Model\CWN</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\HitPoint.h">
+      <Filter>Game\Object\HitPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Manager\HitPointManager.h">
+      <Filter>Game\Object\HitPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Scene.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\SceneFactory.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\SceneManager.h">
+      <Filter>Game\Scene\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\Skill.h">
+      <Filter>Game\Object\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\SkillDefine.h">
+      <Filter>Game\Object\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Manager\SkillManager.h">
+      <Filter>Game\Object\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\SkillSet.h">
+      <Filter>Game\Object\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\TitleScene.h">
+      <Filter>Game\Scene\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Factory\TitleFactory.h">
+      <Filter>Game\Scene\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Input\InputManager.h">
+      <Filter>Library\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Input\Keyboard.h">
+      <Filter>Library\Input\Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Input\GamePad.h">
+      <Filter>Library\Input\Gamepad</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D3D\Device\Device.h">
+      <Filter>Library\System\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\ScreenShot.h">
+      <Filter>Library\Utility\ScreenShot</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Player.h">
+      <Filter>Game\Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CharacterController\PlayerController\PlayerController.h">
+      <Filter>Game\Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Loader\PlayerLoader.h">
+      <Filter>Game\Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Manager\PlayerManager.h">
+      <Filter>Game\Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\Sound.h">
+      <Filter>Library\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\SoundCallBack.h">
+      <Filter>Library\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\SoundCore.h">
+      <Filter>Library\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\SE\SE.h">
+      <Filter>Library\Sound\SE</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\BGM\BGM.h">
+      <Filter>Library\Sound\BGM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\BGM\BGMPimpl.h">
+      <Filter>Library\Sound\BGM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\GameScene\GameSceneUI.h">
+      <Filter>Game\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Factory\GameFactory.h">
+      <Filter>Game\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\GameScene.h">
+      <Filter>Game\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Factory\ResultFactory.h">
+      <Filter>Game\Scene\Result</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\ResultScene.h">
+      <Filter>Game\Scene\Result</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Factory\StageSelectFactory.h">
+      <Filter>Game\Scene\StageSelect</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\StageSelectScene.h">
+      <Filter>Game\Scene\StageSelect</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\WhiteBlackSkill.h">
+      <Filter>Game\Object\Skill\WhiteBlack</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\UI\UIManager.h">
+      <Filter>Game\Object\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\UI\UI.h">
+      <Filter>Game\Object\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\System\System.h">
+      <Filter>Library\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\System\Window.h">
+      <Filter>Library\System\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\System\D2DCore.h">
+      <Filter>Library\Graphics\D2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\D2DGeometry.h">
+      <Filter>Library\Graphics\D2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\D2DGraphic.h">
+      <Filter>Library\Graphics\D2D</Filter>
+    </ClInclude>
+    <ClInclude Include="include\D2D\Interface\D2DRenderTarget.h">
+      <Filter>Library\Graphics\D2D\RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\Rasterizer\Rasterizer.h">
+      <Filter>Library\Graphics\D3D\Rasterizer</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Interface\TextFormat.h">
+      <Filter>Library\Graphics\D2D\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Interface\TextLayout.h">
+      <Filter>Library\Graphics\D2D\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Text\TextObject.h">
+      <Filter>Library\Graphics\D2D\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D3D\SwapChain\SwapChain.h">
+      <Filter>Library\System\SwapChain</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\Voice\SubmixVoice.h">
+      <Filter>Library\Sound\Voice</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\Voice\MasterVoice.h">
+      <Filter>Library\Sound\Voice</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\Voice\SourceVoice.h">
+      <Filter>Library\Sound\Voice</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\Debug.h">
+      <Filter>Library\Utility\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\World\DebugDrawer.h">
+      <Filter>Library\Utility\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\DepthStencil\DepthStencil.h">
+      <Filter>Library\Graphics\D3D\DepthStencil</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\Sampler\Sampler.h">
+      <Filter>Library\Graphics\D3D\Sampler</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Object.h">
+      <Filter>Game\Object\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\ObjectMask.h">
+      <Filter>Game\Object\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\ObjectParameter.h">
+      <Filter>Game\Object\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Pool\ObjectPool.h">
+      <Filter>Game\Object\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Shader\Shader.h">
+      <Filter>Library\Graphics\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Model\ModelSkinShader.h">
+      <Filter>Library\Graphics\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Model\ModelStaticShader.h">
+      <Filter>Library\Graphics\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Brush\RGBrush.h">
+      <Filter>Library\Graphics\D2D\Brush</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Brush\SolidBrush.h">
+      <Filter>Library\Graphics\D2D\Brush</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Stage\Stage.h">
+      <Filter>Game\Object\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\GameScene\StageCall.h">
+      <Filter>Game\Object\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Stage\Factory\StageFactory.h">
+      <Filter>Game\Object\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\StageSelectScene\StageIcon.h">
+      <Filter>Game\Object\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\SizeGetter.h">
+      <Filter>Library\Utility\SizeGetter</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\SafeDelete.h">
+      <Filter>Library\Utility\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\Macro.h">
+      <Filter>Library\Utility\Macro</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Interface\ImagingFactory.h">
+      <Filter>Library\Graphics\D2D\ImagingFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Effect\Effect.h">
+      <Filter>Game\Object\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Sprite\SpriteDecoder.h">
+      <Filter>Library\Graphics\D2D\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Sprite\Sprite.h">
+      <Filter>Library\Graphics\D2D\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\WaveDecoder.h">
+      <Filter>Library\Sound\Wave</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sound\WaveData.h">
+      <Filter>Library\Sound\Wave</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\World\World.h">
+      <Filter>Game\Object\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\D2D\Interface\WriteFactory.h">
+      <Filter>Library\Graphics\D2D\WriteFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Pool\Ref.h">
+      <Filter>Game\Object\Ref</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\RenderTarget\RenderTarget.h">
+      <Filter>Library\Graphics\D3D\RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CharacterSelectScene\Cursor\SelectCursor.h">
+      <Filter>Game\Scene\StageSelect\Cursor</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CharacterSelectScene\Icon\SelectIcon.h">
+      <Filter>Game\Scene\StageSelect\Icon</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\D3DGraphic.h">
+      <Filter>Library\Graphics\D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\System\D3DCore.h">
+      <Filter>Library\Graphics\D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\ShaderResource\ShaderResource.h">
+      <Filter>Library\Graphics\D3D\ShaderResource</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Graphic\Graphic.h">
+      <Filter>Library\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Direction\Fade.h">
+      <Filter>Game\Object\Direction</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Direction\Direction.h">
+      <Filter>Game\Object\Direction</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Shader\TestShader.h">
+      <Filter>Game\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Model\MeshDef.h">
+      <Filter>Library\Graphics\D3D\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CaptureScene\CaptureCamera.h">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CaptureScene\CaptureScene.h">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CaptureScene\ConvertChar.h">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CaptureScene\FileLoader.h">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CaptureScene\FileUtility.h">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CaptureScene\KeyboardOperation.h">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CaptureScene\MathDef.h">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CaptureScene\Menu.h">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CaptureScene\ModelAnimeLoader.h">
+      <Filter>Game\Scene\Capture</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\CreditScene.h">
+      <Filter>Game\Scene\Credit</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Factory\CreditFactory.h">
+      <Filter>Game\Scene\Credit</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\BlueSkill.h">
+      <Filter>Game\Object\Skill\Blue</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\YellowSkill.h">
+      <Filter>Game\Object\Skill\Yelow</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\RedSkill.h">
+      <Filter>Game\Object\Skill\Red</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\SkillState.h">
+      <Filter>Game\Object\Skill\State</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="Resource\FbxSkinMeshShader.hlsl">
-      <Filter>ソース ファイル\HLSL</Filter>
-    </CustomBuild>
     <CustomBuild Include="Resource\FbxStaticShader.hlsl">
-      <Filter>ソース ファイル\HLSL</Filter>
+      <Filter>Game\Shader</Filter>
     </CustomBuild>
+    <CustomBuild Include="Resource\FbxSkinMeshShader.hlsl">
+      <Filter>Game\Shader</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Game">
+      <UniqueIdentifier>{d87a4f4c-b081-4fe7-8ea5-c223aaa13ee0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library">
+      <UniqueIdentifier>{f8ce1e00-b1d7-43cd-b8a8-d4448e801e93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object">
+      <UniqueIdentifier>{f42c42cc-6ee9-47ce-9306-64dd8c942c0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene">
+      <UniqueIdentifier>{ccaaa786-65a3-4ed8-a369-6d0c943c6e90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\Title">
+      <UniqueIdentifier>{531f4053-399f-427f-84a7-074968b70601}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\Result">
+      <UniqueIdentifier>{c5e39a1c-226b-47f7-9339-946a41c600fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\Game">
+      <UniqueIdentifier>{40d53035-35a1-4dc8-9307-9c8569e172e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\Credit">
+      <UniqueIdentifier>{784f992d-f89a-4a96-bd1b-cb87374a133e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\CharacterSelect">
+      <UniqueIdentifier>{f861fd9d-7da8-4b7d-9064-b10bf19a81cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\StageSelect">
+      <UniqueIdentifier>{6d1a7bb4-4b09-44b8-a0c8-f875b37e9281}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\Capture">
+      <UniqueIdentifier>{557141fd-ae97-471d-b1ab-b2e5ef63162b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Sound">
+      <UniqueIdentifier>{d5c3d624-0876-4a1d-a6e0-afbb79c87380}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\System">
+      <UniqueIdentifier>{b82a2efe-1006-4fc8-b31b-6d57a6ae858c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Utility">
+      <UniqueIdentifier>{122f762d-f751-409f-92b9-3e3d8202ec8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Animation">
+      <UniqueIdentifier>{517757f6-d249-44d9-93c8-6c25bd7274b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics">
+      <UniqueIdentifier>{8f4662ba-3a8f-417b-b6de-b8fdcbd8ae81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D3D">
+      <UniqueIdentifier>{e19b79fd-32dd-4dc6-ab09-159b437fd091}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D2D">
+      <UniqueIdentifier>{a862ba22-c330-424e-b73c-6be02611c0c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D2D\Brush">
+      <UniqueIdentifier>{673c14a9-1ef2-401d-96f9-1cd41a102e44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D3D\BlendState">
+      <UniqueIdentifier>{9d102d6f-b51b-4cdd-be5c-77e4945a9ee8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D3D\Buffer">
+      <UniqueIdentifier>{968c072f-312b-440c-914a-41cb55878dd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D3D\Camera">
+      <UniqueIdentifier>{75c1b8b1-4ea1-4bc6-b595-a4b5b6ac79d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Character">
+      <UniqueIdentifier>{cd342d7f-8a5b-49c4-b7c2-100abf313332}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Collision">
+      <UniqueIdentifier>{df7ff899-5d28-494f-8b7a-9da853ec5ad0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Utility\Converter">
+      <UniqueIdentifier>{a44e6c88-6a24-48d0-a730-be6b5e9eeca3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Utility\Delegate">
+      <UniqueIdentifier>{a2670862-334d-4c9b-aae4-1cab572f9660}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Utility\FPS">
+      <UniqueIdentifier>{fba88db1-8b82-453c-9b0c-b5bafd317963}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Utility\FrameTimer">
+      <UniqueIdentifier>{31590b81-544f-4824-ba79-1f063c3d1ea7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Utility\Memory">
+      <UniqueIdentifier>{199d82a1-29b3-45ec-af45-09c86111e8a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\System\Device">
+      <UniqueIdentifier>{53b1edfe-e184-4526-8f2b-c17a522630b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\System\SwapChain">
+      <UniqueIdentifier>{9ae6b0d9-940a-4d38-b6f7-56455bcf934b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\HitPoint">
+      <UniqueIdentifier>{db5d1ff1-dd2d-4575-9f86-edf34626a3e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\Manager">
+      <UniqueIdentifier>{242a9435-02cd-4552-bdf1-189371e20ec1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Skill">
+      <UniqueIdentifier>{a1470c5a-f3ff-4f3c-b6ff-47ac23b2bf94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Input">
+      <UniqueIdentifier>{22a4fdf8-206e-47fe-9d75-11e8cd59d2f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Input\Keyboard">
+      <UniqueIdentifier>{e3eb2892-5618-4fd1-bf8c-c59fae9a1c00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Input\Gamepad">
+      <UniqueIdentifier>{3d4aabd7-7e6b-4690-b64f-e3e453e70487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Utility\ScreenShot">
+      <UniqueIdentifier>{0d37a38f-dd1a-4592-8f20-989f6e8312ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D3D\Rasterizer">
+      <UniqueIdentifier>{112bf9ef-97ad-473d-b2f5-966968922c56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D3D\Sampler">
+      <UniqueIdentifier>{352fc5fb-43f6-469c-82f4-7acc8d69a8fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Player">
+      <UniqueIdentifier>{b2d33cfa-efb7-4d41-bf56-7f6ea0e2d93e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Sound\SE">
+      <UniqueIdentifier>{39e77177-58b6-4a6e-94dc-02a1ab73fb23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Sound\BGM">
+      <UniqueIdentifier>{65171d8c-9cf2-4429-b9ea-6840e86c0cf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Skill\WhiteBlack">
+      <UniqueIdentifier>{35d5aa4d-c320-4fb6-af2e-f1c117bb09b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\UI">
+      <UniqueIdentifier>{0b05a70e-ce53-442b-8da0-89ea617ff74d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\System\Window">
+      <UniqueIdentifier>{e9b92488-c182-4ee5-b745-26bbb5b5ff0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D2D\RenderTarget">
+      <UniqueIdentifier>{6d33f540-5ee5-4a9c-89e3-41601891457c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D2D\Text">
+      <UniqueIdentifier>{412dfae5-51e2-439a-9e58-5137d1b7b80b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Sound\Voice">
+      <UniqueIdentifier>{97fa15fb-d7ea-4045-81c8-799f199251e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Utility\Debug">
+      <UniqueIdentifier>{8b736412-8d85-4a93-baee-c22f5c578ae8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D3D\DepthStencil">
+      <UniqueIdentifier>{3cf55fd8-9525-4e7f-b7af-96ed91ca6468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Object">
+      <UniqueIdentifier>{6e419bf3-28d3-4784-9edb-a518a5ec9e28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\Shader">
+      <UniqueIdentifier>{704de851-ba7b-4118-89fc-7bd54a9e16a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Stage">
+      <UniqueIdentifier>{c3522558-cf10-4f8e-b4b9-e4b2efd4defc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Utility\SizeGetter">
+      <UniqueIdentifier>{89ffd380-a165-4f34-96cf-2d9ee9b3a652}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Utility\Macro">
+      <UniqueIdentifier>{60b9c92a-8bbc-44da-b480-c3759d352a38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D2D\ImagingFactory">
+      <UniqueIdentifier>{847bf336-3aed-4a63-aee4-261c1d338958}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Effect">
+      <UniqueIdentifier>{c263da85-1da9-408a-ba4f-e756c3ac366e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D2D\Sprite">
+      <UniqueIdentifier>{ba4b63dd-05c6-4aef-860c-373a94fba222}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Sound\Wave">
+      <UniqueIdentifier>{c9650072-e64f-48a0-9dc7-b4d338790c04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\World">
+      <UniqueIdentifier>{b9e2146a-7acc-4c63-ad1c-ab8e27089b08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D2D\WriteFactory">
+      <UniqueIdentifier>{f23da83e-14ba-4725-a192-4651287cb337}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Ref">
+      <UniqueIdentifier>{b459a303-d4de-41ad-bd88-1daa1cd879af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D3D\RenderTarget">
+      <UniqueIdentifier>{a878726d-5e8e-4bcf-96e2-11eaea7312f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\StageSelect\Cursor">
+      <UniqueIdentifier>{26137d2f-57da-4362-b5e6-10931d6f674f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\StageSelect\Icon">
+      <UniqueIdentifier>{eb155f3c-7312-4ff5-be86-1d134c1b04f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D3D\ShaderResource">
+      <UniqueIdentifier>{0976edad-5305-4e42-868d-8041e7781649}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D3D\Model">
+      <UniqueIdentifier>{c9a77b3c-5a38-4cce-87fa-10131a6b51c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Graphics\D3D\Model\CWN">
+      <UniqueIdentifier>{b7ca46bb-3245-4299-8e3c-16b8889a764c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Direction">
+      <UniqueIdentifier>{3d26bd96-1e42-4469-ad39-948c2a3bab0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Shader">
+      <UniqueIdentifier>{5c59118c-19a6-46e0-8466-d405ad8ced26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Skill\Blue">
+      <UniqueIdentifier>{46e546d7-d518-4965-ab71-1f9fa9155d69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Skill\Yelow">
+      <UniqueIdentifier>{bf76bf2c-110d-42dc-a580-4a045d0b85c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Skill\Red">
+      <UniqueIdentifier>{24da05c5-8144-42c9-a0f8-7ced4e5e38c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Skill\State">
+      <UniqueIdentifier>{325739a7-a97f-4ea3-b88a-df9e9049b909}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

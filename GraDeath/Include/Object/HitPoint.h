@@ -30,7 +30,9 @@ public:
 	void SetRank ( int _rank );
 
 	int GetRank ();
-
+	bool IsCompared(Player* _player);
+	bool IsEnabled();
+	void Release();
 };
 
 inline void HitPoint::SetHP ( float _hp )

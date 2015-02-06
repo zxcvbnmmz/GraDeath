@@ -64,6 +64,11 @@ void PlayerManager::Update(){
 }
 
 void PlayerManager::Draw(){
+
+	for (int i = 0; i < PLAYERS; ++i){
+		controllers[i]->Draw();
+	}
+
     for (int i = 0; i < PLAYERS; ++i){
         controllers[i]->Draw();
     }
@@ -76,7 +81,11 @@ void PlayerManager::AllPlayerMove(int _movex, int _movey){
 }
 void PlayerManager::OnPlayerPos(int _Player, int _posx, int _posy){
     controllers[_Player]->SetPos(_posx, _posy);
+
 }
+
+
+
 
 
 

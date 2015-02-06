@@ -5,6 +5,7 @@
 #include "D2D/Sprite/Sprite.h"
 #include "Direction/Fade.h"
 #include "Utility/FrameTimer.h"
+#include "Sound/BGM/BGM.h"
 
 class TitleScene : public Scene{
 public:
@@ -33,6 +34,8 @@ private:
 	void Move();
 	Fade fade;
 	FrameTimer timer;
+
+	BGM bgm;
 };
 
 #endif	// end of TitleScene
