@@ -18,7 +18,7 @@ public:
 
 	virtual void SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg );
 
-	AnimationData& GetAnimationData ( int _num );
+	b2Body& Getb2Body ( int _num );
 
 };
 

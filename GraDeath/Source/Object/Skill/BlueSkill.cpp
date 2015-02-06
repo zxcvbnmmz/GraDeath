@@ -59,7 +59,7 @@ void BlueSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirF
 	skills[ _id ]->SkillOn ();
 }
 
-AnimationData& BlueSkill::GetAnimationData ( int _num )
+b2Body& BlueSkill::Getb2Body ( int _num )
 {
-	return skills[ _num ]->GetAnimationData ();
+	return skills[ _num ]->Getb2Body ();
 }

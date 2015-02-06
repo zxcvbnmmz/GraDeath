@@ -3,9 +3,12 @@
 #include "D2D/Sprite/Sprite.h"
 #include <xutility>
 #include "Utility/Converter.h"
+#include"Object/CollisionShape.h"
 #include <string>
 #include <iostream>
 #include <fstream>
+
+void SkillDettachFixture ( b2Body* body );
 
 void Skill::Init ( std::string _filename, std::wstring _path, int skill_id )
 {
@@ -22,6 +25,13 @@ void Skill::Init ( std::string _filename, std::wstring _path, int skill_id )
 	//_path += f;
 
 	skillAnim->Create ( _path.c_str() );// L"Resource/Object/Skill/WhiteBlack/skill01.png" );// f );
+
+	b2BodyDef def;
+	def.position = b2Vec2 ( pos.x, pos.y );
+	def.type = b2_staticBody;
+
+	body = World::CreateBody ( &def );
+	body->SetUserData ( this );
 }
 
 void Skill::Update ()
@@ -35,24 +45,27 @@ void Skill::Update ()
 		auto nextCell = currentCell + 1;
 		if ( nextCell == animSkill.cellDatas[ nowAnime ].end () )
 		{
-			nowAnime = ( nowAnime + 1 ) % animSkill.cellDatas.size ();
+			//nowAnime = ( nowAnime + 1 ) % animSkill.cellDatas.size ();
 			currentCell = animSkill.cellDatas[ nowAnime ].begin ();
 			if ( nowAnime == ( animSkill.cellDatas.size () - 1 ) )
 			{
 				nowAnime = 0;
 				skillFlg = false;
 				currentCell = animSkill.cellDatas[ nowAnime ].begin ();
+				SkillDettachFixture ( body );
 			}
             else
             {
                 nowAnime = (nowAnime + 1) % animSkill.cellDatas.size();
                 currentCell = animSkill.cellDatas[nowAnime].begin();
+				AttachFixture ( ( *currentCell )->shapes );
             }
 
 		}
 		else
 		{
 			currentCell++;
+			AttachFixture ( ( *currentCell )->shapes );
 			frameCount = 0;
 		}
 	}
@@ -101,7 +114,31 @@ void Skill::SkillOff ()
 	skillFlg = false;
 }
 
-AnimationData& Skill::GetAnimationData ()
+b2Body& Skill::Getb2Body ()
 {
-	return animSkill;
+	return *body;
+}
+
+void Skill::AttachFixture ( std::vector<std::shared_ptr<CollisionShape>>& shapes )
+{
+	// 新しいフィクスチャーを作る前に一旦前のを消しておく
+	SkillDettachFixture ( body );
+
+	// 各セルに配置されたCollisionShapeを新しいフィクスチャーとして全てbodyに追加する
+	for ( auto shape : shapes ){
+		shape->AddFixture ( body );
+	}
+}
+
+void SkillDettachFixture ( b2Body* body ){
+	b2Fixture* fixture = body->GetFixtureList ();
+	if ( fixture == nullptr ){
+		return;
+	}
+
+	while ( fixture != nullptr ){
+		b2Fixture* temp = fixture->GetNext ();
+		body->DestroyFixture ( fixture );
+		fixture = temp;
+	}
 }

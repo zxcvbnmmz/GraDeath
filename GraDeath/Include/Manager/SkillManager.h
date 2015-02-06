@@ -5,6 +5,7 @@
 #include "CharacterController/CharacterInfo.h"
 
 struct D3DXVECTOR2;
+class  b2Body;
 
 namespace SkillManager
 {
@@ -21,6 +22,8 @@ namespace SkillManager
 	bool GetSkillUse ( int _num, SKILL_ID _id );
 
 	float GetCoolTime ( int _num, SKILL_ID _id );
+
+	b2Body& Getb2Body ( int _num, SKILL_ID _id );
 
 	CharacterInfo::PLAYER_TYPE GetPlayerType ( int _num );
 
