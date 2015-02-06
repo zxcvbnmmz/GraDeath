@@ -103,13 +103,7 @@ int GameScene::ExecuteStageCall(){
 	return STILL_PROCESSING;
 }
 
-int GameScene::ExecuteButtle(){
-
-	// ‚±‚±‚Å’Êíì‹Æ
-	PlayerManager::Update();
-	SkillManager::Update();
-
-	
+int GameScene::ExecuteButtle(){	
     if (Stage::GetStageHP() > 0){
         // ‚±‚±‚Å’Êíì‹Æ
         PlayerManager::Update();
