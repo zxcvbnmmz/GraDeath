@@ -18,7 +18,6 @@ bool BGM::Play(){
 }
 
 void BGM::Stop(){
-
 	pimpl->Stop();
 }
 

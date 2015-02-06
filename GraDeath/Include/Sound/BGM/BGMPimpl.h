@@ -23,7 +23,6 @@ private:
 	std::shared_ptr<class SourceVoice> sourceVoice;
 };
 
-
 }
 
 #endif	// end of BGMPimpl

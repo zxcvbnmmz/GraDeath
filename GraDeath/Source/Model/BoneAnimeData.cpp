@@ -27,7 +27,6 @@ struct CwnMatrix
 // コンストラクタ
 BoneAnimeData::BoneAnimeData(){}
 
-
 // デストラクタ
 BoneAnimeData::~BoneAnimeData()
 {

@@ -134,7 +134,7 @@ namespace Graphic{
 		viewport._42 = (float)height / 2;
 		viewport._33 = 1.0f;
 		viewport._44 = 1.0f;
-		D3D::RS::SetViewport(width, height);
+		D3D::RS::SetViewport ( width, height );
 	}
 
 	namespace {

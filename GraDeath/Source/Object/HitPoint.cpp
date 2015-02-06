@@ -20,19 +20,3 @@ bool HitPoint::IsDead ()
 {
 	return ( hp <= .0f );
 }
-
-bool HitPoint::IsCompared(Player* _player){
-	return player == _player;
-}
-
-bool HitPoint::IsEnabled(){
-	return player != nullptr;
-}
-
-void HitPoint::Release(){
-	player = nullptr;
-	rank = 0;
-	hp = 0;
-	maxHP = 0;
-}
-
