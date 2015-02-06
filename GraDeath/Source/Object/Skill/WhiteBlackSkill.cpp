@@ -1,7 +1,6 @@
 #include "Object/Skill/WhiteBlackSkill.h"
-#include "Object/Skill/WhiteBlackFirstSkill.h"
-#include "Object/Skill/WhiteBlackSecond.h"
 #include "Loader/PlayerLoader.h"
+#include "Object/Skill/Skill.h"
 
 D3DXVECTOR2 setPosition[] =
 {
@@ -59,7 +58,7 @@ void WhiteBlackSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned in
 	skills[ _id ]->SkillOn ();
 }
 
-AnimationData& WhiteBlackSkill::GetAnimationData ( int _num )
+b2Body& WhiteBlackSkill::Getb2Body ( int _num )
 {
-	return skills[ _num ]->GetAnimationData ();
+	return skills[ _num ]->Getb2Body ();
 }

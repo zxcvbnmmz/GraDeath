@@ -1,16 +1,19 @@
 #ifndef _SKILL_H_
 #define _SKILL_H_
 
+#include <Box2D\Dynamics\b2Body.h>
 #include "Object/Skill/SkillDefine.h"
 #include "CharacterController/CharacterInfo.h"
 #include "Object/ObjectParameter.h"
 #include <memory>
 #include <vector>
 #include <string>
+#include "World/World.h"
 
 class Sprite;
 struct D3DXVECTOR2;
 struct CellData;
+struct CollisionShape;
 
 class Skill
 {
@@ -25,6 +28,7 @@ protected:
 	std::vector<std::shared_ptr<CellData>>::iterator currentCell;
 
 	unsigned int dirFlg;
+	b2Body* body;
 
 public:
 	Skill (){}
@@ -47,7 +51,10 @@ public:
 
 	void SkillOff ();
 
-	AnimationData& GetAnimationData ();
+	b2Body& Getb2Body ();
+
+private:
+	void AttachFixture ( std::vector<std::shared_ptr<struct CollisionShape>>& shapes );
 
 
 };
