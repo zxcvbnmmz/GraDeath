@@ -59,20 +59,34 @@ void PlayerManager::Update(){
 	for (int i = 0; i < PLAYERS - 1; ++i){
 		for (int k = i + 1; k < PLAYERS; ++k){
 			Collision::Collide(&players[i], &players[k]);
+			//Collision::CollideOtherFloors(&players[i]);
 		}
 	}
 }
 
 void PlayerManager::Draw(){
-    
+
+	for (int i = 0; i < PLAYERS; ++i){
+		controllers[i]->Draw();
+	}
+
+    for (int i = 0; i < PLAYERS; ++i){
+        controllers[i]->Draw();
+    }
 }
 
 void PlayerManager::AllPlayerMove(int _movex, int _movey){
-    
+    for (int i = 0; i < PLAYERS; ++i){
+        controllers[i]->Move(_movex , _movey);
+    }
 }
 void PlayerManager::OnPlayerPos(int _Player, int _posx, int _posy){
     controllers[_Player]->SetPos(_posx, _posy);
+
 }
+
+
+
 
 
 

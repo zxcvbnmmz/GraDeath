@@ -34,8 +34,11 @@ public:
 
 	void Init (int padID, Player* _player);
 	void Draw();
+
+	void Move(int _movex, int _movey){}
+	void SetPos(int _posx, int _posy){}
+
 	void Release ();
-    void SetPos(int posx, int posy);
 
 private:
 	virtual void Idle();

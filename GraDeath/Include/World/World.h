@@ -19,6 +19,7 @@ namespace World{
 	b2Contact* GetContactList();
     void SetGravity(float x, float y);
 	void Step(float timeStep = 1.0f / 60.0f);
+	void SetGravity(float x, float y);
 	void DrawDebugData(b2Draw* drawer = nullptr);
 }
 

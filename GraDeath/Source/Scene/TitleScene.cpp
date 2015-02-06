@@ -3,6 +3,7 @@
 #include "System/Window.h"
 
 #include "Scene/Factory/CharacterSelectFactory.h"
+#include "Scene/Factory/CaptureFactory.h"
 #include "Input/Gamepad.h"
 
 #include "Input\Keyboard.h"
@@ -35,7 +36,6 @@ TitleScene::TitleScene(){
 }
 
 TitleScene::~TitleScene(){
-	ObjectPoolManager::GetInstance()->GetCurrentPool()->Clear();
 }
 
 SCENE_STATUS TitleScene::Execute(){
@@ -139,6 +139,13 @@ int TitleScene::ExecuteSelect(){
 		vect_move += D3DXVECTOR2(0, 200);
 		Move();
 	}
+
+	if (Keyboard::CheckKey(KC_P) == INPUT_PUSH) {
+		CaptureFactory cf;
+		SceneFactory::Reserve (&cf);
+		return END_PROCESS;
+	}
+
 	vect_move *= .85f;
 	start_move *= .95f;
 	credit_move *= .95f;

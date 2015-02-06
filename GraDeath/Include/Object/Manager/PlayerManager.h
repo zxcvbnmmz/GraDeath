@@ -9,8 +9,11 @@ namespace PlayerManager{
 	void Release();
 	void Update();
 	void Draw();
+
+
     void AllPlayerMove(int movex, int movey);
     void OnPlayerPos(int _Player, int _posx , int _posy);
+
 };
 
 #endif	// end of PlayerManager
