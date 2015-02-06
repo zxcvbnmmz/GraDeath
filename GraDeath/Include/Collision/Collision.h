@@ -8,9 +8,8 @@ class CharacterController;
 
 namespace Collision{
 	bool Collide(Player* bodyA, Player* bodyB);
-	bool CollideToStage(Player* body, b2Body* breakableStage);
-	bool CollideToSkill(Player* player);
-	bool CollideOtherFloors(Player* body, b2Body* unbreakableStage, CharacterController* controller);
+	bool CollideToStage(Player* body, b2Body* stage, CharacterController* controller);
+	bool CollideFloor(Player* body, b2Body* floor, CharacterController* controller);
 	bool CollideSkill(Player* body, Skill* skill);
 }
 

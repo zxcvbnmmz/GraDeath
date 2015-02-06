@@ -6,7 +6,7 @@
 class Skill;
 struct AnimationData;
 struct D3DXVECTOR2;
-
+class b2Body;
 
 class SkillSet
 {
@@ -26,7 +26,7 @@ public:
 
 	virtual void SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg ) = 0;
 
-	virtual AnimationData& GetAnimationData ( int _num ) = 0;
+	virtual b2Body& Getb2Body ( int _num ) = 0;
 
 };
 #endif

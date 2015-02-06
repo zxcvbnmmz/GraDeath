@@ -37,6 +37,7 @@ public:
 
     void SetPos(int _posx, int _posy);
 
+
 	void Release ();
 
 private:
@@ -55,6 +56,8 @@ private:
 	float ground;
 
 	unsigned int dirFlg = 0;
+
+
 };
 
 #endif
