@@ -6,7 +6,7 @@
 D3DXVECTOR2 setPosition[] =
 {
 	D3DXVECTOR2 ( 0, -290.0f ),
-	D3DXVECTOR2 ( 0, -450.0f ),
+	D3DXVECTOR2 ( -450, -390.0f ),
 	D3DXVECTOR2 ( -100, -290.0f )
 };
 
@@ -36,7 +36,7 @@ void WhiteBlackSkill::Init ()
 	//skills.push_back ( second );
 
 	Skill* third = new Skill;
-	third->Init ( "Resource/Object/Skill/WhiteBlack/shirokuro_Skill_Third.bin", L"Resource/Object/Skill/WhiteBlack/shirokuro_Skill_Third.png", SKILL_ID_LOAD::SKILL_ID_BLACKWHITE );
+	third->Init ( "Resource/Object/Skill/Blue/Blue_Skill_Test.bin", L"Resource/Object/Skill/Blue/Blue_Skill_Test.png", SKILL_ID_LOAD::SKILL_ID_BLUE );
 	skills.push_back ( third );
 }
 

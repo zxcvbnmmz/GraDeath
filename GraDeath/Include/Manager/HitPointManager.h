@@ -9,7 +9,12 @@ namespace HitPointManager
 	void Init ( int _num, Player* _player, float _hp );
 
 	// ダメージ
+
+	void HitDamage(int _num, float _hit);
+	void HitDamage(Player* _player, float _hit);
+
 	void HitDamage ( int _num, float _hit );
+
 
 	// HPの取得
 	float GetHitPoint ( int _num );
@@ -17,11 +22,16 @@ namespace HitPointManager
 	// 勝者
 	int AlivePlayer ();
 
+
+	int GetPlayerRanking ( int _num );
+
 	int PlayerRanking ( int _num );
+
 
 	// 一人だけになった
 	bool IsOnlyOne ();
 
+	void Release();
 }
 
 #endif

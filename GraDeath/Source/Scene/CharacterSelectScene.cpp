@@ -37,13 +37,6 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 		return END_PROCESS;
 	}
 
-	if (Keyboard::CheckKey(KC_O) == INPUT_PUSH){
-		Utility::CreateScreenShot(L"Resource/ScreenShot/");
-	}
-	if (Keyboard::CheckKey(KC_P) == INPUT_PUSH){
-		Utility::CreateScreenShot(L"Resource/ScreenShot/", L"GraDeath");
-	}
-
 	selectCursor->Update ();
 	return STILL_PROCESSING;
 }
