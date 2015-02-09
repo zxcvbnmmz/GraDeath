@@ -9,6 +9,7 @@
 #include "Manager/SkillManager.h"
 #include "Collision/Collision.h"
 #include "Stage/Stage.h"
+#include "Manager/SkillManager.h"
 
 namespace PlayerManager
 {
@@ -51,6 +52,7 @@ void PlayerManager::Release(){
 		controllers[ i ] = nullptr;
 		players[i].Release();
 	}
+	SkillManager::Release();
 }
 
 void PlayerManager::Update(){
@@ -58,11 +60,14 @@ void PlayerManager::Update(){
 		controllers[i]->Update();
 	}
 
-	for (int i = 0; i < PLAYERS - 1; ++i){
+	SkillManager::Update();
+
+	for (int i = 0; i < PLAYERS; ++i){
 		for (int k = i + 1; k < PLAYERS; ++k){
 			Collision::Collide(&players[i], &players[k]);
-			Collision::CollideFloor(&players[i], Stage::GetBreakbleStage(),controllers[i]);
+			Collision::CollideSkill(&players[i], SkillManager::Getb2Body(k));
 		}
+		Collision::CollideFloor(&players[i], Stage::GetBreakbleStage(), controllers[i]);
 	}
 }
 
@@ -75,6 +80,7 @@ void PlayerManager::Draw(){
     for (int i = 0; i < PLAYERS; ++i){
         controllers[i]->Draw();
     }
+	SkillManager::Draw();
 }
 
 void PlayerManager::AllPlayerMove(int _movex, int _movey){

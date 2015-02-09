@@ -12,7 +12,7 @@
 #include "Utility/Delegate.h"
 #include "Scene/GameScene/GameSceneUI.h"
 #include "Manager/HitPointManager.h"
-#include "Manager/SkillManager.h"
+#include "Collision/Collision.h"
 
 #include "World/World.h"
 
@@ -47,7 +47,6 @@ GameScene::~GameScene ()
 	PlayerManager::Release();
 	Stage::Release ();
 	GameSceneUI::Release ();
-	SkillManager::Release ();
 }
 
 SCENE_STATUS GameScene::Execute(){
@@ -110,7 +109,6 @@ int GameScene::ExecuteButtle(){
         // ‚±‚±‚Å’Êíì‹Æ
         //if ()
         World::SetGravity(0, 95);
-        SkillManager::Update();
     }
     else{
 //        PlayerManager::OnPlayerPos(1, 300, 300);
@@ -151,7 +149,6 @@ void GameScene::DrawStageCall(){
 void GameScene::DrawButtle(){
 	Stage::Draw();
 	PlayerManager::Draw();
-	SkillManager::Draw ();
 //    Special();
 	GameSceneUI::Create()->Draw();
 }

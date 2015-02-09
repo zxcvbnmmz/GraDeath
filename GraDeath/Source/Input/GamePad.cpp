@@ -196,4 +196,8 @@ namespace GamePad
 		}
 		return false;
 	}
+
+	bool IsActive(PAD_NUM _num){
+		return pad[_num].isActive;
+	}
 }

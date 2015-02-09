@@ -10,6 +10,7 @@
 #include "UI/UIManager.h"
 #include "Utility/FPS.h"
 #include "Pool/ObjectPool.h"
+#include "Input/Gamepad.h"
 
 #include <time.h>
 
@@ -18,6 +19,18 @@ namespace{
 	Scene* reserve;
 
 	FPS fps;
+
+	bool IsEnd(){
+		for (int i = 0; i < 4; ++i){
+			if (GamePad::IsActive((PAD_NUM)i)){
+				if (GamePad::getGamePadState((PAD_NUM)i, BUTTON_START) == INPUT_PRESS &&
+					GamePad::getGamePadState((PAD_NUM)i, BUTTON_BACK) == INPUT_PRESS){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 }
 
 bool SceneManager::Initialize(){
@@ -58,6 +71,9 @@ int SceneManager::Execute(){
 	}
 
 	InputManager::Update();
+	if (IsEnd()){
+		return 0;
+	}
 
 	Scene* currentScene = scenes.top();
 

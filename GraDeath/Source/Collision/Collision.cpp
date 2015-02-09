@@ -129,7 +129,48 @@ bool Collision::CollideFloor(Player* player, b2Body* unbreakableStage, Character
 	return false;
 }
 
-bool Collision::CollideSkill(Player* player, Skill* skill){
+bool Collision::CollideSkill(Player* player, b2Body* skill){
+	if (skill == nullptr){
+		return false;
+	}
 
+	b2Body* bodyA = player->GetBody();
+	b2Body* bodyB = skill;
+
+	const b2Transform& xfA = bodyA->GetTransform();
+	const b2Transform& xfB = bodyB->GetTransform();
+	b2Fixture* fixtureA = bodyA->GetFixtureList();
+	while (fixtureA != NULL){
+		const b2Shape* shapeA = fixtureA->GetShape();
+		b2Fixture* fixtureB = bodyB->GetFixtureList();
+
+		while (fixtureB != NULL){
+			const b2Shape* shapeB = fixtureB->GetShape();
+
+			// フィルターのマスク値とカテゴリ値をビット演算でどうこうする
+			// この辺りはbox2dの衝突判定と同じ
+			const b2Filter& filterA = fixtureA->GetFilterData();
+			const b2Filter& filterB = fixtureB->GetFilterData();
+			bool collide = (filterA.maskBits & filterB.categoryBits) != 0 && (filterA.categoryBits & filterB.maskBits) != 0;
+
+			if (collide){
+				// b2TestOverlapはシェイプとシェイプが衝突しているか判定する関数
+				bool touching = b2TestOverlap(shapeA, 0, shapeB, 0, xfA, xfB);
+				if (touching){
+					CollisionShape* shape;
+					float strength = 0;
+
+					shape = (CollisionShape*)fixtureB->GetUserData();
+
+					strength = shape->GetStrength();
+					HitPointManager::HitDamage(player, strength);
+
+					return true;
+				}
+			}
+			fixtureB = fixtureB->GetNext();
+		}
+		fixtureA = fixtureA->GetNext();
+	}
 	return false;
 }
