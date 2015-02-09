@@ -4,7 +4,7 @@
 #include "Input/GamePad.h"
 
 
-#define MOVE_SPEED ( 5.0F )
+#define MOVE_SPEED ( 15.0F )
 
 struct CursorState
 {
@@ -131,7 +131,7 @@ void SelectCursor::Determination ( int _num )
 {
 	PAD_NUM padID = ( PAD_NUM )_num;
 
-	if ( INPUT_STATE::INPUT_PUSH == GamePad::getGamePadState ( padID, BUTTON_ID::BUTTON_A ) ||
+	if ( INPUT_STATE::INPUT_PUSH == GamePad::getGamePadState ( padID, BUTTON_ID::BUTTON_A ) &&
 		icon->GetCharacterInfo( _num ).pType != CharacterInfo::PLAYER_TYPE::PLAYER_NON )
 	{
 		cursorState[ _num ].selectFlg = true;

@@ -312,26 +312,26 @@ bool Stage::GetSkillEnd(){
 /*
 この後はコリジョンを外して入れるだけ
 */
-void DettachFixture(b2Body* body);
-void Stage::AttachFixture(){
-    // 新しいフィクスチャーを作る前に一旦前のを消しておく
-    DettachFixture(body);
-
-    // 各セルに配置されたCollisionShapeを新しいフィクスチャーとして全てbodyに追加する
-    for (auto shape : shapes){
-        shape->AddFixture(body);
-    }
-}
-
-void DettachFixture(b2Body* body){
-    b2Fixture* fixture = body->GetFixtureList();
-    if (fixture == nullptr){
-        return;
-    }
-
-    while (fixture != nullptr){
-        b2Fixture* temp = fixture->GetNext();
-        body->DestroyFixture(fixture);
-        fixture = temp;
-    }
-}
+//void DettachFixture(b2Body* body);
+//void Stage::AttachFixture(){
+//    // 新しいフィクスチャーを作る前に一旦前のを消しておく
+//    DettachFixture(body);
+//
+//    // 各セルに配置されたCollisionShapeを新しいフィクスチャーとして全てbodyに追加する
+//    for (auto shape : shapes){
+//        shape->AddFixture(body);
+//    }
+//}
+//
+//void DettachFixture(b2Body* body){
+//    b2Fixture* fixture = body->GetFixtureList();
+//    if (fixture == nullptr){
+//        return;
+//    }
+//
+//    while (fixture != nullptr){
+//        b2Fixture* temp = fixture->GetNext();
+//        body->DestroyFixture(fixture);
+//        fixture = temp;
+//    }
+//}
