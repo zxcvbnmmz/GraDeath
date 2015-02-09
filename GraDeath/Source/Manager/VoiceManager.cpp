@@ -17,7 +17,8 @@ void VoiceManager::Initialize(unsigned int playerID){
 
 void VoiceManager::Release(){
 	for (int i = 0; i < VOICE_MAX; ++i){
-		seList[i]->Release();
+		if(seList[i] != nullptr)
+			seList[i]->Release();
 	}
 }
 

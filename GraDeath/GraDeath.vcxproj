@@ -130,6 +130,7 @@
     <ClCompile Include="Source\Manager\AnimationManager.cpp" />
     <ClCompile Include="Source\Manager\HitPointManager.cpp" />
     <ClCompile Include="Source\Manager\SkillManager.cpp" />
+    <ClCompile Include="Source\Manager\VoiceManager.cpp" />
     <ClCompile Include="Source\Model\BoneAnimeData.cpp" />
     <ClCompile Include="Source\Model\CwnBaseMesh.cpp" />
     <ClCompile Include="Source\Model\CwnDecoder.cpp" />
@@ -251,6 +252,7 @@
     <ClInclude Include="Include\Manager\AnimationManager.h" />
     <ClInclude Include="Include\Manager\HitPointManager.h" />
     <ClInclude Include="Include\Manager\SkillManager.h" />
+    <ClInclude Include="Include\Manager\VoiceManager.h" />
     <ClInclude Include="Include\Model\BoneAnimeData.h" />
     <ClInclude Include="Include\Model\CwnBaseMesh.h" />
     <ClInclude Include="Include\Model\CwnDecoder.h" />
@@ -337,6 +339,7 @@
     <ClInclude Include="Include\Utility\ScreenShot.h" />
     <ClInclude Include="Include\Utility\SizeGetter.h" />
     <ClInclude Include="Include\Utility\FrameTimer.h" />
+    <ClInclude Include="Include\Voice\VoiceList.h" />
     <ClInclude Include="Include\World\DebugDrawer.h" />
     <ClInclude Include="Include\World\World.h" />
   </ItemGroup>

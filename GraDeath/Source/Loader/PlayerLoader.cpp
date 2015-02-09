@@ -10,6 +10,7 @@
 #include "Utility/SizeGetter.h"
 #include "Utility/Converter.h"
 #include "Object/ObjectMask.h"
+#include "Sound/Sound.h"
 
 char* playerIconName[ ] =
 {
@@ -140,6 +141,9 @@ namespace PlayerLoader
 				// サウンド名取得
 				char* soundName = new char[ fileCount ];
 				ifs.read ( ( char* )soundName, sizeof( char )* fileCount );
+				if (temp > 0){
+					cell->se = Sound::CreateSE(soundName);
+				}
 				delete[ ] soundName;
 
 				// shapeカウント

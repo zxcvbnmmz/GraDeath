@@ -92,6 +92,9 @@
     <ClCompile Include="Source\Manager\SkillManager.cpp">
       <Filter>Game\Object\Skill</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Object\Skill\SkillState.cpp">
+      <Filter>Game\Object\Skill</Filter>
+    </ClCompile>
     <ClCompile Include="Source\Scene\TitleScene.cpp">
       <Filter>Game\Scene\Title</Filter>
     </ClCompile>
@@ -272,6 +275,9 @@
     <ClCompile Include="Source\Graphic\RenderTarget\RenderTarget.cpp">
       <Filter>Library\Graphics\D3D\RenderTarget</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor.cpp">
+      <Filter>Game\Scene\StageSelect\Cursor</Filter>
+    </ClCompile>
     <ClCompile Include="Source\System\D3DCore.cpp">
       <Filter>Library\Graphics\D3D</Filter>
     </ClCompile>
@@ -323,8 +329,8 @@
     <ClCompile Include="Source\Scene\Factory\CaptureFactory.cpp">
       <Filter>Game\Scene\Capture</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\Skill\SkillState.cpp">
-      <Filter>Game\Object\Skill\State</Filter>
+    <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp">
+      <Filter>Game\Scene\StageSelect\Icon</Filter>
     </ClCompile>
     <ClCompile Include="Source\Object\Skill\BlueSkill.cpp">
       <Filter>Game\Object\Skill\Blue</Filter>
@@ -333,13 +339,10 @@
       <Filter>Game\Object\Skill\Red</Filter>
     </ClCompile>
     <ClCompile Include="Source\Object\Skill\YellowSkill.cpp">
-      <Filter>Game\Object\Skill\Yelow</Filter>
+      <Filter>Game\Object\Skill\Yellow</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp">
-      <Filter>Game\Scene\CharacterSelect\Icon</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor.cpp">
-      <Filter>Game\Scene\CharacterSelect\Cursor</Filter>
+    <ClCompile Include="Source\Manager\VoiceManager.cpp">
+      <Filter>Game\Object\Voice</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -452,6 +455,9 @@
       <Filter>Game\Object\Skill</Filter>
     </ClInclude>
     <ClInclude Include="Include\Object\Skill\SkillSet.h">
+      <Filter>Game\Object\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object\Skill\SkillState.h">
       <Filter>Game\Object\Skill</Filter>
     </ClInclude>
     <ClInclude Include="Include\Scene\TitleScene.h">
@@ -667,8 +673,11 @@
     <ClInclude Include="Include\Graphic\RenderTarget\RenderTarget.h">
       <Filter>Library\Graphics\D3D\RenderTarget</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Scene\CharacterSelectScene\Cursor\SelectCursor.h">
+      <Filter>Game\Scene\StageSelect\Cursor</Filter>
+    </ClInclude>
     <ClInclude Include="Include\Scene\CharacterSelectScene\Icon\SelectIcon.h">
-      <Filter>Game\Scene\CharacterSelect\Icon</Filter>
+      <Filter>Game\Scene\StageSelect\Icon</Filter>
     </ClInclude>
     <ClInclude Include="Include\Graphic\D3DGraphic.h">
       <Filter>Library\Graphics\D3D</Filter>
@@ -724,9 +733,6 @@
     <ClInclude Include="Include\Scene\CreditScene.h">
       <Filter>Game\Scene\Credit</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Object\Skill\SkillState.h">
-      <Filter>Game\Object\Skill\State</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Object\Skill\BlueSkill.h">
       <Filter>Game\Object\Skill\Blue</Filter>
     </ClInclude>
@@ -734,10 +740,13 @@
       <Filter>Game\Object\Skill\Red</Filter>
     </ClInclude>
     <ClInclude Include="Include\Object\Skill\YellowSkill.h">
-      <Filter>Game\Object\Skill\Yelow</Filter>
+      <Filter>Game\Object\Skill\Yellow</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Scene\CharacterSelectScene\Cursor\SelectCursor.h">
-      <Filter>Game\Scene\CharacterSelect\Cursor</Filter>
+    <ClInclude Include="Include\Voice\VoiceList.h">
+      <Filter>Game\Object\Voice</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Manager\VoiceManager.h">
+      <Filter>Game\Object\Voice</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -941,6 +950,12 @@
     <Filter Include="Library\Graphics\D3D\RenderTarget">
       <UniqueIdentifier>{a878726d-5e8e-4bcf-96e2-11eaea7312f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Scene\StageSelect\Cursor">
+      <UniqueIdentifier>{26137d2f-57da-4362-b5e6-10931d6f674f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\StageSelect\Icon">
+      <UniqueIdentifier>{eb155f3c-7312-4ff5-be86-1d134c1b04f7}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Library\Graphics\D3D\ShaderResource">
       <UniqueIdentifier>{0976edad-5305-4e42-868d-8041e7781649}</UniqueIdentifier>
     </Filter>
@@ -956,23 +971,17 @@
     <Filter Include="Game\Shader">
       <UniqueIdentifier>{5c59118c-19a6-46e0-8466-d405ad8ced26}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Object\Skill\Blue">
-      <UniqueIdentifier>{46e546d7-d518-4965-ab71-1f9fa9155d69}</UniqueIdentifier>
+    <Filter Include="Game\Object\Voice">
+      <UniqueIdentifier>{171ed2fb-7bfd-4071-8a6d-394480f739f8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Object\Skill\Yelow">
-      <UniqueIdentifier>{bf76bf2c-110d-42dc-a580-4a045d0b85c9}</UniqueIdentifier>
+    <Filter Include="Game\Object\Skill\Blue">
+      <UniqueIdentifier>{18bc884b-b28c-4086-919e-12aaf4c52c97}</UniqueIdentifier>
     </Filter>
     <Filter Include="Game\Object\Skill\Red">
-      <UniqueIdentifier>{24da05c5-8144-42c9-a0f8-7ced4e5e38c1}</UniqueIdentifier>
+      <UniqueIdentifier>{44121ecf-184b-4413-8b5c-8c09e586d5c7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Object\Skill\State">
-      <UniqueIdentifier>{325739a7-a97f-4ea3-b88a-df9e9049b909}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Scene\CharacterSelect\Cursor">
-      <UniqueIdentifier>{26137d2f-57da-4362-b5e6-10931d6f674f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Scene\CharacterSelect\Icon">
-      <UniqueIdentifier>{eb155f3c-7312-4ff5-be86-1d134c1b04f7}</UniqueIdentifier>
+    <Filter Include="Game\Object\Skill\Yellow">
+      <UniqueIdentifier>{e3472906-e335-4ea4-b8dc-e2e8903dff75}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

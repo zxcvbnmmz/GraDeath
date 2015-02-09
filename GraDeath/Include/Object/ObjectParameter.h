@@ -1,6 +1,7 @@
 #ifndef _OBJECT_PARAMETER_H_
 #define _OBJECT_PARAMETER_H_
 
+#include "Sound/SE/SE.h"
 #include <vector>
 #include <D3DX10math.h>
 #include <memory>
@@ -50,6 +51,7 @@ struct CellData
 	//short	soundCount;		// サウンド名の文字数
 	//char*	soundFile;		// サウンドファイル
 	short	shapeCount;		// 形数
+	SE se;
 
 	std::vector< std::shared_ptr< ShapeData > > shapeData;	// 形データ
 	std::vector< std::shared_ptr< struct CollisionShape > > shapes;	// 形データ2

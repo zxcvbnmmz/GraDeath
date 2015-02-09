@@ -41,6 +41,10 @@ CURRENT_ANIMATION_STATE AnimationManager::Update(){
 		// ŽŸ‚ÌƒZƒ‹‚ª‚ ‚ê‚Î‚»‚ÌƒZƒ‹‚ðŒ»Ý‚ÌƒZƒ‹‚Æ‚·‚é
 		else{
 			++currentCell;
+			if ((*currentCell)->se != nullptr){
+				(*currentCell)->se->Stop();
+				(*currentCell)->se->Play();
+			}
 			AttachFixtureToPlayer();
 			currentFrame = 0;
 		}

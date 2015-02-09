@@ -64,7 +64,6 @@ void PlayerController::Draw(){
 
 void PlayerController::Release ()
 {
-	Release();
 }
 
 void PlayerController::Idle(){
