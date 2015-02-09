@@ -22,6 +22,8 @@ RedSkill::~RedSkill ()
 		}
 	}
 	skills.clear ();
+
+	SkillSetDettachFixture ( body );
 }
 
 void RedSkill::Init ()
@@ -38,13 +40,20 @@ void RedSkill::Init ()
 	third->Init ( "Resource/Object/Skill/Blue/Blue_Skill_Third3.bin", L"Resource/Object/Skill/Blue/Blue_Skill_Third3.png", SKILL_ID_LOAD::SKILL_ID_BLUE );
 	//third->SetSize ( D3DXVECTOR2 ( 600, 600 ));
 	skills.push_back ( third );
+
+	SkillSet::Initb2Body ();
 }
-//s
 
 void RedSkill::Update ()
 {
 	for ( auto& skill : skills )
+	{
 		skill->Update ();
+		if ( !skill->IsActive () )
+		{
+			SkillSetDettachFixture ( body );
+		}
+	}
 }
 
 void RedSkill::Draw ()
@@ -55,12 +64,22 @@ void RedSkill::Draw ()
 
 void RedSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
 {
+	SkillSetDettachFixture ( body );
+
 	D3DXVECTOR2 temp = ( _pos * 32.0f );
 	skills[ _id ]->SetPosition ( temp + redPosition[ _id ], dirFlg );
 	skills[ _id ]->SkillOn ();
 }
 
-b2Body& RedSkill::Getb2Body ( int _num )
+b2Body* RedSkill::Getb2Body ()
 {
-	return skills[ _num ]->Getb2Body ();
+	for ( auto& skill : skills )
+	{
+		if ( skill->IsActive () )
+		{
+			skill->SetAttachFixture ( body );
+			return body;
+		}
+	}
+	return nullptr;// skills[ _num ]->Getb2Body ();
 }
