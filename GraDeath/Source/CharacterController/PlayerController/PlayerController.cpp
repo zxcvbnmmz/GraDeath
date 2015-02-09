@@ -121,6 +121,7 @@ void PlayerController::Walk(){
 		return;
 	}
 
+	/*
 	if (Keyboard::CheckKey(KC_RIGHT) == INPUT_PRESS){
 		pos.x += 3.0f;
 		player->AddForce(b2Vec2(10, 0));
@@ -130,7 +131,7 @@ void PlayerController::Walk(){
 		player->AddForce(b2Vec2(-10, 0));
 		return;
 	}
-
+	*/
 	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
 		pos.x += 4.0f;
 	}

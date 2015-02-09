@@ -23,7 +23,7 @@ RedSkill::~RedSkill ()
 	}
 	skills.clear ();
 
-	SkillSetDettachFixture ( body );
+	World::DestoryBody ( body );
 }
 
 void RedSkill::Init ()
