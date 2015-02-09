@@ -75,10 +75,10 @@ void Stage::Draw(){
         }
         */
         
-        D3DXVECTOR2 pos = Special_BLUE->GetPosition();
-        if (pos.y != 0)
-            Special_BLUE->SetPositionY(pos.y-5);
-        Special_BLUE->Draw();
+        //D3DXVECTOR2 pos = Special_BLUE->GetPosition();
+        //if (pos.y != 0)
+        //    Special_BLUE->SetPositionY(pos.y-5);
+        //Special_BLUE->Draw();
     }
     if (StageCoolTime > 10){
         StageCoolTime = 0;
@@ -223,6 +223,7 @@ void CreateEachStage(int stageLevel){
         sprite_anime->SetSize(anime_size);
         sprite_animes.push_back(sprite_anime);
 
+		/*
         Special_BLUE.reset(new Sprite);
         Special_BLUE->Create(L"Resource/Scene/Game/Stage/blue_SSKILL.png");
         D3DXVECTOR2 SKILLpos(0, 400);
@@ -234,7 +235,7 @@ void CreateEachStage(int stageLevel){
         SKILL_size.width = 1366.f;
         Special_BLUE->SetSize(SKILL_size);
         Special_SKILLs.push_back(Special_BLUE);
-
+		*/
 
         Sprite* sprite1 = new Sprite;
         sprite1->Create(L"Resource/Scene/Game/Stage/bg01.png");
@@ -245,7 +246,7 @@ void CreateEachStage(int stageLevel){
         Sprite* sprite3 = new Sprite;
         sprite3->Create(L"Resource/Scene/Game/Stage/bg03.png");
         bgSprite.push_back(sprite3);
-        Sprite* Special_BLUE = new Sprite;
+        //Sprite* Special_BLUE = new Sprite;
         
 
         for (auto& bg : bgSprite)
