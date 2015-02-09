@@ -1,6 +1,6 @@
 #include "Scene/CharacterSelectScene/Icon/SelectIcon.h"
 #include "Utility/SafeDelete.h"
-
+#include "System/Window.h"
 
 struct SelectIcon::IconState
 {

@@ -23,7 +23,7 @@ BlueSkill::~BlueSkill ()
 	}
 	skills.clear ();
 
-	SkillSetDettachFixture ( body );
+	World::DestoryBody ( body );
 }
 
 void BlueSkill::Init ()

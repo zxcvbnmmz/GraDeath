@@ -16,6 +16,7 @@ class SelectCursor
 private:
 	CursorState* cursorState;
 	std::shared_ptr<SelectIcon> icon;
+	int maxWidth = 0, maxHeight = 0;
 
 public:
 	SelectCursor ();

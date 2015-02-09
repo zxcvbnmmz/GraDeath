@@ -2,9 +2,10 @@
 #include "Scene/CharacterSelectScene/Icon/SelectIcon.h"
 #include "Utility/SafeDelete.h"
 #include "Input/GamePad.h"
+#include "System/Window.h"
 
 
-#define MOVE_SPEED ( 15.0F )
+#define MOVE_SPEED ( 20.0F )
 
 struct CursorState
 {
@@ -30,6 +31,8 @@ SelectCursor::SelectCursor ()
 	cursorState = new CursorState[ 4 ];
 	GamePad::setThreshold ( 0.4f );
 	icon = std::shared_ptr<SelectIcon> ( new SelectIcon );
+
+	System::Window::GetWindowSize ( &maxWidth, &maxHeight );
 }
 
 SelectCursor::~SelectCursor ()
@@ -125,6 +128,15 @@ void SelectCursor::Move ( int _num )
 		cursorState[ _num ].pos.x += cos ( angle ) * MOVE_SPEED;
 		cursorState[ _num ].pos.y -= sin ( angle ) * MOVE_SPEED;
 	}
+
+	if ( ( cursorState[ _num ].pos.x + 25.0f ) >= maxWidth )
+		cursorState[ _num ].pos.x = maxWidth - 25.0f;
+	if ( cursorState[ _num ].pos.x <= 0 )
+		cursorState[ _num ].pos.x = 0;
+	if ( cursorState[ _num ].pos.y + 25.0f >= maxHeight )
+		cursorState[ _num ].pos.y = maxHeight - 25.0f;
+	if ( cursorState[ _num ].pos.y <= 0 )
+		cursorState[ _num ].pos.y = 0;
 }
 
 void SelectCursor::Determination ( int _num )
