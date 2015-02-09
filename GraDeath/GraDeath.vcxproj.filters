@@ -164,12 +164,6 @@
     <ClCompile Include="Source\Scene\StageSelectScene.cpp">
       <Filter>Game\Scene\StageSelect</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\Skill\WhiteBlackFirstSkill.cpp">
-      <Filter>Game\Object\Skill\WhiteBlack</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Skill\WhiteBlackSecond.cpp">
-      <Filter>Game\Object\Skill\WhiteBlack</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Object\Skill\WhiteBlackSkill.cpp">
       <Filter>Game\Object\Skill\WhiteBlack</Filter>
     </ClCompile>
@@ -337,6 +331,9 @@
     </ClCompile>
     <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp">
       <Filter>Game\Scene\StageSelect\Icon</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Manager\VoiceManager.cpp">
+      <Filter>Game\Object\Voice</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -525,12 +522,6 @@
     </ClInclude>
     <ClInclude Include="Include\Scene\StageSelectScene.h">
       <Filter>Game\Scene\StageSelect</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Skill\WhiteBlackFirstSkill.h">
-      <Filter>Game\Object\Skill\WhiteBlack</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Object\Skill\WhiteBlackSecond.h">
-      <Filter>Game\Object\Skill\WhiteBlack</Filter>
     </ClInclude>
     <ClInclude Include="Include\Object\Skill\WhiteBlackSkill.h">
       <Filter>Game\Object\Skill\WhiteBlack</Filter>
@@ -732,6 +723,12 @@
     </ClInclude>
     <ClInclude Include="Include\Scene\CreditScene.h">
       <Filter>Game\Scene\Credit</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Manager\VoiceManager.h">
+      <Filter>Game\Object\Voice</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Voice\VoiceList.h">
+      <Filter>Game\Object\Voice</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -955,6 +952,9 @@
     </Filter>
     <Filter Include="Game\Shader">
       <UniqueIdentifier>{5c59118c-19a6-46e0-8466-d405ad8ced26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Voice">
+      <UniqueIdentifier>{171ed2fb-7bfd-4071-8a6d-394480f739f8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

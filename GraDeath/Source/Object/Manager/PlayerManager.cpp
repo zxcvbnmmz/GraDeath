@@ -32,6 +32,7 @@ bool PlayerManager::Init(PlayerData* _data){
 	for (int i = 0; i < PLAYERS; ++i){
 		controllers[ i ] = new PlayerController;
 		controllers[i]->Init(i,&players[i]);
+		players[i].SetPlayerType(data[i].pType);
 		HitPointManager::Init ( i, &players[ i ], 100.0f );
 		SkillManager::Init ( i, data[ i ].pType );
 	}
@@ -60,7 +61,7 @@ void PlayerManager::Update(){
 	for (int i = 0; i < PLAYERS - 1; ++i){
 		for (int k = i + 1; k < PLAYERS; ++k){
 			Collision::Collide(&players[i], &players[k]);
-			Collision::CollideFloor(&players[i], Stage::GetUnbreakbleStage(),controllers[i]);
+			Collision::CollideFloor(&players[i], Stage::GetBreakbleStage(),controllers[i]);
 		}
 	}
 }
