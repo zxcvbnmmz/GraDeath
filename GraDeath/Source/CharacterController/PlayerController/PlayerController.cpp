@@ -55,6 +55,9 @@ void PlayerController::Draw(){
 	player->sprite->SetPosition ( pos.x * 32.0f, pos.y * 32.0f);
 	player->sprite->SetSize ( size );
 	player->sprite->Draw ( DRAW_RECT );
+
+	if(padID == 0)
+		t.DrawString(0, 0, L"LinearVelocity  x = %f, y = %f", player->body->GetLinearVelocity().x, player->body->GetLinearVelocity().y);
 }
 
 void PlayerController::Release ()
@@ -82,7 +85,7 @@ void PlayerController::Idle(){
 	}
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH){
 		player->SetAngularVelocity(b2Vec2(0, -2000));
-		ChangeAction(ACTION_JUMP_RISE, false);
+		//ChangeAction(ACTION_JUMP_RISE, false);
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
 		ChangeAction(ACTION_WALK, true);
@@ -103,11 +106,16 @@ void PlayerController::Run(){
 }
 
 void PlayerController::SetPos(int posx, int posy){
-
+    player->sprite->SetPosition(posx, posy);
 }
 
 void PlayerController::Walk(){
 	if (padID != 0){
+		return;
+	}
+
+	if (player->body->GetLinearVelocity().y < -0.3){
+		ChangeAction(ACTION_JUMP_FALL, true);
 		return;
 	}
 
@@ -161,9 +169,3 @@ void PlayerController::Skill(){
 		ChangeAction(ACTION_IDLE, false);
 	}
 }
-
-PLAYER_ACTION PlayerController::GetCurrentAction(){
-	return currentAction;
-}
-
-

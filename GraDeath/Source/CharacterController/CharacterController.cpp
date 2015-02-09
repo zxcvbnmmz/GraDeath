@@ -20,3 +20,8 @@ void CharacterController::ChangeAction(PLAYER_ACTION newAction, bool loop){
 	currentAction = newAction;
 	animManager.ChangeAction(newAction, loop);
 }
+
+PLAYER_ACTION CharacterController::GetCurrentAction(){
+	return currentAction;
+}
+

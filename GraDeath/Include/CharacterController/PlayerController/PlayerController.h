@@ -36,7 +36,6 @@ public:
 	void Draw();
 
     void SetPos(int _posx, int _posy);
-	PLAYER_ACTION GetCurrentAction();
 
 
 	void Release ();
@@ -57,6 +56,8 @@ private:
 	float ground;
 
 	unsigned int dirFlg = 0;
+
+
 };
 
 #endif
