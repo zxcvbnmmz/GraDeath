@@ -38,6 +38,8 @@ void PlayerController::Init (int _padID, Player* _player)
 	animManager.Create(padID, player);
 	animManager.Enable(true);
 
+	//voiceManager.Initialize(player->playerType);
+
 	t.format = D2D::TextFormat::Create(L"MS–¾’©", 20);
 	t.brush = SolidBrush::Create(255, 255, 255, 255);
 }
@@ -62,7 +64,6 @@ void PlayerController::Draw(){
 
 void PlayerController::Release ()
 {
-
 }
 
 void PlayerController::Idle(){
@@ -72,8 +73,8 @@ void PlayerController::Idle(){
 		ChangeAction(ACTION_WALK, true);
 	}
 	else if ((GamePad::getGamePadState((PAD_NUM)padID, BUTTON_B) == INPUT_PUSH ||
-		  Keyboard::CheckKey(KC_A) == INPUT_PUSH ) &&
-		  SkillManager::GetSkillUse ( padID, (SKILL_ID)0 ) ){
+		Keyboard::CheckKey(KC_A) == INPUT_PUSH ) &&
+		SkillManager::GetSkillUse ( padID, (SKILL_ID)0 ) ){
 		//ChangeAction(ACTION_SKILL, false);
 		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), dirFlg );
 	}
@@ -83,9 +84,10 @@ void PlayerController::Idle(){
 		//ChangeAction ( ACTION_ATTACK, false );
 		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_SECOND, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), dirFlg );
 	}
-	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH){
+	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH || 
+		Keyboard::CheckKey(KC_J) == INPUT_PUSH){
 		player->SetAngularVelocity(b2Vec2(0, -2000));
-		//ChangeAction(ACTION_JUMP_RISE, false);
+		ChangeAction(ACTION_JUMP_RISE, false);
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
 		ChangeAction(ACTION_WALK, true);
@@ -154,16 +156,27 @@ void PlayerController::Attack(){
 void PlayerController::Damage(){}
 
 void PlayerController::Jump_Rise(){
-	if (currentAnimState == FINISHED){
-		ChangeAction(ACTION_JUMP_LAND, true);
+	if (player->body->GetLinearVelocity().y > 0){
+		ChangeAction(ACTION_JUMP_FALL, true);
+	}
+}
+
+void PlayerController::Jump_Fall(){
+	if (player->body->GetLinearVelocity().y < 0){
+		ChangeAction(ACTION_JUMP_LAND, false);
 	}
 }
 
 void PlayerController::Jump_Land(){
 	if (currentAnimState == FINISHED){
+		float angle;
+		if (GamePad::getLStickState((PAD_NUM)padID, angle)){
+			ChangeAction(ACTION_WALK, true);
+		}
 		ChangeAction(ACTION_IDLE, true);
 	}
 }
+
 
 void PlayerController::Skill(){
 	if (currentAnimState == FINISHED){

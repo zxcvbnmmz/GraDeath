@@ -6,6 +6,9 @@ CharacterController::CharacterController() :currentAction(ACTION_IDLE), enable(f
 	Actions[ACTION_ATTACK] = &CharacterController::Attack;
 	Actions[ACTION_DAMAGE] = &CharacterController::Damage;
 	Actions[ACTION_JUMP_RISE] = &CharacterController::Jump_Rise;
+	Actions[ACTION_JUMP_FALL] = &CharacterController::Jump_Fall;
+	Actions[ACTION_JUMP_LAND] = &CharacterController::Jump_Land;
+	Actions[ACTION_SKILL] = &CharacterController::Skill;
 	Actions[ACTION_IDLE] = &CharacterController::Idle;
 }
 

@@ -12,10 +12,7 @@
 
 
 Player::Player(){
-
-
 	sprite = shared_ptr<Sprite> (new Sprite);
-
 }
 
 Player::~Player(){

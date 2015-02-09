@@ -116,6 +116,7 @@ bool Collision::CollideFloor(Player* player, b2Body* unbreakableStage, Character
 
 				if (abs(manifold.localNormal.y) > 0.5 && player->GetBody()->GetLinearVelocity().y > 10){
 					controller->ChangeAction(ACTION_JUMP_LAND, false);
+					
 				}
 
 				return true;

@@ -12,6 +12,7 @@
 
 #include <vector>
 #include "Manager/AnimationManager.h"
+#include "Manager/VoiceManager.h"
 
 class Player;
 
@@ -43,7 +44,7 @@ protected:
 	CURRENT_ANIMATION_STATE currentAnimState;
 	PLAYER_ACTION currentAction;
 	Player* player;
-
+	VoiceManager voiceManager;
 
 	void(CharacterController::*Actions[ACTION_MAX])();
 
@@ -53,6 +54,7 @@ protected:
 	virtual void Attack(){}
 	virtual void Damage(){}
 	virtual void Jump_Rise(){}
+	virtual void Jump_Fall(){}
 	virtual void Jump_Land(){}
 	virtual void Skill(){}
 };

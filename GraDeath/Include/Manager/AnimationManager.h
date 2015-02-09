@@ -3,6 +3,7 @@
 
 #include <D2D1.h>
 #include "Object/ObjectParameter.h"
+#include "Sound/SE/SE.h"
 
 enum PLAYER_ACTION : unsigned int {
 	ACTION_IDLE,
@@ -16,7 +17,6 @@ enum PLAYER_ACTION : unsigned int {
 	ACTION_NOTHING,
 	ACTION_SKILL,
 	ACTION_MAX
-
 };
 
 enum CURRENT_ANIMATION_STATE{

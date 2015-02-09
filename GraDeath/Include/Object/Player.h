@@ -3,6 +3,7 @@
 
 #include "Object/Object.h"
 #include "Object/ObjectParameter.h"
+#include "CharacterController/CharacterInfo.h"
 #include <vector>
 #include <memory>
 
@@ -27,9 +28,13 @@ public:
 	void SetAngularVelocity(b2Vec2& _force);
 
 	void AttachFixture(vector<shared_ptr<struct CollisionShape>>& shapes);
+	void SetPlayerType(CharacterInfo::PLAYER_TYPE _type){
+		playerType = _type;
+	}
 
 private:
 	shared_ptr<Sprite> sprite;
+	CharacterInfo::PLAYER_TYPE playerType;
 };
 
 #endif	// end of Player

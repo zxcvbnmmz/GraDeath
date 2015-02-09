@@ -15,6 +15,7 @@ bool AnimationManager::Create(unsigned int playerNum, Player* _player){
 
 
 void AnimationManager::ChangeAction(PLAYER_ACTION _action, bool _loop){
+	if (_action > 3)return;
 	currentAction = _action;
 	loop = _loop;
 	currentCell = animation.cellDatas[currentAction].begin();
@@ -40,6 +41,10 @@ CURRENT_ANIMATION_STATE AnimationManager::Update(){
 		// ŽŸ‚ÌƒZƒ‹‚ª‚ ‚ê‚Î‚»‚ÌƒZƒ‹‚ðŒ»Ý‚ÌƒZƒ‹‚Æ‚·‚é
 		else{
 			++currentCell;
+			if ((*currentCell)->se != nullptr){
+				(*currentCell)->se->Stop();
+				(*currentCell)->se->Play();
+			}
 			AttachFixtureToPlayer();
 			currentFrame = 0;
 		}
