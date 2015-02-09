@@ -23,7 +23,7 @@ namespace SkillManager
 
 	float GetCoolTime ( int _num, SKILL_ID _id );
 
-	b2Body& Getb2Body ( int _num, SKILL_ID _id );
+	b2Body* Getb2Body ( int _num );
 
 	CharacterInfo::PLAYER_TYPE GetPlayerType ( int _num );
 

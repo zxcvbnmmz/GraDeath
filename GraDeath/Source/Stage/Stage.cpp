@@ -16,11 +16,15 @@ namespace{
 	std::vector<Sprite*> bgSprite;
     std::vector<std::shared_ptr<Sprite>> sprite_animes;
 	std::shared_ptr<Sprite> sprite_anime;
+    std::vector<std::shared_ptr<Sprite>> Special_SKILLs;
+    std::shared_ptr<Sprite> Special_BLUE;
     float HP = 20.f + rand() % 10;
     bool Stageflg = false;
     int StageCoolTime = 0;
     int count = 0;
     int playernum = 0;
+    int SpecialSkillTime = 0;
+    bool SkillEnd = false;
 }
 
 void CreateWorldEdge();
@@ -63,14 +67,34 @@ void Stage::Draw(){
     if (Stageflg == true){
         StageCoolTime++;
         sprite_anime->SetTrimming(0, 0 + (768 * count), 1366, 768);
+        /*
+        switch ()
+        {
+        default:
+        break;
+        }
+        */
+        
+        //D3DXVECTOR2 pos = Special_BLUE->GetPosition();
+        //if (pos.y != 0)
+        //    Special_BLUE->SetPositionY(pos.y-5);
+        //Special_BLUE->Draw();
     }
     if (StageCoolTime > 10){
         StageCoolTime = 0;
         count++;
         if (count > 5){
             count = 6;
+            if (SpecialSkillTime == 0)
+                SpecialSkillTime = 10;
+            if (SpecialSkillTime > 0)
+                SpecialSkillTime--;
+            if (SpecialSkillTime == 0)
+                CriateStage();
         }
+        
     }
+
 #ifdef _DEBUG
     if (Keyboard::CheckKey(KC_P) == INPUT_PUSH)
         CriateStage();
@@ -100,10 +124,13 @@ void Stage::Release(){
 		Util::safeDelete ( bg );
 	for (auto& anime : sprite_animes)
 		anime.reset();
-	sprites.clear();
+    for (auto& SKILL : Special_SKILLs)
+        SKILL.reset();
+    sprites.clear();
 	sprite_animes.clear();
 	bgSprite.clear();
     CriateStage();
+    Special_SKILLs.clear();
 }
 
 void CreateWorldEdge(){
@@ -129,11 +156,8 @@ void CreateWorldEdge(){
 	filter.maskBits = 0xffff;
 
 	// 上辺
-	screenEdgeShape.Set(upperLeftCorner, upperRightCorner);
-	screenEdgeBody->CreateFixture(&screenEdgeShape, density)->SetFilterData(filter);
-	// 下辺
-	screenEdgeShape.Set(lowerLeftCorner, lowerRightCorner);
-	screenEdgeBody->CreateFixture(&screenEdgeShape, density)->SetFilterData(filter);
+	//screenEdgeShape.Set(upperLeftCorner, upperRightCorner);
+	//screenEdgeBody->CreateFixture(&screenEdgeShape, density)->SetFilterData(filter);
 	// 左辺
 	screenEdgeShape.Set(upperLeftCorner, lowerLeftCorner);
 	screenEdgeBody->CreateFixture(&screenEdgeShape, density)->SetFilterData(filter);
@@ -199,6 +223,20 @@ void CreateEachStage(int stageLevel){
         sprite_anime->SetSize(anime_size);
         sprite_animes.push_back(sprite_anime);
 
+		/*
+        Special_BLUE.reset(new Sprite);
+        Special_BLUE->Create(L"Resource/Scene/Game/Stage/blue_SSKILL.png");
+        D3DXVECTOR2 SKILLpos(0, 400);
+        Special_BLUE->SetPosition(SKILLpos);
+        //@ x 1366* y 768
+        Special_BLUE->SetTrimming(0, 0, 1366, 768);
+        D2D1_SIZE_F SKILL_size;
+        SKILL_size.height = 768.f;
+        SKILL_size.width = 1366.f;
+        Special_BLUE->SetSize(SKILL_size);
+        Special_SKILLs.push_back(Special_BLUE);
+		*/
+
         Sprite* sprite1 = new Sprite;
         sprite1->Create(L"Resource/Scene/Game/Stage/bg01.png");
         bgSprite.push_back(sprite1);
@@ -208,6 +246,9 @@ void CreateEachStage(int stageLevel){
         Sprite* sprite3 = new Sprite;
         sprite3->Create(L"Resource/Scene/Game/Stage/bg03.png");
         bgSprite.push_back(sprite3);
+        //Sprite* Special_BLUE = new Sprite;
+        
+
         for (auto& bg : bgSprite)
             bg->SetPosition(0, 0);
         break;
@@ -266,3 +307,32 @@ b2Body* Stage::GetUnbreakbleStage(){
 	return unbreakableStage;
 }
 
+bool Stage::GetSkillEnd(){
+    return SkillEnd;
+}
+/*
+この後はコリジョンを外して入れるだけ
+*/
+//void DettachFixture(b2Body* body);
+//void Stage::AttachFixture(){
+//    // 新しいフィクスチャーを作る前に一旦前のを消しておく
+//    DettachFixture(body);
+//
+//    // 各セルに配置されたCollisionShapeを新しいフィクスチャーとして全てbodyに追加する
+//    for (auto shape : shapes){
+//        shape->AddFixture(body);
+//    }
+//}
+//
+//void DettachFixture(b2Body* body){
+//    b2Fixture* fixture = body->GetFixtureList();
+//    if (fixture == nullptr){
+//        return;
+//    }
+//
+//    while (fixture != nullptr){
+//        b2Fixture* temp = fixture->GetNext();
+//        body->DestroyFixture(fixture);
+//        fixture = temp;
+//    }
+//}

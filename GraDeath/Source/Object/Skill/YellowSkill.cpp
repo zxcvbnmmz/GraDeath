@@ -22,6 +22,8 @@ YellowSkill::~YellowSkill ()
 		}
 	}
 	skills.clear ();
+
+	SkillSetDettachFixture ( body );
 }
 
 void YellowSkill::Init ()
@@ -38,6 +40,8 @@ void YellowSkill::Init ()
 	third->Init ( "Resource/Object/Skill/Blue/Blue_Skill_Third3.bin", L"Resource/Object/Skill/Blue/Blue_Skill_Third3.png", SKILL_ID_LOAD::SKILL_ID_BLUE );
 	//third->SetSize ( D3DXVECTOR2 ( 600, 600 ));
 	skills.push_back ( third );
+
+	SkillSet::Initb2Body ();
 }
 
 void YellowSkill::Update ()
@@ -54,12 +58,22 @@ void YellowSkill::Draw ()
 
 void YellowSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
 {
+	SkillSetDettachFixture ( body );
+
 	D3DXVECTOR2 temp = ( _pos * 32.0f );
 	skills[ _id ]->SetPosition ( temp + yellowPosition[ _id ], dirFlg );
 	skills[ _id ]->SkillOn ();
 }
 
-b2Body& YellowSkill::Getb2Body ( int _num )
+b2Body* YellowSkill::Getb2Body ()
 {
-	return skills[ _num ]->Getb2Body ();
+	for ( auto& skill : skills )
+	{
+		if ( skill->IsActive () )
+		{
+			skill->SetAttachFixture ( body );
+			return body;
+		}
+	}
+	return nullptr;// skills[ _num ]->Getb2Body ();
 }

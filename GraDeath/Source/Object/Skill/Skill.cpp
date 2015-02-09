@@ -7,6 +7,9 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <Box2D\Dynamics\b2Body.h>
+#include "World/World.h"
+
 
 void SkillDettachFixture ( b2Body* body );
 
@@ -26,12 +29,12 @@ void Skill::Init ( std::string _filename, std::wstring _path, int skill_id )
 
 	skillAnim->Create ( _path.c_str() );// L"Resource/Object/Skill/WhiteBlack/skill01.png" );// f );
 
-	b2BodyDef def;
-	def.position = b2Vec2 ( pos.x, pos.y );
-	def.type = b2_staticBody;
+//	b2BodyDef def;
+//	def.position = b2Vec2 ( pos.x, pos.y );
+//	def.type = b2_staticBody;
 
-	body = World::CreateBody ( &def );
-	body->SetUserData ( this );
+//	body = World::CreateBody ( &def );
+//	body->SetUserData ( this );
 }
 
 void Skill::Update ()
@@ -52,20 +55,20 @@ void Skill::Update ()
 				nowAnime = 0;
 				skillFlg = false;
 				currentCell = animSkill.cellDatas[ nowAnime ].begin ();
-				SkillDettachFixture ( body );
+				//SkillDettachFixture ( body );
 			}
             else
             {
                 nowAnime = (nowAnime + 1) % animSkill.cellDatas.size();
                 currentCell = animSkill.cellDatas[nowAnime].begin();
-				AttachFixture ( ( *currentCell )->shapes );
+				//AttachFixture ( ( *currentCell )->shapes );
             }
 
 		}
 		else
 		{
 			currentCell++;
-			AttachFixture ( ( *currentCell )->shapes );
+			//AttachFixture ( ( *currentCell )->shapes );
 			frameCount = 0;
 		}
 	}
@@ -114,21 +117,37 @@ void Skill::SkillOff ()
 	skillFlg = false;
 }
 
-b2Body& Skill::Getb2Body ()
+//b2Body& Skill::Getb2Body ()
+//{
+//	return *body;
+//}
+
+bool Skill::IsActive ()
 {
-	return *body;
+	return skillFlg;
 }
 
-void Skill::AttachFixture ( std::vector<std::shared_ptr<CollisionShape>>& shapes )
+void Skill::SetAttachFixture ( b2Body* _body )
 {
 	// 新しいフィクスチャーを作る前に一旦前のを消しておく
-	SkillDettachFixture ( body );
+	SkillDettachFixture ( _body );
 
 	// 各セルに配置されたCollisionShapeを新しいフィクスチャーとして全てbodyに追加する
-	for ( auto shape : shapes ){
-		shape->AddFixture ( body );
+	for ( auto shape : ( *currentCell )->shapes ){
+		shape->AddFixture ( _body );
 	}
 }
+
+//void Skill::AttachFixture ( std::vector<std::shared_ptr<CollisionShape>>& shapes )
+//{
+//	// 新しいフィクスチャーを作る前に一旦前のを消しておく
+//	SkillDettachFixture ( body );
+
+	// 各セルに配置されたCollisionShapeを新しいフィクスチャーとして全てbodyに追加する
+//	for ( auto shape : shapes ){
+//		shape->AddFixture ( body );
+//	}
+//}
 
 void SkillDettachFixture ( b2Body* body ){
 	b2Fixture* fixture = body->GetFixtureList ();

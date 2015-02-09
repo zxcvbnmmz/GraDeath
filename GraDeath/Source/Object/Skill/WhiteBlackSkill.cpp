@@ -1,6 +1,9 @@
 #include "Object/Skill/WhiteBlackSkill.h"
+#include <Box2D\Dynamics\b2Body.h>
 #include "Loader/PlayerLoader.h"
 #include "Object/Skill/Skill.h"
+#include "World/World.h"
+
 
 D3DXVECTOR2 setPosition[] =
 {
@@ -22,6 +25,8 @@ WhiteBlackSkill::~WhiteBlackSkill ()
 		}
 	}
 	skills.clear ();
+
+	SkillSetDettachFixture ( body );
 }
 
 void WhiteBlackSkill::Init ()
@@ -37,6 +42,8 @@ void WhiteBlackSkill::Init ()
 	Skill* third = new Skill;
 	third->Init ( "Resource/Object/Skill/Blue/Blue_Skill_Test.bin", L"Resource/Object/Skill/Blue/Blue_Skill_Test.png", SKILL_ID_LOAD::SKILL_ID_BLUE );
 	skills.push_back ( third );
+
+	SkillSet::Initb2Body ();
 }
 
 void WhiteBlackSkill::Update ()
@@ -53,12 +60,25 @@ void WhiteBlackSkill::Draw ()
 
 void WhiteBlackSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
 {
+	SkillSetDettachFixture ( body );
+
 	D3DXVECTOR2 temp = ( _pos * 32.0f );
 	skills[ _id ]->SetPosition ( temp + setPosition[ _id ], dirFlg );
 	skills[ _id ]->SkillOn ();
+	temp = skills[ _id ]->GetPosition ();
+	body->SetTransform ( b2Vec2 ( temp.x / 32.0f, temp.y / 32.0f ), 0 );
 }
 
-b2Body& WhiteBlackSkill::Getb2Body ( int _num )
+b2Body* WhiteBlackSkill::Getb2Body ()
 {
-	return skills[ _num ]->Getb2Body ();
+	for ( auto& skill : skills )
+	{
+		if ( skill->IsActive () )
+		{
+			skill->SetAttachFixture ( body );
+			return body;
+		}
+	}
+	return nullptr;
+	//return skills[ _num ]->Getb2Body ();
 }

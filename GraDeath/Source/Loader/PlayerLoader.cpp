@@ -182,7 +182,10 @@ namespace PlayerLoader
 						def.x = shape->shape.circle.x;
 						def.y = shape->shape.circle.y;
 						def.categoryBit = categoryBits[shape->collisionType];
-						def.maskBit = MASK_COL_ATK_DEF;
+						if ( SKILL_ID_MAX == _type )
+							def.maskBit = MASK_COL_ATK_DEF;
+						else
+							def.maskBit = MASK_COL_ATK;
 						def.strength = shape->strength;
 						collisionShape = std::make_shared<CollisionShape> ( def );
 					}
@@ -201,8 +204,11 @@ namespace PlayerLoader
 						memcpy ( def.x, shape->shape.square.x, sizeof( int )* 4 );
 						memcpy ( def.y, shape->shape.square.y, sizeof( int )* 4 );
 						def.categoryBit = categoryBits[shape->collisionType];
-						def.categoryBit = MASK_COL_ATK_DEF;
-						def.maskBit = MASK_COL_ATK_DEF;
+						//def.categoryBit = MASK_COL_ATK_DEF;
+						if ( SKILL_ID_MAX == _type )
+							def.maskBit = MASK_COL_ATK_DEF;
+						else
+							def.maskBit = MASK_COL_ATK;
 						def.strength = shape->strength;
 						collisionShape.reset ( new CollisionShape ( def ) );
 					}
