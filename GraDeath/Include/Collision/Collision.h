@@ -10,7 +10,7 @@ namespace Collision{
 	bool Collide(Player* bodyA, Player* bodyB);
 	bool CollideToStage(Player* body, b2Body* stage, CharacterController* controller);
 	bool CollideFloor(Player* body, b2Body* floor, CharacterController* controller);
-	bool CollideSkill(Player* body, Skill* skill);
+	bool CollideSkill(Player* body, b2Body* skill);
 }
 
 #endif	// end of Collide
