@@ -6,7 +6,7 @@ bool AnimationManager::Create(unsigned int playerNum, Player* _player){
 	player = _player;
 
 	PlayerLoader::LoadFile(playerNum, &animation);
-	player->Init(animation.fileName, b2Vec2((150 + static_cast<float>(playerNum)* 300.f) / 32.0f, 468/32.0f));
+	player->Init(animation.fileName, b2Vec2((150 + static_cast<float>(playerNum)* 300.f) / 32.0f, 200.0f/32.0f));//468/32.0f));
 
 	ChangeAction(ACTION_IDLE, true);
 
