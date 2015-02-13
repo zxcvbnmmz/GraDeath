@@ -5,11 +5,18 @@
 #include "World/World.h"
 
 
-D3DXVECTOR2 setPosition[] =
+D3DXVECTOR2 setPosition[2][3] =
 {
-	D3DXVECTOR2 ( 0, -290.0f ),
-	D3DXVECTOR2 ( -20, -400.0f ),
-	D3DXVECTOR2 ( -100, -290.0f )
+	{
+		D3DXVECTOR2 ( 0, -290.0f ),
+		D3DXVECTOR2 ( -20, -400.0f ),
+		D3DXVECTOR2 ( -100, -290.0f )
+	},
+	{
+		D3DXVECTOR2 ( -400, -290.0f ),
+		D3DXVECTOR2 ( -820, -400.0f ),
+		D3DXVECTOR2 ( -4100, -290.0f )
+	},
 };
 
 
@@ -64,8 +71,10 @@ void WhiteBlackSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned in
 {
 	SkillSetDettachFixture ( body );
 
-	D3DXVECTOR2 temp = ( _pos * 32.0f );
-	skills[ _id ]->SetPosition ( temp + setPosition[ _id ], dirFlg );
+	int dir = dirFlg - ( -3 * dirFlg ) + 1;
+	D3DXVECTOR2 temp = ( _pos * 32.0f );//*( -1.0f*dirFlg )
+	//D3DXVECTOR2 temp2 = D3DXVECTOR2 ( setPosition[ dirFlg ][ _id ].x*( -1.0f*dirFlg ), setPosition[ _id ].y );
+	skills[ _id ]->SetPosition ( ( temp + setPosition[ dirFlg ][ _id ] ), dirFlg );
 	skills[ _id ]->SkillOn ();
 	temp = skills[ _id ]->GetPosition ();
 	body->SetTransform ( b2Vec2 ( temp.x / 32.0f, temp.y / 32.0f ), 0 );

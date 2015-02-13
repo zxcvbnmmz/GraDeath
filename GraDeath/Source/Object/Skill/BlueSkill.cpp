@@ -63,7 +63,7 @@ void BlueSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirF
 	SkillSetDettachFixture ( body );
 
 	D3DXVECTOR2 temp = ( _pos * 32.0f );
-	skills[ _id ]->SetPosition ( temp + bluePosition[ _id ], dirFlg );
+	skills[ _id ]->SetPosition ( ( temp + bluePosition[ _id ] )*( -1.0f*dirFlg ), dirFlg );
 	skills[ _id ]->SkillOn ();
 }
 
