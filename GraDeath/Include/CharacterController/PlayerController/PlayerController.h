@@ -34,9 +34,7 @@ public:
 
 	void Init (int padID, Player* _player);
 	void Draw();
-
-    void SetPos(int _posx, int _posy);
-
+	void SetPos(int _posx, int _posy, float angle = 0);
 
 	void Release ();
 

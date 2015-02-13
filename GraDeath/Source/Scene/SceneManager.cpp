@@ -44,7 +44,7 @@ bool SceneManager::Initialize(){
 	srand((unsigned)time(NULL));
 
 	GamePad::setStickDeadZone(true);
-	GamePad::setThreshold(0.7f);
+	GamePad::setThreshold(0.2f);
 
 	return true;
 
