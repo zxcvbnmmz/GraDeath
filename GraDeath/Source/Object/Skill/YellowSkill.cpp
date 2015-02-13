@@ -47,7 +47,9 @@ void YellowSkill::Init ()
 void YellowSkill::Update ()
 {
 	for ( auto& skill : skills )
-		skill->Update ();
+	{
+		skill->Update ( body );
+	}
 }
 
 void YellowSkill::Draw ()
@@ -71,7 +73,7 @@ b2Body* YellowSkill::Getb2Body ()
 	{
 		if ( skill->IsActive () )
 		{
-			skill->SetAttachFixture ( body );
+			//skill->SetAttachFixture ( body );
 			return body;
 		}
 	}

@@ -38,7 +38,7 @@ public:
 
 	void Init ( std::string _filename, std::wstring _path, int skill_id );
 
-	virtual void Update ();
+	virtual void Update ( b2Body* _body );
 
 	virtual void Draw ();
 

@@ -48,11 +48,7 @@ void RedSkill::Update ()
 {
 	for ( auto& skill : skills )
 	{
-		skill->Update ();
-		if ( !skill->IsActive () )
-		{
-			SkillSetDettachFixture ( body );
-		}
+		skill->Update ( body );
 	}
 }
 
@@ -77,7 +73,7 @@ b2Body* RedSkill::Getb2Body ()
 	{
 		if ( skill->IsActive () )
 		{
-			skill->SetAttachFixture ( body );
+			//skill->SetAttachFixture ( body );
 			return body;
 		}
 	}

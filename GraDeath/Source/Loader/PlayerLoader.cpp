@@ -15,7 +15,7 @@
 char* playerIconName[ ] =
 {
 	"Resource/Object/Player/B.bin",
-	"Resource/Object/Player/B.bin",
+	"Resource/Object/Player/R.bin",
 	"Resource/Object/Player/shirokuro.bin",
 	"Resource/Object/Player/shirokuro.bin",
 	"Resource/Object/Player/TestData.bin",

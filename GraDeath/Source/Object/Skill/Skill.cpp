@@ -37,7 +37,7 @@ void Skill::Init ( std::string _filename, std::wstring _path, int skill_id )
 //	body->SetUserData ( this );
 }
 
-void Skill::Update ()
+void Skill::Update ( b2Body* _body )
 {
 	if ( !skillFlg )
 		return;
@@ -55,20 +55,20 @@ void Skill::Update ()
 				nowAnime = 0;
 				skillFlg = false;
 				currentCell = animSkill.cellDatas[ nowAnime ].begin ();
-				//SkillDettachFixture ( body );
+				SkillDettachFixture ( _body );
 			}
             else
             {
                 nowAnime = (nowAnime + 1) % animSkill.cellDatas.size();
                 currentCell = animSkill.cellDatas[nowAnime].begin();
-				//AttachFixture ( ( *currentCell )->shapes );
+				SetAttachFixture ( _body );
             }
 
 		}
 		else
 		{
 			currentCell++;
-			//AttachFixture ( ( *currentCell )->shapes );
+			SetAttachFixture ( _body );
 			frameCount = 0;
 		}
 	}
