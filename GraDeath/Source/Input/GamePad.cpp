@@ -44,7 +44,7 @@ namespace GamePad
 		// ƒ{ƒ^ƒ“‚Ì‰ß‹î•ñ
 		DWORD		oldButtonsBuf[ MAX_CONTROLLERS ];
 		// è‡’l
-		float		threshold;
+		float		thresholdzzz;
 		// DeadZone
 		bool		deadZone;
 	}
