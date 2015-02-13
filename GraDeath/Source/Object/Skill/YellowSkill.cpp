@@ -47,7 +47,13 @@ void YellowSkill::Init ()
 void YellowSkill::Update ()
 {
 	for ( auto& skill : skills )
-		skill->Update ();
+	{
+		skill->Update ( body );
+		if ( !skill->IsActive () )
+		{
+			SkillSetDettachFixture ( body );
+		}
+	}
 }
 
 void YellowSkill::Draw ()

@@ -49,7 +49,13 @@ void WhiteBlackSkill::Init ()
 void WhiteBlackSkill::Update ()
 {
 	for ( auto& skill : skills )
-		skill->Update ();
+	{
+		skill->Update ( body );
+		if ( !skill->IsActive () )
+		{
+			SkillSetDettachFixture ( body );
+		}
+	}
 }
 
 void WhiteBlackSkill::Draw ()
@@ -67,6 +73,7 @@ void WhiteBlackSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned in
 	skills[ _id ]->SkillOn ();
 	temp = skills[ _id ]->GetPosition ();
 	body->SetTransform ( b2Vec2 ( temp.x / 32.0f, temp.y / 32.0f ), 0 );
+	skills[_id]->SetAttachFixture ( body );
 }
 
 b2Body* WhiteBlackSkill::Getb2Body ()
@@ -75,7 +82,6 @@ b2Body* WhiteBlackSkill::Getb2Body ()
 	{
 		if ( skill->IsActive () )
 		{
-			skill->SetAttachFixture ( body );
 			return body;
 		}
 	}

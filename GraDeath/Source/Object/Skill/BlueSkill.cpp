@@ -47,7 +47,13 @@ void BlueSkill::Init ()
 void BlueSkill::Update ()
 {
 	for ( auto& skill : skills )
-		skill->Update ();
+	{
+		skill->Update ( body );
+		if ( !skill->IsActive () )
+		{
+			SkillSetDettachFixture ( body );
+		}
+	}
 }
 
 void BlueSkill::Draw ()
@@ -71,7 +77,7 @@ b2Body* BlueSkill::Getb2Body()
 	{
 		if ( skill->IsActive () )
 		{
-			skill->SetAttachFixture ( body );
+			//skill->SetAttachFixture ( body );
 			return body;
 		}
 	}

@@ -5,7 +5,7 @@ void SkillState::Init ( CharacterInfo::PLAYER_TYPE _type )
 {
 	for ( int i = 0; i < SKILL_MAX; i++ )
 	{
-		time[ RECAST ][ i ] = 180.0f + ( 180.0f * ( float )i );
+		time[ RECAST ][ i ] = .0f;// 180.0f + ( 180.0f * ( float )i );
 		time[ COOLTIME ][ i ] = .0f;
 	}
 	type = _type;
