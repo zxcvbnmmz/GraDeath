@@ -56,6 +56,7 @@ void PlayerController::Draw(){
 	player->sprite->SetTrimming ( rect );
 	player->sprite->SetPosition ( pos.x * 32.0f, pos.y * 32.0f);
 	player->sprite->SetSize ( size );
+	player->sprite->SetReverseFlag(player->dir == RIGHT ? FLIP_NONE : FLIP_HORIZONTAL);
 	player->sprite->Draw ( DRAW_RECT );
 
 	if(padID == 0)
@@ -76,13 +77,13 @@ void PlayerController::Idle(){
 		Keyboard::CheckKey(KC_A) == INPUT_PUSH ) &&
 		SkillManager::GetSkillUse ( padID, (SKILL_ID)0 ) ){
 		//ChangeAction(ACTION_SKILL, false);
-		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), dirFlg );
+		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), player->dir );
 	}
 	else if ( ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_B ) == INPUT_PUSH ||
 		Keyboard::CheckKey ( KC_S ) == INPUT_PUSH ) &&
 		SkillManager::GetSkillUse ( padID, ( SKILL_ID )1 ) ){
 		//ChangeAction ( ACTION_ATTACK, false );
-		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_SECOND, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), dirFlg );
+		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_SECOND, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), player->dir );
 	}
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH || 
 		Keyboard::CheckKey(KC_J) == INPUT_PUSH){
@@ -91,11 +92,11 @@ void PlayerController::Idle(){
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
 		ChangeAction(ACTION_WALK, true);
-		dirFlg = 0;
+		player->dir = RIGHT;
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
 		ChangeAction(ACTION_WALK, true);
-		dirFlg = 1;
+		player->dir = LEFT;
 	}
 
 	if (Keyboard::CheckKey(KC_RIGHT) == INPUT_PRESS || Keyboard::CheckKey(KC_LEFT) == INPUT_PRESS){
@@ -113,7 +114,7 @@ void PlayerController::SetPos(int posx, int posy){
 
 void PlayerController::Walk(){
 	if (padID != 0){
-		return;
+//		return;
 	}
 
 	if (player->body->GetLinearVelocity().y < -0.3){
@@ -156,12 +157,12 @@ void PlayerController::Damage(){}
 
 void PlayerController::Jump_Rise(){
 	if (player->body->GetLinearVelocity().y > 0){
-		ChangeAction(ACTION_JUMP_FALL, true);
+		ChangeAction(ACTION_JUMP_FALL, false);
 	}
 }
 
 void PlayerController::Jump_Fall(){
-	if (player->body->GetLinearVelocity().y < 0){
+	if (player->body->GetLinearVelocity().y <= 0){
 		ChangeAction(ACTION_JUMP_LAND, false);
 	}
 }

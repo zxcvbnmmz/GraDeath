@@ -90,8 +90,8 @@ void Skill::Draw ()
 	D3DXVECTOR2 texSize = animSkill.cellSize;
 	skillAnim->SetTrimming ( rect );
 	skillAnim->SetPosition ( pos.x, pos.y );
-	if ( dirFlg == 1 )
-		skillAnim->SetReverseFlag ( FLIP_HORIZONTAL );
+	//if ( dirFlg == 1 )
+		skillAnim->SetReverseFlag ( (REVERSE_FLAG)dirFlg );
 	skillAnim->SetSize ( texSize );
 	skillAnim->Draw ( DRAW_RECT );
 }
