@@ -16,7 +16,13 @@ struct CursorState
 	Sprite			icon;
 };
 
-wchar_t* cursorName = L"Resource/Scene/CharacterSelect/Cursor.png";
+wchar_t* cursorName[] =
+{
+	L"Resource/Scene/CharacterSelect/Cursor.png",
+	L"Resource/Scene/CharacterSelect/Cursor2.png",
+	L"Resource/Scene/CharacterSelect/Cursor3.png",
+	L"Resource/Scene/CharacterSelect/Cursor4.png",
+};
 
 D3DXVECTOR2 cursorPos[ ] =
 {
@@ -48,7 +54,7 @@ void SelectCursor::SetUp ()
 		cursorState[ i ].pos = cursorPos[ i ];
 		cursorState[ i ].active = false;
 		cursorState[ i ].selectFlg = false;
-		cursorState[ i ].icon.Create ( cursorName );
+		cursorState[ i ].icon.Create ( cursorName[i] );
 		cursorState[ i ].icon.SetPosition ( cursorPos[ i ] );
 	}
 	cursorState[ 0 ].active = true;
