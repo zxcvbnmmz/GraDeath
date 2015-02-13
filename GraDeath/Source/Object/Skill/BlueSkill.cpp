@@ -49,10 +49,6 @@ void BlueSkill::Update ()
 	for ( auto& skill : skills )
 	{
 		skill->Update ( body );
-		if ( !skill->IsActive () )
-		{
-			SkillSetDettachFixture ( body );
-		}
 	}
 }
 
