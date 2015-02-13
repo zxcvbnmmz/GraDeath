@@ -1,6 +1,11 @@
 #ifndef _STAGE_H__
 #define _STAGE_H__
 
+#include <vector>
+#include <memory>
+using namespace std;
+
+
 class b2Body;
 
 namespace Stage{
@@ -17,7 +22,8 @@ namespace Stage{
 	b2Body* GetBreakbleStage();
 	b2Body* GetUnbreakbleStage();
     bool GetSkillEnd();
-	void AttachFixture ();
+    void DettachFixture();
+
 };
 
 #endif	// end of Stage

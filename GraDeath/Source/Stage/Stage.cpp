@@ -3,6 +3,7 @@
 #include "System/Window.h"
 #include <Box2D\Box2D.h>
 #include "D2D/Sprite/Sprite.h"
+//#include "Object/CollisionShape.h"
 #include <vector>
 #include <algorithm>
 #include <functional>
@@ -21,7 +22,7 @@ namespace{
     float HP = 20.f + rand() % 10;
     bool Stageflg = false;
     int StageCoolTime = 0;
-    int count = 0;
+    int counter = 0;
     int playernum = 0;
     int SpecialSkillTime = 0;
     bool SkillEnd = false;
@@ -66,7 +67,7 @@ void Stage::Draw(){
 
     if (Stageflg == true){
         StageCoolTime++;
-        sprite_anime->SetTrimming(0, 0 + (768 * count), 1366, 768);
+        sprite_anime->SetTrimming(0, 0 + (768 * counter), 1366, 768);
         /*
         switch ()
         {
@@ -82,9 +83,9 @@ void Stage::Draw(){
     }
     if (StageCoolTime > 10){
         StageCoolTime = 0;
-        count++;
-        if (count > 5){
-            count = 6;
+        counter++;
+        if (counter > 5){
+            counter = 6;
             if (SpecialSkillTime == 0)
                 SpecialSkillTime = 10;
             if (SpecialSkillTime > 0)
@@ -180,7 +181,7 @@ void CreateEachStage(int stageLevel){
     int level;
     struct StageFixtures{
     float pos[2][8];
-    int count
+    int counter
     };
 
     std::list<StageFixture>& stageObjects = StageLoader::GetFixture();
@@ -195,6 +196,8 @@ void CreateEachStage(int stageLevel){
 
     switch (stageLevel)
     {
+    case 1:
+        break;
     default:
         Sprite* sprite = new Sprite;
 
@@ -276,7 +279,7 @@ void SetStageHP(float _HP){
 
 void Stage::CriateStage(){
     Stageflg = false;
-    count = 0;
+    counter = 0;
     //            D3DXVECTOR2 pos(0, 580);
     //            sprite_anime->SetPosition(pos);
     //@ x 1366* y 768
@@ -313,26 +316,18 @@ bool Stage::GetSkillEnd(){
 /*
 この後はコリジョンを外して入れるだけ
 */
-//void DettachFixture(b2Body* body);
-//void Stage::AttachFixture(){
-//    // 新しいフィクスチャーを作る前に一旦前のを消しておく
-//    DettachFixture(body);
-//
-//    // 各セルに配置されたCollisionShapeを新しいフィクスチャーとして全てbodyに追加する
-//    for (auto shape : shapes){
-//        shape->AddFixture(body);
-//    }
-//}
-//
-//void DettachFixture(b2Body* body){
-//    b2Fixture* fixture = body->GetFixtureList();
-//    if (fixture == nullptr){
-//        return;
-//    }
-//
-//    while (fixture != nullptr){
-//        b2Fixture* temp = fixture->GetNext();
-//        body->DestroyFixture(fixture);
-//        fixture = temp;
-//    }
-//}
+
+void Stage::DettachFixture(){
+    b2Fixture* fixture = breakableStage->GetFixtureList();
+    if (fixture == nullptr){
+        return;
+    }
+
+    while (fixture != nullptr){
+        b2Fixture* temp = fixture->GetNext();
+        breakableStage->DestroyFixture(fixture);
+        fixture = temp;
+    }
+
+    CreateWorldEdge();
+}
