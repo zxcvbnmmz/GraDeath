@@ -43,6 +43,9 @@ bool SceneManager::Initialize(){
 	fps.SetFPS(60);
 	srand((unsigned)time(NULL));
 
+	GamePad::setStickDeadZone(true);
+	GamePad::setThreshold(0.2f);
+
 	return true;
 
 }

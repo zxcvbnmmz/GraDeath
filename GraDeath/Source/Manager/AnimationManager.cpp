@@ -15,7 +15,6 @@ bool AnimationManager::Create(unsigned int playerNum, Player* _player){
 
 
 void AnimationManager::ChangeAction(PLAYER_ACTION _action, bool _loop){
-	if (_action > 3)return;
 	currentAction = _action;
 	loop = _loop;
 	currentCell = animation.cellDatas[currentAction].begin();

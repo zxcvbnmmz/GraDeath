@@ -168,10 +168,10 @@
       <Filter>Game\Object\Skill\WhiteBlack</Filter>
     </ClCompile>
     <ClCompile Include="Source\UI\UI.cpp">
-      <Filter>Game\Object\UI</Filter>
+      <Filter>Game\Object\Voice\UI</Filter>
     </ClCompile>
     <ClCompile Include="Source\UI\UIManager.cpp">
-      <Filter>Game\Object\UI</Filter>
+      <Filter>Game\Object\Voice\UI</Filter>
     </ClCompile>
     <ClCompile Include="Source\System\System.cpp">
       <Filter>Library\System</Filter>
@@ -536,10 +536,10 @@
       <Filter>Game\Object\Skill\WhiteBlack</Filter>
     </ClInclude>
     <ClInclude Include="Include\UI\UIManager.h">
-      <Filter>Game\Object\UI</Filter>
+      <Filter>Game\Object\Voice\UI</Filter>
     </ClInclude>
     <ClInclude Include="Include\UI\UI.h">
-      <Filter>Game\Object\UI</Filter>
+      <Filter>Game\Object\Voice\UI</Filter>
     </ClInclude>
     <ClInclude Include="Include\System\System.h">
       <Filter>Library\System</Filter>
@@ -890,9 +890,6 @@
     <Filter Include="Game\Object\Skill\WhiteBlack">
       <UniqueIdentifier>{35d5aa4d-c320-4fb6-af2e-f1c117bb09b5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Object\UI">
-      <UniqueIdentifier>{0b05a70e-ce53-442b-8da0-89ea617ff74d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Library\System\Window">
       <UniqueIdentifier>{e9b92488-c182-4ee5-b745-26bbb5b5ff0c}</UniqueIdentifier>
     </Filter>
@@ -982,6 +979,9 @@
     </Filter>
     <Filter Include="Game\Object\Skill\Yellow">
       <UniqueIdentifier>{e3472906-e335-4ea4-b8dc-e2e8903dff75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\Voice\UI">
+      <UniqueIdentifier>{0b05a70e-ce53-442b-8da0-89ea617ff74d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

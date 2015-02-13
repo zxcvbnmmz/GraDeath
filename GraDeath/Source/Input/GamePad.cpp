@@ -21,7 +21,7 @@
 // XInput‚Ì”F¯‚ÍÅ‘å4‚Â
 #define MAX_CONTROLLERS ( 4 )
 // è‡’l‚ÌMAX
-#define INPUT_DEADZONE  ( 0.24f * float( 0x7FFF ) )
+#define INPUT_DEADZONE  ( float( 0x7FFF ) )
 
 namespace GamePad
 {
@@ -96,6 +96,17 @@ namespace GamePad
 		{
 			pad[ _num ].state.Gamepad.sThumbLX = 0;
 			pad[ _num ].state.Gamepad.sThumbLY = 0;
+		}
+		
+		{
+			D3DXVECTOR2 l = D3DXVECTOR2(pad[_num].state.Gamepad.sThumbLX, pad[_num].state.Gamepad.sThumbLY);
+			float length = D3DXVec2Length(&l);
+			float th = threshold;
+			float dead = th * INPUT_DEADZONE;
+			if (length < threshold){
+				pad[_num].state.Gamepad.sThumbLX = 0;
+				pad[_num].state.Gamepad.sThumbLY = 0;
+			}
 		}
 
 		if ( ( pad[ _num ].state.Gamepad.sThumbRX < threshold &&

@@ -6,10 +6,16 @@
 #include "CharacterController/CharacterInfo.h"
 #include <vector>
 #include <memory>
+#include "D2D/Sprite/Sprite.h"
 
 using namespace std;
 
 class Sprite;
+
+enum PLAYER_DIRECTION{
+	RIGHT = FLIP_NONE,
+	LEFT = FLIP_HORIZONTAL,
+};
 
 class Player : public Object{
 	friend class PlayerController;
@@ -35,6 +41,7 @@ public:
 private:
 	shared_ptr<Sprite> sprite;
 	CharacterInfo::PLAYER_TYPE playerType;
+	PLAYER_DIRECTION dir;
 };
 
 #endif	// end of Player
