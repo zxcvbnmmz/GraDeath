@@ -108,8 +108,8 @@ void PlayerController::Run(){
 
 }
 
-void PlayerController::SetPos(int posx, int posy){
-    player->sprite->SetPosition(posx, posy);
+void PlayerController::SetPos(int posx, int posy, float angle){
+	player->body->SetTransform(b2Vec2(posx, posy), angle);
 }
 
 void PlayerController::Walk(){

@@ -34,7 +34,7 @@ public:
 
 	PLAYER_ACTION GetCurrentAction();
 
-    virtual void SetPos(int _posx, int _posy) = 0;
+    virtual void SetPos(int _posx, int _posy, float angle = 0) = 0;
 	void ChangeAction(PLAYER_ACTION newAction, bool loop);
 
 protected:
