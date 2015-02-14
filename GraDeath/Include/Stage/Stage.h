@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <memory>
+
 using namespace std;
 
 
@@ -23,7 +24,8 @@ namespace Stage{
 	b2Body* GetUnbreakbleStage();
     bool GetSkillEnd();
     void DettachFixture();
-
+    void SetSkillEnd(bool isbool);
+    void FadeDraw();
 };
 
 #endif	// end of Stage

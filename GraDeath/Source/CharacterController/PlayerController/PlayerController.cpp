@@ -106,8 +106,11 @@ void PlayerController::Idle(){
 	}
 }
 
-void PlayerController::Run(){
+void PlayerController::Run(){}
 
+void PlayerController::MovePos(int _movex,int _movey){
+    b2Vec2 pos = player->GetPosition();
+    player->AddForce(b2Vec2(_movex, _movey));
 }
 
 void PlayerController::SetPos(int posx, int posy, float angle){
