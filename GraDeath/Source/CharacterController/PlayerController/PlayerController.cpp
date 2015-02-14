@@ -93,10 +93,12 @@ void PlayerController::Idle(){
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
 		ChangeAction(ACTION_WALK, true);
 		player->dir = RIGHT;
+		Reverse(false);
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
 		ChangeAction(ACTION_WALK, true);
 		player->dir = LEFT;
+		Reverse(true);
 	}
 
 	if (Keyboard::CheckKey(KC_RIGHT) == INPUT_PRESS || Keyboard::CheckKey(KC_LEFT) == INPUT_PRESS){

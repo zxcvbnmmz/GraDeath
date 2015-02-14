@@ -33,6 +33,7 @@ public:
 
 
 	PLAYER_ACTION GetCurrentAction();
+	void Reverse(bool _reverse);
 
     virtual void SetPos(int _posx, int _posy, float angle = 0) = 0;
 	void ChangeAction(PLAYER_ACTION newAction, bool loop);

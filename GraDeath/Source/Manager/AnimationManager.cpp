@@ -1,6 +1,7 @@
 #include "Manager/AnimationManager.h"
 #include "Loader/PlayerLoader.h"
 #include "Object/Player.h"
+#include "Object/CollisionShape.h"
 
 bool AnimationManager::Create(unsigned int playerNum, Player* _player){
 	player = _player;
@@ -45,6 +46,8 @@ CURRENT_ANIMATION_STATE AnimationManager::Update(){
 				(*currentCell)->se->Play();
 			}
 			AttachFixtureToPlayer();
+			if (reverse)
+				Reverse();
 			currentFrame = 0;
 		}
 	}
@@ -66,4 +69,20 @@ const D3DXVECTOR2& AnimationManager::GetCellSize(){
 
 void AnimationManager::AttachFixtureToPlayer(){
 	player->AttachFixture((*currentCell)->shapes);
+}
+
+void AnimationManager::Reverse(bool _reverse){
+	if (reverse == _reverse)
+		return;
+
+	for (auto shape : (*currentCell)->shapes){
+		shape->Reverse();
+	}
+	reverse = _reverse;
+}
+
+void AnimationManager::Reverse(){
+	for (auto shape : (*currentCell)->shapes){
+		shape->Reverse();
+	}
 }

@@ -10,6 +10,7 @@ struct CollisionDef{
 	int categoryBit = 0x0002;
 	int maskBit = 0x0003;
 	int groupIndex = -1;
+	int width = 0, height = 0;
 };
 
 struct CircleDef:public CollisionDef{
@@ -25,21 +26,33 @@ struct SquareDef:public CollisionDef{
 struct CollisionShape{
 private:
 	std::shared_ptr<b2Shape> shape;
+	std::shared_ptr<b2Shape> reverseShape;
 	b2Fixture* fixture = nullptr;
 	b2Filter filter;
 	int strength;
+	int width, height;
 
 public:
 	CollisionShape(CircleDef& def){
 		b2CircleShape* _shape = new b2CircleShape;
-		_shape->m_p.x = (float)def.x / 32.0f; 
+		_shape->m_p.x = (float)def.x / 32.0f;
 		_shape->m_p.y = (float)def.y / 32.0f;
 		_shape->m_radius = (float)def.r / 32.0f;
-		 
+
 		shape.reset(_shape);
+
+		b2CircleShape* _reverseShape = new b2CircleShape;
+		_reverseShape->m_p.x = (def.width / 32) - (float)def.x / 32.0f;
+		_reverseShape->m_p.y = (def.height / 32) - (float)def.y / 32.0f;
+		_reverseShape->m_radius = (float)def.r / 32.0f;
+
+		reverseShape.reset(_reverseShape);
+
 		filter.categoryBits = def.categoryBit;
 		filter.maskBits = def.maskBit;
 		filter.groupIndex = def.groupIndex;
+		width = def.width/32;
+		height = def.height/32;
 		strength = def.strength;
 	}
 
@@ -55,9 +68,21 @@ public:
 		_shape->Set(pos, 4);
 		shape.reset(_shape);
 
+		b2PolygonShape* _reverseShape = new b2PolygonShape;
+
+		for (int i = 0; i < 4; ++i){
+			// 代入の際に、単位変換の為に32.0fで割る必要あり
+			pos[i].x = (def.width / 32) - (float)def.x[i] / 32.0f;
+			pos[i].y = (def.height / 32) - (float)def.y[i] / 32.0f;
+		}
+		_reverseShape->Set(pos, 4);
+		shape.reset(_reverseShape);
+
 		filter.categoryBits = def.categoryBit;
 		filter.maskBits = def.maskBit;
 		filter.groupIndex = def.groupIndex;
+		width = def.width / 32;
+		height = def.height / 32;
 		this->strength = def.strength;
 	}
 
@@ -87,6 +112,21 @@ public:
 			body->DestroyFixture(fixture);
 		}
 	} 
+
+	void Reverse(bool reverse){
+		b2Shape::Type type = shape->GetType();
+		if (type == b2Shape::e_circle){
+			b2CircleShape* circle = reinterpret_cast<b2CircleShape*>(shape.get());
+			if (reverse)
+				circle->m_p = >m_p.y);
+		}
+		else if (type == b2Shape::e_polygon){
+			b2PolygonShape* polygon = reinterpret_cast<b2PolygonShape*>(shape.get());
+			for (int i = 0; i < 4; ++i)
+				polygon->m_vertices[i] =  b2Vec2(width - polygon->m_vertices[i].x, polygon->m_vertices[i].y);
+		}
+			
+	}
 };
 
 #endif	// end of CollisionShape
