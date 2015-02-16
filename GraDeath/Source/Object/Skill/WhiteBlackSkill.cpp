@@ -9,13 +9,13 @@ D3DXVECTOR2 setPosition[2][3] =
 {
 	{
 		D3DXVECTOR2 ( 0, -290.0f ),
-		D3DXVECTOR2 ( -20, -400.0f ),
-		D3DXVECTOR2 ( -100, -290.0f )
+		D3DXVECTOR2 ( -100, -290.0f ),
+		D3DXVECTOR2 ( -20, -400.0f )
 	},
 	{
 		D3DXVECTOR2 ( -400, -290.0f ),
-		D3DXVECTOR2 ( -820, -400.0f ),
-		D3DXVECTOR2 ( -4100, -290.0f )
+		D3DXVECTOR2 ( -1000, -290.0f ),
+		D3DXVECTOR2 ( -820, -400.0f )
 	},
 };
 
@@ -42,9 +42,9 @@ void WhiteBlackSkill::Init ()
 	first->Init ( "Resource/Object/Skill/WhiteBlack/shirokuro_skill01.bin", L"Resource/Object/Skill/WhiteBlack/skill01.png", SKILL_ID_LOAD::SKILL_ID_BLACKWHITE );
 	skills.push_back ( first );
 
-	//WhiteBlackSecond* second = new WhiteBlackSecond;
-	//second->Init ( "", L"" );
-	//skills.push_back ( second );
+	Skill* second = new Skill;
+	second->Init ( "Resource/Object/Skill/WhiteBlack/shirokuro_Skill_Second.bin", L"Resource/Object/Skill/WhiteBlack/shirokuro_Skill_Second.png", SKILL_ID_LOAD::SKILL_ID_BLACKWHITE );
+	skills.push_back ( second );
 
 	Skill* third = new Skill;
 	third->Init ( "Resource/Object/Skill/WhiteBlack/shirokuro_Skill_Third.bin", L"Resource/Object/Skill/WhiteBlack/shirokuro_Skill_Third.png", SKILL_ID_LOAD::SKILL_ID_BLACKWHITE );
