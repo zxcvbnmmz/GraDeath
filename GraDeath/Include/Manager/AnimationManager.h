@@ -26,7 +26,7 @@ enum CURRENT_ANIMATION_STATE{
 
 class AnimationManager{
 public:
-	AnimationManager(){}
+	AnimationManager():reverse(false){}
 	virtual ~AnimationManager(){}
 
 	bool Create(unsigned int playerNum, class Player* _player);
@@ -34,6 +34,7 @@ public:
 	CURRENT_ANIMATION_STATE Update();
 	void GetDrawingRect(D2D1_RECT_F& rect);
 	const D3DXVECTOR2& GetCellSize();
+	void Reverse(bool _reverse);
 
 	void Enable(bool flag){
 		isEnable = flag;
@@ -41,6 +42,7 @@ public:
 
 private:
 	void AttachFixtureToPlayer();
+	void Reverse();
 
 	std::vector<std::shared_ptr<CellData>>::iterator currentCell;
 	PLAYER_ACTION currentAction;
@@ -48,6 +50,7 @@ private:
 	AnimationData animation;
 	bool isEnable;
 	bool loop;
+	bool reverse;
 
 	class Player* player;
 };

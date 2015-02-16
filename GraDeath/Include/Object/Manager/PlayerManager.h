@@ -11,7 +11,7 @@ namespace PlayerManager{
 	void Draw();
 
 
-    void AllPlayerMove(int movex, int movey);
+    int AllPlayerMove(int _movex, int _movey);
     void OnPlayerPos(int _Player, int _posx , int _posy);
 
 };

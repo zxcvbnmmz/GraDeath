@@ -80,4 +80,4 @@ void DettachFixture(b2Body* body){
 		fixture = temp;
 	}
 }
- 
+

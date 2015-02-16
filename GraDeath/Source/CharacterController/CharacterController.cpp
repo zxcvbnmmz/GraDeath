@@ -28,3 +28,7 @@ PLAYER_ACTION CharacterController::GetCurrentAction(){
 	return currentAction;
 }
 
+void CharacterController::Reverse(bool _reverse){
+	animManager.Reverse(_reverse);
+}
+

@@ -83,10 +83,11 @@ void PlayerManager::Draw(){
 	SkillManager::Draw();
 }
 
-void PlayerManager::AllPlayerMove(int _movex, int _movey){
+int PlayerManager::AllPlayerMove(int _movex, int _movey){
     for (int i = 0; i < PLAYERS; ++i){
-//        controllers[i]->Move(_movex , _movey);
+        controllers[i]->MovePos(_movex , _movey);
     }
+    return 0;
 }
 void PlayerManager::OnPlayerPos(int _Player, int _posx, int _posy){
     controllers[_Player]->SetPos(_posx, _posy);
