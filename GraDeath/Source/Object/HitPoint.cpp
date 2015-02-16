@@ -36,3 +36,6 @@ void HitPoint::Release(){
 	maxHP = 0;
 }
 
+int HitPoint::GetPlayerType(){
+	return player->GetPlayerType();
+}

@@ -3,6 +3,7 @@
 
 #include <D2D1.h>
 #include "Object/ObjectParameter.h"
+#include "D2D/Sprite/Sprite.h"
 #include "Sound/SE/SE.h"
 
 enum PLAYER_ACTION : unsigned int {
@@ -19,6 +20,12 @@ enum PLAYER_ACTION : unsigned int {
 	ACTION_MAX
 };
 
+enum PLAYER_DIRECTION{
+	RIGHT = FLIP_NONE,
+	LEFT = FLIP_HORIZONTAL,
+	SAME_BEFORE,
+};
+
 enum CURRENT_ANIMATION_STATE{
 	PROCESSED,
 	FINISHED,
@@ -26,15 +33,17 @@ enum CURRENT_ANIMATION_STATE{
 
 class AnimationManager{
 public:
-	AnimationManager():reverse(false){}
+	AnimationManager(){}
 	virtual ~AnimationManager(){}
 
 	bool Create(unsigned int playerNum, class Player* _player);
-	void ChangeAction(PLAYER_ACTION _action, bool _loop);
+	void ChangeAction(PLAYER_ACTION _action, bool _loop, PLAYER_DIRECTION _dir);
 	CURRENT_ANIMATION_STATE Update();
 	void GetDrawingRect(D2D1_RECT_F& rect);
 	const D3DXVECTOR2& GetCellSize();
-	void Reverse(bool _reverse);
+	PLAYER_DIRECTION GetCurrentDirecton(){
+		return dir;
+	}
 
 	void Enable(bool flag){
 		isEnable = flag;
@@ -50,8 +59,7 @@ private:
 	AnimationData animation;
 	bool isEnable;
 	bool loop;
-	bool reverse;
-
+	PLAYER_DIRECTION dir;
 	class Player* player;
 };
 

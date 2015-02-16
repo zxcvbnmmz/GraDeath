@@ -91,12 +91,12 @@ namespace HitPointManager
 	}
 
 
-	int GetPlayerRanking(int num){
+	int GetPlayerRanking(int num, int& rank){
 		if (hitPoint[num].IsEnabled()){
-			return hitPoint[num].GetRank();
+			rank = hitPoint[num].GetRank();
+			return hitPoint[num].GetPlayerType();
 		}
-
-		return -1;
+		return CharacterInfo::PLAYER_NON;
 	}
 
 	void Release(){

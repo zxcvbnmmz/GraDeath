@@ -9,17 +9,24 @@ bool AnimationManager::Create(unsigned int playerNum, Player* _player){
 	PlayerLoader::LoadFile(playerNum, &animation);
 	player->Init(animation.fileName, b2Vec2((150 + static_cast<float>(playerNum)* 300.f) / 32.0f, 200.0f/32.0f));//468/32.0f));
 
-	ChangeAction(ACTION_IDLE, true);
+	ChangeAction(ACTION_IDLE, true, RIGHT);
 
 	return true;
 }
 
 
-void AnimationManager::ChangeAction(PLAYER_ACTION _action, bool _loop){
+void AnimationManager::ChangeAction(PLAYER_ACTION _action, bool _loop, PLAYER_DIRECTION _dir){
 	currentAction = _action;
 	loop = _loop;
+	if (_dir != SAME_BEFORE){
+		dir = _dir;
+	}
+
 	currentCell = animation.cellDatas[currentAction].begin();
 	AttachFixtureToPlayer();
+	if (dir == LEFT){
+		Reverse();
+	}
 }
 
 CURRENT_ANIMATION_STATE AnimationManager::Update(){
@@ -46,7 +53,7 @@ CURRENT_ANIMATION_STATE AnimationManager::Update(){
 				(*currentCell)->se->Play();
 			}
 			AttachFixtureToPlayer();
-			if (reverse)
+			if(dir == LEFT)
 				Reverse();
 			currentFrame = 0;
 		}
@@ -71,18 +78,8 @@ void AnimationManager::AttachFixtureToPlayer(){
 	player->AttachFixture((*currentCell)->shapes);
 }
 
-void AnimationManager::Reverse(bool _reverse){
-	if (reverse == _reverse)
-		return;
-
-	for (auto shape : (*currentCell)->shapes){
-		shape->Reverse(reverse);
-	}
-	reverse = _reverse;
-}
-
 void AnimationManager::Reverse(){
 	for (auto shape : (*currentCell)->shapes){
-		shape->Reverse(reverse);
+		shape->Reverse();
 	}
 }
