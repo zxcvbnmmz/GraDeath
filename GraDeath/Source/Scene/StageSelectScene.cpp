@@ -8,6 +8,9 @@
 StageSelectScene::StageSelectScene(){
 	stageIcon = std::shared_ptr< StageIcon > ( new StageIcon );
 	stageIcon->SetUp ();
+	bgSprite = std::shared_ptr< Sprite > ( new Sprite );
+	bgSprite->Create (L"Resource/Scene/StageSelect/StageSelect_BG.png");
+	bgSprite->SetPosition ( 0, 0 );
 }
 
 SCENE_STATUS StageSelectScene::Execute(){
@@ -24,6 +27,7 @@ SCENE_STATUS StageSelectScene::Execute(){
 }
 
 void StageSelectScene::Draw(){
+	bgSprite->Draw ();
 	stageIcon->Draw ();
 }
 
