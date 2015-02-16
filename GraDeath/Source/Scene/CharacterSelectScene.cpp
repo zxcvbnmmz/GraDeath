@@ -14,6 +14,10 @@ CharacterSelectScene::CharacterSelectScene(){
 
 	selectCursor = std::shared_ptr< SelectCursor > ( new SelectCursor );
 	selectCursor->SetUp ();
+
+	bgSprite = std::shared_ptr< Sprite > ( new Sprite );
+	bgSprite->Create ( L"Resource/Scene/CharacterSelect/CharacterSelect_BG.png" );
+	bgSprite->SetPosition ( 0, 0 );
 }
 
 SCENE_STATUS CharacterSelectScene::Execute(){
@@ -42,6 +46,7 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 }
 
 void CharacterSelectScene::Draw(){
+	bgSprite->Draw ();
 	selectCursor->Draw ();
 }
 

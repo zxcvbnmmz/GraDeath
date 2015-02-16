@@ -5,6 +5,7 @@
 #include <memory>
 
 class StageIcon;
+class Sprite;
 
 class StageSelectScene : public Scene{
 public:
@@ -15,6 +16,8 @@ public:
 
 private:
 	std::shared_ptr< StageIcon > stageIcon;
+	std::shared_ptr< Sprite > bgSprite;
+
 };
 
 
