@@ -76,13 +76,13 @@ void AnimationManager::Reverse(bool _reverse){
 		return;
 
 	for (auto shape : (*currentCell)->shapes){
-		shape->Reverse();
+		shape->Reverse(reverse);
 	}
 	reverse = _reverse;
 }
 
 void AnimationManager::Reverse(){
 	for (auto shape : (*currentCell)->shapes){
-		shape->Reverse();
+		shape->Reverse(reverse);
 	}
 }

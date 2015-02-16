@@ -5,6 +5,7 @@
 #include <memory>
 
 class SelectCursor;
+class Sprite;
 
 class CharacterSelectScene : public Scene{
 public:
@@ -18,6 +19,8 @@ private:
 	std::shared_ptr< SelectCursor >		selectCursor;
 	int ExecutePreDecide();
 	int ExecuteFadeOut();
+
+	std::shared_ptr< Sprite > bgSprite;
 };
 
 #endif	// end of CharacterSelectScene
