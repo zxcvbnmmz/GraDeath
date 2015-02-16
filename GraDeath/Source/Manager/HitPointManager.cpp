@@ -96,6 +96,7 @@ namespace HitPointManager
 			rank = hitPoint[num].GetRank();
 			return hitPoint[num].GetPlayerType();
 		}
+		rank = -1;
 		return CharacterInfo::PLAYER_NON;
 	}
 
