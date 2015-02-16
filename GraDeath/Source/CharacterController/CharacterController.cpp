@@ -19,16 +19,12 @@ void CharacterController::Update(){
 	}
 }
 
-void CharacterController::ChangeAction(PLAYER_ACTION newAction, bool loop){
+void CharacterController::ChangeAction(PLAYER_ACTION newAction, bool loop, PLAYER_DIRECTION _dir){
 	currentAction = newAction;
-	animManager.ChangeAction(newAction, loop);
+	animManager.ChangeAction(newAction, loop, _dir);
 }
 
 PLAYER_ACTION CharacterController::GetCurrentAction(){
 	return currentAction;
-}
-
-void CharacterController::Reverse(bool _reverse){
-	animManager.Reverse(_reverse);
 }
 

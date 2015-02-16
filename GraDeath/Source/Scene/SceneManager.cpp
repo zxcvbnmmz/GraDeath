@@ -14,6 +14,10 @@
 
 #include <time.h>
 
+#ifdef _DEBUG
+#include "D2D/Brush/SolidBrush.h"
+#endif
+
 namespace{
 	std::stack<Scene*> scenes;
 	Scene* reserve;
@@ -45,6 +49,11 @@ bool SceneManager::Initialize(){
 
 	GamePad::setStickDeadZone(true);
 	GamePad::setThreshold(0.2f);
+
+#ifdef _DEBUG
+	t.format = D2D::TextFormat::Create(L"MS–¾’©",30);
+	t.brush = SolidBrush::Create(1, 1, 1, 1);
+#endif
 
 	return true;
 
@@ -109,6 +118,7 @@ void SceneManager::Draw(){
 
 #ifdef _DEBUG
 	World::DrawDebugData();
+	t.DrawString(0, 0, L"%f", fps.GetFPS());
 #endif
 
 	Graphic::D2D::EndDraw();

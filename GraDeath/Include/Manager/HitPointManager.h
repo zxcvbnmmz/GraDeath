@@ -23,7 +23,7 @@ namespace HitPointManager
 	int AlivePlayer ();
 
 
-	int GetPlayerRanking ( int _num );
+	int GetPlayerRanking(int _num, int& rank);
 
 	int PlayerRanking ( int _num );
 

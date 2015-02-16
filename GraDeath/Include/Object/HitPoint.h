@@ -33,6 +33,7 @@ public:
 	bool IsCompared(Player* _player);
 	bool IsEnabled();
 	void Release();
+	int GetPlayerType();
 };
 
 inline void HitPoint::SetHP ( float _hp )
