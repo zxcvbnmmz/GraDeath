@@ -14,14 +14,20 @@
 
 char* playerIconName[ ] =
 {
+	"Resource/Object/Player/Y.bin",
 	"Resource/Object/Player/B.bin",
-	"Resource/Object/Player/R.bin",
 	"Resource/Object/Player/shirokuro.bin",
-	"Resource/Object/Player/shirokuro.bin",
+	"Resource/Object/Player/WB.bin",
 	"Resource/Object/Player/TestData.bin",
 	"Resource/Object/Player/TestData.bin",
 	"Resource/Object/Player/TestData.bin",
 };
+/*
+PLAYER_RED = 0,
+PLAYER_BLUE,
+PLAYER_YELLOW,
+PLAYER_GRAY,
+*/
 /*
 char skillPassName[5][64] =
 {
@@ -69,10 +75,10 @@ namespace PlayerLoader
 
 		char path[ 5 ][ 64 ] =
 		{
-			"Resource/Object/Skill/WhiteBlack/",
 			"Resource/Object/Skill/Red/",
-			"Resource/Object/Skill/Yellow/",
 			"Resource/Object/Skill/Blue/",
+			"Resource/Object/Skill/Yellow/",
+			"Resource/Object/Skill/WhiteBlack/",
 			"Resource/Object/Player/",
 		};
 
