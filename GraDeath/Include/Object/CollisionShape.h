@@ -117,8 +117,6 @@ public:
 		b2Shape::Type type = shape->GetType();
 		if (type == b2Shape::e_circle){
 			b2CircleShape* circle = reinterpret_cast<b2CircleShape*>(shape.get());
-			if (reverse)
-				circle->m_p = >m_p.y);
 		}
 		else if (type == b2Shape::e_polygon){
 			b2PolygonShape* polygon = reinterpret_cast<b2PolygonShape*>(shape.get());

@@ -22,7 +22,9 @@ bool Sprite::Create(LPCWSTR fileName){
 	assert(bitmap == nullptr);
 
 	if (!D2D::CreateSprite(&bitmap, fileName)){
-		MessageBox(NULL, L"エラー", L"テクスチャの読み込みに失敗", MB_OK);
+		wchar_t str[80];
+		wsprintf(str, L"%s の読み込みに失敗", fileName);
+		MessageBox(NULL, L"エラー", str, MB_OK);
 		abort();
 		return false;
 	}
