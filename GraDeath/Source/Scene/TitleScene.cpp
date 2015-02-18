@@ -141,7 +141,7 @@ void TitleScene::Move() {
 int TitleScene::ExecuteSelect(){
 	if (GamePad::getGamePadState(PAD_1, BUTTON_A, 0) == INPUT_PUSH
 #ifdef _DEBUG
-		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH
+		|| Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH
 #endif
 		){
 		switch (select_i){
