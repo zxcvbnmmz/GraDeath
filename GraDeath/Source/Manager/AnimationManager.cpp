@@ -3,11 +3,11 @@
 #include "Object/Player.h"
 #include "Object/CollisionShape.h"
 
-bool AnimationManager::Create(unsigned int playerNum, Player* _player){
+bool AnimationManager::Create(unsigned int playerNum, Player* _player, float scale){
 	player = _player;
 
-	PlayerLoader::LoadFile(playerNum, &animation, 0.5f);
-	player->Init(animation.fileName, b2Vec2((150 + static_cast<float>(playerNum)* 300.f) / 32.0f, 200.0f/32.0f));//468/32.0f));
+	PlayerLoader::LoadFile(playerNum, &animation, scale);
+	player->Init(animation.fileName, b2Vec2((150 + static_cast<float>(playerNum)* 300.f) / 32.0f, 280.0f / 32.0f), scale);//468/32.0f));
 
 	ChangeAction(ACTION_IDLE, true, RIGHT);
 

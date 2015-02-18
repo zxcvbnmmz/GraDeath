@@ -10,7 +10,8 @@ struct CollisionDef{
 	int categoryBit = 0x0002;
 	int maskBit = 0x0003;
 	int groupIndex = -1;
-	float width = 0;
+	float width = 0, height = 0;
+	float scale;
 };
 
 struct CircleDef:public CollisionDef{
@@ -34,17 +35,22 @@ private:
 	b2Fixture* fixture = nullptr;
 	b2Filter filter;
 	int strength;
-	float width;
+	float width,height;
+	float scale;
 
 public:
 	CollisionShape(CircleDef& def){	
 		b2CircleShape* _shape = new b2CircleShape;
-		_shape->m_p.x = (float)def.x / 32.0f;
-		_shape->m_p.y = (float)def.y / 32.0f;
+		width = def.width / 32.0f;
+		height = def.height / 32.0f;
+		scale = def.scale;
+		
+		_shape->m_p.x = (float)def.x / 32.0f + ((width - (width * scale)) / 2);
+		_shape->m_p.y = (float)def.y / 32.0f + ((height - (height * scale)) / 2);
 		_shape->m_radius = (float)def.r / 32.0f;
 
-		shapeData.circle.x = (float)def.x / 32.0f;
-		shapeData.circle.y = (float)def.y / 32.0f;
+		shapeData.circle.x = (float)def.x / 32.0f + ((width - (width * scale)) / 2);
+		shapeData.circle.y = (float)def.y / 32.0f + ((height - (height * scale)) / 2);
 		shapeData.circle.rad = (float)def.r / 32.0f;
 
 		shape.reset(_shape);
@@ -52,21 +58,23 @@ public:
 		filter.categoryBits = def.categoryBit;
 		filter.maskBits = def.maskBit;
 		filter.groupIndex = def.groupIndex;
-		width = def.width/32.0f;
 		strength = def.strength;
 	}
 
 	CollisionShape(SquareDef& def){
 		b2PolygonShape* _shape = new b2PolygonShape;
 		b2Vec2 pos[4];
+		width = def.width / 32.0f;
+		height = def.height / 32.0f;
+		scale = def.scale;
 
 		for (int i = 0; i < 4; ++i){
 			// 代入の際に、単位変換の為に32.0fで割る必要あり
-			pos[i].x = (float)def.x[i] / 32.0f;
-			pos[i].y = (float)def.y[i] / 32.0f;
+			pos[i].x = (float)def.x[i] / 32.0f + ((width - (width * scale)) / 2.0f);
+			pos[i].y = (float)def.y[i] / 32.0f + ((height - (height * scale)) / 2.0f);
 
-			shapeData.polygon.x[i] = (float)def.x[i] / 32.0f;
-			shapeData.polygon.y[i] = (float)def.y[i] / 32.0f;
+			shapeData.polygon.x[i] = ((float)def.x[i] / 32.0f);
+			shapeData.polygon.y[i] = ((float)def.y[i] / 32.0f);
 		}
 		_shape->Set(pos, 4);
 		shape.reset(_shape);
@@ -82,10 +90,13 @@ public:
 		b2FixtureDef def;
 		if (shape->GetType() == b2Shape::e_polygon){
 			b2PolygonShape* poly = reinterpret_cast<b2PolygonShape*>(shape.get());
+			b2Vec2 pos[4];
 			for (int i = 0; i < 4; ++i){
-				poly->m_vertices[i].x = shapeData.polygon.x[i];
-				poly->m_vertices[i].y = shapeData.polygon.y[i];
+				pos[i] = b2Vec2(shapeData.polygon.x[i] * scale + ((width - (width * scale)) / 2.0f), shapeData.polygon.y[i] * scale + ((height - (height * scale)) / 2.0f));
 			}
+			//poly->m_vertices[i].x = shapeData.polygon.x[i] * scale + ((width - (width * scale)) / 2.0f);
+			//poly->m_vertices[i].y = shapeData.polygon.y[i] * scale + ((height - (height * scale)) / 2.0f);
+			poly->Set(pos, 4);
 		}
 		else{
 			b2CircleShape* circle = reinterpret_cast<b2CircleShape*>(shape.get());
@@ -126,12 +137,12 @@ public:
 		b2Shape::Type type = shape->GetType();
 		if (type == b2Shape::e_circle){
 			b2CircleShape* circle = reinterpret_cast<b2CircleShape*>(shape);
-			circle->m_p.x = width - circle->m_p.x;
+			circle->m_p.x = (width * scale) - circle->m_p.x;
 		}
 		else if (type == b2Shape::e_polygon){
 			b2PolygonShape* polygon = reinterpret_cast<b2PolygonShape*>(shape);
 			for (int i = 0; i < 4; ++i){
-				polygon->m_vertices[i].x = width - polygon->m_vertices[i].x;
+				polygon->m_vertices[i].x = (width * scale) - polygon->m_vertices[i].x;
 			}
 		}
 	}

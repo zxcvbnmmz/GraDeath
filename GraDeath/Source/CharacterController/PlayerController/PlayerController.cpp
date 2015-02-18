@@ -22,7 +22,7 @@
 
 D2D::TextObject t;
 
-void PlayerController::Init (int _padID, Player* _player)
+void PlayerController::Init (int _padID, Player* _player, float scale)
 {
     
 	Release ();
@@ -35,7 +35,7 @@ void PlayerController::Init (int _padID, Player* _player)
 	ground = static_cast<float>(y) - 300;
 	pos = D3DXVECTOR2 ( 150 + static_cast<float>( _padID )* 300.f, ground );
 
-	animManager.Create(padID, player);
+	animManager.Create(padID, player,scale);
 	animManager.Enable(true);
 
 	//voiceManager.Initialize(player->playerType);

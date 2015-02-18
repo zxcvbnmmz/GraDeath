@@ -23,7 +23,7 @@ public:
 
 	virtual ~CharacterController(){}
 
-	virtual void Init(int _padID,Player* _player) = 0;
+	virtual void Init(int _padID,Player* _player, float scale) = 0;
 
 	virtual void Update();
 

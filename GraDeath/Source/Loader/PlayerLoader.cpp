@@ -197,7 +197,9 @@ namespace PlayerLoader
 						else
 							def.maskBit = MASK_COL_ATK;
 						def.strength = shape->strength;
-						def.width = (float)(size.x / parameter->rectWCount) * scale;
+						def.width = (float)(size.x / parameter->rectWCount);
+						def.height = (float)(size.y / parameter->rectHCount);
+						def.scale = scale;
 
 						collisionShape = std::make_shared<CollisionShape> ( def );
 					}
@@ -222,7 +224,9 @@ namespace PlayerLoader
 						else
 							def.maskBit = MASK_COL_ATK;
 						def.strength = shape->strength;
-						def.width = (float)(size.x / parameter->rectWCount) * scale;
+						def.width = (float)(size.x / parameter->rectWCount);
+						def.height = (float)(size.y / parameter->rectHCount);
+						def.scale = scale;
 
 						collisionShape.reset(new CollisionShape(def));
 					}

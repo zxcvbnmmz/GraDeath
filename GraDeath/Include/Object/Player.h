@@ -19,7 +19,7 @@ public:
 	Player();
 	virtual ~Player();
 
-	bool Init(const char* fileName, const b2Vec2& bodyPos);
+	bool Init(const char* fileName, const b2Vec2& bodyPos, float scale);
 	void Release();
 	class b2Body* GetBody(){
 		return body;

@@ -36,7 +36,7 @@ public:
 	AnimationManager(){}
 	virtual ~AnimationManager(){}
 
-	bool Create(unsigned int playerNum, class Player* _player);
+	bool Create(unsigned int playerNum, class Player* _player, float scale = 1.0f);
 	void ChangeAction(PLAYER_ACTION _action, bool _loop, PLAYER_DIRECTION _dir);
 	CURRENT_ANIMATION_STATE Update();
 	void GetDrawingRect(D2D1_RECT_F& rect);

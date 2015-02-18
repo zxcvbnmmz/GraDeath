@@ -32,7 +32,7 @@ bool PlayerManager::Init(PlayerData* _data){
 
 	for (int i = 0; i < PLAYERS; ++i){
 		controllers[ i ] = new PlayerController;
-		controllers[i]->Init(i,&players[i]);
+		controllers[i]->Init(i,&players[i], 0.5f);
 		players[i].SetPlayerType(data[i].pType);
 		HitPointManager::Init ( i, &players[ i ], 100.0f );
 		SkillManager::Init ( i, data[ i ].pType );

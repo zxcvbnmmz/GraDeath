@@ -18,14 +18,14 @@ Player::Player(){
 Player::~Player(){
 }
 
-bool Player::Init(const char* fileName, const b2Vec2& bodyPos){
+bool Player::Init(const char* fileName, const b2Vec2& bodyPos, float scale){
 
 	// ‘fÞ‚ª—ˆ‚½‚ç‚±‚Ìˆ—‚ð•ÏX
 	WCHAR temp[80];
 
 	sprite.reset(new Sprite);
 	sprite->Create( Utility::ConvertToWChar(temp,fileName));
-
+	sprite->SetScale(scale, scale);
 
 	int x, y;
 	System::Window::GetWindowSize(&x, &y);
