@@ -31,10 +31,11 @@ ResultScene::ResultScene(){
 
 SCENE_STATUS ResultScene::Execute(){
 
-	if (GamePad::getAnyGamePadPressed(BUTTON_B) ||
+	if (GamePad::getAnyGamePadPressed(BUTTON_B)
 #ifdef _DEBUG
-		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH){
+		|| Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH
 #endif
+	){
 		CharacterSelectFactory cf;
 		SceneFactory::Reserve(&cf);
 		return END_PROCESS;

@@ -1,6 +1,7 @@
 #ifndef _OBJECT_H__
 #define _OBJECT_H__
 
+#include <D3D10_1.h>
 #include <Box2D\Dynamics\b2Body.h>
 
 class Object{

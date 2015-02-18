@@ -23,9 +23,9 @@ PLAYER_GRAY,
 namespace PlayerLoader
 {
 
-	void LoadFile ( const int _num, AnimationData* parameter );
+	void LoadFile ( const int _num, AnimationData* parameter, float scale = 1.0f );
 
-	void LoadFile ( const char* filename, AnimationData* parameter, int skill_id );
+	void LoadFile(const char* filename, AnimationData* parameter, int skill_id, float scale = 1.0f);
 
 	//char* GetLoadFileName ( CharacterInfo::PLAYER_TYPE _type );
 

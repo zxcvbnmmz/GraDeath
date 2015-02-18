@@ -1,6 +1,6 @@
+#include "Object/Player.h"
 #include "Manager/HitPointManager.h"
 #include "Object/HitPoint.h"
-#include "Object/Player.h"
 
 namespace HitPointManager
 {

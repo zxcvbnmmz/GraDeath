@@ -139,28 +139,34 @@ void TitleScene::Move() {
 }
 
 int TitleScene::ExecuteSelect(){
-	if (GamePad::getGamePadState(PAD_1, BUTTON_A, 0) == INPUT_PUSH ||
+	if (GamePad::getGamePadState(PAD_1, BUTTON_A, 0) == INPUT_PUSH
 #ifdef _DEBUG
-		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH){
+		Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH
 #endif
+		){
 		switch (select_i){
 		case 0:
 		case 2:
 			currentState = FADE_OUT;
+			break;
+		default:
+			break;
 		}
 	}
-	if (GamePad::getGamePadState(PAD_1, BUTTON_DOWN, 0) == INPUT_PUSH ||
+	if (GamePad::getGamePadState(PAD_1, BUTTON_DOWN, 0) == INPUT_PUSH
 #ifdef _DEBUG
-		Keyboard::CheckKey(KC_DOWN) == INPUT_PUSH) {
+		|| Keyboard::CheckKey(KC_DOWN) == INPUT_PUSH
 #endif
+		){
 		select_i++;
 		vect_move += D3DXVECTOR2(0, -100);
 		Move();
 	}
-	if (GamePad::getGamePadState(PAD_1, BUTTON_UP, 0) == INPUT_PUSH ||
+	if (GamePad::getGamePadState(PAD_1, BUTTON_UP, 0) == INPUT_PUSH
 #ifdef _DEBUG
-		Keyboard::CheckKey(KC_UP) == INPUT_PUSH) {
+		|| Keyboard::CheckKey(KC_UP) == INPUT_PUSH
 #endif
+		) {
 		select_i--;
 		vect_move += D3DXVECTOR2(0, 100);
 		Move();

@@ -10,7 +10,7 @@ struct CollisionDef{
 	int categoryBit = 0x0002;
 	int maskBit = 0x0003;
 	int groupIndex = -1;
-	int width = 0;
+	float width = 0;
 };
 
 struct CircleDef:public CollisionDef{
@@ -34,7 +34,7 @@ private:
 	b2Fixture* fixture = nullptr;
 	b2Filter filter;
 	int strength;
-	int width;
+	float width;
 
 public:
 	CollisionShape(CircleDef& def){	
@@ -52,7 +52,7 @@ public:
 		filter.categoryBits = def.categoryBit;
 		filter.maskBits = def.maskBit;
 		filter.groupIndex = def.groupIndex;
-		width = def.width/32;
+		width = def.width/32.0f;
 		strength = def.strength;
 	}
 
@@ -74,7 +74,7 @@ public:
 		filter.categoryBits = def.categoryBit;
 		filter.maskBits = def.maskBit;
 		filter.groupIndex = def.groupIndex;
-		width = def.width / 32;
+		width = def.width / 32.0f;
 		this->strength = def.strength;
 	}
 
