@@ -1,8 +1,8 @@
+#include "Object/Player.h"
 #include "Collision/Collision.h"
 #include "World/World.h"
 #include <Box2D\Box2D.h>
 #include "Object/ObjectMask.h"
-#include "Object/Player.h"
 #include "Object/CollisionShape.h"
 #include "Manager/HitpointManager.h"
 #include "CharacterController/PlayerController/PlayerController.h"

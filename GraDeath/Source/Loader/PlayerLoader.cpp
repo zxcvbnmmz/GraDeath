@@ -46,19 +46,19 @@ namespace PlayerLoader
 		_SKILL_TYPE
 	};
 
-	void Load ( const char* filename, AnimationData* parameter, int _type );
+	void Load ( const char* filename, AnimationData* parameter, int _type ,float scale);
 
-	void LoadFile ( const int _num, AnimationData* parameter )
+	void LoadFile ( const int _num, AnimationData* parameter, float scale)
 	{
-		Load ( playerIconName[ _num ], parameter, SKILL_ID_MAX );
+		Load ( playerIconName[ _num ], parameter, SKILL_ID_MAX, scale);
 	}
 
-	void LoadFile ( const char* filename, AnimationData* parameter, int skill_id )
+	void LoadFile(const char* filename, AnimationData* parameter, int skill_id, float scale)
 	{
-		Load ( filename, parameter, skill_id );
+		Load ( filename, parameter, skill_id, scale);
 	}
 
-	void Load ( const char* filename, AnimationData* parameter, int _type )
+	void Load ( const char* filename, AnimationData* parameter, int _type, float scale )
 	{
 		std::ifstream ifs ( filename, std::ios::binary );
 
@@ -197,7 +197,7 @@ namespace PlayerLoader
 						else
 							def.maskBit = MASK_COL_ATK;
 						def.strength = shape->strength;
-						def.width = size.x / parameter->rectWCount;
+						def.width = (float)(size.x / parameter->rectWCount) * scale;
 
 						collisionShape = std::make_shared<CollisionShape> ( def );
 					}
@@ -222,7 +222,7 @@ namespace PlayerLoader
 						else
 							def.maskBit = MASK_COL_ATK;
 						def.strength = shape->strength;
-						def.width = size.x / parameter->rectWCount;
+						def.width = (float)(size.x / parameter->rectWCount) * scale;
 
 						collisionShape.reset(new CollisionShape(def));
 					}

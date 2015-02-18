@@ -1,6 +1,7 @@
 #ifndef _SKILL_H_
 #define _SKILL_H_
 
+#include <d3d10_1.h>
 //#include <Box2D\Dynamics\b2Body.h>
 #include "Object/Skill/SkillDefine.h"
 #include "CharacterController/CharacterInfo.h"

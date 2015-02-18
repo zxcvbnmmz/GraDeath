@@ -1,3 +1,4 @@
+#include <d3d10_1.h>
 #include "Scene/CaptureScene/CaptureCamera.h"
 #include "Graphic/Camera/Camera.h"
 #include <math.h>
