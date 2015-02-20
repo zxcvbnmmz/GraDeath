@@ -5,12 +5,12 @@
 D3DXVECTOR2 redPosition[ 2 ][ 3 ] =
 {
 	{
-		D3DXVECTOR2 ( 0, -290.0f ),
+		D3DXVECTOR2 ( 100, -212.0f ),
 		D3DXVECTOR2 ( -100, -290.0f ),
 		D3DXVECTOR2 ( -20, -400.0f )
 	},
 	{
-		D3DXVECTOR2 ( -400, -290.0f ),
+		D3DXVECTOR2 ( -350, -212.0f ),
 		D3DXVECTOR2 ( -1000, -290.0f ),
 		D3DXVECTOR2 ( -820, -400.0f )
 	},
