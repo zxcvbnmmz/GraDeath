@@ -22,6 +22,8 @@ wchar_t* skillIconUI[ ] =
 GameSceneUI::GameSceneUI(){
 	// Ç±Ç±Ç≈äeUIÇÃèâä˙âª
 	ground.Create ( L"Resource/UI/Game/player_ui_frame.png" );
+	barBack.Create ( L"Resource/UI/Game/hpbar_back.png" );
+	barFront.Create ( L"Resource/UI/Game/hpbar_frame.png" );
 	gageUI[ HP_BAR ].Create ( L"Resource/UI/Game/hpbar.png" );
 	gageUI[ DEADLY_GAGE ].Create ( L"Resource/UI/Game/deadlygage.png" );
 	for (int i = 0; i < PLAYER_MAX; ++i){
@@ -57,17 +59,30 @@ void GameSceneUI::Draw(){
 		//}
 
 		// HPBar
+		barBack.SetPosition ( tempPos.x + 15, tempPos.y + 15 );
+		barBack.Draw ();
 		gageSize = gageUI[ HP_BAR ].GetDefaultSize ();
 		gageSize.x *= HitPointManager::GetHitPoint ( i );
 		gageUI[ HP_BAR ].SetPosition ( tempPos.x + 15, tempPos.y + 15 );
 		gageUI[ HP_BAR ].SetSize ( gageSize );
 		gageUI[ HP_BAR ].Draw ();
+		barFront.SetPosition ( tempPos.x + 15, tempPos.y + 15 );
+		barFront.Draw ();
 
 		// DeadlyGage
+		float tempGage = ( 1.0f - HitPointManager::GetHitPoint ( i ) ) * 4.0f;
+		if ( tempGage >= 1.0f )
+			tempGage = 1.0f;
+
+		barBack.SetPosition ( tempPos.x + 15, tempPos.y + 50 );
+		barBack.Draw ();
 		gageSize = gageUI[ DEADLY_GAGE ].GetDefaultSize ();
+		gageSize.x *= tempGage;
 		gageUI[ DEADLY_GAGE ].SetPosition ( tempPos.x + 15, tempPos.y + 50 );
 		gageUI[ DEADLY_GAGE ].SetSize ( gageSize );
 		gageUI[ DEADLY_GAGE ].Draw ();
+		barFront.SetPosition ( tempPos.x + 15, tempPos.y + 50 );
+		barFront.Draw ();
 
 		DrawSkillUI ( i, tempPos );
 	}
@@ -94,12 +109,12 @@ void GameSceneUI::DrawSkillUI ( int _num, D3DXVECTOR2& _pos )
 	{
 		//int tempType = SkillManager::GetPlayerType ( _num );
 		//skillIcon[ tempType ][ i ].
-		skillIcon[ i ].SetPosition ( _pos.x + 15 + ( 50 * ( float )i ), _pos.y + 85 );
+		skillIcon[ i ].SetPosition ( _pos.x + 25 + ( 50 * ( float )i ), _pos.y + 85 );
 		skillIcon[ i ].Draw ();
 
 		tempSize = skillMask.GetDefaultSize ();
 		tempSize.y *= SkillManager::GetCoolTime ( _num, ( SKILL_ID )i );
-		skillMask.SetPosition ( _pos.x + 15 + ( 50 * ( float )i ), _pos.y + 85 );
+		skillMask.SetPosition ( _pos.x + 25 + ( 50 * ( float )i ), _pos.y + 85 );
 		skillMask.SetSize ( tempSize );
 		skillMask.Draw ();
 	}

@@ -51,9 +51,9 @@ private:
 	virtual void Jump_Land();
 	virtual void Skill();
 
+	void Move();
+
 	int count = 0;
-	// ˆê“I‚ÉéŒ¾
-	D3DXVECTOR2 pos;
 	float ground;
 
 	unsigned int dirFlg = 0;

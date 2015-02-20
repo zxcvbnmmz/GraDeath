@@ -73,8 +73,8 @@ public:
 			pos[i].x = (float)def.x[i] / 32.0f + ((width - (width * scale)) / 2.0f);
 			pos[i].y = (float)def.y[i] / 32.0f + ((height - (height * scale)) / 2.0f);
 
-			shapeData.polygon.x[i] = ((float)def.x[i] / 32.0f);
-			shapeData.polygon.y[i] = ((float)def.y[i] / 32.0f);
+			shapeData.polygon.x[i] = ((float)def.x[i] / 32.0f) * scale + ((width - (width * scale)) / 2.0f);
+			shapeData.polygon.y[i] = ((float)def.y[i] / 32.0f) * scale + ((height - (height * scale)) / 2.0f);
 		}
 		_shape->Set(pos, 4);
 		shape.reset(_shape);
@@ -92,7 +92,7 @@ public:
 			b2PolygonShape* poly = reinterpret_cast<b2PolygonShape*>(shape.get());
 			b2Vec2 pos[4];
 			for (int i = 0; i < 4; ++i){
-				pos[i] = b2Vec2(shapeData.polygon.x[i] * scale + ((width - (width * scale)) / 2.0f), shapeData.polygon.y[i] * scale + ((height - (height * scale)) / 2.0f));
+				pos[i] = b2Vec2(shapeData.polygon.x[i], shapeData.polygon.y[i]);
 			}
 			//poly->m_vertices[i].x = shapeData.polygon.x[i] * scale + ((width - (width * scale)) / 2.0f);
 			//poly->m_vertices[i].y = shapeData.polygon.y[i] * scale + ((height - (height * scale)) / 2.0f);
@@ -142,8 +142,13 @@ public:
 		else if (type == b2Shape::e_polygon){
 			b2PolygonShape* polygon = reinterpret_cast<b2PolygonShape*>(shape);
 			for (int i = 0; i < 4; ++i){
-				polygon->m_vertices[i].x = (width * scale) - polygon->m_vertices[i].x;
+				polygon->m_vertices[i].x = width - shapeData.polygon.x[i];
 			}
+			b2Vec2 pos[4];
+			for (int i = 0; i < 4; ++i){
+				pos[i] = b2Vec2(width - shapeData.polygon.x[i], shapeData.polygon.y[i]);
+			}
+			polygon->Set(pos, 4);
 		}
 	}
 };
