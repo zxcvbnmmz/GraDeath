@@ -37,7 +37,7 @@ void PlayerController::Init (int _padID, Player* _player, float scale)
 	animManager.Create(padID, player,scale);
 	animManager.Enable(true);
 
-	//voiceManager.Initialize(player->playerType);
+	voiceManager.Initialize(player->playerType);
 
 	t.format = D2D::TextFormat::Create(L"MS–¾’©", 20);
 	t.brush = SolidBrush::Create(255, 255, 255, 255);
