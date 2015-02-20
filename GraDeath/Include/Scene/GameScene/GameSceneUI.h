@@ -37,7 +37,10 @@ private:
 	};
 
 	static const int PLAYER_MAX = 4;
+	float spCount[ PLAYER_MAX ];
 	class Sprite ground;
+	class Sprite barBack;
+	class Sprite barFront;
 	class Sprite gageUI[ BAR_MAX ];
 	class Sprite sprites[PLAYER_MAX][UI_MAX];
 	class Sprite skillIcon[ SKILL_ID::SKILL_MAX ];
