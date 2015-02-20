@@ -65,6 +65,7 @@ SCENE_STATUS GameScene::Execute(){
 #endif
 		){
 
+		//ResultFactory rf;
 		TitleFactory rf;
 
 		SceneFactory::Reserve(&rf);
