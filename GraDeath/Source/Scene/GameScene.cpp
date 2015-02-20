@@ -120,7 +120,8 @@ int GameScene::ExecuteButtle(){
     if (Stage::GetSkillEnd() == true){
 
         Stage::SetSkillEnd(false);
-        PlayerManager::OnPlayerPos(0, 10, 0);
+        for (int i = 0; i < 4; i++)
+            PlayerManager::OnPlayerPos(i, 10, 0);
     }
 
 	// ここでエンドコールへ移行(コメントアウト)
@@ -156,7 +157,6 @@ void GameScene::DrawStageCall(){
 void GameScene::DrawButtle(){
 	Stage::Draw();
 	PlayerManager::Draw();
-//    Special();
 	GameSceneUI::Create()->Draw();
     Stage::FadeDraw();
 }

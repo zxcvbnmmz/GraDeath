@@ -28,6 +28,9 @@ namespace{
     bool SkillEnd = false;
     int SpecialSkillTime = 0;
     std::shared_ptr<Fade> fade;
+    std::shared_ptr<Fade> Suppression_fade;
+    float Suppressioncount = 0;
+    bool isSuppression = false;
     bool fadeflg = false;
 
 }
@@ -83,7 +86,7 @@ void Stage::Draw(){
         
         D3DXVECTOR2 pos = Special_BLUE->GetPosition();
         if (pos.y != 0)
-            Special_BLUE->SetPositionY(pos.y-5);
+            Special_BLUE->SetPositionY(pos.y-3);
         Special_BLUE->Draw();
     }
     if (StageCoolTime > 10){
@@ -327,6 +330,11 @@ bool Stage::GetSkillEnd(){
 void Stage::SetSkillEnd(bool isbool){
     
     SkillEnd = isbool;
+    fade->SetAlpha(0);
+    Suppressioncount = 1;
+    isSuppression = true;
+    Suppression_fade.reset(new Fade(L"Resource/Scene/Game/Stage/blue_Suppression.png"));
+    Suppression_fade->SetAlpha(Suppressioncount);
 }
 /*
 ‚±‚ÌŒã‚ÍƒRƒŠƒWƒ‡ƒ“‚ðŠO‚µ‚Ä“ü‚ê‚é‚¾‚¯
@@ -349,7 +357,12 @@ void Stage::DettachFixture(){
 
 void Stage::FadeDraw(){
     fade->Draw();
-    if (fadeflg == true){
-
+    if (isSuppression == true){
+        Suppressioncount -= 0.005f;
+        if (Suppressioncount <= 0)
+            isSuppression = false;
+        if (Suppressioncount <= 0.5f)
+            Suppression_fade->AddAlpha(-0.01f);
+        Suppression_fade->Draw();
     }
 }
