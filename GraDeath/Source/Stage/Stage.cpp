@@ -30,6 +30,8 @@ namespace{
     std::shared_ptr<Fade> fade;
     std::shared_ptr<Fade> Suppression_fade;
     float Suppressioncount = 0;
+    float SuppressionScale = 1;
+    bool isSuppressionScale = false;
     bool isSuppression = false;
     bool fadeflg = false;
 
@@ -204,22 +206,47 @@ void CreateEachStage(int stageLevel){
     polygon.Set(b2Vec2(pos[0][i],pos[1][i]);
     }
     */
+    Special_BLUE.reset(new Sprite);
+    Special_BLUE->Create(L"Resource/Scene/Game/Stage/blue_SSKILL.png");
+    D3DXVECTOR2 SKILLpos(0, 400);
+    Special_BLUE->SetPosition(SKILLpos);
+    //@ x 1366* y 768
+    Special_BLUE->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F SKILL_size;
+    SKILL_size.height = 768.f;
+    SKILL_size.width = 1366.f;
+    Special_BLUE->SetSize(SKILL_size);
+    Special_SKILLs.push_back(Special_BLUE);
 
     switch (stageLevel)
     {
+/*    //赤（キツネ）
     case 1:
         break;
+    //青（男）
+    case 2:
+        break;
+    //白黒（女）
+    case 3:
+        break;
+    //黄色（女の子）
+    case 4:
+        break;
+    //無色
+    case 5:
+        break;
+*/    //やり方
     default:
         Sprite* sprite = new Sprite;
 
         /*各種パラメータの設定*/
         sprite->Create(L"Resource/Scene/Game/Stage/Stage.png");
-        D3DXVECTOR2 pos(0, 580);
+        D3DXVECTOR2 pos(0, 0);
         sprite->SetPosition(pos);
         //@ x 1366* y 768
-        sprite->SetTrimming(0, 575, 1366, 193);
+        sprite->SetTrimming(0, 0, 1366, 768);
         D2D1_SIZE_F size;
-        size.height = 193.f;
+        size.height = 768.f;
         size.width = 1366.f;
         sprite->SetSize(size);
         sprites.push_back(sprite);
@@ -235,21 +262,7 @@ void CreateEachStage(int stageLevel){
         anime_size.height = 768.f;
         anime_size.width = 1366.f;
         sprite_anime->SetSize(anime_size);
-        sprite_animes.push_back(sprite_anime);
-
-		
-        Special_BLUE.reset(new Sprite);
-        Special_BLUE->Create(L"Resource/Scene/Game/Stage/blue_SSKILL.png");
-        D3DXVECTOR2 SKILLpos(0, 400);
-        Special_BLUE->SetPosition(SKILLpos);
-        //@ x 1366* y 768
-        Special_BLUE->SetTrimming(0, 0, 1366, 768);
-        D2D1_SIZE_F SKILL_size;
-        SKILL_size.height = 768.f;
-        SKILL_size.width = 1366.f;
-        Special_BLUE->SetSize(SKILL_size);
-        Special_SKILLs.push_back(Special_BLUE);
-		
+        sprite_animes.push_back(sprite_anime);		
 
         Sprite* sprite1 = new Sprite;
         sprite1->Create(L"Resource/Scene/Game/Stage/bg01.png");
@@ -266,6 +279,7 @@ void CreateEachStage(int stageLevel){
         for (auto& bg : bgSprite)
             bg->SetPosition(0, 0);
         break;
+
     }
 }
 
@@ -335,6 +349,8 @@ void Stage::SetSkillEnd(bool isbool){
     isSuppression = true;
     Suppression_fade.reset(new Fade(L"Resource/Scene/Game/Stage/blue_Suppression.png"));
     Suppression_fade->SetAlpha(Suppressioncount);
+    SuppressionScale = 2;
+
 }
 /*
 この後はコリジョンを外して入れるだけ
@@ -361,8 +377,22 @@ void Stage::FadeDraw(){
         Suppressioncount -= 0.005f;
         if (Suppressioncount <= 0)
             isSuppression = false;
-        if (Suppressioncount <= 0.5f)
+        if (Suppressioncount >= 0.8f){
+            if(isSuppressionScale == false)
+                SuppressionScale -= 0.08;
+            if (SuppressionScale <= 0.8)
+                isSuppressionScale = true;
+
+            Suppression_fade->SetScale(SuppressionScale);
+        }
+        if (Suppressioncount <= 0.5f){
+            //後で声入れる
+            isSuppressionScale = false;
             Suppression_fade->AddAlpha(-0.01f);
+            if (Suppressioncount <= 0){
+            }
+        }
         Suppression_fade->Draw();
+        
     }
 }
