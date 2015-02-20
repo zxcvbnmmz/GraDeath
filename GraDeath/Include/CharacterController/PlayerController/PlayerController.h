@@ -51,6 +51,8 @@ private:
 	virtual void Jump_Land();
 	virtual void Skill();
 
+	void Move();
+
 	int count = 0;
 	float ground;
 
