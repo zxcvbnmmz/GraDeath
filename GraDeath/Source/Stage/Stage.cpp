@@ -10,6 +10,7 @@
 #include "Utility/SafeDelete.h"
 #include <stdio.h>
 #include "Input\Keyboard.h"
+#include "Direction/Fade.h"
 
 namespace{
 	const static float PTM_RATIO = 32.0f;
@@ -24,8 +25,11 @@ namespace{
     int StageCoolTime = 0;
     int counter = 0;
     int playernum = 0;
-    int SpecialSkillTime = 0;
     bool SkillEnd = false;
+    int SpecialSkillTime = 0;
+    std::shared_ptr<Fade> fade;
+    bool fadeflg = false;
+
 }
 
 void CreateWorldEdge();
@@ -45,7 +49,8 @@ bool Stage::Initialize(int stageID){
 	CreateWorldEdge();
 
 	CreateEachStage(stageID);
-
+    fade.reset(new Fade(L"Resource/Texture/white.png"));
+    fade->SetAlpha(0);
 	return true;
 }
 
@@ -76,22 +81,27 @@ void Stage::Draw(){
         }
         */
         
-        //D3DXVECTOR2 pos = Special_BLUE->GetPosition();
-        //if (pos.y != 0)
-        //    Special_BLUE->SetPositionY(pos.y-5);
-        //Special_BLUE->Draw();
+        D3DXVECTOR2 pos = Special_BLUE->GetPosition();
+        if (pos.y != 0)
+            Special_BLUE->SetPositionY(pos.y-5);
+        Special_BLUE->Draw();
     }
     if (StageCoolTime > 10){
         StageCoolTime = 0;
         counter++;
+        fade->AddAlpha(0.1f);
+        fadeflg = true;
         if (counter > 5){
             counter = 6;
             if (SpecialSkillTime == 0)
                 SpecialSkillTime = 10;
             if (SpecialSkillTime > 0)
                 SpecialSkillTime--;
-            if (SpecialSkillTime == 0)
+            if (SpecialSkillTime == 0){
                 CriateStage();
+                SkillEnd = true;
+                
+            }
         }
         
     }
@@ -169,9 +179,7 @@ void CreateWorldEdge(){
 
     //Stage‚Ì“–‚½‚è”»’è
     screenEdgeShape.Set(StageGetPos(), StageGetSize());
-    b2Fixture* fixture = screenEdgeBody->CreateFixture(&screenEdgeShape, density);
-    fixture->SetFilterData(filter);
-    fixture = breakableStage->CreateFixture(&screenEdgeShape, density);
+    b2Fixture* fixture = breakableStage->CreateFixture(&screenEdgeShape, density);
     fixture->SetFilterData(filter);
 }
 
@@ -226,7 +234,7 @@ void CreateEachStage(int stageLevel){
         sprite_anime->SetSize(anime_size);
         sprite_animes.push_back(sprite_anime);
 
-		/*
+		
         Special_BLUE.reset(new Sprite);
         Special_BLUE->Create(L"Resource/Scene/Game/Stage/blue_SSKILL.png");
         D3DXVECTOR2 SKILLpos(0, 400);
@@ -238,7 +246,7 @@ void CreateEachStage(int stageLevel){
         SKILL_size.width = 1366.f;
         Special_BLUE->SetSize(SKILL_size);
         Special_SKILLs.push_back(Special_BLUE);
-		*/
+		
 
         Sprite* sprite1 = new Sprite;
         sprite1->Create(L"Resource/Scene/Game/Stage/bg01.png");
@@ -249,7 +257,7 @@ void CreateEachStage(int stageLevel){
         Sprite* sprite3 = new Sprite;
         sprite3->Create(L"Resource/Scene/Game/Stage/bg03.png");
         bgSprite.push_back(sprite3);
-        //Sprite* Special_BLUE = new Sprite;
+        Sprite* Special_BLUE = new Sprite;
         
 
         for (auto& bg : bgSprite)
@@ -289,6 +297,8 @@ void Stage::CriateStage(){
     size.width = 1366.f;
     sprite_anime->SetSize(size);
     HP = 20.f + rand() % 10;
+    Special_BLUE->SetPosition(D3DXVECTOR2(0,400));
+    CreateWorldEdge();
 }
 
 bool Stage::GetStageStatus(){
@@ -313,6 +323,11 @@ b2Body* Stage::GetUnbreakbleStage(){
 bool Stage::GetSkillEnd(){
     return SkillEnd;
 }
+
+void Stage::SetSkillEnd(bool isbool){
+    
+    SkillEnd = isbool;
+}
 /*
 ‚±‚ÌŒã‚ÍƒRƒŠƒWƒ‡ƒ“‚ðŠO‚µ‚Ä“ü‚ê‚é‚¾‚¯
 */
@@ -328,6 +343,13 @@ void Stage::DettachFixture(){
         breakableStage->DestroyFixture(fixture);
         fixture = temp;
     }
+}
 
-    CreateWorldEdge();
+
+
+void Stage::FadeDraw(){
+    fade->Draw();
+    if (fadeflg == true){
+
+    }
 }
