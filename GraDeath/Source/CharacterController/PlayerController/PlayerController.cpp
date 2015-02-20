@@ -33,7 +33,6 @@ void PlayerController::Init (int _padID, Player* _player, float scale)
 	int x, y;
 	System::Window::GetWindowSize ( &x, &y );
 	ground = static_cast<float>(y) - 300;
-	pos = D3DXVECTOR2 ( 150 + static_cast<float>( _padID )* 300.f, ground );
 
 	animManager.Create(padID, player,scale);
 	animManager.Enable(true);
@@ -125,20 +124,18 @@ void PlayerController::Walk(){
 	}
 
 	if (Keyboard::CheckKey(KC_RIGHT) == INPUT_PRESS){
-		pos.x += 3.0f;
 		player->AddForce(b2Vec2(10, 0));
 		return;
 	}else if (Keyboard::CheckKey(KC_LEFT) == INPUT_PRESS){
-		pos.x += 3.0f;
 		player->AddForce(b2Vec2(-10, 0));
 		return;
 	}
 	
 	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
-		pos.x += 4.0f;
+		player->AddPosition(4.0f / 32.0f, 0);
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
-		pos.x -= 4.0f;
+		player->AddPosition(-4.0f / 32.0f, 0);
 	}
 	else{
 		ChangeAction(ACTION_IDLE, true, SAME_BEFORE);

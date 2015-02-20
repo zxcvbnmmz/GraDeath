@@ -23,19 +23,19 @@ namespace SkillManager
 		switch ( _type )
 		{
 		case CharacterInfo::PLAYER_RED:
-			new RedSkill;
+			return new RedSkill;
 			break;
 
 		case CharacterInfo::PLAYER_BLUE:
-			new BlueSkill;
+			return new BlueSkill;
 			break;
 
 		case CharacterInfo::PLAYER_YELLOW:
-			new YellowSkill;
+			return new YellowSkill;
 			break;
 
 		case CharacterInfo::PLAYER_GRAY:
-			new WhiteBlackSkill;
+			return new WhiteBlackSkill;
 			break;
 
 		case CharacterInfo::PLAYER_RONDOM:
@@ -56,7 +56,7 @@ namespace SkillManager
 	{
 		skillState[ _num ].Init ( _type );
 
-		SkillSet* tempSkill = new WhiteBlackSkill; //CreateSkillSet ( _type );// new WhiteBlackSkill;
+		SkillSet* tempSkill = CreateSkillSet ( _type );// new WhiteBlackSkill;
 		tempSkill->Init ();
 		skillset.push_back ( tempSkill );
 

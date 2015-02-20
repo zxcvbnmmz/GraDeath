@@ -52,8 +52,6 @@ private:
 	virtual void Skill();
 
 	int count = 0;
-	// ˆê“I‚ÉéŒ¾
-	D3DXVECTOR2 pos;
 	float ground;
 
 	unsigned int dirFlg = 0;

@@ -49,6 +49,12 @@ void Player::AddForce(b2Vec2& force){
 	body->SetLinearVelocity(force);
 }
 
+void Player::AddPosition(float x, float y){
+	b2Transform t = body->GetTransform();
+	t.p += b2Vec2(x,y);
+	body->SetTransform(t.p,0);
+}
+
 void Player::SetAngularVelocity(b2Vec2& force){
 	body->ApplyForce(force,body->GetPosition(),false);
 }
