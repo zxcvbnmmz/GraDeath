@@ -56,7 +56,7 @@ namespace SkillManager
 	{
 		skillState[ _num ].Init ( _type );
 
-		SkillSet* tempSkill = CreateSkillSet ( _type );// new WhiteBlackSkill;
+		SkillSet* tempSkill = new WhiteBlackSkill; //CreateSkillSet ( _type );// new WhiteBlackSkill;
 		tempSkill->Init ();
 		skillset.push_back ( tempSkill );
 
