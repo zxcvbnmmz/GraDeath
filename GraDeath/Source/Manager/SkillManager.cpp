@@ -4,6 +4,10 @@
 #include <vector>
 #include "Object/Skill/SkillSet.h"
 #include "Object/Skill/WhiteBlackSkill.h"
+#include "Object/Skill/RedSkill.h"
+#include "Object/Skill/BlueSkill.h"
+#include "Object/Skill/YellowSkill.h"
+
 
 namespace SkillManager
 {
@@ -14,11 +18,45 @@ namespace SkillManager
 		std::vector<SkillSet*> skillset;
 	}
 
+	SkillSet* CreateSkillSet ( CharacterInfo::PLAYER_TYPE _type )
+	{
+		switch ( _type )
+		{
+		case CharacterInfo::PLAYER_RED:
+			new RedSkill;
+			break;
+
+		case CharacterInfo::PLAYER_BLUE:
+			new BlueSkill;
+			break;
+
+		case CharacterInfo::PLAYER_YELLOW:
+			new YellowSkill;
+			break;
+
+		case CharacterInfo::PLAYER_GRAY:
+			new WhiteBlackSkill;
+			break;
+
+		case CharacterInfo::PLAYER_RONDOM:
+			return nullptr;
+			break;
+
+		case CharacterInfo::PLAYER_NON:
+			return nullptr;
+			break;
+
+		default:
+			break;
+		}
+		return nullptr;
+	}
+
 	void Init ( int _num, CharacterInfo::PLAYER_TYPE _type )
 	{
 		skillState[ _num ].Init ( _type );
 
-		SkillSet* tempSkill = new WhiteBlackSkill;
+		SkillSet* tempSkill = CreateSkillSet ( _type );// new WhiteBlackSkill;
 		tempSkill->Init ();
 		skillset.push_back ( tempSkill );
 

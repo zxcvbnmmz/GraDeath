@@ -2,12 +2,20 @@
 #include "Object/Skill/Skill.h"
 #include "Loader/PlayerLoader.h"
 
-D3DXVECTOR2 bluePosition[ ] =
+D3DXVECTOR2 bluePosition[ 2 ][ 3 ] =
 {
-	D3DXVECTOR2 ( 0, -290.0f ),
-	D3DXVECTOR2 ( -400, -400.0f ),
-	D3DXVECTOR2 ( -100, -290.0f )
+	{
+		D3DXVECTOR2 ( 0, -290.0f ),
+		D3DXVECTOR2 ( -100, -290.0f ),
+		D3DXVECTOR2 ( -20, -400.0f )
+	},
+	{
+		D3DXVECTOR2 ( -400, -290.0f ),
+		D3DXVECTOR2 ( -1000, -290.0f ),
+		D3DXVECTOR2 ( -820, -400.0f )
+	},
 };
+
 
 
 BlueSkill::~BlueSkill ()
@@ -29,7 +37,7 @@ BlueSkill::~BlueSkill ()
 void BlueSkill::Init ()
 {
 	Skill* first = new Skill;
-	first->Init ( "Resource/Object/Skill/WhiteBlack/shirokuro_skill01.bin", L"Resource/Object/Skill/WhiteBlack/skill01.png", SKILL_ID_LOAD::SKILL_ID_BLACKWHITE );
+	first->Init ( "Resource/Object/Skill/Blue/Blue_Skill_First.bin", L"Resource/Object/Blue/WhiteBlack/Blue_Skill_First.png", SKILL_ID_LOAD::SKILL_ID_BLUE );
 	skills.push_back ( first );
 
 	//WhiteBlackSecond* second = new WhiteBlackSecond;
@@ -63,8 +71,11 @@ void BlueSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirF
 	SkillSetDettachFixture ( body );
 
 	D3DXVECTOR2 temp = ( _pos * 32.0f );
-	skills[ _id ]->SetPosition ( ( temp + bluePosition[ _id ] )*( -1.0f*dirFlg ), dirFlg );
+	skills[ _id ]->SetPosition ( ( temp + bluePosition[ dirFlg ][ _id ] ), dirFlg );
 	skills[ _id ]->SkillOn ();
+	temp = skills[ _id ]->GetPosition ();
+	body->SetTransform ( b2Vec2 ( temp.x / 32.0f, temp.y / 32.0f ), 0 );
+	skills[ _id ]->SetAttachFixture ( body );
 }
 
 b2Body* BlueSkill::Getb2Body()
