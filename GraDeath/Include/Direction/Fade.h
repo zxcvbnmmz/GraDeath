@@ -18,6 +18,8 @@ public:
 	FADE_STATUS AddAlpha(float _alpha);
 	void SetAlpha(float _alpha);
 	void Draw();
+	void SetScale(float scale);
+	void SetPosition(int x, int y);
 
 	CREATE(Fade);
 
