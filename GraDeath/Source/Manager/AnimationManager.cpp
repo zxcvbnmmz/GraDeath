@@ -39,6 +39,8 @@ CURRENT_ANIMATION_STATE AnimationManager::Update(){
 			if (loop){
 				currentCell = animation.cellDatas[currentAction].begin();
 				AttachFixtureToPlayer();
+				if (dir == LEFT)
+					Reverse();
 				currentFrame = 0;
 			}
 			else{

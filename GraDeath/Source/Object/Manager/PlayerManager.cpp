@@ -77,9 +77,6 @@ void PlayerManager::Draw(){
 		controllers[i]->Draw();
 	}
 
-    for (int i = 0; i < PLAYERS; ++i){
-        controllers[i]->Draw();
-    }
 	SkillManager::Draw();
 }
 

@@ -37,4 +37,14 @@ void Fade::Draw(){
 	sprite->Draw();
 }
 
+void Fade::SetScale(float scale){
+	sprite->SetScale(scale, scale);
+}
 
+void Fade::SetScale(float scaleX, float scaleY){
+	sprite->SetScale(scaleX, scaleY);
+}
+
+void Fade::SetPosition(int x, int y){
+	sprite->SetPosition(x,y);
+}

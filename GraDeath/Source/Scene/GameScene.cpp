@@ -111,10 +111,18 @@ int GameScene::ExecuteButtle(){
         World::SetGravity(0, 95);
     }
     else{
-//        PlayerManager::OnPlayerPos(1, 300, 300);
+        World::SetGravity(0, 25);
+        Stage::DettachFixture();
+//        PlayerManager::AllPlayerMove(0,10);
+        
 //        PlayerManager::OnPlayerPos(Stage::StageBrakePlayerNum(),300,300);
     }
+    if (Stage::GetSkillEnd() == true){
 
+        Stage::SetSkillEnd(false);
+        for (int i = 0; i < 4; i++)
+            PlayerManager::OnPlayerPos(i, 10, 0);
+    }
 
 	// ここでエンドコールへ移行(コメントアウト)
 	//if (stageTimer-- < 0){
@@ -149,8 +157,8 @@ void GameScene::DrawStageCall(){
 void GameScene::DrawButtle(){
 	Stage::Draw();
 	PlayerManager::Draw();
-//    Special();
 	GameSceneUI::Create()->Draw();
+    Stage::FadeDraw();
 }
 
 void GameScene::DrawEndCall(){
