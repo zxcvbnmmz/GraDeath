@@ -44,7 +44,6 @@ private:
 	virtual void Idle();
 	virtual void Run();
 	virtual void Walk();
-	virtual void Attack();
 	virtual void Damage();
 	virtual void Jump_Rise();
 	virtual void Jump_Fall();

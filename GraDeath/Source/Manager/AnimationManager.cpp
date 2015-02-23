@@ -50,7 +50,8 @@ CURRENT_ANIMATION_STATE AnimationManager::Update(){
 		// ŽŸ‚ÌƒZƒ‹‚ª‚ ‚ê‚Î‚»‚ÌƒZƒ‹‚ðŒ»Ý‚ÌƒZƒ‹‚Æ‚·‚é
 		else{
 			++currentCell;
-			if ((*currentCell)->se != nullptr){
+			Sound::SE* se = (*currentCell)->se.get();
+			if (se != NULL && (*currentCell)->se->IsEnable()){
 				(*currentCell)->se->Stop();
 				(*currentCell)->se->Play();
 			}
