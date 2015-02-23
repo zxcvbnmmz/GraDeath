@@ -7,6 +7,7 @@ namespace HitPointManager
 	namespace
 	{
 		HitPoint hitPoint[ 4 ];
+		bool checkFlg[4];
 		unsigned int rank;
 	}
 
@@ -16,7 +17,7 @@ namespace HitPointManager
 		hitPoint[ _num ].Init ( _player );
 		hitPoint[ _num ].SetHP ( _hp );
 		hitPoint[ _num ].SetRank(1);
-
+		checkFlg[_num] = true;
 		rank = 4;
 	}
 
@@ -37,8 +38,9 @@ namespace HitPointManager
 		for (int i = 0; i < 4; ++i){
 			if (hitPoint[i].IsCompared(_player)){
 				hitPoint[i].IsDamage(_hit);
-				if (hitPoint[i].IsDead())
+				if (hitPoint[i].IsDead() && checkFlg[i] )
 				{
+					checkFlg[i] = false;
 					hitPoint[i].SetRank(rank);
 					rank--;
 				}
