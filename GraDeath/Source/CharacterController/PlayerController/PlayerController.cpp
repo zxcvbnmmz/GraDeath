@@ -75,26 +75,35 @@ void PlayerController::Idle(){
 	if (GamePad::getLStickState((PAD_NUM)padID, angle)){
 		ChangeAction(ACTION_WALK, true, SAME_BEFORE);
 	}
-	else if ((GamePad::getGamePadState((PAD_NUM)padID, BUTTON_B) == INPUT_PUSH ||
-		Keyboard::CheckKey(KC_A) == INPUT_PUSH ) &&
-		SkillManager::GetSkillUse ( padID, (SKILL_ID)0 ) ){
+	else if ( GamePad::getGamePadState((PAD_NUM)padID, BUTTON_B) == INPUT_PUSH
+#ifdef _DEBUG
+		|| ( Keyboard::CheckKey ( KC_A ) == INPUT_PUSH && ( padID == 0 ) )
+#endif
+		&& SkillManager::GetSkillUse ( padID, (SKILL_ID)0 ) ){
 		ChangeAction(ACTION_SKILL, false);
 		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ),animManager.GetCurrentDirecton());
 	}
-	else if ( ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_Y ) == INPUT_PUSH ||
-		Keyboard::CheckKey ( KC_S ) == INPUT_PUSH ) &&
-		SkillManager::GetSkillUse ( padID, ( SKILL_ID )1 ) ){
+	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_Y ) == INPUT_PUSH
+#ifdef _DEBUG
+		|| ( Keyboard::CheckKey ( KC_S ) == INPUT_PUSH && ( padID == 0 ) )
+#endif
+		&& SkillManager::GetSkillUse ( padID, ( SKILL_ID )1 ) ){
 		ChangeAction ( ACTION_SKILL_2, false );
 		SkillManager::SkillOn(padID, SKILL_ID::SKILL_SECOND, D3DXVECTOR2(this->player->GetPosition().x, this->player->GetPosition().y), animManager.GetCurrentDirecton());
 	}
-	else if ( ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_X ) == INPUT_PUSH ||
-		Keyboard::CheckKey ( KC_D ) == INPUT_PUSH ) &&
-		SkillManager::GetSkillUse ( padID, ( SKILL_ID )2 ) ){
-		//ChangeAction ( ACTION_SKILL, false );
+	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_X ) == INPUT_PUSH
+#ifdef _DEBUG
+		|| ( Keyboard::CheckKey ( KC_D ) == INPUT_PUSH && ( padID == 0 ) )
+#endif
+		&& SkillManager::GetSkillUse ( padID, ( SKILL_ID )2 ) ){
+		ChangeAction ( ACTION_SKILL_3, false );
 		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_THIRD, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), animManager.GetCurrentDirecton () );
 	}
-	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH || 
-		Keyboard::CheckKey(KC_J) == INPUT_PUSH){
+	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH
+#ifdef _DEBUG
+		|| ( Keyboard::CheckKey ( KC_J ) == INPUT_PUSH && ( padID == 0 ) )
+#endif
+		){
 		player->SetAngularVelocity(b2Vec2(0, -2000));
 		ChangeAction(ACTION_JUMP_RISE, false, SAME_BEFORE);
 	}
@@ -105,7 +114,7 @@ void PlayerController::Idle(){
 		ChangeAction(ACTION_WALK, true, LEFT);
 	}
 
-	if (Keyboard::CheckKey(KC_RIGHT) == INPUT_PRESS || Keyboard::CheckKey(KC_LEFT) == INPUT_PRESS){
+	if ( ( padID  == 0 ) && ( Keyboard::CheckKey ( KC_RIGHT ) == INPUT_PRESS || Keyboard::CheckKey ( KC_LEFT ) == INPUT_PRESS ) ){
 		ChangeAction(ACTION_WALK, true,SAME_BEFORE);
 	}
 }
