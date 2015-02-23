@@ -29,7 +29,7 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 		CharacterInfo info[4];
 		for ( int i = 0; i < 4; i++ )
 		{
-			info[ i ].pType = CharacterInfo::PLAYER_TYPE::PLAYER_YELLOW;
+			info[ i ].pType = CharacterInfo::PLAYER_TYPE::PLAYER_BLUE;
 			info[ i ].pcType = CharacterInfo::PC_TYPE::PC_PLAYER;
 			//info[ i ] = selectCursor->GetCharacterInfo ( i );
 		}

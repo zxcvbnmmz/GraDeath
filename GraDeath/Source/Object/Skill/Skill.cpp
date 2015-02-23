@@ -62,6 +62,8 @@ void Skill::Update ( b2Body* _body )
                 nowAnime = (nowAnime + 1) % animSkill.cellDatas.size();
                 currentCell = animSkill.cellDatas[nowAnime].begin();
 				SetAttachFixture ( _body );
+				if ( dirFlg )
+					Reverse ();
             }
 
 		}
@@ -69,6 +71,8 @@ void Skill::Update ( b2Body* _body )
 		{
 			currentCell++;
 			SetAttachFixture ( _body );
+			if ( dirFlg )
+				Reverse ();
 			frameCount = 0;
 		}
 	}
@@ -136,6 +140,8 @@ void Skill::SetAttachFixture ( b2Body* _body )
 	for ( auto shape : ( *currentCell )->shapes ){
 		shape->AddFixture ( _body );
 	}
+	if ( dirFlg )
+		Reverse ();
 }
 
 //void Skill::AttachFixture ( std::vector<std::shared_ptr<CollisionShape>>& shapes )
@@ -159,5 +165,13 @@ void SkillDettachFixture ( b2Body* body ){
 		b2Fixture* temp = fixture->GetNext ();
 		body->DestroyFixture ( fixture );
 		fixture = temp;
+	}
+}
+
+void Skill::Reverse ()
+{
+	for ( auto shape : ( *currentCell )->shapes )
+	{
+		shape->Reverse ();
 	}
 }
