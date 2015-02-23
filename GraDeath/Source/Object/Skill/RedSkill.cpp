@@ -67,6 +67,9 @@ void RedSkill::Draw ()
 
 void RedSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
 {
+	if ( _id >= skills.size () )
+		return
+
 	SkillSetDettachFixture ( body );
 
 	D3DXVECTOR2 temp = ( _pos * 32.0f );

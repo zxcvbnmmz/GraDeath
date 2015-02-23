@@ -8,14 +8,14 @@
 D3DXVECTOR2 setPosition[2][3] =
 {
 	{
-		D3DXVECTOR2 ( 0, -290.0f ),
-		D3DXVECTOR2 ( -100, -290.0f ),
-		D3DXVECTOR2 ( -20, -400.0f )
+		D3DXVECTOR2 ( 150, -215.0f ),
+		D3DXVECTOR2 ( 150, -365.0f ),
+		D3DXVECTOR2 ( 30, -350.0f )
 	},
 	{
-		D3DXVECTOR2 ( -400, -290.0f ),
-		D3DXVECTOR2 ( -1000, -290.0f ),
-		D3DXVECTOR2 ( -820, -400.0f )
+		D3DXVECTOR2 ( -400, -215.0f ),
+		D3DXVECTOR2 ( -800, -365.0f ),
+		D3DXVECTOR2 ( -700, -350.0f )
 	},
 };
 
@@ -69,6 +69,9 @@ void WhiteBlackSkill::Draw ()
 
 void WhiteBlackSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
 {
+	if ( _id >= skills.size () )
+		return
+
 	SkillSetDettachFixture ( body );
 
 	int dir = dirFlg - ( -3 * dirFlg ) + 1;
