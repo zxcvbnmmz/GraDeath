@@ -8,36 +8,75 @@
 #include "Input\Keyboard.h"
 ResultScene::ResultScene(){
 	
-	sRank[0].Create(L"Resource/Scene/Result/1st.png");
+	//sRank[0].Create(L"Resource/Scene/Result/1st.png");
 	sRank[1].Create(L"Resource/Scene/Result/2nd.png");
 	sRank[2].Create(L"Resource/Scene/Result/3rd.png");
 	sRank[3].Create(L"Resource/Scene/Result/4th.png");
-	sPlayer[0].Create(L"Resource/Scene/Result/1p.png");
-	sPlayer[1].Create(L"Resource/Scene/Result/2p.png");
-	sPlayer[2].Create(L"Resource/Scene/Result/3p.png");
-	sPlayer[3].Create(L"Resource/Scene/Result/4p.png");
-	sChara[0].Create(L"Resource/Scene/Result/Chara1.png");
-	sChara[1].Create(L"Resource/Scene/Result/Chara2.png");
-	sChara[2].Create(L"Resource/Scene/Result/Chara3.png");
-	sChara[3].Create(L"Resource/Scene/Result/Chara4.png");
+	//sPlayer[0].Create(L"Resource/Scene/Result/1p.png");
+	//sPlayer[1].Create(L"Resource/Scene/Result/2p.png");
+	//sPlayer[2].Create(L"Resource/Scene/Result/3p.png");
+	//sPlayer[3].Create(L"Resource/Scene/Result/4p.png");
+	//sChara[0].Create(L"Resource/Scene/Result/Chara1.png");
+	//sChara[1].Create(L"Resource/Scene/Result/Chara2.png");
+	//sChara[2].Create(L"Resource/Scene/Result/Chara3.png");
+	//sChara[3].Create(L"Resource/Scene/Result/Chara4.png");
 	for (int i = 0; i < 4; i++) {
-		//int rank, chara;
-		//chara = HitPointManager::GetPlayerRanking(i, rank);
-		//switch (chara)
-		//{
-		//case CharacterInfo::PLAYER_BLUE:
-		//	sChara[i].Create(L"Resource/Scene/Result/Chara1.png");
-		//	break;
-		//case CharacterInfo::PLAYER_RED:
-		//	sChara[i].Create(L"Resource/Scene/Result/Chara2.png");
-		//	break;
-		//case CharacterInfo::PLAYER_YELLOW:
-		//	sChara[i].Create(L"Resource/Scene/Result/Chara3.png");
-		//	break;
-		//case CharacterInfo::PLAYER_GRAY:
-		//	sChara[i].Create(L"Resource/Scene/Result/Chara4.png");
-		//	break;
-		//}
+		int rank, chara;
+		chara = HitPointManager::GetPlayerRanking(i, rank);
+		switch (chara)
+		{
+		case CharacterInfo::PLAYER_BLUE:
+			if (rank != 1)
+				sChara[rank - 1].Create(L"Resource/Scene/Result/Chara1.png");
+			else
+				sChara[rank - 1].Create(L"Resource/Scene/Result/1st_B.png");
+			break;
+		case CharacterInfo::PLAYER_RED:
+			if (rank != 1)
+				sChara[rank - 1].Create(L"Resource/Scene/Result/Chara2.png");
+			else
+				sChara[rank - 1].Create(L"Resource/Scene/Result/1st_R.png");
+			break;
+		case CharacterInfo::PLAYER_YELLOW:
+			if (rank != 1)
+				sChara[rank - 1].Create(L"Resource/Scene/Result/Chara3.png");
+			else
+				sChara[rank - 1].Create(L"Resource/Scene/Result/1st_Y.png");
+			break;
+		case CharacterInfo::PLAYER_GRAY:
+			if (rank != 1)
+				sChara[rank - 1].Create(L"Resource/Scene/Result/Chara4.png");
+			else
+				sChara[rank - 1].Create(L"Resource/Scene/Result/1st_WB.png");
+			break;
+		}
+		switch (i)
+		{
+		case 0:
+			if (rank != 1)
+				sPlayer[rank - 1].Create(L"Resource/Scene/Result/1p.png");
+			else
+				sPlayer[rank - 1].Create(L"Resource/Scene/Result/1st_1p.png");
+			break;
+		case 1:
+			if (rank != 1)
+				sPlayer[rank - 1].Create(L"Resource/Scene/Result/2p.png");
+			else
+				sPlayer[rank - 1].Create(L"Resource/Scene/Result/1st_2p.png");
+			break;
+		case 2:
+			if (rank != 1)
+				sPlayer[rank - 1].Create(L"Resource/Scene/Result/3p.png");
+			else
+				sPlayer[rank - 1].Create(L"Resource/Scene/Result/1st_3p.png");
+			break;
+		case 3:
+			if (rank != 1)
+				sPlayer[rank - 1].Create(L"Resource/Scene/Result/4p.png");
+			else
+				sPlayer[rank - 1].Create(L"Resource/Scene/Result/1st_4p.png");
+			break;
+		}
 		pRank[i] = D3DXVECTOR2(550 - i * 150, 100 + 100 * i);
 		pMove[i] = D3DXVECTOR2(0, 300);
 		alpha[i] = 1.f;
@@ -69,12 +108,16 @@ SCENE_STATUS ResultScene::Execute(){
 		timer = 90;
 	}
 
-	for (int i = 0; i < 4; i++){
+	for (int i = 1; i < 4; i++){
 		if (timer > 30 + 15 * (3 - i))
 		{
 			pMove[i].y *= .9f;
 			alpha[i] *= .9f;
 		}
+	}
+	if (timer > 100){
+		pMove[0].y *= .99f;
+		alpha[0] *= .99f;
 	}
 	timer++;
 	return STILL_PROCESSING;
@@ -82,8 +125,6 @@ SCENE_STATUS ResultScene::Execute(){
 
 void ResultScene::Draw(){
 	for (int i = 0; i < 4; i++){
-		sRank[i].SetPosition(pRank[i] + pMove[i]);
-		sRank[i].SetAlpha(1.f - alpha[i]);
 		sPlayer[i].SetPosition(pRank[i] + pMove[i]);
 		sPlayer[i].SetAlpha(1.f - alpha[i]);
 		sChara[i].SetPosition(pRank[i] + pMove[i]);
@@ -91,6 +132,10 @@ void ResultScene::Draw(){
 
 		sChara[i].Draw();
 		sPlayer[i].Draw();
-		sRank[i].Draw();
+		if (i != 0){
+			sRank[i].SetPosition(pRank[i] + pMove[i]);
+			sRank[i].SetAlpha(1.f - alpha[i]);
+			sRank[i].Draw();
+		}
 	}
 }
