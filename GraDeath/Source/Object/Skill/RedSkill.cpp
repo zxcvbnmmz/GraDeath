@@ -6,13 +6,13 @@ D3DXVECTOR2 redPosition[ 2 ][ 3 ] =
 {
 	{
 		D3DXVECTOR2 ( 100, -212.0f ),
-		D3DXVECTOR2 ( 200, -370.0f ),
-		D3DXVECTOR2 ( -20, -400.0f )
+		D3DXVECTOR2 ( -200, -350.0f ),
+		D3DXVECTOR2 ( 200, -370.0f )
 	},
 	{
 		D3DXVECTOR2 ( -350, -212.0f ),
-		D3DXVECTOR2 ( -900, -370.0f ),
-		D3DXVECTOR2 ( -820, -400.0f )
+		D3DXVECTOR2 ( -450, -350.0f ),
+		D3DXVECTOR2 ( -900, -370.0f )
 	},
 };
 
@@ -39,9 +39,9 @@ void RedSkill::Init ()
 	first->Init ( "Resource/Object/Skill/Red/Red_Skill_First.bin", L"Resource/Object/Skill/Red/Red_Skill_First.png", SKILL_ID_LOAD::SKILL_ID_RED );
 	skills.push_back ( first );
 
-	//WhiteBlackSecond* second = new WhiteBlackSecond;
-	//second->Init ( "", L"" );
-	//skills.push_back ( second );
+	Skill* second = new Skill;
+	second->Init ( "Resource/Object/Skill/Red/Red_Skill_SP.bin", L"Resource/Object/Skill/Red/Red_Skill_SP.png", SKILL_ID_LOAD::SKILL_ID_RED );
+	skills.push_back ( second );
 
 	Skill* third = new Skill;
 	third->Init ( "Resource/Object/Skill/Red/Red_Skill_Third.bin", L"Resource/Object/Skill/Red/Red_Skill_Third.png", SKILL_ID_LOAD::SKILL_ID_RED );

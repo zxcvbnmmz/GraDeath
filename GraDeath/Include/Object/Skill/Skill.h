@@ -60,6 +60,7 @@ public:
 	void SetAttachFixture ( b2Body* _body );
 
 private:
+	void Reverse ();
 	//void AttachFixture ( std::vector<std::shared_ptr<struct CollisionShape>>& shapes );
 
 

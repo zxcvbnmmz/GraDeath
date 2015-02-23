@@ -45,12 +45,12 @@ public:
 		height = def.height / 32.0f;
 		scale = def.scale;
 		
-		_shape->m_p.x = (float)def.x / 32.0f + ((width - (width * scale)) / 2);
-		_shape->m_p.y = (float)def.y / 32.0f + ((height - (height * scale)) / 2);
+		_shape->m_p.x = (float)def.x / 32.0f + ((width - (width * scale)) / 2.0f);
+		_shape->m_p.y = (float)def.y / 32.0f + ((height - (height * scale)) / 2.0f);
 		_shape->m_radius = (float)def.r / 32.0f;
 
-		shapeData.circle.x = (float)def.x / 32.0f + ((width - (width * scale)) / 2);
-		shapeData.circle.y = (float)def.y / 32.0f + ((height - (height * scale)) / 2);
+		shapeData.circle.x = (float)def.x / 32.0f * scale + ((width - (width * scale)) / 2.0f);
+		shapeData.circle.y = (float)def.y / 32.0f * scale + ((height - (height * scale)) / 2.0f);
 		shapeData.circle.rad = (float)def.r / 32.0f;
 
 		shape.reset(_shape);
@@ -82,7 +82,6 @@ public:
 		filter.categoryBits = def.categoryBit;
 		filter.maskBits = def.maskBit;
 		filter.groupIndex = def.groupIndex;
-		width = def.width / 32.0f;
 		this->strength = def.strength;
 	}
 
@@ -137,7 +136,7 @@ public:
 		b2Shape::Type type = shape->GetType();
 		if (type == b2Shape::e_circle){
 			b2CircleShape* circle = reinterpret_cast<b2CircleShape*>(shape);
-			circle->m_p.x = (width * scale) - circle->m_p.x;
+			circle->m_p = b2Vec2(width - shapeData.circle.x, shapeData.circle.y);
 		}
 		else if (type == b2Shape::e_polygon){
 			b2PolygonShape* polygon = reinterpret_cast<b2PolygonShape*>(shape);
