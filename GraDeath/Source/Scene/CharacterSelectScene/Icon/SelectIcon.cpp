@@ -1,6 +1,7 @@
 #include "Scene/CharacterSelectScene/Icon/SelectIcon.h"
 #include "Utility/SafeDelete.h"
 #include "System/Window.h"
+#include <stdlib.h>
 
 struct SelectIcon::IconState
 {
@@ -37,11 +38,11 @@ D3DXVECTOR2 playerIconPos[] =
 
 D3DXVECTOR2 charcterIconPos[ ] =
 {
-	D3DXVECTOR2 ( 525, 300 ),
-	D3DXVECTOR2 ( 700, 300 ),
-	D3DXVECTOR2 ( 525, 480 ),
-	D3DXVECTOR2 ( 700, 480 ),
-	D3DXVECTOR2 ( 610, 390 ),
+	D3DXVECTOR2 ( 525, 325 ),
+	D3DXVECTOR2 ( 700, 325 ),
+	D3DXVECTOR2 ( 525, 455 ),
+	D3DXVECTOR2 ( 700, 455 ),
+	//D3DXVECTOR2 ( 610, 390 ),
 };
 
 
@@ -66,7 +67,7 @@ void SelectIcon::SetUp ()
 		iconState[ i ].info.pcType = CharacterInfo::PC_TYPE::PC_NON;
 	}
 
-	for ( int i = 0; i < 5; i++ )
+	for ( int i = 0; i < 4; i++ )
 	{
 		charSprite[ i ].Create ( playerIconName[ i ] );
 		charSprite[ i ].SetPosition ( playerIconPos[ i ] );
@@ -93,13 +94,13 @@ void SelectIcon::Draw ()
 		}
 	}
 
-	for ( int i = 0; i < 5; i++ )
+	for ( int i = 0; i < 4; i++ )
 		selectSprite[ i ].Draw ();
 }
 
-void SelectIcon::CursorCollision ( int num, D3DXVECTOR2& _pos )
+bool SelectIcon::CursorCollision ( int num, D3DXVECTOR2& _pos )
 {
-	for ( int i = 0; i < 5; i++ )
+	for ( int i = 0; i < 4; i++ )
 	{
 		iconState[ num ].iconNum = 5;
 		D3DXVECTOR2 pos = selectSprite[ i ].GetPosition ();
@@ -109,11 +110,18 @@ void SelectIcon::CursorCollision ( int num, D3DXVECTOR2& _pos )
 			_pos.y <  pos.y + size.y &&
 			_pos.y >  pos.y )
 		{
+			//iconState[ num ].iconNum = ( 4 == CharacterInfo::PLAYER_TYPE::PLAYER_RONDOM ) ? rand () % 4 : i;
 			iconState[ num ].iconNum = i;
 			iconState[ num ].info.pType = ( CharacterInfo::PLAYER_TYPE )i;
-			break;
+			return true;
 		}
 	} 
+	return false;
+}
+
+void SelectIcon::SetRandomChar ( int _num, CharacterInfo::PLAYER_TYPE _type )
+{
+	iconState[ _num ].info.pType = _type;
 }
 
 CharacterInfo SelectIcon::GetCharacterInfo ( int _num )

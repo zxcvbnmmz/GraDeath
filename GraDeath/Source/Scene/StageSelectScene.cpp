@@ -4,6 +4,7 @@
 #include "Input/Gamepad.h"
 #include "Input/Keyboard.h"
 #include "Scene/StageSelectScene/StageIcon.h"
+#include "Scene/Factory/CharacterSelectFactory.h"
 
 StageSelectScene::StageSelectScene(){
 	stageIcon = std::shared_ptr< StageIcon > ( new StageIcon );
@@ -15,10 +16,19 @@ StageSelectScene::StageSelectScene(){
 
 SCENE_STATUS StageSelectScene::Execute(){
 
-	if ( GamePad::getGamePadState ( PAD_1, BUTTON_A ) == INPUT_PUSH ||
-		INPUT_STATE::INPUT_PUSH == Keyboard::CheckKey ( KC_ENTER ) ){
+	if ( GamePad::getGamePadState ( PAD_1, BUTTON_A ) == INPUT_PUSH
+#ifdef _DEBUG
+		|| Keyboard::CheckKey ( KC_ENTER ) == INPUT_PUSH
+#endif
+		){
 		GameFactory gf;
 		SceneFactory::Reserve(&gf);
+		return END_PROCESS;
+	}
+	else if ( GamePad::getGamePadState ( PAD_1, BUTTON_B ) == INPUT_PUSH )
+	{
+		CharacterSelectFactory cf;
+		SceneFactory::Reserve ( &cf );
 		return END_PROCESS;
 	}
 	stageIcon->Update ();

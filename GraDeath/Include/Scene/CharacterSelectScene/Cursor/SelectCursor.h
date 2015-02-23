@@ -5,6 +5,7 @@
 
 #include "D2D/Sprite/Sprite.h"
 #include "CharacterController/CharacterInfo.h"
+#include "Sound/SE/SE.h"
 
 #ifdef _DEBUG
 #include "D2D/Text/TextObject.h"
@@ -20,6 +21,8 @@ private:
 	CursorState* cursorState;
 	std::shared_ptr<SelectIcon> icon;
 	int maxWidth = 0, maxHeight = 0;
+
+	SE seVoiceList[ 4 ];
 
 #ifdef _DEBUG
 	D2D::TextObject temp;

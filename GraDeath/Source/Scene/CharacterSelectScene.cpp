@@ -10,6 +10,7 @@
 #include "Object/Manager/PlayerManager.h"
 #include "CharacterController/CharacterInfo.h"
 
+
 CharacterSelectScene::CharacterSelectScene(){
 
 	selectCursor = std::shared_ptr< SelectCursor > ( new SelectCursor );
@@ -18,34 +19,49 @@ CharacterSelectScene::CharacterSelectScene(){
 	bgSprite = std::shared_ptr< Sprite > ( new Sprite );
 	bgSprite->Create ( L"Resource/Scene/CharacterSelect/CharacterSelect_BG.png" );
 	bgSprite->SetPosition ( 0, 0 );
+
+	timer.Set ( 240 );
+	countFlg = false;
 }
 
 SCENE_STATUS CharacterSelectScene::Execute(){
 
-	if ( selectCursor->AllSelectCheck () ||
-		GamePad::getAnyGamePadPressed ( BUTTON_X ) ||
-		INPUT_STATE::INPUT_PUSH == Keyboard::CheckKey ( KC_ENTER ) ){
-
-		CharacterInfo info[4];
-		for ( int i = 0; i < 4; i++ )
+	if ( countFlg )
+	{
+		if ( timer.Step () == FrameTimer::TIME_OUT )
 		{
-			if ( i == 0 )
+			CharacterInfo info[ 4 ];
+			for ( int i = 0; i < 4; i++ )
 			{
+#ifdef _DEBUG
+				if ( i == 0 )
+				{
+					info[ i ] = selectCursor->GetCharacterInfo ( i );
+				}
+				else
+				{
+					info[ i ].pType = CharacterInfo::PLAYER_TYPE::PLAYER_BLUE;
+					info[ i ].pcType = CharacterInfo::PC_TYPE::PC_PLAYER;
+				}
+#else
 				info[ i ] = selectCursor->GetCharacterInfo ( i );
+#endif
 			}
-			else
-			{
-				info[ i ].pType = CharacterInfo::PLAYER_TYPE::PLAYER_BLUE;
-				info[ i ].pcType = CharacterInfo::PC_TYPE::PC_PLAYER;
-			}
-			//info[ i ] = selectCursor->GetCharacterInfo ( i );
+			CharacterInfoFunc::SetCharacterInfo ( info );
+			StageSelectFactory sf;
+			SceneFactory::Reserve ( &sf );
+			return END_PROCESS;
 		}
-		
-		CharacterInfoFunc::SetCharacterInfo ( info );
+		return STILL_PROCESSING;
+	}
 
-		StageSelectFactory sf;
-		SceneFactory::Reserve(&sf);
-		return END_PROCESS;
+	if ( selectCursor->AllSelectCheck () ||
+		GamePad::getAnyGamePadPressed ( BUTTON_X )
+#ifdef _DEBUG
+		|| Keyboard::CheckKey ( KC_ENTER ) == INPUT_PUSH
+#endif
+		 ){
+		countFlg = true;
 	}
 
 	selectCursor->Update ();

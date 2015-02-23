@@ -3,6 +3,7 @@
 
 #include "Scene.h"
 #include <memory>
+#include "Utility/FrameTimer.h"
 
 class SelectCursor;
 class Sprite;
@@ -21,6 +22,8 @@ private:
 	int ExecuteFadeOut();
 
 	std::shared_ptr< Sprite > bgSprite;
+	FrameTimer timer;
+	bool countFlg;
 };
 
 #endif	// end of CharacterSelectScene

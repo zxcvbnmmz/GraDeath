@@ -4,6 +4,8 @@
 #include "Input/GamePad.h"
 #include "Input/Keyboard.h"
 #include "System/Window.h"
+#include "Sound/Sound.h"
+#include <stdlib.h>
 
 #ifdef _DEBUG
 #include "D2D/Brush/SolidBrush.h"
@@ -31,9 +33,9 @@ wchar_t* cursorName[] =
 D3DXVECTOR2 cursorPos[ ] =
 {
 	D3DXVECTOR2 ( 100, 100 ),
-	D3DXVECTOR2 ( 100, 100 ),
-	D3DXVECTOR2 ( 100, 100 ),
-	D3DXVECTOR2 ( 100, 100 ),
+	D3DXVECTOR2 ( 100, 450 ),
+	D3DXVECTOR2 ( 1200, 100 ),
+	D3DXVECTOR2 ( 1200, 450 ),
 };
 
 SelectCursor::SelectCursor ()
@@ -44,6 +46,11 @@ SelectCursor::SelectCursor ()
 
 	System::Window::GetWindowSize ( &maxWidth, &maxHeight );
 
+	seVoiceList[ 0 ] = Sound::CreateSE ( "Resource/Voice/chara1_select.wav" );
+	seVoiceList[ 1 ] = Sound::CreateSE ( "Resource/Voice/chara2_select.wav" );
+	seVoiceList[ 2 ] = Sound::CreateSE ( "Resource/Voice/chara3_select.wav" );
+	seVoiceList[ 3 ] = Sound::CreateSE ( "Resource/Voice/chara4_select.wav" );
+
 #ifdef _DEBUG
 	temp.format = D2D::TextFormat::Create ( L"MSñæí©", 30 );
 	temp.brush = SolidBrush::Create ( 1, 1, 1, 1 );
@@ -53,6 +60,11 @@ SelectCursor::SelectCursor ()
 SelectCursor::~SelectCursor ()
 {
 	Util::safeDeleteArray ( cursorState );
+
+	for ( int i = 0; i < 4; ++i ){
+		if ( seVoiceList[ i ] != nullptr )
+			seVoiceList[ i ]->Release ();
+	}
 }
 
 // èâä˙âª
@@ -61,14 +73,19 @@ void SelectCursor::SetUp ()
 	for ( int i = 0; i < 4; i++ )
 	{
 		cursorState[ i ].pos = cursorPos[ i ];
+#ifdef _DEBUG
 		cursorState[ i ].active = false;
+#else
+		cursorState[ i ].active = true;
+#endif
 		cursorState[ i ].selectFlg = false;
 		cursorState[ i ].selectChara = 4;
 		cursorState[ i ].icon.Create ( cursorName[i] );
 		cursorState[ i ].icon.SetPosition ( cursorPos[ i ] );
 	}
+#ifdef _DEBUG
 	cursorState[ 0 ].active = true;
-
+#endif
 	icon->SetUp ();
 }
 
@@ -80,7 +97,7 @@ void SelectCursor::Update ()
 	{
 		SubUpdate ( i );
 
-		if ( cursorState[ i ].active )
+		if ( cursorState[ i ].active && !cursorState[ i ].selectFlg )
 			icon->CursorCollision ( i, cursorState[ i ].pos );
 	}
 #ifdef _DEBUG
@@ -103,7 +120,6 @@ void SelectCursor::Draw ()
 			cursorState[ i ].icon.Draw ();
 		}
 	}
-
 #ifdef _DEBUG
 	temp.DrawString ( 600, 0, L"SelectNum Å©Å®Ç≈î‘çÜêÿÇËë÷Ç¶ %d", tempCharNum );
 #endif
@@ -127,10 +143,10 @@ CharacterInfo SelectCursor::GetCharacterInfo ( int _num )
 #ifdef _DEBUG
 	if ( _num == 0 )
 	{
-		CharacterInfo tempInfo;
-		tempInfo.pType = ( CharacterInfo::PLAYER_TYPE ) tempCharNum ;
-		tempInfo.pcType = CharacterInfo::PC_TYPE::PC_PLAYER;
-		return tempInfo;
+		//CharacterInfo tempInfo;
+		//tempInfo.pType = ( CharacterInfo::PLAYER_TYPE ) tempCharNum ;
+		//tempInfo.pcType = CharacterInfo::PC_TYPE::PC_PLAYER;
+		//return tempInfo;
 	}
 #endif
 	return icon->GetCharacterInfo ( _num );
@@ -158,6 +174,9 @@ void SelectCursor::Move ( int _num )
 {
 	PAD_NUM padID = ( PAD_NUM )_num;
 
+	if ( cursorState[ _num ].selectFlg )
+		return;
+
 	float angle = .0f;
 	if ( GamePad::getLStickState ( padID, angle ) )
 	{
@@ -182,6 +201,12 @@ void SelectCursor::Determination ( int _num )
 	if ( INPUT_STATE::INPUT_PUSH == GamePad::getGamePadState ( padID, BUTTON_ID::BUTTON_A ) &&
 		icon->GetCharacterInfo( _num ).pType != CharacterInfo::PLAYER_TYPE::PLAYER_NON )
 	{
+		if ( icon->GetCharacterInfo ( _num ).pType == CharacterInfo::PLAYER_TYPE::PLAYER_RONDOM )
+		{
+			icon->SetRandomChar ( _num, ( CharacterInfo::PLAYER_TYPE )(rand() % 4) );
+		}
+		seVoiceList[ icon->GetCharacterInfo ( _num ).pType ]->Stop ();
+		seVoiceList[ icon->GetCharacterInfo ( _num ).pType ]->Play ();
 		cursorState[ _num ].selectFlg = true;
 	}
 }

@@ -25,9 +25,11 @@ public:
 
 	void Draw ();
 
-	void CursorCollision ( int, D3DXVECTOR2& );
+	bool CursorCollision ( int, D3DXVECTOR2& );
 
 	CharacterInfo GetCharacterInfo ( int );
+
+	void SetRandomChar ( int _num, CharacterInfo::PLAYER_TYPE _type );
 
 };
 
