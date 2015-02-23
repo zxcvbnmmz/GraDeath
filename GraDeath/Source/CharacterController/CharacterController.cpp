@@ -9,6 +9,7 @@ CharacterController::CharacterController() :currentAction(ACTION_IDLE), enable(f
 	Actions[ ACTION_SKILL_2 ] = &CharacterController::Skill;
 	Actions[ ACTION_SKILL_3 ] = &CharacterController::Skill;
 	Actions[ACTION_IDLE] = &CharacterController::Idle;
+	Actions[ ACTION_DAMAGE ] = &CharacterController::Damage;
 }
 
 void CharacterController::Update(){

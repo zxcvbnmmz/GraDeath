@@ -160,7 +160,11 @@ void PlayerController::Walk(){
 	}
 }
 
-void PlayerController::Damage(){}
+void PlayerController::Damage(){
+	if ( currentAnimState == FINISHED ){
+		ChangeAction ( ACTION_IDLE, false, SAME_BEFORE );
+	}
+}
 
 void PlayerController::Jump_Rise(){
 	Move();
