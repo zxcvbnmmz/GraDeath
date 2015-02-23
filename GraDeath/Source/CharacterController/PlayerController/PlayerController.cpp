@@ -37,7 +37,7 @@ void PlayerController::Init (int _padID, Player* _player, float scale)
 	animManager.Create ( _padID, player, scale );
 	animManager.Enable(true);
 
-	//voiceManager.Initialize(player->playerType);
+	voiceManager.Initialize(player->playerType);
 
 	t.format = D2D::TextFormat::Create(L"MS–¾’©", 20);
 	t.brush = SolidBrush::Create(255, 255, 255, 255);
@@ -131,17 +131,14 @@ void PlayerController::Walk(){
 		return;
 	}
 	
-	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) == INPUT_PRESS ){
-		player->AddPosition(4.0f / 32.0f, 0);
-	}
-	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) == INPUT_PRESS ){
-		player->AddPosition(-4.0f / 32.0f, 0);
-	}
-	else{
+	Move();
+	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_RIGTH ) != INPUT_PRESS &&
+		GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_LEFT ) != INPUT_PRESS ){
 		ChangeAction(ACTION_IDLE, true, SAME_BEFORE);
 	}
 
 	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_A ) == INPUT_PUSH ){
+		player->SetAngularVelocity(b2Vec2(0, -2000));
 		ChangeAction(ACTION_JUMP_RISE, false, SAME_BEFORE);
 	}
 }
@@ -155,12 +152,14 @@ void PlayerController::Attack(){
 void PlayerController::Damage(){}
 
 void PlayerController::Jump_Rise(){
+	Move();
 	if (player->body->GetLinearVelocity().y > 0){
 		ChangeAction(ACTION_JUMP_FALL, false, SAME_BEFORE);
 	}
 }
 
 void PlayerController::Jump_Fall(){
+	Move();
 	if (player->body->GetLinearVelocity().y <= 0){
 		ChangeAction(ACTION_JUMP_LAND, false, SAME_BEFORE);
 	}
@@ -180,5 +179,15 @@ void PlayerController::Jump_Land(){
 void PlayerController::Skill(){
 	if (currentAnimState == FINISHED){
 		ChangeAction(ACTION_IDLE, false, SAME_BEFORE);
+	}
+}
+
+
+void PlayerController::Move(){
+	if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_RIGTH) == INPUT_PRESS){
+		player->AddPosition(4.0f / 32.0f, 0);
+	}
+	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_LEFT) == INPUT_PRESS){
+		player->AddPosition(-4.0f / 32.0f, 0);
 	}
 }

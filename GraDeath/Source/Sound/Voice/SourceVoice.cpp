@@ -6,6 +6,9 @@
 
 namespace Sound{
 	SourceVoice::SourceVoice(shared_ptr<WaveData> _waveData, SubmixVoice* submix, IXAudio2VoiceCallback* callback) :voice(nullptr), waveData(_waveData){
+		if (!waveData)
+			return;
+
 		WAVEFORMATEX* ex = waveData.get()->wfex;
 		HRESULT hr;
 

@@ -12,7 +12,7 @@ public:
 	void Draw();
 
 private:
-	Sprite sRank[4], sChara[4], sPlayer[4]/*, sFrame*/;
+	Sprite sRank[4], sChara[4], sPlayer[4];
 	D3DXVECTOR2 pRank[4], pMove[4], pPlayer, pChara;
 	float alpha[4];
 	int timer;

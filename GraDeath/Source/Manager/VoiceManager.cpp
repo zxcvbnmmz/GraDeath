@@ -11,7 +11,7 @@ VoiceManager::~VoiceManager(){
 
 void VoiceManager::Initialize(unsigned int playerID){
 	for (int i = 0; i < VOICE_MAX; ++i){
-		seList[i] = Sound::CreateSE(characterVoices[playerID][i]);
+		//seList[i] = Sound::CreateSE(characterVoices[playerID][i]);
 	}
 }
 
