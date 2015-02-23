@@ -22,6 +22,7 @@ GameScene::GameScene() :currentState(FADE_IN) {
 	PlayerManager::Init ( ( PlayerData* )CharacterInfoFunc::GetCharacterInfo () );
 
 	GameSceneUI::Create ();
+	GameSceneUI::Create ()->SetPlayerIcon ( CharacterInfoFunc::GetCharacterInfo () );
 	
 	AddFunction(this, &GameScene::ExecuteFadeIn);
 	AddFunction(this, &GameScene::ExecuteStageCall);
