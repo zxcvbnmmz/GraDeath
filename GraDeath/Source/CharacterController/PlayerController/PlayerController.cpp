@@ -81,11 +81,17 @@ void PlayerController::Idle(){
 		//ChangeAction(ACTION_SKILL, false);
 		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ),animManager.GetCurrentDirecton());
 	}
-	else if ( ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_B ) == INPUT_PUSH ||
+	else if ( ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_Y ) == INPUT_PUSH ||
 		Keyboard::CheckKey ( KC_S ) == INPUT_PUSH ) &&
 		SkillManager::GetSkillUse ( padID, ( SKILL_ID )1 ) ){
 		//ChangeAction ( ACTION_ATTACK, false );
 		SkillManager::SkillOn(padID, SKILL_ID::SKILL_SECOND, D3DXVECTOR2(this->player->GetPosition().x, this->player->GetPosition().y), animManager.GetCurrentDirecton());
+	}
+	else if ( ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_X ) == INPUT_PUSH ||
+		Keyboard::CheckKey ( KC_D ) == INPUT_PUSH ) &&
+		SkillManager::GetSkillUse ( padID, ( SKILL_ID )2 ) ){
+		//ChangeAction ( ACTION_ATTACK, false );
+		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_THIRD, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), animManager.GetCurrentDirecton () );
 	}
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH || 
 		Keyboard::CheckKey(KC_J) == INPUT_PUSH){
