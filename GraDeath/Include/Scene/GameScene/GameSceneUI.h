@@ -5,12 +5,15 @@
 #include "D2D/Sprite/Sprite.h"
 #include "Object/Skill/SkillDefine.h"
 
+struct CharacterInfo;
+
 class GameSceneUI : public Ref{
 public:
 	void Draw();
 
 	static GameSceneUI* Create();
 	static void Release();
+	void SetPlayerIcon ( CharacterInfo* _info );
 
 private:
 	GameSceneUI();
@@ -37,6 +40,7 @@ private:
 	};
 
 	static const int PLAYER_MAX = 4;
+	int playerIcon[ PLAYER_MAX ];
 	float spCount[ PLAYER_MAX ];
 	class Sprite ground;
 	class Sprite barBack;

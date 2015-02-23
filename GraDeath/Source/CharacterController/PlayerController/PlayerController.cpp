@@ -34,7 +34,7 @@ void PlayerController::Init (int _padID, Player* _player, float scale)
 	System::Window::GetWindowSize ( &x, &y );
 	ground = static_cast<float>(y) - 300;
 
-	animManager.Create(padID, player,scale);
+	animManager.Create ( _padID, player, scale );
 	animManager.Enable(true);
 
 	voiceManager.Initialize(player->playerType);

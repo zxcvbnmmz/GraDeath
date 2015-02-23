@@ -5,13 +5,13 @@
 D3DXVECTOR2 bluePosition[ 2 ][ 3 ] =
 {
 	{
-		D3DXVECTOR2 ( 0, -290.0f ),
-		D3DXVECTOR2 ( -100, -290.0f ),
+		D3DXVECTOR2 ( 200, -215.0f ),
+		D3DXVECTOR2 ( -380, -350.0f ),
 		D3DXVECTOR2 ( -20, -400.0f )
 	},
 	{
-		D3DXVECTOR2 ( -400, -290.0f ),
-		D3DXVECTOR2 ( -1000, -290.0f ),
+		D3DXVECTOR2 ( -380, -215.0f ),
+		D3DXVECTOR2 ( -400, -350.0f ),
 		D3DXVECTOR2 ( -820, -400.0f )
 	},
 };
@@ -37,7 +37,7 @@ BlueSkill::~BlueSkill ()
 void BlueSkill::Init ()
 {
 	Skill* first = new Skill;
-	first->Init ( "Resource/Object/Skill/Blue/Blue_Skill_First.bin", L"Resource/Object/Blue/WhiteBlack/Blue_Skill_First.png", SKILL_ID_LOAD::SKILL_ID_BLUE );
+	first->Init ( "Resource/Object/Skill/Blue/Blue_Skill_First.bin", L"Resource/Object/Skill/Blue/Blue_Skill_First.png", SKILL_ID_LOAD::SKILL_ID_BLUE );
 	skills.push_back ( first );
 
 	//WhiteBlackSecond* second = new WhiteBlackSecond;

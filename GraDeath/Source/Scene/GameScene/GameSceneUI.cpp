@@ -1,6 +1,7 @@
 #include "Scene/GameScene/GameSceneUI.h"
 #include "Manager/HitPointManager.h"
 #include "Manager/SkillManager.h"
+#include "CharacterController/CharacterInfo.h"
 
 GameSceneUI* GameSceneUI::ui = nullptr;
 
@@ -26,9 +27,6 @@ GameSceneUI::GameSceneUI(){
 	barFront.Create ( L"Resource/UI/Game/hpbar_frame.png" );
 	gageUI[ HP_BAR ].Create ( L"Resource/UI/Game/hpbar.png" );
 	gageUI[ DEADLY_GAGE ].Create ( L"Resource/UI/Game/deadlygage.png" );
-	for (int i = 0; i < PLAYER_MAX; ++i){
-		sprites[ i ][ IDENTIFIER ].Create ( playerIconUI[ i ] );
-	}
 	for ( int i = 0; i < SKILL_ID::SKILL_MAX; i++ )
 	{
 		skillIcon[ i ].Create ( skillIconUI[ i ] );
@@ -101,6 +99,17 @@ void GameSceneUI::Release(){
 	ui = nullptr;
 }
 
+void GameSceneUI::SetPlayerIcon ( CharacterInfo* _info )
+{
+	for ( int i = 0; i < PLAYER_MAX; ++i ){
+		sprites[ i ][ IDENTIFIER ].Create ( playerIconUI[ _info[ i ].pType ] );//playerIconUI[ i ] );
+	}
+
+//	for ( int i = 0; i < PLAYER_MAX; i++ )
+//	{
+//		playerIcon[ i ] = _info[ i ].pType;
+//	}
+}
 
 void GameSceneUI::DrawSkillUI ( int _num, D3DXVECTOR2& _pos )
 {
