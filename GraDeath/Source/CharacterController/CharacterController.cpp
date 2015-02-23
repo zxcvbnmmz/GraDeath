@@ -1,10 +1,7 @@
 #include "CharacterController/CharacterController.h"
 
 CharacterController::CharacterController() :currentAction(ACTION_IDLE), enable(false){
-	Actions[ACTION_RUN] = &CharacterController::Run;
 	Actions[ACTION_WALK] = &CharacterController::Walk;
-	Actions[ACTION_ATTACK] = &CharacterController::Attack;
-	Actions[ACTION_DAMAGE] = &CharacterController::Damage;
 	Actions[ACTION_JUMP_RISE] = &CharacterController::Jump_Rise;
 	Actions[ACTION_JUMP_FALL] = &CharacterController::Jump_Fall;
 	Actions[ACTION_JUMP_LAND] = &CharacterController::Jump_Land;

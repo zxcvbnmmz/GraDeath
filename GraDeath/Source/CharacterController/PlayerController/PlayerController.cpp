@@ -39,8 +39,10 @@ void PlayerController::Init (int _padID, Player* _player, float scale)
 
 	voiceManager.Initialize(player->playerType);
 
+#ifdef _DEBUG
 	t.format = D2D::TextFormat::Create(L"MS–¾’©", 20);
 	t.brush = SolidBrush::Create(255, 255, 255, 255);
+#endif
 }
 
 void PlayerController::Draw(){
@@ -140,12 +142,6 @@ void PlayerController::Walk(){
 	if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_A ) == INPUT_PUSH ){
 		player->SetAngularVelocity(b2Vec2(0, -2000));
 		ChangeAction(ACTION_JUMP_RISE, false, SAME_BEFORE);
-	}
-}
-
-void PlayerController::Attack(){
-	if (currentAnimState == FINISHED){
-		ChangeAction(ACTION_IDLE, true, SAME_BEFORE);
 	}
 }
 

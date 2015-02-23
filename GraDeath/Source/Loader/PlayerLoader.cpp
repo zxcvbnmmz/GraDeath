@@ -146,9 +146,14 @@ namespace PlayerLoader
 
 				// ƒTƒEƒ“ƒh–¼Žæ“¾
 				char* soundName = new char[ fileCount ];
+				ZeroMemory(soundName,sizeof(char)*fileCount);
 				ifs.read ( ( char* )soundName, sizeof( char )* fileCount );
 				if (temp > 0){
-					cell->se = Sound::CreateSE(soundName);
+					std::string voicePath = "Resource\\Voice\\";
+					char temp[80];
+					strncpy_s(temp, soundName, sizeof(char)*fileCount);
+					voicePath += temp;
+					cell->se = Sound::CreateSE(const_cast<char*>(voicePath.c_str()));
 				}
 				delete[ ] soundName;
 

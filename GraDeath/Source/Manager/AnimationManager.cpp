@@ -23,6 +23,11 @@ void AnimationManager::ChangeAction(PLAYER_ACTION _action, bool _loop, PLAYER_DI
 	}
 
 	currentCell = animation.cellDatas[currentAction].begin();
+	Sound::SE* se = (*currentCell)->se.get();
+	if (se != NULL && (*currentCell)->se->IsEnable()){
+		(*currentCell)->se->Stop();
+		(*currentCell)->se->Play();
+	}
 	AttachFixtureToPlayer();
 	if (dir == LEFT){
 		Reverse();
@@ -37,7 +42,15 @@ CURRENT_ANIMATION_STATE AnimationManager::Update(){
 		// 次のセルが無ければセルの頭に戻るか、終わったことを通知する
 		if (nextCell == animation.cellDatas[currentAction].end()){
 			if (loop){
+				if (currentAction == 4){
+					int a = 0;
+				}
 				currentCell = animation.cellDatas[currentAction].begin();
+				Sound::SE* se = (*currentCell)->se.get();
+				if (se != NULL && (*currentCell)->se->IsEnable()){
+					(*currentCell)->se->Stop();
+					(*currentCell)->se->Play();
+				}
 				AttachFixtureToPlayer();
 				if (dir == LEFT)
 					Reverse();
@@ -50,7 +63,8 @@ CURRENT_ANIMATION_STATE AnimationManager::Update(){
 		// 次のセルがあればそのセルを現在のセルとする
 		else{
 			++currentCell;
-			if ((*currentCell)->se != nullptr){
+			Sound::SE* se = (*currentCell)->se.get();
+			if (se != NULL && (*currentCell)->se->IsEnable()){
 				(*currentCell)->se->Stop();
 				(*currentCell)->se->Play();
 			}

@@ -30,6 +30,7 @@ public:
 	float GetPlayingTime();
 	void SetLoop(unsigned int loopBegin, unsigned int loopLength, unsigned int loopCount);
 	void ExitLoop();
+	bool IsEnable();
 
 private:
 	class SEPimpl;

@@ -18,6 +18,7 @@ namespace Sound{
 		float GetPlayingTime();
 		void SetLoop(unsigned int loopBegin, unsigned int loopEnd, unsigned int loopCount);
 		void ExitLoop();
+		bool IsEnable();
 
 	private:
 		std::shared_ptr<class SourceVoice> sourceVoice;
@@ -72,6 +73,10 @@ namespace Sound{
 		sourceVoice->SubmitBuffer(loopBegin, loopLength, loopCount);
 	}
 
+	bool SE::SEPimpl::IsEnable(){
+		return sourceVoice != nullptr;
+	}
+
 	SE::SE(std::shared_ptr<class SourceVoice> _sourceVoice, SubmixVoice* submix):pimpl(new SEPimpl(_sourceVoice)){}
 
 	SE::~SE(){
@@ -111,5 +116,9 @@ namespace Sound{
 
 	void SE::SetLoop(unsigned int loopBegin, unsigned int loopEnd, unsigned int loopCount){
 		pimpl->SetLoop(loopBegin, loopEnd, loopCount);
+	}
+
+	bool SE::IsEnable(){
+		return pimpl->IsEnable();
 	}
 }
