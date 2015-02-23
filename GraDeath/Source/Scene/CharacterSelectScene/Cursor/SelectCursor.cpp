@@ -2,8 +2,12 @@
 #include "Scene/CharacterSelectScene/Icon/SelectIcon.h"
 #include "Utility/SafeDelete.h"
 #include "Input/GamePad.h"
+#include "Input/Keyboard.h"
 #include "System/Window.h"
 
+#ifdef _DEBUG
+#include "D2D/Brush/SolidBrush.h"
+#endif
 
 #define MOVE_SPEED ( 20.0F )
 
@@ -39,6 +43,11 @@ SelectCursor::SelectCursor ()
 	icon = std::shared_ptr<SelectIcon> ( new SelectIcon );
 
 	System::Window::GetWindowSize ( &maxWidth, &maxHeight );
+
+#ifdef _DEBUG
+	temp.format = D2D::TextFormat::Create ( L"MS–¾’©", 30 );
+	temp.brush = SolidBrush::Create ( 1, 1, 1, 1 );
+#endif
 }
 
 SelectCursor::~SelectCursor ()
@@ -54,6 +63,7 @@ void SelectCursor::SetUp ()
 		cursorState[ i ].pos = cursorPos[ i ];
 		cursorState[ i ].active = false;
 		cursorState[ i ].selectFlg = false;
+		cursorState[ i ].selectChara = 4;
 		cursorState[ i ].icon.Create ( cursorName[i] );
 		cursorState[ i ].icon.SetPosition ( cursorPos[ i ] );
 	}
@@ -69,9 +79,16 @@ void SelectCursor::Update ()
 	for ( int i = 0; i < 4; i++ )
 	{
 		SubUpdate ( i );
+
 		if ( cursorState[ i ].active )
 			icon->CursorCollision ( i, cursorState[ i ].pos );
 	}
+#ifdef _DEBUG
+	if ( Keyboard::CheckKey ( KC_RIGHT ) == INPUT_PUSH )
+		tempCharNum = ( tempCharNum + 1 ) % 4;
+	if ( Keyboard::CheckKey ( KC_LEFT ) == INPUT_PUSH )
+		tempCharNum = ( tempCharNum + 3 ) % 4;
+#endif
 }
 
 // •`‰æ
@@ -86,6 +103,10 @@ void SelectCursor::Draw ()
 			cursorState[ i ].icon.Draw ();
 		}
 	}
+
+#ifdef _DEBUG
+	temp.DrawString ( 600, 0, L"SelectNum ©¨‚Å”Ô†Ø‚è‘Ö‚¦ %d", tempCharNum );
+#endif
 }
 
 bool SelectCursor::AllSelectCheck ()
@@ -103,6 +124,15 @@ bool SelectCursor::AllSelectCheck ()
 
 CharacterInfo SelectCursor::GetCharacterInfo ( int _num )
 {
+#ifdef _DEBUG
+	if ( _num == 0 )
+	{
+		CharacterInfo tempInfo;
+		tempInfo.pType = ( CharacterInfo::PLAYER_TYPE ) tempCharNum ;
+		tempInfo.pcType = CharacterInfo::PC_TYPE::PC_PLAYER;
+		return tempInfo;
+	}
+#endif
 	return icon->GetCharacterInfo ( _num );
 }
 
