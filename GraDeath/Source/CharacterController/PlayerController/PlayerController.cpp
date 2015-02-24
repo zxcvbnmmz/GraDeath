@@ -120,9 +120,11 @@ void PlayerController::Idle(){
 		ChangeAction(ACTION_WALK, true, LEFT);
 	}
 
+#ifdef _DEBUG
 	if ( ( padID  == 0 ) && ( Keyboard::CheckKey ( KC_RIGHT ) == INPUT_PRESS || Keyboard::CheckKey ( KC_LEFT ) == INPUT_PRESS ) ){
 		ChangeAction(ACTION_WALK, true,SAME_BEFORE);
 	}
+#endif
 }
 
 void PlayerController::Run(){}
@@ -174,7 +176,7 @@ void PlayerController::Damage(){
 
 void PlayerController::Jump_Rise(){
 	Move();
-	if (player->body->GetLinearVelocity().y > 0){
+	if (player->body->GetLinearVelocity().y >= 0){
 		ChangeAction(ACTION_JUMP_FALL, false, SAME_BEFORE);
 	}
 }
