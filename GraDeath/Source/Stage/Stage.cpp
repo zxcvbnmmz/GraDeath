@@ -595,8 +595,25 @@ void Stage::SetSkillEnd(bool isbool){
     fade->SetAlpha(0);
     Suppressioncount = 1;
     isSuppression = true;
-    Suppression_fade.reset(new Fade(L"Resource/Scene/Game/Stage/blue_Suppression.png"));
-    Suppression_fade->SetAlpha(Suppressioncount);
+    switch (Charatype)
+    {
+    case 0:
+        Suppression_fade.reset(new Fade(L"Resource/Scene/Game/Stage/red_Suppression.png"));
+        Suppression_fade->SetAlpha(Suppressioncount);
+        break;
+    case 1:
+        Suppression_fade.reset(new Fade(L"Resource/Scene/Game/Stage/blue_Suppression.png"));
+        Suppression_fade->SetAlpha(Suppressioncount);
+        break;
+    case 2:
+        Suppression_fade.reset(new Fade(L"Resource/Scene/Game/Stage/yellow_Suppression.png"));
+        Suppression_fade->SetAlpha(Suppressioncount);
+        break;
+    case 3:
+        Suppression_fade.reset(new Fade(L"Resource/Scene/Game/Stage/sirokuro_Suppression.png"));
+        Suppression_fade->SetAlpha(Suppressioncount);
+        break;
+    }
     SuppressionScale = 2;
 
 }
