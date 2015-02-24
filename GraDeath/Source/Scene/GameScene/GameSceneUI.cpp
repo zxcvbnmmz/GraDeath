@@ -2,6 +2,7 @@
 #include "Manager/HitPointManager.h"
 #include "Manager/SkillManager.h"
 #include "CharacterController/CharacterInfo.h"
+#include "Manager/SkillManager.h"
 
 GameSceneUI* GameSceneUI::ui = nullptr;
 
@@ -75,7 +76,7 @@ void GameSceneUI::Draw(){
 		barBack.SetPosition ( tempPos.x + 15, tempPos.y + 50 );
 		barBack.Draw ();
 		gageSize = gageUI[ DEADLY_GAGE ].GetDefaultSize ();
-		gageSize.x *= tempGage;
+		gageSize.x *= SkillManager::GetSPGage( i );//tempGage;
 		gageUI[ DEADLY_GAGE ].SetPosition ( tempPos.x + 15, tempPos.y + 50 );
 		gageUI[ DEADLY_GAGE ].SetSize ( gageSize );
 		gageUI[ DEADLY_GAGE ].Draw ();

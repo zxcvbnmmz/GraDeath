@@ -28,6 +28,7 @@ namespace SkillManager
 	CharacterInfo::PLAYER_TYPE GetPlayerType ( int _num );
 
 	void SetSPGage ( int num, float _gage );
+	float GetSPGage ( int num );
 
 }
 

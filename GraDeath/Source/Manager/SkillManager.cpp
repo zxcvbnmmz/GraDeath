@@ -113,7 +113,7 @@ namespace SkillManager
 		ret = skillState[ _num ].GetUseSkill ( _id );
 		if ( SKILL_THIRD == _id )
 		{
-			if ( spGage[ _num ] <= 1.0f )
+			if ( spGage[ _num ] < 1.0f )
 				ret = false;
 		}
 		if ( ret )
@@ -139,5 +139,12 @@ namespace SkillManager
 	void SetSPGage ( int num, float _gage )
 	{
 		spGage[ num ] += _gage;
+		if ( spGage[ num ] >= 1.0f )
+			spGage[ num ] = 1.0f;
+	}
+
+	float GetSPGage ( int num )
+	{
+		return spGage[ num ];
 	}
 }
