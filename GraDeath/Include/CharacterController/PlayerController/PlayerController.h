@@ -36,7 +36,7 @@ public:
 	void Draw();
     void MovePos(int _movex, int _movey);
 	void SetPos(int _posx, int _posy, float angle = 0);
-
+	void SetDamage ();
 
 	void Release ();
 

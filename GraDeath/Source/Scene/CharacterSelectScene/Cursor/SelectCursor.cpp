@@ -143,10 +143,10 @@ CharacterInfo SelectCursor::GetCharacterInfo ( int _num )
 #ifdef _DEBUG
 	if ( _num == 0 )
 	{
-		//CharacterInfo tempInfo;
-		//tempInfo.pType = ( CharacterInfo::PLAYER_TYPE ) tempCharNum ;
-		//tempInfo.pcType = CharacterInfo::PC_TYPE::PC_PLAYER;
-		//return tempInfo;
+		CharacterInfo tempInfo;
+		tempInfo.pType = ( CharacterInfo::PLAYER_TYPE ) tempCharNum ;
+		tempInfo.pcType = CharacterInfo::PC_TYPE::PC_PLAYER;
+		return tempInfo;
 	}
 #endif
 	return icon->GetCharacterInfo ( _num );
@@ -199,7 +199,8 @@ void SelectCursor::Determination ( int _num )
 	PAD_NUM padID = ( PAD_NUM )_num;
 
 	if ( INPUT_STATE::INPUT_PUSH == GamePad::getGamePadState ( padID, BUTTON_ID::BUTTON_A ) &&
-		icon->GetCharacterInfo( _num ).pType != CharacterInfo::PLAYER_TYPE::PLAYER_NON )
+		icon->GethitFlg ( _num ) )
+		//icon->GetCharacterInfo( _num ).pType != CharacterInfo::PLAYER_TYPE::PLAYER_NON )
 	{
 		if ( icon->GetCharacterInfo ( _num ).pType == CharacterInfo::PLAYER_TYPE::PLAYER_RONDOM )
 		{

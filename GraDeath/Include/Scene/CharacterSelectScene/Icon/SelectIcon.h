@@ -31,6 +31,8 @@ public:
 
 	void SetRandomChar ( int _num, CharacterInfo::PLAYER_TYPE _type );
 
+	bool GethitFlg ( int _num );
+
 };
 
 

@@ -69,6 +69,12 @@ void PlayerController::Release ()
 {
 }
 
+void PlayerController::SetDamage ()
+{
+	if ( currentAction != ACTION_DAMAGE )
+		ChangeAction ( ACTION_DAMAGE, false, SAME_BEFORE );
+}
+
 void PlayerController::Idle(){
 
 	float angle;

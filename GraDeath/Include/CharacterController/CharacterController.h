@@ -31,6 +31,7 @@ public:
 
 	virtual void Release() = 0;
 
+	virtual void SetDamage () = 0;
 
 	PLAYER_ACTION GetCurrentAction();
 

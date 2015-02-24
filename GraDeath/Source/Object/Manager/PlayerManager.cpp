@@ -65,7 +65,10 @@ void PlayerManager::Update(){
 	for (int i = 0; i < PLAYERS; ++i){
 		for (int k = i + 1; k < PLAYERS; ++k){
 			Collision::Collide(&players[i], &players[k]);
-			Collision::CollideSkill(&players[k], SkillManager::Getb2Body(i));
+			if ( Collision::CollideSkill ( &players[ k ], SkillManager::Getb2Body ( i ) ) )
+			{
+				//controllers[ k ]->SetDamage ();
+			}
 		}
 		Collision::CollideFloor(&players[i], Stage::GetBreakbleStage(), controllers[i]);
 	}

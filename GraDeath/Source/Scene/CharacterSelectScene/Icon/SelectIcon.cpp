@@ -6,6 +6,7 @@
 struct SelectIcon::IconState
 {
 	int iconNum;
+	bool hitFlg;
 	CharacterInfo info;
 };
 
@@ -15,7 +16,7 @@ wchar_t* playerIconName[ ] =
 	L"Resource/Scene/CharacterSelect/CharacterSelect_PlayerIcon_2.png",
 	L"Resource/Scene/CharacterSelect/CharacterSelect_PlayerIcon_3.png",
 	L"Resource/Scene/CharacterSelect/CharacterSelect_PlayerIcon_4.png",
-	L"Resource/Scene/CharacterSelect/CharacterSelect_PlayerIcon_Random.png"
+	//L"Resource/Scene/CharacterSelect/CharacterSelect_PlayerIcon_Random.png"
 };
 
 wchar_t* charcterIconName[ ] =
@@ -24,7 +25,7 @@ wchar_t* charcterIconName[ ] =
 	L"Resource/Scene/CharacterSelect/CharacterSelect_Icon_2.png",
 	L"Resource/Scene/CharacterSelect/CharacterSelect_Icon_3.png",
 	L"Resource/Scene/CharacterSelect/CharacterSelect_Icon_4.png",
-	L"Resource/Scene/CharacterSelect/CharacterSelect_Icon_Random.png"
+	//L"Resource/Scene/CharacterSelect/CharacterSelect_Icon_Random.png"
 };
 
 D3DXVECTOR2 playerIconPos[] =
@@ -65,6 +66,7 @@ void SelectIcon::SetUp ()
 		iconState[ i ].iconNum = 5;
 		iconState[ i ].info.pType = CharacterInfo::PLAYER_TYPE::PLAYER_NON;
 		iconState[ i ].info.pcType = CharacterInfo::PC_TYPE::PC_NON;
+		iconState[ i ].hitFlg = false;
 	}
 
 	for ( int i = 0; i < 4; i++ )
@@ -103,6 +105,7 @@ bool SelectIcon::CursorCollision ( int num, D3DXVECTOR2& _pos )
 	for ( int i = 0; i < 4; i++ )
 	{
 		iconState[ num ].iconNum = 5;
+		iconState[ num ].hitFlg = false;
 		D3DXVECTOR2 pos = selectSprite[ i ].GetPosition ();
 		D3DXVECTOR2 size = selectSprite[ i ].GetDefaultSize ();
 		if ( _pos.x < pos.x + size.x &&
@@ -111,6 +114,7 @@ bool SelectIcon::CursorCollision ( int num, D3DXVECTOR2& _pos )
 			_pos.y >  pos.y )
 		{
 			//iconState[ num ].iconNum = ( 4 == CharacterInfo::PLAYER_TYPE::PLAYER_RONDOM ) ? rand () % 4 : i;
+			iconState[ num ].hitFlg = true;
 			iconState[ num ].iconNum = i;
 			iconState[ num ].info.pType = ( CharacterInfo::PLAYER_TYPE )i;
 			return true;
@@ -122,6 +126,11 @@ bool SelectIcon::CursorCollision ( int num, D3DXVECTOR2& _pos )
 void SelectIcon::SetRandomChar ( int _num, CharacterInfo::PLAYER_TYPE _type )
 {
 	iconState[ _num ].info.pType = _type;
+}
+
+bool SelectIcon::GethitFlg ( int _num )
+{
+	return iconState[ _num ].hitFlg;
 }
 
 CharacterInfo SelectIcon::GetCharacterInfo ( int _num )
