@@ -17,7 +17,7 @@ namespace SkillManager
 
 	void Release ();
 
-	void SkillOn ( int _num, int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg );
+	bool SkillOn ( int _num, int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg );
 
 	bool GetSkillUse ( int _num, SKILL_ID _id );
 
@@ -26,6 +26,8 @@ namespace SkillManager
 	b2Body* Getb2Body ( int _num );
 
 	CharacterInfo::PLAYER_TYPE GetPlayerType ( int _num );
+
+	void SetSPGage ( int num, float _gage );
 
 }
 

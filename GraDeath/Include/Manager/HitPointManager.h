@@ -22,6 +22,7 @@ namespace HitPointManager
 	// ŸÒ
 	int AlivePlayer ();
 
+	bool IsDead ( int _num );
 
 	int GetPlayerRanking(int _num, int& rank);
 

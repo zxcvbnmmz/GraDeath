@@ -16,6 +16,7 @@ namespace SkillManager
 		SkillState skillState[ 4 ];
 		Skill skill[4];
 		std::vector<SkillSet*> skillset;
+		float spGage[ 4 ];
 	}
 
 	SkillSet* CreateSkillSet ( CharacterInfo::PLAYER_TYPE _type )
@@ -59,7 +60,7 @@ namespace SkillManager
 		SkillSet* tempSkill = CreateSkillSet ( _type );// new WhiteBlackSkill;
 		tempSkill->Init ();
 		skillset.push_back ( tempSkill );
-
+		spGage[ _num ] = 0.0f;
 		//skill[ _num ].Init ("Resource/Object/Skill/WhiteBlack/shirokuro_skill01.bin", L"Resource/Object/Skill/WhiteBlack/" );
 	}
 
@@ -96,16 +97,28 @@ namespace SkillManager
 		skillset.clear ();
 	}
 
-	void SkillOn ( int _num, int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
+	bool SkillOn ( int _num, int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
 	{
+		if ( !GetSkillUse ( _num, ( SKILL_ID )_id ) )
+			return false;
 		skillset[ _num ]->SetPosition ( _id, _pos, dirFlg );
+		return true;
 		//skill[ _num ].SetPosition ( _pos );
 		//skill[ _num ].SkillOn ();
 	}
 
 	bool GetSkillUse ( int _num, SKILL_ID _id )
 	{
-		return skillState[ _num ].GetUseSkill ( _id );
+		bool ret = false;
+		ret = skillState[ _num ].GetUseSkill ( _id );
+		if ( SKILL_THIRD == _id )
+		{
+			if ( spGage[ _num ] <= 1.0f )
+				ret = false;
+		}
+		if ( ret )
+			spGage[ _num ] = 0.0f;
+		return ret;
 	}
 
 	float GetCoolTime ( int _num, SKILL_ID _id )
@@ -123,4 +136,8 @@ namespace SkillManager
 		return skillState[ _num ].GetPlayerType ();
 	}
 
+	void SetSPGage ( int num, float _gage )
+	{
+		spGage[ num ] += _gage;
+	}
 }

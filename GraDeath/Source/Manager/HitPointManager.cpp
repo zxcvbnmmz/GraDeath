@@ -76,6 +76,11 @@ namespace HitPointManager
 		return tempNum;
 	}
 
+	bool IsDead ( int _num )
+	{
+		return hitPoint[ _num ].IsDead ();
+	}
+
 	// ˆêl‚¾‚¯‚É‚È‚Á‚½
 	bool IsOnlyOne ()
 	{

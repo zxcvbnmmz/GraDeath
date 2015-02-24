@@ -57,7 +57,8 @@ void PlayerManager::Release(){
 
 void PlayerManager::Update(){
 	for (int i = 0; i < PLAYERS; ++i){
-		controllers[i]->Update();
+		if(  !HitPointManager::IsDead ( i ) )
+			controllers[i]->Update();
 	}
 
 	SkillManager::Update();
@@ -77,6 +78,7 @@ void PlayerManager::Update(){
 void PlayerManager::Draw(){
 
 	for (int i = 0; i < PLAYERS; ++i){
+		if ( !HitPointManager::IsDead ( i ) )
 		controllers[i]->Draw();
 	}
 
