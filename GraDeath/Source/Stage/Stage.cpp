@@ -35,7 +35,6 @@ namespace{
     bool isSuppression = false;
     bool fadeflg = false;
     int StageID = 0;
-
 }
 
 void CreateWorldEdge();
@@ -182,12 +181,225 @@ void CreateWorldEdge(){
 	// 右辺
 	screenEdgeShape.Set(upperRightCorner, lowerRightCorner);
 	screenEdgeBody->CreateFixture(&screenEdgeShape, density)->SetFilterData(filter);
-
-
+/*
+    b2Vec2 StageGetPos(){
+        return b2Vec2(0, 19);
+    }
+    b2Vec2 StageGetSize(){
+        return b2Vec2(42, 19);
+    }
+*/
     //Stageの当たり判定
     screenEdgeShape.Set(StageGetPos(), StageGetSize());
     b2Fixture* fixture = breakableStage->CreateFixture(&screenEdgeShape, density);
+    screenEdgeShape.Set(StageGetPos(), lowerLeftCorner);
+    fixture = breakableStage->CreateFixture(&screenEdgeShape, density);
+    screenEdgeShape.Set(lowerLeftCorner, lowerRightCorner);
+    fixture = breakableStage->CreateFixture(&screenEdgeShape, density);
+    screenEdgeShape.Set(StageGetPos(), lowerRightCorner);
+    fixture = breakableStage->CreateFixture(&screenEdgeShape, density);
     fixture->SetFilterData(filter);
+}
+
+void CreateRedStage(Sprite* _sprite){
+    _sprite->Create(L"Resource/Scene/Game/Stage/RedStage.png");
+    D3DXVECTOR2 pos(0, 0);
+    _sprite->SetPosition(pos);
+    //@ x 1366* y 768
+    _sprite->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F size;
+    size.height = 768.f;
+    size.width = 1366.f;
+    _sprite->SetSize(size);
+    sprites.push_back(_sprite);
+
+    //アニメーション用
+    sprite_anime.reset(new Sprite);
+    sprite_anime->Create(L"Resource/Scene/Game/Stage/RedStage.png");
+    D3DXVECTOR2 animepos(0, 0);
+    sprite_anime->SetPosition(animepos);
+    //@ x 1366* y 768
+    sprite_anime->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F anime_size;
+    anime_size.height = 768.f;
+    anime_size.width = 1366.f;
+    sprite_anime->SetSize(anime_size);
+    sprite_animes.push_back(sprite_anime);
+
+    Sprite* sprite1 = new Sprite;
+    sprite1->Create(L"Resource/Scene/Game/Stage/Redbg1.png");
+    bgSprite.push_back(sprite1);
+    Sprite* sprite2 = new Sprite;
+    sprite2->Create(L"Resource/Scene/Game/Stage/Redbg2.png");
+    bgSprite.push_back(sprite2);
+    Sprite* sprite3 = new Sprite;
+    sprite3->Create(L"Resource/Scene/Game/Stage/Redbg3.png");
+    bgSprite.push_back(sprite3);
+    Sprite* Special_BLUE = new Sprite;
+
+
+    for (auto& bg : bgSprite)
+        bg->SetPosition(0, 0);
+}
+void CreateBlueStage(Sprite* _sprite){
+    _sprite->Create(L"Resource/Scene/Game/Stage/BlueStage.png");
+    D3DXVECTOR2 pos(0, 0);
+    _sprite->SetPosition(pos);
+    //@ x 1366* y 768
+    _sprite->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F size;
+    size.height = 768.f;
+    size.width = 1366.f;
+    _sprite->SetSize(size);
+    sprites.push_back(_sprite);
+
+    //アニメーション用
+    sprite_anime.reset(new Sprite);
+    sprite_anime->Create(L"Resource/Scene/Game/Stage/BlueStage.png");
+    D3DXVECTOR2 animepos(0, 0);
+    sprite_anime->SetPosition(animepos);
+    //@ x 1366* y 768
+    sprite_anime->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F anime_size;
+    anime_size.height = 768.f;
+    anime_size.width = 1366.f;
+    sprite_anime->SetSize(anime_size);
+    sprite_animes.push_back(sprite_anime);
+
+    Sprite* sprite1 = new Sprite;
+    sprite1->Create(L"Resource/Scene/Game/Stage/Bluebg1.png");
+    bgSprite.push_back(sprite1);
+    Sprite* sprite2 = new Sprite;
+    sprite2->Create(L"Resource/Scene/Game/Stage/Bluebg2.png");
+    bgSprite.push_back(sprite2);
+    Sprite* sprite3 = new Sprite;
+    sprite3->Create(L"Resource/Scene/Game/Stage/Bluebg3.png");
+    bgSprite.push_back(sprite3);
+    Sprite* Special_BLUE = new Sprite;
+
+
+    for (auto& bg : bgSprite)
+        bg->SetPosition(0, 0);
+}
+void CreateSiroKuroStage(Sprite* _sprite){
+    _sprite->Create(L"Resource/Scene/Game/Stage/SiroKuroStage.png");
+    D3DXVECTOR2 pos(0, 0);
+    _sprite->SetPosition(pos);
+    //@ x 1366* y 768
+    _sprite->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F size;
+    size.height = 768.f;
+    size.width = 1366.f;
+    _sprite->SetSize(size);
+    sprites.push_back(_sprite);
+
+    //アニメーション用
+    sprite_anime.reset(new Sprite);
+    sprite_anime->Create(L"Resource/Scene/Game/Stage/SiroKuroStage.png");
+    D3DXVECTOR2 animepos(0, 0);
+    sprite_anime->SetPosition(animepos);
+    //@ x 1366* y 768
+    sprite_anime->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F anime_size;
+    anime_size.height = 768.f;
+    anime_size.width = 1366.f;
+    sprite_anime->SetSize(anime_size);
+    sprite_animes.push_back(sprite_anime);
+
+    Sprite* sprite1 = new Sprite;
+    sprite1->Create(L"Resource/Scene/Game/Stage/SiroKurobg1.png");
+    bgSprite.push_back(sprite1);
+    Sprite* sprite2 = new Sprite;
+    sprite2->Create(L"Resource/Scene/Game/Stage/SiroKurobg2.png");
+    bgSprite.push_back(sprite2);
+    Sprite* sprite3 = new Sprite;
+    sprite3->Create(L"Resource/Scene/Game/Stage/SiroKurobg3.png");
+    bgSprite.push_back(sprite3);
+    Sprite* Special_BLUE = new Sprite;
+
+
+    for (auto& bg : bgSprite)
+        bg->SetPosition(0, 0);
+}
+void CreateYellowStage(Sprite* _sprite){
+    _sprite->Create(L"Resource/Scene/Game/Stage/YellowStage.png");
+    D3DXVECTOR2 pos(0, 0);
+    _sprite->SetPosition(pos);
+    //@ x 1366* y 768
+    _sprite->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F size;
+    size.height = 768.f;
+    size.width = 1366.f;
+    _sprite->SetSize(size);
+    sprites.push_back(_sprite);
+
+    //アニメーション用
+    sprite_anime.reset(new Sprite);
+    sprite_anime->Create(L"Resource/Scene/Game/Stage/YellowStage.png");
+    D3DXVECTOR2 animepos(0, 0);
+    sprite_anime->SetPosition(animepos);
+    //@ x 1366* y 768
+    sprite_anime->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F anime_size;
+    anime_size.height = 768.f;
+    anime_size.width = 1366.f;
+    sprite_anime->SetSize(anime_size);
+    sprite_animes.push_back(sprite_anime);
+
+    Sprite* sprite1 = new Sprite;
+    sprite1->Create(L"Resource/Scene/Game/Stage/Yellowbg1.png");
+    bgSprite.push_back(sprite1);
+    Sprite* sprite2 = new Sprite;
+    sprite2->Create(L"Resource/Scene/Game/Stage/Yellowbg2.png");
+    bgSprite.push_back(sprite2);
+    Sprite* sprite3 = new Sprite;
+    sprite3->Create(L"Resource/Scene/Game/Stage/Yellowbg3.png");
+    bgSprite.push_back(sprite3);
+    Sprite* Special_BLUE = new Sprite;
+
+
+    for (auto& bg : bgSprite)
+        bg->SetPosition(0, 0);
+}
+void CreateNoCollarStage(Sprite* _sprite){
+    _sprite->Create(L"Resource/Scene/Game/Stage/NoColorStage.png");
+    D3DXVECTOR2 pos(0, 0);
+    _sprite->SetPosition(pos);
+    //@ x 1366* y 768
+    _sprite->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F size;
+    size.height = 768.f;
+    size.width = 1366.f;
+    _sprite->SetSize(size);
+    sprites.push_back(_sprite);
+
+    //アニメーション用
+    sprite_anime.reset(new Sprite);
+    sprite_anime->Create(L"Resource/Scene/Game/Stage/NoColorStage.png");
+    D3DXVECTOR2 animepos(0, 0);
+    sprite_anime->SetPosition(animepos);
+    //@ x 1366* y 768
+    sprite_anime->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F anime_size;
+    anime_size.height = 768.f;
+    anime_size.width = 1366.f;
+    sprite_anime->SetSize(anime_size);
+    sprite_animes.push_back(sprite_anime);
+
+    Sprite* sprite1 = new Sprite;
+    sprite1->Create(L"Resource/Scene/Game/Stage/NoColorbg1.png");
+    bgSprite.push_back(sprite1);
+    Sprite* sprite2 = new Sprite;
+    sprite2->Create(L"Resource/Scene/Game/Stage/NoColorbg2.png");
+    bgSprite.push_back(sprite2);
+    Sprite* sprite3 = new Sprite;
+    sprite3->Create(L"Resource/Scene/Game/Stage/NoColorbg3.png");
+    bgSprite.push_back(sprite3);
+    Sprite* Special_BLUE = new Sprite;
+
+
+    for (auto& bg : bgSprite)
+        bg->SetPosition(0, 0);
 }
 
 void CreateEachStage(int stageLevel){
@@ -219,92 +431,34 @@ void CreateEachStage(int stageLevel){
     SKILL_size.width = 1366.f;
     Special_BLUE->SetSize(SKILL_size);
     Special_SKILLs.push_back(Special_BLUE);
-    int test;
+
+    Sprite* sprite = new Sprite;
     switch (StageID)
     {
         //赤（キツネ）
-        case 1:
-            test = 0;
+    case 0:
+        CreateRedStage(sprite);
         break;
-        //青（男）
-        case 2:
-            test = 0;
+/*        //青（男）
+    case 1:
+        CreateBlueStage(sprite);
         break;
         //白黒（女）
-        case 3:
-            test = 0;
+    case 2:
+        CreateSiroKuroStage(sprite);
         break;
         //黄色（女の子）
-        case 4:
-            test = 0;
-        break;
-        //無色
-        case 5:
-            test = 0;
-        break;
-    }
-    switch (StageID)
-    {
-/*    //赤（キツネ）
-    case 1:
-        break;
-    //青（男）
-    case 2:
-        break;
-    //白黒（女）
     case 3:
+        CreateYellowStage(sprite);
+        test = 0;
         break;
-    //黄色（女の子）
+*/        //無色
     case 4:
         break;
-    //無色
-    case 5:
-        break;
-*/    //やり方
+        //やり方
     default:
-        Sprite* sprite = new Sprite;
-
-        /*各種パラメータの設定*/
-        sprite->Create(L"Resource/Scene/Game/Stage/Stage.png");
-        D3DXVECTOR2 pos(0, 0);
-        sprite->SetPosition(pos);
-        //@ x 1366* y 768
-        sprite->SetTrimming(0, 0, 1366, 768);
-        D2D1_SIZE_F size;
-        size.height = 768.f;
-        size.width = 1366.f;
-        sprite->SetSize(size);
-        sprites.push_back(sprite);
-
-        //アニメーション用
-		sprite_anime.reset(new Sprite);
-        sprite_anime->Create(L"Resource/Scene/Game/Stage/Stage.png");
-        D3DXVECTOR2 animepos(0, 0);
-        sprite_anime->SetPosition(animepos);
-        //@ x 1366* y 768
-        sprite_anime->SetTrimming(0, 0, 1366, 768);
-        D2D1_SIZE_F anime_size;
-        anime_size.height = 768.f;
-        anime_size.width = 1366.f;
-        sprite_anime->SetSize(anime_size);
-        sprite_animes.push_back(sprite_anime);		
-
-        Sprite* sprite1 = new Sprite;
-        sprite1->Create(L"Resource/Scene/Game/Stage/bg01.png");
-        bgSprite.push_back(sprite1);
-        Sprite* sprite2 = new Sprite;
-        sprite2->Create(L"Resource/Scene/Game/Stage/bg02.png");
-        bgSprite.push_back(sprite2);
-        Sprite* sprite3 = new Sprite;
-        sprite3->Create(L"Resource/Scene/Game/Stage/bg03.png");
-        bgSprite.push_back(sprite3);
-        Sprite* Special_BLUE = new Sprite;
-        
-
-        for (auto& bg : bgSprite)
-            bg->SetPosition(0, 0);
+        CreateNoCollarStage(sprite);
         break;
-
     }
 }
 

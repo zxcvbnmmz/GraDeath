@@ -3,6 +3,8 @@
 
 #include "Scene.h"
 #include "D2D/Sprite/Sprite.h"
+#include "Sound/BGM/BGM.h"
+#include "Sound/SE/SE.h"
 
 class ResultScene : public Scene{
 public:
@@ -12,10 +14,13 @@ public:
 	void Draw();
 
 private:
-	Sprite sRank[4], sChara[4], sPlayer[4];
+	Sprite sRank[4], sChara[4], sPlayer[4], sBG;
 	D3DXVECTOR2 pRank[4], pMove[4], pPlayer, pChara;
 	float alpha[4];
 	int timer;
+
+	BGM bgm;
+	SE vWin;
 };
 
 

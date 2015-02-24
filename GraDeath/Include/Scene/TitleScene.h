@@ -16,18 +16,21 @@ public:
 	void Draw();
 
 private:
-	Sprite sprite, sStart, sCredit, sExit, sVector, sBG1, sBG2, sChara;
+	Sprite sprite, sStart, sCredit, sExit, sVector, sBG1, sBG2, sChara, sCaution;
 	D3DXVECTOR2 start_pos, credit_pos, exit_pos, vect_pos,
 		vect_move, start_move, credit_move, exit_move, chara_pos;
 	int tCount, select_i;
 
 	enum CURRENT_GAME_STATE{
+		CAUTION,
 		SELECT,
 		FADE_OUT
 	}currentState;
+	int ExecuteCaution();
 	int ExecuteSelect();
 	int ExecuteFadeOut();
 
+	void DrawCaution();
 	void DrawSelect();
 	void DrawFadeOut();
 

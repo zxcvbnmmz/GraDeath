@@ -276,7 +276,7 @@
       <Filter>Library\Graphics\D3D\RenderTarget</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\CharacterSelectScene\Cursor\SelectCursor.cpp">
-      <Filter>Game\Scene\CharacterSelect\Cursor</Filter>
+      <Filter>Game\Scene\StageSelect\Cursor</Filter>
     </ClCompile>
     <ClCompile Include="Source\System\D3DCore.cpp">
       <Filter>Library\Graphics\D3D</Filter>
@@ -330,7 +330,7 @@
       <Filter>Game\Scene\Capture</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scene\CharacterSelectScene\Icon\SelectIcon.cpp">
-      <Filter>Game\Scene\CharacterSelect\Icon</Filter>
+      <Filter>Game\Scene\StageSelect\Icon</Filter>
     </ClCompile>
     <ClCompile Include="Source\Object\Skill\BlueSkill.cpp">
       <Filter>Game\Object\Skill\Blue</Filter>
@@ -343,6 +343,9 @@
     </ClCompile>
     <ClCompile Include="Source\Manager\VoiceManager.cpp">
       <Filter>Game\Object\Voice</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\Factory\CreditFactroy.cpp">
+      <Filter>Game\Scene\Credit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -674,10 +677,10 @@
       <Filter>Library\Graphics\D3D\RenderTarget</Filter>
     </ClInclude>
     <ClInclude Include="Include\Scene\CharacterSelectScene\Cursor\SelectCursor.h">
-      <Filter>Game\Scene\CharacterSelect\Cursor</Filter>
+      <Filter>Game\Scene\StageSelect\Cursor</Filter>
     </ClInclude>
     <ClInclude Include="Include\Scene\CharacterSelectScene\Icon\SelectIcon.h">
-      <Filter>Game\Scene\CharacterSelect\Icon</Filter>
+      <Filter>Game\Scene\StageSelect\Icon</Filter>
     </ClInclude>
     <ClInclude Include="Include\Graphic\D3DGraphic.h">
       <Filter>Library\Graphics\D3D</Filter>
@@ -747,6 +750,9 @@
     </ClInclude>
     <ClInclude Include="Include\Manager\VoiceManager.h">
       <Filter>Game\Object\Voice</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Factory\CreditFactory.h">
+      <Filter>Game\Scene\Credit</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -947,6 +953,12 @@
     <Filter Include="Library\Graphics\D3D\RenderTarget">
       <UniqueIdentifier>{a878726d-5e8e-4bcf-96e2-11eaea7312f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Scene\StageSelect\Cursor">
+      <UniqueIdentifier>{26137d2f-57da-4362-b5e6-10931d6f674f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\StageSelect\Icon">
+      <UniqueIdentifier>{eb155f3c-7312-4ff5-be86-1d134c1b04f7}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Library\Graphics\D3D\ShaderResource">
       <UniqueIdentifier>{0976edad-5305-4e42-868d-8041e7781649}</UniqueIdentifier>
     </Filter>
@@ -976,12 +988,6 @@
     </Filter>
     <Filter Include="Game\Object\Voice\UI">
       <UniqueIdentifier>{0b05a70e-ce53-442b-8da0-89ea617ff74d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Scene\CharacterSelect\Cursor">
-      <UniqueIdentifier>{26137d2f-57da-4362-b5e6-10931d6f674f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Scene\CharacterSelect\Icon">
-      <UniqueIdentifier>{eb155f3c-7312-4ff5-be86-1d134c1b04f7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
