@@ -6,6 +6,7 @@
 #include "Scene/Factory/CaptureFactory.h"
 #include "Input/Gamepad.h"
 #include "Scene/Factory/TitleFactory.h"
+#include "Scene/Factory/CreditFactory.h"
 
 #include "Input\Keyboard.h"
 #include "Utility/Delegate.h"
@@ -146,6 +147,7 @@ int TitleScene::ExecuteSelect(){
 		){
 		switch (select_i){
 		case 0:
+		case 1:
 		case 2:
 			currentState = FADE_OUT;
 			break;
@@ -195,11 +197,18 @@ int TitleScene::ExecuteFadeOut(){
 				SceneFactory::Reserve(&cf);
 				break;
 			}
+			case 1:{
+				CreditFactory cf;
+				SceneFactory::Reserve(&cf);
+				break;
+			}
 			case 2:
 #ifdef _DEBUG
 				TitleFactory tf;
 				SceneFactory::Reserve(&tf);
+				break;
 #endif
+				PostQuitMessage(0);
 				break;
 			}
 			return END_PROCESS;
