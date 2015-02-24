@@ -37,14 +37,27 @@ GameScene::GameScene() :currentState(FADE_IN) {
 
 	stageTimer = 300;
 
-
-	//bgm = Sound::CreateBGM("Resource/BGM/StageBGM_Chara1.wav");
+	//switch (Stage::GetStageNum())
+	//{
+	//case 0:
+	//	bgm = Sound::CreateBGM("Resource/BGM/RedBGM.wav");
+	//	break;
+	//case 1:
+	//	bgm = Sound::CreateBGM("Resource/BGM/StageBGM_Chara1.wav");
+	//	break;
+	//case 2:
+	//	bgm = Sound::CreateBGM("Resource/BGM/ShirokuroBGM.wav");
+	//	break;
+	//default:
+	//	bgm = Sound::CreateBGM("Resource/BGM/NOCollarBGM.wav");
+	//	break;
+	//}
 }
 
 GameScene::~GameScene ()
 {
 	stageCall.Release();
-
+	bgm->~BGM();
 	PlayerManager::Release();
 	Stage::Release ();
 	GameSceneUI::Release ();
