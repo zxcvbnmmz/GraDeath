@@ -26,6 +26,7 @@ namespace Stage{
     void DettachFixture();
     void SetSkillEnd(bool isbool);
     void FadeDraw();
+    void SetStagenum(int _ID);
 };
 
 #endif	// end of Stage
