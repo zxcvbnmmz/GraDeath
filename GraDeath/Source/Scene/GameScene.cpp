@@ -123,7 +123,7 @@ int GameScene::ExecuteButtle(){
 
         Stage::SetSkillEnd(false);
         for (int i = 0; i < 4; i++)
-            PlayerManager::OnPlayerPos(i, 10, 0);
+            PlayerManager::OnPlayerPos(i, 2+(10*i), 0);
     }
 
 	// ここでエンドコールへ移行(コメントアウト)
