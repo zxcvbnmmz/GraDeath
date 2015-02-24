@@ -115,7 +115,7 @@ SCENE_STATUS ResultScene::Execute(){
 		Keyboard::CheckKey(KC_S) == INPUT_PUSH
 #endif
 		) {
-		timer = 90;
+		timer = 150;
 	}
 
 	for (int i = 1; i < 4; i++){
