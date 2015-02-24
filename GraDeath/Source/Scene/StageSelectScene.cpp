@@ -6,6 +6,8 @@
 #include "Scene/StageSelectScene/StageIcon.h"
 #include "Scene/Factory/CharacterSelectFactory.h"
 
+#include "Stage/Stage.h"
+
 StageSelectScene::StageSelectScene(){
 	stageIcon = std::shared_ptr< StageIcon > ( new StageIcon );
 	stageIcon->SetUp ();
@@ -21,6 +23,7 @@ SCENE_STATUS StageSelectScene::Execute(){
 		|| Keyboard::CheckKey ( KC_ENTER ) == INPUT_PUSH
 #endif
 		){
+		Stage::SetStagenum ( stageIcon->GetStageNum() );
 		GameFactory gf;
 		SceneFactory::Reserve(&gf);
 		return END_PROCESS;

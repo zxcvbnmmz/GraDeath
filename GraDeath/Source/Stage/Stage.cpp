@@ -34,6 +34,7 @@ namespace{
     bool isSuppressionScale = false;
     bool isSuppression = false;
     bool fadeflg = false;
+    int StageID = 0;
 
 }
 
@@ -50,10 +51,10 @@ namespace{
     b2Body* GetUnbreakbleStage();
 }
 
-bool Stage::Initialize(int stageID){
+bool Stage::Initialize(int _stageID){
 	CreateWorldEdge();
 
-	CreateEachStage(stageID);
+	CreateEachStage(_stageID);
     fade.reset(new Fade(L"Resource/Texture/white.png"));
     fade->SetAlpha(0);
 	return true;
@@ -147,6 +148,7 @@ void Stage::Release(){
 	bgSprite.clear();
     CriateStage();
     Special_SKILLs.clear();
+    Special_BLUE.reset();
 }
 
 void CreateWorldEdge(){
@@ -217,8 +219,31 @@ void CreateEachStage(int stageLevel){
     SKILL_size.width = 1366.f;
     Special_BLUE->SetSize(SKILL_size);
     Special_SKILLs.push_back(Special_BLUE);
-
-    switch (stageLevel)
+    int test;
+    switch (StageID)
+    {
+        //赤（キツネ）
+        case 1:
+            test = 0;
+        break;
+        //青（男）
+        case 2:
+            test = 0;
+        break;
+        //白黒（女）
+        case 3:
+            test = 0;
+        break;
+        //黄色（女の子）
+        case 4:
+            test = 0;
+        break;
+        //無色
+        case 5:
+            test = 0;
+        break;
+    }
+    switch (StageID)
     {
 /*    //赤（キツネ）
     case 1:
@@ -395,4 +420,8 @@ void Stage::FadeDraw(){
         Suppression_fade->Draw();
         
     }
+}
+
+void Stage::SetStagenum(int _ID){
+    StageID = _ID;
 }

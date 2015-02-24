@@ -67,7 +67,7 @@ void PlayerManager::Update(){
 			Collision::Collide(&players[i], &players[k]);
 			if ( Collision::CollideSkill ( &players[ k ], SkillManager::Getb2Body ( i ) ) )
 			{
-				//controllers[ k ]->SetDamage ();
+				controllers[ k ]->SetDamage ();
 			}
 		}
 		Collision::CollideFloor(&players[i], Stage::GetBreakbleStage(), controllers[i]);
