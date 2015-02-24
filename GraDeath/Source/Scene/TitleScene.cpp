@@ -35,6 +35,7 @@ TitleScene::TitleScene(){
 	sVector.Create(L"Resource/Texture/Vector.png");
 	sBG1.Create(L"Resource/Texture/TitleBG1.png");
 	sBG2.Create(L"Resource/Texture/TitleBG2.png");
+	sCaution.Create(L"Resource/Texture/Caution.png");
 	start_pos = D3DXVECTOR2(700, 300);
 	credit_pos = D3DXVECTOR2(800, 400);
 	exit_pos = D3DXVECTOR2(800, 500);
@@ -46,12 +47,16 @@ TitleScene::TitleScene(){
 	tCount = 0;
 	select_i = 0;
 
+	AddFunction(this, &TitleScene::ExecuteCaution);
 	AddFunction(this, &TitleScene::ExecuteSelect);
 	AddFunction(this, &TitleScene::ExecuteFadeOut);
+	AddFunction(this, &TitleScene::DrawCaution);
 	AddFunction(this, &TitleScene::DrawSelect);
 	AddFunction(this, &TitleScene::DrawFadeOut);
-	currentState = SELECT;
-	fade.SetAlpha(0);
+	currentState = CAUTION;
+	//fade.SetAlpha(0);
+	//timer.Set(60);
+	fade.SetAlpha(1);
 	timer.Set(60);
 }
 
@@ -66,6 +71,12 @@ SCENE_STATUS TitleScene::Execute(){
 
 void TitleScene::Draw(){
 	(*draws[currentState])();
+}
+
+void TitleScene::DrawCaution(){
+	sCaution.SetPosition(0, 0);
+	sCaution.Draw();
+	fade.Draw();
 }
 
 void TitleScene::DrawSelect(){
@@ -137,6 +148,42 @@ void TitleScene::Move() {
 		exit_pos.x = 700;
 		break;
 	}
+}
+
+int TitleScene::ExecuteCaution(){
+	static int step = 0;
+	if (GamePad::getGamePadState(PAD_1, BUTTON_A, 0) == INPUT_PUSH
+#ifdef _DEBUG
+		|| Keyboard::CheckKey(KC_ENTER) == INPUT_PUSH
+#endif
+		){
+		step = 1;
+	}
+	switch (step)
+	{
+	case 0:
+		if (fade.AddAlpha(-1.f / 120.f) == FADE_CLEAR){
+			if (timer.Step() == FrameTimer::TIME_OUT) {
+				step++;
+				fade.SetAlpha(0);
+				timer.Set(45);
+			}
+		}
+		break;
+	case 1:
+		if (fade.AddAlpha(1.f / 120.f) == FADE_UNCLEAR){
+			if (timer.Step() == FrameTimer::TIME_OUT) {
+				step++;
+			}
+		}
+		break;
+	case 2:
+		currentState = SELECT;
+		fade.SetAlpha(0);
+		timer.Set(60);
+		break;
+	}
+	return STILL_PROCESSING;
 }
 
 int TitleScene::ExecuteSelect(){
