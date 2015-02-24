@@ -8,6 +8,7 @@ using namespace std;
 
 
 class b2Body;
+class Sprite;
 
 namespace Stage{
     bool Initialize(int stageID);
@@ -27,6 +28,10 @@ namespace Stage{
     void SetSkillEnd(bool isbool);
     void FadeDraw();
     void SetStagenum(int _ID);
+    void CreateRedStage(Sprite* _sprite);
+    void CreateBlueStage(Sprite* _sprite);
+    void CreateSiroKuroStage(Sprite* _sprite);
+    void CreateYellowStage(Sprite* _sprite);
+    void CreateNoCollarStage(Sprite* _sprite);
 };
-
 #endif	// end of Stage
