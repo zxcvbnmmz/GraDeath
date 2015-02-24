@@ -481,8 +481,8 @@ void CreateEachStage(int stageLevel){
     Special_SKILLs.push_back(Special_SIROKURO);
 
     //スペシャルスキルのBGM系
-    BlueSkillSE = Sound::CreateSE("Resource/Voice/chara1_gd.wav");
-    RedSkillSE = Sound::CreateSE("Resource/Voice/chara2_gd.wav");
+    RedSkillSE = Sound::CreateSE("Resource/Voice/chara1_gd.wav");
+    BlueSkillSE = Sound::CreateSE("Resource/Voice/chara2_gd.wav");
     YellowSkillSE = Sound::CreateSE("Resource/Voice/chara3_gd.wav");
     SiroKuroSkillSE = Sound::CreateSE("Resource/Voice/chara4_gd.wav");
 
