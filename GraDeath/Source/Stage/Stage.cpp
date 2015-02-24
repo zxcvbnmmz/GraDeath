@@ -181,11 +181,23 @@ void CreateWorldEdge(){
 	// ‰E•Ó
 	screenEdgeShape.Set(upperRightCorner, lowerRightCorner);
 	screenEdgeBody->CreateFixture(&screenEdgeShape, density)->SetFilterData(filter);
-
-
+/*
+    b2Vec2 StageGetPos(){
+        return b2Vec2(0, 19);
+    }
+    b2Vec2 StageGetSize(){
+        return b2Vec2(42, 19);
+    }
+*/
     //Stage‚Ì“–‚½‚è”»’è
     screenEdgeShape.Set(StageGetPos(), StageGetSize());
     b2Fixture* fixture = breakableStage->CreateFixture(&screenEdgeShape, density);
+    screenEdgeShape.Set(StageGetPos(), lowerLeftCorner);
+    fixture = breakableStage->CreateFixture(&screenEdgeShape, density);
+    screenEdgeShape.Set(lowerLeftCorner, lowerRightCorner);
+    fixture = breakableStage->CreateFixture(&screenEdgeShape, density);
+    screenEdgeShape.Set(StageGetPos(), lowerRightCorner);
+    fixture = breakableStage->CreateFixture(&screenEdgeShape, density);
     fixture->SetFilterData(filter);
 }
 
