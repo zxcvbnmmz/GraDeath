@@ -21,6 +21,10 @@ namespace{
 	std::shared_ptr<Sprite> sprite_anime;
     std::vector<std::shared_ptr<Sprite>> Special_SKILLs;
     std::shared_ptr<Sprite> Special_BLUE;
+    std::shared_ptr<Sprite> Special_RED;
+    std::shared_ptr<Sprite> Special_YELLOW;
+    std::shared_ptr<Sprite> Special_SIROKURO;
+
     float HP = 20.f + rand() % 10;
     bool Stageflg = false;
     int StageCoolTime = 0;
@@ -94,10 +98,11 @@ void Stage::Draw(){
         }
         */
         
-        D3DXVECTOR2 pos = Special_BLUE->GetPosition();
+        D3DXVECTOR2 pos = GetSpecialSkillpos(Charatype);
+        
         if (pos.y != 0)
-            Special_BLUE->SetPositionY(pos.y-3);
-        Special_BLUE->Draw();
+            SetSpecialSkill(Charatype, pos.y - 3);
+        StageDraw(Charatype);
     }
     if (StageCoolTime > 10){
         StageCoolTime = 0;
@@ -247,7 +252,6 @@ void CreateRedStage(Sprite* _sprite){
     Sprite* sprite3 = new Sprite;
     sprite3->Create(L"Resource/Scene/Game/Stage/Redbg3.png");
     bgSprite.push_back(sprite3);
-    Sprite* Special_BLUE = new Sprite;
 
 
     for (auto& bg : bgSprite)
@@ -287,7 +291,6 @@ void CreateBlueStage(Sprite* _sprite){
     Sprite* sprite3 = new Sprite;
     sprite3->Create(L"Resource/Scene/Game/Stage/Bluebg3.png");
     bgSprite.push_back(sprite3);
-    Sprite* Special_BLUE = new Sprite;
 
 
     for (auto& bg : bgSprite)
@@ -327,7 +330,6 @@ void CreateSiroKuroStage(Sprite* _sprite){
     Sprite* sprite3 = new Sprite;
     sprite3->Create(L"Resource/Scene/Game/Stage/SiroKurobg3.png");
     bgSprite.push_back(sprite3);
-    Sprite* Special_BLUE = new Sprite;
 
 
     for (auto& bg : bgSprite)
@@ -367,7 +369,6 @@ void CreateYellowStage(Sprite* _sprite){
     Sprite* sprite3 = new Sprite;
     sprite3->Create(L"Resource/Scene/Game/Stage/Yellowbg3.png");
     bgSprite.push_back(sprite3);
-    Sprite* Special_BLUE = new Sprite;
 
 
     for (auto& bg : bgSprite)
@@ -407,7 +408,6 @@ void CreateNoCollarStage(Sprite* _sprite){
     Sprite* sprite3 = new Sprite;
     sprite3->Create(L"Resource/Scene/Game/Stage/NoColorbg3.png");
     bgSprite.push_back(sprite3);
-    Sprite* Special_BLUE = new Sprite;
 
 
     for (auto& bg : bgSprite)
@@ -434,21 +434,57 @@ void CreateEachStage(int stageLevel){
     */
     Special_BLUE.reset(new Sprite);
     Special_BLUE->Create(L"Resource/Scene/Game/Stage/blue_SSKILL.png");
-    D3DXVECTOR2 SKILLpos(0, 400);
-    Special_BLUE->SetPosition(SKILLpos);
+    D3DXVECTOR2 BLUESKILLpos(0, 400);
+    Special_BLUE->SetPosition(BLUESKILLpos);
     //@ x 1366* y 768
     Special_BLUE->SetTrimming(0, 0, 1366, 768);
-    D2D1_SIZE_F SKILL_size;
-    SKILL_size.height = 768.f;
-    SKILL_size.width = 1366.f;
-    Special_BLUE->SetSize(SKILL_size);
+    D2D1_SIZE_F BLUESKILL_size;
+    BLUESKILL_size.height = 768.f;
+    BLUESKILL_size.width = 1366.f;
+    Special_BLUE->SetSize(BLUESKILL_size);
     Special_SKILLs.push_back(Special_BLUE);
 
+    Special_RED.reset(new Sprite);
+    Special_RED->Create(L"Resource/Scene/Game/Stage/red_SSKILL.png");
+    D3DXVECTOR2 REDSKILLpos(0, 400);
+    Special_RED->SetPosition(REDSKILLpos);
+    //@ x 1366* y 768
+    Special_RED->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F REDSKILL_size;
+    REDSKILL_size.height = 768.f;
+    REDSKILL_size.width = 1366.f;
+    Special_RED->SetSize(REDSKILL_size);
+    Special_SKILLs.push_back(Special_RED);
+
+    Special_YELLOW.reset(new Sprite);
+    Special_YELLOW->Create(L"Resource/Scene/Game/Stage/yellow_SSKILL.png");
+    D3DXVECTOR2 YELLOWSKILLpos(0, 400);
+    Special_YELLOW->SetPosition(YELLOWSKILLpos);
+    //@ x 1366* y 768
+    Special_YELLOW->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F YELLOWSKILL_size;
+    YELLOWSKILL_size.height = 768.f;
+    YELLOWSKILL_size.width = 1366.f;
+    Special_YELLOW->SetSize(YELLOWSKILL_size);
+    Special_SKILLs.push_back(Special_YELLOW);
+
+    Special_SIROKURO.reset(new Sprite);
+    Special_SIROKURO->Create(L"Resource/Scene/Game/Stage/sirokuro_SSKILL.png");
+    D3DXVECTOR2 SIROKUROSKILLpos(0, 400);
+    Special_SIROKURO->SetPosition(SIROKUROSKILLpos);
+    //@ x 1366* y 768
+    Special_SIROKURO->SetTrimming(0, 0, 1366, 768);
+    D2D1_SIZE_F SIROKUROSKILL_size;
+    SIROKUROSKILL_size.height = 768.f;
+    SIROKUROSKILL_size.width = 1366.f;
+    Special_SIROKURO->SetSize(SIROKUROSKILL_size);
+    Special_SKILLs.push_back(Special_SIROKURO);
+
     //スペシャルスキルのBGM系
-//    RedSkillSE = Sound::CreateSE("Resource/Scene/Game/StagebreakSE/RedSpecialSkillSE.wav");
-//    BlueSkillSE = Sound::CreateSE("Resource/Scene/Game/StagebreakSE/BuleSpecialSkillSE.wav");
-//    YellowSkillSE = Sound::CreateSE("Resource/Scene/Game/StagebreakSE/YellowSpecialSkillSE.wav");
-//    SiroKuroSkillSE = Sound::CreateSE("Resource/Scene/Game/StagebreakSE/SiroKuroSpecialSkillSE.wav");
+    BlueSkillSE = Sound::CreateSE("Resource/Voice/chara1_gd.wav");
+    RedSkillSE = Sound::CreateSE("Resource/Voice/chara2_gd.wav");
+    YellowSkillSE = Sound::CreateSE("Resource/Voice/chara3_gd.wav");
+    SiroKuroSkillSE = Sound::CreateSE("Resource/Voice/chara4_gd.wav");
 
     Sprite* sprite = new Sprite;
     switch (StageID)
@@ -511,8 +547,23 @@ void Stage::CriateStage(){
     size.width = 1366.f;
     sprite_anime->SetSize(size);
     HP = 20.f + rand() % 10;
-    Special_BLUE->SetPosition(D3DXVECTOR2(0,400));
+    switch (Charatype)
+    {
+    case 0://赤
+        Special_RED->SetPosition(D3DXVECTOR2(0, 400));
+        break;
+    case 1://あお
+        Special_BLUE->SetPosition(D3DXVECTOR2(0, 400));
+        break;
+    case 2://き
+        Special_YELLOW->SetPosition(D3DXVECTOR2(0, 400));
+        break;
+    case 3://しろくろ
+        Special_SIROKURO->SetPosition(D3DXVECTOR2(0, 400));
+        break;
+    }
     CreateWorldEdge();
+
 }
 
 bool Stage::GetStageStatus(){
@@ -578,8 +629,8 @@ void Stage::FadeDraw(){
             if(isSuppressionScale == false)
                 SuppressionScale -= 0.08;
             if (SuppressionScale <= 0.8){
-//                if (isPlaySE(Charatype))
-//                    Stage::PlaySpecialSkillSE(Charatype);
+                if (isPlaySE(Charatype))
+                    Stage::PlaySpecialSkillSE(Charatype);
                 isSuppressionScale = true;
             }
 
@@ -653,6 +704,59 @@ bool Stage::isPlaySE(int _playertype){
             return true;
         else
             return false;
+        break;
+    }
+}
+
+D3DXVECTOR2 Stage::GetSpecialSkillpos(int _playertype){
+    switch (_playertype)
+    {
+    case 0:
+        return Special_RED->GetPosition();
+        break;
+    case 1:
+        return Special_BLUE->GetPosition();
+        break;
+    case 2:
+        return Special_YELLOW->GetPosition();
+        break;
+    case 3:
+        return Special_SIROKURO->GetPosition();
+        break;
+    }
+}
+void Stage::SetSpecialSkill(int _playertype, int pos){
+    switch (_playertype)
+    {
+    case 0:
+        Special_RED->SetPositionY(pos);
+        break;
+    case 1:
+        Special_BLUE->SetPositionY(pos);
+        break;
+    case 2:
+        Special_YELLOW->SetPositionY(pos);
+        break;
+    case 3:
+        Special_SIROKURO->SetPositionY(pos);
+        break;
+    }
+}
+
+void Stage::StageDraw(int _playernum){
+    switch (_playernum)
+    {
+    case 0:
+        Special_RED->Draw();
+        break;
+    case 1:
+        Special_BLUE->Draw();
+        break;
+    case 2:
+        Special_YELLOW->Draw();
+        break;
+    case 3:
+        Special_SIROKURO->Draw();
         break;
     }
 }
