@@ -86,24 +86,27 @@ void PlayerController::Idle(){
 		|| ( Keyboard::CheckKey ( KC_A ) == INPUT_PUSH && ( padID == 0 ) )
 #endif
 		&& SkillManager::GetSkillUse ( padID, (SKILL_ID)0 ) ){
-		ChangeAction(ACTION_SKILL, false);
-		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ),animManager.GetCurrentDirecton());
+		bool temp = SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), animManager.GetCurrentDirecton () );
+		if ( temp )
+			ChangeAction(ACTION_SKILL, false);	
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_Y ) == INPUT_PUSH
 #ifdef _DEBUG
 		|| ( Keyboard::CheckKey ( KC_S ) == INPUT_PUSH && ( padID == 0 ) )
 #endif
 		&& SkillManager::GetSkillUse ( padID, ( SKILL_ID )1 ) ){
-		ChangeAction ( ACTION_SKILL_2, false );
-		SkillManager::SkillOn(padID, SKILL_ID::SKILL_SECOND, D3DXVECTOR2(this->player->GetPosition().x, this->player->GetPosition().y), animManager.GetCurrentDirecton());
+		bool temp = SkillManager::SkillOn ( padID, SKILL_ID::SKILL_SECOND, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), animManager.GetCurrentDirecton () );
+		if ( temp )
+	 		ChangeAction ( ACTION_SKILL_2, false );
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_X ) == INPUT_PUSH
 #ifdef _DEBUG
 		|| ( Keyboard::CheckKey ( KC_D ) == INPUT_PUSH && ( padID == 0 ) )
 #endif
 		&& SkillManager::GetSkillUse ( padID, ( SKILL_ID )2 ) ){
-		ChangeAction ( ACTION_SKILL_3, false );
-		SkillManager::SkillOn ( padID, SKILL_ID::SKILL_THIRD, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), animManager.GetCurrentDirecton () );
+		bool temp = SkillManager::SkillOn ( padID, SKILL_ID::SKILL_THIRD, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), animManager.GetCurrentDirecton () );
+		if ( temp )
+			ChangeAction ( ACTION_SKILL_3, false );		
 	}
 	else if (GamePad::getGamePadState((PAD_NUM)padID, BUTTON_A) == INPUT_PUSH
 #ifdef _DEBUG

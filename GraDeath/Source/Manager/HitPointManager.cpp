@@ -1,6 +1,7 @@
 #include "Object/Player.h"
 #include "Manager/HitPointManager.h"
 #include "Object/HitPoint.h"
+#include "Manager/SkillManager.h"
 
 namespace HitPointManager
 {
@@ -37,6 +38,7 @@ namespace HitPointManager
 		for (int i = 0; i < 4; ++i){
 			if (hitPoint[i].IsCompared(_player)){
 				hitPoint[i].IsDamage(_hit);
+				SkillManager::SetSPGage ( i, _hit * 0.05f );
 				if (hitPoint[i].IsDead() && checkFlg[i] )
 				{
 					checkFlg[i] = false;
@@ -74,6 +76,11 @@ namespace HitPointManager
 			}			
 		}
 		return tempNum;
+	}
+
+	bool IsDead ( int _num )
+	{
+		return hitPoint[ _num ].IsDead ();
 	}
 
 	// ˆêl‚¾‚¯‚É‚È‚Á‚½
