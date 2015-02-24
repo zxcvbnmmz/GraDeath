@@ -57,7 +57,7 @@ GameScene::GameScene() :currentState(FADE_IN) {
 GameScene::~GameScene ()
 {
 	stageCall.Release();
-	bgm->~BGM();
+	//bgm->~BGM();
 	PlayerManager::Release();
 	Stage::Release ();
 	GameSceneUI::Release ();
