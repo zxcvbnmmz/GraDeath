@@ -219,7 +219,30 @@ void CreateEachStage(int stageLevel){
     SKILL_size.width = 1366.f;
     Special_BLUE->SetSize(SKILL_size);
     Special_SKILLs.push_back(Special_BLUE);
-
+    int test;
+    switch (StageID)
+    {
+        //赤（キツネ）
+        case 1:
+            test = 0;
+        break;
+        //青（男）
+        case 2:
+            test = 0;
+        break;
+        //白黒（女）
+        case 3:
+            test = 0;
+        break;
+        //黄色（女の子）
+        case 4:
+            test = 0;
+        break;
+        //無色
+        case 5:
+            test = 0;
+        break;
+    }
     switch (StageID)
     {
 /*    //赤（キツネ）
