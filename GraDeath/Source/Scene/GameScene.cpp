@@ -115,6 +115,7 @@ int GameScene::ExecuteButtle(){
     else{
         World::SetGravity(0, 25);
         Stage::DettachFixture();
+//        Stage::SetCharaType();
 //        PlayerManager::AllPlayerMove(0,10);
         
 //        PlayerManager::OnPlayerPos(Stage::StageBrakePlayerNum(),300,300);

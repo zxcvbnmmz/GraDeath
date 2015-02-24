@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "Input\Keyboard.h"
 #include "Direction/Fade.h"
+#include "Sound/SE/SE.h"
 
 namespace{
 	const static float PTM_RATIO = 32.0f;
@@ -35,6 +36,13 @@ namespace{
     bool isSuppression = false;
     bool fadeflg = false;
     int StageID = 0;
+    int Charatype = 0;
+    SE RedSkillSE;
+    SE BlueSkillSE;
+    SE YellowSkillSE;
+    SE SiroKuroSkillSE;
+    SE NoCollarSkillSE;
+
 }
 
 void CreateWorldEdge();
@@ -148,6 +156,10 @@ void Stage::Release(){
     CriateStage();
     Special_SKILLs.clear();
     Special_BLUE.reset();
+    RedSkillSE->Release();
+    BlueSkillSE->Release();
+    YellowSkillSE->Release();
+    SiroKuroSkillSE->Release();
 }
 
 void CreateWorldEdge(){
@@ -432,6 +444,12 @@ void CreateEachStage(int stageLevel){
     Special_BLUE->SetSize(SKILL_size);
     Special_SKILLs.push_back(Special_BLUE);
 
+    //スペシャルスキルのBGM系
+//    RedSkillSE = Sound::CreateSE("Resource/Scene/Game/StagebreakSE/RedSpecialSkillSE.wav");
+//    BlueSkillSE = Sound::CreateSE("Resource/Scene/Game/StagebreakSE/BuleSpecialSkillSE.wav");
+//    YellowSkillSE = Sound::CreateSE("Resource/Scene/Game/StagebreakSE/YellowSpecialSkillSE.wav");
+//    SiroKuroSkillSE = Sound::CreateSE("Resource/Scene/Game/StagebreakSE/SiroKuroSpecialSkillSE.wav");
+
     Sprite* sprite = new Sprite;
     switch (StageID)
     {
@@ -559,8 +577,11 @@ void Stage::FadeDraw(){
         if (Suppressioncount >= 0.8f){
             if(isSuppressionScale == false)
                 SuppressionScale -= 0.08;
-            if (SuppressionScale <= 0.8)
+            if (SuppressionScale <= 0.8){
+//                if (isPlaySE(Charatype))
+//                    Stage::PlaySpecialSkillSE(Charatype);
                 isSuppressionScale = true;
+            }
 
             Suppression_fade->SetScale(SuppressionScale);
         }
@@ -578,4 +599,60 @@ void Stage::FadeDraw(){
 
 void Stage::SetStagenum(int _ID){
     StageID = _ID;
+}
+
+void Stage::SetCharaType(int _type){
+    Charatype = _type;
+}
+
+int Stage::GetStageNum(){
+    return StageID;
+}
+
+void Stage::PlaySpecialSkillSE(int _playertype){
+    switch (_playertype)
+    {
+    case 0:
+        RedSkillSE->Play();
+        break;
+    case 1:
+        BlueSkillSE->Play();
+        break;
+    case 2:
+        YellowSkillSE->Play();
+        break;
+    case 3:
+        SiroKuroSkillSE->Play();
+        break;
+    }
+}
+
+bool Stage::isPlaySE(int _playertype){
+    switch (_playertype)
+    {
+    case 0:
+        if (RedSkillSE->GetPlayingTime() > 0)
+            return true;
+        else
+            return false;
+        break;
+    case 1:
+        if (BlueSkillSE->GetPlayingTime() > 0)
+            return true;
+        else
+            return false;
+        break;
+    case 2:
+        if (YellowSkillSE->GetPlayingTime() > 0)
+            return true;
+        else
+            return false;
+        break;
+    case 3:
+        if (SiroKuroSkillSE->GetPlayingTime() > 0)
+            return true;
+        else
+            return false;
+        break;
+    }
 }

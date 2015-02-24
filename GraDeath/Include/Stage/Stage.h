@@ -28,10 +28,14 @@ namespace Stage{
     void SetSkillEnd(bool isbool);
     void FadeDraw();
     void SetStagenum(int _ID);
+    int GetStageNum();
     void CreateRedStage(Sprite* _sprite);
     void CreateBlueStage(Sprite* _sprite);
     void CreateSiroKuroStage(Sprite* _sprite);
     void CreateYellowStage(Sprite* _sprite);
     void CreateNoCollarStage(Sprite* _sprite);
+    void SetCharaType(int _type);
+    void PlaySpecialSkillSE(int _playertype);
+    bool isPlaySE(int _playertype);
 };
 #endif	// end of Stage
