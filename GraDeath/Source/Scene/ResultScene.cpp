@@ -20,6 +20,7 @@ ResultScene::ResultScene(){
 	//sChara[1].Create(L"Resource/Scene/Result/Chara2.png");
 	//sChara[2].Create(L"Resource/Scene/Result/Chara3.png");
 	//sChara[3].Create(L"Resource/Scene/Result/Chara4.png");
+	sBG.Create(L"Resource/Scene/Result/Result_bg.png");
 	for (int i = 0; i < 4; i++) {
 		int rank, chara;
 		chara = HitPointManager::GetPlayerRanking(i, rank);
@@ -28,26 +29,34 @@ ResultScene::ResultScene(){
 		case CharacterInfo::PLAYER_BLUE:
 			if (rank != 1)
 				sChara[rank - 1].Create(L"Resource/Scene/Result/Chara1.png");
-			else
+			else{
 				sChara[rank - 1].Create(L"Resource/Scene/Result/1st_B.png");
+				vWin = Sound::CreateSE("Resource/Voice/chara2_win.wav");
+			}
 			break;
 		case CharacterInfo::PLAYER_RED:
 			if (rank != 1)
 				sChara[rank - 1].Create(L"Resource/Scene/Result/Chara2.png");
-			else
+			else{
 				sChara[rank - 1].Create(L"Resource/Scene/Result/1st_R.png");
+				vWin = Sound::CreateSE("Resource/Voice/chara1_win.wav");
+			}
 			break;
 		case CharacterInfo::PLAYER_YELLOW:
 			if (rank != 1)
 				sChara[rank - 1].Create(L"Resource/Scene/Result/Chara3.png");
-			else
+			else{
 				sChara[rank - 1].Create(L"Resource/Scene/Result/1st_Y.png");
+				vWin = Sound::CreateSE("Resource/Voice/chara3_win.wav");
+			}
 			break;
 		case CharacterInfo::PLAYER_GRAY:
 			if (rank != 1)
 				sChara[rank - 1].Create(L"Resource/Scene/Result/Chara4.png");
-			else
+			else{
 				sChara[rank - 1].Create(L"Resource/Scene/Result/1st_WB.png");
+				vWin = Sound::CreateSE("Resource/Voice/chara4_win.wav");
+			}
 			break;
 		}
 		switch (i)
@@ -84,6 +93,7 @@ ResultScene::ResultScene(){
 	pChara = D3DXVECTOR2(0, 210);
 	pPlayer = D3DXVECTOR2(0, 280);
 	timer = 0;
+	bgm = Sound::CreateBGM("Resource/BGM/GDtitle.wav");
 }
 
 SCENE_STATUS ResultScene::Execute(){
@@ -119,13 +129,17 @@ SCENE_STATUS ResultScene::Execute(){
 		pMove[0].y *= .99f;
 		alpha[0] *= .99f;
 	}
+	if (timer > 150)
+		vWin->Play();
 	timer++;
 	return STILL_PROCESSING;
 }
 
 void ResultScene::Draw(){
+	sBG.SetPosition(0, 0);
+	sBG.Draw();
 	for (int i = 0; i < 4; i++){
-		sPlayer[i].SetPosition(pRank[i] + pMove[i]);
+		sPlayer[i].SetPosition(pRank[i] + pMove[i] + D3DXVECTOR2((i == 0) * 500, (i == 0) * 500));
 		sPlayer[i].SetAlpha(1.f - alpha[i]);
 		sChara[i].SetPosition(pRank[i] + pMove[i]);
 		sChara[i].SetAlpha(1.f - alpha[i]);
