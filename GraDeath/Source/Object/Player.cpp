@@ -13,6 +13,7 @@
 
 Player::Player(){
 	sprite = shared_ptr<Sprite> (new Sprite);
+	IsCollidable = true;
 }
 
 Player::~Player(){
@@ -36,6 +37,7 @@ bool Player::Init(const char* fileName, const b2Vec2& bodyPos, float scale){
 	
 	body = World::CreateBody(&def);
 	body->SetUserData(this);
+	IsCollidable = true;
 
 	return true;
 }
@@ -64,6 +66,10 @@ void DettachFixture(b2Body* body);
 void Player::AttachFixture(vector<shared_ptr<CollisionShape>>& shapes){
 	// 新しいフィクスチャーを作る前に一旦前のを消しておく
 	DettachFixture(body);
+
+	if (!IsCollidable){
+		return;
+	}
 
 	// 各セルに配置されたCollisionShapeを新しいフィクスチャーとして全てbodyに追加する
 	for (auto shape : shapes){

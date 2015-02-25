@@ -27,7 +27,6 @@ namespace HitPointManager
 		hitPoint[ _num ].IsDamage ( _hit );
 		if ( hitPoint[ _num ].IsDead () )
 		{
-			hitPoint[_num].
 			hitPoint[ _num ].SetRank ( rank );
 			rank--;
 		}
