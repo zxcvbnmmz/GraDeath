@@ -1001,5 +1001,8 @@
     <Filter Include="Game\Object\BGM">
       <UniqueIdentifier>{aba66afd-b207-4f19-a2ff-87ca3211225c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Object\NewFilter1">
+      <UniqueIdentifier>{aa65cb3c-65c2-4fa2-8c9b-1a051267da11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
