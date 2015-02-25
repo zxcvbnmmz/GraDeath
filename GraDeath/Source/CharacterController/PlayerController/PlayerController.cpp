@@ -61,8 +61,8 @@ void PlayerController::Draw(){
 	player->sprite->SetReverseFlag(dir == RIGHT ? FLIP_NONE : FLIP_HORIZONTAL);
 	player->sprite->Draw ( DRAW_RECT );
 
-	if(padID == 0)
-		t.DrawString(0, 0, L"LinearVelocity  x = %f, y = %f", player->body->GetLinearVelocity().x, player->body->GetLinearVelocity().y);
+	//if(padID == 0)
+	//	t.DrawString(0, 0, L"LinearVelocity  x = %f, y = %f", player->body->GetLinearVelocity().x, player->body->GetLinearVelocity().y);
 }
 
 void PlayerController::Release ()
