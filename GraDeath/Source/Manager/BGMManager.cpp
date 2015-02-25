@@ -1,6 +1,8 @@
 #include "Manager/BGMManager.h"
 #include "Sound/Sound.h"
 
+BGMManager* BGMManager::inst = nullptr;
+
 BGMManager::~BGMManager(){
 }
 
