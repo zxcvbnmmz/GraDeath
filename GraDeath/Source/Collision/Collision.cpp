@@ -152,6 +152,8 @@ bool Collision::CollideSkill(Player* player, b2Body* skill){
 			const b2Filter& filterB = fixtureB->GetFilterData();
 			bool collide = (filterA.maskBits & filterB.categoryBits) != 0 && (filterA.categoryBits & filterB.maskBits) != 0;
 
+			collide = true;
+
 			if (collide){
 				// b2TestOverlapはシェイプとシェイプが衝突しているか判定する関数
 				bool touching = b2TestOverlap(shapeA, 0, shapeB, 0, xfA, xfB);
