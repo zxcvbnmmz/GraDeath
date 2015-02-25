@@ -39,6 +39,8 @@ public:
 		return playerType;
 	}
 
+	bool IsCollidable;
+
 private:
 	shared_ptr<Sprite> sprite;
 	CharacterInfo::PLAYER_TYPE playerType;

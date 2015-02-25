@@ -12,7 +12,7 @@ void HitPoint::IsDamage ( float _hit )
 	if ( ( hp -= _hit ) <= .0f )
 	{
 		hp = 0.f;
-		//player->
+		player->IsCollidable = false;
 	}
 }
 
