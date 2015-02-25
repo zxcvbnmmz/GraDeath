@@ -27,9 +27,6 @@ public:
 	void Play(char* fileName); 
 	void Stop(char* fileName);
 
-
-
-
 private:
 	static BGMManager* inst;
 	std::map<char*, BGM> BGMs;
