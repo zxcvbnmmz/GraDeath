@@ -6,6 +6,8 @@
 #include "Scene/Factory/CharacterSelectFactory.h"
 #include "Input/Gamepad.h"
 #include "Input\Keyboard.h"
+#include "Manager/BGMManager.h"
+
 ResultScene::ResultScene(){
 	
 	//sRank[0].Create(L"Resource/Scene/Result/1st.png");
@@ -20,6 +22,8 @@ ResultScene::ResultScene(){
 	//sChara[1].Create(L"Resource/Scene/Result/Chara2.png");
 	//sChara[2].Create(L"Resource/Scene/Result/Chara3.png");
 	//sChara[3].Create(L"Resource/Scene/Result/Chara4.png");
+	BGMManager::GetInstance ()->Play ( "Resource/BGM/GDtitle.wav" );
+
 	sBG.Create(L"Resource/Scene/Result/Result_bg.png");
 	for (int i = 0; i < 4; i++) {
 		int rank, chara;

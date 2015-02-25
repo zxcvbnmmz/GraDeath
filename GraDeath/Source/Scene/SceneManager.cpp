@@ -14,6 +14,8 @@
 
 #include <time.h>
 
+#include "Manager/BGMManager.h"
+
 #ifdef _DEBUG
 #include "D2D/Brush/SolidBrush.h"
 #endif
@@ -50,6 +52,8 @@ bool SceneManager::Initialize(){
 	GamePad::setStickDeadZone(true);
 	GamePad::setThreshold(0.2f);
 
+	BGMManager::GetInstance ()->Load ( "Resource/BGM/GDtitle.wav" );
+
 #ifdef _DEBUG
 	t.format = D2D::TextFormat::Create(L"MS–¾’©",30);
 	t.brush = SolidBrush::Create(1, 1, 1, 1);
@@ -74,6 +78,7 @@ void SceneManager::Release(){
 		reserve = nullptr;
 	}
 
+	BGMManager::GetInstance ()->Release ();
 	ObjectPoolManager::Destroy();
 }
 

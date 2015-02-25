@@ -12,6 +12,8 @@
 #include "Utility/Delegate.h"
 #include <time.h>
 
+#include "Manager/BGMManager.h"
+
 TitleScene::TitleScene(){
 	srand((unsigned int)time(NULL));
 	switch (rand() % 4)
@@ -185,6 +187,7 @@ int TitleScene::ExecuteCaution(){
 			fade = Fade(L"Resource/Texture/Cut/in_cat02.png");
 		fade.SetAlpha(0);
 		timer.Set(60);
+		BGMManager::GetInstance ()->Play ( "Resource/BGM/GDtitle.wav" );
 		break;
 	}
 	return STILL_PROCESSING;

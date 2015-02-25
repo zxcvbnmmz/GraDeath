@@ -66,7 +66,7 @@ GameScene::GameScene() :currentState(FADE_IN) {
 		break;
 
 	default:
-		bgm = Sound::CreateBGM("Resource/BGM/NOCollarBGM.wav");
+		bgm = Sound::CreateBGM("Resource/BGM/NOCollarBGM2.wav");
 		break;
 	}
 }
@@ -121,9 +121,10 @@ int GameScene::ExecuteStageCall(){
 	// ここでステージコール作業
 	if (stageCall.Update() == StageCall::FINISHED){
 		currentState = BUTTLE;
+		bgm->Play ();
 	}
 
-	bgm->Play();
+	//bgm->Play();
 
 	return STILL_PROCESSING;
 }

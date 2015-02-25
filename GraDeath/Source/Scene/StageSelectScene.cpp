@@ -13,6 +13,8 @@
 
 #include <stdlib.h>
 
+#include "Manager/BGMManager.h"
+
 
 StageSelectScene::StageSelectScene(){
 	stageIcon = std::shared_ptr< StageIcon > ( new StageIcon );
@@ -77,6 +79,7 @@ int StageSelectScene::ExecuteOut ()
 {
 	if ( fade->AddAlpha ( 1.f / 120.f ) == FADE_UNCLEAR )
 	{
+		BGMManager::GetInstance ()->Stop ( "Resource/BGM/GDtitle.wav" );
 		GameFactory gf;
 		SceneFactory::Reserve ( &gf );
 		return END_PROCESS;

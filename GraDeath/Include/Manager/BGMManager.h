@@ -32,7 +32,7 @@ private:
 	std::map<char*, BGM> BGMs;
 };
 
-BGMManager* BGMManager::inst = nullptr; 
+//BGMManager* BGMManager::inst = nullptr; 
 
 
 #endif	// end of BGMManager
