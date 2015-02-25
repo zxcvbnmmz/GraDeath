@@ -24,7 +24,7 @@ public:
 
 	void Load(char* fileName);
 
-	void Play(char* fileName);
+	void Play(char* fileName); 
 	void Stop(char* fileName);
 
 
