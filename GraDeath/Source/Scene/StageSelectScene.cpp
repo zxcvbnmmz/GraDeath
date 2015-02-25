@@ -11,6 +11,8 @@
 #include "Utility/Delegate.h"
 #include "Direction/Fade.h"
 
+#include <stdlib.h>
+
 
 StageSelectScene::StageSelectScene(){
 	stageIcon = std::shared_ptr< StageIcon > ( new StageIcon );
@@ -22,8 +24,12 @@ StageSelectScene::StageSelectScene(){
 	//loadSprite = std::shared_ptr< Sprite > ( new Sprite );
 	//loadSprite->Create ( L"Resource/Scene/StageSelect/StageSelect_BG.png" );
 	//loadSprite->SetPosition ( 0, 0 );
-
-	fade = std::shared_ptr< Fade >( new Fade );
+	
+	int tempNum = rand () % 2;
+	if ( tempNum == 0 )
+		fade = std::shared_ptr< Fade > ( new Fade ( L"Resource/Texture/Cut/in_cat01.png" ) );
+	else
+		fade = std::shared_ptr< Fade > ( new Fade ( L"Resource/Texture/Cut/in_cat02.png" ) );
 	fade->SetAlpha ( 0 );
 	currentState = SELECT_MAIN;
 
