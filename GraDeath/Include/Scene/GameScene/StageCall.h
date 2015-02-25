@@ -24,8 +24,7 @@ class StageCall{
 	SE startSE;
 	SE endSE;
 
-	Sprite startText;
-	Sprite endText;
+	Sprite startText, readyText, endText;
 
 	D3DXVECTOR2 text_pos, text_move;
 
