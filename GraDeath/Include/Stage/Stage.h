@@ -37,5 +37,8 @@ namespace Stage{
     void SetCharaType(int _type);
     void PlaySpecialSkillSE(int _playertype);
     bool isPlaySE(int _playertype);
+    D3DXVECTOR2 GetSpecialSkillpos(int _playertype);
+    void SetSpecialSkill(int _playertype, int pos);
+    void StageDraw(int _playernum);
 };
 #endif	// end of Stage

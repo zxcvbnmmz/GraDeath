@@ -9,7 +9,7 @@ struct CollisionDef{
 	int strength = 0;
 	int categoryBit = 0x0002;
 	int maskBit = 0x0003;
-	int groupIndex = -1;
+	int groupIndex = 0;
 	float width = 0, height = 0;
 	float scale;
 };
