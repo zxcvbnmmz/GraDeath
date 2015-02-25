@@ -86,10 +86,10 @@ int StageCall::Update(){
 	switch (callFlg)
 	{
 	case false:
-		text_move *= .9;
+		text_move *= .97 - (.02 * isEndCall);
 		break;
 	default:
-		text_move /= .85;
+		text_move /= .90;
 		break;
 	}
 	if (text_move.x < 1 && text_move.x > 0)
