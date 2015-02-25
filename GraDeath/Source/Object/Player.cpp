@@ -90,3 +90,7 @@ void DettachFixture(b2Body* body){
 	}
 }
 
+void Player::Destroy(){
+	DettachFixture(body);
+	IsCollidable = false;
+}

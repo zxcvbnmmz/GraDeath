@@ -39,6 +39,7 @@ public:
 		return playerType;
 	}
 
+	void Destroy();
 	bool IsCollidable;
 
 private:
