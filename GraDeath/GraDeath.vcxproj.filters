@@ -350,6 +350,9 @@
     <ClCompile Include="CollisionShape.cpp">
       <Filter>Game\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Manager\BGMManager.cpp">
+      <Filter>Game\Object\BGM</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Manager\AnimationManager.h">
@@ -757,6 +760,9 @@
     <ClInclude Include="Include\Scene\Factory\CreditFactory.h">
       <Filter>Game\Scene\Credit</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Manager\BGMManager.h">
+      <Filter>Game\Object\BGM</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Resource\FbxStaticShader.hlsl">
@@ -991,6 +997,9 @@
     </Filter>
     <Filter Include="Game\Object\Voice\UI">
       <UniqueIdentifier>{0b05a70e-ce53-442b-8da0-89ea617ff74d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Object\BGM">
+      <UniqueIdentifier>{aba66afd-b207-4f19-a2ff-87ca3211225c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
