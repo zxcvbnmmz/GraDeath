@@ -20,7 +20,7 @@ namespace{
 
 StageCall::StageCall(){
 	// ファイル名とコールバックを指定
-	startSE = Sound::CreateSE("Resource/Scene/Game/StageCall/se_maoudamashii_magical10.wav", &stageCallBack);
+	startSE = Sound::CreateSE("Resource/Scene/Game/StageCall/startSE.wav", &stageCallBack);
 	endSE = Sound::CreateSE("Resource/Scene/Game/StageCall/endSE.wav", &endCallBack);
 	startText.Create(L"Resource/Scene/Game/StageCall/CallText.png");
 	endText.Create(L"Resource/Scene/Game/StageCall/EndText.png");
@@ -35,7 +35,7 @@ void StageCall::Initialize(bool pIsEndCall){
 		break;
 	default:
 		endSE->Play();
-		//startSE->Stop();
+		startSE->Stop();
 		break;
 	}
 

@@ -68,10 +68,6 @@ SCENE_STATUS GameScene::Execute(){
 	int status = (int)(*executes[currentState])();
 
 
-	if (HitPointManager::IsOnlyOne()){
-		currentState = SURVIVE_ONE;
-	}
-
 
 	if (GamePad::getAnyGamePadPressed(BUTTON_START) == INPUT_PRESS 
 #ifdef _DEBUG
@@ -140,11 +136,12 @@ int GameScene::ExecuteButtle(){
             PlayerManager::OnPlayerPos(i, 2+(10*i), 0);
     }
 
-	// ここでエンドコールへ移行(コメントアウト)
-	//if (stageTimer-- < 0){
-	//	currentState = END_CALL;
-	//	stageCall.Initialize(true);
-	//	}
+	if (HitPointManager::IsOnlyOne()){
+		currentState = SURVIVE_ONE;
+		stageCall.Initialize(true);
+
+	}
+
 	return STILL_PROCESSING;
 }
 
