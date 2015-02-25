@@ -28,6 +28,8 @@ public:
 	void Stop(char* fileName);
 
 
+
+
 private:
 	static BGMManager* inst;
 	std::map<char*, BGM> BGMs;
