@@ -29,7 +29,6 @@ INT WINAPI WinMain(HINSTANCE inst, HINSTANCE, LPSTR, INT){
 		if (!SceneManager::Execute()){
 			break;
 		}
-
 		Graphic::Present(0, 0);
 	}
 
