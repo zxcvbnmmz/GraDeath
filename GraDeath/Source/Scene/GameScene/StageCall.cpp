@@ -22,6 +22,7 @@ StageCall::StageCall(){
 	// ファイル名とコールバックを指定
 	startSE = Sound::CreateSE("Resource/Scene/Game/StageCall/startSE.wav", &stageCallBack);
 	endSE = Sound::CreateSE("Resource/Scene/Game/StageCall/endSE.wav", &endCallBack);
+	readyText.Create(L"Resource/Scene/Game/StageCall/ReadyText.png");
 	startText.Create(L"Resource/Scene/Game/StageCall/CallText.png");
 	endText.Create(L"Resource/Scene/Game/StageCall/EndText.png");
 
@@ -58,8 +59,14 @@ void StageCall::Draw(){
 	switch (isEndCall)
 	{
 	case false:
-		startText.SetPosition(text_pos + text_move);
-		startText.Draw();
+		if (text_move.x <= 0){
+			startText.SetPosition(text_pos + text_move);
+			startText.Draw();
+		}
+		else{
+			readyText.SetPosition(text_pos + text_move);
+			readyText.Draw();
+		}
 		break;
 	default:
 		endText.SetPosition(text_pos + text_move);
@@ -69,12 +76,13 @@ void StageCall::Draw(){
 }
 
 int StageCall::Update(){
+#ifndef _DEBUG
 	if (Keyboard::CheckKey(KC_ENTER) == INPUT_PRESS)
 	{
 		// 動作が終了したらFINISHEDを返し戦闘に移行する
 		return FINISHED;
 	}
-
+#endif
 	switch (callFlg)
 	{
 	case false:
