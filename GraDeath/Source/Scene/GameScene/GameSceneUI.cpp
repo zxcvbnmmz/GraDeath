@@ -115,7 +115,7 @@ void GameSceneUI::SetPlayerIcon ( CharacterInfo* _info )
 void GameSceneUI::DrawSkillUI ( int _num, D3DXVECTOR2& _pos )
 {
 	D3DXVECTOR2 tempSize;
-	for ( int i = 0; i < SKILL_ID::SKILL_MAX; i++ )
+	for ( int i = 0; i < SKILL_ID::SKILL_MAX-1; i++ )
 	{
 		//int tempType = SkillManager::GetPlayerType ( _num );
 		//skillIcon[ tempType ][ i ].

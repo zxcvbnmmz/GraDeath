@@ -179,6 +179,10 @@ int TitleScene::ExecuteCaution(){
 		break;
 	case 2:
 		currentState = SELECT;
+		if (rand() % 2 == 0)
+			fade = Fade(L"Resource/Texture/Cut/in_cat01.png");
+		else
+			fade = Fade(L"Resource/Texture/Cut/in_cat02.png");
 		fade.SetAlpha(0);
 		timer.Set(60);
 		break;
