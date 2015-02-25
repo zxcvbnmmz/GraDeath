@@ -493,7 +493,7 @@ void CreateEachStage(int stageLevel){
     case 0:
         CreateRedStage(sprite);
         break;
-/*        //青（男）
+       //青（男）
     case 1:
         CreateBlueStage(sprite);
         break;
@@ -504,10 +504,11 @@ void CreateEachStage(int stageLevel){
         //黄色（女の子）
     case 3:
         CreateYellowStage(sprite);
-        test = 0;
+        //test = 0;
         break;
-*/        //無色
+        //無色
     case 4:
+		CreateNoCollarStage ( sprite );
         break;
         //やり方
     default:

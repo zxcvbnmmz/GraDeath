@@ -16,6 +16,15 @@
 
 #include "World/World.h"
 
+char* stageBGMName[ ] =
+{
+	"Resource/BGM/RedBGM.wav",
+	"Resource/BGM/StageBGM_Chara1.wav",
+	"Resource/BGM/ShirokuroBGM.wav",
+	"Resource/BGM/YellowBGM.wav",
+	"Resource/BGM/NOCollarBGM.wav",
+};
+
 GameScene::GameScene() :currentState(FADE_IN) {
 	Stage::Initialize(0);
 	
@@ -37,27 +46,35 @@ GameScene::GameScene() :currentState(FADE_IN) {
 
 	stageTimer = 300;
 
-	//switch (Stage::GetStageNum())
-	//{
-	//case 0:
-	//	bgm = Sound::CreateBGM("Resource/BGM/RedBGM.wav");
-	//	break;
-	//case 1:
-	//	bgm = Sound::CreateBGM("Resource/BGM/StageBGM_Chara1.wav");
-	//	break;
-	//case 2:
-	//	bgm = Sound::CreateBGM("Resource/BGM/ShirokuroBGM.wav");
-	//	break;
-	//default:
-	//	bgm = Sound::CreateBGM("Resource/BGM/NOCollarBGM.wav");
-	//	break;
-	//}
+	//int temp = Stage::GetStageNum ();
+	//bgm = Sound::CreateBGM ( stageBGMName[ Stage::GetStageNum () ] );
+
+	switch (Stage::GetStageNum())
+	{
+	case 0:
+		bgm = Sound::CreateBGM("Resource/BGM/RedBGM.wav");
+		break;
+	case 1:
+		bgm = Sound::CreateBGM("Resource/BGM/StageBGM_Chara1.wav");
+		break;
+	case 2:
+		bgm = Sound::CreateBGM("Resource/BGM/ShirokuroBGM.wav");
+		break;
+
+	case 3:
+		bgm = Sound::CreateBGM ( "Resource/BGM/YellowBGM.wav" );
+		break;
+
+	default:
+		bgm = Sound::CreateBGM("Resource/BGM/NOCollarBGM.wav");
+		break;
+	}
 }
 
 GameScene::~GameScene ()
 {
 	stageCall.Release();
-	//bgm->~BGM();
+	bgm->~BGM();
 	PlayerManager::Release();
 	Stage::Release ();
 	GameSceneUI::Release ();
@@ -110,9 +127,7 @@ int GameScene::ExecuteStageCall(){
 		currentState = BUTTLE;
 	}
 
-	//bgm->Play();
-
-
+	bgm->Play();
 
 	return STILL_PROCESSING;
 }
@@ -153,7 +168,7 @@ int GameScene::ExecuteEndCall(){
 
 		ResultFactory rf;
 		SceneFactory::Reserve(&rf);
-		//bgm->Stop();
+		bgm->Stop();
 
 
 		return END_PROCESS;
