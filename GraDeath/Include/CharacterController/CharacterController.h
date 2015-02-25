@@ -39,6 +39,7 @@ public:
 
     virtual void SetPos(int _posx, int _posy, float angle = 0) = 0;
 	void ChangeAction(PLAYER_ACTION newAction, bool loop, PLAYER_DIRECTION _dir = SAME_BEFORE);
+	void Enable(bool _enable);
 
 protected:
 	int padID;

@@ -347,6 +347,9 @@
     <ClCompile Include="Source\Scene\Factory\CreditFactroy.cpp">
       <Filter>Game\Scene\Credit</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionShape.cpp">
+      <Filter>Game\Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Manager\AnimationManager.h">

@@ -13,8 +13,8 @@ CharacterController::CharacterController() :currentAction(ACTION_IDLE), enable(f
 }
 
 void CharacterController::Update(){
+	currentAnimState = animManager.Update();
 	if (enable){
-		currentAnimState = animManager.Update();
 		(this->*Actions[currentAction])();
 	}
 }
@@ -28,3 +28,7 @@ PLAYER_ACTION CharacterController::GetCurrentAction(){
 	return currentAction;
 }
 
+
+void CharacterController::Enable(bool _enable){
+	enable = _enable;
+}

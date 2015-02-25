@@ -92,6 +92,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CollisionShape.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Source\CharacterController\CharacterController.cpp" />
     <ClCompile Include="Source\CharacterController\CharacterInfo.cpp" />

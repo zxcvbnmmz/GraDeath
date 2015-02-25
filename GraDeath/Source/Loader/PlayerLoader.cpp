@@ -197,10 +197,14 @@ namespace PlayerLoader
 						def.x = shape->shape.circle.x;
 						def.y = shape->shape.circle.y;
 						def.categoryBit = categoryBits[shape->collisionType];
-						if ( SKILL_ID_MAX == _type )
+						if (SKILL_ID_MAX == _type){
 							def.maskBit = MASK_COL_ATK_DEF;
-						else
+							def.groupIndex = 1;
+						}
+						else{
 							def.maskBit = MASK_COL_ATK;
+							def.groupIndex = -1;
+						}
 						def.strength = shape->strength;
 						def.width = (float)(size.x / parameter->rectWCount);
 						def.height = (float)(size.y / parameter->rectHCount);
@@ -224,10 +228,15 @@ namespace PlayerLoader
 						memcpy ( def.y, shape->shape.square.y, sizeof( int )* 4 );
 						def.categoryBit = categoryBits[shape->collisionType];
 						//def.categoryBit = MASK_COL_ATK_DEF;
-						if ( SKILL_ID_MAX == _type )
+						if (SKILL_ID_MAX == _type){
 							def.maskBit = MASK_COL_ATK_DEF;
-						else
+							def.groupIndex = 1;
+						}
+						else{
 							def.maskBit = MASK_COL_ATK;
+							def.categoryBit = 0;
+							def.groupIndex = -1;
+						}
 						def.strength = shape->strength;
 						def.width = (float)(size.x / parameter->rectWCount);
 						def.height = (float)(size.y / parameter->rectHCount);
