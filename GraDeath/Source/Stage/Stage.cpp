@@ -12,6 +12,7 @@
 #include "Input\Keyboard.h"
 #include "Direction/Fade.h"
 #include "Sound/SE/SE.h"
+#include "Manager/HitpointManager.h"
 
 namespace{
 	const static float PTM_RATIO = 32.0f;
@@ -539,6 +540,7 @@ void SetStageHP(float _HP){
 void Stage::CriateStage(){
     Stageflg = false;
     counter = 0;
+	HitPointManager::HitDamageEx ( playernum, 20 );
     //            D3DXVECTOR2 pos(0, 580);
     //            sprite_anime->SetPosition(pos);
     //@ x 1366* y 768
