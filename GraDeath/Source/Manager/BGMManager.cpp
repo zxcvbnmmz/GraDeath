@@ -13,6 +13,7 @@ void BGMManager::Load(char* fileName){
 void BGMManager::Play(char* fileName){
 	auto it = BGMs.find(fileName);
 	if (it != BGMs.end()){
+		(*it).second->SetLoop(0, 0, 255);
 		(*it).second->Play();
 	}
 }
