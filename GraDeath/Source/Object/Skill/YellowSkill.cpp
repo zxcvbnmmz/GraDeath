@@ -5,12 +5,12 @@
 D3DXVECTOR2 yellowPosition[ 2 ][ 3 ] =
 {
 	{
-		D3DXVECTOR2 ( 75, -220.0f ),
+		D3DXVECTOR2 ( 75, -210.0f ),
 		D3DXVECTOR2 ( -340, -360.0f ),
 		D3DXVECTOR2 ( -350, -350.0f )
 	},
 	{
-		D3DXVECTOR2 ( -400, -220.0f ),
+		D3DXVECTOR2 ( -400, -210.0f ),
 		D3DXVECTOR2 ( -340, -360.0f ),
 		D3DXVECTOR2 ( -350, -350.0f )
 	},
