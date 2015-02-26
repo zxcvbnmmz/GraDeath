@@ -28,6 +28,9 @@ ResultScene::ResultScene(){
 	for (int i = 0; i < 4; i++) {
 		int rank, chara;
 		chara = HitPointManager::GetPlayerRanking(i, rank);
+		if ( rank < 0 ){
+			continue;
+		}
 		switch (chara)
 		{
 		case CharacterInfo::PLAYER_BLUE:

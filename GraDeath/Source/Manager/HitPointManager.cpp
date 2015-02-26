@@ -70,7 +70,7 @@ namespace HitPointManager
 	void HitDamageEx(int _num, float _hit)
 	{
 		for (int i = 0; i < 4; ++i){
-			if (i != _num && hitPoint[_num].IsEnabled()){
+			if ( i != _num && !hitPoint[ i ].IsDead () && hitPoint[ _num ].IsEnabled () ){
 				hitPoint[i].IsDamage(_hit);
 				if (hitPoint[i].IsDead())
 				{

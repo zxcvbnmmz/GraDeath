@@ -19,7 +19,10 @@ Sprite::~Sprite(){
 }
 
 bool Sprite::Create(LPCWSTR fileName){
-	assert(bitmap == nullptr);
+	if ( bitmap != nullptr ){
+		int a = 0;
+		assert(bitmap == nullptr);
+	}
 
 	if (!D2D::CreateSprite(&bitmap, fileName)){
 		wchar_t str[80];
