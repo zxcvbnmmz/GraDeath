@@ -33,7 +33,7 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 			CharacterInfo info[ 4 ];
 			for ( int i = 0; i < 4; i++ )
 			{
-//#ifdef _DEBUG
+#ifdef _DEBUG
 				if ( i == 0 )
 				{
 					info[ i ] = selectCursor->GetCharacterInfo ( i );
@@ -43,9 +43,9 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 					info[ i ].pType = CharacterInfo::PLAYER_TYPE::PLAYER_YELLOW;
 					info[ i ].pcType = CharacterInfo::PC_TYPE::PC_PLAYER;
 				}
-//#else
-//				info[ i ] = selectCursor->GetCharacterInfo ( i );
-//#endif
+#else
+				info[ i ] = selectCursor->GetCharacterInfo ( i );
+#endif
 			}
 			CharacterInfoFunc::SetCharacterInfo ( info );
 			StageSelectFactory sf;
@@ -56,9 +56,9 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 	}
 
 	if ( selectCursor->AllSelectCheck ()
-//#ifdef _DEBUG
+#ifdef _DEBUG
 		|| Keyboard::CheckKey ( KC_ENTER ) == INPUT_PUSH
-//#endif
+#endif
 		 ){
 		countFlg = true;
 	}
