@@ -162,7 +162,8 @@ int GameScene::ExecuteButtle(){
 }
 
 int GameScene::ExecuteEndCall(){
-	if (stageCall.Update() == StageCall::FINISHED){
+	if (stageCall.Update() == StageCall::FINISHED ||
+		GamePad::getAnyGamePadPressed ( BUTTON_START ) == INPUT_PRESS ){
 
 		ResultFactory rf;
 		SceneFactory::Reserve(&rf);
