@@ -103,7 +103,10 @@ namespace SkillManager
 			if ( !GetSkillUse ( _num, ( SKILL_ID )_id ) )
 				return false;
 
-		skillset[ _num ]->SetPosition ( _id, _pos, dirFlg );
+		if ( !skillset[ _num ]->SetPosition ( _id, _pos, dirFlg ) )
+		{
+			return false;
+		}
 		return true;
 		//skill[ _num ].SetPosition ( _pos );
 		//skill[ _num ].SkillOn ();
@@ -111,6 +114,9 @@ namespace SkillManager
 
 	bool GetSkillUse ( int _num, SKILL_ID _id )
 	{
+		if ( skillset[ _num ]->IsActive () )
+			return false;
+
 		bool ret = false;
 		ret = skillState[ _num ].GetUseSkill ( _id );
 		if ( SKILL_THIRD == _id )

@@ -66,10 +66,18 @@ void BlueSkill::Draw ()
 		skill->Draw ();
 }
 
-void BlueSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
+bool BlueSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
 {
 	if ( _id >= skills.size () )
-		return;
+		return false;
+
+	for ( auto& skill : skills )
+	{
+		if ( skill->IsActive () )
+		{
+			return false;
+		}
+	}
 
 	SkillSetDettachFixture ( body );
 
@@ -79,6 +87,20 @@ void BlueSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirF
 	temp = skills[ _id ]->GetPosition ();
 	body->SetTransform ( b2Vec2 ( temp.x / 32.0f, temp.y / 32.0f ), 0 );
 	skills[ _id ]->SetAttachFixture ( body );
+
+	return true;
+}
+
+bool BlueSkill::IsActive ()
+{
+	for ( auto& skill : skills )
+	{
+		if ( skill->IsActive () )
+		{
+			return true;
+		}
+	}
+	return false;
 }
 
 b2Body* BlueSkill::Getb2Body()
