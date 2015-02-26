@@ -533,6 +533,7 @@ void Stage::StageDamage ( float _damage, int _playernum ){
     HP = HP - _damage;
     playernum = _playernum;
 }
+
 void SetStageHP(float _HP){
     HP = _HP;
 }

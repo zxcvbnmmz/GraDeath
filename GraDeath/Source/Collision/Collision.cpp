@@ -177,7 +177,7 @@ bool Collision::CollideSkill(Player* player, b2Body* skill){
 	return false;
 }
 
-bool Collision::CollideSkillToStage ( b2Body* stage, b2Body* skill, int _num )
+bool Collision::CollideSkillToStage ( b2Body* stage, b2Body* skill, int _num, int _type )
 {
 	if ( skill == nullptr ){
 		return false;
@@ -215,6 +215,7 @@ bool Collision::CollideSkillToStage ( b2Body* stage, b2Body* skill, int _num )
 
 					strength = shape->GetStrength ();
 					Stage::StageDamage ( strength, _num );
+					Stage::SetCharaType ( _type );
 					//HitPointManager::HitDamage ( player, strength );
 
 					return true;
