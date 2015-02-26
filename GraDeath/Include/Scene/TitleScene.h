@@ -6,6 +6,7 @@
 #include "Direction/Fade.h"
 #include "Utility/FrameTimer.h"
 #include "Sound/BGM/BGM.h"
+#include "Sound/SE/SE.h"
 
 class TitleScene : public Scene{
 public:
@@ -39,6 +40,7 @@ private:
 	FrameTimer timer;
 
 	BGM bgm;
+	SE selectSE, cancelSE, moveSE;
 };
 
 #endif	// end of TitleScene

@@ -38,6 +38,9 @@ TitleScene::TitleScene(){
 	sBG1.Create(L"Resource/Texture/TitleBG1.png");
 	sBG2.Create(L"Resource/Texture/TitleBG2.png");
 	sCaution.Create(L"Resource/Texture/Caution.png");
+	selectSE = Sound::CreateSE("Resource/Texture/selectSE.wav");
+	cancelSE = Sound::CreateSE("Resource/Texture/cancelSE.wav");
+	moveSE = Sound::CreateSE("Resource/Texture/moveSE.wav");
 	start_pos = D3DXVECTOR2(700, 300);
 	credit_pos = D3DXVECTOR2(800, 400);
 	exit_pos = D3DXVECTOR2(800, 500);
@@ -160,6 +163,7 @@ int TitleScene::ExecuteCaution(){
 #endif
 		){
 		step = 1;
+		selectSE->Play();
 	}
 	switch (step)
 	{
@@ -202,7 +206,12 @@ int TitleScene::ExecuteSelect(){
 		switch (select_i){
 		case 0:
 		case 1:
+			selectSE->Stop();
+			selectSE->Play();
+			currentState = FADE_OUT;
+			break;
 		case 2:
+			cancelSE->Play();
 			currentState = FADE_OUT;
 			break;
 		default:
@@ -214,6 +223,8 @@ int TitleScene::ExecuteSelect(){
 		|| Keyboard::CheckKey(KC_DOWN) == INPUT_PUSH
 #endif
 		){
+		moveSE->Stop();
+		moveSE->Play();
 		select_i++;
 		vect_move += D3DXVECTOR2(0, -100);
 		Move();
@@ -223,6 +234,8 @@ int TitleScene::ExecuteSelect(){
 		|| Keyboard::CheckKey(KC_UP) == INPUT_PUSH
 #endif
 		) {
+		moveSE->Stop();
+		moveSE->Play();
 		select_i--;
 		vect_move += D3DXVECTOR2(0, 100);
 		Move();

@@ -5,6 +5,8 @@
 #include "D2D/Sprite/Sprite.h"
 #include "Direction/Fade.h"
 #include "Utility/FrameTimer.h"
+#include "Sound/SE/SE.h"
+#include "Direction/Fade.h"
 
 class CreditScene : public Scene{
 public:
@@ -26,13 +28,17 @@ private:
 	int ExecutePage1();
 	int ExecutePage2();
 	int ExecutePage3();
+	int ExecuteFadeOut();
 	void DrawPage1();
 	void DrawPage2();
 	void DrawPage3();
+	void DrawFadeOut();
 
 	Sprite sPage1, sPage2, sPage3;
 	D3DXVECTOR2 sPos1, sPos2, sPos3, mPos;
+	SE cancelSE, moveSE;
 
+	std::shared_ptr<Fade> fade;
 };
 
 
