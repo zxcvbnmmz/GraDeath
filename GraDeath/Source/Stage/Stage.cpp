@@ -12,6 +12,7 @@
 #include "Input\Keyboard.h"
 #include "Direction/Fade.h"
 #include "Sound/SE/SE.h"
+#include "Manager/HitpointManager.h"
 
 namespace{
 	const static float PTM_RATIO = 32.0f;
@@ -25,7 +26,7 @@ namespace{
     std::shared_ptr<Sprite> Special_YELLOW;
     std::shared_ptr<Sprite> Special_SIROKURO;
 
-    float HP = 20.f + rand() % 10;
+    float HP = 500.f + rand() % 500;
     bool Stageflg = false;
     int StageCoolTime = 0;
     int counter = 0;
@@ -158,7 +159,7 @@ void Stage::Release(){
     sprites.clear();
 	sprite_animes.clear();
 	bgSprite.clear();
-    CriateStage();
+    //CriateStage();
     Special_SKILLs.clear();
     Special_BLUE.reset();
     RedSkillSE->Release();
@@ -528,7 +529,7 @@ float Stage::GetStageHP(){
     return HP;
 }
 
-void StageDamage(float _damage, int _playernum){
+void Stage::StageDamage ( float _damage, int _playernum ){
     HP = HP - _damage;
     playernum = _playernum;
 }
@@ -539,6 +540,7 @@ void SetStageHP(float _HP){
 void Stage::CriateStage(){
     Stageflg = false;
     counter = 0;
+	HitPointManager::HitDamageEx ( playernum, 300 );
     //            D3DXVECTOR2 pos(0, 580);
     //            sprite_anime->SetPosition(pos);
     //@ x 1366* y 768
@@ -547,7 +549,7 @@ void Stage::CriateStage(){
     size.height = 768.f;
     size.width = 1366.f;
     sprite_anime->SetSize(size);
-    HP = 20.f + rand() % 10;
+    HP = 500.f + rand() % 500;
     switch (Charatype)
     {
     case 0://ê‘

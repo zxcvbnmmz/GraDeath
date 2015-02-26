@@ -13,7 +13,10 @@ namespace HitPointManager
 	void HitDamage(int _num, float _hit);
 	void HitDamage(Player* _player, float _hit);
 
-	void HitDamage ( int _num, float _hit );
+	void HitDamage(int _num, float _hit);
+
+	void HitDamageEx(int _num, float _damage);
+	void HitDamageEx(Player* _player, float _damage);
 
 
 	// HP�̎擾

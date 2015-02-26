@@ -7,6 +7,7 @@
 #include "Manager/HitpointManager.h"
 #include "CharacterController/PlayerController/PlayerController.h"
 #include "CharacterController/CharacterController.h"
+#include "Stage/Stage.h"
 
 bool Collision::Collide(Player* playerA, Player* playerB){
 	b2Body* bodyA = playerA->GetBody();
@@ -176,7 +177,7 @@ bool Collision::CollideSkill(Player* player, b2Body* skill){
 	return false;
 }
 
-bool Collision::CollideSkillToStage ( b2Body* stage, b2Body* skill )
+bool Collision::CollideSkillToStage ( b2Body* stage, b2Body* skill, int _num )
 {
 	if ( skill == nullptr ){
 		return false;
@@ -213,6 +214,7 @@ bool Collision::CollideSkillToStage ( b2Body* stage, b2Body* skill )
 					shape = ( CollisionShape* )fixtureB->GetUserData ();
 
 					strength = shape->GetStrength ();
+					Stage::StageDamage ( strength, _num );
 					//HitPointManager::HitDamage ( player, strength );
 
 					return true;

@@ -29,7 +29,7 @@ void DefaultDebugDrawer::DrawSolidPolygon(const b2Vec2* vertices, int32 vertexCo
 
 void DefaultDebugDrawer::DrawCircle(const b2Vec2& center, float32 radius, const b2Color& color){
 	b2Vec2 c(center.x*32.0f, center.y*32.0f);
-	float rad = radius * 32.0f / 2.0f;
+	float rad = radius * 32.0f;
 	Graphic::D2D::Geometry::DrawEllipse(brush, c.x, c.y, radius);
 }
 

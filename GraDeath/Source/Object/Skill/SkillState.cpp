@@ -5,11 +5,11 @@ void SkillState::Init ( CharacterInfo::PLAYER_TYPE _type )
 {
 	for ( int i = 0; i < SKILL_MAX-1; i++ )
 	{
-#ifdef _DEBUG
-		time[ RECAST ][ i ] = .0f;
-#else
+//#ifdef _DEBUG
+//		time[ RECAST ][ i ] = .0f;
+//#else
 		time[ RECAST ][ i ] = 180.0f + ( 180.0f * ( float )i );
-#endif
+//#endif
 		time[ COOLTIME ][ i ] = .0f;
 	}
 	type = _type;

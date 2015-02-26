@@ -15,7 +15,8 @@ namespace Stage{
 	void Draw();
 	void Release();
     float GetStageHP();
-    void StageDamage(float _damage);
+    //void StageDamage(float _damage);
+	void StageDamage ( float _damage, int _playernum );
     void SetStageHP(float _HP,int playernum);
     bool GetStageStatus();
     void CriateStage();

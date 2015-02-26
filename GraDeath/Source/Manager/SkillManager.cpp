@@ -99,8 +99,10 @@ namespace SkillManager
 
 	bool SkillOn ( int _num, int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
 	{
-		if ( !GetSkillUse ( _num, ( SKILL_ID )_id ) )
-			return false;
+		if ( _id == SKILL_ID::SKILL_THIRD )
+			if ( !GetSkillUse ( _num, ( SKILL_ID )_id ) )
+				return false;
+
 		skillset[ _num ]->SetPosition ( _id, _pos, dirFlg );
 		return true;
 		//skill[ _num ].SetPosition ( _pos );
@@ -138,7 +140,7 @@ namespace SkillManager
 
 	void SetSPGage ( int num, float _gage )
 	{
-		spGage[ num ] += _gage;
+		spGage[ num ] += _gage * 0.0035f;
 		if ( spGage[ num ] >= 1.0f )
 			spGage[ num ] = 1.0f;
 	}
