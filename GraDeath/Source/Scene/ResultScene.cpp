@@ -139,7 +139,7 @@ SCENE_STATUS ResultScene::Execute(){
 		Keyboard::CheckKey(KC_S) == INPUT_PUSH
 #endif
 		) {
-		timer = 250;
+		timer = 300;
 	}
 
 	for (int i = 1; i < 4; i++){
@@ -153,7 +153,7 @@ SCENE_STATUS ResultScene::Execute(){
 		pMove[0].y *= .98f;
 		alpha[0] *= .98f;
 	}
-	if (timer > 250)
+	if (timer > 300)
 		vWin->Play();
 	timer++;
 	return STILL_PROCESSING;
