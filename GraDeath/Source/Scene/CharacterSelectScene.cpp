@@ -40,7 +40,7 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 				}
 				else
 				{
-					info[ i ].pType = CharacterInfo::PLAYER_TYPE::PLAYER_BLUE;
+					info[ i ].pType = CharacterInfo::PLAYER_TYPE::PLAYER_RED;
 					info[ i ].pcType = CharacterInfo::PC_TYPE::PC_PLAYER;
 				}
 #else

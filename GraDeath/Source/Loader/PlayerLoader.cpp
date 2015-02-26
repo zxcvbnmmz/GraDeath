@@ -193,7 +193,7 @@ namespace PlayerLoader
 						ifs.read ( ( char* )&shape->shape.circle.rad, sizeof( int ) );
 
 						// ‰¼’Ç‰Á
-						def.r = shape->shape.circle.rad;
+						def.r = shape->shape.circle.rad/2.0f;
 						def.x = shape->shape.circle.x;
 						def.y = shape->shape.circle.y;
 						def.categoryBit = categoryBits[shape->collisionType];
