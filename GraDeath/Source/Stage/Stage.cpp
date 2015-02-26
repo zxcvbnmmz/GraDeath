@@ -25,7 +25,7 @@ namespace{
     std::shared_ptr<Sprite> Special_YELLOW;
     std::shared_ptr<Sprite> Special_SIROKURO;
 
-    float HP = 20.f + rand() % 10;
+    float HP = 500.f + rand() % 500;
     bool Stageflg = false;
     int StageCoolTime = 0;
     int counter = 0;
@@ -528,7 +528,7 @@ float Stage::GetStageHP(){
     return HP;
 }
 
-void StageDamage(float _damage, int _playernum){
+void Stage::StageDamage ( float _damage, int _playernum ){
     HP = HP - _damage;
     playernum = _playernum;
 }
@@ -547,7 +547,7 @@ void Stage::CriateStage(){
     size.height = 768.f;
     size.width = 1366.f;
     sprite_anime->SetSize(size);
-    HP = 20.f + rand() % 10;
+    HP = 500.f + rand() % 500;
     switch (Charatype)
     {
     case 0://ê‘

@@ -55,8 +55,7 @@ SCENE_STATUS CharacterSelectScene::Execute(){
 		return STILL_PROCESSING;
 	}
 
-	if ( selectCursor->AllSelectCheck () ||
-		GamePad::getAnyGamePadPressed ( BUTTON_X )
+	if ( selectCursor->AllSelectCheck ()
 //#ifdef _DEBUG
 		|| Keyboard::CheckKey ( KC_ENTER ) == INPUT_PUSH
 //#endif
