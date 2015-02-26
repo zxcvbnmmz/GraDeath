@@ -159,7 +159,7 @@ void Stage::Release(){
     sprites.clear();
 	sprite_animes.clear();
 	bgSprite.clear();
-    CriateStage();
+    //CriateStage();
     Special_SKILLs.clear();
     Special_BLUE.reset();
     RedSkillSE->Release();
@@ -540,7 +540,7 @@ void SetStageHP(float _HP){
 void Stage::CriateStage(){
     Stageflg = false;
     counter = 0;
-	HitPointManager::HitDamageEx ( playernum, 20 );
+	HitPointManager::HitDamageEx ( playernum, 300 );
     //            D3DXVECTOR2 pos(0, 580);
     //            sprite_anime->SetPosition(pos);
     //@ x 1366* y 768

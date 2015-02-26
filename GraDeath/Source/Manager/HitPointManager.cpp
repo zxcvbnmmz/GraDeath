@@ -38,7 +38,7 @@ namespace HitPointManager
 		for (int i = 0; i < 4; ++i){
 			if (hitPoint[i].IsCompared(_player)){
 				hitPoint[i].IsDamage(_hit);
-				SkillManager::SetSPGage(i, _hit * 0.05f);
+				SkillManager::SetSPGage(i, _hit);
 				if (hitPoint[i].IsDead() && checkFlg[i])
 				{
 					checkFlg[i] = false;
