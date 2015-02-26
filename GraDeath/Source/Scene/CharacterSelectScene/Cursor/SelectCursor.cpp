@@ -146,7 +146,7 @@ CharacterInfo SelectCursor::GetCharacterInfo ( int _num )
 		CharacterInfo tempInfo;
 		tempInfo.pType = ( CharacterInfo::PLAYER_TYPE ) tempCharNum ;
 		tempInfo.pcType = CharacterInfo::PC_TYPE::PC_PLAYER;
-		return tempInfo;
+		//return tempInfo;
 	}
 #endif
 	return icon->GetCharacterInfo ( _num );
