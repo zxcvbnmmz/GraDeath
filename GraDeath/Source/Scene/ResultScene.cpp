@@ -8,6 +8,21 @@
 #include "Input\Keyboard.h"
 #include "Manager/BGMManager.h"
 
+#include "Sound/SoundCallBack.h"
+
+namespace{
+	SOUND_CALLBACK(SE_CALL);
+	void SE_CALL::OnVoiceProcessingPassStart(UINT32 BytesRequired){}
+	void SE_CALL::OnVoiceProcessingPassEnd(){}
+	void SE_CALL::OnStreamEnd(){ BGMManager::GetInstance()->Play("Resource/BGM/GDtitle.wav"); }
+	void SE_CALL::OnBufferStart(void* pBufferContext){}
+	void SE_CALL::OnBufferEnd(void* pBufferContext){}
+	void SE_CALL::OnLoopEnd(void* pBufferContext){}
+	void SE_CALL::OnVoiceError(void* pBufferContext, HRESULT Error){}
+
+	SE_CALL seCallBack;
+}
+
 ResultScene::ResultScene(){
 	
 	//sRank[0].Create(L"Resource/Scene/Result/1st.png");
@@ -22,7 +37,7 @@ ResultScene::ResultScene(){
 	//sChara[1].Create(L"Resource/Scene/Result/Chara2.png");
 	//sChara[2].Create(L"Resource/Scene/Result/Chara3.png");
 	//sChara[3].Create(L"Resource/Scene/Result/Chara4.png");
-	BGMManager::GetInstance ()->Play ( "Resource/BGM/GDtitle.wav" );
+	//BGMManager::GetInstance ()->Play ( "Resource/BGM/GDtitle.wav" );
 
 	sBG.Create(L"Resource/Scene/Result/Result_bg.png");
 	for (int i = 0; i < 4; i++) {
@@ -94,10 +109,12 @@ ResultScene::ResultScene(){
 		pMove[i] = D3DXVECTOR2(0, 300);
 		alpha[i] = 1.f;
 	}
+	winSE = Sound::CreateSE("Resource/Scene/Result/winSE.wav", &seCallBack);
 	pChara = D3DXVECTOR2(0, 210);
 	pPlayer = D3DXVECTOR2(0, 280);
 	timer = 0;
 	bgm = Sound::CreateBGM("Resource/BGM/GDtitle.wav");
+	winSE->Play();
 }
 
 SCENE_STATUS ResultScene::Execute(){
@@ -119,21 +136,21 @@ SCENE_STATUS ResultScene::Execute(){
 		Keyboard::CheckKey(KC_S) == INPUT_PUSH
 #endif
 		) {
-		timer = 150;
+		timer = 250;
 	}
 
 	for (int i = 1; i < 4; i++){
-		if (timer > 30 + 15 * (3 - i))
+		if (timer > 60 + 30 * (3 - i))
 		{
 			pMove[i].y *= .9f;
 			alpha[i] *= .9f;
 		}
 	}
-	if (timer > 100){
-		pMove[0].y *= .99f;
-		alpha[0] *= .99f;
+	if (timer > 200){
+		pMove[0].y *= .98f;
+		alpha[0] *= .98f;
 	}
-	if (timer > 150)
+	if (timer > 250)
 		vWin->Play();
 	timer++;
 	return STILL_PROCESSING;

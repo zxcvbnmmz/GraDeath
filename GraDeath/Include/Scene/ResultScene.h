@@ -20,7 +20,7 @@ private:
 	int timer;
 
 	BGM bgm;
-	SE vWin;
+	SE vWin, winSE;
 };
 
 
