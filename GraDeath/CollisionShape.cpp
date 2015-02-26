@@ -4,7 +4,7 @@ CollisionDef::CollisionDef(){
 	strength = 0;
 	categoryBit = 0x0002;
 	maskBit = 0x0003;
-	groupIndex = 1;
+	groupIndex = -1;
 	width = 0, height = 0;
 	scale = 1;
 }
@@ -21,9 +21,9 @@ CollisionShape::CollisionShape(CircleDef& def){
 	_shape->m_p.y = (float)def.y / 32.0f + ((height - (height * scale)) / 2.0f);
 	_shape->m_radius = (float)def.r / 32.0f;
 
-	shapeData.circle.x = (float)def.x / 32.0f * scale + ((width - (width * scale)) / 2.0f);
-	shapeData.circle.y = (float)def.y / 32.0f * scale + ((height - (height * scale)) / 2.0f);
-	shapeData.circle.rad = (float)def.r / 32.0f;
+	shapeData.circle.x = ((float)def.x / 32.0f) * scale + ((width - (width * scale)) / 2.0f);
+	shapeData.circle.y = ((float)def.y / 32.0f) * scale + ((height - (height * scale)) / 2.0f);
+	shapeData.circle.rad = ((float)def.r / 32.0f) * scale;
 
 	shape.reset(_shape);
 

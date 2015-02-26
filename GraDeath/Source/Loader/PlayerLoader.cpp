@@ -202,7 +202,8 @@ namespace PlayerLoader
 							def.groupIndex = 1;
 						}
 						else{
-							def.maskBit = MASK_COL_ATK;
+							def.categoryBit = 0;
+							def.maskBit = 0;
 							def.groupIndex = -1;
 						}
 						def.strength = shape->strength;
@@ -210,7 +211,7 @@ namespace PlayerLoader
 						def.height = (float)(size.y / parameter->rectHCount);
 						def.scale = scale;
 
-						collisionShape = std::make_shared<CollisionShape> ( def );
+						collisionShape.reset(new CollisionShape(def));
 					}
 					else
 					{// ‹U‚¾‚ÆŽlŠp
@@ -233,8 +234,8 @@ namespace PlayerLoader
 							def.groupIndex = 1;
 						}
 						else{
-							def.maskBit = MASK_COL_ATK;
 							def.categoryBit = 0;
+							def.maskBit = 0;
 							def.groupIndex = -1;
 						}
 						def.strength = shape->strength;
