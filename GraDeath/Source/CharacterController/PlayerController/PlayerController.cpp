@@ -82,18 +82,12 @@ void PlayerController::Idle(){
 		ChangeAction(ACTION_WALK, true, SAME_BEFORE);
 	}
 	else if ( GamePad::getGamePadState((PAD_NUM)padID, BUTTON_B) == INPUT_PUSH
-#ifdef _DEBUG
-		|| ( Keyboard::CheckKey ( KC_A ) == INPUT_PUSH && ( padID == 0 ) )
-#endif
 		&& SkillManager::GetSkillUse ( padID, (SKILL_ID)0 ) ){
 		bool temp = SkillManager::SkillOn ( padID, SKILL_ID::SKILL_FIRST, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), animManager.GetCurrentDirecton () );
 		if ( temp )
 			ChangeAction(ACTION_SKILL, false);	
 	}
 	else if ( GamePad::getGamePadState ( ( PAD_NUM )padID, BUTTON_Y ) == INPUT_PUSH
-#ifdef _DEBUG
-		|| ( Keyboard::CheckKey ( KC_S ) == INPUT_PUSH && ( padID == 0 ) )
-#endif
 		&& SkillManager::GetSkillUse ( padID, ( SKILL_ID )1 ) ){
 		bool temp = SkillManager::SkillOn ( padID, SKILL_ID::SKILL_SECOND, D3DXVECTOR2 ( this->player->GetPosition ().x, this->player->GetPosition ().y ), animManager.GetCurrentDirecton () );
 		if ( temp )

@@ -35,4 +35,13 @@ float BGM::BGMPimpl::GetPlayingTime(){
 	return sourceVoice->GetPlayingTime();
 }
 
+
+void BGM::BGMPimpl::SetLoop ( unsigned int _loopBegin, unsigned int _loopLength, unsigned int _loopCount ){
+	loopBegin = _loopBegin;
+	loopLength = _loopLength;
+	loopCount = _loopCount;
+	sourceVoice->SubmitBuffer ( loopBegin, loopLength, loopCount );
+}
+
+
 }

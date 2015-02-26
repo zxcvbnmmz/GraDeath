@@ -69,6 +69,10 @@ GameScene::GameScene() :currentState(FADE_IN) {
 		bgm = Sound::CreateBGM("Resource/BGM/NOCollarBGM2.wav");
 		break;
 	}
+	// 最初の引数がループ開始点
+	// 第二引数がループ終了点
+	// 第三引数がループ回数（255で無限ループ）
+	bgm->SetLoop ( 0, 0, 255 );
 }
 
 GameScene::~GameScene ()

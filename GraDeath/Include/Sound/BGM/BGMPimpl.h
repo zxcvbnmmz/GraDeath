@@ -16,11 +16,15 @@ public:
 	void SetVolume(float volume);
 	void SetPitch(float pitch);
 	float GetPlayingTime();
-	void ExitLoop();
-	void SetPlayingParametor();
+	void SetLoop ( unsigned int loopBegin, unsigned int loopEnd, unsigned int loopCount );
+	void ExitLoop ();
+	void SetPlayingParametor ();
 
 private:
 	std::shared_ptr<class SourceVoice> sourceVoice;
+	unsigned int loopBegin = 0;
+	unsigned int loopLength = 0;
+	unsigned int loopCount = 0;
 };
 
 

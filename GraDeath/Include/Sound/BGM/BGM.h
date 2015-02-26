@@ -24,8 +24,9 @@ public:
 	void SetVoume(float volume);
 	void SetPitch(float pitch);
 	float GetPlayingTime();
-	void ExitLoop();
-	void SetPlayingParametor();
+	void SetLoop ( unsigned int loopBegin, unsigned int loopLength, unsigned int loopCount );
+	void ExitLoop ();
+	void SetPlayingParametor ();
 
 private:
 	class BGMPimpl;
