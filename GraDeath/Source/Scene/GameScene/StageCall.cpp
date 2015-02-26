@@ -76,7 +76,7 @@ void StageCall::Draw(){
 }
 
 int StageCall::Update(){
-#ifndef _DEBUG
+#ifdef _DEBUG
 	if (Keyboard::CheckKey(KC_ENTER) == INPUT_PRESS)
 	{
 		// “®ì‚ªI—¹‚µ‚½‚çFINISHED‚ğ•Ô‚µí“¬‚ÉˆÚs‚·‚é

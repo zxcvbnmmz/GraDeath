@@ -34,4 +34,8 @@ float BGM::GetPlayingTime(){
 	return pimpl->GetPlayingTime();
 }
 
+void BGM::SetLoop ( unsigned int loopBegin, unsigned int loopEnd, unsigned int loopCount ){
+	pimpl->SetLoop ( loopBegin, loopEnd, loopCount );
+}
+
 }

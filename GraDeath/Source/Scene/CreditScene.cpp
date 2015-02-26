@@ -33,7 +33,11 @@ SCENE_STATUS CreditScene::Execute(){
 	mPos *= .9;
 	int status = (int)(*executes[currentState])();
 
-	if (Keyboard::CheckKey(KC_R) == INPUT_STATE::INPUT_PUSH){
+	if (GamePad::getAnyGamePadPressed(BUTTON_B) == INPUT_PRESS
+#ifdef _DEBUG
+		|| Keyboard::CheckKey(KC_R) == INPUT_STATE::INPUT_PUSH
+#endif
+		){
 		TitleFactory cf;
 		SceneFactory::Reserve(&cf);
 		return END_PROCESS;
@@ -94,15 +98,6 @@ int CreditScene::ExecutePage2(){
 }
 
 int CreditScene::ExecutePage3(){
-	if (GamePad::getGamePadState(PAD_1, BUTTON_RIGTH, 0) == INPUT_PUSH
-#ifdef _DEBUG
-		|| Keyboard::CheckKey(KC_RIGHT) == INPUT_PUSH
-#endif
-		){
-		TitleFactory cf;
-		SceneFactory::Reserve(&cf);
-		return END_PROCESS;
-	}
 	if (GamePad::getGamePadState(PAD_1, BUTTON_LEFT, 0) == INPUT_PUSH
 #ifdef _DEBUG
 		|| Keyboard::CheckKey(KC_LEFT) == INPUT_PUSH

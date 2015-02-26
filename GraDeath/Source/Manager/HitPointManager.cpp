@@ -87,15 +87,18 @@ namespace HitPointManager
 	bool IsOnlyOne ()
 	{
 		bool temp = false;
+		int count = 0;
 		for ( int i = 0; i < 4; i++ )
 		{
-			if ( temp == !hitPoint[ i ].IsDead () )
-				return false;
+			if ( hitPoint[ i ].IsDead () )
+				count++;
+			//if ( temp == !hitPoint[ i ].IsDead () )
+			//	return false;
 
-			if ( !hitPoint[ i ].IsDead () )
-				temp = true;
+			//if ( !hitPoint[ i ].IsDead () )
+			//	temp = true;
 		}
-		return temp;
+		return ( count == 3 ) ? true : false;//temp;
 	}
 
 
