@@ -30,11 +30,11 @@ void SkillState::Update ()
 
 bool SkillState::GetUseSkill ( SKILL_ID _id )
 {
-	for ( int i = 0; i < 3; i++ )
-	{
-		if ( ( time[ COOLTIME ][ i ] != .0f ) )
-			return false;
-	}
+	//for ( int i = 0; i < 3; i++ )
+	//{
+	//	if ( ( time[ COOLTIME ][ i ] != .0f ) )
+	//		return false;
+	//}
 	if ( ( time[ COOLTIME ][ _id ] == .0f ) )
 	{
 		time[ COOLTIME ][ _id ] = time[ RECAST ][ _id ];

@@ -28,7 +28,8 @@ public:
 
 	virtual void Draw () = 0;
 
-	virtual void SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg ) = 0;
+	virtual bool SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg ) = 0;
+	virtual bool IsActive () = 0;
 
 	virtual b2Body* Getb2Body () = 0;
 

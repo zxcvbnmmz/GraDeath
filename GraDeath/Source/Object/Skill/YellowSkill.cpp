@@ -64,11 +64,18 @@ void YellowSkill::Draw ()
 		skill->Draw ();
 }
 
-void YellowSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
+bool YellowSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
 {
 	if ( _id >= skills.size () )
-		return
+		return false;
 
+	for ( auto& skill : skills )
+	{
+		if ( skill->IsActive () )
+		{
+			return false;
+		}
+	}
 	SkillSetDettachFixture ( body );
 
 	D3DXVECTOR2 temp = ( _pos * 32.0f );
@@ -77,6 +84,20 @@ void YellowSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int di
 	temp = skills[ _id ]->GetPosition ();
 	body->SetTransform ( b2Vec2 ( temp.x / 32.0f, temp.y / 32.0f ), 0 );
 	skills[ _id ]->SetAttachFixture ( body );
+
+	return true;
+}
+
+bool YellowSkill::IsActive ()
+{
+	for ( auto& skill : skills )
+	{
+		if ( skill->IsActive () )
+		{
+			return true;
+		}
+	}
+	return false;
 }
 
 b2Body* YellowSkill::Getb2Body ()

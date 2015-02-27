@@ -65,11 +65,17 @@ void RedSkill::Draw ()
 		skill->Draw ();
 }
 
-void RedSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
+bool RedSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFlg )
 {
 	if ( _id >= skills.size () )
-		return
-
+		return false;
+	for ( auto& skill : skills )
+	{
+		if ( skill->IsActive () )
+		{
+			return false;
+		}
+	}
 	SkillSetDettachFixture ( body );
 
 	D3DXVECTOR2 temp = ( _pos * 32.0f );
@@ -78,6 +84,20 @@ void RedSkill::SetPosition ( int _id, const D3DXVECTOR2 _pos, unsigned int dirFl
 	temp = skills[ _id ]->GetPosition ();
 	body->SetTransform ( b2Vec2 ( temp.x / 32.0f, temp.y / 32.0f ), 0 );
 	skills[ _id ]->SetAttachFixture ( body );
+
+	return true;
+}
+
+bool RedSkill::IsActive ()
+{
+	for ( auto& skill : skills )
+	{
+		if ( skill->IsActive () )
+		{
+			return true;
+		}
+	}
+	return false;
 }
 
 b2Body* RedSkill::Getb2Body ()
