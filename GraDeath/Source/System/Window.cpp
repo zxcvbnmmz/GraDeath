@@ -17,9 +17,9 @@ bool Window::Create(WNDPROC proc, HINSTANCE inst){
 	windowData.height = GetPrivateProfileInt(L"WindowInfo", L"WindowHeight", 480, fileName);
 
 	WCHAR windowName[256], fullScreen[8], iconName[256];
-	GetPrivateProfileString(L"WindowInfo", L"WindowName", L"", windowName, wcslen(windowName), fileName);
-	GetPrivateProfileString(L"WindowInfo", L"FullScreen", L"", fullScreen, wcslen(fullScreen), fileName);
-	GetPrivateProfileString(L"WindowInfo", L"Icon", IDI_APPLICATION, iconName, wcslen(iconName), fileName);
+	GetPrivateProfileString(L"WindowInfo", L"WindowName", L"", windowName, 256, fileName);
+	GetPrivateProfileString(L"WindowInfo", L"FullScreen", L"", fullScreen, 8, fileName);
+	GetPrivateProfileString(L"WindowInfo", L"Icon", IDI_APPLICATION, iconName, 256, fileName);
 
 	WNDCLASSEX wc = { sizeof(wc), CS_HREDRAW | CS_VREDRAW, proc, 0, 0, inst, LoadIcon(NULL, iconName), LoadCursor(NULL, IDC_ARROW),
 		(HBRUSH)GetStockObject(LTGRAY_BRUSH), L"", windowName, LoadIcon(NULL, IDI_APPLICATION) };
